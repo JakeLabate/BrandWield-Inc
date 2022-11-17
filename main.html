@@ -741,12 +741,106 @@ Can we create a search bar that:
 			// if open & clicked, close
 			if (document.getElementById('brandDropdown').style.display = 'block')
 			{ document.getElementById('brandDropdown').style.display = 'none'; }
+
 		"/>
-	<div id="brandDropdown" class="dropzone"onmouseleave="this.style.display = 'none';"><br>
-		<span class="draggableBrandVar" draggable="true" >Contact Phone: 203-907-5536</span><br><br>
-		<span class="draggableBrandVar" draggable="true">Contact Email: brandwield@gmail.com</span><br><br>
-		<span class="draggableBrandVar" draggable="true">Contact Website: https://brandwield.com</span><br><br>
-		<span class="draggableBrandVar" draggable="true">Founder Name: Jake Labate</span><br>
+
+	<script>
+
+		// DRAGGABLES
+
+		// onmouseover title
+		function onmouseoverDraggableContactInfoSection () {
+
+			// close other sections
+			onmouseleaveDraggableFoundingInfoSection();
+			onmouseleaveDraggableBusinessInfoSection();
+
+			// open this section
+			document.getElementById('draggableContactInfoSection').style.display = 'block'
+
+			// style header of this section
+			document.getElementById('draggableContactInfoSectionHeader').style.color = '#7800a8';
+
+			// rest color of other headers
+			document.getElementById('draggableFounderInfoSectionHeader').style.color = 'black';
+			document.getElementById('draggableBusinessInfoSectionHeader').style.color = 'black';
+
+
+		}
+		function onmouseoverDraggableFoundingInfoSection () {
+			// close other sections
+			onmouseleaveDraggableContactInfoSection();
+			onmouseleaveDraggableBusinessInfoSection();
+
+			// open this section
+			document.getElementById('draggableFoundingInfoSection').style.display = 'block'
+
+			// style header of this section
+			document.getElementById('draggableFoundingInfoSectionHeader').style.color = '#7800a8';
+
+			// rest color of other headers
+			document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';
+			document.getElementById('draggableBusinessInfoSectionHeader').style.color = 'black';
+		}
+		function onmouseoverDraggableBusinessInfoSection () {
+
+			// close other sections
+			onmouseleaveDraggableContactInfoSection();
+			onmouseleaveDraggableFoundingInfoSection();
+
+			// open this section
+			document.getElementById('draggableBusinessInfoSection').style.display = 'block'
+
+			// style header of this section
+			document.getElementById('draggableBusinessInfoSectionHeader').style.color = '#7800a8';
+
+			// rest color of other headers
+			document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';
+			document.getElementById('draggableFoundingInfoSectionHeader').style.color = 'black';
+		}
+
+		// onmouseleave box
+		function onmouseleaveDraggableContactInfoSection () {
+			document.getElementById('draggableContactInfoSection').style.display = 'none'
+			document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';
+		}
+		function onmouseleaveDraggableFoundingInfoSection () {
+			document.getElementById('draggableFoundingInfoSection').style.display = 'none'
+			document.getElementById('draggableFoundingInfoSectionHeader').style.color = 'black';
+		}
+		function onmouseleaveDraggableBusinessInfoSection () {
+			document.getElementById('draggableBusinessInfoSection').style.display = 'none'
+			document.getElementById('draggableBusinessInfoSectionHeader').style.color = 'black';
+		}
+
+
+
+	</script>
+
+
+
+	<div id="brandDropdown" class="dropzone" onmouseleave="this.style.display = 'none';"><br>
+
+		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none" onmouseleave="onmouseleaveDraggableContactInfoSection();">
+			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggablePrimaryContactEmail" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar" draggable="true"></span><br><br>
+		</b>
+
+		<b id="draggableFoundingInfoSectionHeader" onmouseover="onmouseoverDraggableFoundingInfoSection();">Founding Info:</b><br><br><b id="draggableFoundingInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableFoundingInfoSection();">
+			<span id="draggableFounderName" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableFoundingDate" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableTradeBusinessName" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableLegalBusinessName" class="draggableBrandVar" draggable="true"></span><br><br>
+		</b>
+
+		<b id="draggableBusinessInfoSectionHeader" onmouseover="onmouseoverDraggableBusinessInfoSection();">Business Info:</b><br><br><b id="draggableBusinessInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableBusinessInfoSection();">
+			<span id="draggableBusinessType" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableSlogan" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableMissionStatement" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableValueProp" class="draggableBrandVar" draggable="true"></span><br><br>
+		</b>
+
 	</div>
 </div>
 
