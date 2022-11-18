@@ -1,4 +1,3 @@
-
 // FOUNDING INFO
 // founderName
 function unlockFounderName() {

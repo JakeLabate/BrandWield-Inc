@@ -1,4 +1,3 @@
-
 // Import CDN Resources
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
@@ -30,22 +29,21 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		console.log("No Brand Returned");
 	}
 
-
-
-
 	// Set Brand Variables in BrandWield App if they exist
 
 	// squareLogo
 	if (snapshot.val().squareLogo != null) {
+		// set local storage
+		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
 		document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
 		document.getElementById('squareLogoBro').style.maxWidth = '32px';
 		document.getElementById('squareLogoBro').style.maxHeight = '32px';
-		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
-		document.getElementById("logoIcon").src = snapshot.val().squareLogo;
 	} else {
 	}
 	// fullLogo
 	if (snapshot.val().fullLogo != null) {
+		// set local storage
+		localStorage.setItem('fullLogo', snapshot.val().fullLogo);
 		document.getElementById('fullLogoBro').src = snapshot.val().fullLogo;
 		document.getElementById('fullLogoBro').style.maxWidth = '250px';
 		document.getElementById('fullLogoBro').style.maxHeight = '250px';
@@ -55,6 +53,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Social Media
 
 	if (snapshot.val().facebookUrl != null) {
+		// set local storage
+		localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
 		document.getElementById('facebookUrl').value = snapshot.val().facebookUrl;
 		document.getElementById('facebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
 	} else {
@@ -64,6 +64,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().facebookUsername != null) {
+		// set local storage
+		localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
 		document.getElementById('facebookUsername').value = snapshot.val().facebookUsername;
 		document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').value.length + 1;
 	} else {
@@ -73,6 +75,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().instagramUrl != null) {
+		// set local storage
+		localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
 		document.getElementById('instagramUrl').value = snapshot.val().instagramUrl;
 		document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').value.length + 1;
 	} else {
@@ -82,6 +86,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().instagramUsername != null) {
+		// set local storage
+		localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
 		document.getElementById('instagramUsername').value = snapshot.val().instagramUsername;
 		document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').value.length + 1;
 	} else {
@@ -91,6 +97,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().linkedinUrl != null) {
+		// set local storage
+		localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
 		document.getElementById('linkedinUrl').value = snapshot.val().linkedinUrl;
 		document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').value.length + 1;
 	} else {
@@ -100,6 +108,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().linkedinUsername != null) {
+		// set local storage
+		localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
 		document.getElementById('linkedinUsername').value = snapshot.val().linkedinUsername;
 		document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').value.length + 1;
 	} else {
@@ -109,6 +119,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().twitterUrl != null) {
+		// set local storage
+		localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
 		document.getElementById('twitterUrl').value = snapshot.val().twitterUrl;
 		document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').value.length + 1;
 	} else {
@@ -118,6 +130,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().twitterUsername != null) {
+		// set local storage
+		localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
 		document.getElementById('twitterUsername').value = snapshot.val().twitterUsername;
 		document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').value.length + 1;
 	} else {
@@ -127,6 +141,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tiktokUrl != null) {
+		// set local storage
+		localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
 		document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
 		document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
 	} else {
@@ -136,6 +152,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tiktokUsername != null) {
+		// set local storage
+		localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
 		document.getElementById('tiktokUsername').value = snapshot.val().tiktokUsername;
 		document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').value.length + 1;
 	} else {
@@ -147,6 +165,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Colors
 
 	if (snapshot.val().primaryColor != null) {
+		// set local storage
+		localStorage.setItem('primaryColor', snapshot.val().primaryColor);
 		document.getElementById('primaryColor').value = snapshot.val().primaryColor;
 		document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
 		document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -155,12 +175,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('primaryColorValueDisplayColor').style.borderRadius = '25px';
 		document.getElementById('primaryColorValueDisplayColor').style.borderWidth = '3px';
 		document.getElementById('primaryColorValueDisplayColor').style.borderStyle = 'solid'
+
 	} else {
 		document.getElementById('primaryColor').placeholder = '#1d1d6e';
 		document.getElementById('warningPrimaryColor').style.display = 'block';
 	}
 
 	if (snapshot.val().secondaryColor != null) {
+		// set local storage
+		localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
 		document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
 		document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
 		document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -175,6 +198,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tertiaryColor != null) {
+		// set local storage
+		localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
 		document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
 		document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
 		document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -191,6 +216,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Fonts
 
 	if (snapshot.val().primaryFont != null) {
+		// set local storage
+		localStorage.setItem('primaryFont', snapshot.val().primaryFont);
 		document.getElementById('primaryFont').value = snapshot.val().primaryFont;
 		document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
 	} else {
@@ -200,6 +227,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().secondaryFont != null) {
+		// set local storage
 		document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
 		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
 	} else {
@@ -209,6 +237,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tertiaryFont != null) {
+		// set local storage
+		localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
 		document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
 		document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
 	} else {
@@ -220,6 +250,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Contact Info
 
 	if (snapshot.val().primaryContactPhone != null) {
+		// set local storage
+		localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
 		document.getElementById('primaryContactPhone').value = snapshot.val().primaryContactPhone;
 		document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').value.length + 1;
 		document.getElementById('draggablePrimaryContactPhone').innerHTML = 'Contact Phone: ' + snapshot.val().primaryContactPhone;
@@ -230,6 +262,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().primaryContactEmail != null) {
+		// set local storage
+		localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
 		document.getElementById('primaryContactEmail').value = snapshot.val().primaryContactEmail;
 		document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').value.length + 2;
 		document.getElementById('draggablePrimaryContactEmail').innerHTML = 'Contact Email: ' + snapshot.val().primaryContactEmail;
@@ -240,6 +274,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().primaryContactWebsite != null) {
+		// set local storage
+		localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
 		document.getElementById('primaryContactWebsite').value = snapshot.val().primaryContactWebsite;
 		document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').value.length + 1;
 		document.getElementById('draggablePrimaryContactWebsite').innerHTML = 'Contact Website: ' + snapshot.val().primaryContactWebsite;
@@ -252,6 +288,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Address
 
 	if (snapshot.val().officeAddressStreet1 != null) {
+		// set local storage
+		localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
 		document.getElementById('officeAddressStreet1').value = snapshot.val().officeAddressStreet1;
 		document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').value.length + 1;
 	} else {
@@ -261,6 +299,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().officeAddressStreet2 != null) {
+		// set local storage
+		localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
 		document.getElementById('officeAddressStreet2').value = snapshot.val().officeAddressStreet2;
 		document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').value.length + 1;
 	} else {
@@ -270,6 +310,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().officeAddressCity != null) {
+		// set local storage
+		localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
 		document.getElementById('officeAddressCity').value = snapshot.val().officeAddressCity;
 		document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').value.length + 1;
 	} else {
@@ -279,6 +321,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().officeAddressState != null) {
+		// set local storage
+		localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
 		document.getElementById('officeAddressState').value = snapshot.val().officeAddressState;
 		document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').value.length + 1;
 	} else {
@@ -288,6 +332,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().officeAddressZip != null) {
+		// set local storage
+		localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
 		document.getElementById('officeAddressZip').value = snapshot.val().officeAddressZip;
 		document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').value.length + 1;
 	} else {
@@ -297,6 +343,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().officeAddressCountry != null) {
+		// set local storage
+		localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
 		document.getElementById('officeAddressCountry').value = snapshot.val().officeAddressCountry;
 		document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').value.length + 1;
 	} else {
@@ -308,6 +356,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Hours of Operation
 
 	if (snapshot.val().mondayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
 		document.getElementById('mondayOpeningTime').size = document.getElementById('mondayOpeningTime').value.length + 1;
 	} else {
 		document.getElementById('mondayOpeningTime').placeholder = '9:00 AM';
@@ -315,6 +365,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().mondayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
 		document.getElementById('mondayClosingTime').value = snapshot.val().mondayClosingTime;
 	} else {
 		document.getElementById('mondayClosingTime').placeholder = '5:00 PM';
@@ -322,6 +374,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tuesdayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('tuesdayOpeningTime', snapshot.val().tuesdayOpeningTime);
 		document.getElementById('tuesdayOpeningTime').value = snapshot.val().tuesdayOpeningTime;
 	} else {
 		document.getElementById('tuesdayOpeningTime').placeholder = '9:00 AM';
@@ -329,6 +383,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tuesdayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('tuesdayClosingTime', snapshot.val().tuesdayClosingTime);
 		document.getElementById('tuesdayClosingTime').value = snapshot.val().tuesdayClosingTime;
 	} else {
 		document.getElementById('tuesdayClosingTime').placeholder = '5:00 PM';
@@ -336,6 +392,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().wednesdayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('wednesdayOpeningTime', snapshot.val().wednesdayOpeningTime);
 		document.getElementById('wednesdayOpeningTime').value = snapshot.val().wednesdayOpeningTime;
 	} else {
 		document.getElementById('wednesdayOpeningTime').placeholder = '9:00 AM';
@@ -343,6 +401,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().wednesdayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('wednesdayClosingTime', snapshot.val().wednesdayClosingTime);
 		document.getElementById('wednesdayClosingTime').value = snapshot.val().wednesdayClosingTime;
 	} else {
 		document.getElementById('wednesdayClosingTime').placeholder = '5:00 PM';
@@ -350,6 +410,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().thursdayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('thursdayOpeningTime', snapshot.val().thursdayOpeningTime);
 		document.getElementById('thursdayOpeningTime').value = snapshot.val().thursdayOpeningTime;
 	} else {
 		document.getElementById('thursdayOpeningTime').placeholder = '9:00 AM';
@@ -357,6 +419,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().thursdayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('thursdayClosingTime', snapshot.val().thursdayClosingTime);
 		document.getElementById('thursdayClosingTime').value = snapshot.val().thursdayClosingTime;
 	} else {
 		document.getElementById('thursdayClosingTime').placeholder = '5:00 PM';
@@ -364,6 +428,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().fridayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('fridayOpeningTime', snapshot.val().fridayOpeningTime);
 		document.getElementById('fridayOpeningTime').value = snapshot.val().fridayOpeningTime;
 	} else {
 		document.getElementById('fridayOpeningTime').placeholder = '9:00 AM';
@@ -371,6 +437,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().fridayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('fridayClosingTime', snapshot.val().fridayClosingTime);
 		document.getElementById('fridayClosingTime').value = snapshot.val().fridayClosingTime;
 	} else {
 		document.getElementById('fridayClosingTime').placeholder = '5:00 PM';
@@ -378,6 +446,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().saturdayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('saturdayOpeningTime', snapshot.val().saturdayOpeningTime);
 		document.getElementById('saturdayOpeningTime').value = snapshot.val().saturdayOpeningTime;
 	} else {
 		document.getElementById('saturdayOpeningTime').placeholder = '9:00 AM';
@@ -385,6 +455,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().saturdayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('saturdayClosingTime', snapshot.val().saturdayClosingTime);
 		document.getElementById('saturdayClosingTime').value = snapshot.val().saturdayClosingTime;
 	} else {
 		document.getElementById('saturdayClosingTime').placeholder = '5:00 PM';
@@ -392,6 +464,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().sundayOpeningTime != null) {
+		// set local storage
+		localStorage.setItem('sundayOpeningTime', snapshot.val().sundayOpeningTime);
 		document.getElementById('sundayOpeningTime').value = snapshot.val().sundayOpeningTime;
 	} else {
 		document.getElementById('sundayOpeningTime').placeholder = '9:00 AM';
@@ -399,6 +473,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().sundayClosingTime != null) {
+		// set local storage
+		localStorage.setItem('sundayClosingTime', snapshot.val().sundayClosingTime);
 		document.getElementById('sundayClosingTime').value = snapshot.val().sundayClosingTime;
 	} else {
 		document.getElementById('sundayClosingTime').placeholder = '5:00 PM';
@@ -408,6 +484,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Founding Info
 
 	if (snapshot.val().founderName != null) {
+		// set local storage
+		localStorage.setItem('founderName', snapshot.val().founderName);
 		document.getElementById('founderName').value = snapshot.val().founderName;
 		document.getElementById('founderName').size = document.getElementById('founderName').value.length + 1;
 		document.getElementById('draggableFounderName').innerHTML = 'Founder Name: ' + snapshot.val().founderName;
@@ -418,6 +496,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().foundingDate != null) {
+		// set local storage
+		localStorage.setItem('foundingDate', snapshot.val().foundingDate);
 		document.getElementById('foundingDate').value = snapshot.val().foundingDate;
 		document.getElementById('draggableFoundingDate').innerHTML = 'Founding Date: ' + snapshot.val().foundingDate;
 	} else {
@@ -426,6 +506,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().tradeBusinessName != null) {
+		// set local storage
+		localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
 		document.getElementById('tradeBusinessName').value = snapshot.val().tradeBusinessName;
 		document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').value.length + 1;
 		document.getElementById('draggableTradeBusinessName').innerHTML = 'Trade Business Name: ' + snapshot.val().tradeBusinessName;
@@ -437,6 +519,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().legalBusinessName != null) {
+		// set local storage
+		localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
 		document.getElementById('legalBusinessName').value = snapshot.val().legalBusinessName;
 		document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').value.length + 1;
 		document.getElementById('draggableLegalBusinessName').innerHTML = 'Legal Business Name: ' + snapshot.val().legalBusinessName;
@@ -450,6 +534,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Basic Info
 
 	if (snapshot.val().businessType != null) {
+		// set local storage
+		localStorage.setItem('businessType', snapshot.val().businessType);
 		document.getElementById('businessType').value = snapshot.val().businessType;
 		document.getElementById('businessType').size = document.getElementById('businessType').value.length + 1;
 		document.getElementById('draggableBusinessType').innerHTML = 'Business Type: ' + snapshot.val().businessType;
@@ -460,6 +546,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().slogan != null) {
+		// set local storage
+		localStorage.setItem('slogan', snapshot.val().slogan);
 		document.getElementById('slogan').value = snapshot.val().slogan;
 		document.getElementById('slogan').size = document.getElementById('slogan').value.length + 1;
 		document.getElementById('draggableSlogan').innerHTML = 'Slogan: ' + snapshot.val().slogan;
@@ -470,6 +558,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().missionStatement != null) {
+		// set local storage
+		localStorage.setItem('missionStatement', snapshot.val().missionStatement);
 		document.getElementById('missionStatement').value = snapshot.val().missionStatement;
 		document.getElementById('missionStatement').size = document.getElementById('missionStatement').value.length + 1;
 		document.getElementById('draggableMissionStatement').innerHTML = 'Mission Statement: ' + snapshot.val().missionStatement;
@@ -480,6 +570,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	if (snapshot.val().valueProp != null) {
+		// set local storage
+		localStorage.setItem('valueProp', snapshot.val().valueProp);
 		document.getElementById('valueProp').value = snapshot.val().valueProp;
 		document.getElementById('valueProp').size = document.getElementById('valueProp').value.length + 1;
 		document.getElementById('draggableValueProp').innerHTML = 'Value Proposition: ' + snapshot.val().valueProp;
@@ -489,10 +581,12 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('valueProp').size = document.getElementById('valueProp').placeholder.length + 1;
 	}
 
-	// People
+	// PEOPLE
 
 	// Person 1
 	if (snapshot.val().person1Name != null) {
+		// set local storage
+		localStorage.setItem('person1Name', snapshot.val().person1Name);
 		document.getElementById('person1Name').value = snapshot.val().person1Name;
 		document.getElementById('person1Name').size = document.getElementById('person1Name').value.length + 1;
 	} else {
@@ -500,8 +594,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson1Name').style.display = 'block';
 		document.getElementById('person1Name').size = document.getElementById('person1Name').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person1Title != null) {
+		// set local storage
+		localStorage.setItem('person1Title', snapshot.val().person1Title);
 		document.getElementById('person1Title').value = snapshot.val().person1Title;
 		document.getElementById('person1Title').size = document.getElementById('person1Title').value.length + 1;
 	} else {
@@ -509,15 +604,17 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson1Title').style.display = 'block';
 		document.getElementById('person1Title').size = document.getElementById('person1Title').placeholder.length + 1;
 	}
-
 	//   if (snapshot.val().person1Headshot != null) {
+	//     // set local storage
+	//     localStorage.setItem('person1Headshot', snapshot.val().person1Headshot);
 	//      document.getElementById('person1Headshot').value = snapshot.val().person1Headshot;
 	//  } else {
 	//      document.getElementById('person1Headshot').placeholder = 'https://via.placeholder.com/150';
 	//       document.getElementById('warningPerson1Headshot').style.display = 'block';
 	//   }
-
 	if (snapshot.val().person1FacebookUrl != null) {
+		// set local storage
+		localStorage.setItem('person1FacebookUrl', snapshot.val().person1FacebookUrl);
 		document.getElementById('person1FacebookUrl').value = snapshot.val().person1FacebookUrl;
 		document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
 
@@ -526,8 +623,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson1FacebookUrl').style.display = 'block';
 		document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person1InstagramUrl != null) {
+		// set local storage
+		localStorage.setItem('person1InstagramUrl', snapshot.val().person1InstagramUrl);
 		document.getElementById('person1InstagramUrl').value = snapshot.val().person1InstagramUrl;
 		document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').value.length + 1;
 	} else {
@@ -535,8 +633,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson1InstagramUrl').style.display = 'block';
 		document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person1LinkedinUrl != null) {
+		// set local storage
+		localStorage.setItem('person1LinkedinUrl', snapshot.val().person1LinkedinUrl);
 		document.getElementById('person1LinkedinUrl').value = snapshot.val().person1LinkedinUrl;
 		document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').value.length + 1;
 	} else {
@@ -544,8 +643,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson1LinkedinUrl').style.display = 'block';
 		document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person1TwitterUrl != null) {
+		// set local storage
+		localStorage.setItem('person1TwitterUrl', snapshot.val().person1TwitterUrl);
 		document.getElementById('person1TwitterUrl').value = snapshot.val().person1TwitterUrl;
 		document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').value.length + 1;
 	} else {
@@ -553,8 +653,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson1TwitterUrl').style.display = 'block';
 		document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person1TiktokUrl != null) {
+		// set local storage
+		localStorage.setItem('person1TiktokUrl', snapshot.val().person1TiktokUrl);
 		document.getElementById('person1TiktokUrl').value = snapshot.val().person1TiktokUrl;
 		document.getElementById('person1TiktokUrl').size = document.getElementById('person1TiktokUrl').value.length + 1;
 	} else {
@@ -564,8 +665,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Person 2
-
 	if (snapshot.val().person2Name != null) {
+		// set local storage
+		localStorage.setItem('person2Name', snapshot.val().person2Name);
 		document.getElementById('person2Name').value = snapshot.val().person2Name;
 		document.getElementById('person2Name').size = document.getElementById('person2Name').value.length + 1;
 	} else {
@@ -573,8 +675,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson2Name').style.display = 'block';
 		document.getElementById('person2Name').size = document.getElementById('person2Name').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person2Title != null) {
+		// set local storage
+		localStorage.setItem('person2Title', snapshot.val().person2Title);
 		document.getElementById('person2Title').value = snapshot.val().person2Title;
 		document.getElementById('person2Title').size = document.getElementById('person2Title').value.length + 1;
 	} else {
@@ -582,15 +685,17 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson2Title').style.display = 'block';
 		document.getElementById('person2Title').size = document.getElementById('person2Title').placeholder.length + 1;
 	}
-
 	//   if (snapshot.val().person2Headshot != null) {
+	//       // set local storage
+	//       localStorage.setItem('person2Headshot', snapshot.val().person2Headshot);
 	//      document.getElementById('person2Headshot').value = snapshot.val().person2Headshot;
 	//  } else {
 	//       document.getElementById('person2Headshot').placeholder = 'https://via.placeholder.com/250';
 	//       document.getElementById('warningPerson2Headshot').style.display = 'block';
 	//  }
-
 	if (snapshot.val().person2FacebookUrl != null) {
+		// set local storage
+		localStorage.setItem('person2FacebookUrl', snapshot.val().person2FacebookUrl);
 		document.getElementById('person2FacebookUrl').value = snapshot.val().person2FacebookUrl;
 		document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').value.length + 1;
 	} else {
@@ -598,8 +703,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson2FacebookUrl').style.display = 'block';
 		document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person2InstagramUrl != null) {
+		// set local storage
+		localStorage.setItem('person2InstagramUrl', snapshot.val().person2InstagramUrl);
 		document.getElementById('person2InstagramUrl').value = snapshot.val().person2InstagramUrl;
 		document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').value.length + 1;
 	} else {
@@ -607,8 +713,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson2InstagramUrl').style.display = 'block';
 		document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person2LinkedinUrl != null) {
+		// set local storage
+		localStorage.setItem('person2LinkedinUrl', snapshot.val().person2LinkedinUrl);
 		document.getElementById('person2LinkedinUrl').value = snapshot.val().person2LinkedinUrl;
 		document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').value.length + 1;
 	} else {
@@ -616,8 +723,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson2LinkedinUrl').style.display = 'block';
 		document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person2TwitterUrl != null) {
+		// set local storage
+		localStorage.setItem('person2TwitterUrl', snapshot.val().person2TwitterUrl);
 		document.getElementById('person2TwitterUrl').value = snapshot.val().person2TwitterUrl;
 		document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').value.length + 1;
 	} else {
@@ -625,8 +733,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPerson2TwitterUrl').style.display = 'block';
 		document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().person2TiktokUrl != null) {
+		// set local storage
+		localStorage.setItem('person2TiktokUrl', snapshot.val().person2TiktokUrl);
 		document.getElementById('person2TiktokUrl').value = snapshot.val().person2TiktokUrl;
 		document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').value.length + 1;
 	} else {
@@ -635,10 +744,12 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').placeholder.length + 1;
 	}
 
-	// Offers
+	// OFFERS
 
 	// Offer 1
 	if (snapshot.val().offer1Name != null) {
+		// set local storage
+		localStorage.setItem('offer1Name', snapshot.val().offer1Name);
 		document.getElementById('offer1Name').value = snapshot.val().offer1Title;
 		document.getElementById('offer1Name').size = document.getElementById('offer1Name').value.length + 1;
 	} else {
@@ -646,8 +757,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer1Name').style.display = 'block';
 		document.getElementById('offer1Name').size = document.getElementById('offer1Name').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer1Price != null) {
+		// set local storage
+		localStorage.setItem('offer1Price', snapshot.val().offer1Price);
 		document.getElementById('offer1Price').value = snapshot.val().offer1Price;
 		document.getElementById('offer1Price').size = document.getElementById('offer1Price').value.length + 1;
 	} else {
@@ -655,8 +767,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer1Price').style.display = 'block';
 		document.getElementById('offer1Price').size = document.getElementById('offer1Price').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer1Feature != null) {
+		// set local storage
+		localStorage.setItem('offer1Feature', snapshot.val().offer1Feature);
 		document.getElementById('offer1Feature').value = snapshot.val().offer1Feature;
 		document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').value.length + 1;
 	} else {
@@ -664,8 +777,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer1Feature').style.display = 'block';
 		document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer1Benefit != null) {
+		// set local storage
+		localStorage.setItem('offer1Benefit', snapshot.val().offer1Benefit);
 		document.getElementById('offer1Benefit').value = snapshot.val().offer1Benefit;
 		document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').value.length + 1;
 	} else {
@@ -673,8 +787,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer1Benefit').style.display = 'block';
 		document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer1Solution != null) {
+		// set local storage
+		localStorage.setItem('offer1Solution', snapshot.val().offer1Solution);
 		document.getElementById('offer1Solution').value = snapshot.val().offer1Solution;
 		document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').value.length + 1;
 	} else {
@@ -682,8 +797,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer1Solution').style.display = 'block';
 		document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer1Description != null) {
+		// set local storage
+		localStorage.setItem('offer1Description', snapshot.val().offer1Description);
 		document.getElementById('offer1Description').value = snapshot.val().offer1Description;
 		document.getElementById('offer1Description').size = document.getElementById('offer1Description').value.length + 1;
 	} else {
@@ -691,8 +807,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer1Description').style.display = 'block';
 		document.getElementById('offer1Description').size = document.getElementById('offer1Description').placeholder.length + 1;
 	}
-
 	//   if (snapshot.val().offer1Image != null) {
+	//     // set local storage
+	//     localStorage.setItem('offer1Image', snapshot.val().offer1Image);
 	//      document.getElementById('offer1Image').value = snapshot.val().offer1Image;
 	//   } else {
 	//      document.getElementById('offer1Image').placeholder = 'https://via.placeholder.com/150';
@@ -700,8 +817,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	//   }
 
 	// Offer 2
-
 	if (snapshot.val().offer2Title != null) {
+		// set local storage
+		localStorage.setItem('offer2Title', snapshot.val().offer2Title);
 		document.getElementById('offer2Name').value = snapshot.val().offer2Name;
 		document.getElementById('offer2Name').size = document.getElementById('offer2Name').value.length + 1;
 	} else {
@@ -709,8 +827,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer2Name').style.display = 'block';
 		document.getElementById('offer2Name').size = document.getElementById('offer2Name').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer2Price != null) {
+		// set local storage
+		localStorage.setItem('offer2Price', snapshot.val().offer2Price);
 		document.getElementById('offer2Price').value = snapshot.val().offer2Price;
 		document.getElementById('offer2Price').size = document.getElementById('offer2Price').value.length + 1;
 	} else {
@@ -718,8 +837,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer2Price').style.display = 'block';
 		document.getElementById('offer2Price').size = document.getElementById('offer2Price').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer2Feature != null) {
+		// set local storage
+		localStorage.setItem('offer2Feature', snapshot.val().offer2Feature);
 		document.getElementById('offer2Feature').value = snapshot.val().offer2Feature;
 		document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').value.length + 1;
 	} else {
@@ -727,8 +847,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer2Feature').style.display = 'block';
 		document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer2Benefit != null) {
+		// set local storage
+		localStorage.setItem('offer2Benefit', snapshot.val().offer2Benefit);
 		document.getElementById('offer2Benefit').value = snapshot.val().offer2Benefit;
 		document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').value.length + 1;
 	} else {
@@ -736,8 +857,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer2Benefit').style.display = 'block';
 		document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer2Solution != null) {
+		// set local storage
+		localStorage.setItem('offer2Solution', snapshot.val().offer2Solution);
 		document.getElementById('offer2Solution').value = snapshot.val().offer2Solution;
 		document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').value.length + 1;
 	} else {
@@ -745,8 +867,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer2Solution').style.display = 'block';
 		document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').placeholder.length + 1;
 	}
-
 	if (snapshot.val().offer2Description != null) {
+		// set local storage
+		localStorage.setItem('offer2Description', snapshot.val().offer2Description);
 		document.getElementById('offer2Description').value = snapshot.val().offer2Description;
 		document.getElementById('offer2Description').size = document.getElementById('offer2Description').value.length + 1;
 	} else {
@@ -754,15 +877,14 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOffer2Description').style.display = 'block';
 		document.getElementById('offer2Description').size = document.getElementById('offer2Description').placeholder.length + 1;
 	}
-
 	//  if (snapshot.val().offer2Image != null) {
+	//    // set local storage
+	//    localStorage.setItem('offer2Image', snapshot.val().offer2Image);
 	//       document.getElementById('offer2Image').value = snapshot.val().offer2Image;
 	//   } else {
 	//       document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
 //        document.getElementById('warningOffer2Image').style.display = 'block';
 	//  }
-
-
 
 });
 
