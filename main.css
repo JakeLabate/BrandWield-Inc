@@ -369,8 +369,16 @@ b[display="block"] {
     display: block;
 }
 
-input[type='time'] {
+pre code {
+    background-color: #424242;
+    border: 3px solid #282828;
+    border-radius: 5px;
+    color: #e8e8e8;
+    display: block;
+    padding: 15px;
 }
+
+
 
 .integration {
     display: flex;
@@ -395,7 +403,7 @@ input[type='time'] {
 }
 
 .tabs {
-    margin-top: 58px;
+    margin-top: 65px;
 }
 
 .tab {
