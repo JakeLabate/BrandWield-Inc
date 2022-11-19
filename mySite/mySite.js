@@ -195,6 +195,12 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	localStorage.setItem('offer2Description', snapshot.val().offer2Description);
 	localStorage.setItem('offer2Image', snapshot.val().offer2Image);
 
+	localStorage.setItem('testimonial1Author', snapshot.val().testimonials.one.author);
+	localStorage.setItem('testimonial1Title', snapshot.val().testimonials.one.title);
+	localStorage.setItem('testimonial1Company', snapshot.val().testimonials.one.company);
+	localStorage.setItem('testimonial1Headshot', snapshot.val().testimonials.one.headshot);
+	localStorage.setItem('testimonial1Quote', snapshot.val().testimonials.one.quote);
+
 });
 
 
@@ -718,4 +724,23 @@ document.querySelectorAll('.person4TiktokUrl').forEach(function (element) {
 	element.href = localStorage.getItem('person4TiktokUrl');
 	element.title = 'Visit ' + localStorage.getItem('person4Name') + ' on TikTok';
 	element.target = '_blank';
+});
+// TESTIMONIALS
+// Testimonial 1
+document.querySelectorAll('.testimonial1Author').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('testimonial1Author');
+});
+document.querySelectorAll('.testimonial1Title').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('testimonial1Title');
+});
+document.querySelectorAll('.testimonial1Company').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('testimonial1Company');
+});
+document.querySelectorAll('.testimonial1Headshot').forEach(function (element) {
+	element.src = localStorage.getItem('testimonial1Headshot');
+	element.alt = localStorage.getItem('testimonial1Name'); + ' Headshot';
+	element.title = localStorage.getItem('testimonial1Name');
+});
+document.querySelectorAll('.testimonial1Quote').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('testimonial1Quote');
 });

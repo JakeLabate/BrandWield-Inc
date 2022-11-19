@@ -26,6 +26,31 @@
 	font-min-size: 16px;
 }
 
+/* Site Loader */
+.loader {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid var(--primaryColor);
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	position: fixed; /* or absolute */
+	top: 50%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -60px;
+}
+/* Safari */
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -173,7 +198,7 @@ button.rectangle.primary:hover {
 	scale: 1.05;
 	transition: .2s ease-in-out;
 }
-button.round.primary {
+button.round.primary, .roundPrimaryButton {
 	background-color: var(--primaryColor);
 	color: white;
 	border: none;
@@ -186,7 +211,7 @@ button.round.primary {
 	transition: .2s ease-in-out;
 
 }
-button.round.primary:hover {
+button.round.primary:hover, .roundPrimaryButton:hover {
 	scale: 1.05;
 	transition: .2s ease-in-out;
 }
@@ -276,15 +301,15 @@ footer > div > p > a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-
 }
-.personCard {
+.personCards > .personCard {
 	background-color: #fff;
 	border-radius: 10px;
 	padding: 20px;
 	margin: 20px;
 	transition: .1s ease-in-out;
 	background-image: linear-gradient(to bottom right, var(--primaryColor), white);
+	width: fit-content;
 }
 .personCard:hover {
 	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
@@ -509,3 +534,16 @@ footer > div > p > a:hover {
 .offer2Solution {}
 .offer2Description {}
 .offer2Image {}
+
+.testimonial1Name {}
+.testimonial1Title {}
+.testimonial1Company {}
+.testimonial1Quote {}
+.testimonial1Headshot {
+	height: 150px;
+	width: 150px;
+	border: 3px solid var(--secondaryColor);
+	border-radius: 75px;
+	margin: 30px 20px 20px 20px;
+	box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
+}

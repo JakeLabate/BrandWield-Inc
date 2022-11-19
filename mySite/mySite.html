@@ -39,8 +39,6 @@
 </head>
 <body>
 
-
-
 <!-- Header -->
 <header>
 	<nav>
@@ -57,7 +55,7 @@
 <!-- Scroll2Top Button -->
 <div class="scroll-container">
 	<a class="scroll2Top" href="#top">
-		<img height="25px" width="25px" src="/otherIcons/arrowUp.svg" />
+		<img alt="" height="25px" width="25px" src="/otherIcons/arrowUp.svg" />
 	</a>
 </div>
 
@@ -69,6 +67,7 @@
 		<h1><span style="background-color: var(--primaryColor); color: #fff; padding: 2px 8px 2px 8px;" class="tradeBusinessName"></span><br><span style="font-size: 30px;" class="slogan"></span></h1><br>
 		<text class="valueProp"></text><br>
 		<a title="Product" href="#product"><button class="round primary">Read On</button></a>
+		<a title="About" href="#about"><button class="round secondary">About <span class="tradeBusinessName"></span></button></a>
 	</section>
 
 	<!-- Product -->
@@ -82,11 +81,12 @@
 		<h2>Our Mission</h2>
 		<p class="missionStatement">
 	</section>
+
 	<!-- About -->
 	<section id="about">
-		<h2>About Us</h2>
-		<div class="personCards" style="display:flex;">
-			<div class="personCard" style="width: fit-content;">
+		<h2>About <span class="tradeBusinessName"></span></h2>
+		<div class="personCards">
+			<div class="personCard">
 				<text style="font-size: 24px" class="person1Name bold"></text><br>
 				<text class="person1Title"></text><br>
 				<img class="person1Headshot" alt="" src="" /><br>
@@ -99,7 +99,7 @@
 					<a class="person1TiktokUrl"><img class="person1TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
 				</div>
 			</div>
-			<div class="personCard" style="width: fit-content;">
+			<div class="personCard">
 				<text style="font-size: 24px" class="person2Name bold"></text><br>
 				<text class="person2Title"></text><br>
 				<img class="person2Headshot" alt="" src="" /><br>
@@ -112,7 +112,7 @@
 					<a class="person2TiktokUrl"><img class="person2TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
 				</div>
 			</div>
-			<div class="personCard" style="width: fit-content;">
+			<div class="personCard">
 				<text style="font-size: 24px" class="person3Name bold"></text><br>
 				<text class="person3Title"></text><br>
 				<img class="person3Headshot" alt="" src="" /><br>
@@ -125,7 +125,7 @@
 					<a class="person3TiktokUrl"><img class="person3TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
 				</div>
 			</div>
-			<div class="personCard" style="width: fit-content;">
+			<div class="personCard">
 				<text style="font-size: 24px" class="person4Name bold"></text><br>
 				<text class="person4Title"></text><br>
 				<img class="person4Headshot" alt="" src="" /><br>
@@ -139,12 +139,26 @@
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<!-- Testimonials -->
+	<section id="testimonials">
+		<h2>Our Clients & Customers</h2>
+		<div class="personCards">
+			<div class="personCard">
+				<text style="font-size: 24px" class="testimonial1Author bold"></text><br>
+				<text class="testimonial1Title"></text><br>
+				<text class="testimonial1Company"></text><br>
+				<img class="testimonial1Headshot" alt="" src="" /><br>
+				<text class="testimonial1Quote"></text><br>
+			</div>
+		</div>
 
 	</section>
 
 	<!-- Contact -->
 	<section id="contact">
-		<h2>Contact Us</h2>
+		<h2>Contact <span class="tradeBusinessName"></span></h2>
 		<form method="post">
 			<div>
 				<label for="name">Name</label>
@@ -155,11 +169,11 @@
 				<input type="email" id="email" name="email" placeholder="Your email..">
 			</div>
 			<div>
-				<label for="subject">Subject</label>
+				<label for="subject">Subject</label><br>
 				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 			</div>
 			<div>
-				<input type="button" value="Send Email" onclick="sendEmail()" />
+				<input class="roundPrimaryButton" type="button" value="Send Message" onclick="sendEmail()" />
 			</div>
 		</form>
 	</section>
@@ -208,9 +222,15 @@
 
 </body>
 
+<!-- Saved Assets
+
+<div class="loader"></div>
+
 <button class="rectangle primary">Rectangle Primary Button</button>
 <button class="rectangle secondary">Rectangle Secondary Button</button>
 <button class="round primary">Round Primary Button</button>
 <button class="round secondary">Round Secondary Button</button>
+
+-->
 
 </html>
