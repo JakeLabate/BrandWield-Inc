@@ -17,10 +17,8 @@
 	<!-- JavaScript -->
 	<script type="module" src="mySite.js"></script>
 
-
-	<script src=
-				"https://smtpjs.com/v3/smtp.js">
-	</script>
+	<!-- SMTP Mail JavaScript (not yet working) -->
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script type="text/javascript">
 		function sendEmail() {
 			Email.send({
@@ -70,6 +68,17 @@
 
 	<section id="about">
 		<h2 style="font-family: var(--primaryFont);">About Us</h2>
+
+		<div class="personCard" style="width: fit-content;">
+			<text style="font-size: 24px" class="person1Name bold"></text><br>
+			<text class="person1Title"></text><br>
+			<img class="person1Headshot" style="height: 150px; width: 150px; border: 3px solid var(--secondaryColor); border-radius: 75px; margin: 30px 0 20px 0; box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;" alt="" src="" /><br>
+			<a class="person1FacebookUrl"><img class="person1FacebookUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/facebook.png" /></a>
+			<a class="person1InstagramUrl"><img class="person1InstagramUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/instagram.png" /></a>
+			<a class="person1LinkedinUrl"><img class="person1LinkedinUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
+			<a class="person1TwitterUrl"><img class="person1TwitterUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/twitter.png" /></a>
+			<a class="person1TiktokUrl"><img class="person1TiktokUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
+		</div>
 	</section>
 
 	<section id="contact">
@@ -97,6 +106,7 @@
 
 <footer>
 
+	<!-- Contact -->
 	<div>
 		<p style="font-size: 26px">Contact</p>
 		<p>Phone: <a class="primaryContactPhone underline bold"></a></p>
@@ -112,13 +122,15 @@
 			<text class="officeAddressCountry"></text>
 		</a>
 	</div>
+
+	<!-- Social Media -->
 	<div>
-		<p style="font-size: 26px">Social</p>
-		<p>Facebook: <a class="facebookUrl underline bold"></a></p>
-		<p>LinkedIn: <a class="linkedinUrl underline bold"></a></p>
-		<p>Instagram: <a class="instagramUrl underline bold"></a></p>
-		<p>Twitter: <a class="twitterUrl underline bold"></a></p>
-		<p>TikTok: <a class="tiktokUrl underline bold"></a></p>
+		<p style="font-size: 26px">Social Media</p>
+		<a class="facebookUrl"><img class="facebookUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/facebook.png" /></a>
+		<a class="linkedinUrl"><img class="linkedinUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/instagram.png" /></a>
+		<a class="instagramUrl"><img class="instagramUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
+		<a class="twitterUrl"><img class="twitterUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/twitter.png" /></a>
+		<a class="tiktokUrl"><img class="tiktokUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
 	</div>
 
 </footer>

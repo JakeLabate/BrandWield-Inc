@@ -189,19 +189,29 @@ footer {
 footer > div {
 	padding: 20px;
 }
-footer > div > p > a {
-	color: #fff;
-}
-footer > div > p > a:hover {
-	color: #d5d5d5;
-}
 footer > div > a {
 	color: #fff;
 }
 footer > div > a:hover {
 	color: #d5d5d5;
 }
+footer > div > a > img{
+}
+footer > div > a > img:hover {
 
+}
+footer > div > a:hover {
+	color: #d5d5d5;
+}
+footer > div > a:hover {
+	color: #d5d5d5;
+}
+footer > div > p > a {
+	color: #fff;
+}
+footer > div > p > a:hover {
+	color: #d5d5d5;
+}
 
 /* Attention Methods */
 .italic {
@@ -217,6 +227,22 @@ footer > div > a:hover {
 	background-color: var(--primaryColor);
 	display: inline-block;
 	padding: 2px 5px 2px 5px;
+}
+
+.personCard {
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 20px;
+	transition: .1s ease-in-out;
+	background-image: linear-gradient(to bottom right, var(--primaryColor), white);
+}
+.personCard:hover {
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+	transition: .1s ease-in-out;
+	scale: 1.05;
+	background-image: linear-gradient(to bottom right, white, var(--primaryColor));
+
 }
 
 /* Brand Variables  */
@@ -254,6 +280,7 @@ footer > div > a:hover {
 .tertiaryFont {}
 
 .facebookUrl {}
+.facebookUrl {}
 .facebookUsername {}
 .instagramUrl {}
 .instagramUsername {}
@@ -282,11 +309,41 @@ footer > div > a:hover {
 .person1Name {}
 .person1Title {}
 .person1Headshot {}
-.person1FacebookUrl {}
-.person1InstagramUrl {}
-.person1LinkedinUrl {}
-.person1TwitterUrl {}
-.person1TiktokUrl {}
+.person1FacebookUrl {
+	transition: .1s ease-in-out;
+}
+.person1FacebookUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person1InstagramUrl {
+	transition: .1s ease-in-out;
+}
+.person1InstagramUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person1LinkedinUrl {
+	transition: .1s ease-in-out;
+}
+.person1LinkedinUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person1TwitterUrl {
+	transition: .1s ease-in-out;
+}
+.person1TwitterUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person1TiktokUrl {
+	transition: .1s ease-in-out;
+}
+.person1TiktokUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 
 .person2Name {}
 .person2Title {}

@@ -477,33 +477,66 @@ document.querySelectorAll('.legalBusinessName').forEach(function (element) {
 
 // SOCIAL MEDIA
 document.querySelectorAll('.facebookUrl').forEach(function (element) {
-	element.innerHTML = localStorage.getItem('facebookUrl');
 	element.href = localStorage.getItem('facebookUrl');
 	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on Facebook';
 	element.target = '_blank';
 });
 document.querySelectorAll('.instagramUrl').forEach(function (element) {
-	element.innerHTML = localStorage.getItem('instagramUrl');
 	element.href = localStorage.getItem('instagramUrl');
 	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on Instagram';
 	element.target = '_blank';
 });
 document.querySelectorAll('.linkedinUrl').forEach(function (element) {
-	element.innerHTML = localStorage.getItem('linkedinUrl');
 	element.href = localStorage.getItem('linkedinUrl');
 	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on LinkedIn';
 	element.target = '_blank';
 });
 document.querySelectorAll('.twitterUrl').forEach(function (element) {
-	element.innerHTML = localStorage.getItem('twitterUrl');
 	element.href = localStorage.getItem('twitterUrl');
 	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on Twitter';
 	element.target = '_blank';
 });
 document.querySelectorAll('.tiktokUrl').forEach(function (element) {
-	element.innerHTML = localStorage.getItem('tiktokUrl');
 	element.href = localStorage.getItem('tiktokUrl');
 	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on TikTok';
+	element.target = '_blank';
+});
+
+// PEOPLE
+document.querySelectorAll('.person1Name').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person1Name');
+});
+document.querySelectorAll('.person1Title').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person1Title');
+});
+document.querySelectorAll('.person1Headshot').forEach(function (element) {
+	element.src = localStorage.getItem('person1Headshot');
+	element.alt = localStorage.getItem('person1Name'); + ' Headshot';
+	element.title = localStorage.getItem('person1Name');
+} );
+document.querySelectorAll('.person1FacebookUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person1FacebookUrl');
+	element.title = 'Visit ' + localStorage.getItem('person1Name') + ' on Facebook';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person1InstagramUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person1InstagramUrl');
+	element.title = 'Visit ' + localStorage.getItem('person1Name') + ' on Instagram';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person1LinkedinUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person1LinkedinUrl');
+	element.title = 'Visit ' + localStorage.getItem('person1Name') + ' on LinkedIn';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person1TwitterUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person1TwitterUrl');
+	element.title = 'Visit ' + localStorage.getItem('person1Name') + ' on Twitter';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person1TiktokUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person1TiktokUrl');
+	element.title = 'Visit ' + localStorage.getItem('person1Name') + ' on TikTok';
 	element.target = '_blank';
 });
 
