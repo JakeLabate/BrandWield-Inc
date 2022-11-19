@@ -78,8 +78,6 @@ nav > ul > li > a:hover {
 	color: #fff;
 	transition: .2s ease-in-out;
 }
-nav > ul > li > a > img {}
-nav > ul > li > a > img:hover {}
 
 pre > code {
 	background-color: #2f2f2f;
@@ -369,5 +367,3 @@ footer > div > p > a:hover {
 .offer2Solution {}
 .offer2Description {}
 .offer2Image {}
-
-
