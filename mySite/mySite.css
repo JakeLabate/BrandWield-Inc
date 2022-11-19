@@ -24,8 +24,13 @@ body {
 	background-color: #f5f5f5;
 	margin: 0;
 }
+
 a {
 	cursor: pointer;
+	text-decoration: none;
+}
+a:hover {
+	color: var(--primaryColor);
 }
 
 nav {
@@ -93,6 +98,10 @@ p {
 	font-weight: 400;
 }
 
+form {
+	padding: 30px;
+}
+
 /* Buttons */
 button.rectangle.primary {
 	background-color: var(--primaryColor);
@@ -153,6 +162,28 @@ button.round.secondary:hover {
 	transition: .2s ease-in-out;
 }
 
+footer {
+	min-height: 400px;
+	background-color: var(--primaryColor);
+	color: #fff;
+}
+footer > div {
+	padding: 20px;
+}
+footer > div > p > a {
+	color: #fff;
+}
+footer > div > p > a:hover {
+	color: #d5d5d5;
+}
+footer > div > a {
+	color: #fff;
+}
+footer > div > a:hover {
+	color: #d5d5d5;
+}
+
+
 /* Attention Methods */
 .italic {
 	font-style: italic;
@@ -168,4 +199,99 @@ button.round.secondary:hover {
 	display: inline-block;
 	padding: 2px 5px 2px 5px;
 }
+
+/* Brand Variables  */
+.primaryContactPhone {}
+.primaryContactEmail {}
+.primaryContactWebsite {}
+
+.officeAddressStreet1 {}
+.officeAddressStreet2 {}
+.officeAddressCity {}
+.officeAddressState {}
+.officeAddressZip {}
+.officeAddressCountry {}
+.officeAddressFull {}
+
+.founderName {}
+.foundingDate {}
+.tradeBusinessName {}
+.legalBusinessName {}
+
+.businessType {}
+.slogan {}
+.missionStatement {}
+.valueProp {}
+
+.squareLogo {}
+.fullLogo {}
+
+.primaryColor {}
+.secondaryColor {}
+.tertiaryColor {}
+
+.primaryFont {}
+.secondaryFont {}
+.tertiaryFont {}
+
+.facebookUrl {}
+.facebookUsername {}
+.instagramUrl {}
+.instagramUsername {}
+.linkedinUrl {}
+.linkedinUsername {}
+.twitterUrl {}
+.twitterUsername {}
+.tiktokUrl {}
+.tiktokUsername {}
+
+.mondayOpeningTime {}
+.mondayClosingTime {}
+.tuesdayOpeningTime {}
+.tuesdayClosingTime {}
+.wednesdayOpeningTime {}
+.wednesdayClosingTime {}
+.thursdayOpeningTime {}
+.thursdayClosingTime {}
+.fridayOpeningTime {}
+.fridayClosingTime {}
+.saturdayOpeningTime {}
+.saturdayClosingTime {}
+.sundayOpeningTime {}
+.sundayClosingTime {}
+
+.person1Name {}
+.person1Title {}
+.person1Headshot {}
+.person1FacebookUrl {}
+.person1InstagramUrl {}
+.person1LinkedinUrl {}
+.person1TwitterUrl {}
+.person1TiktokUrl {}
+
+.person2Name {}
+.person2Title {}
+.person2Headshot {}
+.person2FacebookUrl {}
+.person2InstagramUrl {}
+.person2LinkedinUrl {}
+.person2TwitterUrl {}
+.person2TiktokUrl {}
+
+.offer1Name {}
+.offer1Price {}
+.offer1Feature {}
+.offer1Benefit {}
+.offer1Solution {}
+.offer1Description {}
+.offer1Image {}
+
+.offer2Name {}
+.offer2Price {}
+.offer2Feature {}
+.offer2Benefit {}
+.offer2Solution {}
+.offer2Description {}
+.offer2Image {}
+
 

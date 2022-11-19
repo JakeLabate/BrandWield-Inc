@@ -1,15 +1,143 @@
+// Import CDN Resources
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+// Firebase Config
+const firebaseConfig = {
+	apiKey: "AIzaSyAPuMZxmsEfVmwrFhVNrpbVkbudksJQWxM",
+	authDomain: "labate-firestore.firebaseapp.com",
+	databaseURL: "https://labate-firestore-default-rtdb.firebaseio.com",
+	projectId: "labate-firestore",
+	storageBucket: "labate-firestore.appspot.com",
+	messagingSenderId: "544978849115",
+	appId: "1:544978849115:web:c3d13f876cbc58ec1cde7e",
+	measurementId: "G-SC3X25RVX1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+
+// Get Brand Variables
+const dbRef = ref(getDatabase());
+const brand = 'BrandWield';
+get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
+	if (snapshot.exists()) {
+		console.log('Brand Returned: ' + brand);
+		console.log(snapshot.val());
+	} else {
+		console.log("No Brand Returned");
+	}
+
+	// Save the brand variables to localStorage
+
+	localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
+	localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
+	localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
+
+	localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
+	localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
+	localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
+	localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
+	localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
+	localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
+
+	localStorage.setItem('founderName', snapshot.val().founderName);
+	localStorage.setItem('foundingDate', snapshot.val().foundingDate);
+	localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
+	localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
+
+	localStorage.setItem('businessType', snapshot.val().businessType);
+	localStorage.setItem('slogan', snapshot.val().slogan);
+	localStorage.setItem('missionStatement', snapshot.val().missionStatement);
+	localStorage.setItem('valueProp', snapshot.val().valueProp);
+
+	localStorage.setItem('squareLogo', snapshot.val().squareLogo);
+	localStorage.setItem('fullLogo', snapshot.val().fullLogo);
+
+	localStorage.setItem('primaryColor', snapshot.val().primaryColor);
+	localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
+	localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
+
+	localStorage.setItem('primaryFont', snapshot.val().primaryFont);
+	localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
+	localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
+
+	localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
+	localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
+	localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
+	localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
+	localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
+	localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
+	localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
+	localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
+	localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
+	localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
+
+	localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
+	localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
+	localStorage.setItem('tuesdayOpeningTime', snapshot.val().tuesdayOpeningTime);
+	localStorage.setItem('tuesdayClosingTime', snapshot.val().tuesdayClosingTime);
+	localStorage.setItem('wednesdayOpeningTime', snapshot.val().wednesdayOpeningTime);
+	localStorage.setItem('wednesdayClosingTime', snapshot.val().wednesdayClosingTime);
+	localStorage.setItem('thursdayOpeningTime', snapshot.val().thursdayOpeningTime);
+	localStorage.setItem('thursdayClosingTime', snapshot.val().thursdayClosingTime);
+	localStorage.setItem('fridayOpeningTime', snapshot.val().fridayOpeningTime);
+	localStorage.setItem('fridayClosingTime', snapshot.val().fridayClosingTime);
+	localStorage.setItem('saturdayOpeningTime', snapshot.val().saturdayOpeningTime);
+	localStorage.setItem('saturdayClosingTime', snapshot.val().saturdayClosingTime);
+	localStorage.setItem('sundayOpeningTime', snapshot.val().sundayOpeningTime);
+	localStorage.setItem('sundayClosingTime', snapshot.val().sundayClosingTime);
+
+	localStorage.setItem('person1Name', snapshot.val().person1Name);
+	localStorage.setItem('person1Title', snapshot.val().person1Title);
+	localStorage.setItem('person1Headshot', snapshot.val().person1Headshot);
+	localStorage.setItem('person1FacebookUrl', snapshot.val().person1FacebookUrl);
+	localStorage.setItem('person1InstagramUrl', snapshot.val().person1InstagramUrl);
+	localStorage.setItem('person1LinkedinUrl', snapshot.val().person1LinkedinUrl);
+	localStorage.setItem('person1TwitterUrl', snapshot.val().person1TwitterUrl);
+	localStorage.setItem('person1TiktokUrl', snapshot.val().person1TiktokUrl);
+
+	localStorage.setItem('person2Name', snapshot.val().person2Name);
+	localStorage.setItem('person2Title', snapshot.val().person2Title);
+	localStorage.setItem('person2Headshot', snapshot.val().person2Headshot);
+	localStorage.setItem('person2FacebookUrl', snapshot.val().person2FacebookUrl);
+	localStorage.setItem('person2InstagramUrl', snapshot.val().person2InstagramUrl);
+	localStorage.setItem('person2LinkedinUrl', snapshot.val().person2LinkedinUrl);
+	localStorage.setItem('person2TwitterUrl', snapshot.val().person2TwitterUrl);
+	localStorage.setItem('person2TiktokUrl', snapshot.val().person2TiktokUrl);
+
+	localStorage.setItem('offer1Name', snapshot.val().offer1Name);
+	localStorage.setItem('offer1Price', snapshot.val().offer1Price);
+	localStorage.setItem('offer1Feature', snapshot.val().offer1Feature);
+	localStorage.setItem('offer1Benefit', snapshot.val().offer1Benefit);
+	localStorage.setItem('offer1Solution', snapshot.val().offer1Solution);
+	localStorage.setItem('offer1Description', snapshot.val().offer1Description);
+	localStorage.setItem('offer1Image', snapshot.val().offer1Image);
+
+	localStorage.setItem('offer2Title', snapshot.val().offer2Title);
+	localStorage.setItem('offer2Price', snapshot.val().offer2Price);
+	localStorage.setItem('offer2Feature', snapshot.val().offer2Feature);
+	localStorage.setItem('offer2Benefit', snapshot.val().offer2Benefit);
+	localStorage.setItem('offer2Solution', snapshot.val().offer2Solution);
+	localStorage.setItem('offer2Description', snapshot.val().offer2Description);
+	localStorage.setItem('offer2Image', snapshot.val().offer2Image);
+
+});
+
+
 // Set brand variables
 const websiteHeadData = {
 	// Misc. Head Tags
-	title:  'website title tag',
-	description:  'website meta description tag',
-	keywords:  'keywords meta tag',
-	baseUrl:  'baseeeeeeeeeeeeeeeeeeeee',
-	googleFonts:  'Roboto',
-	canonicalUrl:  'canonical url',
-	robots:  'robots meta tag',
+	title:  localStorage.getItem('tradeBusinessName') + ' | ' + localStorage.getItem('slogan') + ' | ' + localStorage.getItem('missionStatement'),
+	description:  localStorage.getItem('slogan') + ' | ' + localStorage.getItem('missionStatement'),
+	keywords:  '',
+	baseUrl:  localStorage.getItem('primaryContactWebsite'),
+	googleFonts:  localStorage.getItem('primaryFont'),
+	canonicalUrl:  localStorage.getItem('primaryContactWebsite'),
+	robots:  'index, follow',
 	viewport:  'width=device-width, initial-scale=1',
-	themeColor:  'theme color meta tag',
+	themeColor:  localStorage.getItem('primaryColor'),
 	// HTTP EQUIV Meta Tags
 	httpEquiv: {
 		ContentType:  'text/html; charset=utf-8',
@@ -18,28 +146,28 @@ const websiteHeadData = {
 	},
 	// Article Meta Tags
 	article: {
-		publisher:  'article published time',
-		modifiedTime:  'article modified time',
+		publisher:  'https://brandwield.com',
+		modifiedTime:  new Date().toISOString(),
 	},
 	//  Rel Icons
 	icons: {
-		icon16: '16x16 icon',
-		icon32:  '32x32 favicon',
-		icon96:  '96x96 favicon',
-		icon192:  '192x192 favicon',
+		icon16: 'https://16x16icon.png',
+		icon32:  'https://32x32icon.png',
+		icon96:  'https://96x96icon.png',
+		icon192:  'https://192x192icon.png',
 	},
 	// Open Graph Meta Tags
 	og: {
-		ogTitle:  'og:title',
-		ogDescription:  'og:description',
+		ogTitle:  localStorage.getItem('tradeBusinessName') + ' | ' + localStorage.getItem('slogan') + ' | ' + localStorage.getItem('missionStatement'),
+		ogDescription:  localStorage.getItem('slogan') + ' | ' + localStorage.getItem('missionStatement'),
 		ogImage:  'og:image',
 		ogImageWidth:  'og:image:width',
 		ogImageHeight:  'og:image:height',
-		ogImageAlt:  'og:image:alt',
-		ogUrl:  'og:url',
-		ogType:  'og:type',
-		ogLocale:  'og:locale',
-		ogSiteName:  'og:site_name',
+		ogImageAlt:  localStorage.getItem('tradeBusinessName') + ' Logo',
+		ogUrl:  localStorage.getItem('primaryContactWebsite'),
+		ogType:  'website',
+		ogLocale:  'en-US',
+		ogSiteName:  localStorage.getItem('tradeBusinessName') + ' | ' + localStorage.getItem('slogan'),
 
 	},
 	// Twitter Meta Tags
@@ -50,26 +178,27 @@ const websiteHeadData = {
 		twitterTitle:  'twitter:title',
 		twitterDescription:  'twitter:description',
 		twitterImage:  'twitter:image',
-		twitterImageAlt:  'twitter:image:alt'
+		twitterImageAlt:  localStorage.getItem('tradeBusinessName') + ' Logo',
 	},
 	// Random Variables Used in Schema Markup
-	brandTradeName: 'brand trade name',
-	brandLegalName: 'brand legal name',
-	logo:  'logo',
-	brandFacebookUrl: 'facebook url',
-	brandInstagramUrl: 'instagram url',
-	brandLinkedinUrl: 'linkedin url',
-	brandTwitterUrl: 'twitter url',
-	brandTiktokUrl: 'tiktok url',
-	brandYoutubeUrl: 'youtube url',
-	brandPhone: 'phone number',
-	brandEmail: 'email address',
+	brandTradeName: localStorage.getItem('tradeBusinessName'),
+	brandLegalName: localStorage.getItem('legalBusinessName'),
+	logo:  localStorage.getItem('logoFull'),
+	brandFacebookUrl: localStorage.getItem('facebookUrl'),
+	brandInstagramUrl: localStorage.getItem('instagramUrl'),
+	brandLinkedinUrl: localStorage.getItem('linkedinUrl'),
+	brandTwitterUrl: localStorage.getItem('twitterUrl'),
+	brandTiktokUrl: localStorage.getItem('tiktokUrl'),
+	brandPhone: localStorage.getItem('primaryContactPhone'),
+	brandEmail: localStorage.getItem('primaryContactEmail'),
 	brandAddress: {
-		street: 'street address',
-		city: 'city',
-		state: 'state',
-		zip: 'zip code',
-		country: 'country'
+		street: localStorage.getItem('officeAddressStreet1') + ' ' + localStorage.getItem('officeAddressStreet2'),
+		street1: localStorage.getItem('officeAddressStreet1'),
+		street2: localStorage.getItem('officeAddressStreet2'),
+		city: localStorage.getItem('officeAddressCity'),
+		state: localStorage.getItem('officeAddressState'),
+		zip: localStorage.getItem('officeAddressZip'),
+		country: localStorage.getItem('officeAddressCountry'),
 	}
 };
 
@@ -87,7 +216,7 @@ const schemaMarkup  = {
 			'publisher': 'https://brandwield.com/#publisher',
 			'image': websiteHeadData.ogImage,
 			'logo': websiteHeadData.logo,
-			'sameAs': [websiteHeadData.brandFacebookUrl, websiteHeadData.brandInstagramUrl, websiteHeadData.brandLinkedinUrl, websiteHeadData.brandTwitterUrl, websiteHeadData.brandTiktokUrl, websiteHeadData.brandYoutubeUrl],
+			'sameAs': [websiteHeadData.brandFacebookUrl, websiteHeadData.brandInstagramUrl, websiteHeadData.brandLinkedinUrl, websiteHeadData.brandTwitterUrl, websiteHeadData.brandTiktokUrl],
 			'dateModified': websiteHeadData.article.modifiedTime,
 		},
 		{
@@ -110,14 +239,7 @@ const schemaMarkup  = {
 			'alternateName': websiteHeadData.brandLegalName,
 			'description': websiteHeadData.description,
 			'inLanguage': 'en-US',
-			'sameAs': [
-				websiteHeadData.brandFacebookUrl,
-				websiteHeadData.brandInstagramUrl,
-				websiteHeadData.brandLinkedinUrl,
-				websiteHeadData.brandTwitterUrl,
-				websiteHeadData.brandTiktokUrl,
-				websiteHeadData.brandYoutubeUrl
-			],
+			'sameAs': [websiteHeadData.brandFacebookUrl, websiteHeadData.brandInstagramUrl, websiteHeadData.brandLinkedinUrl, websiteHeadData.brandTwitterUrl, websiteHeadData.brandTiktokUrl],
 			address: {
 				'@type': 'postalAddress',
 				"@id": websiteHeadData.baseUrl + '/#postaladdress',
@@ -136,14 +258,7 @@ const schemaMarkup  = {
 			'description': websiteHeadData.description,
 			'telephone': websiteHeadData.brandPhone,
 			'email': websiteHeadData.brandEmail,
-			'sameAs': [
-				websiteHeadData.brandFacebookUrl,
-				websiteHeadData.brandInstagramUrl,
-				websiteHeadData.brandLinkedinUrl,
-				websiteHeadData.brandTwitterUrl,
-				websiteHeadData.brandTiktokUrl,
-				websiteHeadData.brandYoutubeUrl
-			],
+			'sameAs': [websiteHeadData.brandFacebookUrl, websiteHeadData.brandInstagramUrl, websiteHeadData.brandLinkedinUrl, websiteHeadData.brandTwitterUrl, websiteHeadData.brandTiktokUrl],
 			address: {
 				'@type': 'postalAddress',
 				"@id": websiteHeadData.baseUrl + '/#postaladdress',
@@ -163,14 +278,7 @@ const schemaMarkup  = {
 			'inLanguage': 'en-US',
 			'publisher': websiteHeadData.baseUrl + '/#publisher',
 			'logo': websiteHeadData.logo,
-			'sameAs': [
-				websiteHeadData.brandFacebookUrl,
-				websiteHeadData.brandInstagramUrl,
-				websiteHeadData.brandLinkedinUrl,
-				websiteHeadData.brandTwitterUrl,
-				websiteHeadData.brandTiktokUrl,
-				websiteHeadData.brandYoutubeUrl
-			],
+			'sameAs': [websiteHeadData.brandFacebookUrl, websiteHeadData.brandInstagramUrl, websiteHeadData.brandLinkedinUrl, websiteHeadData.brandTwitterUrl, websiteHeadData.brandTiktokUrl],
 			address: {
 				'@type': 'postalAddress',
 				"@id": websiteHeadData.baseUrl + '/#postaladdress',
@@ -209,7 +317,8 @@ const css = {
 	},
 	fonts: {
 		primaryFont: 'Montserrat',
-		secondaryFont: 'Roboto Slab'
+		secondaryFont: 'Roboto Slab',
+		tertiaryFont: 'Comic Sans MS'
 	}
 }
 
@@ -217,7 +326,6 @@ const css = {
 document.head.innerHTML += '<!-- Misc. Head Tags --><title>' + websiteHeadData.title + '</title>'
 document.head.innerHTML += '<meta name="description" content="' + websiteHeadData.description + '">'
 document.head.innerHTML += '<meta name="keywords" content="' + websiteHeadData.keywords + '">'
-document.head.innerHTML += '<base href="' + websiteHeadData.baseUrl + '">'
 document.head.innerHTML += '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=' + websiteHeadData.googleFonts + ':wght@400&display=swap' + '">'
 document.head.innerHTML += '<link rel="canonical" href="' + websiteHeadData.canonicalUrl + '">'
 document.head.innerHTML += '<meta name="robots" content="' + websiteHeadData.robots + '">'
@@ -270,3 +378,110 @@ document.documentElement.style.setProperty('--tertiaryColor', css.colors.tertiar
 
 document.documentElement.style.setProperty('--primaryFont', css.fonts.primaryFont);
 document.documentElement.style.setProperty('--secondaryFont', css.fonts.secondaryFont);
+document.documentElement.style.setProperty('--tertiaryFont', css.fonts.tertiaryFont);
+
+
+// Set the CLASSES in the HTML to the value of the brand variables
+
+// COLORS
+document.querySelectorAll('.primaryColor').forEach(function (element) {
+  element.style.color = css.colors.primaryColor;
+});
+document.querySelectorAll('.secondaryColor').forEach(function (element) {
+  element.style.color = css.colors.secondaryColor;
+});
+document.querySelectorAll('.tertiaryColor').forEach(function (element) {
+  element.style.color = css.colors.tertiaryColor;
+});
+
+// FONTS
+document.querySelectorAll('.primaryFont').forEach(function (element) {
+  element.style.fontFamily = css.fonts.primaryFont;
+});
+document.querySelectorAll('.secondaryFont').forEach(function (element) {
+  element.style.fontFamily = css.fonts.secondaryFont;
+});
+document.querySelectorAll('.tertiaryFont').forEach(function (element) {
+  element.style.fontFamily = css.fonts.tertiaryFont;
+});
+
+// Contact Information
+document.querySelectorAll('.primaryContactPhone').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandPhone;
+	element.href = 'tel:' + websiteHeadData.brandPhone;
+	element.title = 'Call ' + websiteHeadData.brandTradeName;
+	element.target = '_blank';
+});
+document.querySelectorAll('.primaryContactEmail').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandEmail;
+	element.href = 'mailto:' + websiteHeadData.brandEmail;
+	element.title = 'Email ' + websiteHeadData.brandTradeName;
+	element.target = '_blank';
+});
+document.querySelectorAll('.primaryContactWebsite').forEach(function (element) {
+	element.innerHTML = websiteHeadData.baseUrl;
+	element.href = websiteHeadData.baseUrl;
+	element.title = 'Visit ' + websiteHeadData.brandTradeName; + ' Website';
+	element.target = '_blank';
+});
+
+// Address
+document.querySelectorAll('.officeAddressStreet1').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandAddress.street1;
+});
+document.querySelectorAll('.officeAddressStreet2').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandAddress.street2;
+});
+document.querySelectorAll('.officeAddressCity').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandAddress.city;
+});
+document.querySelectorAll('.officeAddressState').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandAddress.state;
+});
+document.querySelectorAll('.officeAddressZip').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandAddress.zip;
+});
+document.querySelectorAll('.officeAddressCountry').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandAddress.country;
+});
+document.querySelectorAll('.officeAddressFull').forEach(function (element) {
+	element.href = 'https://www.google.com/maps/place/' + websiteHeadData.brandTradeName + ', ' + websiteHeadData.brandAddress.street1 + ', ' + websiteHeadData.brandAddress.city + ', ' + websiteHeadData.brandAddress.state + ' ' + websiteHeadData.brandAddress.zip;
+});
+
+// Social Media
+document.querySelectorAll('.facebookUrl').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandFacebookUrl;
+	element.href = websiteHeadData.brandFacebookUrl;
+	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on Facebook';
+	element.target = '_blank';
+});
+document.querySelectorAll('.instagramUrl').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandInstagramUrl;
+	element.href = websiteHeadData.brandInstagramUrl;
+	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on Instagram';
+	element.target = '_blank';
+});
+document.querySelectorAll('.linkedinUrl').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandLinkedinUrl;
+	element.href = websiteHeadData.brandLinkedinUrl;
+	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on LinkedIn';
+	element.target = '_blank';
+});
+document.querySelectorAll('.twitterUrl').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandTwitterUrl;
+	element.href = websiteHeadData.brandTwitterUrl;
+	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on Twitter';
+	element.target = '_blank';
+});
+document.querySelectorAll('.tiktokUrl').forEach(function (element) {
+	element.innerHTML = websiteHeadData.brandTiktokUrl;
+	element.href = websiteHeadData.brandTiktokUrl;
+	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on TikTok';
+	element.target = '_blank';
+});
+
+
+
+
+
+

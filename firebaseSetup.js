@@ -228,6 +228,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	if (snapshot.val().secondaryFont != null) {
 		// set local storage
+		localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
 		document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
 		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
 	} else {
