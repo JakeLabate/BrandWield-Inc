@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 
 	<!-- CSS Stylesheet -->
-	<link rel="stylesheet" href="mysite.css">
+	<link rel="stylesheet" href="mySite.css">
 
 	<!-- Google Fonts CDN -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,35 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,200" />
 
 	<!-- JavaScript -->
-	<script type="module" src="mysite.js"></script>
+	<script type="module" src="mySite.js"></script>
+
+
+	<script src=
+				"https://smtpjs.com/v3/smtp.js">
+	</script>
+	<script type="text/javascript">
+		function sendEmail() {
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username: "brandwield@gmail.com",
+				Password: "05E63804897A64AD8760CB04F5139BB7ADF2",
+				To: "brandwield@gmail.com",
+				From: "brandwield@gmail.com",
+				Subject: "Message from BrandWield",
+				Body: "Well that was easy!!",
+			})
+			.then(function (message) {
+				alert("mail sent successfully")
+			});
+		}
+	</script>
 
 </head>
 <body>
 <header>
 	<nav>
 		<ul>
-			<li><a title="Top" href="#top">Top</a></li>
+			<li><a class="squareLogo" style="padding: 0 0 0 0 !important; height: 44px !important; width: 44px !important;"><img class="squareLogo" style="height: 50px !important; width: 50px !important;" alt="" src="" /></a></li>
 			<li><a title="Product" href="#product">Product</a></li>
 			<li><a title="Mission" href="#mission">Mission</a></li>
 			<li><a title="About" href="#about">About</a></li>
@@ -33,15 +54,18 @@
 <main>
 
 	<section id="top">
-		<h1>Top</h1>
+		<h1><span style="background-color: var(--primaryColor); color: #fff; padding: 2px 8px 2px 8px;" class="tradeBusinessName"></span><br><span style="font-size: 30px;" class="slogan"></span></h1><br>
+		<a title="Product" href="#product"><button class="round primary">Read On</button></a>
 	</section>
 
 	<section id="product">
 		<h2 style="color: var(--secondaryColor);">Our Product</h2>
+		<p class="valueProp"></p>
 	</section>
 
 	<section id="mission">
 		<h2 style="color: var(--tertiaryColor);">Our Mission</h2>
+		<p class="missionStatement">
 	</section>
 
 	<section id="about">
@@ -50,8 +74,7 @@
 
 	<section id="contact">
 		<h2 style="font-family: var(--secondaryFont);">Contact Us</h2>
-
-		<form>
+		<form method="post">
 			<div>
 				<label for="name">Name</label>
 				<input type="text" id="name" name="name" placeholder="Your name..">
@@ -65,10 +88,9 @@
 				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 			</div>
 			<div>
-				<input type="submit" value="Submit">
+				<input type="button" value="Send Email" onclick="sendEmail()" />
 			</div>
 		</form>
-
 	</section>
 
 </main>

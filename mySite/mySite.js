@@ -151,10 +151,10 @@ const websiteHeadData = {
 	},
 	//  Rel Icons
 	icons: {
-		icon16: 'https://16x16icon.png',
-		icon32:  'https://32x32icon.png',
-		icon96:  'https://96x96icon.png',
-		icon192:  'https://192x192icon.png',
+		icon16: localStorage.getItem('squareLogo'),
+		icon32:  localStorage.getItem('squareLogo'),
+		icon96:  localStorage.getItem('squareLogo'),
+		icon192:  localStorage.getItem('squareLogo'),
 	},
 	// Open Graph Meta Tags
 	og: {
@@ -308,20 +308,6 @@ const schemaMarkup  = {
 	]
 };
 
-// CSS
-const css = {
-	colors: {
-		primaryColor: '#f36a6a',
-		secondaryColor: '#7c9cef',
-		tertiaryColor: '#78ea7a'
-	},
-	fonts: {
-		primaryFont: 'Montserrat',
-		secondaryFont: 'Roboto Slab',
-		tertiaryFont: 'Comic Sans MS'
-	}
-}
-
 // Misc. Head Tags
 document.head.innerHTML += '<!-- Misc. Head Tags --><title>' + websiteHeadData.title + '</title>'
 document.head.innerHTML += '<meta name="description" content="' + websiteHeadData.description + '">'
@@ -372,111 +358,152 @@ document.head.innerHTML += '<meta name="twitter:image:alt" content="' + websiteH
 document.head.innerHTML += '<!-- Schema Markup JSON --><script type="application/ld+json">' + JSON.stringify(schemaMarkup) + '</script>'
 
 // CSS Variables
-document.documentElement.style.setProperty('--primaryColor', css.colors.primaryColor);
-document.documentElement.style.setProperty('--secondaryColor', css.colors.secondaryColor);
-document.documentElement.style.setProperty('--tertiaryColor', css.colors.tertiaryColor);
+document.documentElement.style.setProperty('--primaryColor', localStorage.getItem('primaryColor'));
+document.documentElement.style.setProperty('--secondaryColor', localStorage.getItem('secondaryColor'));
+document.documentElement.style.setProperty('--tertiaryColor', localStorage.getItem('tertiaryColor'));
 
-document.documentElement.style.setProperty('--primaryFont', css.fonts.primaryFont);
-document.documentElement.style.setProperty('--secondaryFont', css.fonts.secondaryFont);
-document.documentElement.style.setProperty('--tertiaryFont', css.fonts.tertiaryFont);
+document.documentElement.style.setProperty('--primaryFont', localStorage.getItem('primaryFont'));
+document.documentElement.style.setProperty('--secondaryFont', localStorage.getItem('secondaryFont'));
+document.documentElement.style.setProperty('--tertiaryFont', localStorage.getItem('tertiaryFont'));
 
 
 // Set the CLASSES in the HTML to the value of the brand variables
 
+// CONTACT
+document.querySelectorAll('.primaryContactPhone').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('primaryContactPhone');
+	element.href = 'tel:' + localStorage.getItem('primaryContactPhone');
+	element.title = 'Call ' + localStorage.getItem('tradeBusinessName');
+	element.target = '_blank';
+});
+document.querySelectorAll('.primaryContactEmail').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('primaryContactEmail');
+	element.href = 'mailto:' + localStorage.getItem('primaryContactEmail');
+	element.title = 'Email ' + localStorage.getItem('tradeBusinessName');
+	element.target = '_blank';
+});
+document.querySelectorAll('.primaryContactWebsite').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('primaryContactWebsite');
+	element.href = localStorage.getItem('primaryContactWebsite');
+	element.title = 'Visit ' + localStorage.getItem('primaryContactWebsite'); + ' Website';
+	element.target = '_blank';
+});
+
+// ADDRESS
+document.querySelectorAll('.officeAddressStreet1').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('officeAddressStreet1')
+});
+document.querySelectorAll('.officeAddressStreet2').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('officeAddressStreet2')
+});
+document.querySelectorAll('.officeAddressCity').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('officeAddressCity')
+});
+document.querySelectorAll('.officeAddressState').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('officeAddressState')
+});
+document.querySelectorAll('.officeAddressZip').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('officeAddressZip')
+});
+document.querySelectorAll('.officeAddressCountry').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('officeAddressCountry')
+});
+document.querySelectorAll('.officeAddressFull').forEach(function (element) {
+	element.href = 'https://www.google.com/maps/place/' + localStorage.getItem('tradeBusinessName') + ', ' + localStorage.getItem('officeAddressStreet1') + ', ' + localStorage.getItem('officeAddressStreet2') + ', ' + localStorage.getItem('officeAddressCity') + ' ' + localStorage.getItem('officeAddressState') + ' ' + localStorage.getItem('officeAddressZip') + ', ' + localStorage.getItem('officeAddressCountry');
+});
+
+// BASIC
+document.querySelectorAll('.businessType').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('businessType')
+});
+document.querySelectorAll('.slogan').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('slogan');
+});
+document.querySelectorAll('.missionStatement').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('missionStatement');
+});
+document.querySelectorAll('.valueProp').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('valueProp');
+});
+
+// Logos
+document.querySelectorAll('.squareLogo').forEach(function (element) {
+	element.href = '#top';
+	element.src = localStorage.getItem('squareLogo');
+	element.alt = localStorage.getItem('tradeBusinessName'); + ' Logo';
+	element.title = localStorage.getItem('tradeBusinessName');
+});
+document.querySelectorAll('.fullLogo').forEach(function (element) {
+	element.href = '#top';
+	element.src = localStorage.getItem('fullLogo');
+	element.alt = localStorage.getItem('tradeBusinessName'); + ' Logo';
+	element.title = localStorage.getItem('tradeBusinessName');
+});
 // COLORS
 document.querySelectorAll('.primaryColor').forEach(function (element) {
-  element.style.color = css.colors.primaryColor;
+	element.style.color = localStorage.getItem('primaryColor');
 });
 document.querySelectorAll('.secondaryColor').forEach(function (element) {
-  element.style.color = css.colors.secondaryColor;
+	element.style.color = localStorage.getItem('secondaryColor');
 });
 document.querySelectorAll('.tertiaryColor').forEach(function (element) {
-  element.style.color = css.colors.tertiaryColor;
+	element.style.color = localStorage.getItem('tertiaryColor');
 });
 
 // FONTS
 document.querySelectorAll('.primaryFont').forEach(function (element) {
-  element.style.fontFamily = css.fonts.primaryFont;
+	element.style.fontFamily = localStorage.getItem('primaryFont');
 });
 document.querySelectorAll('.secondaryFont').forEach(function (element) {
-  element.style.fontFamily = css.fonts.secondaryFont;
+	element.style.fontFamily = localStorage.getItem('secondaryFont');
 });
 document.querySelectorAll('.tertiaryFont').forEach(function (element) {
-  element.style.fontFamily = css.fonts.tertiaryFont;
+	element.style.fontFamily = localStorage.getItem('tertiaryFont');
 });
 
-// Contact Information
-document.querySelectorAll('.primaryContactPhone').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandPhone;
-	element.href = 'tel:' + websiteHeadData.brandPhone;
-	element.title = 'Call ' + websiteHeadData.brandTradeName;
-	element.target = '_blank';
+// FOUNDING
+document.querySelectorAll('.founderName').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('founderName');
 });
-document.querySelectorAll('.primaryContactEmail').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandEmail;
-	element.href = 'mailto:' + websiteHeadData.brandEmail;
-	element.title = 'Email ' + websiteHeadData.brandTradeName;
-	element.target = '_blank';
+document.querySelectorAll('.foundingDate').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('foundingDate');
 });
-document.querySelectorAll('.primaryContactWebsite').forEach(function (element) {
-	element.innerHTML = websiteHeadData.baseUrl;
-	element.href = websiteHeadData.baseUrl;
-	element.title = 'Visit ' + websiteHeadData.brandTradeName; + ' Website';
-	element.target = '_blank';
+document.querySelectorAll('.tradeBusinessName').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('tradeBusinessName');
+});
+document.querySelectorAll('.legalBusinessName').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('legalBusinessName');
 });
 
-// Address
-document.querySelectorAll('.officeAddressStreet1').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandAddress.street1;
-});
-document.querySelectorAll('.officeAddressStreet2').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandAddress.street2;
-});
-document.querySelectorAll('.officeAddressCity').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandAddress.city;
-});
-document.querySelectorAll('.officeAddressState').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandAddress.state;
-});
-document.querySelectorAll('.officeAddressZip').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandAddress.zip;
-});
-document.querySelectorAll('.officeAddressCountry').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandAddress.country;
-});
-document.querySelectorAll('.officeAddressFull').forEach(function (element) {
-	element.href = 'https://www.google.com/maps/place/' + websiteHeadData.brandTradeName + ', ' + websiteHeadData.brandAddress.street1 + ', ' + websiteHeadData.brandAddress.city + ', ' + websiteHeadData.brandAddress.state + ' ' + websiteHeadData.brandAddress.zip;
-});
-
-// Social Media
+// SOCIAL MEDIA
 document.querySelectorAll('.facebookUrl').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandFacebookUrl;
-	element.href = websiteHeadData.brandFacebookUrl;
-	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on Facebook';
+	element.innerHTML = localStorage.getItem('facebookUrl');
+	element.href = localStorage.getItem('facebookUrl');
+	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on Facebook';
 	element.target = '_blank';
 });
 document.querySelectorAll('.instagramUrl').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandInstagramUrl;
-	element.href = websiteHeadData.brandInstagramUrl;
-	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on Instagram';
+	element.innerHTML = localStorage.getItem('instagramUrl');
+	element.href = localStorage.getItem('instagramUrl');
+	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on Instagram';
 	element.target = '_blank';
 });
 document.querySelectorAll('.linkedinUrl').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandLinkedinUrl;
-	element.href = websiteHeadData.brandLinkedinUrl;
-	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on LinkedIn';
+	element.innerHTML = localStorage.getItem('linkedinUrl');
+	element.href = localStorage.getItem('linkedinUrl');
+	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on LinkedIn';
 	element.target = '_blank';
 });
 document.querySelectorAll('.twitterUrl').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandTwitterUrl;
-	element.href = websiteHeadData.brandTwitterUrl;
-	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on Twitter';
+	element.innerHTML = localStorage.getItem('twitterUrl');
+	element.href = localStorage.getItem('twitterUrl');
+	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on Twitter';
 	element.target = '_blank';
 });
 document.querySelectorAll('.tiktokUrl').forEach(function (element) {
-	element.innerHTML = websiteHeadData.brandTiktokUrl;
-	element.href = websiteHeadData.brandTiktokUrl;
-	element.title = 'Visit ' + websiteHeadData.brandTradeName + ' on TikTok';
+	element.innerHTML = localStorage.getItem('tiktokUrl');
+	element.href = localStorage.getItem('tiktokUrl');
+	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on TikTok';
 	element.target = '_blank';
 });
 
