@@ -19,21 +19,58 @@
 	font-weight: 700;
 	text-decoration: underline;
 }
+
 * {
 	font-family: var(--primaryFont);
 	font-weight: 400;
 	font-min-size: 16px;
 }
 
+html {
+	scroll-behavior: smooth;
+}
 body {
 	background-color: #f5f5f5;
 	margin: 0;
+	position: relative;
+
+}
+
+/* Scrolling (scroll to top & smooth scrolling) */
+.scroll2Top {
+	background-color: #ffffff;
+	padding: 16px 10px 5px 10px;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+.scroll2Top:hover {
+	background-color: var(--primaryColor);
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+	transition: all 0.1s ease-in-out;
+}
+.scroll-container {
+	position: absolute;
+	top: 0;
+	right:0;
+	height: 100%;
+}
+.scroll-container:before {
+	content: '';
+	display: block;
+	height: 100vh;
+	pointer-events: none;
+}
+.scroll-container a {
+	position: sticky;
+	top: 88vh;
+	cursor: pointer;
+	font-size: 20px;
 }
 
 main {
 	padding: 0 40px 40px 40px;
 }
-
 section {
 	padding-top: 60px;
 }
@@ -46,13 +83,14 @@ a:hover {
 	color: var(--primaryColor);
 }
 
+/* Navbar */
 nav {
 	background-color: #fff;
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 999;
 }
-
 nav > ul {
 	list-style-type: none;
 	margin: 0;
@@ -60,9 +98,11 @@ nav > ul {
 	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
+	z-index: 9999;
 }
 nav > ul > li {
-
+	width: 100%;
+	z-index: 99999;
 }
 nav > ul > li > a {
 	display: block;
@@ -72,6 +112,8 @@ nav > ul > li > a {
 	text-decoration: none;
 	cursor: pointer;
 	transition: .2s ease-in-out;
+	width: 100%;
+	z-index: 999999;
 }
 nav > ul > li > a:hover {
 	background-color: var(--primaryColor);
@@ -79,15 +121,11 @@ nav > ul > li > a:hover {
 	transition: .2s ease-in-out;
 }
 
-pre > code {
-	background-color: #2f2f2f;
-	border-radius: 10px;
-	padding: 5px;
-}
-
+/* Headers */
 h1 {
 	font-size: 44px;
 	font-weight: 700;
+	margin-bottom: 0;
 }
 h2 {
 	font-size: 38px;
@@ -124,7 +162,8 @@ button.rectangle.primary {
 	background-color: var(--primaryColor);
 	color: white;
 	border: none;
-	padding: 12px 22px 12px 22px;
+	padding: 10px 20px 10px 20px;
+	margin: 25px 0 25px 0;
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
@@ -139,11 +178,13 @@ button.round.primary {
 	color: white;
 	border: none;
 	border-radius: 30px;
-	padding: 12px 22px 12px 22px;
+	padding: 10px 20px 10px 20px;
+	margin: 25px 0 25px 0;
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
 	transition: .2s ease-in-out;
+
 }
 button.round.primary:hover {
 	scale: 1.05;
@@ -154,6 +195,7 @@ button.rectangle.secondary {
 	color: var(--primaryColor);
 	border: 3px solid var(--primaryColor);
 	padding: 10px 20px 10px 20px;
+	margin: 25px 0 25px 0;
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
@@ -169,6 +211,7 @@ button.round.secondary {
 	border: 3px solid var(--primaryColor);
 	border-radius: 30px;
 	padding: 10px 20px 10px 20px;
+	margin: 25px 0 25px 0;
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
@@ -179,6 +222,7 @@ button.round.secondary:hover {
 	transition: .2s ease-in-out;
 }
 
+/* Footer */
 footer {
 	min-height: 400px;
 	background-color: var(--primaryColor);
@@ -227,6 +271,13 @@ footer > div > p > a:hover {
 	padding: 2px 5px 2px 5px;
 }
 
+/* About Section */
+.personCards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
 .personCard {
 	background-color: #fff;
 	border-radius: 10px;
@@ -241,6 +292,11 @@ footer > div > p > a:hover {
 	scale: 1.05;
 	background-image: linear-gradient(to bottom right, white, var(--primaryColor));
 
+}
+.personSocialMedia {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 25px 0 25px;
 }
 
 /* Brand Variables  */
@@ -267,7 +323,16 @@ footer > div > p > a:hover {
 .valueProp {}
 
 .squareLogo {}
-.fullLogo {}
+.fullLogo {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	max-width: 300px;
+	max-height: 300px;
+	object-fit: fill;
+
+}
 
 .primaryColor {}
 .secondaryColor {}
@@ -277,16 +342,45 @@ footer > div > p > a:hover {
 .secondaryFont {}
 .tertiaryFont {}
 
-.facebookUrl {}
-.facebookUrl {}
+.facebookUrl {
+	transition: .1s ease-in-out;
+}
+.facebookUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 .facebookUsername {}
-.instagramUrl {}
+.instagramUrl {
+	transition: .1s ease-in-out;
+}
+.instagramUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 .instagramUsername {}
-.linkedinUrl {}
+.linkedinUrl {
+	transition: .1s ease-in-out;
+}
+.linkedinUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 .linkedinUsername {}
-.twitterUrl {}
+.twitterUrl {
+	transition: .1s ease-in-out;
+}
+.twitterUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 .twitterUsername {}
-.tiktokUrl {}
+.tiktokUrl {
+	transition: .1s ease-in-out;
+}
+.tiktokUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 .tiktokUsername {}
 
 .mondayOpeningTime {}
@@ -306,7 +400,16 @@ footer > div > p > a:hover {
 
 .person1Name {}
 .person1Title {}
-.person1Headshot {}
+.person1Bio {
+}
+.person1Headshot {
+	height: 150px;
+	width: 150px;
+	border: 3px solid var(--secondaryColor);
+	border-radius: 75px;
+	margin: 30px 20px 20px 20px;
+	box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
+}
 .person1FacebookUrl {
 	transition: .1s ease-in-out;
 }
@@ -345,12 +448,51 @@ footer > div > p > a:hover {
 
 .person2Name {}
 .person2Title {}
-.person2Headshot {}
-.person2FacebookUrl {}
-.person2InstagramUrl {}
-.person2LinkedinUrl {}
-.person2TwitterUrl {}
-.person2TiktokUrl {}
+.person2Bio {
+}
+.person2Headshot {
+	height: 150px;
+	width: 150px;
+	border: 3px solid var(--secondaryColor);
+	border-radius: 75px;
+	margin: 30px 20px 20px 20px;
+	box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
+}
+.person2FacebookUrl {
+	transition: .1s ease-in-out;
+}
+.person2FacebookUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person2InstagramUrl {
+	transition: .1s ease-in-out;
+}
+.person2InstagramUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person2LinkedinUrl {
+	transition: .1s ease-in-out;
+}
+.person2LinkedinUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person2TwitterUrl {
+	transition: .1s ease-in-out;
+}
+.person2TwitterUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
+.person2TiktokUrl {
+	transition: .1s ease-in-out;
+}
+.person2TiktokUrl:hover {
+	scale: 1.1;
+	transition: .1s ease-in-out;
+}
 
 .offer1Name {}
 .offer1Price {}

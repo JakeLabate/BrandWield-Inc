@@ -29,50 +29,120 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		console.log("No Brand Returned");
 	}
 
-	// Save the brand variables to localStorage
+	// Contact
+	if (snapshot.val().primaryContact != null) {
+		localStorage.setItem('primaryContact', snapshot.val().primaryContact);
+	}
+	if (snapshot.val().primaryContactEmail != null) {
+		localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
+	}
+	if (snapshot.val().primaryContactPhone != null) {
+		localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
+	}
+	// Address
+	if (snapshot.val().officeAddressStreet1 != null) {
+		localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
+	}
+	if (snapshot.val().officeAddressStreet2 != null) {
+		localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
+	}
+	if (snapshot.val().officeAddressCity != null) {
+		localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
+	}
+	if (snapshot.val().officeAddressState != null) {
+		localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
+	}
+	if (snapshot.val().officeAddressZip != null) {
+		localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
+	}
+	if (snapshot.val().officeAddressCountry != null) {
+		localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
+	}
+	// Founding
+	if (snapshot.val().founderName != null) {
+		localStorage.setItem('founderName', snapshot.val().founderName);
+	}
+	if (snapshot.val().foundingDate != null) {
+		localStorage.setItem('foundingDate', snapshot.val().foundingDate);
+	}
+	if (snapshot.val().tradeBusinessName != null) {
+		localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
+	}
+	if (snapshot.val().legalBusinessName != null) {
+		localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
+	}
+	// Business
+	if (snapshot.val().businessType != null) {
+		localStorage.setItem('businessType', snapshot.val().businessType);
+	}
+	if (snapshot.val().slogan != null) {
+		localStorage.setItem('slogan', snapshot.val().slogan);
+	}
+	if (snapshot.val().missionStatement != null) {
+		localStorage.setItem('missionStatement', snapshot.val().missionStatement);
+	}
+	if (snapshot.val().valueProp != null) {
+		localStorage.setItem('valueProp', snapshot.val().valueProp);
+	}
+	// Logos
+	if (snapshot.val().squareLogo != null) {
+		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
+	}
+	if (snapshot.val().fullLogo != null) {
+		localStorage.setItem('fullLogo', snapshot.val().fullLogo);
+	}
+	// Colors
+	if (snapshot.val().primaryColor != null) {
+		localStorage.setItem('primaryColor', snapshot.val().primaryColor);
+	}
+	if (snapshot.val().secondaryColor != null) {
+		localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
+	}
+	if (snapshot.val().tertiaryColor != null) {
+		localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
+	}
+	// Fonts
+	if (snapshot.val().primaryFont != null) {
+		localStorage.setItem('primaryFont', snapshot.val().primaryFont);
+	}
+	if (snapshot.val().secondaryFont != null) {
+		localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
+	}
+	if (snapshot.val().tertiaryFont != null) {
+		localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
+	}
+	// Social
+	if (snapshot.val().facebookUrl != null) {
+		localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
+	}
+	if (snapshot.val().facebookUsername != null) {
+		localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
+	}
+	if (snapshot.val().instagramUrl != null) {
+		localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
+	}
+	if (snapshot.val().instagramUsername != null) {
+		localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
+	}
+	if (snapshot.val().linkedinUrl != null) {
+		localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
+	}
+	if (snapshot.val().linkedinUsername != null) {
+		localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
+	}
+	if (snapshot.val().twitterUrl != null) {
+		localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
+	}
+	if (snapshot.val().twitterUsername != null) {
+		localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
+	}
+	if (snapshot.val().tiktokUrl != null) {
+		localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
+	}
+	if (snapshot.val().tiktokUsername != null) {
+		localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
+	}
 
-	localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
-	localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
-	localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
-
-	localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
-	localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
-	localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
-	localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
-	localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
-	localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
-
-	localStorage.setItem('founderName', snapshot.val().founderName);
-	localStorage.setItem('foundingDate', snapshot.val().foundingDate);
-	localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
-	localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
-
-	localStorage.setItem('businessType', snapshot.val().businessType);
-	localStorage.setItem('slogan', snapshot.val().slogan);
-	localStorage.setItem('missionStatement', snapshot.val().missionStatement);
-	localStorage.setItem('valueProp', snapshot.val().valueProp);
-
-	localStorage.setItem('squareLogo', snapshot.val().squareLogo);
-	localStorage.setItem('fullLogo', snapshot.val().fullLogo);
-
-	localStorage.setItem('primaryColor', snapshot.val().primaryColor);
-	localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
-	localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
-
-	localStorage.setItem('primaryFont', snapshot.val().primaryFont);
-	localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
-	localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
-
-	localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
-	localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
-	localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
-	localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
-	localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
-	localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
-	localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
-	localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
-	localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
-	localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
 
 	localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
 	localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
@@ -91,6 +161,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	localStorage.setItem('person1Name', snapshot.val().person1Name);
 	localStorage.setItem('person1Title', snapshot.val().person1Title);
+	localStorage.setItem('person1Bio', snapshot.val().person1Bio);
 	localStorage.setItem('person1Headshot', snapshot.val().person1Headshot);
 	localStorage.setItem('person1FacebookUrl', snapshot.val().person1FacebookUrl);
 	localStorage.setItem('person1InstagramUrl', snapshot.val().person1InstagramUrl);
@@ -100,6 +171,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	localStorage.setItem('person2Name', snapshot.val().person2Name);
 	localStorage.setItem('person2Title', snapshot.val().person2Title);
+	localStorage.setItem('person2Bio', snapshot.val().person2Bio);
 	localStorage.setItem('person2Headshot', snapshot.val().person2Headshot);
 	localStorage.setItem('person2FacebookUrl', snapshot.val().person2FacebookUrl);
 	localStorage.setItem('person2InstagramUrl', snapshot.val().person2InstagramUrl);
@@ -388,7 +460,6 @@ document.querySelectorAll('.primaryContactWebsite').forEach(function (element) {
 	element.title = 'Visit ' + localStorage.getItem('primaryContactWebsite'); + ' Website';
 	element.target = '_blank';
 });
-
 // ADDRESS
 document.querySelectorAll('.officeAddressStreet1').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('officeAddressStreet1')
@@ -411,7 +482,6 @@ document.querySelectorAll('.officeAddressCountry').forEach(function (element) {
 document.querySelectorAll('.officeAddressFull').forEach(function (element) {
 	element.href = 'https://www.google.com/maps/place/' + localStorage.getItem('tradeBusinessName') + ', ' + localStorage.getItem('officeAddressStreet1') + ', ' + localStorage.getItem('officeAddressStreet2') + ', ' + localStorage.getItem('officeAddressCity') + ' ' + localStorage.getItem('officeAddressState') + ' ' + localStorage.getItem('officeAddressZip') + ', ' + localStorage.getItem('officeAddressCountry');
 });
-
 // BASIC
 document.querySelectorAll('.businessType').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('businessType')
@@ -425,7 +495,6 @@ document.querySelectorAll('.missionStatement').forEach(function (element) {
 document.querySelectorAll('.valueProp').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('valueProp');
 });
-
 // Logos
 document.querySelectorAll('.squareLogo').forEach(function (element) {
 	element.href = '#top';
@@ -449,7 +518,6 @@ document.querySelectorAll('.secondaryColor').forEach(function (element) {
 document.querySelectorAll('.tertiaryColor').forEach(function (element) {
 	element.style.color = localStorage.getItem('tertiaryColor');
 });
-
 // FONTS
 document.querySelectorAll('.primaryFont').forEach(function (element) {
 	element.style.fontFamily = localStorage.getItem('primaryFont');
@@ -460,7 +528,6 @@ document.querySelectorAll('.secondaryFont').forEach(function (element) {
 document.querySelectorAll('.tertiaryFont').forEach(function (element) {
 	element.style.fontFamily = localStorage.getItem('tertiaryFont');
 });
-
 // FOUNDING
 document.querySelectorAll('.founderName').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('founderName');
@@ -474,7 +541,6 @@ document.querySelectorAll('.tradeBusinessName').forEach(function (element) {
 document.querySelectorAll('.legalBusinessName').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('legalBusinessName');
 });
-
 // SOCIAL MEDIA
 document.querySelectorAll('.facebookUrl').forEach(function (element) {
 	element.href = localStorage.getItem('facebookUrl');
@@ -501,13 +567,16 @@ document.querySelectorAll('.tiktokUrl').forEach(function (element) {
 	element.title = 'Visit ' + localStorage.getItem('tradeBusinessName') + ' on TikTok';
 	element.target = '_blank';
 });
-
 // PEOPLE
+// Person 1
 document.querySelectorAll('.person1Name').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('person1Name');
 });
 document.querySelectorAll('.person1Title').forEach(function (element) {
 	element.innerHTML = localStorage.getItem('person1Title');
+});
+document.querySelectorAll('.person1Bio').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person1Bio');
 });
 document.querySelectorAll('.person1Headshot').forEach(function (element) {
 	element.src = localStorage.getItem('person1Headshot');
@@ -539,9 +608,114 @@ document.querySelectorAll('.person1TiktokUrl').forEach(function (element) {
 	element.title = 'Visit ' + localStorage.getItem('person1Name') + ' on TikTok';
 	element.target = '_blank';
 });
-
-
-
-
-
-
+// Person 2
+document.querySelectorAll('.person2Name').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person2Name');
+});
+document.querySelectorAll('.person2Title').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person2Title');
+});
+document.querySelectorAll('.person2Headshot').forEach(function (element) {
+	element.src = localStorage.getItem('person2Headshot');
+	element.alt = localStorage.getItem('person2Name'); + ' Headshot';
+	element.title = localStorage.getItem('person2Name');
+} );
+document.querySelectorAll('.person2FacebookUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person2FacebookUrl');
+	element.title = 'Visit ' + localStorage.getItem('person2Name') + ' on Facebook';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person2InstagramUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person2InstagramUrl');
+	element.title = 'Visit ' + localStorage.getItem('person2Name') + ' on Instagram';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person2LinkedinUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person2LinkedinUrl');
+	element.title = 'Visit ' + localStorage.getItem('person2Name') + ' on LinkedIn';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person2TwitterUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person2TwitterUrl');
+	element.title = 'Visit ' + localStorage.getItem('person2Name') + ' on Twitter';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person2TiktokUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person2TiktokUrl');
+	element.title = 'Visit ' + localStorage.getItem('person2Name') + ' on TikTok';
+	element.target = '_blank';
+});
+// Person 3
+document.querySelectorAll('.person3Name').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person3Name');
+});
+document.querySelectorAll('.person3Title').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person3Title');
+});
+document.querySelectorAll('.person3Headshot').forEach(function (element) {
+	element.src = localStorage.getItem('person3Headshot');
+	element.alt = localStorage.getItem('person3Name'); + ' Headshot';
+	element.title = localStorage.getItem('person3Name');
+} );
+document.querySelectorAll('.person3FacebookUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person3FacebookUrl');
+	element.title = 'Visit ' + localStorage.getItem('person3Name') + ' on Facebook';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person3InstagramUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person3InstagramUrl');
+	element.title = 'Visit ' + localStorage.getItem('person3Name') + ' on Instagram';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person3LinkedinUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person3LinkedinUrl');
+	element.title = 'Visit ' + localStorage.getItem('person3Name') + ' on LinkedIn';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person3TwitterUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person3TwitterUrl');
+	element.title = 'Visit ' + localStorage.getItem('person3Name') + ' on Twitter';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person3TiktokUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person3TiktokUrl');
+	element.title = 'Visit ' + localStorage.getItem('person3Name') + ' on TikTok';
+	element.target = '_blank';
+});
+// Person 4
+document.querySelectorAll('.person4Name').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person4Name');
+});
+document.querySelectorAll('.person4Title').forEach(function (element) {
+	element.innerHTML = localStorage.getItem('person4Title');
+});
+document.querySelectorAll('.person4Headshot').forEach(function (element) {
+	element.src = localStorage.getItem('person4Headshot');
+	element.alt = localStorage.getItem('person4Name'); + ' Headshot';
+	element.title = localStorage.getItem('person4Name');
+} );
+document.querySelectorAll('.person4FacebookUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person4FacebookUrl');
+	element.title = 'Visit ' + localStorage.getItem('person4Name') + ' on Facebook';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person4InstagramUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person4InstagramUrl');
+	element.title = 'Visit ' + localStorage.getItem('person4Name') + ' on Instagram';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person4LinkedinUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person4LinkedinUrl');
+	element.title = 'Visit ' + localStorage.getItem('person4Name') + ' on LinkedIn';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person4TwitterUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person4TwitterUrl');
+	element.title = 'Visit ' + localStorage.getItem('person4Name') + ' on Twitter';
+	element.target = '_blank';
+});
+document.querySelectorAll('.person4TiktokUrl').forEach(function (element) {
+	element.href = localStorage.getItem('person4TiktokUrl');
+	element.title = 'Visit ' + localStorage.getItem('person4Name') + ' on TikTok';
+	element.target = '_blank';
+});

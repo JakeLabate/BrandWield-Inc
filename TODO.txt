@@ -1,0 +1,8 @@
+
+
+
+
+
+Varibles to add:
+- 'team description' (describe your team in 1 sentence)
+- 'person1Bio' + others (describe your team member in 1 sentence)

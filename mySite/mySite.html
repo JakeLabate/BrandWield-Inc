@@ -38,10 +38,14 @@
 
 </head>
 <body>
+
+
+
+<!-- Header -->
 <header>
 	<nav>
 		<ul>
-			<li><a class="squareLogo" style="padding: 0 0 0 0 !important; height: 44px !important; width: 44px !important;"><img class="squareLogo" style="height: 50px !important; width: 50px !important;" alt="" src="" /></a></li>
+			<li><a class="squareLogo" style="padding: 0 0 0 0; height: 44px ; width: 44px;"><img class="squareLogo" style="height: 50px; width: 50px;" alt="" src="" /></a></li>
 			<li><a title="Product" href="#product">Product</a></li>
 			<li><a title="Mission" href="#mission">Mission</a></li>
 			<li><a title="About" href="#about">About</a></li>
@@ -49,40 +53,98 @@
 		</ul>
 	</nav>
 </header>
+
+<!-- Scroll2Top Button -->
+<div class="scroll-container">
+	<a class="scroll2Top" href="#top">
+		<img height="25px" width="25px" src="/otherIcons/arrowUp.svg" />
+	</a>
+</div>
+
+<!-- Main -->
 <main>
 
+	<!-- Hero -->
 	<section id="top">
 		<h1><span style="background-color: var(--primaryColor); color: #fff; padding: 2px 8px 2px 8px;" class="tradeBusinessName"></span><br><span style="font-size: 30px;" class="slogan"></span></h1><br>
+		<text class="valueProp"></text><br>
 		<a title="Product" href="#product"><button class="round primary">Read On</button></a>
 	</section>
 
+	<!-- Product -->
 	<section id="product">
-		<h2 style="color: var(--secondaryColor);">Our Product</h2>
+		<h2>Our Product</h2>
 		<p class="valueProp"></p>
 	</section>
 
+	<!-- Mission -->
 	<section id="mission">
-		<h2 style="color: var(--tertiaryColor);">Our Mission</h2>
+		<h2>Our Mission</h2>
 		<p class="missionStatement">
 	</section>
-
+	<!-- About -->
 	<section id="about">
-		<h2 style="font-family: var(--primaryFont);">About Us</h2>
-
-		<div class="personCard" style="width: fit-content;">
-			<text style="font-size: 24px" class="person1Name bold"></text><br>
-			<text class="person1Title"></text><br>
-			<img class="person1Headshot" style="height: 150px; width: 150px; border: 3px solid var(--secondaryColor); border-radius: 75px; margin: 30px 0 20px 0; box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;" alt="" src="" /><br>
-			<a class="person1FacebookUrl"><img class="person1FacebookUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/facebook.png" /></a>
-			<a class="person1InstagramUrl"><img class="person1InstagramUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/instagram.png" /></a>
-			<a class="person1LinkedinUrl"><img class="person1LinkedinUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
-			<a class="person1TwitterUrl"><img class="person1TwitterUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/twitter.png" /></a>
-			<a class="person1TiktokUrl"><img class="person1TiktokUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
+		<h2>About Us</h2>
+		<div class="personCards" style="display:flex;">
+			<div class="personCard" style="width: fit-content;">
+				<text style="font-size: 24px" class="person1Name bold"></text><br>
+				<text class="person1Title"></text><br>
+				<img class="person1Headshot" alt="" src="" /><br>
+				<text class="person1Bio"></text><br>
+				<div class="personSocialMedia">
+					<a class="person1FacebookUrl"><img class="person1FacebookUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/facebook.png" /></a>
+					<a class="person1InstagramUrl"><img class="person1InstagramUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/instagram.png" /></a>
+					<a class="person1LinkedinUrl"><img class="person1LinkedinUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
+					<a class="person1TwitterUrl"><img class="person1TwitterUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/twitter.png" /></a>
+					<a class="person1TiktokUrl"><img class="person1TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
+				</div>
+			</div>
+			<div class="personCard" style="width: fit-content;">
+				<text style="font-size: 24px" class="person2Name bold"></text><br>
+				<text class="person2Title"></text><br>
+				<img class="person2Headshot" alt="" src="" /><br>
+				<text class="person2Bio"></text><br>
+				<div class="personSocialMedia">
+					<a class="person2FacebookUrl"><img class="person2FacebookUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/facebook.png" /></a>
+					<a class="person2InstagramUrl"><img class="person2InstagramUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/instagram.png" /></a>
+					<a class="person2LinkedinUrl"><img class="person2LinkedinUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
+					<a class="person2TwitterUrl"><img class="person2TwitterUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/twitter.png" /></a>
+					<a class="person2TiktokUrl"><img class="person2TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
+				</div>
+			</div>
+			<div class="personCard" style="width: fit-content;">
+				<text style="font-size: 24px" class="person3Name bold"></text><br>
+				<text class="person3Title"></text><br>
+				<img class="person3Headshot" alt="" src="" /><br>
+				<text class="person3Bio"></text><br>
+				<div class="personSocialMedia">
+					<a class="person3FacebookUrl"><img class="person3FacebookUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/facebook.png" /></a>
+					<a class="person3InstagramUrl"><img class="person3InstagramUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/instagram.png" /></a>
+					<a class="person3LinkedinUrl"><img class="person3LinkedinUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
+					<a class="person3TwitterUrl"><img class="person3TwitterUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/twitter.png" /></a>
+					<a class="person3TiktokUrl"><img class="person3TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
+				</div>
+			</div>
+			<div class="personCard" style="width: fit-content;">
+				<text style="font-size: 24px" class="person4Name bold"></text><br>
+				<text class="person4Title"></text><br>
+				<img class="person4Headshot" alt="" src="" /><br>
+				<text class="person4Bio"></text><br>
+				<div class="personSocialMedia">
+					<a class="person4FacebookUrl"><img class="person4FacebookUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/facebook.png" /></a>
+					<a class="person4InstagramUrl"><img class="person4InstagramUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/instagram.png" /></a>
+					<a class="person4LinkedinUrl"><img class="person4LinkedinUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/linkedin.png" /></a>
+					<a class="person4TwitterUrl"><img class="person4TwitterUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/twitter.png" /></a>
+					<a class="person4TiktokUrl"><img class="person4TiktokUrl" style="height: 30px; width: 30px;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
+				</div>
+			</div>
 		</div>
+
 	</section>
 
+	<!-- Contact -->
 	<section id="contact">
-		<h2 style="font-family: var(--secondaryFont);">Contact Us</h2>
+		<h2>Contact Us</h2>
 		<form method="post">
 			<div>
 				<label for="name">Name</label>
@@ -104,8 +166,8 @@
 
 </main>
 
+ <!-- Footer -->
 <footer>
-
 	<!-- Contact -->
 	<div>
 		<p style="font-size: 26px">Contact</p>
@@ -122,7 +184,6 @@
 			<text class="officeAddressCountry"></text>
 		</a>
 	</div>
-
 	<!-- Social Media -->
 	<div>
 		<p style="font-size: 26px">Social Media</p>
@@ -132,39 +193,24 @@
 		<a class="twitterUrl"><img class="twitterUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/twitter.png" /></a>
 		<a class="tiktokUrl"><img class="tiktokUrl" style="height: 30px !important; width: 30px !important;" alt="" src="/socialMediaIcons/tiktok.png" /></a>
 	</div>
-
+	<!-- Logo -->
+	<div>
+		<img class="fullLogo" alt="" src="" />
+	</div>
+	<!-- Copyright -->
+	<div>
+		<text>Copyright © 2022 <text class="legalBusinessName bold"></text></text> | All Rights Reserved.
+	</div>
 </footer>
 
 
+
+
 </body>
-
-<h1 class="primaryColor">Header 1</h1>
-<h2 class="secondaryColor">Header 2</h2>
-<h3>Header 3</h3>
-<a class="primaryContactPhone"></a>
-<h5>Header 5</h5>
-<h6>Header 6</h6>
-
-<p>Paragraph</p>
-<p class="italic">Italic</p>
-<p class="bold">Bold</p>
-<p class="underline">Underline</p>
-<p class="highlight">Highlight</p>
 
 <button class="rectangle primary">Rectangle Primary Button</button>
 <button class="rectangle secondary">Rectangle Secondary Button</button>
 <button class="round primary">Round Primary Button</button>
 <button class="round secondary">Round Secondary Button</button>
-
-<!-- Problem Here / Will not show in a 'block', shows on different lines -->
-<pre>
-	<code>
-		.p {
-			color: red;
-		}
-	</code>
-</pre>
-
-
 
 </html>
