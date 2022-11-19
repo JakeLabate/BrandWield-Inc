@@ -29,6 +29,16 @@ function eventTitleUpdate () {
 		localStorage.setItem('titleWords', titleWords);
 		generateHashtags();
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventDateUpdate () {
 	let outputEventDate = document.getElementById("inputEventDate");
@@ -60,6 +70,16 @@ function eventDateUpdate () {
 			}
 		}
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventTimeUpdate () {
 	let outputEventTime = document.getElementById("inputEventTime");
@@ -91,6 +111,16 @@ function eventTimeUpdate () {
 			}
 		}
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventLocationUpdate () {
 	let outputEventLocation = document.getElementById("inputEventLocation");
@@ -127,6 +157,16 @@ function eventLocationUpdate () {
 		localStorage.setItem('locationWords', locationWords);
 		generateHashtags();
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventOrganizationUpdate () {
 	let outputEventOrganization = document.getElementById("inputEventOrganization");
@@ -163,6 +203,16 @@ function eventOrganizationUpdate () {
 		localStorage.setItem('organizationWords', organizationWords);
 		generateHashtags();
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventHostUpdate () {
 	let outputEventHost = document.getElementById("inputEventHost");
@@ -199,6 +249,16 @@ function eventHostUpdate () {
 		localStorage.setItem('hostWords', hostWords);
 		generateHashtags();
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventDescriptionUpdate () {
 	let outputEventDescription = document.getElementById("inputEventDescription");
@@ -230,6 +290,16 @@ function eventDescriptionUpdate () {
 		localStorage.setItem('descriptionWords', descriptionWords);
 		generateHashtags();
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventLinkUpdate () {
 	let outputEventLink = document.getElementById("inputEventLink");
@@ -251,6 +321,16 @@ function eventLinkUpdate () {
 			}, 1000);
 		}
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventPrimarycolorUpdate () {
 	let outputEventPrimarycolor = document.getElementById("inputEventPrimaryColor");
@@ -296,6 +376,16 @@ function eventPrimarycolorUpdate () {
 			}
 		}
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 function eventLogoUpdate () {
 	let outputEventLogo = document.getElementById("inputEventLogo");
@@ -328,6 +418,16 @@ function eventLogoUpdate () {
 		document.getElementById("verticalImageLogoHere").setAttribute("src", localStorage.getItem("image"))
 		document.getElementById("squareImageLogoHere").setAttribute("src", localStorage.getItem("image"))
 	}
+	hasTitle();
+	hasTitleDate();
+	hasTitleDateTime();
+	hasTitleDateTimeLocation();
+	hasTitleDateTimeLocationOrganization();
+	hasTitleDateTimeLocationOrganizationHost();
+	hasTitleDateTimeLocationOrganizationHostDescription();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLink();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
+	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
 
 // Generate hashtags as user enters input

@@ -1,0 +1,171 @@
+:root {
+
+	/* Colors */
+	--primaryColor: #7c1212;
+	--secondaryColor: #1b1bc0;
+	--tertiaryColor: #063b06;
+
+	/* Fonts */
+	--primaryFont: Montserrat, sans-serif;
+	--secondaryFont: Robot, sans-serif;
+
+	/* Attention Methods */
+	--primaryAttention: bold; 	/* Can be either 'bold', 'underline', 'italic', or 'highlight' */
+
+}
+
+* {
+	font-family: var(--primaryFont);
+	font-weight: 400;
+	font-min-size: 16px;
+}
+
+body {
+	background-color: #f5f5f5;
+	margin: 0;
+}
+a {
+	cursor: pointer;
+}
+
+nav {
+	background-color: #fff;
+}
+nav > ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+}
+nav > ul > li {
+
+}
+nav > ul > li > a {
+	display: block;
+	color: #000;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+nav > ul > li > a:hover {
+	background-color: var(--primaryColor);
+	color: #fff;
+	transition: .2s ease-in-out;
+}
+
+pre > code {
+	background-color: #2f2f2f;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+h1 {
+	font-size: 44px;
+	font-weight: 700;
+}
+h2 {
+	font-size: 38px;
+	font-weight: 600;
+}
+h3 {
+	font-size: 32px;
+	font-weight: 500;
+}
+h4 {
+	font-size: 26px;
+	font-weight: 400;
+}
+h5 {
+	font-size: 22px;
+	font-weight: 400;
+}
+h6 {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+p {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+/* Buttons */
+button.rectangle.primary {
+	background-color: var(--primaryColor);
+	color: white;
+	border: none;
+	padding: 12px 22px 12px 22px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+button.rectangle.primary:hover {
+	scale: 1.05;
+	transition: .2s ease-in-out;
+}
+button.round.primary {
+	background-color: var(--primaryColor);
+	color: white;
+	border: none;
+	border-radius: 30px;
+	padding: 12px 22px 12px 22px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+button.round.primary:hover {
+	scale: 1.05;
+	transition: .2s ease-in-out;
+}
+button.rectangle.secondary {
+	background-color: #ffffff;
+	color: var(--primaryColor);
+	border: 3px solid var(--primaryColor);
+	padding: 10px 20px 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+button.rectangle.secondary:hover {
+	scale: 1.05;
+	transition: .2s ease-in-out;
+}
+button.round.secondary {
+	background-color: #ffffff;
+	color: var(--primaryColor);
+	border: 3px solid var(--primaryColor);
+	border-radius: 30px;
+	padding: 10px 20px 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+button.round.secondary:hover {
+	scale: 1.05;
+	transition: .2s ease-in-out;
+}
+
+/* Attention Methods */
+.italic {
+	font-style: italic;
+}
+.bold {
+	font-weight: 700;
+}
+.underline {
+	text-decoration: underline;
+}
+.highlight {
+	background-color: var(--primaryColor);
+	display: inline-block;
+	padding: 2px 5px 2px 5px;
+}
+

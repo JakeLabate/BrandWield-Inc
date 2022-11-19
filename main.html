@@ -9,7 +9,6 @@
 
 	<!-- Google Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 	<!-- Firebase Setup -->
 	<script type="module" src="firebaseSetup.js"></script>
@@ -24,17 +23,7 @@
 
 <!-- Search Bar -->
 <div id="searchBar">
-	<img id="logoIcon" alt="Brand Logo" src="brandwieldLogos/squareLogo.png"
-		 onmouseover="
-			document.getElementById('logoIcon').style.scale = 1.2;
-			document.getElementById('brandDropdown').style.display = 'block';
-		"
-		onclick="
-			// if open & clicked, close
-			if (document.getElementById('brandDropdown').style.display = 'block')
-			{ document.getElementById('brandDropdown').style.display = 'none'; }
-
-		"/>
+	<img id="logoIcon" alt="Brand Logo" src="brandwieldLogos/squareLogo.png" onmouseover="onmouseoverBrandWieldIcon();" onclick="onclickBrandWieldIcon();"/>
 	<label for="brandSearch" style="display: none">Search Brand</label>
 	<input id="brandSearch" type="text" size="22" placeholder="🔎 search your brand..." onkeyup="
 
@@ -98,7 +87,6 @@
 <!-- Brand Tab -->
 <div id="brand" class="w3-container w3-display-container city">
 	<h2>My Brand</h2>
-	<!-- BRAND -->
 	<!-- Contact -->
 	<div class="wrap-collabsible">
 		<input id="collapsibleContact" class="toggle" type="checkbox">
@@ -2454,7 +2442,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 
 <!-- Content Tab -->
@@ -2511,178 +2498,50 @@
 
 	<!-- Event Inputs -->
 	<div id="inputs" class="column">
-		<label for="inputEventTitle">Event Title</label>
-		<input id="inputEventTitle" type="text" onkeyup="
-		eventTitleUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-
-	">
-		<br>
-		<label for="inputEventDate">Date</label>
-		<input id="inputEventDate" type="date" oninput="
-		eventDateUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<br>
-		<label for="inputEventTime">Time</label>
-		<input id="inputEventTime" type="time" oninput="
-		eventTimeUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<br>
-		<label for="inputEventLocation">Location</label>
-		<input id="inputEventLocation" type="text" onkeyup="
-		eventLocationUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<img id="linkLocation" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
-		<br>
-		<label for="inputEventOrganization">Organization</label>
-		<input id="inputEventOrganization" type="text" onkeyup="
-		eventOrganizationUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<br>
-		<label for="inputEventHost">Host</label>
-		<input id="inputEventHost" type="text" onkeyup="
-		eventHostUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<img id="linkHost" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
-		<br>
-		<label for="inputEventDescription">Description</label>
-		<input id="inputEventDescription" type="text" onkeyup="
-		eventDescriptionUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<br>
-		<label for="inputEventLink">Link</label>
-		<input id="inputEventLink" type="url" onkeyup="
-		eventLinkUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<img id="linkLink" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
-		<br>
-		<label for="inputEventPrimaryColor">Primary Color</label>
-		<input id="inputEventPrimaryColor" type="color" oninput="
-		eventPrimarycolorUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<img id="linkPrimarycolor" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
-		<br>
-		<label for="inputEventLogo">Logo</label>
-		<input id="inputEventLogo" type="file" oninput="
-		eventLogoUpdate();
-		hasTitle();
-		hasTitleDate();
-		hasTitleDateTime();
-		hasTitleDateTimeLocation();
-		hasTitleDateTimeLocationOrganization();
-		hasTitleDateTimeLocationOrganizationHost();
-		hasTitleDateTimeLocationOrganizationHostDescription();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLink();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
-		hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
-	">
-		<!-- load 'squareLogo' from brand and/ord localStorage not working
-		<img id="linkLogo" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLogo();" onmouseleave="onmouseleaveLinkLogo();" onclick="onclickLinkLogo();">
-		-->
-
-		<!--
-
-		<div id="postSupport" class="row">
-			grab variables from brand input fields, and suggest usage, applying usage upon user approval<br>
-			<br>
-
-			<br>
-			<div id="mentionsSupport" class="column">Mentions:<text>calls social media apis, detecting profiles from name of host</text></div>
-			<div id="hashtagsSupport" class="column">Hashtags:<br><text>detect: longer words, repeating words, most pronounded/rare words?</text></div>
-			<div id="emojisSupport" class="column">Emojis:<br><text>sentement detection from event desc</text></div>
+		<div>
+			<label for="inputEventTitle">Event Title</label>
+			<input id="inputEventTitle" type="text" onkeyup="eventTitleUpdate();">
 		</div>
-
-		-->
-
+		<div>
+			<label for="inputEventDate">Date</label>
+			<input id="inputEventDate" type="date" oninput="eventDateUpdate();">
+		</div>
+		<div>
+			<label for="inputEventTime">Time</label>
+			<input id="inputEventTime" type="time" oninput="eventTimeUpdate();">
+		</div>
+		<div>
+			<label for="inputEventLocation">Location</label>
+			<input id="inputEventLocation" type="text" onkeyup="eventLocationUpdate();">
+			<img id="linkLocation" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
+		</div>
+		<div>
+			<label for="inputEventOrganization">Organization</label>
+			<input id="inputEventOrganization" type="text" onkeyup="eventOrganizationUpdate();">
+		</div>
+		<div>
+			<label for="inputEventHost">Host</label>
+			<input id="inputEventHost" type="text" onkeyup="eventHostUpdate();">
+			<img id="linkHost" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
+		</div>
+		<div>
+			<label for="inputEventDescription">Description</label>
+			<input id="inputEventDescription" type="text" onkeyup="eventDescriptionUpdate();">
+		</div>
+		<div>
+			<label for="inputEventLink">Link</label>
+			<input id="inputEventLink" type="url" onkeyup="eventLinkUpdate();">
+			<img id="linkLink" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
+		</div>
+		<div>
+			<label for="inputEventPrimaryColor">Primary Color</label>
+			<input id="inputEventPrimaryColor" type="color" oninput="eventPrimarycolorUpdate();">
+			<img id="linkPrimarycolor" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
+		</div>
+		<div>
+			<label for="inputEventLogo">Logo</label>
+			<input id="inputEventLogo" type="file" oninput="eventLogoUpdate();">
+		</div>
 	</div>
 
 	<!-- Event Outputs -->
@@ -2756,6 +2615,7 @@
 
 	</div>
 
+	<!-- Event Final Content -->
 	<div id="final" class="column">
 
 		<div id="finalImageHorizontal" class="imageColors">
@@ -2809,16 +2669,6 @@
 			<img class="socialMediaIcon" src="socialMediaIcons/pinterest.png" />
 		</div>
 
-
-
-		<div id="facebookPost">
-		</div>
-		<div id="instagramPost">
-		</div>
-		<div id="linkedinPost">
-		</div>
-		<div id="twitterPost">
-		</div>
 	</div>
 </div>
 
@@ -2835,6 +2685,7 @@
 	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 </div>
 
+<!-- Dont need, but might produce bugs if removed? -->
 <div id="masterOutput" style="display: none;">
 	<text id="masterOutputEventTitle">event</text>
 	<text id="masterOutputEventDate">date</text>
@@ -2846,5 +2697,4 @@
 </div>
 
 </body>
-
 </html>

@@ -1,5 +1,15 @@
 // DRAGGABLE Brand Variables
 
+function onmouseoverBrandWieldIcon () {
+	document.getElementById('logoIcon').style.scale = 1.2;
+	document.getElementById('brandDropdown').style.display = 'block';
+}
+function onclickBrandWieldIcon() {
+	// if open & clicked, close
+	if (document.getElementById('brandDropdown').style.display = 'block')
+	{ document.getElementById('brandDropdown').style.display = 'none'; }
+}
+
 // onmouseover title
 function onmouseoverDraggableContactInfoSection () {
 

@@ -88,7 +88,6 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
     right: 0;
 }
 
-
 .tabs {
     margin-top: 65px;
 }
@@ -437,6 +436,7 @@ pre code {
     -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
 }
 
+
 .wrap-collabsible {
     margin: 10px 20px 10px 20px;
 }
@@ -469,26 +469,11 @@ pre code {
     margin-right: .7rem;
     transition: .1s;
 }
+
 .toggle:checked+.lbl-toggle::before {
     transform: rotate(90deg) translateX(-3px);
 }
-.collapsible-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: .1s;
-}
-.toggle:checked+.lbl-toggle {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-.toggle:checked + .lbl-toggle + .collapsible-content {
-    max-height: 10000px;
-}
-.collapsible-content .content-inner {
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: .5rem 1rem;
-}
+
 .collapsible {
     background-color: white;
     color: #252525;
@@ -501,10 +486,29 @@ pre code {
     border-radius: 40px;
     transition: .2s;
 }
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: .1s;
+}
+.collapsible-content .content-inner {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: .5rem 1rem;
+}
 .active, .collapsible:hover {
     background-color: #d2d2d2;
     cursor: pointer;
     transition: .2s;
+}
+
+
+.toggle:checked+.lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.toggle:checked + .lbl-toggle + .collapsible-content {
+    max-height: 10000px;
 }
 
 /* Lock Styling */
@@ -522,6 +526,7 @@ pre code {
     transition: .1s;
 }
 
+/* Brand Variables in 'My Brand' section */
 .varGroup {
     padding: 10px 25px 10px 25px;
 }
