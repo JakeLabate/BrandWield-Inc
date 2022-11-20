@@ -543,7 +543,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// PEOPLE
-
 	// Person 1
 	if (snapshot.val().person1Name != null) {
 		// set local storage
@@ -706,7 +705,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// OFFERS
-
 	// Offer 1
 	if (snapshot.val().offer1Name != null) {
 		// set local storage
