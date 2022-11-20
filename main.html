@@ -22,62 +22,49 @@
 <body>
 
 <!-- Search Bar -->
-<div id="searchBar">
+<div id="searchBar" style="height: 55px">
+
+	<!-- Brand Icon -->
 	<img id="logoIcon" alt="Brand Logo" src="brandwieldLogos/squareLogo.png" onmouseover="onmouseoverBrandWieldIcon();" onclick="onclickBrandWieldIcon();"/>
-	<label for="brandSearch" style="display: none">Search Brand</label>
-	<input id="brandSearch" type="text" size="22" placeholder="🔎 search your brand..." onkeyup="
 
-    let searchTerm = document.getElementById('brandSearch').value;
-    let allInputs = document.getElementsByTagName('input');
-    for (let i = 0; i < allInputs.length; i++)
-    {
-      if (allInputs[i].id.includes(searchTerm))
-      {
-        allInputs[i].style.backgroundColor = 'lightblue';
-      }
-      else
-      {
-        allInputs[i].style.backgroundColor = 'white';
-      }
-    }
-  ">
-	<span class="material-symbols-outlined" onclick="selectContentType('integrations')" style="position: absolute; right: 12px; top: 16px">settings</span>
-
+	<!-- Brand Icon Dropdown -->
 	<div id="brandDropdown" class="dropzone" onmouseleave="this.style.display = 'none';"><br>
-
-		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none" onmouseleave="onmouseleaveDraggableContactInfoSection();">
+		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableContactInfoSection();">
 			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggablePrimaryContactEmail" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar" draggable="true"></span><br><br>
 		</b>
-
 		<b id="draggableFoundingInfoSectionHeader" onmouseover="onmouseoverDraggableFoundingInfoSection();">Founding Info:</b><br><br><b id="draggableFoundingInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableFoundingInfoSection();">
 			<span id="draggableFounderName" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggableFoundingDate" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggableTradeBusinessName" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggableLegalBusinessName" class="draggableBrandVar" draggable="true"></span><br><br>
 		</b>
-
 		<b id="draggableBusinessInfoSectionHeader" onmouseover="onmouseoverDraggableBusinessInfoSection();">Business Info:</b><br><br><b id="draggableBusinessInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableBusinessInfoSection();">
 			<span id="draggableBusinessType" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggableSlogan" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggableMissionStatement" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggableValueProp" class="draggableBrandVar" draggable="true"></span><br><br>
 		</b>
-
 	</div>
+
+	<!-- Settings Tab (currently just 'integration') -->
+	<span class="material-symbols-outlined" onclick="selectContentType('integrations')" style="position: absolute; right: 12px; top: 16px">settings</span>
+
 </div>
 <!-- Tabs -->
 <script>
 	function selectContentType(cityName) {
-		var i;
-		var x = document.getElementsByClassName("city");
+		let i;
+		let x = document.getElementsByClassName("city");
 		for (i = 0; i < x.length; i++) {
 			x[i].style.display = "none";
 		}
 		document.getElementById(cityName).style.display = "block";
 	}
 </script>
+
+<!-- Tabs -->
 <div class="tabs">
 	<button class="tab" onclick="selectContentType('brand')">My Brand</button>
 	<button class="tab" onclick="selectContentType('content')">My Content</button>
@@ -87,8 +74,10 @@
 <!-- Brand Tab -->
 <div id="brand" class="w3-container w3-display-container city">
 	<h2>My Brand</h2>
+	<h3 style="padding-bottom: 20px;">Manage your entire brand from a single dashboard!</h3>
+
 	<!-- Contact -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleContact" class="toggle" type="checkbox">
 		<label for="collapsibleContact" class="lbl-toggle">Contact</label>
 		<div class="collapsible-content">
@@ -133,7 +122,7 @@
 		</div>
 	</div>
 	<!-- Address -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleAddress" class="toggle" type="checkbox">
 		<label for="collapsibleAddress" class="lbl-toggle">Address</label>
 		<div class="collapsible-content">
@@ -206,13 +195,12 @@
 						<button id="clearOfficeAddressCountry" onclick="clearOfficeAddressCountry()">Clear</button>
 					</div>
 
-
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Founding -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleFounding" class="toggle" type="checkbox">
 		<label for="collapsibleFounding" class="lbl-toggle">Founding</label>
 		<div class="collapsible-content">
@@ -268,7 +256,7 @@
 		</div>
 	</div>
 	<!-- Hours of Operation -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleHoursOfOperation" class="toggle" type="checkbox">
 		<label for="collapsibleHoursOfOperation" class="lbl-toggle">Hours of Operation</label>
 		<div class="collapsible-content">
@@ -446,7 +434,7 @@
 		</div>
 	</div>
 	<!-- Basic -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleBasic" class="toggle" type="checkbox">
 		<label for="collapsibleBasic" class="lbl-toggle">Basic</label>
 		<div class="collapsible-content">
@@ -489,35 +477,10 @@
 							<option value="TouristInformationCenter">Tourist Information Center</option>
 							<option value="TravelAgency">Travel Agency</option>
 						</select>
-						<span id="businessTypeUnlock" class="material-symbols-outlined" onclick="
-            document.getElementById('businessType').setAttribute('style', 'display: block;');
-            document.getElementById('businessType').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-            document.getElementById('businessTypeUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('businessTypeLock').setAttribute('style', 'background-color: transparent;');
-            document.getElementById('businessTypeValueDisplay').setAttribute('style', 'display: none;');
-          ">lock_open</span>
-						<span id="businessTypeLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-            document.getElementById('businessType').setAttribute('style', 'display: none;');
-            document.getElementById('businessTypeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('businessTypeUnlock').setAttribute('style', 'background-color: transparent;');
-            document.getElementById('businessTypeValueDisplay').innerHTML = 'Current Business Type: ' + document.getElementById('businessType').value;
-            document.getElementById('businessTypeValueDisplay').setAttribute('style', 'display: block;');
-            if (document.getElementById('businessType').value == null) { document.getElementById('warningBusinessType').setAttribute('style', 'display: block;'); }
-            if (document.getElementById('businessType').value != null) { document.getElementById('warningBusinessType').setAttribute('style', 'display: none;'); }
-          ">lock</span>
+						<span id="businessTypeUnlock" class="material-symbols-outlined" onclick="unlockBusinessType();">lock_open</span>
+						<span id="businessTypeLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockBusinessType();">lock</span>
 						<p id="businessTypeValueDisplay" style="display: none;"></p>
-						<button id="clearBusinessType" onclick="
-          if (confirm('Are you sure you want to CLEAR the Business Type?') == true) {
-            document.getElementById('businessType').value = '';
-            document.getElementById('businessType').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-            setTimeout(function() {
-              document.getElementById('businessType').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: green;');
-              document.getElementById('warningBusinessType').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-            confirm.close();
-          }
-          ">Clear</button>
+						<button id="clearBusinessType" onclick="clearBusinessType();">Clear</button>
 
 					</div>
 
@@ -527,32 +490,9 @@
 						<label for="slogan">Slogan</label>
 						<span class="material-symbols-outlined" onclick='alert("The slogan is a short phrase that is used to describe your business. It should be catchy and memorable.")'>info</span>
 						<input type="text" id="slogan" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="sloganUnlock" class="material-symbols-outlined" onclick="
-            document.getElementById('slogan').removeAttribute('readonly');
-            document.getElementById('slogan').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-            document.getElementById('sloganUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('sloganLock').setAttribute('style', 'background-color: transparent;');
-          ">lock_open</span>
-						<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-            document.getElementById('slogan').setAttribute('readonly', true);
-            document.getElementById('slogan').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-            document.getElementById('sloganLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('sloganUnlock').setAttribute('style', 'background-color: transparent;');
-            if (document.getElementById('slogan').value.length > 0) { document.getElementById('warningSlogan').setAttribute('style', 'display: block;'); }
-            if (document.getElementById('slogan').value.length < 1) { document.getElementById('warningSlogan').setAttribute('style', 'display: none;'); }
-          ">lock</span>
-						<button id="clearSlogan" onclick="
-            if (confirm('Are you sure you want to CLEAR the Slogan?') == true) {
-                document.getElementById('slogan').value = '';
-                document.getElementById('slogan').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-                setTimeout(function() {
-                document.getElementById('slogan').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-                document.getElementById('warningSlogan').setAttribute('style', 'display: block;');
-                }, 800);
-            } else {
-                confirm.close();
-            }
-            ">Clear</button>
+						<span id="sloganUnlock" class="material-symbols-outlined" onclick="unlockSlogan();">lock_open</span>
+						<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan();">lock</span>
+						<button id="clearSlogan" onclick="clearSlogan();">Clear</button>
 					</div>
 
 					<!-- Mission Statement -->
@@ -561,32 +501,9 @@
 						<label for="missionStatement">Mission Statement</label>
 						<span class="material-symbols-outlined" onclick='alert("The mission statement is a short phrase that describes the purpose of your business. It should be short and to the point.")'>info</span>
 						<input type="text" id="missionStatement" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="missionStatementUnlock" class="material-symbols-outlined" onclick="
-            document.getElementById('missionStatement').removeAttribute('readonly');
-            document.getElementById('missionStatement').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-            document.getElementById('missionStatementUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('missionStatementLock').setAttribute('style', 'background-color: transparent;');
-          ">lock_open</span>
-						<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-            document.getElementById('missionStatement').setAttribute('readonly', true);
-            document.getElementById('missionStatement').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-            document.getElementById('missionStatementLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('missionStatementUnlock').setAttribute('style', 'background-color: transparent;');
-            if (document.getElementById('missionStatement').value.length > 0) { document.getElementById('warningMissionStatement').setAttribute('style', 'display: block;'); }
-            if (document.getElementById('missionStatement').value.length < 1) { document.getElementById('warningMissionStatement').setAttribute('style', 'display: none;'); }
-          ">lock</span>
-						<button id="clearMissionStatement" onclick="
-            if (confirm('Are you sure you want to CLEAR the Mission Statement?') == true) {
-                document.getElementById('missionStatement').value = '';
-                document.getElementById('missionStatement').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-                setTimeout(function() {
-                document.getElementById('missionStatement').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-                document.getElementById('warningMissionStatement').setAttribute('style', 'display: block;');
-                }, 800);
-            } else {
-                confirm.close();
-            }
-            ">Clear</button>
+						<span id="missionStatementUnlock" class="material-symbols-outlined" onclick="unlockMissionStatement();">lock_open</span>
+						<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement();">lock</span>
+						<button id="clearMissionStatement" onclick="clearMissionStatement();">Clear</button>
 					</div>
 
 					<!-- Value Proposition -->
@@ -595,32 +512,9 @@
 						<label for="valueProp">Value Proposition</label>
 						<span class="material-symbols-outlined" onclick='alert("The value proposition is a short phrase that describes the value your business provides to your customers. It should be short and to the point.")'>info</span>
 						<input type="text" id="valueProp" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="valuePropUnlock" class="material-symbols-outlined" onclick="
-            document.getElementById('valueProp').removeAttribute('readonly');
-            document.getElementById('valueProp').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-            document.getElementById('valuePropUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('valuePropLock').setAttribute('style', 'background-color: transparent;');
-          ">lock_open</span>
-						<span id="valuePropLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-            document.getElementById('valueProp').setAttribute('readonly', true);
-            document.getElementById('valueProp').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-            document.getElementById('valuePropLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('valuePropUnlock').setAttribute('style', 'background-color: transparent;');
-            if (document.getElementById('valueProp').value.length > 0) { document.getElementById('warningValueProposition').setAttribute('style', 'display: block;'); }
-            if (document.getElementById('valueProp').value.length < 1) { document.getElementById('warningValueProposition').setAttribute('style', 'display: none;'); }
-          ">lock</span>
-						<button id="clearValueProp" onclick="
-            if (confirm('Are you sure you want to CLEAR the Value Proposition?') == true) {
-                document.getElementById('valueProp').value = '';
-                document.getElementById('valueProp').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-                setTimeout(function() {
-                document.getElementById('valueProp').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-                document.getElementById('warningValueProposition').setAttribute('style', 'display: block;');
-                }, 800);
-            } else {
-                confirm.close();
-            }
-            ">Clear</button>
+						<span id="valuePropUnlock" class="material-symbols-outlined" onclick="unlockValueProp();">lock_open</span>
+						<span id="valuePropLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockValueProp();">lock</span>
+						<button id="clearValueProp" onclick="clearValueProp();">Clear</button>
 					</div>
 
 				</div>
@@ -628,7 +522,7 @@
 		</div>
 	</div>
 	<!-- Social Media -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleSocialMedia" class="toggle" type="checkbox">
 		<label for="collapsibleSocialMedia" class="lbl-toggle">Social Media</label>
 		<div class="collapsible-content">
@@ -638,355 +532,123 @@
 
 					<!-- Facebook URL -->
 					<div class="var">
-						<span id="warningFacebookURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningFacebookURL" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="facebookUrl">URL</label>
 						<span class="material-symbols-outlined" onclick="alert('The primary Facebook URL page for your company')">info</span>
 						<input id="facebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="facebookUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('facebookUrl').removeAttribute('readonly');
-          document.getElementById('facebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('facebookUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('facebookUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('facebookUrl').setAttribute('readonly', true);
-          document.getElementById('facebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('facebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('facebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('facebookUrl').value.length > 0) { document.getElementById('warningFacebookURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('facebookUrl').value.length < 1) { document.getElementById('warningFacebookURL').setAttribute('style', 'display: block;'); }
-
-        ">lock</span>
-						<button id="clearFacebookUrl" onclick="
-          if (confirm('Are you sure you want to CLEAR the Facebook URL?') == true) {
-              document.getElementById('facebookUrl').value = '';
-              document.getElementById('facebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('facebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningFacebookURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="facebookUrlUnlock" class="material-symbols-outlined" onclick="unlockFacebookUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUrlLock" class="material-symbols-outlined" onclick="lockFacebookUrl();">lock</span>
+						<button id="clearFacebookUrl" onclick="clearFacebookUrl();">Clear</button>
 					</div>
 
 					<!-- Facebook Username -->
 					<div class="var">
-						<span id="warningFacebookUsername" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningFacebookUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="facebookUsername">Username</label>
 						<span class="material-symbols-outlined" onclick="alert('The username for your Facebook page')">info</span>
 						<input id="facebookUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="facebookUsernameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('facebookUsername').removeAttribute('readonly');
-          document.getElementById('facebookUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('facebookUsernameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('facebookUsernameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUsernameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('facebookUsername').setAttribute('readonly', true);
-          document.getElementById('facebookUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('facebookUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('facebookUsernameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('facebookUsername').value.length > 0) { document.getElementById('warningFacebookUsername').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('facebookUsername').value.length < 1) { document.getElementById('warningFacebookUsername').setAttribute('style', 'display: block;'); }
-       ">lock</span>
-						<button id="clearFacebookUsername" onclick="
-          if (confirm('Are you sure you want to CLEAR the Facebook Username?') == true) {
-              document.getElementById('facebookUsername').value = '';
-              document.getElementById('facebookUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('facebookUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningFacebookUsername').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="facebookUsernameUnlock" class="material-symbols-outlined" onclick="unlockFacebookUsername();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUsernameLock" class="material-symbols-outlined" onclick="lockFacebookUsername();">lock</span>
+						<button id="clearFacebookUsername" onclick="clearFacebookUsername();">Clear</button>
 					</div>
 
 					<h3>Instagram</h3>
 
 					<!-- Instagram URL -->
 					<div class="var">
-						<span id="warningInstagramURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningInstagramURL" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="instagramUrl">URL</label>
 						<span class="material-symbols-outlined" onclick="alert('The primary Instagram URL page for your company')">info</span>
 						<input id="instagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="instagramUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('instagramUrl').removeAttribute('readonly');
-          document.getElementById('instagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('instagramUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('instagramUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('instagramUrl').setAttribute('readonly', true);
-          document.getElementById('instagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('instagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('instagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('instagramUrl').value.length > 0) { document.getElementById('warningInstagramURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('instagramUrl').value.length < 1) { document.getElementById('warningInstagramURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearInstagramUrl" onclick="
-          if (confirm('Are you sure you want to CLEAR the Instagram URL?') == true) {
-              document.getElementById('instagramUrl').value = '';
-              document.getElementById('instagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('instagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningInstagramURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="instagramUrlUnlock" class="material-symbols-outlined" onclick="unlockInstagramUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUrlLock" class="material-symbols-outlined" onclick="lockInstagramUrl();" >lock</span>
+						<button id="clearInstagramUrl" onclick="clearInstagramUrl();">Clear</button>
 					</div>
 
 					<!-- Instagram Username -->
 					<div class="var">
-						<span id="warningInstagramUsername" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningInstagramUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="instagramUsername">Username</label>
 						<span class="material-symbols-outlined" onclick="alert('The username for your Instagram page')">info</span>
 						<input id="instagramUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="instagramUsernameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('instagramUsername').removeAttribute('readonly');
-          document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('instagramUsernameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('instagramUsernameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUsernameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('instagramUsername').setAttribute('readonly', true);
-          document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('instagramUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('instagramUsernameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('instagramUsername').value.length > 0) { document.getElementById('warningInstagramUsername').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('instagramUsername').value.length < 1) { document.getElementById('warningInstagramUsername').setAttribute('style', 'display: block;'); }
-        	logInstaPic()
-
-">lock</span>
+						<span id="instagramUsernameUnlock" class="material-symbols-outlined" onclick="unlockInstagramUsername();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUsernameLock" class="material-symbols-outlined" onclick="lockInstagramUsername();">lock</span>
+						<!--	logInstaPic()
 						<img crossorigin="anonymous" id="instagramProfilePic" alt="" src="" height="100px" width="100px"/>
-
-						<button id="clearInstagramUsername" onclick="
-          if (confirm('Are you sure you want to CLEAR the Instagram Username?') == true) {
-              document.getElementById('instagramUsername').value = '';
-              document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningInstagramUsername').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						 -->
+						<button id="clearInstagramUsername" onclick="clearInstagramUsername();">Clear</button>
 					</div>
 
 					<h3>LinkedIn</h3>
 
 					<!-- LinkedIn URL -->
 					<div class="var">
-						<span id="warningLinkedinURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningLinkedinURL" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="linkedinUrl">URL</label>
 						<span class="material-symbols-outlined" onclick="alert('The primary LinkedIn URL page for your company')">info</span>
 						<input id="linkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="linkedinUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('linkedinUrl').removeAttribute('readonly');
-          document.getElementById('linkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('linkedinUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('linkedinUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('linkedinUrl').setAttribute('readonly', true);
-          document.getElementById('linkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('linkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('linkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('linkedinUrl').value.length > 0) { document.getElementById('warningLinkedinURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('linkedinUrl').value.length < 1) { document.getElementById('warningLinkedinURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearLinkedinURL" onclick="
-          if (confirm('Are you sure you want to CLEAR the LinkedIn URL?') == true) {
-              document.getElementById('linkedinUrl').value = '';
-              document.getElementById('linkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('linkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningLinkedinURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="linkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUrlLock" class="material-symbols-outlined" onclick="lockLinkedinUrl();">lock</span>
+						<button id="clearLinkedinURL" onclick="clearLinkedinUrl();">Clear</button>
 					</div>
 
 					<!-- LinkedIn Username -->
 					<div class="var">
-						<span id="warningLinkedinUsername" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningLinkedinUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="linkedinUsername">Username</label>
 						<span class="material-symbols-outlined" onclick="alert('The username for your LinkedIn page')">info</span>
 						<input id="linkedinUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="linkedinUsernameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('linkedinUsername').removeAttribute('readonly');
-          document.getElementById('linkedinUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('linkedinUsernameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('linkedinUsernameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUsernameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('linkedinUsername').setAttribute('readonly', true);
-          document.getElementById('linkedinUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('linkedinUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('linkedinUsernameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('linkedinUsername').value.length > 0) { document.getElementById('warningLinkedinUsername').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('linkedinUsername').value.length < 1) { document.getElementById('warningLinkedinUsername').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearLinkedinUsername" onclick="
-          if (confirm('Are you sure you want to CLEAR the LinkedIn Username?') == true) {
-              document.getElementById('linkedinUsername').value = '';
-              document.getElementById('linkedinUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('linkedinUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningLinkedinUsername').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="linkedinUsernameUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUsername();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUsernameLock" class="material-symbols-outlined" onclick="lockLinkedinUsername();">lock</span>
+						<button id="clearLinkedinUsername" onclick="clearLinkedinUsername();">Clear</button>
 					</div>
 
 					<h3>Twitter</h3>
 
 					<!-- Twitter URL -->
 					<div class="var">
-						<span id="warningTwitterURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningTwitterURL" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="twitterUrl">URL</label>
 						<span class="material-symbols-outlined" onclick="alert('The primary Twitter URL page for your company')">info</span>
 						<input id="twitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="twitterUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('twitterUrl').removeAttribute('readonly');
-          document.getElementById('twitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('twitterUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('twitterUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('twitterUrl').setAttribute('readonly', true);
-          document.getElementById('twitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('twitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('twitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('twitterUrl').value.length > 0) { document.getElementById('warningTwitterURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('twitterUrl').value.length < 1) { document.getElementById('warningTwitterURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearTwitterUrl" onclick="
-          if (confirm('Are you sure you want to CLEAR the Twitter URL?') == true) {
-              document.getElementById('twitterUrl').value = '';
-              document.getElementById('twitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('twitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningTwitterURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="twitterUrlUnlock" class="material-symbols-outlined" onclick="unlockTwitterUrl()">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUrlLock" class="material-symbols-outlined" onclick="lockTwitterUrl();">lock</span>
+						<button id="clearTwitterUrl" onclick="clearTwitterUrl();">Clear</button>
 					</div>
 
 					<!-- Twitter Username -->
 					<div class="var">
-						<span id="warningTwitterUsername" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningTwitterUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="twitterUsername">Username</label>
 						<span class="material-symbols-outlined" onclick="alert('The username for your Twitter page')">info</span>
 						<input id="twitterUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="twitterUsernameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('twitterUsername').removeAttribute('readonly');
-          document.getElementById('twitterUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('twitterUsernameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('twitterUsernameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUsernameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('twitterUsername').setAttribute('readonly', true);
-          document.getElementById('twitterUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('twitterUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('twitterUsernameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('twitterUsername').value.length > 0) { document.getElementById('warningTwitterUsername').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('twitterUsername').value.length < 1) { document.getElementById('warningTwitterUsername').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearTwitterUsername" onclick="
-          if (confirm('Are you sure you want to CLEAR the Twitter Username?') == true) {
-              document.getElementById('twitterUsername').value = '';
-              document.getElementById('twitterUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('twitterUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningTwitterUsername').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="twitterUsernameUnlock" class="material-symbols-outlined" onclick="unlockTwitterUsername();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUsernameLock" class="material-symbols-outlined" onclick="lockTwitterUsername();">lock</span>
+						<button id="clearTwitterUsername" onclick="clearTwitterUsername();">Clear</button>
 					</div>
 
 					<h3>TikTok</h3>
 
 					<!-- TikTok URL -->
 					<div class="var">
-						<span id="warningTiktokURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningTiktokURL" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="tiktokUrl">URL</label>
 						<span class="material-symbols-outlined" onclick="alert('The primary TikTok URL page for your company')">info</span>
 						<input id="tiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tiktokUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('tiktokUrl').removeAttribute('readonly');
-          document.getElementById('tiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('tiktokUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tiktokUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('tiktokUrl').setAttribute('readonly', true);
-          document.getElementById('tiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('tiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('tiktokUrl').value.length > 0) { document.getElementById('warningTiktokURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('tiktokUrl').value.length < 1) { document.getElementById('warningTiktokURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearTiktokURL" onclick="
-          if (confirm('Are you sure you want to CLEAR the TikTok URL?') == true) {
-              document.getElementById('tiktokUrl').value = '';
-              document.getElementById('tiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('tiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningTiktokURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="tiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockTiktokUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUrlLock" class="material-symbols-outlined" onclick="lockTiktokUrl();">lock</span>
+						<button id="clearTiktokURL" onclick="clearTiktokUrl();">Clear</button>
 					</div>
 
 					<!-- TikTok Username -->
 					<div class="var">
-						<span id="warningTiktokUsername" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningTiktokUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 						<label for="tiktokUsername">Username</label>
 						<span class="material-symbols-outlined" onclick="alert('The username for your TikTok page')">info</span>
 						<input id="tiktokUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tiktokUsernameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('tiktokUsername').removeAttribute('readonly');
-          document.getElementById('tiktokUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('tiktokUsernameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tiktokUsernameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUsernameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('tiktokUsername').setAttribute('readonly', true);
-          document.getElementById('tiktokUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('tiktokUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tiktokUsernameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('tiktokUsername').value.length > 0) { document.getElementById('warningTiktokUsername').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('tiktokUsername').value.length < 1) { document.getElementById('warningTiktokUsername').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="clearTiktokUsername" onclick="
-          if (confirm('Are you sure you want to CLEAR the TikTok Username?') == true) {
-              document.getElementById('tiktokUsername').value = '';
-              document.getElementById('tiktokUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('tiktokUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningTiktokUsername').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="tiktokUsernameUnlock" class="material-symbols-outlined" onclick="unlockTiktokUsername();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUsernameLock" class="material-symbols-outlined" onclick="lockTiktokUsername();">lock</span>
+						<button id="clearTiktokUsername" onclick="clearTiktokUsername();">Clear</button>
 					</div>
 
 				</div>
@@ -994,7 +656,7 @@
 		</div>
 	</div>
 	<!-- Brand -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleBrand" class="toggle" type="checkbox">
 		<label for="collapsibleBrand" class="lbl-toggle">Brand</label>
 		<div class="collapsible-content">
@@ -1024,7 +686,7 @@
           if (document.getElementById('squareLogo').value != null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: none;'); }
           if (document.getElementById('squareLogo').value == null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;'); }
         ">lock</span>
-						<img style="padding: 0 10px 0 10px; display: none;" height="32px" width="32px" id="uploadedSquareImage">
+						<img alt="" src="" style="padding: 0 10px 0 10px; display: none;" height="32px" width="32px" id="uploadedSquareImage">
 						<p id="squareLogoValueDisplay" style="display: none;"></p>
 						<img id="squareLogoBro" style="padding-left: 20px;" alt="Square Logo" src="">
 
@@ -1067,7 +729,7 @@
           if (document.getElementById('fullLogo').value != null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: none;'); }
           if (document.getElementById('fullLogo').value == null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: block;'); }
         ">lock</span>
-						<img style="padding: 0 10px 0 10px; max-height: 200px; max-width: 200px;" id="uploadedFullImage">
+						<img alt="" src="" style="padding: 0 10px 0 10px; max-height: 200px; max-width: 200px;" id="uploadedFullImage">
 						<p id="fullLogoValueDisplay" style="display: none;"></p>
 						<img id="fullLogoBro" style="padding-left: 20px;" alt="Full Logo" src="">
 
@@ -1245,7 +907,7 @@
           document.getElementById('primaryFontLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryFontLock" class="material-symbols-outlined" onclick="
-          document.getElementById('primaryFont').setAttribute('readonly', true);
+          document.getElementById('primaryFont').append('readonly');
           document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('primaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('primaryFontUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1281,7 +943,7 @@
           document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryFontLock" class="material-symbols-outlined" onclick="
-          document.getElementById('secondaryFont').setAttribute('readonly', true);
+          document.getElementById('secondaryFont').append('readonly');
           document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('secondaryFontUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1313,10 +975,10 @@
           document.getElementById('tertiaryFont').removeAttribute('readonly');
           document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
           document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: transparenttransparent;');
+          document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryFontLock" class="material-symbols-outlined" onclick="
-          document.getElementById('tertiaryFont').setAttribute('readonly', true);
+          document.getElementById('tertiaryFont').append('readonly');
           document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1343,7 +1005,7 @@
 		</div>
 	</div>
 	<!-- Offerings -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsibleOfferings" class="toggle" type="checkbox">
 		<label for="collapsibleOfferings" class="lbl-toggle">Offerings</label>
 		<div class="collapsible-content">
@@ -1364,7 +1026,7 @@
           document.getElementById('offer1NameLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer1NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Name').setAttribute('readonly', true);
+          document.getElementById('offer1Name').append('readonly');
           document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer1NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1399,7 +1061,7 @@
           document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer1PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Price').setAttribute('readonly', true);
+          document.getElementById('offer1Price').append('readonly');
           document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer1PriceUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1434,7 +1096,7 @@
           document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer1FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Feature').setAttribute('readonly', true);
+          document.getElementById('offer1Feature').append('readonly');
           document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer1FeatureUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1469,7 +1131,7 @@
           document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer1BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Benefit').setAttribute('readonly', true);
+          document.getElementById('offer1Benefit').append('readonly');
           document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer1BenefitUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1504,7 +1166,7 @@
           document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer1SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Solution').setAttribute('readonly', true);
+          document.getElementById('offer1Solution').append('readonly');
           document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer1SolutionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1539,7 +1201,7 @@
           document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer1DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Description').setAttribute('readonly', true);
+          document.getElementById('offer1Description').append('readonly');
           document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer1DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1616,7 +1278,7 @@
           document.getElementById('offer2NameLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer2NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Name').setAttribute('readonly', true);
+          document.getElementById('offer2Name').append('readonly');
           document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer2NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1651,7 +1313,7 @@
           document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer2PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Price').setAttribute('readonly', true);
+          document.getElementById('offer2Price').append('readonly');
           document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer2PriceUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1686,7 +1348,7 @@
           document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer2FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Feature').setAttribute('readonly', true);
+          document.getElementById('offer2Feature').append('readonly');
           document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer2FeatureUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1721,7 +1383,7 @@
           document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer2BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Benefit').setAttribute('readonly', true);
+          document.getElementById('offer2Benefit').append('readonly');
           document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer2BenefitUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1756,7 +1418,7 @@
           document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer2SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Solution').setAttribute('readonly', true);
+          document.getElementById('offer2Solution').append('readonly');
           document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer2SolutionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1791,7 +1453,7 @@
           document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span id="offer2DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Description').setAttribute('readonly', true);
+          document.getElementById('offer2Description').append('readonly');
           document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('offer2DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1857,7 +1519,7 @@
 		</div>
 	</div>
 	<!-- People -->
-	<div class="wrap-collabsible">
+	<div class="wrap-collapsible">
 		<input id="collapsiblePeople" class="toggle" type="checkbox">
 		<label for="collapsiblePeople" class="lbl-toggle">People</label>
 		<div class="collapsible-content">
@@ -1879,7 +1541,7 @@
           document.getElementById('person1NameLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1NameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Name').setAttribute('readonly', true);
+          document.getElementById('person1Name').append('readonly');
           document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1914,7 +1576,7 @@
           document.getElementById('person1TitleLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TitleLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Title').setAttribute('readonly', true);
+          document.getElementById('person1Title').append('readonly');
           document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1TitleUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1989,7 +1651,7 @@
           document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1FacebookUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1FacebookUrl').setAttribute('readonly', true);
+          document.getElementById('person1FacebookUrl').append('readonly');
           document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2024,7 +1686,7 @@
           document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1InstagramUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1InstagramUrl').setAttribute('readonly', true);
+          document.getElementById('person1InstagramUrl').append('readonly');
           document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2059,7 +1721,7 @@
           document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1LinkedinUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1LinkedinUrl').setAttribute('readonly', true);
+          document.getElementById('person1LinkedinUrl').append('readonly');
           document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2094,7 +1756,7 @@
           document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TwitterUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1TwitterUrl').setAttribute('readonly', true);
+          document.getElementById('person1TwitterUrl').append('readonly');
           document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2129,7 +1791,7 @@
           document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TiktokUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1TiktokUrl').setAttribute('readonly', true);
+          document.getElementById('person1TiktokUrl').append('readonly');
           document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person1TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2166,7 +1828,7 @@
           document.getElementById('person2NameLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2NameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Name').setAttribute('readonly', true);
+          document.getElementById('person2Name').append('readonly');
           document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2201,7 +1863,7 @@
           document.getElementById('person2TitleLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TitleLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Title').setAttribute('readonly', true);
+          document.getElementById('person2Title').append('readonly');
           document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2TitleUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2276,7 +1938,7 @@
           document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2FacebookUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2FacebookUrl').setAttribute('readonly', true);
+          document.getElementById('person2FacebookUrl').append('readonly');
           document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2311,7 +1973,7 @@
           document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2InstagramUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2InstagramUrl').setAttribute('readonly', true);
+          document.getElementById('person2InstagramUrl').append('readonly');
           document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2346,7 +2008,7 @@
           document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2LinkedinUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2LinkedinUrl').setAttribute('readonly', true);
+          document.getElementById('person2LinkedinUrl').append('readonly');
           document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2381,7 +2043,7 @@
           document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TwitterUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2TwitterUrl').setAttribute('readonly', true);
+          document.getElementById('person2TwitterUrl').append('readonly');
           document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2416,7 +2078,7 @@
           document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
         ">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TiktokUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2TiktokUrl').setAttribute('readonly', true);
+          document.getElementById('person2TiktokUrl').append('readonly');
           document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
           document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
           document.getElementById('person2TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2442,6 +2104,7 @@
 			</div>
 		</div>
 	</div>
+
 </div>
 
 <!-- Content Tab -->
@@ -2495,6 +2158,7 @@
 <!-- New Content Tab -->
 <div id="newContent" class="w3-container w3-display-container city" style="display:none">
 	<h2>New Content</h2>
+	<h3 style="padding-bottom: 20px;">Generate multiple pieces of content for each keystroke!</h3>
 
 	<!-- Event Inputs -->
 	<div id="inputs" class="column">
@@ -2553,56 +2217,48 @@
 			<p>Are you ready for the <a class="link" href=""><text class="title"></text></a> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
 			<p>The <text class="organization"></text> is hosting the <a class="link" href=""><text class="title"></text></a>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
 		</div>
-
 		<!-- With Link -->
 		<div id="hasTitleDateTimeLocationOrganizationHostDescriptionLink" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text>, <text style="background-color: lightblue">{{Host}}</text>, <text style="background-color: #D5DCFF">{{Description}}</text> & <text style="background-color: #EFB261">{{Link}}</text></p><br>
 			<p>Are you ready for the <a class="link" href=""><text class="title"></text></a> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
 			<p>The <text class="organization"></text> is hosting the <a class="link" href=""><text class="title"></text></a>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
 		</div>
-
 		<!-- With Description -->
 		<div id="hasTitleDateTimeLocationOrganizationHostDescription" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text>, <text style="background-color: lightblue">{{Host}}</text> & <text style="background-color: #D5DCFF">{{Description}}</text></p><br>
 			<p>Are you ready for the <text class="title"></text> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
 			<p>The <text class="organization"></text> is hosting the <text class="title"></text>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
 		</div>
-
 		<!-- With Host -->
 		<div id="hasTitleDateTimeLocationOrganizationHost" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text> & <text style="background-color: lightblue">{{Host}}</text></p><br>
 			<p>The <text class="organization"></text> is hosting the <text class="title"></text> at <text class="time"></text> on <text class="date"></text>. Contact <text class="host"></text> for more information! See you at the <text class="location"></text>!</p><br>
 			<p>Are you a fan on the <text class="organization"></text>? See you at <text class="time"></text> on <text class="date"></text> at <text class="location"></text> for the <text class="title"></text>! Contact <text class="host"></text> for more information!</p>
 		</div>
-
 		<!-- With Organization -->
 		<div id="hasTitleDateTimeLocationOrganization" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text> & <text style="background-color: lightgreen">{{Organization}}</text></p><br>
 			<p>The <text class="organization"></text> is hosting the <text class="title"></text> at <text class="time"></text> on <text class="date"></text>. See you at the <text class="location"></text>!</p><br>
 			<p>Are you a fan on the <text class="organization"></text>? See you at <text class="time"></text> on <text class="date"></text> at <text class="location"></text> for the <text class="title"></text>!</p>
 		</div>
-
 		<!-- With Location -->
 		<div id="hasTitleDateTimeLocation" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text> & <text style="background-color: #DFDFDF">{{Location}}</text></p><br>
 			<p>See you at the <text class="title"></text> at <text class="location"></text>. Be there for <text class="time"></text> on <text class="date"></text>!</p><br>
 			<p>Are you busy at <text class="time"></text> on <text class="date"></text>? Show up to <text class="location"></text> for our event, <text class="title"></text>!</p>
 		</div>
-
 		<!-- With Time -->
 		<div id="hasTitleDateTime" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text> & <text style="background-color: #FFE88C">{{Time}}</text></p><br>
 			<p>See you at the <text class="title"></text>! Be there for <text class="time"></text> on <text class="date"></text>!</p><br>
 			<p>Are you busy at <text class="time"></text> on <text class="date"></text>? Show up for our event, <text class="title"></text>!</p>
 		</div>
-
 		<!-- With Date -->
 		<div id="hasTitleDate" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text> & <text style="background-color: lightpink">{{Date}}</text></p><br>
 			<p>See you at the <text class="title"></text>! Be there on <text class="date"></text>!</p><br>
 			<p>Are you busy on <text class="date"></text>? Show up for our event, <text class="title"></text>!</p>
 		</div>
-
 		<!-- With Title -->
 		<div id="hasTitle" style="display: none">
 			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text><br>
@@ -2618,6 +2274,7 @@
 	<!-- Event Final Content -->
 	<div id="final" class="column">
 
+		<!-- Final Image (Horizontal) -->
 		<div id="finalImageHorizontal" class="imageColors">
 			<text id="finalTitleHorizontal" class="title"></text><br>
 			<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text><br>
@@ -2626,9 +2283,18 @@
 			<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationHorizontal" class="organization"></text><br>
 			<text class="showOnHost">Hosted by: </text><text id="finalHostHorizontal" class="host"></text>
 			<div>
-				<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" />
+				<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
 			</div>
 		</div>
+		<div id="finalImageHorizontalPlatforms">
+			<p>1200h X 630w</p>
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/facebook.png" />
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/linkedin.png" />
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/twitter.png" />
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/medium.png" />
+		</div>
+
+		<!-- Final Image (Vertical) -->
 		<div id="finalImageVertical" class="imageColors">
 			<text id="finalTitleVertical" class="title"></text><br>
 			<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text><br>
@@ -2637,9 +2303,16 @@
 			<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationVertical" class="organization"></text><br>
 			<text class="showOnHost">Hosted by: </text><text id="finalHostVertical" class="host"></text>
 			<div>
-				<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" />
+				<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
 			</div>
 		</div>
+		<div id="finalImageVerticalPlatforms">
+			<p>1350h X 1080w</p>
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/instagram.png" />
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/tiktok.png" />
+		</div>
+
+		<!-- Final Image (Square) -->
 		<div id="finalImageSquare" class="imageColors">
 			<text id="finalTitleSquare" class="title"></text><br>
 			<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text><br>
@@ -2648,28 +2321,16 @@
 			<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationSquare" class="organization"></text><br>
 			<text class="showOnHost">Hosted by: </text><text id="finalHostSquare" class="host"></text>
 			<div>
-				<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" />
+				<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
 			</div>
-		</div>
-
-		<div id="finalImageHorizontalPlatforms">
-			<p>1200h X 630w</p>
-			<img class="socialMediaIcon" src="socialMediaIcons/facebook.png" />
-			<img class="socialMediaIcon" src="socialMediaIcons/linkedin.png" />
-			<img class="socialMediaIcon" src="socialMediaIcons/twitter.png" />
-			<img class="socialMediaIcon" src="socialMediaIcons/medium.png" />
-		</div>
-		<div id="finalImageVerticalPlatforms">
-			<p>1350h X 1080w</p>
-			<img class="socialMediaIcon" src="socialMediaIcons/instagram.png" />
-			<img class="socialMediaIcon" src="socialMediaIcons/tiktok.png" />
 		</div>
 		<div id="finalImageSquarePlatforms">
 			<p>1000h X 1000w</p>
-			<img class="socialMediaIcon" src="socialMediaIcons/pinterest.png" />
+			<img alt="" class="socialMediaIcon" src="socialMediaIcons/pinterest.png" />
 		</div>
 
 	</div>
+
 </div>
 
 <!-- Integrations Tab -->
@@ -2685,7 +2346,7 @@
 	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 </div>
 
-<!-- Dont need, but might produce bugs if removed? -->
+<!-- Do not need, but might produce bugs if removed? -->
 <div id="masterOutput" style="display: none;">
 	<text id="masterOutputEventTitle">event</text>
 	<text id="masterOutputEventDate">date</text>
@@ -2693,7 +2354,7 @@
 	<text id="masterOutputEventLocation">location</text>
 	<text id="masterOutputEventOrganization">organization</text>
 	<text id="masterOutputEventHost">host</text>
-	<text id="masterOutputEventescriptionLink">link</text>
+	<text id="masterOutputEventDescriptionLink">link</text>
 </div>
 
 </body>

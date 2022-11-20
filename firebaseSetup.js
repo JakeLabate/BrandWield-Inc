@@ -20,7 +20,7 @@ const db = getDatabase();
 
 // Get Brand Variables
 const dbRef = ref(getDatabase());
-const brand = 'Labate Group';
+const brand = 'BrandWield';
 get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.exists()) {
 		console.log('Brand Returned: ' + brand);
@@ -35,6 +35,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().squareLogo != null) {
 		// set local storage
 		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
+		document.getElementById('logoIcon').src = snapshot.val().squareLogo;
 		document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
 		document.getElementById('squareLogoBro').style.maxWidth = '32px';
 		document.getElementById('squareLogoBro').style.maxHeight = '32px';
@@ -51,7 +52,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Social Media
-
 	if (snapshot.val().facebookUrl != null) {
 		// set local storage
 		localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
@@ -62,7 +62,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningFacebookURL').style.display = 'block';
 		document.getElementById('facebookUrl').size = document.getElementById('facebookUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().facebookUsername != null) {
 		// set local storage
 		localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
@@ -73,7 +72,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningFacebookUsername').style.display = 'block';
 		document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').placeholder.length + 1;
 	}
-
 	if (snapshot.val().instagramUrl != null) {
 		// set local storage
 		localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
@@ -84,7 +82,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningInstagramURL').style.display = 'block';
 		document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().instagramUsername != null) {
 		// set local storage
 		localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
@@ -95,7 +92,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningInstagramUsername').style.display = 'block';
 		document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').placeholder.length + 1;
 	}
-
 	if (snapshot.val().linkedinUrl != null) {
 		// set local storage
 		localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
@@ -106,7 +102,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningLinkedinURL').style.display = 'block';
 		document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().linkedinUsername != null) {
 		// set local storage
 		localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
@@ -117,7 +112,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningLinkedinUsername').style.display = 'block';
 		document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').placeholder.length + 1;
 	}
-
 	if (snapshot.val().twitterUrl != null) {
 		// set local storage
 		localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
@@ -128,7 +122,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningTwitterURL').style.display = 'block';
 		document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().twitterUsername != null) {
 		// set local storage
 		localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
@@ -139,7 +132,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningTwitterUsername').style.display = 'block';
 		document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').placeholder.length + 1;
 	}
-
 	if (snapshot.val().tiktokUrl != null) {
 		// set local storage
 		localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
@@ -150,7 +142,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningTiktokURL').style.display = 'block';
 		document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').placeholder.length + 1;
 	}
-
 	if (snapshot.val().tiktokUsername != null) {
 		// set local storage
 		localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
@@ -163,10 +154,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Colors
-
 	if (snapshot.val().primaryColor != null) {
 		// set local storage
 		localStorage.setItem('primaryColor', snapshot.val().primaryColor);
+		document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
 		document.getElementById('primaryColor').value = snapshot.val().primaryColor;
 		document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
 		document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -180,10 +171,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('primaryColor').placeholder = '#1d1d6e';
 		document.getElementById('warningPrimaryColor').style.display = 'block';
 	}
-
 	if (snapshot.val().secondaryColor != null) {
 		// set local storage
 		localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
+		document.documentElement.style.setProperty('--secondaryColor', snapshot.val().secondaryColor);
 		document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
 		document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
 		document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -196,10 +187,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('secondaryColor').placeholder = '#136513';
 		document.getElementById('warningSecondaryColor').style.display = 'block';
 	}
-
 	if (snapshot.val().tertiaryColor != null) {
 		// set local storage
 		localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
+		document.documentElement.style.setProperty('--tertiaryColor', snapshot.val().tertiaryColor);
 		document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
 		document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
 		document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -214,10 +205,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Fonts
-
 	if (snapshot.val().primaryFont != null) {
 		// set local storage
 		localStorage.setItem('primaryFont', snapshot.val().primaryFont);
+		document.documentElement.style.setProperty('--primaryFont', snapshot.val().primaryFont);
 		document.getElementById('primaryFont').value = snapshot.val().primaryFont;
 		document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
 	} else {
@@ -225,10 +216,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPrimaryFont').style.display = 'block';
 		document.getElementById('primaryFont').size = document.getElementById('primaryFont').placeholder.length + 1;
 	}
-
 	if (snapshot.val().secondaryFont != null) {
 		// set local storage
 		localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
+		document.documentElement.style.setProperty('--secondaryFont', snapshot.val().secondaryFont);
 		document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
 		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
 	} else {
@@ -236,10 +227,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningSecondaryFont').style.display = 'block';
 		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').placeholder.length + 1;
 	}
-
 	if (snapshot.val().tertiaryFont != null) {
 		// set local storage
 		localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
+		document.documentElement.style.setProperty('--tertiaryFont', snapshot.val().tertiaryFont);
 		document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
 		document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
 	} else {
@@ -249,7 +240,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Contact Info
-
 	if (snapshot.val().primaryContactPhone != null) {
 		// set local storage
 		localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
@@ -261,7 +251,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPrimaryContactPhone').style.display = 'block';
 		document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').placeholder.length + 1;
 	}
-
 	if (snapshot.val().primaryContactEmail != null) {
 		// set local storage
 		localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
@@ -273,7 +262,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningPrimaryContactEmail').style.display = 'block';
 		document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').placeholder.length + 3;
 	}
-
 	if (snapshot.val().primaryContactWebsite != null) {
 		// set local storage
 		localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
@@ -287,7 +275,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Address
-
 	if (snapshot.val().officeAddressStreet1 != null) {
 		// set local storage
 		localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
@@ -298,7 +285,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOfficeAddressStreet1').style.display = 'block';
 		document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').placeholder.length + 1;
 	}
-
 	if (snapshot.val().officeAddressStreet2 != null) {
 		// set local storage
 		localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
@@ -309,7 +295,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOfficeAddressStreet2').style.display = 'block';
 		document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').placeholder.length + 1;
 	}
-
 	if (snapshot.val().officeAddressCity != null) {
 		// set local storage
 		localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
@@ -320,7 +305,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOfficeAddressCity').style.display = 'block';
 		document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').placeholder.length + 1;
 	}
-
 	if (snapshot.val().officeAddressState != null) {
 		// set local storage
 		localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
@@ -331,7 +315,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOfficeAddressState').style.display = 'block';
 		document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').placeholder.length + 1;
 	}
-
 	if (snapshot.val().officeAddressZip != null) {
 		// set local storage
 		localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
@@ -342,7 +325,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningOfficeAddressZip').style.display = 'block';
 		document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').placeholder.length + 1;
 	}
-
 	if (snapshot.val().officeAddressCountry != null) {
 		// set local storage
 		localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
@@ -355,7 +337,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Hours of Operation
-
 	if (snapshot.val().mondayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
@@ -364,7 +345,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('mondayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningMondayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().mondayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
@@ -373,7 +353,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('mondayClosingTime').placeholder = '5:00 PM';
 		document.getElementById('warningMondayClosingTime').style.display = 'block';
 	}
-
 	if (snapshot.val().tuesdayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('tuesdayOpeningTime', snapshot.val().tuesdayOpeningTime);
@@ -382,7 +361,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('tuesdayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningTuesdayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().tuesdayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('tuesdayClosingTime', snapshot.val().tuesdayClosingTime);
@@ -391,7 +369,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('tuesdayClosingTime').placeholder = '5:00 PM';
 		document.getElementById('warningTuesdayClosingTime').style.display = 'block';
 	}
-
 	if (snapshot.val().wednesdayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('wednesdayOpeningTime', snapshot.val().wednesdayOpeningTime);
@@ -400,7 +377,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('wednesdayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningWednesdayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().wednesdayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('wednesdayClosingTime', snapshot.val().wednesdayClosingTime);
@@ -409,7 +385,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('wednesdayClosingTime').placeholder = '5:00 PM';
 		document.getElementById('warningWednesdayClosingTime').style.display = 'block';
 	}
-
 	if (snapshot.val().thursdayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('thursdayOpeningTime', snapshot.val().thursdayOpeningTime);
@@ -418,7 +393,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('thursdayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningThursdayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().thursdayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('thursdayClosingTime', snapshot.val().thursdayClosingTime);
@@ -427,7 +401,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('thursdayClosingTime').placeholder = '5:00 PM';
 		document.getElementById('warningThursdayClosingTime').style.display = 'block';
 	}
-
 	if (snapshot.val().fridayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('fridayOpeningTime', snapshot.val().fridayOpeningTime);
@@ -436,7 +409,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('fridayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningFridayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().fridayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('fridayClosingTime', snapshot.val().fridayClosingTime);
@@ -445,7 +417,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('fridayClosingTime').placeholder = '5:00 PM';
 		document.getElementById('warningFridayClosingTime').style.display = 'block';
 	}
-
 	if (snapshot.val().saturdayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('saturdayOpeningTime', snapshot.val().saturdayOpeningTime);
@@ -454,7 +425,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('saturdayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningSaturdayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().saturdayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('saturdayClosingTime', snapshot.val().saturdayClosingTime);
@@ -463,7 +433,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('saturdayClosingTime').placeholder = '5:00 PM';
 		document.getElementById('warningSaturdayClosingTime').style.display = 'block';
 	}
-
 	if (snapshot.val().sundayOpeningTime != null) {
 		// set local storage
 		localStorage.setItem('sundayOpeningTime', snapshot.val().sundayOpeningTime);
@@ -472,7 +441,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('sundayOpeningTime').placeholder = '9:00 AM';
 		document.getElementById('warningSundayOpeningTime').style.display = 'block';
 	}
-
 	if (snapshot.val().sundayClosingTime != null) {
 		// set local storage
 		localStorage.setItem('sundayClosingTime', snapshot.val().sundayClosingTime);
@@ -483,7 +451,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Founding Info
-
 	if (snapshot.val().founderName != null) {
 		// set local storage
 		localStorage.setItem('founderName', snapshot.val().founderName);
@@ -495,7 +462,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningFounderName').style.display = 'block';
 		document.getElementById('founderName').size = document.getElementById('founderName').placeholder.length + 1;
 	}
-
 	if (snapshot.val().foundingDate != null) {
 		// set local storage
 		localStorage.setItem('foundingDate', snapshot.val().foundingDate);
@@ -505,7 +471,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('foundingDate').placeholder = '2017';
 		document.getElementById('warningFoundingDate').style.display = 'block';
 	}
-
 	if (snapshot.val().tradeBusinessName != null) {
 		// set local storage
 		localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
@@ -518,7 +483,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningTradeBusinessName').style.display = 'block';
 		document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').placeholder.length + 1;
 	}
-
 	if (snapshot.val().legalBusinessName != null) {
 		// set local storage
 		localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
@@ -533,7 +497,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	// Basic Info
-
 	if (snapshot.val().businessType != null) {
 		// set local storage
 		localStorage.setItem('businessType', snapshot.val().businessType);
@@ -545,7 +508,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('businessType').placeholder = 'Restaurant';
 		document.getElementById('warningBusinessType').style.display = 'block';
 	}
-
 	if (snapshot.val().slogan != null) {
 		// set local storage
 		localStorage.setItem('slogan', snapshot.val().slogan);
@@ -557,7 +519,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningSlogan').style.display = 'block';
 		document.getElementById('slogan').size = document.getElementById('slogan').placeholder.length + 1;
 	}
-
 	if (snapshot.val().missionStatement != null) {
 		// set local storage
 		localStorage.setItem('missionStatement', snapshot.val().missionStatement);
@@ -569,7 +530,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		document.getElementById('warningMissionStatement').style.display = 'block';
 		document.getElementById('missionStatement').size = document.getElementById('missionStatement').placeholder.length + 1;
 	}
-
 	if (snapshot.val().valueProp != null) {
 		// set local storage
 		localStorage.setItem('valueProp', snapshot.val().valueProp);
@@ -884,7 +844,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	//       document.getElementById('offer2Image').value = snapshot.val().offer2Image;
 	//   } else {
 	//       document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
-//        document.getElementById('warningOffer2Image').style.display = 'block';
+    //        document.getElementById('warningOffer2Image').style.display = 'block';
 	//  }
 
 });

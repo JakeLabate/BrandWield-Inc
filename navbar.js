@@ -1,16 +1,16 @@
 // DRAGGABLE Brand Variables
-
+// icon interaction
 function onmouseoverBrandWieldIcon () {
-	document.getElementById('logoIcon').style.scale = 1.2;
+	document.getElementById('logoIcon').style.scale = '1.2';
 	document.getElementById('brandDropdown').style.display = 'block';
 }
 function onclickBrandWieldIcon() {
 	// if open & clicked, close
-	if (document.getElementById('brandDropdown').style.display = 'block')
+	if (document.getElementById('brandDropdown').style.display === 'block')
 	{ document.getElementById('brandDropdown').style.display = 'none'; }
 }
 
-// onmouseover title
+// onmouseover section title
 function onmouseoverDraggableContactInfoSection () {
 
 	// close other sections
@@ -21,15 +21,15 @@ function onmouseoverDraggableContactInfoSection () {
 	document.getElementById('draggableContactInfoSection').style.display = 'block'
 
 	// style header of this section
-	document.getElementById('draggableContactInfoSectionHeader').style.color = '#7800a8';
+	document.getElementById('draggableContactInfoSectionHeader').style.color = 'var(--primaryColor)';
+	document.getElementById('draggableContactInfoSectionHeader').style.fontWeight = 'bold';
 
 	// rest color of other headers
 	document.getElementById('draggableFounderInfoSectionHeader').style.color = 'black';
 	document.getElementById('draggableBusinessInfoSectionHeader').style.color = 'black';
-
-
 }
 function onmouseoverDraggableFoundingInfoSection () {
+
 	// close other sections
 	onmouseleaveDraggableContactInfoSection();
 	onmouseleaveDraggableBusinessInfoSection();
@@ -38,7 +38,8 @@ function onmouseoverDraggableFoundingInfoSection () {
 	document.getElementById('draggableFoundingInfoSection').style.display = 'block'
 
 	// style header of this section
-	document.getElementById('draggableFoundingInfoSectionHeader').style.color = '#7800a8';
+	document.getElementById('draggableFoundingInfoSectionHeader').style.color = 'var(--primaryColor)';
+	document.getElementById('draggableFoundingInfoSectionHeader').style.fontWeight = 'bold';
 
 	// rest color of other headers
 	document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';
@@ -54,14 +55,15 @@ function onmouseoverDraggableBusinessInfoSection () {
 	document.getElementById('draggableBusinessInfoSection').style.display = 'block'
 
 	// style header of this section
-	document.getElementById('draggableBusinessInfoSectionHeader').style.color = '#7800a8';
+	document.getElementById('draggableBusinessInfoSectionHeader').style.color = 'var(--primaryColor)';
+	document.getElementById('draggableBusinessInfoSectionHeader').style.fontWeight = 'bold';
 
 	// rest color of other headers
 	document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';
 	document.getElementById('draggableFoundingInfoSectionHeader').style.color = 'black';
 }
 
-// onmouseleave box
+// onmouseleave section box
 function onmouseleaveDraggableContactInfoSection () {
 	document.getElementById('draggableContactInfoSection').style.display = 'none'
 	document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';

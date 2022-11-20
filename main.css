@@ -1,3 +1,16 @@
+:root {
+
+    /* COLORS */
+    --primaryColor: #737373;
+    --secondaryColor: #737373;
+    --tertiaryColor: #737373;
+
+    /* FONTS */
+    --primaryFont: 'Montserrat', sans-serif;
+    --secondaryFont: 'Roboto', sans-serif;
+    --tertiaryFont: Comic Sans MS, Comic Sans, cursive;
+}
+
 /* Everything */
 * {
     box-sizing: border-box;
@@ -384,7 +397,8 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
 
 #brandDropdown {
     display: none;
-    padding: 5px 0 0 15px;
+    padding: 35px 25px 25px 25px;
+    background-color: #f1f1f1;
 }
 
 .draggableBrandVar {
@@ -395,10 +409,11 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
 }
 .draggableBrandVar:hover {
     cursor: pointer;
-    background-color: cornflowerblue;
+    background-color: var(--primaryColor);
     color: white;
     font-weight: bolder;
 }
+
 
 b[display="block"] {
     display: block;
@@ -411,7 +426,7 @@ pre code {
     border-radius: 5px;
     color: #e8e8e8;
     display: block;
-    padding: 15px;
+    padding: 5px;
 }
 
 

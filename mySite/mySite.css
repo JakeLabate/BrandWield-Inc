@@ -296,7 +296,7 @@ footer > div > p > a:hover {
 	padding: 2px 5px 2px 5px;
 }
 
-/* About Section */
+/* Used in 'About' & 'Testimonials' Sections */
 .personCards {
 	display: flex;
 	flex-wrap: wrap;
