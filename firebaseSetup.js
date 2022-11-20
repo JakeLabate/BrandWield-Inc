@@ -159,6 +159,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('primaryColor', snapshot.val().primaryColor);
 		document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
 		document.getElementById('primaryColor').value = snapshot.val().primaryColor;
+		document.getElementById('inputEventPrimaryColor').value = '#ffffff';
 		document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
 		document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
 		document.getElementById('primaryColorValueDisplayColor').style.backgroundColor = document.getElementById('primaryColor').value;

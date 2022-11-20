@@ -30,11 +30,9 @@
 	<!-- Brand Icon Dropdown -->
 	<div id="brandDropdown" class="dropzone" onmouseleave="this.style.display = 'none';"><br>
 		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableContactInfoSection();">
-			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span>
-
 			<!-- Edit Button showing the potential feature of editing brand info in the 'brandbar' -->
-			<span class="material-symbols-outlined edit" onclick="document.getElementById('draggablePrimaryContactPhone').style.backgroundColor = '#fff'">edit</span><br><br>
-
+			<span class="material-symbols-outlined edit" onclick="document.getElementById('draggablePrimaryContactPhone').style.backgroundColor = '#fff'">edit</span>
+			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggablePrimaryContactEmail" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar" draggable="true"></span><br><br>
 		</b>
@@ -1600,7 +1598,7 @@
 	<h3 style="padding-bottom: 20px;">Generate multiple pieces of content for each keystroke!</h3>
 
 	<!-- Event Inputs -->
-	<div id="inputs" class="column">
+	<div id="inputs" class="column3">
 		<div>
 			<label for="inputEventTitle">Event Title</label>
 			<input id="inputEventTitle" type="text" onkeyup="eventTitleUpdate();">
@@ -1616,7 +1614,7 @@
 		<div>
 			<label for="inputEventLocation">Location</label>
 			<input id="inputEventLocation" type="text" onkeyup="eventLocationUpdate();">
-			<img id="linkLocation" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
+			<img id="linkLocation" title="Load Address" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
 		</div>
 		<div>
 			<label for="inputEventOrganization">Organization</label>
@@ -1625,7 +1623,7 @@
 		<div>
 			<label for="inputEventHost">Host</label>
 			<input id="inputEventHost" type="text" onkeyup="eventHostUpdate();">
-			<img id="linkHost" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
+			<img id="linkHost" title="Load Founder Name" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
 		</div>
 		<div>
 			<label for="inputEventDescription">Description</label>
@@ -1634,12 +1632,12 @@
 		<div>
 			<label for="inputEventLink">Link</label>
 			<input id="inputEventLink" type="url" onkeyup="eventLinkUpdate();">
-			<img id="linkLink" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
+			<img id="linkLink" title="Load Website URL" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
 		</div>
 		<div>
 			<label for="inputEventPrimaryColor">Primary Color</label>
 			<input id="inputEventPrimaryColor" type="color" oninput="eventPrimarycolorUpdate();">
-			<img id="linkPrimarycolor" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
+			<img id="linkPrimarycolor" title="Load Primary Color" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
 		</div>
 		<div>
 			<label for="inputEventLogo">Logo</label>
@@ -1648,70 +1646,71 @@
 	</div>
 
 	<!-- Event Outputs -->
-	<div id="outputs" class="column">
+	<div id="outputs" class="column3">
 
 		<!-- With Primary Color -->
-		<div id="hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text>, <text style="background-color: lightblue">{{Host}}</text>, <text style="background-color: #D5DCFF">{{Description}}</text>,  <text style="background-color: #EFB261">{{Link}}</text> & <text class="primarycolor" style="background-color: #998bff">{{PrimaryColor}}</text></p><br>
-			<p>Are you ready for the <a class="link" href=""><text class="title"></text></a> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
-			<p>The <text class="organization"></text> is hosting the <a class="link" href=""><text class="title"></text></a>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
+		<div id="hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text>, <text class="chip" style="background-color: #FFE88C">{{Time}}</text>, <text class="chip" style="background-color: #DFDFDF">{{Location}}</text>, <text class="chip" style="background-color: lightgreen">{{Organization}}</text>, <text class="chip" style="background-color: lightblue">{{Host}}</text>, <text class="chip" style="background-color: #D5DCFF">{{Description}}</text>,  <text class="chip" style="background-color: #EFB261">{{Link}}</text> & <text class="chip" class="primarycolor" style="background-color: #998bff">{{PrimaryColor}}</text></p><br>
+			<p>Are you ready for the <a class="link" href="" target="_blank"><text class="title chip"></text></a> event on <text class="date chip"></text> at <text class="time chip"></text>? It will be held at <text class="location chip"></text> and hosted by <text class="host chip"></text> from the <text class="organization chip"></text>. The event is being put on by <text class="organization chip"></text>. <text class="description chip"></text>.</p><br>
+			<p>The <text class="organization chip"></text> is hosting the <a class="link" href="" target="_blank"><text class="title chip"></text></a>, and the event is almost here! Mark you calendars for <text class="time chip"></text> on <text class="date chip"></text> at the one and only <text class="location chip"></text>. If you are a member, or an interested member of the <text class="organization chip"></text>, be sure to contact <text class="host chip"></text> for more info. <text class="description chip"></text></p>
 		</div>
 		<!-- With Link -->
-		<div id="hasTitleDateTimeLocationOrganizationHostDescriptionLink" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text>, <text style="background-color: lightblue">{{Host}}</text>, <text style="background-color: #D5DCFF">{{Description}}</text> & <text style="background-color: #EFB261">{{Link}}</text></p><br>
-			<p>Are you ready for the <a class="link" href=""><text class="title"></text></a> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
-			<p>The <text class="organization"></text> is hosting the <a class="link" href=""><text class="title"></text></a>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
+		<div id="hasTitleDateTimeLocationOrganizationHostDescriptionLink" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text>, <text class="chip" style="background-color: #FFE88C">{{Time}}</text>, <text class="chip" style="background-color: #DFDFDF">{{Location}}</text>, <text class="chip" style="background-color: lightgreen">{{Organization}}</text>, <text class="chip" style="background-color: lightblue">{{Host}}</text>, <text class="chip" style="background-color: #D5DCFF">{{Description}}</text> & <text class="chip" style="background-color: #EFB261">{{Link}}</text></p><br>
+			<p>Are you ready for the <a class="link" target="_blank" href=""><text class="title"></text></a> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
+			<p>The <text class="organization"></text> is hosting the <a class="link" target="_blank" href=""><text class="title"></text></a>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
 		</div>
 		<!-- With Description -->
-		<div id="hasTitleDateTimeLocationOrganizationHostDescription" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text>, <text style="background-color: lightblue">{{Host}}</text> & <text style="background-color: #D5DCFF">{{Description}}</text></p><br>
-			<p>Are you ready for the <text class="title"></text> event on <text class="date"></text> at <text class="time"></text>? It will be held at <text class="location"></text> and hosted by <text class="host"></text> from the <text class="organization"></text>. The event is being put on by <text class="organization"></text>. <text class="description"></text>.</p><br>
-			<p>The <text class="organization"></text> is hosting the <text class="title"></text>, and the event is almost here! Mark you calendars for <text class="time"></text> on <text class="date"></text> at the one and only <text class="location"></text>. If you are a member, or an interested member of the <text class="organization"></text>, be sure to contact <text class="host"></text> for more info. <text class="description"></text></p>
+		<div id="hasTitleDateTimeLocationOrganizationHostDescription" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text>, <text class="chip" style="background-color: #FFE88C">{{Time}}</text>, <text class="chip" style="background-color: #DFDFDF">{{Location}}</text>, <text class="chip" style="background-color: lightgreen">{{Organization}}</text>, <text class="chip" style="background-color: lightblue">{{Host}}</text> & <text class="chip" style="background-color: #D5DCFF">{{Description}}</text></p><br>
+			<p>Are you ready for the <text class="title chip"></text> event on <text class="date chip"></text> at <text class="time chip"></text>? It will be held at <text class="location chip"></text> and hosted by <text class="host chip"></text> from the <text class="organization chip"></text>. The event is being put on by <text class="organization chip"></text>. <text class="description chip"></text>.</p><br>
+			<p>The <text class="organization chip"></text> is hosting the <text class="title chip"></text>, and the event is almost here! Mark you calendars for <text class="time chip"></text> on <text class="date chip"></text> at the one and only <text class="location chip"></text>. If you are a member, or an interested member of the <text class="organization chip"></text>, be sure to contact <text class="host chip"></text> for more info. <text class="description chip"></text></p>
 		</div>
 		<!-- With Host -->
-		<div id="hasTitleDateTimeLocationOrganizationHost" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text>, <text style="background-color: lightgreen">{{Organization}}</text> & <text style="background-color: lightblue">{{Host}}</text></p><br>
-			<p>The <text class="organization"></text> is hosting the <text class="title"></text> at <text class="time"></text> on <text class="date"></text>. Contact <text class="host"></text> for more information! See you at the <text class="location"></text>!</p><br>
-			<p>Are you a fan on the <text class="organization"></text>? See you at <text class="time"></text> on <text class="date"></text> at <text class="location"></text> for the <text class="title"></text>! Contact <text class="host"></text> for more information!</p>
+		<div id="hasTitleDateTimeLocationOrganizationHost" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text>, <text class="chip" style="background-color: #FFE88C">{{Time}}</text>, <text class="chip" style="background-color: #DFDFDF">{{Location}}</text>, <text class="chip" style="background-color: lightgreen">{{Organization}}</text> & <text class="chip" style="background-color: lightblue">{{Host}}</text></p><br>
+			<p>The <text class="organization chip"></text> is hosting the <text class="title chip"></text> at <text class="time chip"></text> on <text class="date chip"></text>. Contact <text class="host chip"></text> for more information! See you at the <text class="location chip"></text>!</p><br>
+			<p>Are you a fan on the <text class="organization chip"></text>? See you at <text class="time chip"></text> on <text class="date chip"></text> at <text class="location chip"></text> for the <text class="title chip"></text>! Contact <text class="host chip"></text> for more information!</p>
 		</div>
 		<!-- With Organization -->
-		<div id="hasTitleDateTimeLocationOrganization" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text>, <text style="background-color: #DFDFDF">{{Location}}</text> & <text style="background-color: lightgreen">{{Organization}}</text></p><br>
-			<p>The <text class="organization"></text> is hosting the <text class="title"></text> at <text class="time"></text> on <text class="date"></text>. See you at the <text class="location"></text>!</p><br>
-			<p>Are you a fan on the <text class="organization"></text>? See you at <text class="time"></text> on <text class="date"></text> at <text class="location"></text> for the <text class="title"></text>!</p>
+		<div id="hasTitleDateTimeLocationOrganization" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text>, <text class="chip" style="background-color: #FFE88C">{{Time}}</text>, <text class="chip" style="background-color: #DFDFDF">{{Location}}</text> & <text class="chip" style="background-color: lightgreen">{{Organization}}</text></p><br>
+			<p>The <text class="organization chip"></text> is hosting the <text class="title chip"></text> at <text class="time chip"></text> on <text class="date chip"></text>. See you at the <text class="location chip"></text>!</p><br>
+			<p>Are you a fan on the <text class="organization chip"></text>? See you at <text class="time chip"></text> on <text class="date chip"></text> at <text class="location chip"></text> for the <text class="title chip"></text>!</p>
 		</div>
 		<!-- With Location -->
-		<div id="hasTitleDateTimeLocation" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text>, <text style="background-color: #FFE88C">{{Time}}</text> & <text style="background-color: #DFDFDF">{{Location}}</text></p><br>
-			<p>See you at the <text class="title"></text> at <text class="location"></text>. Be there for <text class="time"></text> on <text class="date"></text>!</p><br>
-			<p>Are you busy at <text class="time"></text> on <text class="date"></text>? Show up to <text class="location"></text> for our event, <text class="title"></text>!</p>
+		<div id="hasTitleDateTimeLocation" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text>, <text class="chip" style="background-color: #FFE88C">{{Time}}</text> & <text class="chip" style="background-color: #DFDFDF">{{Location}}</text></p><br>
+			<p>See you at the <text class="title chip"></text> at <text class="location chip"></text>. Be there for <text class="time chip"></text> on <text class="date chip"></text>!</p><br>
+			<p>Are you busy at <text class="time chip"></text> on <text class="date chip"></text>? Show up to <text class="location chip"></text> for our event, <text class="title chip"></text>!</p>
 		</div>
 		<!-- With Time -->
-		<div id="hasTitleDateTime" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text>, <text style="background-color: lightpink">{{Date}}</text> & <text style="background-color: #FFE88C">{{Time}}</text></p><br>
-			<p>See you at the <text class="title"></text>! Be there for <text class="time"></text> on <text class="date"></text>!</p><br>
-			<p>Are you busy at <text class="time"></text> on <text class="date"></text>? Show up for our event, <text class="title"></text>!</p>
+		<div id="hasTitleDateTime" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text>, <text class="chip" style="background-color: lightpink">{{Date}}</text> & <text class="chip" style="background-color: #FFE88C">{{Time}}</text></p><br>
+			<p>See you at the <text class="title chip"></text>! Be there for <text class="time chip"></text> on <text class="date chip"></text>!</p><br>
+			<p>Are you busy at <text class="time chip"></text> on <text class="date chip"></text>? Show up for our event, <text class="title chip"></text>!</p>
 		</div>
 		<!-- With Date -->
-		<div id="hasTitleDate" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text> & <text style="background-color: lightpink">{{Date}}</text></p><br>
-			<p>See you at the <text class="title"></text>! Be there on <text class="date"></text>!</p><br>
-			<p>Are you busy on <text class="date"></text>? Show up for our event, <text class="title"></text>!</p>
+		<div id="hasTitleDate" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text> & <text class="chip" style="background-color: lightpink">{{Date}}</text></p><br>
+			<p>See you at the <text class="title chip"></text>! Be there on <text class="date chip"></text>!</p><br>
+			<p>Are you busy on <text class="date chip"></text>? Show up for our event, <text class="title chip"></text>!</p>
 		</div>
 		<!-- With Title -->
-		<div id="hasTitle" style="display: none">
-			<p>Requirements Met: <text style="background-color: #CF88FF">{{Title}}</text><br>
-			<p>We are hosting an event! See you at the <text class="title"></text>!</p><br>
+		<div id="hasTitle" style="display: none; line-height: 2em;">
+			<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text><br>
+			<p>We are hosting an event! See you at the <text class="title chip"></text>!</p><br>
 		</div>
 
-		<!-- Hashtags Container -->
-		<div style="padding: 10px 10px 10px 10px">Hashtags:</div>
-		<div id="hashtagsHere" style="padding: 10px 10px 10px 10px"></div>
+		<!-- Hashtags Container
+		<div style="padding: 10px 10px 10px 10px; line-height: 2em;">Hashtags:</div>
+		<div id="hashtagsHere" style="padding: 10px 10px 10px 10px; line-height: 2em;"></div>
+		-->
 
 	</div>
 
 	<!-- Event Final Content -->
-	<div id="final" class="column">
+	<div id="final" class="column3">
 
 		<!-- Final Image (Horizontal) -->
 		<div id="finalImageHorizontal" class="imageColors">

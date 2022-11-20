@@ -422,8 +422,9 @@ b[display="block"] {
 span.edit {
     background-color: #e7e7e7;
     border: 1px solid #c9c9c9;
-    padding: 2px 2px 2px 2px;
-    margin-left: 3px;
+    padding: 5px 5px 5px 5px;
+    margin-left: 2px;
+    font-size: 16px;
 }
 span.edit:hover {
     cursor: pointer;
@@ -431,6 +432,30 @@ span.edit:hover {
     color: white;
     font-weight: bolder;
 }
+
+.chip {
+    padding: 2px 9px 2px 9px;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px #818181;
+    margin: 0 4px 0 4px;
+}
+
+a.link {
+    color: #ffffff;
+}
+
+a.link.chip {
+    color: white;
+    background-image: url("otherIcons/link.svg");
+}
+ a.link.chip > img {
+     position: absolute;
+     bottom: 7px;
+     left: 0;
+     background-image: url('/otherIcons/link.svg');
+     z-index: 999999999;
+ }
 
 pre code {
     background-color: #424242;
