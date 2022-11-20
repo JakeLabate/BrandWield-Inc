@@ -12,6 +12,7 @@ function eventTitleUpdate () {
 		for (let i = 0; i < titleElements.length; i++) {
 			titleElements[i].style.backgroundColor = "#CF88FF";
 			titleElements[i].classList.add("chip");
+			titleElements[i].title = "Title of the event";
 		}
 		// if the titleElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < titleElements.length; i++) {
@@ -46,6 +47,8 @@ function eventDateUpdate () {
 		// for all elements with the class name 'date', everytime the value changes, change the background color to lightpink for 1 second
 		for (let i = 0; i < dateElements.length; i++) {
 			dateElements[i].style.backgroundColor = "lightpink";
+			dateElements[i].title = "Date of the event";
+
 		}
 		// For all elements with the class of 'showOnDate', set the display to inline
 		let showOnDateElements = document.getElementsByClassName("showOnDate");
@@ -83,6 +86,8 @@ function eventTimeUpdate () {
 		// for all elements with the class name 'time', everytime the value changes, change the background color to #FFE88C for 1 second
 		for (let i = 0; i < timeElements.length; i++) {
 			timeElements[i].style.backgroundColor = "#FFE88C";
+			timeElements[i].title = "Time of the event";
+
 		}
 		// For all elements with the class of 'showOnTime', set the display to inline
 		let showOnTimeElements = document.getElementsByClassName("showOnTime");
@@ -120,6 +125,8 @@ function eventLocationUpdate () {
 		// for all elements with the class name 'location', everything the value changes, change the background color to #DFDFDF for 1 second
 		for (let i = 0; i < locationElements.length; i++) {
 			locationElements[i].style.backgroundColor = "#DFDFDF";
+			locationElements[i].title = "Location of the event";
+
 		}
 		// if the locationElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < locationElements.length; i++) {
@@ -158,6 +165,8 @@ function eventOrganizationUpdate () {
 		// for all elements with the class name 'organization', everything the value changes, change the background color to lightgreen for 1 second
 		for (let i = 0; i < organizationElements.length; i++) {
 			organizationElements[i].style.backgroundColor = "lightgreen";
+			organizationElements[i].title = "Event organization";
+
 		}
 		// if the organizationElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < organizationElements.length; i++) {
@@ -196,6 +205,7 @@ function eventHostUpdate () {
 		// for all elements with the class name 'host', everything the value changes, change the background color to lightblue for 1 second
 		for (let i = 0; i < hostElements.length; i++) {
 			hostElements[i].style.backgroundColor = "lightblue";
+			hostElements[i].title = "Event host";
 		}
 		document.getElementById("hasTitleDateTimeLocationOrganizationHost").style.display = "inline";
 		// if the hostElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
@@ -231,6 +241,7 @@ function eventDescriptionUpdate () {
 		// for all elements with the class name 'host', everything the value changes, change the background color to #D5DCFF for 1 second
 		for (let i = 0; i < descriptionElements.length; i++) {
 			descriptionElements[i].style.backgroundColor = "#D5DCFF";
+			descriptionElements[i].title = "Event description";
 		}
 		// if the dateElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < descriptionElements.length; i++) {
@@ -263,7 +274,6 @@ function eventLinkUpdate () {
 		let linkElements = document.getElementsByClassName("link");
 		for (let i = 0; i < linkElements.length; i++) {
 			linkElements[i].href = outputEventLink.value;
-			linkElements[i].title = inputEventTitle.value;
 		}
 		for (let i = 0; i < titleElements.length; i++) {
 			titleElements[i].color = '#ffffff'
@@ -343,6 +353,7 @@ function eventLogoUpdate () {
 		let showOnLogoElements = document.getElementsByClassName("showOnLogo");
 		for (let i = 0; i < showOnLogoElements.length; i++) {
 			showOnLogoElements[i].style.display = "inline";
+			logoElements[i].title = "Your logo";
 		}
 
 		const file = document.querySelector('#inputEventLogo').files[0];
@@ -584,6 +595,35 @@ function hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo
 	}
 }
 
+// Copy to clipboard
+// hasTitle
+function copyToClipboardHasTitle1() {
+	let copyText = document.getElementById("copyToClipboardHasTitle1").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTitle2() {
+	let copyText = document.getElementById("copyToClipboardHasTitle2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+// hasTitleDate
+function copyToClipboardHasTitleDate1() {
+	let copyText = document.getElementById("copyToClipboardHasTitleDate1").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTitleDate2() {
+	let copyText = document.getElementById("copyToClipboardHasTitleDate2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+
+
 // Add links as input fields from brand data
 // Location
 function onmouseoverLinkLocation () {
@@ -705,3 +745,5 @@ function onclickLinkLogo () {
 	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolor();
 	hasTitleDateTimeLocationOrganizationHostDescriptionLinkPrimarycolorLogo();
 }
+
+

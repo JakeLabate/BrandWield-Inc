@@ -131,7 +131,7 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
 .column3 {
     float: left;
     width: 33.33%;
-    padding: 10px;
+    padding: 20px 20px 20px 20px;
 }
 .column4 {
     float: left;
@@ -434,27 +434,38 @@ span.edit:hover {
 }
 
 .chip {
-    padding: 2px 9px 2px 9px;
+    padding: 2px 8px 2px 8px;
     border-radius: 12px;
     font-weight: bold;
     box-shadow: 1px 1px 5px #818181;
     margin: 0 4px 0 4px;
+    cursor: pointer;
+    user-select: none;
 }
 
 a.link {
     color: #ffffff;
 }
 
-a.link.chip {
-    color: white;
-    background-image: url("otherIcons/link.svg");
-}
- a.link.chip > img {
-     position: absolute;
-     bottom: 7px;
-     left: 0;
-     background-image: url('/otherIcons/link.svg');
-     z-index: 999999999;
+ .copyTextButton {
+     box-shadow: 5px 5px #3f3f3f;
+     -webkit-box-shadow: 0 0 15px -9px rgba(70, 70, 70, 0.9);
+     -moz-box-shadow: 0 0 15px -9px rgba(93, 93, 93, 0.9);
+     background-color: #ffffff;
+     color: #212121;
+     padding: 5px 10px 5px 10px;
+     margin: 8px 8px 8px 8px;
+     border: 1px solid #c9c9c9;
+     transition: .1s ease-in-out;
+
+ }
+
+ .copyTextButton:hover {
+     cursor: pointer;
+     background-color: var(--primaryColor);
+     color: #ffffff;
+     font-weight: bolder;
+     transition: .1s ease-in-out;
  }
 
 pre code {
