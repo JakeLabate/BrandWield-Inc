@@ -1130,9 +1130,37 @@ function clearTiktokUsername () {
 		confirm.close();
 	}
 }
-
 // BRAND
 // squareLogo
+function unlockSquareLogo () {
+	document.getElementById('squareLogo').setAttribute('style', 'display: block;');
+	document.getElementById('squareLogo').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('squareLogoUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('squareLogoLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('squareLogoValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockSquareLogo () {
+	document.getElementById('squareLogo').setAttribute('style', 'display: none;');
+	document.getElementById('squareLogoLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('squareLogoUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('squareLogoValueDisplay').innerHTML = 'Current Square Logo: ' + document.getElementById('squareLogo').value;
+	document.getElementById('squareLogoValueDisplay').setAttribute('style', 'display: block;');
+	if (document.getElementById('squareLogo').value != null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('squareLogo').value == null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;'); }
+}
+function clearSquareLogo () {
+	var confirm = alert('Are you sure you want to clear the square logo?');
+	if (confirm) {
+		document.getElementById('squareLogo').value = '';
+		document.getElementById('squareLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('squareLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
 function showSquareImage() {
 	document.getElementById("uploadedSquareImage").style.display = "block";
 	const file = document.querySelector('#squareLogo').files[0];
@@ -1146,6 +1174,35 @@ function showSquareImage() {
 		document.getElementById("uploadedSquareImage").setAttribute("src", localStorage.getItem("image"));
 }
 // fullLogo
+function unlockFullLogo () {
+	document.getElementById('fullLogo').setAttribute('style', 'display: block;');
+	document.getElementById('fullLogo').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('fullLogoUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('fullLogoLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('fullLogoValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockFullLogo () {
+	document.getElementById('fullLogo').setAttribute('style', 'display: none;');
+	document.getElementById('fullLogoLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('fullLogoUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('fullLogoValueDisplay').innerHTML = 'Current Full Logo: ' + document.getElementById('fullLogo').value;
+	document.getElementById('fullLogoValueDisplay').setAttribute('style', 'display: block;');
+	if (document.getElementById('fullLogo').value != null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('fullLogo').value == null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: block;'); }
+}
+function clearFullLogo () {
+	var confirm = alert('Are you sure you want to clear the full logo?');
+	if (confirm) {
+		document.getElementById('fullLogo').value = '';
+		document.getElementById('fullLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('fullLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningFullLogo').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
 function showFullImage() {
 	document.getElementById("uploadedFullImage").style.display = "block";
 	const file = document.querySelector('#fullLogo').files[0];
@@ -1158,6 +1215,604 @@ function showFullImage() {
 	if(localStorage.getItem("image"))
 		document.getElementById("uploadedFullImage").setAttribute("src", localStorage.getItem("image"));
 }
+// COLORS
+// primaryColor
+function unlockPrimaryColor () {
+	document.getElementById('primaryColor').setAttribute('style', 'display: block;');
+	document.getElementById('primaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('primaryColorUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('primaryColorLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockPrimaryColor () {
+	document.getElementById('primaryColor').setAttribute('style', 'display: none;');
+	document.getElementById('primaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('primaryColorUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
+	document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
+	document.getElementById('primaryColorValueDisplayColor').style.backgroundColor = document.getElementById('primaryColor').value;
+	document.getElementById('primaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
+	document.getElementById('primaryColorValueDisplayColor').style.borderRadius = '25px';
+	document.getElementById('primaryColorValueDisplayColor').style.borderWidth = '3px';
+	document.getElementById('primaryColorValueDisplayColor').style.borderStyle = 'solid'
+	if (document.getElementById('primaryColor').value.length > 0) { document.getElementById('warningPrimaryColor').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('primaryColor').value.length < 1) { document.getElementById('warningPrimaryColor').setAttribute('style', 'display: block;'); }
+}
+function clearPrimaryColor () {
+	var confirm = alert('Are you sure you want to clear the primary color?');
+	if (confirm) {
+		document.getElementById('primaryColor').value = '';
+		document.getElementById('primaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('primaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPrimaryColor').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// secondaryColor
+function unlockSecondaryColor () {
+	document.getElementById('secondaryColor').setAttribute('style', 'display: block;');
+	document.getElementById('secondaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('secondaryColorUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('secondaryColorLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockSecondaryColor () {
+	document.getElementById('secondaryColor').setAttribute('style', 'display: none;');
+	document.getElementById('secondaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('secondaryColorUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Secondary Color Code: ' + document.getElementById('secondaryColor').value;
+	document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
+	document.getElementById('secondaryColorValueDisplayColor').style.backgroundColor = document.getElementById('secondaryColor').value;
+	document.getElementById('secondaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
+	document.getElementById('secondaryColorValueDisplayColor').style.borderRadius = '25px';
+	document.getElementById('secondaryColorValueDisplayColor').style.borderWidth = '3px';
+	document.getElementById('secondaryColorValueDisplayColor').style.borderStyle = 'solid'
+	if (document.getElementById('secondaryColor').value.length > 0) { document.getElementById('warningSecondaryColor').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('secondaryColor').value.length < 1) { document.getElementById('warningSecondaryColor').setAttribute('style', 'display: block;'); }
+}
+function clearSecondaryColor () {
+	var confirm = alert('Are you sure you want to clear the secondary color?');
+	if (confirm) {
+		document.getElementById('secondaryColor').value = '';
+		document.getElementById('secondaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('secondaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningSecondaryColor').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// tertiaryColor
+function unlockTertiaryColor () {
+	document.getElementById('tertiaryColor').setAttribute('style', 'display: block;');
+	document.getElementById('tertiaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('tertiaryColorUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('tertiaryColorLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
+}
+function lockTertiaryColor () {
+	document.getElementById('tertiaryColor').setAttribute('style', 'display: none;');
+	document.getElementById('tertiaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('tertiaryColorUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Tertiary Color Code: ' + document.getElementById('tertiaryColor').value;
+	document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
+	document.getElementById('tertiaryColorValueDisplayColor').style.backgroundColor = document.getElementById('tertiaryColor').value;
+	document.getElementById('tertiaryColorValueDisplayColor').style.borderColor = '#1e1e1e';
+	document.getElementById('tertiaryColorValueDisplayColor').style.borderRadius = '25px';
+	document.getElementById('tertiaryColorValueDisplayColor').style.borderWidth = '3px';
+	document.getElementById('tertiaryColorValueDisplayColor').style.borderStyle = 'solid'
+	if (document.getElementById('tertiaryColor').value.length > 0) { document.getElementById('warningTertiaryColor').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('tertiaryColor').value.length < 1) { document.getElementById('warningTertiaryColor').setAttribute('style', 'display: block;'); }
+}
+function clearTertiaryColor () {
+	var confirm = alert('Are you sure you want to clear the tertiary color?');
+	if (confirm) {
+		document.getElementById('tertiaryColor').value = '';
+		document.getElementById('tertiaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('tertiaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningTertiaryColor').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// FONTS
+// primaryFont
+function unlockPrimaryFont () {
+	document.getElementById('primaryFont').removeAttribute('readonly');
+	document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('primaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('primaryFontLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPrimaryFont () {
+	document.getElementById('primaryFont').append('readonly');
+	document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('primaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('primaryFontUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('warningPrimaryFont').setAttribute('style', 'display: none;');
+	if (document.getElementById('primaryFont').value.length > 0) { document.getElementById('warningPrimaryFont').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('primaryFont').value.length < 1) { document.getElementById('warningPrimaryFont').setAttribute('style', 'display: block;'); }
+}
+function clearPrimaryFont () {
+	let confirm = alert('Are you sure you want to clear the primary font?');
+	if (confirm) {
+		document.getElementById('primaryFont').value = '';
+		document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPrimaryFont').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// secondaryFont
+function unlockSecondaryFont () {
+	document.getElementById('secondaryFont').removeAttribute('readonly');
+	document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('secondaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockSecondaryFont () {
+	document.getElementById('secondaryFont').append('readonly');
+	document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('secondaryFontUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('secondaryFont').value.length > 0) { document.getElementById('warningSecondaryFont').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('secondaryFont').value.length < 1) { document.getElementById('warningSecondaryFont').setAttribute('style', 'display: block;'); }
+}
+function clearSecondaryFont () {
+	let confirm = alert('Are you sure you want to clear the secondary font?');
+	if (confirm) {
+		document.getElementById('secondaryFont').value = '';
+		document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningSecondaryFont').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// tertiaryFont
+function unlockTertiaryFont () {
+	document.getElementById('tertiaryFont').removeAttribute('readonly');
+	document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockTertiaryFont () {
+	document.getElementById('tertiaryFont').append('readonly');
+	document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('tertiaryFont').value.length > 0) { document.getElementById('warningTertiaryFont').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('tertiaryFont').value.length < 1) { document.getElementById('warningTertiaryFont').setAttribute('style', 'display: block;'); }
+}
+function clearTertiaryFont () {
+	let confirm = alert('Are you sure you want to clear the tertiary font?');
+	if (confirm) {
+		document.getElementById('tertiaryFont').value = '';
+		document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningTertiaryFont').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// OFFERS
+// offer1
+// offer1Name
+function unlockOffer1Name () {
+	document.getElementById('offer1Name').removeAttribute('readonly');
+	document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer1NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1NameLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer1Name () {
+	document.getElementById('offer1Name').append('readonly');
+	document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1NameUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer1Name').value.length > 0) { document.getElementById('warningOffer1Name').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Name').value.length < 1) { document.getElementById('warningOffer1Name').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Name () {
+	let confirm = alert('Are you sure you want to clear the offer 1 name?');
+	if (confirm) {
+		document.getElementById('offer1Name').value = '';
+		document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer1Name').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer1Price
+function unlockOffer1Price () {
+	document.getElementById('offer1Price').removeAttribute('readonly');
+	document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer1PriceUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer1Price () {
+	document.getElementById('offer1Price').append('readonly');
+	document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1PriceUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer1Price').value.length > 0) { document.getElementById('warningOffer1Price').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Price').value.length < 1) { document.getElementById('warningOffer1Price').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Price () {
+	let confirm = alert('Are you sure you want to clear the offer 1 price?');
+	if (confirm) {
+		document.getElementById('offer1Price').value = '';
+		document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer1Price').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer1Feature
+function unlockOffer1Feature () {
+	document.getElementById('offer1Feature').removeAttribute('readonly');
+	document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer1FeatureUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer1Feature () {
+	document.getElementById('offer1Feature').append('readonly');
+	document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1FeatureUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer1Feature').value.length > 0) { document.getElementById('warningOffer1Feature').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Feature').value.length < 1) { document.getElementById('warningOffer1Feature').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Feature () {
+	let confirm = alert('Are you sure you want to clear the offer 1 feature?');
+	if (confirm) {
+		document.getElementById('offer1Feature').value = '';
+		document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer1Feature').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer1Benefit
+function unlockOffer1Benefit () {
+	document.getElementById('offer1Benefit').removeAttribute('readonly');
+	document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer1BenefitUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer1Benefit () {
+	document.getElementById('offer1Benefit').append('readonly');
+	document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1BenefitUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer1Benefit').value.length > 0) { document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Benefit').value.length < 1) { document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Benefit () {
+	let confirm = alert('Are you sure you want to clear the offer 1 benefit?');
+	if (confirm) {
+		document.getElementById('offer1Benefit').value = '';
+		document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer1Solution
+function unlockOffer1Solution () {
+	document.getElementById('offer1Solution').removeAttribute('readonly');
+	document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer1SolutionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer1Solution () {
+	document.getElementById('offer1Solution').append('readonly');
+	document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1SolutionUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer1Solution').value.length > 0) { document.getElementById('warningOffer1Solution').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Solution').value.length < 1) { document.getElementById('warningOffer1Solution').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Solution () {
+	let confirm = alert('Are you sure you want to clear the offer 1 solution?');
+	if (confirm) {
+		document.getElementById('offer1Solution').value = '';
+		document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer1Solution').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer1Description
+function unlockOffer1Description () {
+	document.getElementById('offer1Description').removeAttribute('readonly');
+	document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer1DescriptionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer1Description () {
+	document.getElementById('offer1Description').append('readonly');
+	document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer1Description').value.length > 0) { document.getElementById('warningOffer1Description').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Description').value.length < 1) { document.getElementById('warningOffer1Description').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Description () {
+	let confirm = alert('Are you sure you want to clear the offer 1 description?');
+	if (confirm) {
+		document.getElementById('offer1Description').value = '';
+		document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer1Description').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer1Image
+function unlockOffer1Image () {
+	document.getElementById('offer1Image').setAttribute('style', 'display: block;');
+	document.getElementById('offer1Image').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('offer1ImageUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1ImageLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('offer1ImageValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockOffer1Image () {
+	document.getElementById('offer1Image').setAttribute('style', 'display: none;');
+	document.getElementById('offer1ImageLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer1ImageUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('offer1ImageValueDisplay').innerHTML = 'Current Person 1 Headshot: ' + document.getElementById('offer1Image').value;
+	document.getElementById('offer1ImageValueDisplay').setAttribute('style', 'display: block;');
+	if (document.getElementById('offer1Image').value != null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer1Image').value == null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: block;'); }
+}
+function clearOffer1Image () {
+	let confirm = alert('Are you sure you want to clear the offer 1 image?');
+	if (confirm) {
+		document.getElementById('offer1Image').value = '';
+		document.getElementById('offer1Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
+		setTimeout(function() {
+			document.getElementById('offer1Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
+			document.getElementById('warningOffer1Image').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2
+// offer2Name
+function unlockOffer2Name () {
+	document.getElementById('offer2Name').removeAttribute('readonly');
+	document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer2NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2NameLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer2Name () {
+	document.getElementById('offer2Name').append('readonly');
+	document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2NameUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer2Name').value.length > 0) { document.getElementById('warningOffer2Name').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Name').value.length < 1) { document.getElementById('warningOffer2Name').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Name () {
+	let confirm = alert('Are you sure you want to clear the offer 2 name?');
+	if (confirm) {
+		document.getElementById('offer2Name').value = '';
+		document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer2Name').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2Price
+function unlockOffer2Price () {
+	document.getElementById('offer2Price').removeAttribute('readonly');
+	document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer2PriceUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer2Price () {
+	document.getElementById('offer2Price').append('readonly');
+	document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2PriceUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer2Price').value.length > 0) { document.getElementById('warningOffer2Price').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Price').value.length < 1) { document.getElementById('warningOffer2Price').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Price () {
+	let confirm = alert('Are you sure you want to clear the offer 2 price?');
+	if (confirm) {
+		document.getElementById('offer2Price').value = '';
+		document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer2Price').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2Feature
+function unlockOffer2Feature () {
+	document.getElementById('offer2Feature').removeAttribute('readonly');
+	document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer2FeatureUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer2Feature () {
+	document.getElementById('offer2Feature').append('readonly');
+	document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2FeatureUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer2Feature').value.length > 0) { document.getElementById('warningOffer2Feature').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Feature').value.length < 1) { document.getElementById('warningOffer2Feature').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Feature () {
+	let confirm = alert('Are you sure you want to clear the offer 2 feature?');
+	if (confirm) {
+		document.getElementById('offer2Feature').value = '';
+		document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer2Feature').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2Benefit
+function unlockOffer2Benefit () {
+	document.getElementById('offer2Benefit').removeAttribute('readonly');
+	document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer2BenefitUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer2Benefit () {
+	document.getElementById('offer2Benefit').append('readonly');
+	document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2BenefitUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer2Benefit').value.length > 0) { document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Benefit').value.length < 1) { document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Benefit () {
+	let confirm = alert('Are you sure you want to clear the offer 2 benefit?');
+	if (confirm) {
+		document.getElementById('offer2Benefit').value = '';
+		document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2Solution
+function unlockOffer2Solution () {
+	document.getElementById('offer2Solution').removeAttribute('readonly');
+	document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer2SolutionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer2Solution () {
+	document.getElementById('offer2Solution').append('readonly');
+	document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2SolutionUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer2Solution').value.length > 0) { document.getElementById('warningOffer2Solution').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Solution').value.length < 1) { document.getElementById('warningOffer2Solution').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Solution () {
+	let confirm = alert('Are you sure you want to clear the offer 2 solution?');
+	if (confirm) {
+		document.getElementById('offer2Solution').value = '';
+		document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer2Solution').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2Description
+function unlockOffer2Description () {
+	document.getElementById('offer2Description').removeAttribute('readonly');
+	document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('offer2DescriptionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockOffer2Description () {
+	document.getElementById('offer2Description').append('readonly');
+	document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('offer2Description').value.length > 0) { document.getElementById('warningOffer2Description').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Description').value.length < 1) { document.getElementById('warningOffer2Description').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Description () {
+	let confirm = alert('Are you sure you want to clear the offer 2 description?');
+	if (confirm) {
+		document.getElementById('offer2Description').value = '';
+		document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningOffer2Description').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// offer2Image
+function unlockOffer2Image () {
+	document.getElementById('offer2Image').setAttribute('style', 'display: block;');
+	document.getElementById('offer2Image').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('offer2ImageUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2ImageLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('offer2ImageValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockOffer2Image () {
+	document.getElementById('offer2Image').setAttribute('style', 'display: none;');
+	document.getElementById('offer2ImageLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('offer2ImageUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('offer2ImageValueDisplay').innerHTML = 'Current Person 2 Headshot: ' + document.getElementById('offer2Image').value;
+	document.getElementById('offer2ImageValueDisplay').setAttribute('style', 'display: block;');
+	if (document.getElementById('offer2Image').value != null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('offer2Image').value == null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: block;'); }
+}
+function clearOffer2Image () {
+	let confirm = alert('Are you sure you want to clear the offer 2 image?');
+	if (confirm) {
+		document.getElementById('offer2Image').value = '';
+		document.getElementById('offer2Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
+		setTimeout(function() {
+			document.getElementById('offer2Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
+			document.getElementById('warningOffer2Image').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+
+
+
+
+
+
+
 
 // SOCIAL MEDIA
 // function logInstaPic() {

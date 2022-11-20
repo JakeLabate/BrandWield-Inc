@@ -419,6 +419,18 @@ b[display="block"] {
     display: block;
 }
 
+span.edit {
+    background-color: #e7e7e7;
+    border: 1px solid #c9c9c9;
+    padding: 2px 2px 2px 2px;
+    margin-left: 3px;
+}
+span.edit:hover {
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    color: white;
+    font-weight: bolder;
+}
 
 pre code {
     background-color: #424242;

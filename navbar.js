@@ -67,6 +67,8 @@ function onmouseoverDraggableBusinessInfoSection () {
 function onmouseleaveDraggableContactInfoSection () {
 	document.getElementById('draggableContactInfoSection').style.display = 'none'
 	document.getElementById('draggableContactInfoSectionHeader').style.color = 'black';
+	// (temporary) - remove white background on phone edit when brand dropdown closes
+	document.getElementById('draggablePrimaryContactPhone').style.backgroundColor = '#e7e7e7';
 }
 function onmouseleaveDraggableFoundingInfoSection () {
 	document.getElementById('draggableFoundingInfoSection').style.display = 'none'

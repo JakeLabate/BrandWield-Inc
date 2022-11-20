@@ -30,7 +30,11 @@
 	<!-- Brand Icon Dropdown -->
 	<div id="brandDropdown" class="dropzone" onmouseleave="this.style.display = 'none';"><br>
 		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableContactInfoSection();">
-			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span>
+
+			<!-- Edit Button showing the potential feature of editing brand info in the 'brandbar' -->
+			<span class="material-symbols-outlined edit" onclick="document.getElementById('draggablePrimaryContactPhone').style.backgroundColor = '#fff'">edit</span><br><br>
+
 			<span id="draggablePrimaryContactEmail" class="draggableBrandVar" draggable="true"></span><br><br>
 			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar" draggable="true"></span><br><br>
 		</b>
@@ -672,47 +676,19 @@
 				<div class="varGroup">
 
 					<h3>Logos</h3>
+
 					<!-- Square Logo -->
 					<div class="var">
 						<span id="warningSquareLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 						<label for="squareLogo">Square Logo</label>
 						<span class="material-symbols-outlined" onclick='alert("A logo that represents your business where the height is equal to the length")'>info</span>
 						<input id="squareLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showSquareImage()">
-						<span id="squareLogoUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('squareLogo').setAttribute('style', 'display: block;');
-          document.getElementById('squareLogo').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('squareLogoUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('squareLogoLock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('squareLogoValueDisplay').setAttribute('style', 'display: none;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="squareLogoLock" class="material-symbols-outlined" onclick="
-          document.getElementById('squareLogo').setAttribute('style', 'display: none;');
-          document.getElementById('squareLogoLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('squareLogoUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('squareLogoValueDisplay').innerHTML = 'Current Square Logo: ' + document.getElementById('squareLogo').value;
-          document.getElementById('squareLogoValueDisplay').setAttribute('style', 'display: block;');
-          if (document.getElementById('squareLogo').value != null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('squareLogo').value == null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="squareLogoUnlock" class="material-symbols-outlined" onclick="unlockSquareLogo(); ">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="squareLogoLock" class="material-symbols-outlined" onclick="lockSquareLogo();">lock</span>
 						<img alt="" src="" style="padding: 0 10px 0 10px; display: none;" height="32px" width="32px" id="uploadedSquareImage">
 						<p id="squareLogoValueDisplay" style="display: none;"></p>
 						<img id="squareLogoBro" style="padding-left: 20px;" alt="Square Logo" src="">
-
-						<!--
-						<button id="squareLogoClear" onclick="
-							  var confirm = alert('Are you sure you want to clear the square logo?');
-							  if (confirm) {
-								  document.getElementById('squareLogo').value = '';
-								  document.getElementById('squareLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-								  setTimeout(function() {
-								  document.getElementById('squareLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-								  document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						  -->
+						<button id="squareLogoClear" onclick="clearSquareLogo();">Clear</button>
 					</div>
 
 					<!-- Full Logo -->
@@ -721,41 +697,12 @@
 						<label for="fullLogo">Full Logo</label>
 						<span class="material-symbols-outlined" onclick='alert("Your full-sized business logo")'>info</span>
 						<input id="fullLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showFullImage()">
-						<span id="fullLogoUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('fullLogo').setAttribute('style', 'display: block;');
-          document.getElementById('fullLogo').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('fullLogoUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('fullLogoLock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('fullLogoValueDisplay').setAttribute('style', 'display: none;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fullLogoLock" class="material-symbols-outlined" onclick="
-          document.getElementById('fullLogo').setAttribute('style', 'display: none;');
-          document.getElementById('fullLogoLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('fullLogoUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('fullLogoValueDisplay').innerHTML = 'Current Full Logo: ' + document.getElementById('fullLogo').value;
-          document.getElementById('fullLogoValueDisplay').setAttribute('style', 'display: block;');
-          if (document.getElementById('fullLogo').value != null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('fullLogo').value == null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="fullLogoUnlock" class="material-symbols-outlined" onclick="unlockFullLogo();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fullLogoLock" class="material-symbols-outlined" onclick="lockFullLogo();">lock</span>
 						<img alt="" src="" style="padding: 0 10px 0 10px; max-height: 200px; max-width: 200px;" id="uploadedFullImage">
 						<p id="fullLogoValueDisplay" style="display: none;"></p>
 						<img id="fullLogoBro" style="padding-left: 20px;" alt="Full Logo" src="">
-
-						<!--
-						<button id="fullLogoClear" onclick="
-							  var confirm = alert('Are you sure you want to clear the full logo?');
-							  if (confirm) {
-								  document.getElementById('fullLogo').value = '';
-								  document.getElementById('fullLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-								  setTimeout(function() {
-								  document.getElementById('fullLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-								  document.getElementById('warningFullLogo').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						  -->
+						<button id="fullLogoClear" onclick="clearFullLogo();">Clear</button>
 					</div>
 
 					<h3>Colors</h3>
@@ -766,44 +713,11 @@
 						<label for="primaryColor">Primary Color</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary color of your business")'>info</span>
 						<input id="primaryColor" type="color" style="display: none;">
-						<span id="primaryColorUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('primaryColor').setAttribute('style', 'display: block;');
-          document.getElementById('primaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('primaryColorUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('primaryColorLock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: none;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryColorLock" class="material-symbols-outlined" onclick="
-          document.getElementById('primaryColor').setAttribute('style', 'display: none;');
-          document.getElementById('primaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('primaryColorUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
-          document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
-		  document.getElementById('primaryColorValueDisplayColor').style.backgroundColor = document.getElementById('primaryColor').value;
-		  document.getElementById('primaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
-		  document.getElementById('primaryColorValueDisplayColor').style.borderRadius = '25px';
-		  document.getElementById('primaryColorValueDisplayColor').style.borderWidth = '3px';
-		  document.getElementById('primaryColorValueDisplayColor').style.borderStyle = 'solid'
-		  if (document.getElementById('primaryColor').value.length > 0) { document.getElementById('warningPrimaryColor').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('primaryColor').value.length < 1) { document.getElementById('warningPrimaryColor').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="primaryColorUnlock" class="material-symbols-outlined" onclick="unlockPrimaryColor();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryColorLock" class="material-symbols-outlined" onclick="lockPrimaryColor();">lock</span>
 						<p id="primaryColorValueDisplay"></p>
 						<div id="primaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
-						<!--
-						<button id="primaryColorClear" onclick="
-							  var confirm = alert('Are you sure you want to clear the primary color?');
-							  if (confirm) {
-								  document.getElementById('primaryColor').value = '';
-								  document.getElementById('primaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-								  setTimeout(function() {
-								  document.getElementById('primaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-								  document.getElementById('warningPrimaryColor').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						 -->
+						<button id="primaryColorClear" onclick="clearPrimaryColor();">Clear</button>
 					</div>
 
 					<!-- Secondary Color -->
@@ -812,45 +726,11 @@
 						<label for="secondaryColor">Secondary Color</label>
 						<span class="material-symbols-outlined" onclick='alert("The secondary color of your business")'>info</span>
 						<input id="secondaryColor" type="color" style="display: none;">
-						<span id="secondaryColorUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('secondaryColor').setAttribute('style', 'display: block;');
-          document.getElementById('secondaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('secondaryColorUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('secondaryColorLock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: none;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryColorLock" class="material-symbols-outlined" onclick="
-          document.getElementById('secondaryColor').setAttribute('style', 'display: none;');
-          document.getElementById('secondaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('secondaryColorUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Secondary Color Code: ' + document.getElementById('secondaryColor').value;
-          document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
-		  document.getElementById('secondaryColorValueDisplayColor').style.backgroundColor = document.getElementById('secondaryColor').value;
-		  document.getElementById('secondaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
-		  document.getElementById('secondaryColorValueDisplayColor').style.borderRadius = '25px';
-		  document.getElementById('secondaryColorValueDisplayColor').style.borderWidth = '3px';
-		  document.getElementById('secondaryColorValueDisplayColor').style.borderStyle = 'solid'
-          if (document.getElementById('secondaryColor').value.length > 0) { document.getElementById('warningSecondaryColor').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('secondaryColor').value.length < 1) { document.getElementById('warningSecondaryColor').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="secondaryColorUnlock" class="material-symbols-outlined" onclick="unlockSecondaryColor();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryColorLock" class="material-symbols-outlined" onclick="lockSecondaryColor();">lock</span>
 						<p id="secondaryColorValueDisplay"></p>
 						<div id="secondaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
-
-						<!--
-						<button id="secondaryColorClear" onclick="
-							  var confirm = alert('Are you sure you want to clear the secondary color?');
-							  if (confirm) {
-								  document.getElementById('secondaryColor').value = '';
-								  document.getElementById('secondaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-								  setTimeout(function() {
-								  document.getElementById('secondaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-								  document.getElementById('warningSecondaryColor').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						 -->
+						<button id="secondaryColorClear" onclick="clearSecondaryColor();">Clear</button>
 					</div>
 
 					<!-- Tertiary Color -->
@@ -859,45 +739,11 @@
 						<label for="tertiaryColor">Tertiary Color</label>
 						<span class="material-symbols-outlined" onclick='alert("The tertiary color of your business")'>info</span>
 						<input id="tertiaryColor" type="color" style="display: none;">
-						<span id="tertiaryColorUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('tertiaryColor').setAttribute('style', 'display: block;');
-          document.getElementById('tertiaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('tertiaryColorUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tertiaryColorLock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryColorLock" class="material-symbols-outlined" onclick="
-          document.getElementById('tertiaryColor').setAttribute('style', 'display: none;');
-          document.getElementById('tertiaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tertiaryColorUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Tertiary Color Code: ' + document.getElementById('tertiaryColor').value;
-          document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
-		  document.getElementById('tertiaryColorValueDisplayColor').style.backgroundColor = document.getElementById('tertiaryColor').value;
-		  document.getElementById('tertiaryColorValueDisplayColor').style.borderColor = '#1e1e1e';
-		  document.getElementById('tertiaryColorValueDisplayColor').style.borderRadius = '25px';
-		  document.getElementById('tertiaryColorValueDisplayColor').style.borderWidth = '3px';
-		  document.getElementById('tertiaryColorValueDisplayColor').style.borderStyle = 'solid'
-          if (document.getElementById('tertiaryColor').value.length > 0) { document.getElementById('warningTertiaryColor').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('tertiaryColor').value.length < 1) { document.getElementById('warningTertiaryColor').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="tertiaryColorUnlock" class="material-symbols-outlined" onclick="unlockTertiaryColor();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryColorLock" class="material-symbols-outlined" onclick="lockTertiaryColor();">lock</span>
 						<p id="tertiaryColorValueDisplay"></p>
 						<div id="tertiaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
-
-						<!--
-						<button id="tertiaryColorClear" onclick="
-							  var confirm = alert('Are you sure you want to clear the tertiary color?');
-							  if (confirm) {
-								  document.getElementById('tertiaryColor').value = '';
-								  document.getElementById('tertiaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-								  setTimeout(function() {
-								  document.getElementById('tertiaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-								  document.getElementById('warningTertiaryColor').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						 -->
+						<button id="tertiaryColorClear" onclick="clearTertiaryColor();">Clear</button>
 					</div>
 
 					<h3>Fonts</h3>
@@ -908,34 +754,9 @@
 						<label for="primaryFont">Primary Font</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary font of your business")'>info</span>
 						<input id="primaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1; this.style.fontFamily = this.value">
-						<span id="primaryFontUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('primaryFont').removeAttribute('readonly');
-          document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('primaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('primaryFontLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryFontLock" class="material-symbols-outlined" onclick="
-          document.getElementById('primaryFont').append('readonly');
-          document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('primaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('primaryFontUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('warningPrimaryFont').setAttribute('style', 'display: none;');
-          if (document.getElementById('primaryFont').value.length > 0) { document.getElementById('warningPrimaryFont').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('primaryFont').value.length < 1) { document.getElementById('warningPrimaryFont').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="primaryFontClear" onclick="
-          let confirm = alert('Are you sure you want to clear the primary font?');
-          if (confirm) {
-              document.getElementById('primaryFont').value = '';
-              document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPrimaryFont').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="primaryFontUnlock" class="material-symbols-outlined" onclick="unlockPrimaryFont(); ">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryFontLock" class="material-symbols-outlined" onclick="lockPrimaryFont();">lock</span>
+						<button id="primaryFontClear" onclick="clearPrimaryFont();">Clear</button>
 					</div>
 
 					<!-- Secondary Font -->
@@ -944,33 +765,9 @@
 						<label for="secondaryFont">Secondary Font</label>
 						<span class="material-symbols-outlined" onclick='alert("The secondary font of your business")'>info</span>
 						<input id="secondaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="secondaryFontUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('secondaryFont').removeAttribute('readonly');
-          document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('secondaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryFontLock" class="material-symbols-outlined" onclick="
-          document.getElementById('secondaryFont').append('readonly');
-          document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('secondaryFontUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('secondaryFont').value.length > 0) { document.getElementById('warningSecondaryFont').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('secondaryFont').value.length < 1) { document.getElementById('warningSecondaryFont').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="secondaryFontClear" onclick="
-          let confirm = alert('Are you sure you want to clear the secondary font?');
-          if (confirm) {
-              document.getElementById('secondaryFont').value = '';
-              document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningSecondaryFont').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="secondaryFontUnlock" class="material-symbols-outlined" onclick="unlockSecondaryFont(); ">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryFontLock" class="material-symbols-outlined" onclick="lockSecondaryFont();">lock</span>
+						<button id="secondaryFontClear" onclick="clearSecondaryFont();">Clear</button>
 					</div>
 
 					<!-- Tertiary Font -->
@@ -979,33 +776,9 @@
 						<label for="tertiaryFont">Tertiary Font</label>
 						<span class="material-symbols-outlined" onclick='alert("The tertiary font of your business")'>info</span>
 						<input id="tertiaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tertiaryFontUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('tertiaryFont').removeAttribute('readonly');
-          document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryFontLock" class="material-symbols-outlined" onclick="
-          document.getElementById('tertiaryFont').append('readonly');
-          document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('tertiaryFont').value.length > 0) { document.getElementById('warningTertiaryFont').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('tertiaryFont').value.length < 1) { document.getElementById('warningTertiaryFont').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="tertiaryFontClear" onclick="
-          let confirm = alert('Are you sure you want to clear the tertiary font?');
-          if (confirm) {
-              document.getElementById('tertiaryFont').value = '';
-              document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningTertiaryFont').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="tertiaryFontUnlock" class="material-symbols-outlined" onclick="unlockTertiaryFont(); ">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryFontLock" class="material-symbols-outlined" onclick="lockTertiaryFont();">lock</span>
+						<button id="tertiaryFontClear" onclick="clearTertiaryFont();">Clear</button>
 					</div>
 
 				</div>
@@ -1028,33 +801,9 @@
 						<label for="offer1Name">Offer 1 Name</label>
 						<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
 						<input id="offer1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1NameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Name').removeAttribute('readonly');
-          document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer1NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1NameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer1NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Name').append('readonly');
-          document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1NameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer1Name').value.length > 0) { document.getElementById('warningOffer1Name').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Name').value.length < 1) { document.getElementById('warningOffer1Name').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer1NameClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 1 name?');
-          if (confirm) {
-              document.getElementById('offer1Name').value = '';
-              document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer1Name').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer1NameUnlock" class="material-symbols-outlined" onclick="unlockOffer1Name();">lock_open</span>
+						<span id="offer1NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Name();">lock</span>
+						<button id="offer1NameClear" onclick="clearOffer1Name();">Clear</button>
 					</div>
 
 					<!-- Offer 1 Price -->
@@ -1063,33 +812,9 @@
 						<label for="offer1Price">Offer 1 Price</label>
 						<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
 						<input id="offer1Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1PriceUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Price').removeAttribute('readonly');
-          document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer1PriceUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer1PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Price').append('readonly');
-          document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1PriceUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer1Price').value.length > 0) { document.getElementById('warningOffer1Price').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Price').value.length < 1) { document.getElementById('warningOffer1Price').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer1PriceClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 1 price?');
-          if (confirm) {
-              document.getElementById('offer1Price').value = '';
-              document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer1Price').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer1PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer1Price();">lock_open</span>
+						<span id="offer1PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Price();">lock</span>
+						<button id="offer1PriceClear" onclick="clearOffer1Price();">Clear</button>
 					</div>
 
 					<!-- Offer 1 Feature -->
@@ -1098,33 +823,9 @@
 						<label for="offer1Feature">Offer 1 Feature</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
 						<input id="offer1Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1FeatureUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Feature').removeAttribute('readonly');
-          document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer1FeatureUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer1FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Feature').append('readonly');
-          document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1FeatureUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer1Feature').value.length > 0) { document.getElementById('warningOffer1Feature').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Feature').value.length < 1) { document.getElementById('warningOffer1Feature').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer1FeatureClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 1 feature?');
-          if (confirm) {
-              document.getElementById('offer1Feature').value = '';
-              document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer1Feature').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer1FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer1Feature();">lock_open</span>
+						<span id="offer1FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Feature();">lock</span>
+						<button id="offer1FeatureClear" onclick="clearOffer1Feature();">Clear</button>
 					</div>
 
 					<!-- Offer 1 Benefit -->
@@ -1133,33 +834,9 @@
 						<label for="offer1Benefit">Offer 1 Benefit</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
 						<input id="offer1Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1BenefitUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Benefit').removeAttribute('readonly');
-          document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer1BenefitUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer1BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Benefit').append('readonly');
-          document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1BenefitUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer1Benefit').value.length > 0) { document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Benefit').value.length < 1) { document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer1BenefitClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 1 benefit?');
-          if (confirm) {
-              document.getElementById('offer1Benefit').value = '';
-              document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer1BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer1Benefit();">lock_open</span>
+						<span id="offer1BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Benefit();">lock</span>
+						<button id="offer1BenefitClear" onclick="clearOffer1Benefit();">Clear</button>
 					</div>
 
 					<!-- Offer 1 Solution -->
@@ -1168,33 +845,9 @@
 						<label for="offer1Solution">Offer 1 Solution</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
 						<input id="offer1Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1SolutionUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Solution').removeAttribute('readonly');
-          document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer1SolutionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer1SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Solution').append('readonly');
-          document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1SolutionUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer1Solution').value.length > 0) { document.getElementById('warningOffer1Solution').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Solution').value.length < 1) { document.getElementById('warningOffer1Solution').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer1SolutionClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 1 solution?');
-          if (confirm) {
-              document.getElementById('offer1Solution').value = '';
-              document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer1Solution').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer1SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Solution();">lock_open</span>
+						<span id="offer1SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Solution();">lock</span>
+						<button id="offer1SolutionClear" onclick="clearOffer1Solution();">Clear</button>
 					</div>
 
 					<!-- Offer 1 Description -->
@@ -1203,33 +856,9 @@
 						<label for="offer1Description">Offer 1 Description</label>
 						<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
 						<input id="offer1Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1DescriptionUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Description').removeAttribute('readonly');
-          document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer1DescriptionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer1DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer1Description').append('readonly');
-          document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer1Description').value.length > 0) { document.getElementById('warningOffer1Description').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Description').value.length < 1) { document.getElementById('warningOffer1Description').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer1DescriptionClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 1 description?');
-          if (confirm) {
-              document.getElementById('offer1Description').value = '';
-              document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer1Description').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer1DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Description();">lock_open</span>
+						<span id="offer1DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Description();">lock</span>
+						<button id="offer1DescriptionClear" onclick="clearOffer1Description();">Clear</button>
 					</div>
 
 					<!-- Offer 1 Image -->
@@ -1238,38 +867,10 @@
 						<label for="offer1Image">Offer 1 Image</label>
 						<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
 						<input id="offer1Image" type="file" value="" style="display: none;">
-						<span id="offer1ImageUnlock" class="material-symbols-outlined" onclick="
-            document.getElementById('offer1Image').setAttribute('style', 'display: block;');
-            document.getElementById('offer1Image').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-            document.getElementById('offer1ImageUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('offer1ImageLock').setAttribute('style', 'background-color: transparent;');
-            document.getElementById('offer1ImageValueDisplay').setAttribute('style', 'display: none;');
-          ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer1ImageLock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer1Image').setAttribute('style', 'display: none;');
-          document.getElementById('offer1ImageLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer1ImageUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('offer1ImageValueDisplay').innerHTML = 'Current Person 1 Headshot: ' + document.getElementById('offer1Image').value;
-          document.getElementById('offer1ImageValueDisplay').setAttribute('style', 'display: block;');
-          if (document.getElementById('offer1Image').value != null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer1Image').value == null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="offer1ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer1Image();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer1ImageLock" class="material-symbols-outlined" onclick="lockOffer1Image();">lock</span>
 						<p id="offer1ImageValueDisplay" style="display: none;"></p>
-						<!--
-						<button id="offer1ImageClear" onclick="
-							  let confirm = alert('Are you sure you want to clear the offer 1 image?');
-							  if (confirm) {
-								  document.getElementById('offer1Image').value = '';
-								  document.getElementById('offer1Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
-								  setTimeout(function() {
-								  document.getElementById('offer1Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
-								  document.getElementById('warningOffer1Image').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						 -->
+						<button id="offer1ImageClear" onclick="clearOffer1Image();">Clear</button>
 					</div>
 
 					<h3>Offer 2</h3>
@@ -1280,33 +881,9 @@
 						<label for="offer2Name">Offer 2 Name</label>
 						<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
 						<input id="offer2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2NameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Name').removeAttribute('readonly');
-          document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer2NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2NameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer2NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Name').append('readonly');
-          document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2NameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer2Name').value.length > 0) { document.getElementById('warningOffer2Name').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Name').value.length < 1) { document.getElementById('warningOffer2Name').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer2NameClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 2 name?');
-          if (confirm) {
-              document.getElementById('offer2Name').value = '';
-              document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer2Name').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer2NameUnlock" class="material-symbols-outlined" onclick="unlockOffer2Name();">lock_open</span>
+						<span id="offer2NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Name() ">lock</span>
+						<button id="offer2NameClear" onclick="clearOffer2Name();">Clear</button>
 					</div>
 
 					<!-- Offer 2 Price -->
@@ -1315,33 +892,9 @@
 						<label for="offer2Price">Offer 2 Price</label>
 						<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
 						<input id="offer2Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2PriceUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Price').removeAttribute('readonly');
-          document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer2PriceUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer2PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Price').append('readonly');
-          document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2PriceUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer2Price').value.length > 0) { document.getElementById('warningOffer2Price').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Price').value.length < 1) { document.getElementById('warningOffer2Price').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer2PriceClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 2 price?');
-          if (confirm) {
-              document.getElementById('offer2Price').value = '';
-              document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer2Price').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer2PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer2Price();">lock_open</span>
+						<span id="offer2PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Price();">lock</span>
+						<button id="offer2PriceClear" onclick="clearOffer2Price();">Clear</button>
 					</div>
 
 					<!-- Offer 2 Feature -->
@@ -1350,33 +903,9 @@
 						<label for="offer2Feature">Offer 2 Feature</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
 						<input id="offer2Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2FeatureUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Feature').removeAttribute('readonly');
-          document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer2FeatureUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer2FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Feature').append('readonly');
-          document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2FeatureUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer2Feature').value.length > 0) { document.getElementById('warningOffer2Feature').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Feature').value.length < 1) { document.getElementById('warningOffer2Feature').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer2FeatureClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 2 feature?');
-          if (confirm) {
-              document.getElementById('offer2Feature').value = '';
-              document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer2Feature').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer2FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer2Feature();">lock_open</span>
+						<span id="offer2FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Feature();">lock</span>
+						<button id="offer2FeatureClear" onclick="clearOffer2Feature();">Clear</button>
 					</div>
 
 					<!-- Offer 2 Benefit -->
@@ -1385,33 +914,9 @@
 						<label for="offer2Benefit">Offer 2 Benefit</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
 						<input id="offer2Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2BenefitUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Benefit').removeAttribute('readonly');
-          document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer2BenefitUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer2BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Benefit').append('readonly');
-          document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2BenefitUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer2Benefit').value.length > 0) { document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Benefit').value.length < 1) { document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer2BenefitClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 2 benefit?');
-          if (confirm) {
-              document.getElementById('offer2Benefit').value = '';
-              document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer2BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer2Benefit();">lock_open</span>
+						<span id="offer2BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Benefit();">lock</span>
+						<button id="offer2BenefitClear" onclick="clearOffer2Benefit();">Clear</button>
 					</div>
 
 					<!-- Offer 2 Solution -->
@@ -1420,33 +925,9 @@
 						<label for="offer2Solution">Offer 2 Solution</label>
 						<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
 						<input id="offer2Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2SolutionUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Solution').removeAttribute('readonly');
-          document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer2SolutionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer2SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Solution').append('readonly');
-          document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2SolutionUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer2Solution').value.length > 0) { document.getElementById('warningOffer2Solution').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Solution').value.length < 1) { document.getElementById('warningOffer2Solution').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer2SolutionClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 2 solution?');
-          if (confirm) {
-              document.getElementById('offer2Solution').value = '';
-              document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer2Solution').setAttribute('style', 'display: none;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer2SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Solution();">lock_open</span>
+						<span id="offer2SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Solution();">lock</span>
+						<button id="offer2SolutionClear" onclick="clearOffer2Solution();">Clear</button>
 					</div>
 
 					<!-- Offer 2 Description -->
@@ -1455,33 +936,9 @@
 						<label for="offer2Description">Offer 2 Description</label>
 						<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
 						<input id="offer2Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2DescriptionUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Description').removeAttribute('readonly');
-          document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('offer2DescriptionUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span id="offer2DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="
-          document.getElementById('offer2Description').append('readonly');
-          document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('offer2Description').value.length > 0) { document.getElementById('warningOffer2Description').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Description').value.length < 1) { document.getElementById('warningOffer2Description').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="offer2DescriptionClear" onclick="
-          let confirm = alert('Are you sure you want to clear the offer 2 description?');
-          if (confirm) {
-              document.getElementById('offer2Description').value = '';
-              document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningOffer2Description').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="offer2DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Description();">lock_open</span>
+						<span id="offer2DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Description();">lock</span>
+						<button id="offer2DescriptionClear" onclick="clearOffer2Description();">Clear</button>
 					</div>
 
 					<!-- Offer 2 Image -->
@@ -1490,38 +947,10 @@
 						<label for="offer2Image">Offer 2 Image</label>
 						<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
 						<input id="offer2Image" type="file" value="" style="display: none;">
-						<span id="offer2ImageUnlock" class="material-symbols-outlined" onclick="
-            document.getElementById('offer2Image').setAttribute('style', 'display: block;');
-            document.getElementById('offer2Image').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-            document.getElementById('offer2ImageUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-            document.getElementById('offer2ImageLock').setAttribute('style', 'background-color: transparent;');
-            document.getElementById('offer2ImageValueDisplay').setAttribute('style', 'display: none;');
-          ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer2ImageLock" class="material-symbols-outlined" onclick="
-          document.getElementById('offer2Image').setAttribute('style', 'display: none;');
-          document.getElementById('offer2ImageLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('offer2ImageUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('offer2ImageValueDisplay').innerHTML = 'Current Person 2 Headshot: ' + document.getElementById('offer2Image').value;
-          document.getElementById('offer2ImageValueDisplay').setAttribute('style', 'display: block;');
-          if (document.getElementById('offer2Image').value != null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('offer2Image').value == null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="offer2ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer2Image();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer2ImageLock" class="material-symbols-outlined" onclick="lockOffer2Image();">lock</span>
 						<p id="offer2ImageValueDisplay" style="display: none;"></p>
-						<!--
-						<button id="offer2ImageClear" onclick="
-							  let confirm = alert('Are you sure you want to clear the offer 2 image?');
-							  if (confirm) {
-								  document.getElementById('offer2Image').value = '';
-								  document.getElementById('offer2Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
-								  setTimeout(function() {
-								  document.getElementById('offer2Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
-								  document.getElementById('warningOffer2Image').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						-->
+						<button id="offer2ImageClear" onclick="clearOffer2Image();">Clear</button>
 					</div>
 				</div>
 			</div>

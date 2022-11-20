@@ -1,8 +1,17 @@
-
-
-
-
-
+Can do:
+- Save browser image uploads for image files to public 'google cloud storage' links (and then to save to firebase as the image variables)
+- Create templates in Bannerbear for social media banners
+- 'clear' buttons
+        - stops working from 'brand' section down
+        - does not work with images & fonts
 Varibles to add:
 - 'team description' (describe your team in 1 sentence)
 - 'person1Bio' + others (describe your team member in 1 sentence)
+
+Solve:
+- Figure out how to 'write' or 'set' data to firebase upon the 'lock' button being pressed.
+- Show where variable is changed in the users brand content from the 'myBrand' page (where they edit the variables)
+- Add a 'click-to-add' function to addable 'myBrand' variables like 'people', 'offerings', 'locations', 'testimonials' etc.
+- Firebase hosting to live url
+        - Set up user accounts with firebase auth and allow account-specific functions
+- Import instagram api profile url pic to the image placeholder
