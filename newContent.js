@@ -20,10 +20,10 @@ function eventTitleUpdate () {
 			}
 		}
 		// separate the title into an array of words (seperated by spaces)
-		var text = document.getElementById("inputEventTitle").value;
-		var titleWords = text.split(" ");
+		let text = document.getElementById("inputEventTitle").value;
+		let titleWords = text.split(" ");
 		localStorage.setItem('titleWords', titleWords);
-		generateHashtags();
+		generateHashtagsForTitle();
 	}
 	hasTitle();
 	hasTitleDate();
@@ -138,8 +138,8 @@ function eventLocationUpdate () {
 		}
 		document.getElementById("hasTitleDateTimeLocation").style.display = "inline";
 		// separate the location into an array of words (seperated by spaces)
-		var text = document.getElementById("inputEventLocation").value;
-		var locationWords = text.split(" ");
+		let text = document.getElementById("inputEventLocation").value;
+		let locationWords = text.split(" ");
 		localStorage.setItem('locationWords', locationWords);
 		generateHashtags();
 	}
@@ -178,8 +178,8 @@ function eventOrganizationUpdate () {
 		}
 		document.getElementById("hasTitleDateTimeLocationOrganization").style.display = "inline";
 		// separate the organization into an array of words (seperated by spaces)
-		var text = document.getElementById("inputEventOrganization").value;
-		var organizationWords = text.split(" ");
+		let text = document.getElementById("inputEventOrganization").value;
+		let organizationWords = text.split(" ");
 		localStorage.setItem('organizationWords', organizationWords);
 		generateHashtags();
 	}
@@ -214,8 +214,8 @@ function eventHostUpdate () {
 			}
 		}
 		// separate the host into an array of words (seperated by spaces)
-		var text = document.getElementById("inputEventHost").value;
-		var hostWords = text.split(" ");
+		let text = document.getElementById("inputEventHost").value;
+		let hostWords = text.split(" ");
 		localStorage.setItem('hostWords', hostWords);
 		generateHashtags();
 	}
@@ -250,8 +250,8 @@ function eventDescriptionUpdate () {
 		}
 		document.getElementById("hasTitleDateTimeLocationOrganizationHostDescription").style.display = "inline";
 		// separate the description into an array of words (seperated by spaces)
-		var text = document.getElementById("inputEventDescription").value;
-		var descriptionWords = text.split(" ");
+		let text = document.getElementById("inputEventDescription").value;
+		let descriptionWords = text.split(" ");
 		localStorage.setItem('descriptionWords', descriptionWords);
 		generateHashtags();
 	}
@@ -383,35 +383,26 @@ function eventLogoUpdate () {
 }
 
 // Generate hashtags as user enters input
-function generateHashtags () {
+function generateHashtagsForTitle () {
 
-	// retreive the stored word strings from local storage
-	let titleWords = localStorage.getItem('titleWords');
-	let locationWords = localStorage.getItem('locationWords');
-	let organizationWords = localStorage.getItem('organizationWords');
-	let hostWords = localStorage.getItem('hostWords');
-	let descriptionWords = localStorage.getItem('descriptionWords');
+	// make 'hashtagsContainer' visible
+	document.getElementById("hashtagsContainer").style.display = 'block';
 
-	// join the titleWords, locationWords, organizationWords, hostWords and descriptionWords arrays into one array
-	var allWords = titleWords.concat(locationWords, organizationWords, hostWords, descriptionWords);
+	// set the words to all lowercase
+	let titleWordsLower = localStorage.getItem('titleWords').toLowerCase();
 
-	// make all words in the array lowercase
-	var allWordsLowercase = allWords.toLowerCase();
+	// add a '#' to the beginning of each word
+	let titleWordsHashtag = titleWordsLower.replace(/\b(\w)/g, '#$1');
 
-	// remove all commas from the array
-	var allWordsLowercaseNoCommas = allWordsLowercase.replaceAll(',', ' #');
+	// replace all commas in the string with a space
+	let titleWordsHashtagNoCommas = titleWordsHashtag.replace(/,/g, ' ');
 
-	var arr = ["apple", "mango", "apple",
-		"orange", "mango", "mango", "mango"];
+	// set the string into the hashtag output
+	document.getElementById("hashtagsHere").innerText = titleWordsHashtagNoCommas;
 
-	function removeDuplicates(arr) {
-		return arr.filter((item, index) => arr.indexOf(item) === index);
-	}
-
-	console.log(removeDuplicates(arr));
-
-	// show this string of words in a div with the if of #hashtagsHere
-	document.getElementById("hashtagsHere").innerHTML = removeDuplicates(allWordsLowercaseNoCommas);
+	// for each word in the string, add the class '.chip' to it
+	let titleWordsHashtagNoCommasItem = titleWordsHashtagNoCommas.split(" ");
+	console.log(titleWordsHashtagNoCommasItem);
 
 }
 
@@ -622,6 +613,15 @@ function copyToClipboardHasTitleDate2() {
 		alert("Copied:\n" + copyText);
 	});
 }
+
+
+ function copyToClipboardHashtags () {
+	 let copyText = document.getElementById("hashtagsHere").innerText;
+ 	navigator.clipboard.writeText(copyText).then(() => {
+ 		alert("Copied:\n" + copyText);
+ 	});
+ }
+
 
 
 // Add links as input fields from brand data

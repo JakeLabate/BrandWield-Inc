@@ -1703,18 +1703,18 @@
 			<!-- With Date -->
 			<div id="hasTitleDate" style="display: none; line-height: 2em;">
 				<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text> & <text class="chip" style="background-color: lightpink">{{Date}}</text></p><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitleDate1">See you at the <text  contenteditable="false"class="title chip"></text>! Be there on <text contenteditable="false" class="date chip"></text>!</p>
+				<p style="padding: 10px 14px 10px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitleDate1">See you at the <text  contenteditable="false"class="title chip"></text>! Be there on <text contenteditable="false" class="date chip"></text>!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate1();">Copy Text</button><br><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitleDate2">Are you busy on <text contenteditable="false" class="date chip"></text>? Show up for our event, <text contenteditable="false" class="title chip"></text>!</p>
+				<p style="padding: 10px 14px 10px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitleDate2">Are you busy on <text contenteditable="false" class="date chip"></text>? Show up for our event, <text contenteditable="false" class="title chip"></text>!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate2();">Copy Text</button>
 			</div>
 
 			<!-- With Title -->
 			<div id="hasTitle" style="display: none; line-height: 2em;">
 				<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text></p><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text contenteditable="false" class="title chip"></text>!</p>
+				<p style="padding: 10px 14px 10px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text contenteditable="false" class="title chip"></text>!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitle1();">Copy Text</button><br><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitle2">Will we be seeing you at the <text contenteditable="false" class="title chip"></text>? Inquire now!</p>
+				<p style="padding: 10px 14px 10px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">Will we be seeing you at the <text contenteditable="false" class="title chip"></text>? Inquire now!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitle2();">Copy Text</button>
 			</div>
 			<br>
@@ -1722,12 +1722,86 @@
 
 			<!-- Hashtags Container -->
 			<div id="hashtagsContainer" style="display: none; box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">
-				<div style="padding: 10px 10px 10px 10px; line-height: 2em;">Hashtags:</div>
-				<div contenteditable="true" id="hashtagsHere" style="padding: 10px 10px 10px 10px; line-height: 2em;"></div>
+				<div style="padding: 10px 14px 10px 14px; line-height: 2em;">Hashtags</div>
+				<div contenteditable="true" id="hashtagsHere" style="padding: 10px 14px 10px 14px; line-height: 2em; border: 1px solid #cecece; border-radius: 5px;"></div>
 				<button class="copyTextButton" onclick="copyToClipboardHashtags();">Copy Hashtags</button>
 			</div>
 
+			<!-- Share to Social Media Container -->
+			<div>
+
+				<!-- Share Via Facebook -->
+				<div onclick="
+					// prepare facebook post parameters
+					let u = document.getElementById('inputEventLink').value;
+					document.getElementById('shareViaFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + u
+				">
+					<!-- facebook link -->
+					<a title="Share Via Facebook"
+					   id="shareViaFacebook"
+					   class="shareToSocial"
+					   target="_blank"
+					   href="https://labate.io/events/business-to-business-showcase-2022">
+						<img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/facebook.png" />
+					</a>
+				</div>
+
+				<!-- Share Via LinkedIn -->
+				<div onclick="
+					// prepare linkedin post parameters
+					let url = document.getElementById('inputEventLink').value;
+					let title = document.getElementById('inputEventTitle').value;
+					document.getElementById('shareViaLinkedin').href = 'http://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title
+				">
+					<!-- linkedin link -->
+					<a title="Share Via Linkedin"
+					   id="shareViaLinkedin"
+					   class="shareToSocial"
+					   target="_blank"
+					   href="">
+						<img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/linkedin.png" />
+					</a>
+				</div>
+
+				<!-- Share Via Twitter -->
+				<div onclick="
+					// prepare twitter post parameters
+					let url = document.getElementById('inputEventLink').value;
+					document.getElementById('shareViaTwitter').href = 'http://twitter.com/share?url=' + url
+				">
+					<!-- twitter link -->
+					<a title="Share Via Twitter"
+					   id="shareViaTwitter"
+					   class="shareToSocial"
+					   target="_blank"
+					   href="">
+						<img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/twitter.png" />
+					</a>
+				</div>
+
+				<!-- Share Via Email -->
+				<div onclick="
+					// prepare email parameters
+					let email = 'brandwield@gmail.com';
+					let subject = document.getElementById('inputEventTitle').value;
+					let body = document.getElementById('inputEventLink').value;
+					document.getElementById('shareViaEmail').href = 'mailto:?' + email + '&subject=' + subject + '&body=' + body
+				">
+					<!-- email link -->
+					<a title="Share Via Email"
+					   id="shareViaEmail"
+					   class="shareToSocial"
+					   target="_blank"
+					   href=""><span style="height: 25px; width: 25px;" class="material-symbols-outlined">mail</span>
+					</a>
+				</div>
+
+			</div>
+
 		</div>
+
+
+
 
 		<!-- Final Images -->
 		<div id="final" class="column3" style="user-select: none;">

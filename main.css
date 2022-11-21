@@ -123,9 +123,6 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
     -5px -5px 12px #ffffff;
     transition: .25s;
 }
-.tab:active {
-
-}
 
 /* Columns & Rows */
 .column3 {
@@ -468,6 +465,18 @@ a.link {
      transition: .1s ease-in-out;
  }
 
+ .shareToSocial {
+     text-decoration: none;
+     height: 20px;
+     width: 20px;
+     transition: .1s ease-in-out;
+ }
+ .shareToSocial:hover {
+     cursor: pointer;
+     scale: 1.1;
+     transition: .1s ease-in-out;
+ }
+
 pre code {
     background-color: #424242;
     border: 3px solid #282828;
@@ -582,11 +591,11 @@ pre code {
             'GRAD' 0,
             'opsz' 48;
     cursor: pointer;
-    transition: .1s;
+    transition: .1s ease-in-out;
 }
 .material-symbols-outlined:hover {
     scale: 1.10;
-    transition: .1s;
+    transition: .1s ease-in-out;
 }
 
 /* Brand Variables in 'My Brand' section */
