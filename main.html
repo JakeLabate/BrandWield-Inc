@@ -69,7 +69,9 @@
 <!-- Tabs -->
 <div class="tabs">
 	<button class="tab" onclick="selectContentType('brand')">My Brand</button>
+	<!-- My content
 	<button class="tab" onclick="selectContentType('content')">My Content</button>
+	-->
 	<button class="tab" onclick="selectContentType('newContent')">New Content</button>
 </div>
 
@@ -971,33 +973,9 @@
 						<label for="person1Name">Person 1 Name</label>
 						<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
 						<input id="person1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1NameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Name').removeAttribute('readonly');
-          document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1NameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1NameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Name').append('readonly');
-          document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1NameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1Name').value.length > 0) { document.getElementById('warningPerson1Name').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1Name').value.length < 1) { document.getElementById('warningPerson1Name').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person1NameClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 name?');
-          if (confirm) {
-              document.getElementById('person1Name').value = '';
-              document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Name').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1NameUnlock" class="material-symbols-outlined" onclick="unlockPerson1Name();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1NameLock" class="material-symbols-outlined" onclick="lockPerson1Name();">lock</span>
+						<button id="person1NameClear" onclick="clearPerson1Name();">Clear</button>
 					</div>
 
 					<!-- Person 1 Title -->
@@ -1006,33 +984,9 @@
 						<label for="person1Title">Person 1 Title</label>
 						<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
 						<input id="person1Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1TitleUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Title').removeAttribute('readonly');
-          document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1TitleUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1TitleLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TitleLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Title').append('readonly');
-          document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1TitleUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1Title').value.length > 0) { document.getElementById('warningPerson1Title').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1Title').value.length < 1) { document.getElementById('warningPerson1Title').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person1TitleClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 title?');
-          if (confirm) {
-              document.getElementById('person1Title').value = '';
-              document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Title').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson1Title();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TitleLock" class="material-symbols-outlined" onclick="lockPerson1Title();">lock</span>
+						<button id="person1TitleClear" onclick="clearPerson1Title();">Clear</button>
 					</div>
 
 					<!-- Person 1 Headshot -->
@@ -1041,38 +995,10 @@
 						<label for="person1Headshot">Person 1 Headshot</label>
 						<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
 						<input id="person1Headshot" type="file" accept="image/*" value="" style="display: none;">
-						<span id="person1HeadshotUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Headshot').setAttribute('style', 'display: block;');
-          document.getElementById('person1Headshot').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('person1HeadshotUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1HeadshotLock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('person1HeadshotValueDisplay').setAttribute('style', 'display: none;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1HeadshotLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1Headshot').setAttribute('style', 'display: none;');
-          document.getElementById('person1HeadshotLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1HeadshotUnlock').setAttribute('style', 'background-color: transparent;');
-          document.getElementById('person1HeadshotValueDisplay').innerHTML = 'Current Person 1 Headshot: ' + document.getElementById('person1Headshot').value;
-          document.getElementById('person1HeadshotValueDisplay').setAttribute('style', 'display: block;');
-          if (document.getElementById('person1Headshot').value != null) { document.getElementById('warningPerson1Image').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1Headshot').value == null) { document.getElementById('warningPerson1Image').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="person1HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson1Headshot();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1HeadshotLock" class="material-symbols-outlined" onclick="lockPerson1Headshot();">lock</span>
 						<p id="person1HeadshotValueDisplay" style="display: none;"></p>
-						<!--
-						<button id="person1HeadshotClear" onclick="
-							  let confirm = alert('Are you sure you want to clear the person 1 headshot?');
-							  if (confirm) {
-								  document.getElementById('person1Headshot').value = '';
-								  document.getElementById('person1Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
-								  setTimeout(function() {
-								  document.getElementById('person1Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
-								  document.getElementById('warningPerson1Image').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						-->
+						<button id="person1HeadshotClear" onclick="clearPerson1Headshot();">Clear</button>
 					</div>
 
 					<!-- Person 1 Facebook URL -->
@@ -1081,33 +1007,9 @@
 						<label for="person1FacebookUrl">Person 1 Facebook URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
 						<input id="person1FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1FacebookUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1FacebookUrl').removeAttribute('readonly');
-          document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1FacebookUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1FacebookUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1FacebookUrl').append('readonly');
-          document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1FacebookUrl').value.length > 0) { document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1FacebookUrl').value.length < 1) { document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person1FacebookUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 Facebook URL?');
-          if (confirm) {
-              document.getElementById('person1FacebookUrl').value = '';
-              document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1FacebookUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson1FacebookUrl();">lock</span>
+						<button id="person1FacebookUrlClear" onclick="clearPerson1FacebookUrl();">Clear</button>
 					</div>
 
 					<!-- Person 1 Instagram URL -->
@@ -1116,33 +1018,9 @@
 						<label for="person1InstagramUrl">Person 1 Instagram URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
 						<input id="person1InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1InstagramUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1InstagramUrl').removeAttribute('readonly');
-          document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1InstagramUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1InstagramUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1InstagramUrl').append('readonly');
-          document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1InstagramUrl').value.length > 0) { document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1InstagramUrl').value.length < 1) { document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person1InstagramUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 Instagram URL?');
-          if (confirm) {
-              document.getElementById('person1InstagramUrl').value = '';
-              document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1InstagramUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson1InstagramUrl();">lock</span>
+						<button id="person1InstagramUrlClear" onclick="clearPerson1InstagramUrl();">Clear</button>
 					</div>
 
 					<!-- Person 1 LinkedIn URL -->
@@ -1151,33 +1029,9 @@
 						<label for="person1LinkedinUrl">Person 1 LinkedIn URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
 						<input id="person1LinkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1LinkedinUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1LinkedinUrl').removeAttribute('readonly');
-          document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1LinkedinUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1LinkedinUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1LinkedinUrl').append('readonly');
-          document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1LinkedinUrl').value.length > 0) { document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1LinkedinUrl').value.length < 1) { document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="person1LinkedinUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 LinkedIn URL?');
-          if (confirm) {
-              document.getElementById('person1LinkedinUrl').value = '';
-              document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1LinkedinUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson1LinkedinUrl();">lock</span>
+						<button id="person1LinkedinUrlClear" onclick="clearPerson1LinkedinUrl();">Clear</button>
 					</div>
 
 					<!-- Person 1 Twitter URL -->
@@ -1186,33 +1040,9 @@
 						<label for="person1TwitterUrl">Person 1 Twitter URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
 						<input id="person1TwitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1TwitterUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1TwitterUrl').removeAttribute('readonly');
-          document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1TwitterUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TwitterUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1TwitterUrl').append('readonly');
-          document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1TwitterUrl').value.length > 0) { document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1TwitterUrl').value.length < 1) { document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="person1TwitterUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 Twitter URL?');
-          if (confirm) {
-              document.getElementById('person1TwitterUrl').value = '';
-              document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TwitterUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson1TwitterUrl()">lock</span>
+						<button id="person1TwitterUrlClear" onclick="clearPerson1TwitterUrl();">Clear</button>
 					</div>
 
 					<!-- Person 1 TikTok URL -->
@@ -1221,33 +1051,9 @@
 						<label for="person1TiktokUrl">Person 1 TikTok URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
 						<input id="person1TiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1TiktokUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1TiktokUrl').removeAttribute('readonly');
-          document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person1TiktokUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TiktokUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person1TiktokUrl').append('readonly');
-          document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person1TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person1TiktokUrl').value.length > 0) { document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person1TiktokUrl').value.length < 1) { document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="person1TiktokUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 1 TikTok URL?');
-          if (confirm) {
-              document.getElementById('person1TiktokUrl').value = '';
-              document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person1TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TiktokUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson1TiktokUrl();">lock</span>
+						<button id="person1TiktokUrlClear" onclick="clearPerson1TiktokUrl();">Clear</button>
 					</div>
 
 					<h3>Person 2</h3>
@@ -1258,33 +1064,9 @@
 						<label for="person2Name">Person 2 Name</label>
 						<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
 						<input id="person2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2NameUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Name').removeAttribute('readonly');
-          document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2NameLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2NameLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Name').append('readonly');
-          document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2NameUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2Name').value.length > 0) { document.getElementById('warningPerson2Name').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2Name').value.length < 1) { document.getElementById('warningPerson2Name').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person2NameClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 name?');
-          if (confirm) {
-              document.getElementById('person2Name').value = '';
-              document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2Name').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2NameUnlock" class="material-symbols-outlined" onclick="unlockPerson2Name();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2NameLock" class="material-symbols-outlined" onclick="lockPerson2Name();">lock</span>
+						<button id="person2NameClear" onclick="clearPerson2Name();">Clear</button>
 					</div>
 
 					<!-- Person 2 Title -->
@@ -1293,33 +1075,9 @@
 						<label for="person2Title">Person 2 Title</label>
 						<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
 						<input id="person2Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2TitleUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Title').removeAttribute('readonly');
-          document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2TitleUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2TitleLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TitleLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Title').append('readonly');
-          document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2TitleUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2Title').value.length > 0) { document.getElementById('warningPerson2Title').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2Title').value.length < 1) { document.getElementById('warningPerson2Title').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person2TitleClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 title?');
-          if (confirm) {
-              document.getElementById('person2Title').value = '';
-              document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2Title').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson2Title();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TitleLock" class="material-symbols-outlined" onclick="lockPerson2Title();">lock</span>
+						<button id="person2TitleClear" onclick="clearPerson2Title();">Clear</button>
 					</div>
 
 					<!-- Person 2 Headshot -->
@@ -1328,38 +1086,10 @@
 						<label for="person2Headshot">Person 2 Headshot</label>
 						<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
 						<input id="person2Headshot" type="file" accept="image/*" value="" style="display: none;">
-						<span id="person2HeadshotUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Headshot').setAttribute('style', 'display: block;');
-          document.getElementById('person2Headshot').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
-          document.getElementById('person2HeadshotUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2HeadshotLock').setAttribute('style', 'background-color: white;');
-          document.getElementById('person2HeadshotValueDisplay').setAttribute('style', 'display: transparent;');
-        ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2HeadshotLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2Headshot').setAttribute('style', 'display: none;');
-          document.getElementById('person2HeadshotLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2HeadshotUnlock').setAttribute('style', 'background-color: white;');
-          document.getElementById('person2HeadshotValueDisplay').innerHTML = 'Current Person 2 Headshot: ' + document.getElementById('person2Headshot').value;
-          document.getElementById('person2HeadshotValueDisplay').setAttribute('style', 'display: transparent;');
-          if (document.getElementById('person2Headshot').value != null) { document.getElementById('warningPerson2Headshot').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2Headshot').value == null) { document.getElementById('warningPerson2Headshot').setAttribute('style', 'display: block;'); }
-        ">lock</span>
+						<span id="person2HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson2Headshot();">lock_open</span>
+						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2HeadshotLock" class="material-symbols-outlined" onclick="lockPerson2Headshot();">lock</span>
 						<p id="person2HeadshotValueDisplay" style="display: none;"></p>
-						<!--
-						<button id="person2HeadshotClear" onclick="
-							  let confirm = alert('Are you sure you want to clear the person 2 headshot?');
-							  if (confirm) {
-								  document.getElementById('person2Headshot').value = '';
-								  document.getElementById('person2Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
-								  setTimeout(function() {
-								  document.getElementById('person2Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
-								  document.getElementById('warningPerson2Headshot').setAttribute('style', 'display: block;');
-								  }, 800);
-							  } else {
-								  confirm.close();
-							  }
-							  ">Clear</button>
-						 -->
+						<button id="person2HeadshotClear" onclick="clearPerson2Headshot();">Clear</button>
 					</div>
 
 					<!-- Person 2 Facebook URL -->
@@ -1368,33 +1098,9 @@
 						<label for="person2FacebookUrl">Person 2 Facebook URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
 						<input id="person2FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2FacebookUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2FacebookUrl').removeAttribute('readonly');
-          document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2FacebookUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2FacebookUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2FacebookUrl').append('readonly');
-          document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2FacebookUrl').value.length > 0) { document.getElementById('warningPerson2FacebookURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2FacebookUrl').value.length < 1) { document.getElementById('warningPerson2FacebookURL').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person2FacebookUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 Facebook URL?');
-          if (confirm) {
-              document.getElementById('person2FacebookUrl').value = '';
-              document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2FacebookURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2FacebookUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson2FacebookUrl()">lock</span>
+						<button id="person2FacebookUrlClear" onclick="clearPerson1FacebookUrl();">Clear</button>
 					</div>
 
 					<!-- Person 2 Instagram URL -->
@@ -1403,33 +1109,9 @@
 						<label for="person2InstagramUrl">Person 2 Instagram URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
 						<input id="person2InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2InstagramUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2InstagramUrl').removeAttribute('readonly');
-          document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2InstagramUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2InstagramUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2InstagramUrl').append('readonly');
-          document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2InstagramUrl').value.length > 0) { document.getElementById('warningPerson2InstagramURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2InstagramUrl').value.length < 1) { document.getElementById('warningPerson2InstagramURL').setAttribute('style', 'display: block;'); }
-      ">lock</span>
-						<button id="person2InstagramUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 Instagram URL?');
-          if (confirm) {
-              document.getElementById('person2InstagramUrl').value = '';
-              document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2InstagramURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1InstagramUrl()">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson2InstagramUrl();">lock</span>
+						<button id="person2InstagramUrlClear" onclick="clearPerson2InstagramUrl();">Clear</button>
 					</div>
 
 					<!-- Person 2 LinkedIn URL -->
@@ -1438,33 +1120,9 @@
 						<label for="person2LinkedinUrl">Person 2 LinkedIn URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
 						<input id="person2LinkedinUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
-						<span id="person2LinkedinUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2LinkedinUrl').removeAttribute('readonly');
-          document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2LinkedinUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2LinkedinUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2LinkedinUrl').append('readonly');
-          document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2LinkedinUrl').value.length > 0) { document.getElementById('warningPerson2LinkedinURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2LinkedinUrl').value.length < 1) { document.getElementById('warningPerson2LinkedinURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="person2LinkedinUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 LinkedIn URL?');
-          if (confirm) {
-              document.getElementById('person2LinkedinUrl').value = '';
-              document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2LinkedinURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2LinkedinUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson2LinkedinUrl();">lock</span>
+						<button id="person2LinkedinUrlClear" onclick="clearPerson2LinkedinUrl();">Clear</button>
 					</div>
 
 					<!-- Person 2 Twitter URL -->
@@ -1473,33 +1131,9 @@
 						<label for="person2TwitterUrl">Person 2 Twitter URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
 						<input id="person2TwitterUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
-						<span id="person2TwitterUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2TwitterUrl').removeAttribute('readonly');
-          document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2TwitterUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TwitterUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2TwitterUrl').append('readonly');
-          document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2TwitterUrl').value.length > 0) { document.getElementById('warningPerson2TwitterURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2TwitterUrl').value.length < 1) { document.getElementById('warningPerson2TwitterURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="person2TwitterUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 Twitter URL?');
-          if (confirm) {
-              document.getElementById('person2TwitterUrl').value = '';
-              document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2TwitterURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TwitterUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson2TwitterUrl()">lock</span>
+						<button id="person2TwitterUrlClear" onclick="clearPerson1TwitterUrl();">Clear</button>
 					</div>
 
 					<!-- Person 2 TikTok URL -->
@@ -1508,33 +1142,9 @@
 						<label for="person2TiktokUrl">Person 2 TikTok URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
 						<input id="person2TiktokUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
-						<span id="person2TiktokUrlUnlock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2TiktokUrl').removeAttribute('readonly');
-          document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
-          document.getElementById('person2TiktokUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
-        ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TiktokUrlLock" class="material-symbols-outlined" onclick="
-          document.getElementById('person2TiktokUrl').append('readonly');
-          document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-          document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
-          document.getElementById('person2TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
-          if (document.getElementById('person2TiktokUrl').value.length > 0) { document.getElementById('warningPerson2TiktokURL').setAttribute('style', 'display: none;'); }
-          if (document.getElementById('person2TiktokUrl').value.length < 1) { document.getElementById('warningPerson2TiktokURL').setAttribute('style', 'display: block;'); }
-        ">lock</span>
-						<button id="person2TiktokUrlClear" onclick="
-          let confirm = alert('Are you sure you want to clear the person 2 TikTok URL?');
-          if (confirm) {
-              document.getElementById('person2TiktokUrl').value = '';
-              document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
-              setTimeout(function() {
-              document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-              document.getElementById('warningPerson2TiktokURL').setAttribute('style', 'display: block;');
-              }, 800);
-          } else {
-              confirm.close();
-          }
-          ">Clear</button>
+						<span id="person2TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TiktokUrl();">lock_open</span>
+						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson2TiktokUrl();">lock</span>
+						<button id="person2TiktokUrlClear" onclick="clearPerson2TiktokUrl();">Clear</button>
 					</div>
 
 				</div>
@@ -1544,7 +1154,7 @@
 
 </div>
 
-<!-- Content Tab -->
+<!-- Content Tab
 <div id="content" class="w3-container w3-display-container city" style="display:none">
 	<h2>My Content</h2>
 
@@ -1591,6 +1201,7 @@
 	</div>
 
 </div>
+ -->
 
 <!-- New Content Tab -->
 <div id="newContent" class="w3-container w3-display-container city" style="display:none">
@@ -1703,18 +1314,30 @@
 			<!-- With Date -->
 			<div id="hasTitleDate" style="display: none; line-height: 2em;">
 				<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text> & <text class="chip" style="background-color: lightpink">{{Date}}</text></p><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitleDate1">See you at the <text  contenteditable="false"class="title chip"></text>! Be there on <text contenteditable="false" class="date chip"></text>!</p>
+				<div>
+					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitleDate1">See you at the <text contenteditable="false" class="title chip"></text>! Be there on <text contenteditable="false" class="date chip"></text>!</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+				</div>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate1();">Copy Text</button><br><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitleDate2">Are you busy on <text contenteditable="false" class="date chip"></text>? Show up for our event, <text contenteditable="false" class="title chip"></text>!</p>
+				<div>
+					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitleDate2">Are you busy on <text contenteditable="false" class="date chip"></text>? Show up for our event, <text contenteditable="false" class="title chip"></text>!</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+				</div>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate2();">Copy Text</button>
 			</div>
 
 			<!-- With Title -->
 			<div id="hasTitle" style="display: none; line-height: 2em;">
 				<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text></p><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text contenteditable="false" class="title chip"></text>!</p>
+				<div>
+					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text contenteditable="false" class="title chip"></text>!</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+				</div>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitle1();">Copy Text</button><br><br>
-				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitle2">Will we be seeing you at the <text contenteditable="false" class="title chip"></text>? Inquire now!</p>
+				<div>
+					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">Will we be seeing you at the <text contenteditable="false" class="title chip"></text>? Inquire now!</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+				</div>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitle2();">Copy Text</button>
 			</div>
 			<br>
@@ -1722,16 +1345,19 @@
 
 			<!-- Hashtags Container -->
 			<div id="hashtagsContainer" style="display: none; box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">
-				<div style="padding: 10px 10px 10px 10px; line-height: 2em;">Hashtags:</div>
-				<div contenteditable="true" id="hashtagsHere" style="padding: 10px 10px 10px 10px; line-height: 2em;"></div>
+				<div style="padding: 10px 14px 22px 14px; line-height: 2em;">Hashtags</div>
+				<div>
+					<div contenteditable="true" id="hashtagsHere" style="padding: 10px 14px 22px 14px; line-height: 2em; border: 1px solid #cecece; border-radius: 5px;"></div>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -13px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+				</div>
 				<button class="copyTextButton" onclick="copyToClipboardHashtags();">Copy Hashtags</button>
 			</div>
 
 		</div>
 
-		<!-- Final Images -->
-		<div id="final" class="column3" style="user-select: none;">
 
+		<!-- Sendables -->
+		<div id="final" class="column3" style="user-select: none;">
 			<!-- Final Image (Horizontal) -->
 			<div id="finalImageHorizontal" class="imageColors">
 				<text id="finalTitleHorizontal" class="title"></text><br>
@@ -1787,12 +1413,231 @@
 				<img alt="" class="socialMediaIcon" src="socialMediaIcons/pinterest.png" />
 			</div>
 
+			<!-- Social Sendables -->
+			<div id="socialSendables">
+
+				<!-- Social Sendables Tab Script -->
+				<script>
+					function openSocialTab(evt, cityName) {
+						var i, socialTabContent, tablinks;
+						socialTabContent = document.getElementsByClassName("socialTabContent");
+						for (i = 0; i < socialTabContent.length; i++) {
+							socialTabContent[i].style.display = "none";
+						}
+						tablinks = document.getElementsByClassName("tablinks");
+						for (i = 0; i < tablinks.length; i++) {
+							tablinks[i].className = tablinks[i].className.replace(" active", "");
+						}
+						document.getElementById(cityName).style.display = "block";
+					}
+				</script>
+
+				<!-- Social Sendables Clickable Tabs -->
+				<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/facebookWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/linkedinWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/twitterWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/emailWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/redditWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/tumblrWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/telegramWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/whatsappWhite.png" /></button>
+
+					<!-- Facebook -->
+					<div id="tabFacebook" class="socialTabContent">
+						<!-- Share Via Facebook -->
+						<div onclick="
+							// prepare & set facebook post parameters
+							let u = document.getElementById('inputEventLink').value;
+							document.getElementById('shareViaFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + u
+						">
+							Post Preview<br><br>
+							<div id="facebookPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- facebook link -->
+							<a title="Share Via Facebook"
+							   id="shareViaFacebook"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--facebookColor)">Share to Facebook</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- Linkedin -->
+					<div id="tabLinkedin" class="socialTabContent">
+						<!-- Share Via LinkedIn -->
+						<div onclick="
+							// prepare & set linkedin post parameters
+							let url = document.getElementById('inputEventLink').value;
+							let title = document.getElementById('inputEventTitle').value; // not shown in shared link
+							let summary = document.getElementById('inputEventDescription').value; // link not working when added
+							document.getElementById('shareViaLinkedin').href = 'https://linkedin.com/shareArticle?url=' + url + '&title=' + title
+						">
+							Post Preview<br><br>
+							<div id="linkedinPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- linkedin link -->
+							<a title="Share Via Linkedin"
+							   id="shareViaLinkedin"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--linkedinColor)">Share to LinkedIn</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- Twitter -->
+					<div id="tabTwitter" class="socialTabContent">
+						<!-- Share Via Twitter -->
+						<div onclick="
+							// prepare & set twitter post parameters
+							let url = document.getElementById('inputEventLink').value;
+							let text = 'text to share';
+							let hashtags = 'hashtag1,hashtag2';
+							document.getElementById('shareViaTwitter').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text + '&hashtags=' + hashtags
+						">
+							Post Preview<br><br>
+							<div id="twitterPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- twitter link -->
+							<a title="Share Via Twitter"
+							   id="shareViaTwitter"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--twitterColor)">Share to Twitter</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- Email -->
+					<div id="tabEmail" class="socialTabContent">
+						<!-- Share Via Email -->
+						<div onclick="
+							// prepare & set email parameters
+							let email = 'brandwield@gmail.com';
+							let subject = document.getElementById('inputEventTitle').value;
+							let body = document.getElementById('inputEventLink').value;
+							document.getElementById('shareViaEmail').href = 'mailto:?' + email + '&subject=' + subject + '&body=' + body
+						">
+							Post Preview<br><br>
+							<div id="emailPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- email link -->
+							<a title="Share Via Email"
+							   id="shareViaEmail"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--googleColor)">Share to Email</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- Reddit -->
+					<div id="tabReddit" class="socialTabContent">
+						<!-- Share Via Reddit -->
+						<div onclick="
+							// prepare & set reddit post parameters
+							let url = document.getElementById('inputEventLink').value;
+							let title = document.getElementById('inputEventTitle').value;
+							document.getElementById('shareViaTwitter').href = 'https://www.reddit.com/submit?url=' + url + '&title=' + title
+						">
+							Post Preview<br><br>
+							<div id="redditPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- reddit link -->
+							<a title="Share Via Reddit"
+							   id="shareViaReddit"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--redditColor)">Share to Reddit</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- Tumblr -->
+					<div id="tabTumblr" class="socialTabContent">
+						<!-- Share Via Tumblr -->
+						<div onclick="
+							// prepare & set tumblr post parameters
+							let canonicalUrl = document.getElementById('inputEventLink').value;
+							let caption = document.getElementById('inputEventTitle').value;
+							let tags = 'tag1,tag2';
+							document.getElementById('shareViaTwitter').href = 'https://www.tumblr.com/widgets/share/tool' + '?canonicalUrl=' + canonicalUrl + '&caption=' + caption + '&tags=' + tags
+						">
+							Post Preview<br><br>
+							<div id="tumblrPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- tumblr link -->
+							<a title="Share Via Tumblr"
+							   id="shareViaTumblr"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--tumblrColor)">Share to Tumblr</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- Telegram -->
+					<div id="tabTelegram" class="socialTabContent">
+						<!-- Share Via Telegram -->
+						<div onclick="
+							// prepare & set telegram post parameters
+							let url = document.getElementById('inputEventLink').value;
+							let text = document.getElementById('inputEventTitle').value;
+							document.getElementById('shareViaTwitter').href = 'https://t.me/share/url' + '?url=' + url + '&text=' + text
+						">
+							Post Preview<br><br>
+							<div id="telegramPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+
+							<!-- telegram link -->
+							<a title="Share Via Telegram"
+							   id="shareViaTelegram"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--telegramColor)">Share to Telegram</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+					<!-- WhatsApp -->
+					<div id="tabWhatsapp" class="socialTabContent">
+						<!-- Share Via WhatsApp -->
+						<div onclick="
+							// prepare & set whatsapp post parameters
+							let url = document.getElementById('inputEventLink').value; // param not found - link added via 'text' param
+							let text = document.getElementById('inputEventTitle').value;
+							document.getElementById('shareViaTwitter').href = 'https://wa.me/' + '?text=' + text + ' ' + url
+						">
+							Post Preview<br><br>
+							<div id="whatsappPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- whatsapp link -->
+							<a title="Share Via WhatsApp"
+							   id="shareViaWhatsapp"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--whatsappColor)">Share to WhatsApp</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+
+				</div>
+
+			</div>
+
 		</div>
 
 	</div>
-
-
-
 </div>
 
 <!-- Integrations Tab -->
@@ -1820,4 +1665,5 @@
 </div>
 
 </body>
+
 </html>

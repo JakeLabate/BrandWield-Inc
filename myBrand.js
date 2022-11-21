@@ -1407,6 +1407,464 @@ function clearTertiaryFont () {
 		confirm.close();
 	}
 }
+// PEOPLE
+// person1
+// person1Name
+function unlockPerson1Name () {
+	document.getElementById('person1Name').removeAttribute('readonly');
+	document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1NameLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1Name () {
+	document.getElementById('person1Name').append('readonly');
+	document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1NameUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1Name').value.length > 0) { document.getElementById('warningPerson1Name').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1Name').value.length < 1) { document.getElementById('warningPerson1Name').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1Name () {
+	let confirm = alert('Are you sure you want to clear the person 1 name?');
+	if (confirm) {
+		document.getElementById('person1Name').value = '';
+		document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Name').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1Title
+function unlockPerson1Title () {
+	document.getElementById('person1Title').removeAttribute('readonly');
+	document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1TitleUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1TitleLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1Title () {
+	document.getElementById('person1Title').append('readonly');
+	document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1TitleUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1Title').value.length > 0) { document.getElementById('warningPerson1Title').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1Title').value.length < 1) { document.getElementById('warningPerson1Title').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1Title () {
+	let confirm = alert('Are you sure you want to clear the person 1 title?');
+	if (confirm) {
+		document.getElementById('person1Title').value = '';
+		document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Title').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1Headshot
+function unlockPerson1Headshot () {
+	document.getElementById('person1Headshot').setAttribute('style', 'display: block;');
+	document.getElementById('person1Headshot').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('person1HeadshotUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1HeadshotLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('person1HeadshotValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockPerson1Headshot () {
+	document.getElementById('person1Headshot').setAttribute('style', 'display: none;');
+	document.getElementById('person1HeadshotLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1HeadshotUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('person1HeadshotValueDisplay').innerHTML = 'Current Person 1 Headshot: ' + document.getElementById('person1Headshot').value;
+	document.getElementById('person1HeadshotValueDisplay').setAttribute('style', 'display: block;');
+	if (document.getElementById('person1Headshot').value != null) { document.getElementById('warningPerson1Image').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1Headshot').value == null) { document.getElementById('warningPerson1Image').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1Headshot () {
+	let confirm = alert('Are you sure you want to clear the person 1 headshot?');
+	if (confirm) {
+		document.getElementById('person1Headshot').value = '';
+		document.getElementById('person1Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
+		setTimeout(function() {
+			document.getElementById('person1Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
+			document.getElementById('warningPerson1Image').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1FacebookUrl
+function unlockPerson1FacebookUrl () {
+	document.getElementById('person1FacebookUrl').removeAttribute('readonly');
+	document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1FacebookUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1FacebookUrl () {
+	document.getElementById('person1FacebookUrl').append('readonly');
+	document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1FacebookUrl').value.length > 0) { document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1FacebookUrl').value.length < 1) { document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1FacebookUrl () {
+	let confirm = alert('Are you sure you want to clear the person 1 Facebook URL?');
+	if (confirm) {
+		document.getElementById('person1FacebookUrl').value = '';
+		document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1TInstagramUrl
+function unlockPerson1InstagramUrl () {
+	document.getElementById('person1InstagramUrl').removeAttribute('readonly');
+	document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1InstagramUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1InstagramUrl () {
+	document.getElementById('person1InstagramUrl').append('readonly');
+	document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1InstagramUrl').value.length > 0) { document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1InstagramUrl').value.length < 1) { document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1InstagramUrl () {
+	let confirm = alert('Are you sure you want to clear the person 1 Instagram URL?');
+	if (confirm) {
+		document.getElementById('person1InstagramUrl').value = '';
+		document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1LinkedinUrl
+function unlockPerson1LinkedinUrl () {
+	document.getElementById('person1LinkedinUrl').removeAttribute('readonly');
+	document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1LinkedinUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1LinkedinUrl () {
+	document.getElementById('person1LinkedinUrl').append('readonly');
+	document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1LinkedinUrl').value.length > 0) { document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1LinkedinUrl').value.length < 1) { document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1LinkedinUrl () {
+	let confirm = alert('Are you sure you want to clear the person 1 LinkedIn URL?');
+	if (confirm) {
+		document.getElementById('person1LinkedinUrl').value = '';
+		document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1TwitterUrl
+function unlockPerson1TwitterUrl () {
+	document.getElementById('person1TwitterUrl').removeAttribute('readonly');
+	document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1TwitterUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1TwitterUrl () {
+	document.getElementById('person1TwitterUrl').append('readonly');
+	document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1TwitterUrl').value.length > 0) { document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1TwitterUrl').value.length < 1) { document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1TwitterUrl () {
+	let confirm = alert('Are you sure you want to clear the person 1 Twitter URL?');
+	if (confirm) {
+		document.getElementById('person1TwitterUrl').value = '';
+		document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person1TiktokUrl
+function unlockPerson1TiktokUrl () {
+	document.getElementById('person1TiktokUrl').removeAttribute('readonly');
+	document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person1TiktokUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson1TiktokUrl () {
+	document.getElementById('person1TiktokUrl').append('readonly');
+	document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person1TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person1TiktokUrl').value.length > 0) { document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person1TiktokUrl').value.length < 1) { document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: block;'); }
+}
+function clearPerson1TiktokUrl () {
+	let confirm = alert('Are you sure you want to clear the person 1 TikTok URL?');
+	if (confirm) {
+		document.getElementById('person1TiktokUrl').value = '';
+		document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+
+// person2
+// person2Name
+function unlockPerson2Name () {
+	document.getElementById('person2Name').removeAttribute('readonly');
+	document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2NameUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2NameLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2Name () {
+	document.getElementById('person2Name').append('readonly');
+	document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2NameUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2Name').value.length > 0) { document.getElementById('warningPerson2Name').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2Name').value.length < 1) { document.getElementById('warningPerson2Name').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2Name () {
+	let confirm = alert('Are you sure you want to clear the person 2 name?');
+	if (confirm) {
+		document.getElementById('person2Name').value = '';
+		document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Name').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2Title
+function unlockPerson2Title () {
+	document.getElementById('person2Title').removeAttribute('readonly');
+	document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2TitleUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2TitleLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2Title () {
+	document.getElementById('person2Title').append('readonly');
+	document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2TitleUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2Title').value.length > 0) { document.getElementById('warningPerson2Title').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2Title').value.length < 1) { document.getElementById('warningPerson2Title').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2Title () {
+	let confirm = alert('Are you sure you want to clear the person 2 title?');
+	if (confirm) {
+		document.getElementById('person2Title').value = '';
+		document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Title').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2Headshot
+function unlockPerson2Headshot () {
+	document.getElementById('person2Headshot').setAttribute('style', 'display: block;');
+	document.getElementById('person2Headshot').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
+	document.getElementById('person2HeadshotUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2HeadshotLock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('person2HeadshotValueDisplay').setAttribute('style', 'display: none;');
+}
+function lockPerson2Headshot () {
+	document.getElementById('person2Headshot').setAttribute('style', 'display: none;');
+	document.getElementById('person2HeadshotLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2HeadshotUnlock').setAttribute('style', 'background-color: transparent;');
+	document.getElementById('person2HeadshotValueDisplay').innerHTML = 'Current Person 2 Headshot: ' + document.getElementById('person2Headshot').value;
+	document.getElementById('person2HeadshotValueDisplay').setAttribute('style', 'display: block;');
+	if (document.getElementById('person2Headshot').value != null) { document.getElementById('warningPerson2Image').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2Headshot').value == null) { document.getElementById('warningPerson2Image').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2Headshot () {
+	let confirm = alert('Are you sure you want to clear the person 2 headshot?');
+	if (confirm) {
+		document.getElementById('person2Headshot').value = '';
+		document.getElementById('person2Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
+		setTimeout(function() {
+			document.getElementById('person2Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: block;');
+			document.getElementById('warningPerson2Image').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2FacebookUrl
+function unlockPerson2FacebookUrl () {
+	document.getElementById('person2FacebookUrl').removeAttribute('readonly');
+	document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2FacebookUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2FacebookUrl () {
+	document.getElementById('person2FacebookUrl').append('readonly');
+	document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2FacebookUrl').value.length > 0) { document.getElementById('warningPerson2Facebook').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2FacebookUrl').value.length < 1) { document.getElementById('warningPerson2Facebook').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2FacebookUrl () {
+	let confirm = alert('Are you sure you want to clear the person 2 Facebook URL?');
+	if (confirm) {
+		document.getElementById('person2FacebookUrl').value = '';
+		document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Facebook').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2TInstagramUrl
+function unlockPerson2InstagramUrl () {
+	document.getElementById('person2InstagramUrl').removeAttribute('readonly');
+	document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2InstagramUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2InstagramUrl () {
+	document.getElementById('person2InstagramUrl').append('readonly');
+	document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2InstagramUrl').value.length > 0) { document.getElementById('warningPerson2Instagram').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2InstagramUrl').value.length < 1) { document.getElementById('warningPerson2Instagram').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2InstagramUrl () {
+	let confirm = alert('Are you sure you want to clear the person 2 Instagram URL?');
+	if (confirm) {
+		document.getElementById('person2InstagramUrl').value = '';
+		document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Instagram').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2LinkedinUrl
+function unlockPerson2LinkedinUrl () {
+	document.getElementById('person2LinkedinUrl').removeAttribute('readonly');
+	document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2LinkedinUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2LinkedinUrl () {
+	document.getElementById('person2LinkedinUrl').append('readonly');
+	document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2LinkedinUrl').value.length > 0) { document.getElementById('warningPerson2Linkedin').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2LinkedinUrl').value.length < 1) { document.getElementById('warningPerson2Linkedin').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2LinkedinUrl () {
+	let confirm = alert('Are you sure you want to clear the person 2 LinkedIn URL?');
+	if (confirm) {
+		document.getElementById('person2LinkedinUrl').value = '';
+		document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Linkedin').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2TwitterUrl
+function unlockPerson2TwitterUrl () {
+	document.getElementById('person2TwitterUrl').removeAttribute('readonly');
+	document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2TwitterUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2TwitterUrl () {
+	document.getElementById('person2TwitterUrl').append('readonly');
+	document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2TwitterUrl').value.length > 0) { document.getElementById('warningPerson2Twitter').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2TwitterUrl').value.length < 1) { document.getElementById('warningPerson2Twitter').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2TwitterUrl () {
+	let confirm = alert('Are you sure you want to clear the person 2 Twitter URL?');
+	if (confirm) {
+		document.getElementById('person2TwitterUrl').value = '';
+		document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Twitter').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+// person2TiktokUrl
+function unlockPerson2TiktokUrl () {
+	document.getElementById('person2TiktokUrl').removeAttribute('readonly');
+	document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange;');
+	document.getElementById('person2TiktokUrlUnlock').setAttribute('style', 'background-color: orange; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
+}
+function lockPerson2TiktokUrl () {
+	document.getElementById('person2TiktokUrl').append('readonly');
+	document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+	document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
+	document.getElementById('person2TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
+	if (document.getElementById('person2TiktokUrl').value.length > 0) { document.getElementById('warningPerson2Tiktok').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('person2TiktokUrl').value.length < 1) { document.getElementById('warningPerson2Tiktok').setAttribute('style', 'display: block;'); }
+}
+function clearPerson2TiktokUrl () {
+	let confirm = alert('Are you sure you want to clear the person 2 TikTok URL?');
+	if (confirm) {
+		document.getElementById('person2TiktokUrl').value = '';
+		document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+		setTimeout(function() {
+			document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
+			document.getElementById('warningPerson2Tiktok').setAttribute('style', 'display: block;');
+		}, 800);
+	} else {
+		confirm.close();
+	}
+}
+
+
 // OFFERS
 // offer1
 // offer1Name

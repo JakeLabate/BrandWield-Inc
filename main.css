@@ -1,5 +1,7 @@
 :root {
 
+    /* BRAND ASSETS */
+
     /* COLORS */
     --primaryColor: #737373;
     --secondaryColor: #737373;
@@ -9,6 +11,26 @@
     --primaryFont: 'Montserrat', sans-serif;
     --secondaryFont: 'Roboto', sans-serif;
     --tertiaryFont: Comic Sans MS, Comic Sans, cursive;
+
+    /* SOCIAL MEDIA ASSETS */
+    --facebookColor: #3b5998;
+    --twitterColor: #1da1f2;
+    --instagramColor: #e1306c;
+    --youtubeColor: #ff0000;
+    --pinterestColor: #bd081c;
+    --linkedinColor: #0077b5;
+    --tumblrColor: #35465c;
+    --redditColor: #ff4500;
+    --snapchatColor: #fffc00;
+    --tiktokColor: #000000;
+    --whatsappColor: #25d366;
+    --telegramColor: #0088cc;
+    --discordColor: #7289da;
+    --twitchColor: #6441a5;
+    --spotifyColor: #1db954;
+    --soundcloudColor: #ff8800;
+    --googleColor: #4285f4;
+
 }
 
 /* Everything */
@@ -107,7 +129,7 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
 .tab {
     padding: 8px 14px 8px 14px;
     border-radius: 11px;
-    background: linear-gradient(145deg, #f0f0f0, #e3e3e3);
+    background: #ffffff;
     box-shadow:  5px 5px 12px #b5b5b5,
     -5px -5px 12px #ffffff;
     border: transparent;
@@ -122,9 +144,6 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
     box-shadow:  5px 5px 12px #808080,
     -5px -5px 12px #ffffff;
     transition: .25s;
-}
-.tab:active {
-
 }
 
 /* Columns & Rows */
@@ -457,7 +476,6 @@ a.link {
      margin: 8px 8px 8px 8px;
      border: 1px solid #c9c9c9;
      transition: .1s ease-in-out;
-
  }
 
  .copyTextButton:hover {
@@ -467,6 +485,71 @@ a.link {
      font-weight: bolder;
      transition: .1s ease-in-out;
  }
+
+ .shareToSocial {
+     text-decoration: none;
+     height: 20px;
+     width: 20px;
+     transition: .1s ease-in-out;
+     background-color: transparent;
+     border: none;
+ }
+ .shareToSocial:hover {
+     cursor: pointer;
+     scale: 1.1;
+     transition: .1s ease-in-out;
+ }
+
+#socialSendablesTab {}
+#socialSendablesTab:hover {
+    background-color: white !important;
+}
+
+.socialTab {
+    margin: 0 0 0 0;
+    padding: 10px 10px 10px 10px;
+}
+
+#socialSendables {
+     display: inline-block;
+     position: absolute;
+     top: 800px;
+     right: 20px;
+ }
+.socialTabContent {
+     background-color: #ffffff;
+     display: none;
+     border: 2px solid #575757;
+     padding: 20px 20px 20px 20px;
+ }
+
+div[id*="PostPreview"] {}
+#facebookPostPreview {}
+#linkedinPostPreview {}
+#twitterPostPreview {}
+#emailPostPreview {}
+#redditPostPreview {}
+#tumblrPostPreview {}
+#telegramPostPreview {}
+#whatsappPostPreview {}
+
+.shareButton {
+    padding: 12px 17px 12px 17px;
+    font-weight: bolder;
+    margin: 20px 0 20px 0;
+    color: #ffffff;
+    box-shadow: 5px 10px #888888;
+    -webkit-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
+    -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
+    border-radius: 7px;
+    border: none;
+    transition: .1s ease-in-out;
+ }
+.shareButton:hover {
+    cursor: pointer;;
+    transition: .1s ease-in-out;
+    scale: 1.03;
+}
 
 pre code {
     background-color: #424242;
@@ -582,11 +665,11 @@ pre code {
             'GRAD' 0,
             'opsz' 48;
     cursor: pointer;
-    transition: .1s;
+    transition: .1s ease-in-out;
 }
 .material-symbols-outlined:hover {
     scale: 1.10;
-    transition: .1s;
+    transition: .1s ease-in-out;
 }
 
 /* Brand Variables in 'My Brand' section */
