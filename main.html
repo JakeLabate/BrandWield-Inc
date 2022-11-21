@@ -32,21 +32,21 @@
 		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableContactInfoSection();">
 			<!-- Edit Button showing the potential feature of editing brand info in the 'brandbar' -->
 			<span class="material-symbols-outlined edit" onclick="document.getElementById('draggablePrimaryContactPhone').style.backgroundColor = '#fff'">edit</span>
-			<span id="draggablePrimaryContactPhone" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggablePrimaryContactEmail" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggablePrimaryContactPhone" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggablePrimaryContactEmail" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar chip" draggable="true"></span><br><br>
 		</b>
 		<b id="draggableFoundingInfoSectionHeader" onmouseover="onmouseoverDraggableFoundingInfoSection();">Founding Info:</b><br><br><b id="draggableFoundingInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableFoundingInfoSection();">
-			<span id="draggableFounderName" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggableFoundingDate" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggableTradeBusinessName" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggableLegalBusinessName" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableFounderName" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggableFoundingDate" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggableTradeBusinessName" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggableLegalBusinessName" class="draggableBrandVar chip" draggable="true"></span><br><br>
 		</b>
 		<b id="draggableBusinessInfoSectionHeader" onmouseover="onmouseoverDraggableBusinessInfoSection();">Business Info:</b><br><br><b id="draggableBusinessInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableBusinessInfoSection();">
-			<span id="draggableBusinessType" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggableSlogan" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggableMissionStatement" class="draggableBrandVar" draggable="true"></span><br><br>
-			<span id="draggableValueProp" class="draggableBrandVar" draggable="true"></span><br><br>
+			<span id="draggableBusinessType" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggableSlogan" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggableMissionStatement" class="draggableBrandVar chip" draggable="true"></span><br><br>
+			<span id="draggableValueProp" class="draggableBrandVar chip" draggable="true"></span><br><br>
 		</b>
 	</div>
 
@@ -1703,25 +1703,29 @@
 			<!-- With Date -->
 			<div id="hasTitleDate" style="display: none; line-height: 2em;">
 				<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text> & <text class="chip" style="background-color: lightpink">{{Date}}</text></p><br>
-				<p id="copyToClipboardHasTitleDate1">See you at the <text class="title chip"></text>! Be there on <text class="date chip"></text>!</p>
+				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitleDate1">See you at the <text  contenteditable="false"class="title chip"></text>! Be there on <text contenteditable="false" class="date chip"></text>!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate1();">Copy Text</button><br><br>
-				<p id="copyToClipboardHasTitleDate2">Are you busy on <text class="date chip"></text>? Show up for our event, <text class="title chip"></text>!</p>
+				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitleDate2">Are you busy on <text contenteditable="false" class="date chip"></text>? Show up for our event, <text contenteditable="false" class="title chip"></text>!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate2();">Copy Text</button>
 			</div>
 
 			<!-- With Title -->
 			<div id="hasTitle" style="display: none; line-height: 2em;">
 				<p style="box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">Requirements Met:<br><text class="chip" style="background-color: #CF88FF">{{Title}}</text></p><br>
-				<p id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text class="title chip"></text>!</p>
+				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text contenteditable="false" class="title chip"></text>!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitle1();">Copy Text</button><br><br>
-				<p id="copyToClipboardHasTitle2">Will we be seeing you at the <text class="title chip"></text>? Inquire now!</p>
+				<p style="padding: 10px 10px 10px 10px;" contenteditable="true" id="copyToClipboardHasTitle2">Will we be seeing you at the <text contenteditable="false" class="title chip"></text>? Inquire now!</p>
 				<button class="copyTextButton" onclick="copyToClipboardHasTitle2();">Copy Text</button>
 			</div>
+			<br>
+			<br>
 
-			<!-- Hashtags Container
-			<div style="padding: 10px 10px 10px 10px; line-height: 2em;">Hashtags:</div>
-			<div id="hashtagsHere" style="padding: 10px 10px 10px 10px; line-height: 2em;"></div>
-			-->
+			<!-- Hashtags Container -->
+			<div id="hashtagsContainer" style="display: none; box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">
+				<div style="padding: 10px 10px 10px 10px; line-height: 2em;">Hashtags:</div>
+				<div contenteditable="true" id="hashtagsHere" style="padding: 10px 10px 10px 10px; line-height: 2em;"></div>
+				<button class="copyTextButton" onclick="copyToClipboardHashtags();">Copy Hashtags</button>
+			</div>
 
 		</div>
 
