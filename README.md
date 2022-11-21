@@ -157,7 +157,7 @@ BrandWield Inc. is considering an angel round. We may or may not decide to accep
 Contact me.
 
 ## Contact
-Jake Labate, Founder & CEO of BrandWield Inc. - [call me](tel:203-907-5536) or [email me](mailto:brandwield@gmail.com?subject=Github Inquiry) anytime.
+Jake Labate, Founder & CEO of BrandWield Inc, <a href="203-907-5536">call me</a> or <a href="brandwield@gmail">email me</a>.
 
 Project Link: [https://github.com/JakeLabate/BrandWield-Inc](https://github.com/JakeLabate/BrandWield-Inc)
 
