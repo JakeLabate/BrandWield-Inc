@@ -45,7 +45,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase();
+const db = getDatabase(); 
 
 // Get Brand Variables
 const dbRef = ref(getDatabase());
