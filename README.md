@@ -1,112 +1,109 @@
-
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/JakeLabate/BrandWield-Inc">
     <img src="brandwieldLogos/squareLogo.png" alt="Logo" width="80" height="100%" />
   </a>
 
 # BrandWield Inc.
 
+BrandWield is on mission to turn every small business owner into a tier-1 content creator.
 </div>
 
-## Setting the Stage
 ```js
 // Set the stage
-function readThisCode (you) {
-	if (you.goal == 'worldDomination') {
-		// Set conservative brandWieldEval
-		let brandWieldEval = '10,000,000,000';
-		// offer generous compensation
-		let yourEquity = '40%'
-		// get rich
-		let yourNetWorth = brandWieldEval * yourEquity;
-		// rejoice
-		document.getElementById('yourHappiness').value = 'BrandWield Inc.';
-	} else {
-		// Be a bum
-		yourNetWorth = Math.floor(Math.random() * 1, 000, 000);
-	}
+if (you.goal == 'worldDomination') {
+    // Set conservative brandWieldEval
+    let brandWieldEval = '10,000,000,000';
+    // offer generous compensation
+    let yourEquity = '40%'
+    // get rich
+    let yourNetWorth = brandWieldEval * yourEquity;
+    // rejoice
+    document.getElementById('you.happiness').value = 'BrandWield Inc.';
+} else {
+    // Be a bum
+    yourNetWorth = Math.floor(Math.random() * 1, 000, 000);
 }
+```
+## Google Cloud Firebase
+We use [Google Firebase](https://console.firebase.google.com/) to store data on our users.
+```js
+// Import CDN Resources
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+// Firebase Config
+const firebaseConfig = {
+	apiKey: "API-123456789",
+	authDomain: "labate-firestore.firebaseapp.com",
+	databaseURL: "https://labate-firestore-default-rtdb.firebaseio.com",
+	projectId: "labate-firestore",
+	storageBucket: "labate-firestore.appspot.com",
+	messagingSenderId: "544978849115",
+	appId: "1:544978849115:web:c3d13f876cbc58ec1cde7e",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+
+// Get Brand Variables
+const dbRef = ref(getDatabase());
+const brand = 'BrandWield';
+get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
+	if (snapshot.exists()) {
+		console.log('Brand Returned: ' + brand);
+		console.log(snapshot.val());
+	} else {
+		console.log("No Brand Returned");
+	}
+
+	// Set Brand Variables in BrandWield App if they exist
+	// squareLogo
+	if (snapshot.val().squareLogo != null) {
+		// set local storage
+		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
+		document.getElementById('logoIcon').src = snapshot.val().squareLogo;
+		document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
+		document.getElementById('squareLogoBro').style.maxWidth = '32px';
+		document.getElementById('squareLogoBro').style.maxHeight = '32px';
+	}
+	
+	// Other variables ...etc etc etc
+
+});
 ```
 ## Brand Variables
 
 ```html
-<!-- Start Brand Variable -->
-	<!-- A warning icon to show users that their brand variable input field is either empty, or an invalid value -->
-	<!-- Brand variable field label -->
-	<!-- An info button, where users can click to get a better idea of the purpose of the field, and what exactly should go in it -->
-	<!-- The input field -->
-	<!-- An 'unlock' function, unlocking the field & allowing the user the edit its value -->
-	<!-- A 'lock' function, allowing users to save the current field's value to their back end -->
-	<!-- A button that 'clears' the field's value in a single click -->
-<!-- End Brand Variable -->
-```
-```html
-<!-- Slogan -->
+<!-- Mission Statement (one of many brand variables) -->
 <div class="var">
-    <span id="warningSlogan" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-    <label for="slogan">Slogan</label>
-    <span class="material-symbols-outlined" onclick='alert("The slogan is a short phrase that is used to describe your business. It should be catchy and memorable.")'>info</span>
-    <input type="text" id="slogan" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-    <span id="sloganUnlock" class="material-symbols-outlined" onclick="unlockSlogan();">lock_open</span>
-    <span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan();">lock</span>
-    <button id="clearSlogan" onclick="clearSlogan();">Clear</button>
-</div>
-
-<!-- Mission Statement -->
-<div class="var">
+    
+    <!-- A warning icon to show users that their brand variable input field is either empty, or an invalid value -->
     <span id="warningMissionStatement" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+    
+    <!-- Brand variable field label -->
     <label for="missionStatement">Mission Statement</label>
+    
+    <!-- An info button, where users can click to get a better idea of the purpose of the field, and what exactly should go in it -->
     <span class="material-symbols-outlined" onclick='alert("The mission statement is a short phrase that describes the purpose of your business. It should be short and to the point.")'>info</span>
+    
+    <!-- The input field -->
     <input type="text" id="missionStatement" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+    
+    <!-- An 'unlock' function, unlocking the field & allowing the user the edit its value -->
     <span id="missionStatementUnlock" class="material-symbols-outlined" onclick="unlockMissionStatement();">lock_open</span>
+    
+    <!-- A 'lock' function, allowing users to save the current field's value to their back end -->
     <span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement();">lock</span>
+    
+    <!-- A button that 'clears' the field's value in a single click -->
     <button id="clearMissionStatement" onclick="clearMissionStatement();">Clear</button>
-</div>
 
-<!-- Value Proposition -->
-<div class="var">
-    <span id="warningValueProposition" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-    <label for="valueProp">Value Proposition</label>
-    <span class="material-symbols-outlined" onclick='alert("The value proposition is a short phrase that describes the value your business provides to your customers. It should be short and to the point.")'>info</span>
-    <input type="text" id="valueProp" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-    <span id="valuePropUnlock" class="material-symbols-outlined" onclick="unlockValueProp();">lock_open</span>
-    <span id="valuePropLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockValueProp();">lock</span>
-    <button id="clearValueProp" onclick="clearValueProp();">Clear</button>
 </div>
-```
-```css
-.var {
-    display: flex;
-    padding: 10px 10px 10px 10px;
-    border-radius: 40px;
-    box-shadow: 5px 10px #888888;
-    -webkit-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-    -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-    margin: 8px auto;
-    font-weight: bold;
-    align-items: center;
-    font-size: 16px;
-    transition: .1s;
-    position: relative;
-    background-color: #fff;
-}
-.var:hover {
-    scale: 1.01;
-    transition: .1s;
-    background-color: #ececec;
-}
-.material-symbols-outlined {
-	font-variation-settings: 
-          'FILL' 0,
-		  'wght' 600,
-		  'GRAD' 0,
-		  'opsz' 48;
-	cursor: pointer;
-	transition: .1s ease-in-out;
-}
 ```
 ```js
+// primaryColor variable-editing functions
 function unlockPrimaryColor () {
 	document.getElementById('primaryColor').setAttribute('style', 'display: block;');
 	document.getElementById('primaryColor').setAttribute('style', 'style, border-width: 3px; border-radius: 30px; border-style: solid; border-color: orange; display: block;');
@@ -142,13 +139,13 @@ function clearPrimaryColor () {
 	}
 }
 ```
-![](../Screen Shot 2022-11-21 at 1.39.43 PM.png)
+Rendered UI
+![Screenshot of brand variables UI](../Screen Shot 2022-11-21 at 1.39.43 PM.png)
 ### Built With
 
-HTML<br>
-CSS<br>
-JavaScript (plain)<br>
-
+HTML 5<br>
+CSS 3<br>
+JavaScript ES6 (plain js)<br>
 
 ## Funding
 BrandWield Inc. is considering an angel round. We may or may not decide to accept investors at this point in time.
