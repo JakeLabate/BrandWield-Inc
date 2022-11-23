@@ -1291,128 +1291,214 @@
 		<!-- Outputs -->
 		<div id="outputs" class="column3" style="user-select: none;">
 
-			<!-- Title -->
-			<div id="hasTitle" style="display: none; line-height: 2em;">
-				<div>
-					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">Are you ready for the <text contenteditable="false" class="title chip"></text>?</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle1();">Copy Text</button>
-				</div>
-				<div>
-					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">We are hosting an event! Will you be at the <text contenteditable="false" class="title chip"></text>?</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle2();">Copy Text</button>
-				</div>
-				<div>
-					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle3">We will see you at the <text contenteditable="false" class="title chip"></text>!</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle3();">Copy Text</button>
-				</div>
-				<div>
-					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle4">We are hosting an event; will you be there? Don't miss the <text contenteditable="false" class="title chip"></text>!</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle4();">Copy Text</button>
-				</div>
-				<div>
-					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle5">The <text contenteditable="false" class="title chip"></text> is right around the corner. Will you be there?</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle5();">Copy Text</button>
+
+			<div class="tab">
+				<button class="tablinks" onclick="openCity(event, 'TitleTab')">Title</button>
+				<button class="tablinks" onclick="openCity(event, 'DateTab')">Date</button>
+				<button class="tablinks" onclick="openCity(event, 'TimeTab')">Time</button>
+				<button class="tablinks" onclick="openCity(event, 'LocationTab')">Location</button>
+				<button class="tablinks" onclick="openCity(event, 'OrganizationTab')">Organization</button>
+				<button class="tablinks" onclick="openCity(event, 'HostTab')">Host</button>
+			</div>
+
+			<!-- Title Output -->
+			<div id="TitleTab" class="tabcontent">
+				<div id="hasTitle" style="display: none; line-height: 2em;">
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">Are you ready for the <text contenteditable="false" class="title chip"></text>?</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle1();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">We are hosting an event! Will you be at the <text contenteditable="false" class="title chip"></text>?</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle2();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle3">We will see you at the <text contenteditable="false" class="title chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle3();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle4">We are hosting an event; will you be there? Don't miss the <text contenteditable="false" class="title chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle4();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle5">The <text contenteditable="false" class="title chip"></text> is right around the corner. Will you be there?</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle5();">Copy Text</button>
+					</div>
 				</div>
 			</div>
 
-			<!-- Date -->
-			This even will take place on ___ !
-			Are you busy on ___ ?
-			Mark your calendar for ___ !
-			Set aside some time on the ___ !
-			___ is closer than you think!
-
-			<!-- Time -->
-			The event will start at ___ .
-			Be there for ___ sharp!
-			Be there by ___ !
-			We formally start at ___ .
-			It will start at ___ .
-
-			<!-- Location -->
-			We will be located at ___ .
-			The event will take place at ___ .
-			See you at ___ !
-			Be sure you know where to go! The event will take place at ___ .
-			Have you ever been to ___ ? We are hosting the event there!
-
-			<!-- Organization -->
-			The event is hosted by ___ .
-			Have you ever been to an ___ event?
-			The ___ is hosting the event!
-			Organized by the ___ !
-			The event made possible by the ___ !
-
-			<!-- Host -->
-			___ will greet you at the door!
-			___ will be there to welcome you!
-			Contact ___ if you have any questions!
-			Want more info? Contact ___ !
-			___ can answer any of your questions ahead of time!
-
-
-			<!-- Date -->
-			<div id="hasDate" style="display: none; line-height: 2em;">
-				<div>
-					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitleDate1">See you at the <text contenteditable="false" class="title chip"></text>! Be there on <text contenteditable="false" class="date chip"></text>!</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+			<!-- Date Output -->
+			<div id="DateTab" class="tabcontent">
+				<div id="hasDate" style="display: none; line-height: 2em;">
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate1">This event will take place on <text contenteditable="false" class="date chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate1();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate2">Are you busy on <text contenteditable="false" class="date chip"></text>?</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate2();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate3">Mark your calendar for <text contenteditable="false" class="date chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate3();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate4">Set aside some time on <text contenteditable="false" class="date chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate4();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate5"><text contenteditable="false" class="date chip"></text> is closer than you think!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate5();">Copy Text</button>
+					</div>
 				</div>
-				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate1();">Copy Text</button><br><br>
-				<div>
-					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitleDate2">Are you busy on <text contenteditable="false" class="date chip"></text>? Show up for our event, <text contenteditable="false" class="title chip"></text>!</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+			</div>
+
+			<!-- Time Output -->
+			<div id="TimeTab" class="tabcontent">
+				<div id="hasTime" style="display: none; line-height: 2em;">
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime1">This even will start at <text contenteditable="false" class="time chip"></text>.</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime1();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime2">Be there for <text contenteditable="false" class="time chip"></text> sharp!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime2();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime3">Be there by <text contenteditable="false" class="time chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime3();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime4">We formally start at <text contenteditable="false" class="time chip"></text>.</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime4();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime5">It will start at <text contenteditable="false" class="time chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime5();">Copy Text</button>
+					</div>
 				</div>
-				<button class="copyTextButton" onclick="copyToClipboardHasTitleDate2();">Copy Text</button>
 			</div>
 
-			<!-- Time -->
-			<div id="hasTime" style="display: none; line-height: 2em;">
-				<p>See you at the <text class="title chip"></text>! Be there for <text class="time chip"></text> on <text class="date chip"></text>!</p><br>
-				<p>Are you busy at <text class="time chip"></text> on <text class="date chip"></text>? Show up for our event, <text class="title chip"></text>!</p>
+			<!-- Location Output -->
+			<div id="LocationTab" class="tabcontent">
+				<div id="hasLocation" style="display: none; line-height: 2em;">
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation1">This event will be located at <text contenteditable="false" class="location chip"></text>.</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation1();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation2">This event will take place at <text contenteditable="false" class="location chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation2();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation3">See you at <text contenteditable="false" class="location chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation3();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation4">Be sure you know where to go! The event will take place at <text contenteditable="false" class="location chip"></text>.</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation4();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation5">Have you ever been to <text contenteditable="false" class="location chip"></text>? We are hosting the event there!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation5();">Copy Text</button>
+					</div>
+				</div>
 			</div>
 
-			<!-- Location -->
-			<div id="hasLocation" style="display: none; line-height: 2em;">
-				<p>See you at the <text class="title chip"></text> at <text class="location chip"></text>. Be there for <text class="time chip"></text> on <text class="date chip"></text>!</p><br>
-				<p>Are you busy at <text class="time chip"></text> on <text class="date chip"></text>? Show up to <text class="location chip"></text> for our event, <text class="title chip"></text>!</p>
+			<!-- Organization Output -->
+			<div id="OrganizationTab" class="tabcontent">
+				<div id="hasOrganization" style="display: none; line-height: 2em;">
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization1">The event is hosted by <text contenteditable="false" class="organization chip"></text>.</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization1();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization2">Have you ever been to a <text contenteditable="false" class="organization chip"></text> event?</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization2();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization3">The <text contenteditable="false" class="organization chip"></text> is hosting the event!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization3();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization4">Organized by the <text contenteditable="false" class="organization chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization4();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization5">This event is made possible by <text contenteditable="false" class="organization chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization5();">Copy Text</button>
+					</div>
+				</div>
 			</div>
 
-			<!-- Organization -->
-			<div id="hasOrganization" style="display: none; line-height: 2em;">
-				<p>The <text class="organization chip"></text> is hosting the <text class="title chip"></text> at <text class="time chip"></text> on <text class="date chip"></text>. See you at the <text class="location chip"></text>!</p><br>
-				<p>Are you a fan on the <text class="organization chip"></text>? See you at <text class="time chip"></text> on <text class="date chip"></text> at <text class="location chip"></text> for the <text class="title chip"></text>!</p>
+			<!-- Host Output -->
+			<div id="HostTab" class="tabcontent">
+				<div id="hasHost" style="display: none; line-height: 2em;">
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost1"><text contenteditable="false" class="host chip"></text> will be there to greet you at the door!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost1();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost2"><text contenteditable="false" class="host chip"></text> will be there to welcome you!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost2();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost3">Contact <text contenteditable="false" class="host chip"></text> if you have any questions!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost3();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost4">Looking for more information? Contact <text contenteditable="false" class="host chip"></text>!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost4();">Copy Text</button>
+					</div>
+					<div>
+						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost5"><text contenteditable="false" class="host chip"></text> can answer any of your questions ahead of time!</p>
+						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost5();">Copy Text</button>
+					</div>
+				</div>
 			</div>
 
-			<!-- Host -->
-			<div id="hasHost" style="display: none; line-height: 2em;">
-				<p>The <text class="organization chip"></text> is hosting the <text class="title chip"></text> at <text class="time chip"></text> on <text class="date chip"></text>. Contact <text class="host chip"></text> for more information! See you at the <text class="location chip"></text>!</p><br>
-				<p>Are you a fan of the <text class="organization chip"></text>? See you at <text class="time chip"></text> on <text class="date chip"></text> at <text class="location chip"></text> for the <text class="title chip"></text>! Contact <text class="host chip"></text> for more information!</p>
-			</div>
-
-			<!-- Description -->
+			<!-- Description Output -->
 			<div id="hasDescription" style="display: none; line-height: 2em;">
-				<p>Are you ready for the <text class="title chip"></text> event on <text class="date chip"></text> at <text class="time chip"></text>? It will be held at <text class="location chip"></text> and hosted by <text class="host chip"></text> from the <text class="organization chip"></text>. The event is being put on by <text class="organization chip"></text>. <text class="description chip"></text>.</p><br>
-				<p>The <text class="organization chip"></text> is hosting the <text class="title chip"></text>, and the event is almost here! Mark you calendars for <text class="time chip"></text> on <text class="date chip"></text> at the one and only <text class="location chip"></text>. If you are a member, or an interested member of the <text class="organization chip"></text>, be sure to contact <text class="host chip"></text> for more info. <text class="description chip"></text></p>
+				<div>
+					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDescription1"><text contenteditable="false" class="description chip"></text></p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDescription1();">Copy Text</button>
+				</div>
 			</div>
 
-			<!-- Link -->
+			<!-- Link Output-->
 			<div id="hasLink" style="display: none; line-height: 2em;">
-				<p>Are you ready for the <a class="link" target="_blank" href=""><text class="title chip"></text></a> event on <text class="date chip"></text> at <text class="time chip"></text>? It will be held at <text class="location chip"></text> and hosted by <text class="host chip"></text> from the <text class="organization chip"></text>. The event is being put on by <text class="organization chip"></text>. <text class="description chip"></text>.</p><br>
-				<p>The <text class="organization chip"></text> is hosting the <a class="link" target="_blank" href=""><text class="title chip"></text></a>, and the event is almost here! Mark you calendars for <text class="time chip"></text> on <text class="date chip"></text> at the one and only <text class="location chip"></text>. If you are a member, or an interested member of the <text class="organization chip"></text>, be sure to contact <text class="host chip"></text> for more info. <text class="description chip"></text></p>
 			</div>
-
-			<!-- Color -->
-			<div id="hasColor" style="display: none; line-height: 2em;">
-				<p>Are you ready for the <a class="link" href="" target="_blank"><text class="title chip"></text></a> event on <text class="date chip"></text> at <text class="time chip"></text>? It will be held at <text class="location chip"></text> and hosted by <text class="host chip"></text> from the <text class="organization chip"></text>. The event is being put on by <text class="organization chip"></text>. <text class="description chip"></text>.</p><br>
-				<p>The <text class="organization chip"></text> is hosting the <a class="link" href="" target="_blank"><text class="title chip"></text></a>, and the event is almost here! Mark you calendars for <text class="time chip"></text> on <text class="date chip"></text> at the one and only <text class="location chip"></text>. If you are a member, or an interested member of the <text class="organization chip"></text>, be sure to contact <text class="host chip"></text> for more info. <text class="description chip"></text></p>
-			</div>
-			<br>
-			<br>
 
 			<!-- Hashtags Container -->
 			<div id="hashtagsContainer" style="display: none; box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">

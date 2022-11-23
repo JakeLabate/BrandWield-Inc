@@ -1,5 +1,22 @@
+
+// Output Content Tabs
+function openCity(evt, outputTabName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+	tabcontent[i].style.display = "none";
+}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+	tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+	document.getElementById(outputTabName).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+
 // Update variables as use types
 function eventTitleUpdate () {
+	openCity(event, 'TitleTab');
 	let outputEventTitle = document.getElementById("inputEventTitle");
 	if (outputEventTitle.value != null && outputEventTitle.value.length > 0) {
 		// find all elements with the class name 'title' and update their innerHTML to the value of the input
@@ -36,7 +53,9 @@ function eventTitleUpdate () {
 		}
 	}
 }
+
 function eventDateUpdate () {
+	openCity(event, 'DateTab');
 	let outputEventDate = document.getElementById("inputEventDate");
 	if (outputEventDate.value != null && outputEventDate.value.length > 0) {
 		// find all elements with the class name 'date' and update their innerHTML to the value of the input
@@ -44,7 +63,9 @@ function eventDateUpdate () {
 		for (let i = 0; i < dateElements.length; i++) {
 			dateElements[i].innerHTML = outputEventDate.value;
 		}
-		// for all elements with the class name 'date', everytime the value changes, change the background color to lightpink for 1 second
+		// set the display to inline for the element with the id of 'hasDate'
+		document.getElementById("hasDate").style.display = "inline";
+		// for all elements with the class name 'date', everytime the value changes, change the background color to lightpink
 		for (let i = 0; i < dateElements.length; i++) {
 			dateElements[i].style.backgroundColor = "lightpink";
 			dateElements[i].title = "Date of the event";
@@ -70,6 +91,7 @@ function eventDateUpdate () {
 	}
 }
 function eventTimeUpdate () {
+	openCity(event, 'TimeTab');
 	let outputEventTime = document.getElementById("inputEventTime");
 	if (outputEventTime.value != null && outputEventTime.value.length > 0) {
 		// find all elements with the class name 'time' and update their innerHTML to the value of the input
@@ -77,11 +99,13 @@ function eventTimeUpdate () {
 		for (let i = 0; i < timeElements.length; i++) {
 			timeElements[i].innerHTML = outputEventTime.value;
 		}
+		// set the display to inline for the element with the id of 'hasTime'
+		document.getElementById("hasTime").style.display = "inline";
+
 		// for all elements with the class name 'time', everytime the value changes, change the background color to #FFE88C for 1 second
 		for (let i = 0; i < timeElements.length; i++) {
 			timeElements[i].style.backgroundColor = "#FFE88C";
 			timeElements[i].title = "Time of the event";
-
 		}
 		// For all elements with the class of 'showOnTime', set the display to inline
 		let showOnTimeElements = document.getElementsByClassName("showOnTime");
@@ -104,6 +128,7 @@ function eventTimeUpdate () {
 	}
 }
 function eventLocationUpdate () {
+	openCity(event, 'LocationTab');
 	let outputEventLocation = document.getElementById("inputEventLocation");
 	if (outputEventLocation.value != null && outputEventLocation.value.length > 0) {
 		// find all elements with the class name 'location' and update their innerHTML to the value of the input
@@ -111,7 +136,9 @@ function eventLocationUpdate () {
 		for (let i = 0; i < locationElements.length; i++) {
 			locationElements[i].innerHTML = outputEventLocation.value;
 		}
-		// for all elements with the class name 'location', everything the value changes, change the background color to #DFDFDF for 1 second
+		// set the display to inline for the element with the id of 'hasLocation'
+		document.getElementById("hasLocation").style.display = "inline";
+		// for all elements with the class name 'location', everything the value changes, change the background color to #DFDFDF
 		for (let i = 0; i < locationElements.length; i++) {
 			locationElements[i].style.backgroundColor = "#DFDFDF";
 			locationElements[i].title = "Location of the event";
@@ -139,6 +166,7 @@ function eventLocationUpdate () {
 	}
 }
 function eventOrganizationUpdate () {
+	openCity(event, 'OrganizationTab');
 	let outputEventOrganization = document.getElementById("inputEventOrganization");
 	if (outputEventOrganization.value != null && outputEventOrganization.value.length > 0) {
 		// find all elements with the class name 'organization' and update their innerHTML to the value of the input
@@ -146,7 +174,10 @@ function eventOrganizationUpdate () {
 		for (let i = 0; i < organizationElements.length; i++) {
 			organizationElements[i].innerHTML = outputEventOrganization.value;
 		}
-		// for all elements with the class name 'organization', everything the value changes, change the background color to lightgreen for 1 second
+		// set the display to inline for the element with the id of 'hasDate'
+		document.getElementById("hasOrganization").style.display = "inline";
+
+		// for all elements with the class name 'organization', everything the value changes, change the background color to lightgreen
 		for (let i = 0; i < organizationElements.length; i++) {
 			organizationElements[i].style.backgroundColor = "lightgreen";
 			organizationElements[i].title = "Event organization";
@@ -173,6 +204,7 @@ function eventOrganizationUpdate () {
 	}
 }
 function eventHostUpdate () {
+	openCity(event, 'HostTab');
 	let outputEventHost = document.getElementById("inputEventHost");
 	if (outputEventHost.value != null && outputEventHost.value.length > 0) {
 		// find all elements with the class name 'host' and update their innerHTML to the value of the input
@@ -180,7 +212,10 @@ function eventHostUpdate () {
 		for (let i = 0; i < hostElements.length; i++) {
 			hostElements[i].innerHTML = outputEventHost.value;
 		}
-		// for all elements with the class name 'host', everything the value changes, change the background color to lightblue for 1 second
+		// set the display to inline for the element with the id of 'hasHost'
+		document.getElementById("hasHost").style.display = "inline";
+
+		// for all elements with the class name 'host', everything the value changes, change the background color to lightblue
 		for (let i = 0; i < hostElements.length; i++) {
 			hostElements[i].style.backgroundColor = "lightblue";
 			hostElements[i].title = "Event host";
@@ -214,7 +249,10 @@ function eventDescriptionUpdate () {
 		for (let i = 0; i < descriptionElements.length; i++) {
 			descriptionElements[i].innerHTML = outputEventDescription.value;
 		}
-		// for all elements with the class name 'host', everything the value changes, change the background color to #D5DCFF for 1 second
+		// set the display to inline for the element with the id of 'hasDescription'
+		document.getElementById("hasDescription").style.display = "inline";
+
+		// for all elements with the class name 'host', everything the value changes, change the background color to #D5DCFF
 		for (let i = 0; i < descriptionElements.length; i++) {
 			descriptionElements[i].style.backgroundColor = "#D5DCFF";
 			descriptionElements[i].title = "Event description";
@@ -247,6 +285,9 @@ function eventLinkUpdate () {
 		for(let i = 0; i < linkElements.length; i ++) {
 			linkElements[i].href = outputEventLink.value;
 		}
+		// set the display to inline for the element with the id of 'hasLink'
+		document.getElementById("hasLink").style.display = "inline";
+
 		for(let i = 0; i < linkElements.length; i ++) {
 			linkElements[i].color = '#ffffff'
 		}
@@ -607,10 +648,6 @@ function generateHashtagsForDescription () {
 
 }
 
-
-
-
-
 // Copy to clipboard
 // hasTitle
 function copyToClipboardHasTitle1() {
@@ -643,22 +680,172 @@ function copyToClipboardHasTitle5() {
 		alert("Copied:\n" + copyText);
 	});
 }
-// hasTitleDate
-function copyToClipboardHasTitleDate1() {
-	let copyText = document.getElementById("copyToClipboardHasTitleDate1").innerText;
+// hasDate
+function copyToClipboardHasDate1() {
+	let copyText = document.getElementById("copyToClipboardHasDate1").innerText;
 	navigator.clipboard.writeText(copyText).then(() => {
 		alert("Copied:\n" + copyText);
 	});
 }
-function copyToClipboardHasTitleDate2() {
-	let copyText = document.getElementById("copyToClipboardHasTitleDate2").innerText;
+function copyToClipboardHasDate2() {
+	let copyText = document.getElementById("copyToClipboardHasDate2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasDate3() {
+	let copyText = document.getElementById("copyToClipboardHasDate3").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasDate4() {
+	let copyText = document.getElementById("copyToClipboardHasDate4").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasDate5() {
+	let copyText = document.getElementById("copyToClipboardHasDate5").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+// hasTime
+function copyToClipboardHasTime1() {
+	let copyText = document.getElementById("copyToClipboardHasTime1").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTime2() {
+	let copyText = document.getElementById("copyToClipboardHasTime2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTime3() {
+	let copyText = document.getElementById("copyToClipboardHasTime3").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTime4() {
+	let copyText = document.getElementById("copyToClipboardHasTime4").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTime5() {
+	let copyText = document.getElementById("copyToClipboardHasTime5").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+// hasLocation
+function copyToClipboardHasLocation1() {
+	let copyText = document.getElementById("copyToClipboardHasLocation1").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasLocation2() {
+	let copyText = document.getElementById("copyToClipboardHasLocation2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasLocation3() {
+	let copyText = document.getElementById("copyToClipboardHasLocation3").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasLocation4() {
+	let copyText = document.getElementById("copyToClipboardHasLocation4").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasLocation5() {
+	let copyText = document.getElementById("copyToClipboardHasLocation5").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+// hasOrganization
+function copyToClipboardHasOrganization1() {
+	let copyText = document.getElementById("copyToClipboardHasOrganization1").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasOrganization2() {
+	let copyText = document.getElementById("copyToClipboardHasOrganization2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasOrganization3() {
+	let copyText = document.getElementById("copyToClipboardHasOrganization3").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasOrganization4() {
+	let copyText = document.getElementById("copyToClipboardHasOrganization4").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasOrganization5() {
+	let copyText = document.getElementById("copyToClipboardHasOrganization5").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+// hasHost
+function copyToClipboardHasHost1() {
+	let copyText = document.getElementById("copyToClipboardHasHost1").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasHost2() {
+	let copyText = document.getElementById("copyToClipboardHasHost2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasHost3() {
+	let copyText = document.getElementById("copyToClipboardHasHost3").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasHost4() {
+	let copyText = document.getElementById("copyToClipboardHasHost4").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasHost5() {
+	let copyText = document.getElementById("copyToClipboardHasHost5").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+// hasDescription
+function copyToClipboardHasDescription1() {
+	let copyText = document.getElementById("copyToClipboardHasHost1").innerText;
 	navigator.clipboard.writeText(copyText).then(() => {
 		alert("Copied:\n" + copyText);
 	});
 }
 
 
- function copyToClipboardHashtags () {
+// Hashtags
+function copyToClipboardHashtags () {
 	 let copyText = document.getElementById("hashtagsHere").innerText;
  	navigator.clipboard.writeText(copyText).then(() => {
  		alert("Copied:\n" + copyText);
