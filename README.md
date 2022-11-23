@@ -10,19 +10,18 @@ BrandWield is on mission to turn every small business owner into a tier-1 conten
 </div>
 
 ```js
-// Set the stage
-if (you.goal == 'worldDomination') {
-    // Set conservative brandWieldEval
-    let brandWieldEval = '10,000,000,000';
-    // offer generous compensation
-    let yourEquity = '40%'
-    // get rich
-    let yourNetWorth = brandWieldEval * yourEquity;
+// set conservative eval
+let brandWieldEval = '$10,000,000,000';
+// offer generous compensation
+let yourEquity = '40%'
+// get rich
+let yourNetWorth = brandWieldEval * yourEquity;
+
+// propose a partnership
+if (you.goal == 'worldDomination' && you.futureTitle == 'coFounder' && you.intellengenct == 'fuckingBrilliant' && you.ambition == 'unlimited' && you.personality == 'genuine') 
+{
     // rejoice
     document.getElementById('you.happiness').value = 'BrandWield Inc.';
-} else {
-    // Be a bum
-    yourNetWorth = Math.floor(Math.random() * 1, 000, 000);
 }
 ```
 ## Google Cloud Firebase
