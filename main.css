@@ -37,6 +37,12 @@
 * {
     box-sizing: border-box;
     font-family: Montserrat, sans-serif;
+    font-size: 16px;
+}
+
+/* Not working for some reason */
+div[id="outputs"] {
+    font-size: 14px !important;
 }
 
 a {
@@ -93,7 +99,7 @@ span.material-symbols-outlined[id*='warning'] {
     border-radius: 50%;
 }
 
-button[id*='clear'], button[id*='Clear'] {
+button[id*='clear'], button[id*='Clear'], .clearButton {
     height: 25px;
     width: 60px;
     font-size: 12px;
@@ -107,7 +113,7 @@ button[id*='clear'], button[id*='Clear'] {
     position: absolute;
     right: 0;
 }
-button[id*='clear']:hover, button[id*='Clear']:hover {
+button[id*='clear']:hover, button[id*='Clear']:hover, .clearButton:hover {
     height: 25px;
     width: 60px;
     font-size: 12px;
@@ -121,6 +127,10 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
     border: #262626;
     position: absolute;
     right: 0;
+}
+
+img {
+    z-index: 9999999;
 }
 
 .tabs {
@@ -384,6 +394,18 @@ button[id*='clear']:hover, button[id*='Clear']:hover {
     position: absolute;
     bottom: 4px;
     left: 5px;
+}
+#squareImageQRHere, #verticalImageQRHere {
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+    display: none;
+}
+#horizontalImageQRHere {
+    position: absolute;
+    bottom: 4px;
+    left: 71px;
+    display: none;
 }
 
 /* Top Nav Bar */
@@ -700,7 +722,5 @@ pre code {
 #businessTypeValueDisplay {
     font-size: 12px;
 }
-
-
 
 

@@ -2267,11 +2267,6 @@ function clearOffer2Image () {
 
 
 
-
-
-
-
-
 // SOCIAL MEDIA
 // function logInstaPic() {
 //	let instagramUserField = document.getElementById('instagramUsername').value;
