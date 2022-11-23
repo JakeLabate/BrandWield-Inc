@@ -402,8 +402,8 @@ function eventLocationClear () {
 }
 function eventOrganizationClear () {
 	if (confirm("Are you sure you want to clear the organizer?")) {
-		document.getElementById("inputEventOrganizer").value = null;
-		eventOrganizerUpdate();
+		document.getElementById("inputEventOrganization").value = null;
+		eventOrganizationUpdate();
 	}
 }
 function eventHostClear () {
@@ -621,6 +621,24 @@ function copyToClipboardHasTitle1() {
 }
 function copyToClipboardHasTitle2() {
 	let copyText = document.getElementById("copyToClipboardHasTitle2").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTitle3() {
+	let copyText = document.getElementById("copyToClipboardHasTitle3").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTitle4() {
+	let copyText = document.getElementById("copyToClipboardHasTitle4").innerText;
+	navigator.clipboard.writeText(copyText).then(() => {
+		alert("Copied:\n" + copyText);
+	});
+}
+function copyToClipboardHasTitle5() {
+	let copyText = document.getElementById("copyToClipboardHasTitle5").innerText;
 	navigator.clipboard.writeText(copyText).then(() => {
 		alert("Copied:\n" + copyText);
 	});

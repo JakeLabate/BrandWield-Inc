@@ -21,6 +21,7 @@
 </head>
 <body>
 
+
 <!-- Search Bar -->
 <div id="searchBar" style="height: 55px">
 
@@ -54,6 +55,7 @@
 	<span class="material-symbols-outlined" onclick="selectContentType('integrations')" style="position: absolute; right: 12px; top: 16px">settings</span>
 
 </div>
+
 <!-- Tabs -->
 <script>
 	function selectContentType(cityName) {
@@ -65,8 +67,6 @@
 		document.getElementById(cityName).style.display = "block";
 	}
 </script>
-
-<!-- Tabs -->
 <div class="tabs">
 	<button class="tab" onclick="selectContentType('brand')">My Brand</button>
 	<!-- My content
@@ -1222,7 +1222,7 @@
 		<!-- Event Date -->
 		<div style="align-items: center; justify-content: space-between;">
 			<label for="inputEventDate">Date</label>
-			<input id="inputEventDate" oninput="eventDateUpdate();">
+			<input id="inputEventDate" type="date" oninput="eventDateUpdate();">
 			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventDateClear();">Clear</button>
 		</div>
 
@@ -1294,16 +1294,67 @@
 			<!-- Title -->
 			<div id="hasTitle" style="display: none; line-height: 2em;">
 				<div>
-					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">We are hosting an event! See you at the <text contenteditable="false" class="title chip"></text>!</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">Are you ready for the <text contenteditable="false" class="title chip"></text>?</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle1();">Copy Text</button>
 				</div>
-				<button class="copyTextButton" onclick="copyToClipboardHasTitle1();">Copy Text</button><br><br>
 				<div>
-					<p style="padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">Will we be seeing you at the <text contenteditable="false" class="title chip"></text>? Inquire now!</p>
-					<span contenteditable="false" style="user-select: none; position: relative; top: -18px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span>
+					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">We are hosting an event! Will you be at the <text contenteditable="false" class="title chip"></text>?</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle2();">Copy Text</button>
 				</div>
-				<button class="copyTextButton" onclick="copyToClipboardHasTitle2();">Copy Text</button>
+				<div>
+					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle3">We will see you at the <text contenteditable="false" class="title chip"></text>!</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle3();">Copy Text</button>
+				</div>
+				<div>
+					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle4">We are hosting an event; will you be there? Don't miss the <text contenteditable="false" class="title chip"></text>!</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle4();">Copy Text</button>
+				</div>
+				<div>
+					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle5">The <text contenteditable="false" class="title chip"></text> is right around the corner. Will you be there?</p>
+					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle5();">Copy Text</button>
+				</div>
 			</div>
+
+			<!-- Date -->
+			This even will take place on ___ !
+			Are you busy on ___ ?
+			Mark your calendar for ___ !
+			Set aside some time on the ___ !
+			___ is closer than you think!
+
+			<!-- Time -->
+			The event will start at ___ .
+			Be there for ___ sharp!
+			Be there by ___ !
+			We formally start at ___ .
+			It will start at ___ .
+
+			<!-- Location -->
+			We will be located at ___ .
+			The event will take place at ___ .
+			See you at ___ !
+			Be sure you know where to go! The event will take place at ___ .
+			Have you ever been to ___ ? We are hosting the event there!
+
+			<!-- Organization -->
+			The event is hosted by ___ .
+			Have you ever been to an ___ event?
+			The ___ is hosting the event!
+			Organized by the ___ !
+			The event made possible by the ___ !
+
+			<!-- Host -->
+			___ will greet you at the door!
+			___ will be there to welcome you!
+			Contact ___ if you have any questions!
+			Want more info? Contact ___ !
+			___ can answer any of your questions ahead of time!
+
 
 			<!-- Date -->
 			<div id="hasDate" style="display: none; line-height: 2em;">
@@ -1481,7 +1532,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--facebookColor)">Share to Facebook <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/facebookWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--facebookColor)">Share to Facebook</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1505,7 +1556,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--linkedinColor)">Share to LinkedIn <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/linkedinWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--linkedinColor)">Share to LinkedIn</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1529,7 +1580,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--twitterColor)">Share to Twitter <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/twitterWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--twitterColor)">Share to Twitter</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1553,7 +1604,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--googleColor)">Share to Email <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/emailWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--googleColor)">Share to Email</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1576,7 +1627,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--redditColor)">Share to Reddit <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/redditWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--redditColor)">Share to Reddit</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1600,7 +1651,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--tumblrColor)">Share to Tumblr <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/tumblrWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--tumblrColor)">Share to Tumblr</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1624,7 +1675,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--telegramColor)">Share to Telegram <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/telegramWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--telegramColor)">Share to Telegram</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
@@ -1647,7 +1698,7 @@
 							   class="shareToSocial"
 							   target="_blank"
 							   href="">
-								<button class="shareButton" style="background-color: var(--whatsappColor)">Share to WhatsApp <img alt="" class="shareToSocial" style="height: 20px; width: 20px;" src="socialMediaIcons/whatsappWhite.png" /></button>
+								<button class="shareButton" style="background-color: var(--whatsappColor)">Share to WhatsApp</button>
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
