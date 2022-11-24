@@ -6,8 +6,7 @@
 
 # BrandWield Inc.
 
-BrandWield is on mission to turn every small business owner into a tier-1 content creator.
-</div>
+**_Making synonymous for content marketers, vision and production_**</div>
 
 ```js
 // set conservative eval
