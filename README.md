@@ -9,6 +9,7 @@
 
 </div>
 
+// Mission Stament
 ```js
 // audit BrandWield's mission statement
 function auditMissionStatement () {
@@ -20,8 +21,7 @@ function auditMissionStatement () {
 	}
 }
 ```
-
-
+// Seeking Co-founder
 ```js
 // set conservative eval
 let brandWieldEval = '$10,000,000,000';
