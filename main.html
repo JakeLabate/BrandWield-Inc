@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
-	<title>BrandWield | Turning everyone and their grandmother into a tier-1 content marketer</title>
+	<title>BrandWield | Making synonymous, content vision and production</title>
 
 	<!-- CSS Stylesheet -->
 	<link rel="stylesheet" href="main.css">
@@ -18,9 +19,12 @@
 	<script src="myBrand.js"></script>
 	<script src="newContent.js"></script>
 
-	<!-- Google Drive API -->
-	<script src="https://www.googleapis.com/auth/drive"></script>
-	<script src="https://www.googleapis.com/auth/drive.file"></script>
+	<!-- HTML2Canvas Screenshot Capture -->
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 </head>
 <body>
@@ -81,8 +85,6 @@
 
 <!-- Brand Tab -->
 <div id="brand" class="w3-container w3-display-container city">
-	<h2>My Brand</h2>
-	<h3 style="padding-bottom: 20px;">Manage your entire brand from a single dashboard!</h3>
 
 	<!-- Contact -->
 	<div class="wrap-collapsible">
@@ -1211,9 +1213,6 @@
 		<!-- Inputs -->
 		<div id="inputs" class="column3" style="user-select: none;">
 
-		<h2>New Content</h2>
-		<h3 style="padding-bottom: 20px;">Generate multiple pieces of content for each keystroke!</h3>
-
 		<!-- Event Title -->
 		<div style="align-items: center;">
 			<label for="inputEventTitle">Event Title</label>
@@ -1295,7 +1294,7 @@
 		<div id="outputs" class="column3" style="max-height: 100vh; overflow: scroll; user-select: none; box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9); -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9); -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);">
 
 			<!-- Output Tabs -->
-			<div style="padding-bottom: 10px;">
+			<div style="padding-bottom: 10px; margin: -.6rem -.6rem 0 -.6rem; ">
 				<button class="socialTab" onclick="openCity(event, 'TitleTab')">Title</button>
 				<button class="socialTab" onclick="openCity(event, 'DateTab')">Date</button>
 				<button class="socialTab" onclick="openCity(event, 'TimeTab')">Time</button>
@@ -1525,7 +1524,7 @@
 				<div>
 					<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDescription1"><text contenteditable="false" class="description chip"></text></p>
 					<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDescription1();">Copy Text</button>
+					<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDescription1(); placeDescriptionAsSelected();">Copy Text</button>
 				</div>
 			</div>
 
@@ -1533,7 +1532,7 @@
 			<div id="hasLink" style="display: none; line-height: 2em;">
 			</div>
 
-			<!-- Hashtags Output
+			<!-- Hashtags Output -->
 
 			<div id="hashtagsContainer" style="display: none; padding: 20px 20px 20px 20px; margin-bottom: 15px;">
 				<div style="padding: 10px 14px 22px 14px; line-height: 2em;">Hashtags</div>
@@ -1548,12 +1547,10 @@
 				<button class="copyTextButton" onclick="copyToClipboardHashtags();">Copy Hashtags</button>
 			</div>
 
- 			-->
-
 		</div>
 
 		<!-- Finals -->
-		<div id="final" class="column3" style="user-select: none; padding: 0 20px 0 20px;">
+		<div id="final" class="column3" style="user-select: none; padding: 0 20px 0 10px;">
 
 			<!-- IMAGES -->
 				<!-- Final Image (Horizontal) -->
@@ -1608,7 +1605,7 @@
 
 			<!-- TEXT -->
 			<div style="position: relative; top: 480px;">
-				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" id="">
+				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
 					<text id="selectedTitleOutput"></text>
 					<text id="selectedDateOutput"></text>
 					<text id="selectedTimeOutput"></text>
@@ -1619,7 +1616,10 @@
 					<text id="selectedHashtagsOutput"></text>
 				</p>
 				<span contenteditable="false" style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-				<button class="copyTextButton" onclick="saveContentFiles();">Save Content</button>
+				<button class="copyTextButton" onclick="saveContentFiles(); screenshotHorizontalFinal(); screenshotVerticalFinal(); screenshotSquareFinal();">Save Content</button>
+				<button class="copyTextButton" onclick="downloadScreenshot();">Download</button>
+				<div id="output"></div>
+				<div id="outputImage"></div>
 			</div>
 
 			<!-- Social Sendables -->
@@ -1861,6 +1861,4 @@
 </div>
 
 </body>
-
-
 </html>

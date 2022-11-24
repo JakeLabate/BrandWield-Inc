@@ -40,6 +40,12 @@
     font-size: 16px;
 }
 
+#photo {
+    border: 4px solid green;
+    padding: 4px;
+}
+
+
 /* Not working for some reason */
 div[id="outputs"] {
     font-size: 14px !important;
@@ -100,6 +106,23 @@ input {
     font-size: 14px;
     background: #ffffff;
 }
+
+.var {
+    display: flex;
+    padding: 10px 10px 10px 10px;
+    border-radius: 40px;
+    box-shadow: 5px 10px #888888;
+    -webkit-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
+    -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
+    margin: 8px auto;
+    font-weight: bold;
+    align-items: center;
+    font-size: 16px;
+    transition: .1s;
+    position: relative;
+    background-color: #fff;
+}
+
 input[type='checkbox'] {
     display: none;
 }
@@ -182,15 +205,13 @@ img {
     width: 25%;
     padding: 10px;
 }
+
 .row:after {
     display: table;
     clear: both;
 }
 
-.socialTab:hover {
-    background-color: #1da1f2;
-    transition: .25s;
-}
+
 
 /* Shortcut 'click link to add brand variable' in the 'New Content' section */
 #linkLocation {
@@ -552,13 +573,17 @@ a.link {
 .socialTab {
     margin: 0 0 0 0;
     padding: 10px 10px 10px 10px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+    border: none;
 }
-.socialTab:active {
+.socialTab:hover {
+    background-color: #3473f1;
+    transition: .25s;
+}
+.socialTab + .active {
     margin: 0 0 0 0;
     padding: 10px 10px 10px 10px;
-    background-color: #FFFFFF;
-
+    background-color: #d73838;
 }
 
 #socialSendables {
@@ -693,7 +718,7 @@ pre code {
     border-bottom-right-radius: 7px;
     padding: .5rem 1rem;
 }
-.active, .collapsible:hover {
+.collapsible:hover {
     background-color: #d2d2d2;
     cursor: pointer;
     transition: .2s;
@@ -727,21 +752,7 @@ pre code {
 .varGroup {
     padding: 10px 25px 10px 25px;
 }
-.var {
-    display: flex;
-    padding: 10px 10px 10px 10px;
-    border-radius: 40px;
-    box-shadow: 5px 10px #888888;
-    -webkit-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-    -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-    margin: 8px auto;
-    font-weight: bold;
-    align-items: center;
-    font-size: 16px;
-    transition: .1s;
-    position: relative;
-    background-color: #fff;
-}
+
 .var:hover {
     scale: 1.01;
     transition: .1s;

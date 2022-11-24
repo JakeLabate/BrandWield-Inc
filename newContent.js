@@ -1,18 +1,17 @@
 
 // Output Content Tabs
 function openCity(evt, outputTabName) {
-	var i, tabcontent, tablinks;
+	let i, tabcontent, tablinks;
 	tabcontent = document.getElementsByClassName("tabcontent");
 	for (i = 0; i < tabcontent.length; i++) {
 	tabcontent[i].style.display = "none";
 }
-	tablinks = document.getElementsByClassName("tablinks");
+	tablinks = document.getElementsByClassName("socialTab");
 	for (i = 0; i < tablinks.length; i++) {
 	tablinks[i].className = tablinks[i].className.replace(" active", "");
 }
 	document.getElementById(outputTabName).style.display = "block";
 	evt.currentTarget.className += " active";
-	evt.currentTarget.classList.remove("active");
 
 }
 
@@ -1174,17 +1173,84 @@ function placeHashtagsAsSelected ()
 }, 1000);
 }
 
+// Screenshot
+// Input: <div id="photo"><button onclick="screenshot();">Take Screenshot</button></div>
+// Output: <div id="output"></div>
+function screenshotHorizontalFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageHorizontal');
+	let screenshotPlaceable = document.getElementById('output');
 
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotHorizontal');
+		Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		var canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		window.location = imageData;
+	}, 1000);
+}
+function screenshotVerticalFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageVertical');
+	let screenshotPlaceable = document.getElementById('output');
+
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotVertical');
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		var canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		window.location = imageData;
+	}, 1000);
+}
+function screenshotSquareFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageSquare');
+	let screenshotPlaceable = document.getElementById('output');
+
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotSquare');
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		// select ALL canvas elements, and for each one, get the dataURL and download it
+		var canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		window.location = imageData;
+	}, 1000);
+}
 
 
 // SAVE CONTENT FILES
 function saveContentFiles () {
 
 	// Get the content
-	let finalText = document.getElementById("finalText").innerText;
+	let blobHtml = document.getElementById("finalText").innerText;
 
 	// Create a new Blob (html)
-	const blob = new Blob([finalText], { type: "text/html" });
+	const blob = new Blob([blobHtml], { type: "text/html" });
 
 	// Download the newly created Blob
 	const url = URL.createObjectURL(blob);

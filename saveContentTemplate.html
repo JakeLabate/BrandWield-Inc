@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>BrandWield Saved Content</title>
+	<meta name="author" content="BRANDWIELD Inc.">
+
+	<!-- CSS -->
+	<style>
+		* {
+
+		}
+		body {
+			padding: 20px 20px 20px 20px;
+		}
+		.dateAndTime {
+			color: #000000;
+			text-decoration: underline;
+		}
+		.legalBusinessName {
+			font-weight: bolder;
+		}
+	</style>
+
+</head>
+<body>
+	<header>
+		<h1>BrandWield Saved Content</h1>
+		<text>New content saved by <span class="legalBusinessName"></span></text>.<br>
+		<text>Your content was saved at <span class="dateAndTime"></span></text>.
+	</header>
+	<main>
+		<section id="savedMedia">
+		</section>
+
+		<section id="savedText">
+			<p>Text:</p>
+			<p id="savedTextHere"></p>
+		</section>
+	</main>
+	<!-- JavaScript -->
+	<script>
+		// Set values
+		let dateAndTime = new Date();
+		let legalBusinessName = localStorage.getItem('legalBusinessName');
+		// Apply values
+		document.querySelectorAll('.companyLegalName').innerText = legalBusinessName;
+		document.querySelectorAll('.dateAndTime').innerText = dateAndTime;
+	</script>
+
+</body>
+</html>
