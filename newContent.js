@@ -12,11 +12,19 @@ function openCity(evt, outputTabName) {
 }
 	document.getElementById(outputTabName).style.display = "block";
 	evt.currentTarget.className += " active";
+	evt.currentTarget.classList.remove("active");
+
 }
 
-// Update variables as use types
+// Variable input changes
 function eventTitleUpdate () {
+
+	// Set the active tab to the Title tab
 	openCity(event, 'TitleTab');
+	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
+	document.getElementById("inputEventTitle").classList.remove("active");
+
+	// Get the value of the input
 	let outputEventTitle = document.getElementById("inputEventTitle");
 	if (outputEventTitle.value != null && outputEventTitle.value.length > 0) {
 		// find all elements with the class name 'title' and update their innerHTML to the value of the input
@@ -53,9 +61,13 @@ function eventTitleUpdate () {
 		}
 	}
 }
-
 function eventDateUpdate () {
+
+	// Set the active tab to the Date tab
 	openCity(event, 'DateTab');
+	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
+	document.getElementById("inputEventDate").classList.remove("active");
+
 	let outputEventDate = document.getElementById("inputEventDate");
 	if (outputEventDate.value != null && outputEventDate.value.length > 0) {
 		// find all elements with the class name 'date' and update their innerHTML to the value of the input
@@ -91,7 +103,12 @@ function eventDateUpdate () {
 	}
 }
 function eventTimeUpdate () {
+
+	// Set the active tab to the Time tab
 	openCity(event, 'TimeTab');
+	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
+	document.getElementById("inputEventTime").classList.remove("active");
+
 	let outputEventTime = document.getElementById("inputEventTime");
 	if (outputEventTime.value != null && outputEventTime.value.length > 0) {
 		// find all elements with the class name 'time' and update their innerHTML to the value of the input
@@ -128,7 +145,12 @@ function eventTimeUpdate () {
 	}
 }
 function eventLocationUpdate () {
+
+	// Set the active tab to the Location tab
 	openCity(event, 'LocationTab');
+	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
+	document.getElementById("inputEventLocation").classList.remove("active");
+
 	let outputEventLocation = document.getElementById("inputEventLocation");
 	if (outputEventLocation.value != null && outputEventLocation.value.length > 0) {
 		// find all elements with the class name 'location' and update their innerHTML to the value of the input
@@ -166,7 +188,12 @@ function eventLocationUpdate () {
 	}
 }
 function eventOrganizationUpdate () {
+
+	// Set the active tab to the Organization tab
 	openCity(event, 'OrganizationTab');
+	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
+	document.getElementById("inputEventOrganization").classList.remove("active");
+
 	let outputEventOrganization = document.getElementById("inputEventOrganization");
 	if (outputEventOrganization.value != null && outputEventOrganization.value.length > 0) {
 		// find all elements with the class name 'organization' and update their innerHTML to the value of the input
@@ -204,7 +231,12 @@ function eventOrganizationUpdate () {
 	}
 }
 function eventHostUpdate () {
+
+	// Set the active tab to the Host tab
 	openCity(event, 'HostTab');
+	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
+	document.getElementById("inputEventHost").classList.remove("active");
+
 	let outputEventHost = document.getElementById("inputEventHost");
 	if (outputEventHost.value != null && outputEventHost.value.length > 0) {
 		// find all elements with the class name 'host' and update their innerHTML to the value of the input
@@ -242,6 +274,10 @@ function eventHostUpdate () {
 	}
 }
 function eventDescriptionUpdate () {
+
+	// Remove the added 'active' attribute that is added as input... it causes the field to be highlighted
+	document.getElementById("inputEventDescription").classList.remove("active");
+
 	let outputEventDescription = document.getElementById("inputEventDescription");
 	if (outputEventDescription.value != null && outputEventDescription.value.length > 0) {
 		// find all elements with the class name 'description' and update their innerHTML to the value of the input
@@ -270,6 +306,7 @@ function eventDescriptionUpdate () {
 		let descriptionWords = text.split(" ");
 		localStorage.setItem('descriptionWords', descriptionWords);
 		generateHashtagsForDescription();
+		placeDescriptionAsSelected();
 	} else {
 		let descriptionElements = document.getElementsByClassName("description");
 		for (let i = 0; i < descriptionElements.length; i++) {
@@ -416,7 +453,7 @@ function eventLogoUpdate () {
 	}
 }
 
-// clear the fields
+// User clears the field
 function eventTitleClear () {
 	if (confirm("Are you sure you want to clear the title?")) {
 		document.getElementById("inputEventTitle").value = null;
@@ -503,8 +540,8 @@ function generateHashtagsForTitle () {
 	// set the string into the hashtag output
 	document.getElementById("hashtagsHereForTitle").innerText = titleWordsHashtagNoCommas;
 
-	// for each word in the string, add the class '.chip' to it
-	let titleWordsHashtagNoCommasItem = titleWordsHashtagNoCommas.split(" ");
+
+
 
 	// set the hashtags in the social shares section preview
 //	document.getElementById("hashtagsHereFacebook").innerText = titleWordsHashtagNoCommas;
@@ -843,13 +880,13 @@ function copyToClipboardHasDescription1() {
 	});
 }
 
-
 // Hashtags
 function copyToClipboardHashtags () {
-	 let copyText = document.getElementById("hashtagsHere").innerText;
+	let copyText = document.getElementById("hashtagsHere").innerText;
  	navigator.clipboard.writeText(copyText).then(() => {
  		alert("Copied:\n" + copyText);
  	});
+	placeHashtagsAsSelected();
  }
 
 
@@ -927,5 +964,242 @@ function onclickLinkLogo () {
 	console.log(document.getElementById("inputEventLogo").value);
 	eventLogoUpdate();
 }
+
+
+
+
+
+// Output variable selected for final
+// Title
+function selectTitleOutput1 () {
+	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle1").innerText + "&nbsp;";
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTitleOutput2 () {
+	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle2").innerText + "&nbsp;";
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
+	}, 1000);
+
+}
+function selectTitleOutput3 () {
+	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle3").innerText + "&nbsp;";
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTitleOutput4 () {
+	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle4").innerText + "&nbsp;";
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTitleOutput5 () {
+	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle5").innerText + "&nbsp;";
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+// Date
+function selectDateOutput1 () {
+	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate1").innerText + "&nbsp;";
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectDateOutput2 () {
+	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate2").innerText + "&nbsp;";
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectDateOutput3 () {
+	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate3").innerText + "&nbsp;";
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectDateOutput4 () {
+	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate4").innerText + "&nbsp;";
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectDateOutput5 () {
+	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate5").innerText + "&nbsp;";
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+// Time
+function selectTimeOutput1 () {
+	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime1").innerText + "&nbsp;";
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTimeOutput2 () {
+	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime2").innerText + "&nbsp;";
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTimeOutput3 () {
+	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime3").innerText + "&nbsp;";
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTimeOutput4 () {
+	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime4").innerText + "&nbsp;";
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectTimeOutput5 () {
+	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime5").innerText + "&nbsp;";
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+// Location
+function selectLocationOutput1 () {
+	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation1").innerText + "&nbsp;";
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectLocationOutput2 () {
+	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation2").innerText + "&nbsp;";
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectLocationOutput3 () {
+	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation3").innerText + "&nbsp;";
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectLocationOutput4 () {
+	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation4").innerText + "&nbsp;";
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectLocationOutput5 () {
+	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation5").innerText + "&nbsp;";
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+// Organization
+function selectOrganizationOutput1 () {
+	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization1").innerText + "&nbsp;";
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectOrganizationOutput2 () {
+	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization2").innerText + "&nbsp;";
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectOrganizationOutput3 () {
+	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization3").innerText + "&nbsp;";
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectOrganizationOutput4 () {
+	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization4").innerText + "&nbsp;";
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectOrganizationOutput5 () {
+	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization5").innerText + "&nbsp;";
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+// Host
+function selectHostOutput1 () {
+	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost1").innerText + "&nbsp;";
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectHostOutput2 () {
+	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost2").innerText + "&nbsp;";
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectHostOutput3 () {
+	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost3").innerText + "&nbsp;";
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectHostOutput4 () {
+	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost4").innerText + "&nbsp;";
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+function selectHostOutput5 () {
+	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost5").innerText + "&nbsp;";
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
+	}, 1000);
+}
+// Description
+function placeDescriptionAsSelected ()
+{
+	document.getElementById("selectedDescriptionOutput").innerHTML = document.getElementById("copyToClipboardHasDescription1").innerText + "&nbsp;";
+	document.getElementById("selectedDescriptionOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedDescriptionOutput").style.backgroundColor = "transparent";
+}, 1000);
+}
+// Hashtags
+function placeHashtagsAsSelected ()
+{
+	document.getElementById("selectedHashtagsOutput").innerHTML = '<br><br>' + document.getElementById("hashtagsHere").innerText;
+	document.getElementById("selectedHashtagsOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedHashtagsOutput").style.backgroundColor = "transparent";
+}, 1000);
+}
+
+
+
+
+// SAVE CONTENT FILES
+function saveContentFiles () {
+
+	// Get the content
+	let finalText = document.getElementById("finalText").innerText;
+
+	// Create a new Blob (html)
+	const blob = new Blob([finalText], { type: "text/html" });
+
+	// Download the newly created Blob
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement("a");
+	a.href = url;
+	a.download = "BrandWiled Content";
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+
+}
+
+
+
+
+
 
 

@@ -23,7 +23,11 @@ const dbRef = ref(getDatabase());
 const brand = 'BrandWield';
 get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.exists()) {
-		console.log('Brand Returned: ' + brand);
+		if (snapshot.val().legalBusinessName != null || snapshot.val().legalBusinessName != '') {
+			console.log('Brand Returned: ' + snapshot.val().legalBusinessName);
+		} else {
+			console.log('Brand Returned!');
+		}
 		console.log(snapshot.val());
 	} else {
 		console.log("No Brand Returned");

@@ -18,6 +18,10 @@
 	<script src="myBrand.js"></script>
 	<script src="newContent.js"></script>
 
+	<!-- Google Drive API -->
+	<script src="https://www.googleapis.com/auth/drive"></script>
+	<script src="https://www.googleapis.com/auth/drive.file"></script>
+
 </head>
 <body>
 
@@ -582,11 +586,9 @@
 						<label for="instagramUsername">Username</label>
 						<span class="material-symbols-outlined" onclick="alert('The username for your Instagram page')">info</span>
 						<input id="instagramUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+						<img src="" alt="" height="30px" width="30" id="instagramProfilePic" style="display: none;">
 						<span id="instagramUsernameUnlock" class="material-symbols-outlined" onclick="unlockInstagramUsername();">lock_open</span>
 						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUsernameLock" class="material-symbols-outlined" onclick="lockInstagramUsername();">lock</span>
-						<!--	logInstaPic()
-						<img crossorigin="anonymous" id="instagramProfilePic" alt="" src="" height="100px" width="100px"/>
-						 -->
 						<button id="clearInstagramUsername" onclick="clearInstagramUsername();">Clear</button>
 					</div>
 
@@ -1094,7 +1096,7 @@
 
 					<!-- Person 2 Facebook URL -->
 					<div class="var">
-						<span id="warningPerson2FacebookURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningPerson2FacebookUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 						<label for="person2FacebookUrl">Person 2 Facebook URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
 						<input id="person2FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
@@ -1105,7 +1107,7 @@
 
 					<!-- Person 2 Instagram URL -->
 					<div class="var">
-						<span id="warningPerson2InstagramURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningPerson2InstagramUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 						<label for="person2InstagramUrl">Person 2 Instagram URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
 						<input id="person2InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
@@ -1116,7 +1118,7 @@
 
 					<!-- Person 2 LinkedIn URL -->
 					<div class="var">
-						<span id="warningPerson2LinkedinURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningPerson2LinkedinUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 						<label for="person2LinkedinUrl">Person 2 LinkedIn URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
 						<input id="person2LinkedinUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
@@ -1127,7 +1129,7 @@
 
 					<!-- Person 2 Twitter URL -->
 					<div class="var">
-						<span id="warningPerson2TwitterURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningPerson2TwitterUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 						<label for="person2TwitterUrl">Person 2 Twitter URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
 						<input id="person2TwitterUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
@@ -1138,7 +1140,7 @@
 
 					<!-- Person 2 TikTok URL -->
 					<div class="var">
-						<span id="warningPerson2TiktokURL" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+						<span id="warningPerson2TiktokUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 						<label for="person2TiktokUrl">Person 2 TikTok URL</label>
 						<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
 						<input id="person2TiktokUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
@@ -1215,90 +1217,91 @@
 		<!-- Event Title -->
 		<div style="align-items: center;">
 			<label for="inputEventTitle">Event Title</label>
-			<input id="inputEventTitle" type="text" onkeyup="eventTitleUpdate();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventTitleClear();">Clear</button>
+			<input id="inputEventTitle" type="text" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
 		</div>
 
 		<!-- Event Date -->
 		<div style="align-items: center; justify-content: space-between;">
 			<label for="inputEventDate">Date</label>
-			<input id="inputEventDate" type="date" oninput="eventDateUpdate();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventDateClear();">Clear</button>
+			<input id="inputEventDate" type="date" oninput="eventDateUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDateClear();">x</a>
 		</div>
 
 		<!-- Event Time -->
 		<div style="align-items: center; justify-content: space-between;">
 			<label for="inputEventTime">Time</label>
-			<input id="inputEventTime" type="time" oninput="eventTimeUpdate();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventTimeClear();">Clear</button>
+			<input id="inputEventTime" type="time" oninput="eventTimeUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTimeClear();">x</a>
 		</div>
 
 		<!-- Event Location -->
 		<div style="align-items: center;">
 			<label for="inputEventLocation">Location</label>
-			<input id="inputEventLocation" type="text" onkeyup="eventLocationUpdate();">
+			<input id="inputEventLocation" type="text" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
 			<img id="linkLocation" title="Load Address" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventLocationClear();">Clear</button>
 		</div>
 
 		<!-- Event Organization -->
 		<div style="align-items: center;">
 			<label for="inputEventOrganization">Organization</label>
-			<input id="inputEventOrganization" type="text" onkeyup="eventOrganizationUpdate();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">Clear</button>
+			<input id="inputEventOrganization" type="text" onkeyup="eventOrganizationUpdate(); placeHashtagsAsSelected();">
+			<a  title="Clear field" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">x</a>
 		</div>
 
 		<!-- Event Host -->
 		<div style="align-items: center;">
 			<label for="inputEventHost">Host</label>
-			<input id="inputEventHost" type="text" onkeyup="eventHostUpdate();">
+			<input id="inputEventHost" type="text" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
 			<img id="linkHost" title="Load Founder Name" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventHostClear();">Clear</button>
 		</div>
 
 		<!-- Event Description -->
 		<div style="align-items: center;">
 			<label for="inputEventDescription">Description</label>
-			<input id="inputEventDescription" type="text" onkeyup="eventDescriptionUpdate();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">Clear</button>
+			<input id="inputEventDescription" type="text" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
 		</div>
 
 		<!-- Event Link -->
 		<div style="align-items: center;">
 			<label for="inputEventLink">Link</label>
-			<input id="inputEventLink" type="url" onkeyup="eventLinkUpdate();">
-			<img id="qrPreview" src="" alt="" height="50px" width="50px"/>
+			<input id="inputEventLink" type="url" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
+			<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
 			<img id="linkLink" title="Load Website URL" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventLinkClear();">Clear</button>
 		</div>
 
 		<!-- Event Primary Color -->
 		<div style="align-items: center;">
 			<label for="inputEventPrimaryColor">Primary Color</label>
-			<input id="inputEventPrimaryColor" type="color" oninput="eventPrimarycolorUpdate();">
+			<input id="inputEventPrimaryColor" type="color" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">x</a>
 			<img id="linkPrimarycolor" title="Load Primary Color" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">Clear</button>
 		</div>
 
 		<!-- Event Logo -->
 		<div style="align-items: center;">
 			<label for="inputEventLogo">Logo</label>
-			<input id="inputEventLogo" type="file" oninput="eventLogoUpdate();">
-			<button class="clearButton" style="position: relative; right: 5px;" onclick="eventLogoClear();">Clear</button>
+			<input id="inputEventLogo" type="file" style="width: 170px" oninput="eventLogoUpdate(); placeHashtagsAsSelected();">
+			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLogoClear();">x</a>
 		</div>
+
 	</div>
 
 		<!-- Outputs -->
-		<div id="outputs" class="column3" style="user-select: none;">
+		<div id="outputs" class="column3" style="max-height: 100vh; overflow: scroll; user-select: none; box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9); -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9); -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);">
 
-
-			<div class="tab">
-				<button class="tablinks" onclick="openCity(event, 'TitleTab')">Title</button>
-				<button class="tablinks" onclick="openCity(event, 'DateTab')">Date</button>
-				<button class="tablinks" onclick="openCity(event, 'TimeTab')">Time</button>
-				<button class="tablinks" onclick="openCity(event, 'LocationTab')">Location</button>
-				<button class="tablinks" onclick="openCity(event, 'OrganizationTab')">Organization</button>
-				<button class="tablinks" onclick="openCity(event, 'HostTab')">Host</button>
+			<!-- Output Tabs -->
+			<div style="padding-bottom: 10px;">
+				<button class="socialTab" onclick="openCity(event, 'TitleTab')">Title</button>
+				<button class="socialTab" onclick="openCity(event, 'DateTab')">Date</button>
+				<button class="socialTab" onclick="openCity(event, 'TimeTab')">Time</button>
+				<button class="socialTab" onclick="openCity(event, 'LocationTab')">Location</button>
+				<button class="socialTab" onclick="openCity(event, 'OrganizationTab')">Organization</button>
+				<button class="socialTab" onclick="openCity(event, 'HostTab')">Host</button>
 			</div>
 
 			<!-- Title Output -->
@@ -1308,26 +1311,31 @@
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle1">Are you ready for the <text contenteditable="false" class="title chip"></text>?</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle1();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTitleOutput1();">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle2">We are hosting an event! Will you be at the <text contenteditable="false" class="title chip"></text>?</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle2();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTitleOutput2();">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle3">We will see you at the <text contenteditable="false" class="title chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle3();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTitleOutput3()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle4">We are hosting an event; will you be there? Don't miss the <text contenteditable="false" class="title chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle4();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTitleOutput4()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTitle5">The <text contenteditable="false" class="title chip"></text> is right around the corner. Will you be there?</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTitle5();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTitleOutput5()">Select Option</button>
 					</div>
 				</div>
 			</div>
@@ -1339,26 +1347,31 @@
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate1">This event will take place on <text contenteditable="false" class="date chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate1();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectDateOutput1()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate2">Are you busy on <text contenteditable="false" class="date chip"></text>?</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate2();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectDateOutput2()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate3">Mark your calendar for <text contenteditable="false" class="date chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate3();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectDateOutput3()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate4">Set aside some time on <text contenteditable="false" class="date chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate4();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectDateOutput4()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasDate5"><text contenteditable="false" class="date chip"></text> is closer than you think!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasDate5();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectDateOutput5()">Select Option</button>
 					</div>
 				</div>
 			</div>
@@ -1370,26 +1383,31 @@
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime1">This even will start at <text contenteditable="false" class="time chip"></text>.</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime1();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTimeOutput1()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime2">Be there for <text contenteditable="false" class="time chip"></text> sharp!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime2();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTimeOutput2()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime3">Be there by <text contenteditable="false" class="time chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime3();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTimeOutput3()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime4">We formally start at <text contenteditable="false" class="time chip"></text>.</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime4();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTimeOutput4()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasTime5">It will start at <text contenteditable="false" class="time chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasTime5();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectTimeOutput5()">Select Option</button>
 					</div>
 				</div>
 			</div>
@@ -1401,26 +1419,31 @@
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation1">This event will be located at <text contenteditable="false" class="location chip"></text>.</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation1();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectLocationOutput1()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation2">This event will take place at <text contenteditable="false" class="location chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation2();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectLocationOutput2()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation3">See you at <text contenteditable="false" class="location chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation3();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectLocationOutput3()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation4">Be sure you know where to go! The event will take place at <text contenteditable="false" class="location chip"></text>.</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation4();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectLocationOutput4()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasLocation5">Have you ever been to <text contenteditable="false" class="location chip"></text>? We are hosting the event there!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasLocation5();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectLocationOutput5()">Select Option</button>
 					</div>
 				</div>
 			</div>
@@ -1432,26 +1455,31 @@
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization1">The event is hosted by <text contenteditable="false" class="organization chip"></text>.</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization1();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectOrganizationOutput1()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization2">Have you ever been to a <text contenteditable="false" class="organization chip"></text> event?</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization2();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectOrganizationOutput2()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization3">The <text contenteditable="false" class="organization chip"></text> is hosting the event!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization3();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectOrganizationOutput3()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization4">Organized by the <text contenteditable="false" class="organization chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization4();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectOrganizationOutput4()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasOrganization5">This event is made possible by <text contenteditable="false" class="organization chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasOrganization5();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectOrganizationOutput5()">Select Option</button>
 					</div>
 				</div>
 			</div>
@@ -1463,26 +1491,31 @@
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost1"><text contenteditable="false" class="host chip"></text> will be there to greet you at the door!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost1();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectHostOutput1()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost2"><text contenteditable="false" class="host chip"></text> will be there to welcome you!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost2();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectHostOutput2()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost3">Contact <text contenteditable="false" class="host chip"></text> if you have any questions!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost3();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectHostOutput3()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost4">Looking for more information? Contact <text contenteditable="false" class="host chip"></text>!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost4();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectHostOutput4()">Select Option</button>
 					</div>
 					<div>
 						<p style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px;" contenteditable="true" id="copyToClipboardHasHost5"><text contenteditable="false" class="host chip"></text> can answer any of your questions ahead of time!</p>
 						<span contenteditable="false" style="user-select: none; position: relative; top: -19px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 						<button class="copyTextButton" style="position: relative; top: -58px; left: 90px;" onclick="copyToClipboardHasHost5();">Copy Text</button>
+						<button class="copyTextButton" style="position: relative; top: -58px; left: 80px;" onclick="selectHostOutput5()">Select Option</button>
 					</div>
 				</div>
 			</div>
@@ -1500,10 +1533,11 @@
 			<div id="hasLink" style="display: none; line-height: 2em;">
 			</div>
 
-			<!-- Hashtags Container -->
-			<div id="hashtagsContainer" style="display: none; box-shadow: 5px 20px #888888; -webkit-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); -moz-box-shadow: 0 0 20px -9px rgba(0,0,0,0.90); padding: 20px 20px 20px 20px; margin-bottom: 15px;">
+			<!-- Hashtags Output
+
+			<div id="hashtagsContainer" style="display: none; padding: 20px 20px 20px 20px; margin-bottom: 15px;">
 				<div style="padding: 10px 14px 22px 14px; line-height: 2em;">Hashtags</div>
-				<div class="hashtagsHere" contenteditable="true" style="padding: 10px 14px 22px 14px; line-height: 2em; border: 1px solid #cecece; border-radius: 5px;">
+				<div id="hashtagsHere" class="hashtagsHere" contenteditable="true" style="padding: 10px 14px 22px 14px; line-height: 2em; border: 1px solid #cecece; border-radius: 5px;">
 					<text id="hashtagsHereForTitle"></text>
 					<text id="hashtagsHereForLocation"></text>
 					<text id="hashtagsHereForOrganization"></text>
@@ -1514,66 +1548,82 @@
 				<button class="copyTextButton" onclick="copyToClipboardHashtags();">Copy Hashtags</button>
 			</div>
 
+ 			-->
+
 		</div>
 
-		<!-- Sendables -->
-		<div id="final" class="column3" style="user-select: none;">
+		<!-- Finals -->
+		<div id="final" class="column3" style="user-select: none; padding: 0 20px 0 20px;">
 
-			<!-- Final Image (Horizontal) -->
-			<div id="finalImageHorizontal" class="imageColors">
-				<text id="finalTitleHorizontal" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeHorizontal" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationHorizontal" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationHorizontal" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostHorizontal" class="host"></text>
-				<div>
-					<img height="60" width="60" id="horizontalImageQRHere" alt="" src="" />
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
-				</div>
+			<!-- IMAGES -->
+				<!-- Final Image (Horizontal) -->
+					<div id="finalImageHorizontal" class="imageColors">
+						<text id="finalTitleHorizontal" class="title"></text>
+						<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text>
+						<text class="showOnTime">Time: </text><text id="finalTimeHorizontal" class="time"></text>
+						<text class="showOnLocation">Location: </text><text id="finalLocationHorizontal" class="location"></text>
+						<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationHorizontal" class="organization"></text>
+						<text class="showOnHost">Hosted by: </text><text id="finalHostHorizontal" class="host"></text>
+						<div>
+							<img height="60" width="60" id="horizontalImageQRHere" alt="" src="" />
+						</div>
+						<div>
+							<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
+						</div>
 
+					</div>
+					<div id="finalImageHorizontalPlatforms">1200h X 630w</div>
+				<!-- Final Image (Vertical) -->
+					<div id="finalImageVertical" class="imageColors">
+						<text id="finalTitleVertical" class="title"></text>
+						<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
+						<text class="showOnTime">Time: </text><text id="finalTimeVertical" class="time"></text>
+						<text class="showOnLocation">Location: </text><text id="finalLocationVertical" class="location"></text>
+						<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationVertical" class="organization"></text>
+						<text class="showOnHost">Hosted by: </text><text id="finalHostVertical" class="host"></text>
+						<div>
+							<img height="60" width="60" id="verticalImageQRHere" alt="" src="" />
+						</div>
+						<div>
+							<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
+						</div>
+					</div>
+					<div id="finalImageVerticalPlatforms">1350h X 1080w</div>
+				<!-- Final Image (Square) -->
+					<div id="finalImageSquare" class="imageColors">
+						<text id="finalTitleSquare" class="title"></text>
+						<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
+						<text class="showOnTime">Time: </text><text id="finalTimeSquare" class="time"></text>
+						<text class="showOnLocation">Location: </text><text id="finalLocationSquare" class="location"></text>
+						<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationSquare" class="organization"></text>
+						<text class="showOnHost">Hosted by: </text><text id="finalHostSquare" class="host"></text>
+						<div>
+							<img height="60" width="60" id="squareImageQRHere" alt="" src=""/>
+						</div>
+						<div>
+							<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
+						</div>
+					</div>
+					<div id="finalImageSquarePlatforms">1000h X 1000w</div>
+
+			<!-- TEXT -->
+			<div style="position: relative; top: 480px;">
+				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" id="">
+					<text id="selectedTitleOutput"></text>
+					<text id="selectedDateOutput"></text>
+					<text id="selectedTimeOutput"></text>
+					<text id="selectedLocationOutput"></text>
+					<text id="selectedOrganizationOutput"></text>
+					<text id="selectedHostOutput"></text>
+					<text id="selectedDescriptionOutput"></text>
+					<text id="selectedHashtagsOutput"></text>
+				</p>
+				<span contenteditable="false" style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+				<button class="copyTextButton" onclick="saveContentFiles();">Save Content</button>
 			</div>
-			<div id="finalImageHorizontalPlatforms">1200h X 630w</div>
-
-			<!-- Final Image (Vertical) -->
-			<div id="finalImageVertical" class="imageColors">
-				<text id="finalTitleVertical" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeVertical" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationVertical" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationVertical" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostVertical" class="host"></text>
-				<div>
-					<img height="60" width="60" id="verticalImageQRHere" alt="" src="" />
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
-				</div>
-			</div>
-			<div id="finalImageVerticalPlatforms">1350h X 1080w</div>
-
-			<!-- Final Image (Square) -->
-			<div id="finalImageSquare" class="imageColors">
-				<text id="finalTitleSquare" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeSquare" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationSquare" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationSquare" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostSquare" class="host"></text>
-				<div>
-					<img height="60" width="60" id="squareImageQRHere" alt="" src=""/>
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
-				</div>
-			</div>
-			<div id="finalImageSquarePlatforms">1000h X 1000w</div>
 
 			<!-- Social Sendables -->
 			<div id="socialSendables">
-
 				<!-- Social Sendables Tab Script -->
 				<script>
 					function openSocialTab(evt, cityName) {
@@ -1589,7 +1639,6 @@
 						document.getElementById(cityName).style.display = "block";
 					}
 				</script>
-
 				<!-- Social Sendables Clickable Tabs -->
 				<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
 					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/facebookWhite.png" /></button>
@@ -1600,7 +1649,6 @@
 					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/tumblrWhite.png" /></button>
 					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/telegramWhite.png" /></button>
 					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/whatsappWhite.png" /></button>
-
 					<!-- Facebook -->
 					<div id="tabFacebook" class="socialTabContent">
 						<!-- Share Via Facebook -->
@@ -1622,7 +1670,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- Linkedin -->
 					<div id="tabLinkedin" class="socialTabContent">
 						<!-- Share Via LinkedIn -->
@@ -1646,7 +1693,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- Twitter -->
 					<div id="tabTwitter" class="socialTabContent">
 						<!-- Share Via Twitter -->
@@ -1670,7 +1716,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- Email -->
 					<div id="tabEmail" class="socialTabContent">
 						<!-- Share Via Email -->
@@ -1694,7 +1739,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- Reddit -->
 					<div id="tabReddit" class="socialTabContent">
 						<!-- Share Via Reddit -->
@@ -1717,7 +1761,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- Tumblr -->
 					<div id="tabTumblr" class="socialTabContent">
 						<!-- Share Via Tumblr -->
@@ -1741,7 +1784,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- Telegram -->
 					<div id="tabTelegram" class="socialTabContent">
 						<!-- Share Via Telegram -->
@@ -1765,7 +1807,6 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 					<!-- WhatsApp -->
 					<div id="tabWhatsapp" class="socialTabContent">
 						<!-- Share Via WhatsApp -->
@@ -1788,9 +1829,7 @@
 							</a>
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
-
 				</div>
-
 			</div>
 
 		</div>
@@ -1822,5 +1861,6 @@
 </div>
 
 </body>
+
 
 </html>

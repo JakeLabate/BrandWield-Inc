@@ -955,15 +955,40 @@ function lockInstagramUsername () {
 	document.getElementById('instagramUsernameUnlock').setAttribute('style', 'background-color: transparent;');
 	if (document.getElementById('instagramUsername').value.length > 0) { document.getElementById('warningInstagramUsername').setAttribute('style', 'display: none;'); }
 	if (document.getElementById('instagramUsername').value.length < 1) { document.getElementById('warningInstagramUsername').setAttribute('style', 'display: block;'); }
+
+	// Get Instagram Profile Pic from username API - https://rapidapi.com/fariswdcash-434L2ELS8qx/api/instagram-profile1
+	const instaUrlOptions = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'instagram-profile1.p.rapidapi.com'
+		}
+	};
+	fetch('https://instagram-profile1.p.rapidapi.com/getid/' + document.getElementById('instagramUsername').value, instaUrlOptions)
+	.then(response => response.json())
+	.then(response => {
+		document.getElementById('instagramProfilePic').style.display = 'inline';
+		document.getElementById('instagramProfilePic').src = response.profile_pic_url_proxy;
+		document.getElementById('instagramProfilePic').alt = response.username;
+		document.getElementById('instagramProfilePic').style.borderRadius = '50%';
+	}).catch(err => console.error(err));
+
 }
 function clearInstagramUsername () {
 	if (confirm('Are you sure you want to CLEAR the Instagram Username?') === true) {
 		document.getElementById('instagramUsername').value = '';
 		document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
+
+		// Clear Instagram Profile Pic
+		document.getElementById('instagramProfilePic').src = null;
+		document.getElementById('instagramProfilePic').alt = null;
+		document.getElementById('instagramProfilePic').style.display = 'none';
+
 		setTimeout(function() {
 			document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 			document.getElementById('warningInstagramUsername').setAttribute('style', 'display: block;');
 		}, 800);
+
 	} else {
 		confirm.close();
 	}
@@ -2267,20 +2292,3 @@ function clearOffer2Image () {
 
 
 
-// SOCIAL MEDIA
-// function logInstaPic() {
-//	let instagramUserField = document.getElementById('instagramUsername').value;
-//	const options = {
-//		method: 'GET',
-//		headers: {
-//			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-//			'X-RapidAPI-Host': 'instagram130.p.rapidapi.com'
-//		}
-//	};
-//
-//	fetch('https://instagram130.p.rapidapi.com/account-info?username=' + instagramUserField, options)
-//	.then(response => response.json())
-//	.then(response => console.log(response))
-//	.then(response => document.getElementById('instagramProfilePic').setAttribute('src', response.profile_pic_url)) // NOT WORKING (CORS ERROR)
-//	.catch(err => console.error(err));
-// }
