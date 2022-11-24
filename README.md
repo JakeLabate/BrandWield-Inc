@@ -5,9 +5,22 @@
   </a>
 
 # BrandWield Inc.
+**_Making content vision and content production, synonymous_**<br />
 
-**_Making content vision and content production, synonymous_**
 </div>
+
+```js
+// audit BrandWield's mission statement
+function auditMissionStatement () {
+	if (contentMarketer.vision === contentMarketer.production) {
+		brandWield.mission = 'Making content vision and content production, synonymous'
+	}
+	else {
+		reviseMissionStatement
+	}
+}
+```
+
 
 ```js
 // set conservative eval
