@@ -6,7 +6,7 @@
 
 # BrandWield Inc.
 
-**_Making content vision and content production, synonomous_**
+**_Making content vision and content production, synonymous_**
 </div>
 
 ```js
