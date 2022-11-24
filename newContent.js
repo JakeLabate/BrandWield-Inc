@@ -1176,6 +1176,11 @@ function placeHashtagsAsSelected ()
 // Screenshot
 // Input: <div id="photo"><button onclick="screenshot();">Take Screenshot</button></div>
 // Output: <div id="output"></div>
+function screenshotAllImages() {
+	screenshotHorizontalFinal();
+	screenshotVerticalFinal();
+	screenshotSquareFinal();
+}
 function screenshotHorizontalFinal() {
 	// Set input & output
 	let screenshotTakeable = document.getElementById('finalImageHorizontal');
@@ -1262,7 +1267,6 @@ function saveContentFiles () {
 	document.body.removeChild(a);
 
 }
-
 
 
 

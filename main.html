@@ -3,12 +3,10 @@
 <head>
 
 	<meta charset="UTF-8">
-	<title>BrandWield | Making synonymous, content vision and production</title>
+	<title>BrandWield | Making content vision and content production, synonymous</title>
 
-	<!-- CSS Stylesheet -->
+	<!-- Stylesheets -->
 	<link rel="stylesheet" href="main.css">
-
-	<!-- Google Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 	<!-- Firebase Setup -->
@@ -24,8 +22,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
-
 
 </head>
 <body>
@@ -1530,11 +1526,9 @@
 			</div>
 
 			<!-- Link Output-->
-			<div id="hasLink" style="display: none; line-height: 2em;">
-			</div>
+			<div id="hasLink" style="display: none; line-height: 2em;"></div>
 
 			<!-- Hashtags Output -->
-
 			<div id="hashtagsContainer" style="display: none; padding: 20px 20px 20px 20px; margin-bottom: 15px;">
 				<div style="padding: 10px 14px 22px 14px; line-height: 2em;">Hashtags</div>
 				<div id="hashtagsHere" class="hashtagsHere" contenteditable="true" style="padding: 10px 14px 22px 14px; line-height: 2em; border: 1px solid #cecece; border-radius: 5px;">
@@ -1617,10 +1611,8 @@
 					<text id="selectedHashtagsOutput"></text>
 				</p>
 				<span contenteditable="false" style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-				<button class="copyTextButton" onclick="saveContentFiles(); screenshotHorizontalFinal(); screenshotVerticalFinal(); screenshotSquareFinal();">Save Content</button>
-				<button class="copyTextButton" onclick="downloadScreenshot();">Download</button>
+				<button class="copyTextButton" onclick="saveContentFiles(); screenshotAllImages();">Save Content</button>
 				<div id="output"></div>
-				<div id="outputImage"></div>
 			</div>
 
 			<!-- Social Sendables -->
