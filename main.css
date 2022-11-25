@@ -239,6 +239,19 @@ img {
     transition: .1s;
 }
 
+p[id*="copyToClipboardHas"] {
+    transition: .1s ease-in-out;
+}
+
+p[id*="copyToClipboardHas"]:hover {
+    transition: .1s ease-in-out;
+    scale: 1.01;
+    box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
+    -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
+    -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
+
+}
+
 /* Images produced in the 'New Content' tab */
 #finalImageHorizontal {
     width: 330px;
