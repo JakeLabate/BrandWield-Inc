@@ -539,8 +539,12 @@ function generateHashtagsForTitle () {
 	// replace all commas in the string with a space
 	let titleWordsHashtagNoCommas = titleWordsHashtag.replace(/,/g, ' ');
 
-	// set the string into the hashtag output
-	document.getElementById("hashtagsHereForTitle").innerText = titleWordsHashtagNoCommas;
+	// remove duplicate hashtags
+	let noDuplicates = titleWordsHashtagNoCommas.split(" ");
+	uniq = [...new Set(noDuplicates)];
+
+	// place the hashtags in the hashtagsContainer
+	document.getElementById("hashtagsHereForTitle").innerText = uniq.join(" ");
 
 }
 function generateHashtagsForLocation () {
@@ -560,8 +564,12 @@ function generateHashtagsForLocation () {
 	// replace all commas in the string with a space
 	let locationWordsHashtagNoCommas = locationWordsHashtag.replace(/,/g, ' ');
 
-	// set the string into the hashtag output
-	document.getElementById("hashtagsHereForLocation").innerText = locationWordsHashtagNoCommas;
+	// remove duplicate hashtags
+	let noDuplicates = locationWordsHashtagNoCommas.split(" ");
+	uniq = [...new Set(noDuplicates)];
+
+	// place the hashtags in the hashtagsContainer
+	document.getElementById("hashtagsHereForLocation").innerText = uniq.join(" ");
 
 }
 function generateHashtagsForOrganization () {
@@ -581,8 +589,12 @@ function generateHashtagsForOrganization () {
 	// replace all commas in the string with a space
 	let organizationWordsHashtagNoCommas = organizationWordsHashtag.replace(/,/g, ' ');
 
-	// set the string into the hashtag output
-	document.getElementById("hashtagsHereForOrganization").innerText = organizationWordsHashtagNoCommas;
+	// remove duplicate hashtags
+	let noDuplicates = organizationWordsHashtagNoCommas.split(" ");
+	uniq = [...new Set(noDuplicates)];
+
+	// place the hashtags in the hashtagsContainer
+	document.getElementById("hashtagsHereForOrganization").innerText = uniq.join(" ");
 
 }
 function generateHashtagsForHost () {
@@ -602,8 +614,12 @@ function generateHashtagsForHost () {
 	// replace all commas in the string with a space
 	let hostWordsHashtagNoCommas = hostWordsHashtag.replace(/,/g, ' ');
 
-	// set the string into the hashtag output
-	document.getElementById("hashtagsHereForHost").innerText = hostWordsHashtagNoCommas;
+	// remove duplicate hashtags
+	let noDuplicates = hostWordsHashtagNoCommas.split(" ");
+	uniq = [...new Set(noDuplicates)];
+
+	// place the hashtags in the hashtagsContainer
+	document.getElementById("hashtagsHereForHost").innerText = uniq.join(" ");
 
 }
 function generateHashtagsForDescription () {
@@ -623,8 +639,12 @@ function generateHashtagsForDescription () {
 	// replace all commas in the string with a space
 	let descriptionWordsHashtagNoCommas = descriptionWordsHashtag.replace(/,/g, ' ');
 
-	// set the string into the hashtag output
-	document.getElementById("hashtagsHereForDescription").innerText = descriptionWordsHashtagNoCommas;
+	// remove duplicate hashtags
+	let noDuplicates = descriptionWordsHashtagNoCommas.split(" ");
+	uniq = [...new Set(noDuplicates)];
+
+	// place the hashtags in the hashtagsContainer
+	document.getElementById("hashtagsHereForDescription").innerText = uniq.join(" ");
 
 }
 
