@@ -530,29 +530,17 @@ function generateHashtagsForTitle () {
 	// set the words to all lowercase
 	let titleWordsLower = localStorage.getItem('titleWords').toLowerCase();
 
+	// remove all non-alphanumeric characters
+	let titleWordsLowerNoSpecial = titleWordsLower.replace(/[^a-z0-9]/gi, ' ');
+
 	// add a '#' to the beginning of each word
-	let titleWordsHashtag = titleWordsLower.replace(/\b(\w)/g, '#$1');
+	let titleWordsHashtag = titleWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let titleWordsHashtagNoCommas = titleWordsHashtag.replace(/,/g, ' ');
 
 	// set the string into the hashtag output
 	document.getElementById("hashtagsHereForTitle").innerText = titleWordsHashtagNoCommas;
-
-
-
-
-	// set the hashtags in the social shares section preview
-//	document.getElementById("hashtagsHereFacebook").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTwitter").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereLinkedIn").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereEmail").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereReddit").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTumblr").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTelegram").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereWhatsApp").innerText = titleWordsHashtagNoCommas;
-
-
 
 }
 function generateHashtagsForLocation () {
@@ -563,28 +551,17 @@ function generateHashtagsForLocation () {
 	// set the words to all lowercase
 	let locationWordsLower = localStorage.getItem('locationWords').toLowerCase();
 
+	// remove all non-alphanumeric characters
+	let locationWordsLowerNoSpecial = locationWordsLower.replace(/[^a-z0-9]/gi, ' ');
+
 	// add a '#' to the beginning of each word
-	let locationWordsHashtag = locationWordsLower.replace(/\b(\w)/g, '#$1');
+	let locationWordsHashtag = locationWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let locationWordsHashtagNoCommas = locationWordsHashtag.replace(/,/g, ' ');
 
 	// set the string into the hashtag output
 	document.getElementById("hashtagsHereForLocation").innerText = locationWordsHashtagNoCommas;
-
-	// for each word in the string, add the class '.chip' to it
-	let locationWordsHashtagNoCommasItem = locationWordsHashtagNoCommas.split(" ");
-	console.log(locationWordsHashtagNoCommasItem);
-
-	// set the hashtags in the social shares section preview
-//	document.getElementById("hashtagsHereFacebook").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTwitter").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereLinkedIn").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereEmail").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereReddit").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTumblr").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTelegram").innerText = locationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereWhatsApp").innerText = locationWordsHashtagNoCommas;
 
 }
 function generateHashtagsForOrganization () {
@@ -595,28 +572,17 @@ function generateHashtagsForOrganization () {
 	// set the words to all lowercase
 	let organizationWordsLower = localStorage.getItem('organizationWords').toLowerCase();
 
+	// remove all non-alphanumeric characters
+	let organizationWordsLowerNoSpecial = organizationWordsLower.replace(/[^a-z0-9]/gi, ' ');
+
 	// add a '#' to the beginning of each word
-	let organizationWordsHashtag = organizationWordsLower.replace(/\b(\w)/g, '#$1');
+	let organizationWordsHashtag = organizationWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let organizationWordsHashtagNoCommas = organizationWordsHashtag.replace(/,/g, ' ');
 
 	// set the string into the hashtag output
 	document.getElementById("hashtagsHereForOrganization").innerText = organizationWordsHashtagNoCommas;
-
-	// for each word in the string, add the class '.chip' to it
-	let organizationWordsHashtagNoCommasItem = organizationWordsHashtagNoCommas.split(" ");
-	console.log(organizationWordsHashtagNoCommasItem);
-
-	// set the hashtags in the social shares section preview
-//	document.getElementById("hashtagsHereFacebook").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTwitter").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereLinkedIn").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereEmail").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereReddit").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTumblr").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTelegram").innerText = organizationWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereWhatsApp").innerText = organizationWordsHashtagNoCommas;
 
 }
 function generateHashtagsForHost () {
@@ -627,28 +593,17 @@ function generateHashtagsForHost () {
 	// set the words to all lowercase
 	let hostWordsLower = localStorage.getItem('hostWords').toLowerCase();
 
+	// remove all non-alphanumeric characters
+	let hostWordsLowerNoSpecial = hostWordsLower.replace(/[^a-z0-9]/gi, ' ');
+
 	// add a '#' to the beginning of each word
-	let hostWordsHashtag = hostWordsLower.replace(/\b(\w)/g, '#$1');
+	let hostWordsHashtag = hostWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let hostWordsHashtagNoCommas = hostWordsHashtag.replace(/,/g, ' ');
 
 	// set the string into the hashtag output
 	document.getElementById("hashtagsHereForHost").innerText = hostWordsHashtagNoCommas;
-
-	// for each word in the string, add the class '.chip' to it
-	let hostWordsHashtagNoCommasItem = hostWordsHashtagNoCommas.split(" ");
-	console.log(hostWordsHashtagNoCommasItem);
-
-	// set the hashtags in the social shares section preview
-//	document.getElementById("hashtagsHereFacebook").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTwitter").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereLinkedIn").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereEmail").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereReddit").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTumblr").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTelegram").innerText = hostWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereWhatsApp").innerText = hostWordsHashtagNoCommas;
 
 }
 function generateHashtagsForDescription () {
@@ -659,28 +614,17 @@ function generateHashtagsForDescription () {
 	// set the words to all lowercase
 	let descriptionWordsLower = localStorage.getItem('descriptionWords').toLowerCase();
 
+	// remove all non-alphanumeric characters
+	let descriptionWordsLowerNoSpecial = descriptionWordsLower.replace(/[^a-z0-9]/gi, ' ');
+
 	// add a '#' to the beginning of each word
-	let descriptionWordsHashtag = descriptionWordsLower.replace(/\b(\w)/g, '#$1');
+	let descriptionWordsHashtag = descriptionWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let descriptionWordsHashtagNoCommas = descriptionWordsHashtag.replace(/,/g, ' ');
 
 	// set the string into the hashtag output
 	document.getElementById("hashtagsHereForDescription").innerText = descriptionWordsHashtagNoCommas;
-
-	// for each word in the string, add the class '.chip' to it
-	let descriptionWordsHashtagNoCommasItem = descriptionWordsHashtagNoCommas.split(" ");
-	console.log(descriptionWordsHashtagNoCommasItem);
-
-	// set the hashtags in the social shares section preview
-//	document.getElementById("hashtagsHereFacebook").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTwitter").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereLinkedIn").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereEmail").innerText = titleWordsHashtagNoCommas;
-//  document.getElementById("hashtagsHereReddit").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTumblr").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereTelegram").innerText = titleWordsHashtagNoCommas;
-//	document.getElementById("hashtagsHereWhatsApp").innerText = titleWordsHashtagNoCommas;
 
 }
 
