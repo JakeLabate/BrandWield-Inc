@@ -970,192 +970,521 @@ function onclickLinkLogo () {
 
 // Output variable selected for final
 // Title
+function clearTitleConsideration () {
+	document.getElementById("consideredTitleOutput").innerHTML = ""
+	document.getElementById("selectedTitleOutput").style.display = "inline";
+}
+
+function considerTitleOutput1 () {
+	document.getElementById("consideredTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle1").innerText + "&nbsp;";
+	document.getElementById("consideredTitleOutput").style.color = "#8c8c8c";
+	document.getElementById("selectedTitleOutput").style.display = "none";
+}
 function selectTitleOutput1 () {
+	document.getElementById("consideredTitleOutput").innerHTML = null
+	document.getElementById("selectedTitleOutput").style.display = "inline";
 	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle1").innerText + "&nbsp;";
-	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTitleOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTitleOutput2 () {
+	document.getElementById("consideredTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle2").innerText + "&nbsp;";
+	document.getElementById("consideredTitleOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTitleOutput").style.display = "none";
 }
 function selectTitleOutput2 () {
+	document.getElementById("consideredTitleOutput").innerHTML = null
+	document.getElementById("selectedTitleOutput").style.display = "inline";
 	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle2").innerText + "&nbsp;";
-	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTitleOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
 
+function considerTitleOutput3 () {
+	document.getElementById("consideredTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle3").innerText + "&nbsp;";
+	document.getElementById("consideredTitleOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTitleOutput").style.display = "none";
 }
 function selectTitleOutput3 () {
+	document.getElementById("consideredTitleOutput").innerHTML = null
+	document.getElementById("selectedTitleOutput").style.display = "inline";
 	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle3").innerText + "&nbsp;";
-	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTitleOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTitleOutput4 () {
+	document.getElementById("consideredTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle4").innerText + "&nbsp;";
+	document.getElementById("consideredTitleOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTitleOutput").style.display = "none";
 }
 function selectTitleOutput4 () {
+	document.getElementById("consideredTitleOutput").innerHTML = null
+	document.getElementById("selectedTitleOutput").style.display = "inline";
 	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle4").innerText + "&nbsp;";
-	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTitleOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTitleOutput5 () {
+	document.getElementById("consideredTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle5").innerText + "&nbsp;";
+	document.getElementById("consideredTitleOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTitleOutput").style.display = "none";
 }
 function selectTitleOutput5 () {
+	document.getElementById("consideredTitleOutput").innerHTML = null
+	document.getElementById("selectedTitleOutput").style.display = "inline";
 	document.getElementById("selectedTitleOutput").innerHTML = document.getElementById("copyToClipboardHasTitle5").innerText + "&nbsp;";
-	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTitleOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTitleOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
 }
+
 // Date
+function clearDateConsideration () {
+	document.getElementById("consideredDateOutput").innerHTML = ""
+	document.getElementById("selectedDateOutput").style.display = "inline";
+}
+
+function considerDateOutput1 () {
+	document.getElementById("consideredDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate1").innerText + "&nbsp;";
+	document.getElementById("consideredDateOutput").style.color = "#8c8c8c";
+	document.getElementById("selectedDateOutput").style.display = "none";
+}
 function selectDateOutput1 () {
+	document.getElementById("consideredDateOutput").innerHTML = null
+	document.getElementById("selectedDateOutput").style.display = "inline";
 	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate1").innerText + "&nbsp;";
-	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
-		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedDateOutput").style.color = "#000000";
+		setTimeout(function() {
+			document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerDateOutput2 () {
+	document.getElementById("consideredDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate2").innerText + "&nbsp;";
+	document.getElementById("consideredDateOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedDateOutput").style.display = "none";
 }
 function selectDateOutput2 () {
+	document.getElementById("consideredDateOutput").innerHTML = null
+	document.getElementById("selectedDateOutput").style.display = "inline";
 	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate2").innerText + "&nbsp;";
-	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedDateOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerDateOutput3 () {
+	document.getElementById("consideredDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate3").innerText + "&nbsp;";
+	document.getElementById("consideredDateOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedDateOutput").style.display = "none";
 }
 function selectDateOutput3 () {
+	document.getElementById("consideredDateOutput").innerHTML = null
+	document.getElementById("selectedDateOutput").style.display = "inline";
 	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate3").innerText + "&nbsp;";
-	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedDateOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerDateOutput4 () {
+	document.getElementById("consideredDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate4").innerText + "&nbsp;";
+	document.getElementById("consideredDateOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedDateOutput").style.display = "none";
 }
 function selectDateOutput4 () {
+	document.getElementById("consideredDateOutput").innerHTML = null
+	document.getElementById("selectedDateOutput").style.display = "inline";
 	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate4").innerText + "&nbsp;";
-	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedDateOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerDateOutput5 () {
+	document.getElementById("consideredDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate5").innerText + "&nbsp;";
+	document.getElementById("consideredDateOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedDateOutput").style.display = "none";
 }
 function selectDateOutput5 () {
+	document.getElementById("consideredDateOutput").innerHTML = null
+	document.getElementById("selectedDateOutput").style.display = "inline";
 	document.getElementById("selectedDateOutput").innerHTML = document.getElementById("copyToClipboardHasDate5").innerText + "&nbsp;";
-	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedDateOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedDateOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
 }
+
 // Time
+function clearTimeConsideration () {
+	document.getElementById("consideredTimeOutput").innerHTML = ""
+	document.getElementById("selectedTimeOutput").style.display = "inline";
+}
+
+function considerTimeOutput1 () {
+	document.getElementById("consideredTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime1").innerText + "&nbsp;";
+	document.getElementById("consideredTimeOutput").style.color = "#8c8c8c";
+	document.getElementById("selectedTimeOutput").style.display = "none";
+}
 function selectTimeOutput1 () {
+	document.getElementById("consideredTimeOutput").innerHTML = null
+	document.getElementById("selectedTimeOutput").style.display = "inline";
 	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime1").innerText + "&nbsp;";
-	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTimeOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTimeOutput2 () {
+	document.getElementById("consideredTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime2").innerText + "&nbsp;";
+	document.getElementById("consideredTimeOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTimeOutput").style.display = "none";
 }
 function selectTimeOutput2 () {
+	document.getElementById("consideredTimeOutput").innerHTML = null
+	document.getElementById("selectedTimeOutput").style.display = "inline";
 	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime2").innerText + "&nbsp;";
-	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTimeOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTimeOutput3 () {
+	document.getElementById("consideredTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime3").innerText + "&nbsp;";
+	document.getElementById("consideredTimeOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTimeOutput").style.display = "none";
 }
 function selectTimeOutput3 () {
+	document.getElementById("consideredTimeOutput").innerHTML = null
+	document.getElementById("selectedTimeOutput").style.display = "inline";
 	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime3").innerText + "&nbsp;";
-	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTimeOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTimeOutput4 () {
+	document.getElementById("consideredTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime4").innerText + "&nbsp;";
+	document.getElementById("consideredTimeOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTimeOutput").style.display = "none";
 }
 function selectTimeOutput4 () {
+	document.getElementById("consideredTimeOutput").innerHTML = null
+	document.getElementById("selectedTimeOutput").style.display = "inline";
 	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime4").innerText + "&nbsp;";
-	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTimeOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerTimeOutput5 () {
+	document.getElementById("consideredTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime5").innerText + "&nbsp;";
+	document.getElementById("consideredTimeOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedTimeOutput").style.display = "none";
 }
 function selectTimeOutput5 () {
+	document.getElementById("consideredTimeOutput").innerHTML = null
+	document.getElementById("selectedTimeOutput").style.display = "inline";
 	document.getElementById("selectedTimeOutput").innerHTML = document.getElementById("copyToClipboardHasTime5").innerText + "&nbsp;";
-	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedTimeOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedTimeOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
 }
+
 // Location
+function clearLocationConsideration () {
+	document.getElementById("consideredLocationOutput").innerHTML = ""
+	document.getElementById("selectedLocationOutput").style.display = "inline";
+}
+
+function considerLocationOutput1 () {
+	document.getElementById("consideredLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation1").innerText + "&nbsp;";
+	document.getElementById("consideredLocationOutput").style.color = "#8c8c8c";
+	document.getElementById("selectedLocationOutput").style.display = "none";
+}
 function selectLocationOutput1 () {
+	document.getElementById("consideredLocationOutput").innerHTML = null
+	document.getElementById("selectedLocationOutput").style.display = "inline";
 	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation1").innerText + "&nbsp;";
-	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedLocationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerLocationOutput2 () {
+	document.getElementById("consideredLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation2").innerText + "&nbsp;";
+	document.getElementById("consideredLocationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedLocationOutput").style.display = "none";
 }
 function selectLocationOutput2 () {
+	document.getElementById("consideredLocationOutput").innerHTML = null
+	document.getElementById("selectedLocationOutput").style.display = "inline";
 	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation2").innerText + "&nbsp;";
-	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedLocationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerLocationOutput3 () {
+	document.getElementById("consideredLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation3").innerText + "&nbsp;";
+	document.getElementById("consideredLocationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedLocationOutput").style.display = "none";
 }
 function selectLocationOutput3 () {
+	document.getElementById("consideredLocationOutput").innerHTML = null
+	document.getElementById("selectedLocationOutput").style.display = "inline";
 	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation3").innerText + "&nbsp;";
-	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedLocationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerLocationOutput4 () {
+	document.getElementById("consideredLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation4").innerText + "&nbsp;";
+	document.getElementById("consideredLocationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedLocationOutput").style.display = "none";
 }
 function selectLocationOutput4 () {
+	document.getElementById("consideredLocationOutput").innerHTML = null
+	document.getElementById("selectedLocationOutput").style.display = "inline";
 	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation4").innerText + "&nbsp;";
-	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedLocationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerLocationOutput5 () {
+	document.getElementById("consideredLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation5").innerText + "&nbsp;";
+	document.getElementById("consideredLocationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedLocationOutput").style.display = "none";
 }
 function selectLocationOutput5 () {
+	document.getElementById("consideredLocationOutput").innerHTML = null
+	document.getElementById("selectedLocationOutput").style.display = "inline";
 	document.getElementById("selectedLocationOutput").innerHTML = document.getElementById("copyToClipboardHasLocation5").innerText + "&nbsp;";
-	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedLocationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedLocationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
 }
+
 // Organization
+function clearOrganizationConsideration () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = ""
+	document.getElementById("selectedOrganizationOutput").style.display = "inline";
+}
+
+function considerOrganizationOutput1 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization1").innerText + "&nbsp;";
+	document.getElementById("consideredOrganizationOutput").style.color = "#8c8c8c";
+	document.getElementById("selectedOrganizationOutput").style.display = "none";
+}
 function selectOrganizationOutput1 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = null
+	document.getElementById("selectedOrganizationOutput").style.display = "inline";
 	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization1").innerText + "&nbsp;";
-	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedOrganizationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerOrganizationOutput2 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization2").innerText + "&nbsp;";
+	document.getElementById("consideredOrganizationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedOrganizationOutput").style.display = "none";
 }
 function selectOrganizationOutput2 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = null
+	document.getElementById("selectedOrganizationOutput").style.display = "inline";
 	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization2").innerText + "&nbsp;";
-	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedOrganizationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerOrganizationOutput3 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization3").innerText + "&nbsp;";
+	document.getElementById("consideredOrganizationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedOrganizationOutput").style.display = "none";
 }
 function selectOrganizationOutput3 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = null
+	document.getElementById("selectedOrganizationOutput").style.display = "inline";
 	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization3").innerText + "&nbsp;";
-	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedOrganizationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerOrganizationOutput4 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization4").innerText + "&nbsp;";
+	document.getElementById("consideredOrganizationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedOrganizationOutput").style.display = "none";
 }
 function selectOrganizationOutput4 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = null
+	document.getElementById("selectedOrganizationOutput").style.display = "inline";
 	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization4").innerText + "&nbsp;";
-	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedOrganizationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerOrganizationOutput5 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization5").innerText + "&nbsp;";
+	document.getElementById("consideredOrganizationOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedOrganizationOutput").style.display = "none";
 }
 function selectOrganizationOutput5 () {
+	document.getElementById("consideredOrganizationOutput").innerHTML = null
+	document.getElementById("selectedOrganizationOutput").style.display = "inline";
 	document.getElementById("selectedOrganizationOutput").innerHTML = document.getElementById("copyToClipboardHasOrganization5").innerText + "&nbsp;";
-	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedOrganizationOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedOrganizationOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
 }
+
 // Host
+function clearHostConsideration () {
+	document.getElementById("consideredHostOutput").innerHTML = ""
+	document.getElementById("selectedHostOutput").style.display = "inline";
+}
+
+function considerHostOutput1 () {
+	document.getElementById("consideredHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost1").innerText + "&nbsp;";
+	document.getElementById("consideredHostOutput").style.color = "#8c8c8c";
+	document.getElementById("selectedHostOutput").style.display = "none";
+}
 function selectHostOutput1 () {
+	document.getElementById("consideredHostOutput").innerHTML = null
+	document.getElementById("selectedHostOutput").style.display = "inline";
 	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost1").innerText + "&nbsp;";
-	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedHostOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerHostOutput2 () {
+	document.getElementById("consideredHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost2").innerText + "&nbsp;";
+	document.getElementById("consideredHostOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedHostOutput").style.display = "none";
 }
 function selectHostOutput2 () {
+	document.getElementById("consideredHostOutput").innerHTML = null
+	document.getElementById("selectedHostOutput").style.display = "inline";
 	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost2").innerText + "&nbsp;";
-	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedHostOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerHostOutput3 () {
+	document.getElementById("consideredHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost3").innerText + "&nbsp;";
+	document.getElementById("consideredHostOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedHostOutput").style.display = "none";
 }
 function selectHostOutput3 () {
+	document.getElementById("consideredHostOutput").innerHTML = null
+	document.getElementById("selectedHostOutput").style.display = "inline";
 	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost3").innerText + "&nbsp;";
-	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedHostOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerHostOutput4 () {
+	document.getElementById("consideredHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost4").innerText + "&nbsp;";
+	document.getElementById("consideredHostOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedHostOutput").style.display = "none";
 }
 function selectHostOutput4 () {
+	document.getElementById("consideredHostOutput").innerHTML = null
+	document.getElementById("selectedHostOutput").style.display = "inline";
 	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost4").innerText + "&nbsp;";
-	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedHostOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+}
+
+function considerHostOutput5 () {
+	document.getElementById("consideredHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost5").innerText + "&nbsp;";
+	document.getElementById("consideredHostOutput").style.color = "#8c8c8c"
+	document.getElementById("selectedHostOutput").style.display = "none";
 }
 function selectHostOutput5 () {
+	document.getElementById("consideredHostOutput").innerHTML = null
+	document.getElementById("selectedHostOutput").style.display = "inline";
 	document.getElementById("selectedHostOutput").innerHTML = document.getElementById("copyToClipboardHasHost5").innerText + "&nbsp;";
-	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
+	document.getElementById("selectedHostOutput").style.backgroundColor = "#d0d0d0";
+	document.getElementById("selectedHostOutput").style.color = "#000000";
+	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
 }
+
 // Description
 function placeDescriptionAsSelected ()
 {
@@ -1200,8 +1529,10 @@ function screenshotHorizontalFinal() {
 	setTimeout(function() {
 		var canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotHorizontal', imageData);
 		window.location = imageData;
-	}, 1000);
+	}, 40000);
 }
 function screenshotVerticalFinal() {
 	// Set input & output
@@ -1221,6 +1552,8 @@ function screenshotVerticalFinal() {
 	setTimeout(function() {
 		var canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotVertical', imageData);
 		window.location = imageData;
 	}, 1000);
 }
@@ -1243,6 +1576,8 @@ function screenshotSquareFinal() {
 		// select ALL canvas elements, and for each one, get the dataURL and download it
 		var canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotSquare', imageData);
 		window.location = imageData;
 	}, 1000);
 }
@@ -1267,7 +1602,6 @@ function saveContentFiles () {
 	document.body.removeChild(a);
 
 }
-
 
 
 
