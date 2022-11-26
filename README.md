@@ -9,12 +9,12 @@
 
 </div>
 
-// Mission Stament
+// Mission Statement
 ```js
 // audit BrandWield's mission statement
 function auditMissionStatement () {
-	if (contentMarketer.vision === contentMarketer.production) {
-		brandWield.mission = 'Making content vision and content production, synonymous'
+	if (contentMarketer.vision != contentMarketer.production) {
+		brandWield.mission = 'incomplete'
 	}
 	else {
 		reviseMissionStatement
