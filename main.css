@@ -193,6 +193,13 @@ img {
 }
 
 /* Columns & Rows */
+.column2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+
 .column3 {
     float: left;
     width: 33.33%;
@@ -638,15 +645,21 @@ div[id*="PostPreview"] {}
     scale: 1.03;
 }
 
+pre {
+    border: none;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 pre code {
     background-color: #424242;
     border: 3px solid #282828;
     border-radius: 5px;
     color: #e8e8e8;
-    display: block;
+    display: inline-block;
     padding: 5px;
 }
-
 
 .integration {
     display: flex;
