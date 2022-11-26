@@ -953,6 +953,10 @@ function selectTitleOutput1 () {
 	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTitle").style.display = "inline";
+	document.getElementById("tabExclamationTitle").style.display = "none";
 }
 
 function considerTitleOutput2 () {
@@ -969,6 +973,10 @@ function selectTitleOutput2 () {
 	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTitle").style.display = "inline";
+	document.getElementById("tabExclamationTitle").style.display = "none";
 }
 
 function considerTitleOutput3 () {
@@ -985,6 +993,10 @@ function selectTitleOutput3 () {
 	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTitle").style.display = "inline";
+	document.getElementById("tabExclamationTitle").style.display = "none";
 }
 
 function considerTitleOutput4 () {
@@ -1001,6 +1013,10 @@ function selectTitleOutput4 () {
 	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTitle").style.display = "inline";
+	document.getElementById("tabExclamationTitle").style.display = "none";
 }
 
 function considerTitleOutput5 () {
@@ -1017,6 +1033,10 @@ function selectTitleOutput5 () {
 	setTimeout(function() {
 		document.getElementById("selectedTitleOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTitle").style.display = "inline";
+	document.getElementById("tabExclamationTitle").style.display = "none";
 }
 
 // Date
@@ -1039,6 +1059,10 @@ function selectDateOutput1 () {
 		setTimeout(function() {
 			document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneDate").style.display = "inline";
+	document.getElementById("tabExclamationDate").style.display = "none";
 }
 
 function considerDateOutput2 () {
@@ -1055,6 +1079,10 @@ function selectDateOutput2 () {
 	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneDate").style.display = "inline";
+	document.getElementById("tabExclamationDate").style.display = "none";
 }
 
 function considerDateOutput3 () {
@@ -1071,6 +1099,10 @@ function selectDateOutput3 () {
 	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneDate").style.display = "inline";
+	document.getElementById("tabExclamationDate").style.display = "none";
 }
 
 function considerDateOutput4 () {
@@ -1087,6 +1119,10 @@ function selectDateOutput4 () {
 	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneDate").style.display = "inline";
+	document.getElementById("tabExclamationDate").style.display = "none";
 }
 
 function considerDateOutput5 () {
@@ -1103,6 +1139,10 @@ function selectDateOutput5 () {
 	setTimeout(function() {
 		document.getElementById("selectedDateOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneDate").style.display = "inline";
+	document.getElementById("tabExclamationDate").style.display = "none";
 }
 
 // Time
@@ -1125,6 +1165,10 @@ function selectTimeOutput1 () {
 	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTime").style.display = "inline";
+	document.getElementById("tabExclamationTime").style.display = "none";
 }
 
 function considerTimeOutput2 () {
@@ -1141,6 +1185,10 @@ function selectTimeOutput2 () {
 	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTime").style.display = "inline";
+	document.getElementById("tabExclamationTime").style.display = "none";
 }
 
 function considerTimeOutput3 () {
@@ -1157,6 +1205,10 @@ function selectTimeOutput3 () {
 	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTime").style.display = "inline";
+	document.getElementById("tabExclamationTime").style.display = "none";
 }
 
 function considerTimeOutput4 () {
@@ -1173,6 +1225,10 @@ function selectTimeOutput4 () {
 	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTime").style.display = "inline";
+	document.getElementById("tabExclamationTime").style.display = "none";
 }
 
 function considerTimeOutput5 () {
@@ -1189,6 +1245,10 @@ function selectTimeOutput5 () {
 	setTimeout(function() {
 		document.getElementById("selectedTimeOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneTime").style.display = "inline";
+	document.getElementById("tabExclamationTime").style.display = "none";
 }
 
 // Location
@@ -1211,6 +1271,10 @@ function selectLocationOutput1 () {
 	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneLocation").style.display = "inline";
+	document.getElementById("tabExclamationLocation").style.display = "none";
 }
 
 function considerLocationOutput2 () {
@@ -1227,6 +1291,10 @@ function selectLocationOutput2 () {
 	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneLocation").style.display = "inline";
+	document.getElementById("tabExclamationLocation").style.display = "none";
 }
 
 function considerLocationOutput3 () {
@@ -1243,6 +1311,10 @@ function selectLocationOutput3 () {
 	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneLocation").style.display = "inline";
+	document.getElementById("tabExclamationLocation").style.display = "none";
 }
 
 function considerLocationOutput4 () {
@@ -1259,6 +1331,10 @@ function selectLocationOutput4 () {
 	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneLocation").style.display = "inline";
+	document.getElementById("tabExclamationLocation").style.display = "none";
 }
 
 function considerLocationOutput5 () {
@@ -1275,6 +1351,10 @@ function selectLocationOutput5 () {
 	setTimeout(function() {
 		document.getElementById("selectedLocationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneLocation").style.display = "inline";
+	document.getElementById("tabExclamationLocation").style.display = "none";
 }
 
 // Organization
@@ -1297,6 +1377,10 @@ function selectOrganizationOutput1 () {
 	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneOrganization").style.display = "inline";
+	document.getElementById("tabExclamationOrganization").style.display = "none";
 }
 
 function considerOrganizationOutput2 () {
@@ -1313,6 +1397,10 @@ function selectOrganizationOutput2 () {
 	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneOrganization").style.display = "inline";
+	document.getElementById("tabExclamationOrganization").style.display = "none";
 }
 
 function considerOrganizationOutput3 () {
@@ -1329,6 +1417,10 @@ function selectOrganizationOutput3 () {
 	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneOrganization").style.display = "inline";
+	document.getElementById("tabExclamationOrganization").style.display = "none";
 }
 
 function considerOrganizationOutput4 () {
@@ -1345,6 +1437,10 @@ function selectOrganizationOutput4 () {
 	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneOrganization").style.display = "inline";
+	document.getElementById("tabExclamationOrganization").style.display = "none";
 }
 
 function considerOrganizationOutput5 () {
@@ -1361,6 +1457,10 @@ function selectOrganizationOutput5 () {
 	setTimeout(function() {
 		document.getElementById("selectedOrganizationOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneOrganization").style.display = "inline";
+	document.getElementById("tabExclamationOrganization").style.display = "none";
 }
 
 // Host
@@ -1383,6 +1483,10 @@ function selectHostOutput1 () {
 	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneHost").style.display = "inline";
+	document.getElementById("tabExclamationHost").style.display = "none";
 }
 
 function considerHostOutput2 () {
@@ -1399,6 +1503,10 @@ function selectHostOutput2 () {
 	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneHost").style.display = "inline";
+	document.getElementById("tabExclamationHost").style.display = "none";
 }
 
 function considerHostOutput3 () {
@@ -1415,6 +1523,10 @@ function selectHostOutput3 () {
 	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneHost").style.display = "inline";
+	document.getElementById("tabExclamationHost").style.display = "none";
 }
 
 function considerHostOutput4 () {
@@ -1431,6 +1543,10 @@ function selectHostOutput4 () {
 	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneHost").style.display = "inline";
+	document.getElementById("tabExclamationHost").style.display = "none";
 }
 
 function considerHostOutput5 () {
@@ -1447,6 +1563,10 @@ function selectHostOutput5 () {
 	setTimeout(function() {
 		document.getElementById("selectedHostOutput").style.backgroundColor = "transparent";
 	}, 1000);
+
+	// toggle exclamation/done in tab
+	document.getElementById("tabDoneHost").style.display = "inline";
+	document.getElementById("tabExclamationHost").style.display = "none";
 }
 
 // Description
