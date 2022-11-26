@@ -163,6 +163,7 @@ button[id*='clear']:hover, button[id*='Clear']:hover, .clearButton:hover {
     border: #262626;
     position: absolute;
     right: 0;
+    cursor: pointer;
 }
 
 img {
@@ -190,6 +191,7 @@ img {
     box-shadow:  5px 5px 12px #808080,
     -5px -5px 12px #ffffff;
     transition: .25s;
+    cursor: pointer;
 }
 
 /* Columns & Rows */
@@ -198,8 +200,6 @@ img {
     width: 50%;
     padding: 10px;
 }
-
-
 .column3 {
     float: left;
     width: 33.33%;
@@ -208,6 +208,22 @@ img {
 .column4 {
     float: left;
     width: 25%;
+    padding: 10px;
+}
+
+.column30Percent {
+    float: left;
+    width: 30%;
+    padding: 10px;
+}
+.column36Dot6Percent {
+    float: left;
+    width: 36.6%;
+    padding: 10px;
+}
+.column40Percent {
+    float: left;
+    width: 40%;
     padding: 10px;
 }
 
@@ -597,6 +613,7 @@ a.link {
 .socialTab:hover {
     background-color: #3473f1;
     transition: .25s;
+    cursor: pointer;
 }
 .socialTab + .active {
     margin: 0 0 0 0;

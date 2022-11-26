@@ -1269,19 +1269,29 @@
 		<h3>Social Media Banners</h3>
 		<div>
 			<h4>Facebook</h4>
-			<div id="facebookBannerImage" style="width: 820px; height: 312px; border: 2px solid #000000"></div>
+			<div id="facebookBannerImage" style="width: 820px; height: 312px; border: 2px solid #000000">
+				<div id="facebookBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 369px; height: 190px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 120px; left: 0;">Logo safe area</div>
+			</div>
 		</div>
 		<div>
 			<h4>LinkedIn</h4>
-			<div id="linkedinBannerImage" style="width: 1128px; height: 191px; border: 2px solid #000000"></div>
+			<div id="linkedinBannerImage" style="width: 1128px; height: 191px; border: 2px solid #000000">
+				<div id="linkedinBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 203px; height: 114px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 73px; left: 0;">Logo safe area</div>
+			</div>
 		</div>
 		<div>
 			<h4>Twitter</h4>
-			<div id="twitterBannerImage" style="width: 1500px; height: 500px; border: 2px solid #000000"></div>
+			<div id="twitterBannerImage" style="width: 1500px; height: 500px; border: 2px solid #000000">
+				<div id="twitterBannerNotchSafArea" style="color: white; background-color: #5d5d5d; width: 1496px; height: 125px; border-bottom: 2px solid #000000; position: relative; top: 0;">Notch safe area</div>
+				<div id="twitterBannerMobileNavLeftSafeArea" style="color: white; background-color: #5d5d5d; width: 300px; height: 175px; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Mobile nav left safe area (same area on right side, but we are having issues blocking off that space like we did here on the left side.)</div>
+				<div id="twitterBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 450px; height: 198px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Logo safe area</div>
+			</div>
 		</div>
 		<div>
 			<h4>YouTube</h4>
-			<div id="youtubeBannerImage" style="width: 2048px; height: 1152px; border: 2px solid #000000"></div>
+			<div id="youtubeBannerImage" style="width: 2048px; height: 326px; border: 2px solid #000000">
+				<div id="youtubeBannerSocialLinksSafeArea" style="color: white; background-color: #5d5d5d; width: 326px; height: 80px; border-top: 2px solid #000000; border-left: 2px solid #000000; position: relative; top: 244px; left: 1720px;">Social links safe area</div>
+			</div>
 		</div>
 	</div>
 
@@ -1316,7 +1326,7 @@
 <div id="newContent" class="w3-container w3-display-container city" style="display:none">
 
 		<!-- Inputs -->
-		<div id="inputs" class="column3" style="user-select: none;">
+		<div id="inputs" class="column30Percent" style="user-select: none;">
 
 		<!-- Event Title -->
 		<div style="align-items: center;">
@@ -1547,7 +1557,7 @@
 		</div>
 
 		<!-- Finals -->
-		<div id="final" class="column3" style="user-select: none; padding: 0 20px 0 10px;">
+		<div id="final" class="column36Dot6Percent" style="user-select: none;">
 
 			<!-- IMAGES -->
 			<!-- Final Image (Horizontal) -->
@@ -1609,8 +1619,8 @@
 					<text id="selectedLocationOutput"></text><text id="consideredLocationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-location-sentence}}&nbsp;</text>
 					<text id="selectedOrganizationOutput"></text><text id="consideredOrganizationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-organization-sentence}}&nbsp;</text>
 					<text id="selectedHostOutput"></text><text id="consideredHostOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-host-sentence}}&nbsp;</text>
-					<text id="selectedDescriptionOutput"></text>
-					<text id="hashtagsContainer" style="display: none;">
+					<text id="selectedDescriptionOutput"></text><text id="consideredDescriptionOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-description}}&nbsp;</text>
+					<text id="hashtagsContainer" style="display: none;"><br>
 						<text id="hashtagsHere" class="hashtagsHere">
 							<text id="hashtagsHereForTitle"></text>
 							<text id="hashtagsHereForLocation"></text>

@@ -274,6 +274,9 @@ function eventHostUpdate () {
 }
 function eventDescriptionUpdate () {
 
+	// remove the placeholder text
+	document.getElementById("consideredDescriptionOutput").style.display = "none";
+
 	// Remove the added 'active' attribute that is added as input... it causes the field to be highlighted
 	document.getElementById("inputEventDescription").classList.remove("active");
 
@@ -1570,16 +1573,15 @@ function selectHostOutput5 () {
 }
 
 // Description
-function placeDescriptionAsSelected ()
-{
+function placeDescriptionAsSelected () {
 	document.getElementById("selectedDescriptionOutput").innerHTML = document.getElementById("copyToClipboardHasDescription1").innerText + "&nbsp;";
 	document.getElementById("selectedDescriptionOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
 	document.getElementById("selectedDescriptionOutput").style.backgroundColor = "transparent";
 }, 1000);
 }
+
 // Hashtags
-function placeHashtagsAsSelected ()
-{
+function placeHashtagsAsSelected () {
 	document.getElementById("selectedHashtagsOutput").innerHTML = '<br><br>' + document.getElementById("hashtagsHere").innerText;
 	document.getElementById("selectedHashtagsOutput").style.backgroundColor = "#d0d0d0"; setTimeout(function() {
 	document.getElementById("selectedHashtagsOutput").style.backgroundColor = "transparent";
@@ -1671,7 +1673,50 @@ function screenshotSquareFinal() {
 function saveContentFiles () {
 
 	// Get the content
-	let blobHtml = document.getElementById("finalText").innerText;
+	let blobHtml =
+
+`<!DOCTYPE html>
+	<html lang="en">
+		<head>
+
+		<meta charset="UTF-8">
+		<title>BrandWield Saved Content</title>
+	<meta name="author" content="BRANDWIELD Inc.">
+
+		<!-- CSS -->
+		<style>
+			* {
+
+		}
+			body {
+			padding: 20px 20px 20px 20px;
+		}
+			.dateAndTime {
+			color: #000000;
+			text-decoration: underline;
+		}
+			.legalBusinessName {
+			font-weight: bolder;
+		}
+		</style>
+
+	</head>
+	<body>
+	<header>
+		<h1>BrandWield Saved Content</h1>
+	</header>
+	<main>
+		<section id="savedMedia">
+		</section>
+
+		<section id="savedText">
+			<p id="savedTextHere" style="width: 300px">
+				${document.getElementById("finalText").innerText}
+			</p>
+		</section>
+	</main>
+	</body>
+</html>`
 
 	// Create a new Blob (html)
 	const blob = new Blob([blobHtml], { type: "text/html" });
