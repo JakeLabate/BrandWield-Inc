@@ -1598,6 +1598,10 @@ function screenshotAllImages() {
 }
 function screenshotHorizontalFinal() {
 	// Set input & output
+
+
+
+
 	let screenshotTakeable = document.getElementById('finalImageHorizontal');
 	let screenshotPlaceable = document.getElementById('output');
 
@@ -1618,7 +1622,7 @@ function screenshotHorizontalFinal() {
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotHorizontal', imageData);
 		window.location = imageData;
-	}, 40000);
+	}, 1000);
 }
 function screenshotVerticalFinal() {
 	// Set input & output
@@ -1641,7 +1645,7 @@ function screenshotVerticalFinal() {
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotVertical', imageData);
 		window.location = imageData;
-	}, 1000);
+	}, 2000);
 }
 function screenshotSquareFinal() {
 	// Set input & output
@@ -1665,7 +1669,7 @@ function screenshotSquareFinal() {
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotSquare', imageData);
 		window.location = imageData;
-	}, 1000);
+	}, 3000);
 }
 
 

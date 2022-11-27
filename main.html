@@ -118,1074 +118,1014 @@
 <div id="brand" class="w3-container w3-display-container city">
 
 	<!-- Contact -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleContact" class="toggle" type="checkbox">
-		<label for="collapsibleContact" class="lbl-toggle">Contact</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
-
-					<!-- Phone Number -->
-					<div class="var">
-						<span id="warningPrimaryContactPhone" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid phone number!');">warning</span>&nbsp;
-						<label for="primaryContactPhone">Phone</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company phone number is the number that will be displayed on your website. This number will be used for all calls to your company.')">info</span>
-						<input id="primaryContactPhone" title="Primary Contact Phone" type="tel" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="primaryContactPhoneUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactPhone()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactPhoneLock" class="material-symbols-outlined" onclick="lockPrimaryContactPhone()">lock</span>
-						<button id="clearPrimaryContactPhone" onclick="clearPrimaryContactPhone()">Clear</button>
-					</div>
-
-					<!-- Email -->
-					<div class="var">
-						<span id="warningPrimaryContactEmail" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid email address!');">warning</span>&nbsp;
-						<label for="primaryContactEmail">Email</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company email address is the email address that will be displayed on your website. This email address will be used for all emails to your company.')">info</span>
-						<input id="primaryContactEmail" type="email" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="primaryContactEmailUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactEmail()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactEmailLock" class="material-symbols-outlined" onclick="lockPrimaryContactEmail()">lock</span>
-						<button id="clearPrimaryContactEmail" onclick="clearPrimaryContactEmail()">Clear</button>
-					</div>
-
-					<!-- Website -->
-					<div class="var">
-						<span id="warningPrimaryContactWebsite" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid website!');">warning</span>&nbsp;
-						<label for="primaryContactWebsite">Website</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company website is the website that will be displayed on your website. This website will be used for all links to your company.')">info</span>
-						<input id="primaryContactWebsite" type="url" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="primaryContactWebsiteUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactWebsite()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactWebsiteLock" class="material-symbols-outlined" onclick="lockPrimaryContactWebsite()">lock</span>
-						<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite()">Clear</button>
-					</div>
-
-				</div>
-			</div>
+	<details>
+		<summary>
+			Contact
+		</summary>
+		<!-- Phone Number -->
+		<div class="var">
+			<span id="warningPrimaryContactPhone" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid phone number!');">warning</span>&nbsp;
+			<label for="primaryContactPhone">Phone</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company phone number is the number that will be displayed on your website. This number will be used for all calls to your company.')">info</span>
+			<input id="primaryContactPhone" title="Primary Contact Phone" type="tel" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="primaryContactPhoneUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactPhone()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactPhoneLock" class="material-symbols-outlined" onclick="lockPrimaryContactPhone()">lock</span>
+			<button id="clearPrimaryContactPhone" onclick="clearPrimaryContactPhone()">Clear</button>
 		</div>
-	</div>
+
+		<!-- Email -->
+		<div class="var">
+			<span id="warningPrimaryContactEmail" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid email address!');">warning</span>&nbsp;
+			<label for="primaryContactEmail">Email</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company email address is the email address that will be displayed on your website. This email address will be used for all emails to your company.')">info</span>
+			<input id="primaryContactEmail" type="email" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="primaryContactEmailUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactEmail()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactEmailLock" class="material-symbols-outlined" onclick="lockPrimaryContactEmail()">lock</span>
+			<button id="clearPrimaryContactEmail" onclick="clearPrimaryContactEmail()">Clear</button>
+		</div>
+
+		<!-- Website -->
+		<div class="var">
+			<span id="warningPrimaryContactWebsite" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid website!');">warning</span>&nbsp;
+			<label for="primaryContactWebsite">Website</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company website is the website that will be displayed on your website. This website will be used for all links to your company.')">info</span>
+			<input id="primaryContactWebsite" type="url" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="primaryContactWebsiteUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactWebsite()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactWebsiteLock" class="material-symbols-outlined" onclick="lockPrimaryContactWebsite()">lock</span>
+			<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite()">Clear</button>
+		</div>
+	</details>
 
 	<!-- Address -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleAddress" class="toggle" type="checkbox">
-		<label for="collapsibleAddress" class="lbl-toggle">Address</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
-
-					<!-- Street Address #1 -->
-					<div class="var">
-						<span id="warningOfficeAddressStreet1" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address (street #1)!');">warning</span>&nbsp;
-						<label for="officeAddressStreet1">Office Address Street #1</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company office address street line #1')">info</span>
-						<input id="officeAddressStreet1" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="officeAddressStreet1Unlock" class="material-symbols-outlined" onclick="unlockOfficeAddressStreet1()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStreet1Lock" class="material-symbols-outlined" onclick="lockOfficeAddressStreet1()">lock</span>
-						<button id="clearOfficeAddressStreet1" onclick="clearOfficeAddressStreet1()">Clear</button>
-					</div>
-
-					<!-- Street Address #2 -->
-					<div class="var">
-						<span id="warningOfficeAddressStreet2" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address (street #2)');">warning</span>&nbsp;
-						<label for="officeAddressStreet2">Office Address Street #2</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company office address street line #2')">info</span>
-						<input id="officeAddressStreet2" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="officeAddressStreet2Unlock" class="material-symbols-outlined" onclick="unlockOfficeAddressStreet2()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStreet2Lock" class="material-symbols-outlined" onclick="lockOfficeAddressStreet2()">lock</span>
-						<button id="clearOfficeAddressStreet2" onclick="clearOfficeAddressStreet2()">Clear</button>
-					</div>
-
-					<!-- City -->
-					<div class="var">
-						<span id="warningOfficeAddressCity" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address city!');">warning</span>&nbsp;
-						<label for="officeAddressCity">Office Address City</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company office address city')">info</span>
-						<input id="officeAddressCity" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="officeAddressCityUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressCity()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressCityLock" class="material-symbols-outlined" onclick="lockOfficeAddressCity()">lock</span>
-						<button id="clearOfficeAddressCity" onclick="clearOfficeAddressCity()">Clear</button>
-					</div>
-
-					<!-- State -->
-					<div class="var">
-						<span id="warningOfficeAddressState" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address state!');">warning</span>&nbsp;
-						<label for="officeAddressState">Office Address State</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company office address state')">info</span>
-						<input id="officeAddressState" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="officeAddressStateUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressState()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStateLock" class="material-symbols-outlined" onclick="lockOfficeAddressState()">lock</span>
-						<button id="clearOfficeAddressState" onclick="clearOfficeAddressState()">Clear</button>
-					</div>
-
-					<!-- Zip Code -->
-					<div class="var">
-						<span id="warningOfficeAddressZip" class="material-symbols-outlined" style="display: none;"  onclick="alert('Please enter a valid office address zip code!');">warning</span>&nbsp;
-						<label for="officeAddressZip">Office Address Zip Code</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company office address zip code')">info</span>
-						<input id="officeAddressZip" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="officeAddressZipUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressZip()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressZipLock" class="material-symbols-outlined" onclick="lockOfficeAddressZip()">lock</span>
-						<button id="clearOfficeAddressZip" onclick="clearOfficeAddressZip()">Clear</button>
-					</div>
-
-					<!-- Country -->
-					<div class="var">
-						<span id="warningOfficeAddressCountry" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address country!');">warning</span>&nbsp;
-						<label for="officeAddressCountry">Office Address County</label>
-						<span class="material-symbols-outlined" onclick="alert('Your company office address country')">info</span>
-						<input id="officeAddressCountry" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="officeAddressCountryUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressCountry()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressCountryLock" class="material-symbols-outlined" onclick="lockOfficeAddressCountry()">lock</span>
-						<button id="clearOfficeAddressCountry" onclick="clearOfficeAddressCountry()">Clear</button>
-					</div>
-
-				</div>
-			</div>
+	<details>
+		<summary>
+			Address
+		</summary>
+		<!-- Street Address #1 -->
+		<div class="var">
+			<span id="warningOfficeAddressStreet1" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address (street #1)!');">warning</span>&nbsp;
+			<label for="officeAddressStreet1">Office Address Street #1</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company office address street line #1')">info</span>
+			<input id="officeAddressStreet1" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="officeAddressStreet1Unlock" class="material-symbols-outlined" onclick="unlockOfficeAddressStreet1()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStreet1Lock" class="material-symbols-outlined" onclick="lockOfficeAddressStreet1()">lock</span>
+			<button id="clearOfficeAddressStreet1" onclick="clearOfficeAddressStreet1()">Clear</button>
 		</div>
-	</div>
+
+		<!-- Street Address #2 -->
+		<div class="var">
+			<span id="warningOfficeAddressStreet2" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address (street #2)');">warning</span>&nbsp;
+			<label for="officeAddressStreet2">Office Address Street #2</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company office address street line #2')">info</span>
+			<input id="officeAddressStreet2" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="officeAddressStreet2Unlock" class="material-symbols-outlined" onclick="unlockOfficeAddressStreet2()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStreet2Lock" class="material-symbols-outlined" onclick="lockOfficeAddressStreet2()">lock</span>
+			<button id="clearOfficeAddressStreet2" onclick="clearOfficeAddressStreet2()">Clear</button>
+		</div>
+
+		<!-- City -->
+		<div class="var">
+			<span id="warningOfficeAddressCity" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address city!');">warning</span>&nbsp;
+			<label for="officeAddressCity">Office Address City</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company office address city')">info</span>
+			<input id="officeAddressCity" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="officeAddressCityUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressCity()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressCityLock" class="material-symbols-outlined" onclick="lockOfficeAddressCity()">lock</span>
+			<button id="clearOfficeAddressCity" onclick="clearOfficeAddressCity()">Clear</button>
+		</div>
+
+		<!-- State -->
+		<div class="var">
+			<span id="warningOfficeAddressState" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address state!');">warning</span>&nbsp;
+			<label for="officeAddressState">Office Address State</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company office address state')">info</span>
+			<input id="officeAddressState" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="officeAddressStateUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressState()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStateLock" class="material-symbols-outlined" onclick="lockOfficeAddressState()">lock</span>
+			<button id="clearOfficeAddressState" onclick="clearOfficeAddressState()">Clear</button>
+		</div>
+
+		<!-- Zip Code -->
+		<div class="var">
+			<span id="warningOfficeAddressZip" class="material-symbols-outlined" style="display: none;"  onclick="alert('Please enter a valid office address zip code!');">warning</span>&nbsp;
+			<label for="officeAddressZip">Office Address Zip Code</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company office address zip code')">info</span>
+			<input id="officeAddressZip" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="officeAddressZipUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressZip()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressZipLock" class="material-symbols-outlined" onclick="lockOfficeAddressZip()">lock</span>
+			<button id="clearOfficeAddressZip" onclick="clearOfficeAddressZip()">Clear</button>
+		</div>
+
+		<!-- Country -->
+		<div class="var">
+			<span id="warningOfficeAddressCountry" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address country!');">warning</span>&nbsp;
+			<label for="officeAddressCountry">Office Address County</label>
+			<span class="material-symbols-outlined" onclick="alert('Your company office address country')">info</span>
+			<input id="officeAddressCountry" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="officeAddressCountryUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressCountry()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressCountryLock" class="material-symbols-outlined" onclick="lockOfficeAddressCountry()">lock</span>
+			<button id="clearOfficeAddressCountry" onclick="clearOfficeAddressCountry()">Clear</button>
+		</div>
+	</details>
 
 	<!-- Founding -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleFounding" class="toggle" type="checkbox">
-		<label for="collapsibleFounding" class="lbl-toggle">Founding</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
-
-					<!-- Founding Name -->
-					<div class="var">
-						<span id="warningFounderName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid founder name!');">warning</span>&nbsp;
-						<label for="founderName">Founder Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The full name of the primary founder of your business")'>info</span>
-						<input id="founderName" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="founderNameUnlock" class="material-symbols-outlined" onclick="unlockFounderName()">lock_open</span>
-						<span id="founderNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockFounderName()">lock</span>
-						<button id="clearFounderName" onclick="clearFounderName()">Clear</button>
-					</div>
-
-					<!-- Founding Date -->
-					<div class="var">
-						<span id="warningFoundingDate" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid founding date');">warning</span>&nbsp;
-						<label for="foundingDate">Founding Date</label>
-						<span class="material-symbols-outlined" onclick='alert("The approx. date the company was founded")'>info</span>
-						<input id="foundingDate" type="date" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="foundingDateUnlock" class="material-symbols-outlined" onclick="unlockFoundingDate()">lock_open</span>
-						<span id="foundingDateLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockFoundingDate()">lock</span>
-						<button id="clearFoundingDate" onclick="clearFoundingDate();">Clear</button>
-					</div>
-
-					<!-- Trade Business Name -->
-					<div class="var">
-						<span id="warningTradeBusinessName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid business trade name!');">warning</span>&nbsp;
-						<label for="tradeBusinessName">Trade Business Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The referenced day-to-day name of your business")'>info</span>
-						<input id="tradeBusinessName" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tradeBusinessNameUnlock" class="material-symbols-outlined" onclick="unlockTradeBusinessName()">lock_open</span>
-						<span id="tradeBusinessNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockTradeBusinessName()">lock</span>
-						<button id="clearTradeBusinessName" onclick="clearTradeBusinessName()">Clear</button>
-					</div>
-
-					<!-- Legal Business Name -->
-					<div class="var">
-						<span id="warningLegalBusinessName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid legal business name!');">warning</span>&nbsp;
-						<label for="legalBusinessName">Legal Business Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The legally recognized name of your business")'>info</span>
-						<input id="legalBusinessName" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="legalBusinessNameUnlock" class="material-symbols-outlined" onclick="unlockLegalBusinessName()">lock_open</span>
-						<span id="legalBusinessNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockLegalBusinessName()">lock</span>
-						<button id="clearLegalBusinessName" onclick="clearLegalBusinessName()">Clear</button>
-					</div>
-
-				</div>
-			</div>
+	<details>
+		<summary>
+			Founding
+		</summary>
+		<!-- Founding Name -->
+		<div class="var">
+			<span id="warningFounderName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid founder name!');">warning</span>&nbsp;
+			<label for="founderName">Founder Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The full name of the primary founder of your business")'>info</span>
+			<input id="founderName" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="founderNameUnlock" class="material-symbols-outlined" onclick="unlockFounderName()">lock_open</span>
+			<span id="founderNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockFounderName()">lock</span>
+			<button id="clearFounderName" onclick="clearFounderName()">Clear</button>
 		</div>
-	</div>
+
+		<!-- Founding Date -->
+		<div class="var">
+			<span id="warningFoundingDate" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid founding date');">warning</span>&nbsp;
+			<label for="foundingDate">Founding Date</label>
+			<span class="material-symbols-outlined" onclick='alert("The approx. date the company was founded")'>info</span>
+			<input id="foundingDate" type="date" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="foundingDateUnlock" class="material-symbols-outlined" onclick="unlockFoundingDate()">lock_open</span>
+			<span id="foundingDateLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockFoundingDate()">lock</span>
+			<button id="clearFoundingDate" onclick="clearFoundingDate();">Clear</button>
+		</div>
+
+		<!-- Trade Business Name -->
+		<div class="var">
+			<span id="warningTradeBusinessName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid business trade name!');">warning</span>&nbsp;
+			<label for="tradeBusinessName">Trade Business Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The referenced day-to-day name of your business")'>info</span>
+			<input id="tradeBusinessName" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="tradeBusinessNameUnlock" class="material-symbols-outlined" onclick="unlockTradeBusinessName()">lock_open</span>
+			<span id="tradeBusinessNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockTradeBusinessName()">lock</span>
+			<button id="clearTradeBusinessName" onclick="clearTradeBusinessName()">Clear</button>
+		</div>
+
+		<!-- Legal Business Name -->
+		<div class="var">
+			<span id="warningLegalBusinessName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid legal business name!');">warning</span>&nbsp;
+			<label for="legalBusinessName">Legal Business Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The legally recognized name of your business")'>info</span>
+			<input id="legalBusinessName" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="legalBusinessNameUnlock" class="material-symbols-outlined" onclick="unlockLegalBusinessName()">lock_open</span>
+			<span id="legalBusinessNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockLegalBusinessName()">lock</span>
+			<button id="clearLegalBusinessName" onclick="clearLegalBusinessName()">Clear</button>
+		</div>
+	</details>
 
 	<!-- Hours of Operation -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleHoursOfOperation" class="toggle" type="checkbox">
-		<label for="collapsibleHoursOfOperation" class="lbl-toggle">Hours of Operation</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
+	<details>
+		<summary>
+			Hours of Operation
+		</summary>
+		<h3>Monday</h3>
 
-					<h3>Monday</h3>
-
-					<!-- Monday Opening Time -->
-					<div class="var">
-						<span id="warningMondayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a Monday opening time!');">warning</span>&nbsp;
-						<label for="mondayOpeningTime">Monday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Monday')">info</span>
-						<input id="mondayOpeningTime" type="time" value="" readonly>
-						<span id="mondayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockMondayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="mondayOpeningTimeLock" class="material-symbols-outlined" onclick="lockMondayOpeningTime()">lock</span>
-						<button id="clearMondayOpeningTime" onclick="clearMondayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Monday Closing Time -->
-					<div class="var">
-						<span id="warningMondayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Monday closing time!');">warning</span>&nbsp;
-						<label for="mondayClosingTime">Monday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Monday')">info</span>
-						<input id="mondayClosingTime" type="time" value="" readonly>
-						<span id="mondayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockMondayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="mondayClosingTimeLock" class="material-symbols-outlined" onclick="lockMondayClosingTime()">lock</span>
-						<button id="clearMondayClosingTime" onclick="clearMondayClosingTime()">Clear</button>
-					</div>
-
-					<h3>Tuesday</h3>
-
-					<!-- Tuesday Opening Time -->
-					<div class="var">
-						<span id="warningTuesdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Monday opening time!');">warning</span>&nbsp;
-						<label for="tuesdayOpeningTime">Tuesday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Tuesday')">info</span>
-						<input id="tuesdayOpeningTime" type="time" value="" readonly>
-						<span id="tuesdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockTuesdayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tuesdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockTuesdayOpeningTime()">lock</span>
-						<button id="clearTuesdayOpeningTime" onclick="clearTuesdayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Tuesday Closing Time -->
-					<div class="var">
-						<span id="warningTuesdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Tuesday closing time!');">warning</span>&nbsp;
-						<label for="tuesdayClosingTime">Tuesday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Tuesday')">info</span>
-						<input id="tuesdayClosingTime" type="time" value="" readonly>
-						<span id="tuesdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockTuesdayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tuesdayClosingTimeLock" class="material-symbols-outlined" onclick="lockTuesdayClosingTime()">lock</span>
-						<button id="clearTuesdayClosingTime" onclick="clearTuesdayClosingTime()">Clear</button>
-					</div>
-
-					<h3>Wednesday</h3>
-
-					<!-- Wednesday Opening Time -->
-					<div class="var">
-						<span id="warningWednesdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Wednesday opening time!');">warning</span>&nbsp;
-						<label for="wednesdayOpeningTime">Wednesday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Wednesday')">info</span>
-						<input id="wednesdayOpeningTime" type="time" value="" readonly>
-						<span id="wednesdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockWednesdayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="wednesdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockWednesdayOpeningTime()">lock</span>
-						<button id="clearWednesdayOpeningTime" onclick="clearWednesdayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Wednesday Closing Time -->
-					<div class="var">
-						<span id="warningWednesdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Wednesday closing time!');">warning</span>&nbsp;
-						<label for="wednesdayClosingTime">Wednesday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Wednesday')">info</span>
-						<input id="wednesdayClosingTime" type="time" value="" readonly>
-						<span id="wednesdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockWednesdayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="wednesdayClosingTimeLock" class="material-symbols-outlined" onclick="lockWednesdayClosingTime()">lock</span>
-						<button id="clearWednesdayClosingTime" onclick="clearWednesdayClosingTime()">Clear</button>
-					</div>
-
-					<h3>Thursday</h3>
-
-					<!-- Thursday Opening Time -->
-					<div class="var">
-						<span id="warningThursdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Thursday opening time!');">warning</span>&nbsp;
-						<label for="thursdayOpeningTime">Thursday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Thursday')">info</span>
-						<input id="thursdayOpeningTime" type="time" value="" readonly>
-						<span id="thursdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockThursdayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="thursdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockThursdayOpeningTime()">lock</span>
-						<button id="clearThursdayOpeningTime" onclick="clearThursdayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Thursday Closing Time -->
-					<div class="var">
-						<span id="warningThursdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Thursday closing time!');">warning</span>&nbsp;
-						<label for="thursdayClosingTime">Thursday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Thursday')">info</span>
-						<input id="thursdayClosingTime" type="time" value="" readonly>
-						<span id="thursdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockThursdayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="thursdayClosingTimeLock" class="material-symbols-outlined" onclick="lockThursdayClosingTime()">lock</span>
-						<button id="clearThursdayClosingTime" onclick="clearThursdayClosingTime()">Clear</button>
-					</div>
-
-					<h3>Friday</h3>
-
-					<!-- Friday Opening Time -->
-					<div class="var">
-						<span id="warningFridayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Friday opening time!');">warning</span>&nbsp;
-						<label for="fridayOpeningTime">Friday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Friday')">info</span>
-						<input id="fridayOpeningTime" type="time" value="" readonly>
-						<span id="fridayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockFridayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fridayOpeningTimeLock" class="material-symbols-outlined" onclick="lockFridayOpeningTime()">lock</span>
-						<button id="clearFridayOpeningTime" onclick="clearFridayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Friday Closing Time -->
-					<div class="var">
-						<span id="warningFridayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Friday closing time!');">warning</span>&nbsp;
-						<label for="fridayClosingTime">Friday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Friday')">info</span>
-						<input id="fridayClosingTime" type="time" value="" readonly>
-						<span id="fridayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockFridayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fridayClosingTimeLock" class="material-symbols-outlined" onclick="lockFridayClosingTime()">lock</span>
-						<button id="clearFridayClosingTime" onclick="clearFridayClosingTime()">Clear</button>
-					</div>
-
-					<h3>Saturday</h3>
-
-					<!-- Saturday Opening Time -->
-					<div class="var">
-						<span id="warningSaturdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Saturday opening time!');">warning</span>&nbsp;
-						<label for="saturdayOpeningTime">Saturday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Saturday')">info</span>
-						<input id="saturdayOpeningTime" type="time" value="" readonly>
-						<span id="saturdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockSaturdayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="saturdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockSaturdayOpeningTime()">lock</span>
-						<button id="clearSaturdayOpeningTime" onclick="clearSaturdayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Saturday Closing Time -->
-					<div class="var">
-						<span id="warningSaturdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Saturday closing time!');">warning</span>&nbsp;
-						<label for="saturdayClosingTime">Saturday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Saturday')">info</span>
-						<input id="saturdayClosingTime" type="time" value="" readonly>
-						<span id="saturdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockSaturdayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="saturdayClosingTimeLock" class="material-symbols-outlined" onclick="lockSaturdayClosingTime()">lock</span>
-						<button id="clearSaturdayClosingTime" onclick="clearSaturdayClosingTime()">Clear</button>
-					</div>
-
-					<h3>Sunday</h3>
-
-					<!-- Sunday Opening Time -->
-					<div class="var">
-						<span id="warningSundayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Sunday opening time!');">warning</span>&nbsp;
-						<label for="sundayOpeningTime">Sunday Opening Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company opens on Sunday')">info</span>
-						<input id="sundayOpeningTime" type="time" value="" readonly>
-						<span id="sundayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockSundayOpeningTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="sundayOpeningTimeLock" class="material-symbols-outlined" onclick="lockSundayOpeningTime()">lock</span>
-						<button id="clearSundayOpeningTime" onclick="clearSundayOpeningTime()">Clear</button>
-					</div>
-
-					<!-- Sunday Closing Time -->
-					<div class="var">
-						<span id="warningSundayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Sunday closing time!');">warning</span>&nbsp;
-						<label for="sundayClosingTime">Sunday Closing Time</label>
-						<span class="material-symbols-outlined" onclick="alert('The time your company closes on Sunday')">info</span>
-						<input id="sundayClosingTime" type="time" value="" readonly>
-						<span id="sundayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockSundayClosingTime()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="sundayClosingTimeLock" class="material-symbols-outlined" onclick="lockSundayClosingTime()">lock</span>
-						<button id="clearSundayClosingTime" onclick="clearSundayClosingTime()">Clear</button>
-					</div>
-
-				</div>
-			</div>
+		<!-- Monday Opening Time -->
+		<div class="var">
+			<span id="warningMondayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a Monday opening time!');">warning</span>&nbsp;
+			<label for="mondayOpeningTime">Monday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Monday')">info</span>
+			<input id="mondayOpeningTime" type="time" value="" readonly>
+			<span id="mondayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockMondayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="mondayOpeningTimeLock" class="material-symbols-outlined" onclick="lockMondayOpeningTime()">lock</span>
+			<button id="clearMondayOpeningTime" onclick="clearMondayOpeningTime()">Clear</button>
 		</div>
-	</div>
+
+		<!-- Monday Closing Time -->
+		<div class="var">
+			<span id="warningMondayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Monday closing time!');">warning</span>&nbsp;
+			<label for="mondayClosingTime">Monday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Monday')">info</span>
+			<input id="mondayClosingTime" type="time" value="" readonly>
+			<span id="mondayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockMondayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="mondayClosingTimeLock" class="material-symbols-outlined" onclick="lockMondayClosingTime()">lock</span>
+			<button id="clearMondayClosingTime" onclick="clearMondayClosingTime()">Clear</button>
+		</div>
+
+		<h3>Tuesday</h3>
+
+		<!-- Tuesday Opening Time -->
+		<div class="var">
+			<span id="warningTuesdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Monday opening time!');">warning</span>&nbsp;
+			<label for="tuesdayOpeningTime">Tuesday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Tuesday')">info</span>
+			<input id="tuesdayOpeningTime" type="time" value="" readonly>
+			<span id="tuesdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockTuesdayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tuesdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockTuesdayOpeningTime()">lock</span>
+			<button id="clearTuesdayOpeningTime" onclick="clearTuesdayOpeningTime()">Clear</button>
+		</div>
+
+		<!-- Tuesday Closing Time -->
+		<div class="var">
+			<span id="warningTuesdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Tuesday closing time!');">warning</span>&nbsp;
+			<label for="tuesdayClosingTime">Tuesday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Tuesday')">info</span>
+			<input id="tuesdayClosingTime" type="time" value="" readonly>
+			<span id="tuesdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockTuesdayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tuesdayClosingTimeLock" class="material-symbols-outlined" onclick="lockTuesdayClosingTime()">lock</span>
+			<button id="clearTuesdayClosingTime" onclick="clearTuesdayClosingTime()">Clear</button>
+		</div>
+
+		<h3>Wednesday</h3>
+
+		<!-- Wednesday Opening Time -->
+		<div class="var">
+			<span id="warningWednesdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Wednesday opening time!');">warning</span>&nbsp;
+			<label for="wednesdayOpeningTime">Wednesday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Wednesday')">info</span>
+			<input id="wednesdayOpeningTime" type="time" value="" readonly>
+			<span id="wednesdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockWednesdayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="wednesdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockWednesdayOpeningTime()">lock</span>
+			<button id="clearWednesdayOpeningTime" onclick="clearWednesdayOpeningTime()">Clear</button>
+		</div>
+
+		<!-- Wednesday Closing Time -->
+		<div class="var">
+			<span id="warningWednesdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Wednesday closing time!');">warning</span>&nbsp;
+			<label for="wednesdayClosingTime">Wednesday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Wednesday')">info</span>
+			<input id="wednesdayClosingTime" type="time" value="" readonly>
+			<span id="wednesdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockWednesdayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="wednesdayClosingTimeLock" class="material-symbols-outlined" onclick="lockWednesdayClosingTime()">lock</span>
+			<button id="clearWednesdayClosingTime" onclick="clearWednesdayClosingTime()">Clear</button>
+		</div>
+
+		<h3>Thursday</h3>
+
+		<!-- Thursday Opening Time -->
+		<div class="var">
+			<span id="warningThursdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Thursday opening time!');">warning</span>&nbsp;
+			<label for="thursdayOpeningTime">Thursday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Thursday')">info</span>
+			<input id="thursdayOpeningTime" type="time" value="" readonly>
+			<span id="thursdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockThursdayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="thursdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockThursdayOpeningTime()">lock</span>
+			<button id="clearThursdayOpeningTime" onclick="clearThursdayOpeningTime()">Clear</button>
+		</div>
+
+		<!-- Thursday Closing Time -->
+		<div class="var">
+			<span id="warningThursdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Thursday closing time!');">warning</span>&nbsp;
+			<label for="thursdayClosingTime">Thursday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Thursday')">info</span>
+			<input id="thursdayClosingTime" type="time" value="" readonly>
+			<span id="thursdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockThursdayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="thursdayClosingTimeLock" class="material-symbols-outlined" onclick="lockThursdayClosingTime()">lock</span>
+			<button id="clearThursdayClosingTime" onclick="clearThursdayClosingTime()">Clear</button>
+		</div>
+
+		<h3>Friday</h3>
+
+		<!-- Friday Opening Time -->
+		<div class="var">
+			<span id="warningFridayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Friday opening time!');">warning</span>&nbsp;
+			<label for="fridayOpeningTime">Friday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Friday')">info</span>
+			<input id="fridayOpeningTime" type="time" value="" readonly>
+			<span id="fridayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockFridayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fridayOpeningTimeLock" class="material-symbols-outlined" onclick="lockFridayOpeningTime()">lock</span>
+			<button id="clearFridayOpeningTime" onclick="clearFridayOpeningTime()">Clear</button>
+		</div>
+
+		<!-- Friday Closing Time -->
+		<div class="var">
+			<span id="warningFridayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Friday closing time!');">warning</span>&nbsp;
+			<label for="fridayClosingTime">Friday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Friday')">info</span>
+			<input id="fridayClosingTime" type="time" value="" readonly>
+			<span id="fridayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockFridayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fridayClosingTimeLock" class="material-symbols-outlined" onclick="lockFridayClosingTime()">lock</span>
+			<button id="clearFridayClosingTime" onclick="clearFridayClosingTime()">Clear</button>
+		</div>
+
+		<h3>Saturday</h3>
+
+		<!-- Saturday Opening Time -->
+		<div class="var">
+			<span id="warningSaturdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Saturday opening time!');">warning</span>&nbsp;
+			<label for="saturdayOpeningTime">Saturday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Saturday')">info</span>
+			<input id="saturdayOpeningTime" type="time" value="" readonly>
+			<span id="saturdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockSaturdayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="saturdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockSaturdayOpeningTime()">lock</span>
+			<button id="clearSaturdayOpeningTime" onclick="clearSaturdayOpeningTime()">Clear</button>
+		</div>
+
+		<!-- Saturday Closing Time -->
+		<div class="var">
+			<span id="warningSaturdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Saturday closing time!');">warning</span>&nbsp;
+			<label for="saturdayClosingTime">Saturday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Saturday')">info</span>
+			<input id="saturdayClosingTime" type="time" value="" readonly>
+			<span id="saturdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockSaturdayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="saturdayClosingTimeLock" class="material-symbols-outlined" onclick="lockSaturdayClosingTime()">lock</span>
+			<button id="clearSaturdayClosingTime" onclick="clearSaturdayClosingTime()">Clear</button>
+		</div>
+
+		<h3>Sunday</h3>
+
+		<!-- Sunday Opening Time -->
+		<div class="var">
+			<span id="warningSundayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Sunday opening time!');">warning</span>&nbsp;
+			<label for="sundayOpeningTime">Sunday Opening Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company opens on Sunday')">info</span>
+			<input id="sundayOpeningTime" type="time" value="" readonly>
+			<span id="sundayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockSundayOpeningTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="sundayOpeningTimeLock" class="material-symbols-outlined" onclick="lockSundayOpeningTime()">lock</span>
+			<button id="clearSundayOpeningTime" onclick="clearSundayOpeningTime()">Clear</button>
+		</div>
+
+		<!-- Sunday Closing Time -->
+		<div class="var">
+			<span id="warningSundayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Sunday closing time!');">warning</span>&nbsp;
+			<label for="sundayClosingTime">Sunday Closing Time</label>
+			<span class="material-symbols-outlined" onclick="alert('The time your company closes on Sunday')">info</span>
+			<input id="sundayClosingTime" type="time" value="" readonly>
+			<span id="sundayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockSundayClosingTime()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="sundayClosingTimeLock" class="material-symbols-outlined" onclick="lockSundayClosingTime()">lock</span>
+			<button id="clearSundayClosingTime" onclick="clearSundayClosingTime()">Clear</button>
+		</div>
+	</details>
 
 	<!-- Basic -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleBasic" class="toggle" type="checkbox">
-		<label for="collapsibleBasic" class="lbl-toggle">Basic</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
+	<details>
+		<summary>
+			Business
+		</summary>
+		<!-- Business Type -->
+		<div class="var">
+			<span id="warningBusinessType" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="businessType">Business Type</label>
+			<span class="material-symbols-outlined" onclick='alert("The type of structure that best represents your business")'>info</span>
+			<select id="businessType" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: none;">
+				<option value="AnimalShelter">Animal Shelter</option>
+				<option value="AutomotiveBusiness">Automotive Business</option>
+				<option value="ChildCare">Child Care</option>
+				<option value="Dentist">Dentist</option>
+				<option value="DryCleaningOrLaundry">Dry Cleaning Or Laundry</option>
+				<option value="EmergencyService">Emergency Service</option>
+				<option value="EmploymentAgency">Employment Agency</option>
+				<option value="EntertainmentBusiness">Entertainment Business</option>
+				<option value="FinancialService">Financial Service</option>
+				<option value="FoodEstablishment">Food Establishment</option>
+				<option value="GovernmentOffice">Government Office</option>
+				<option value="HealthAndBeautyBusiness">Health And Beauty Business</option>
+				<option value="HomeAndConstructionBusiness">Home And Construction Business</option>
+				<option value="InternetCafe">Internet Cafe</option>
+				<option value="LegalService">Legal Service</option>
+				<option value="Library">Library</option>
+				<option value="LodgingBusiness">Lodging Business</option>
+				<option value="MedicalOrganization">Medical Organization</option>
+				<option value="ProfessionalService">Professional Service</option>
+				<option value="RadioStation">Radio Station</option>
+				<option value="RealEstateAgent">Real Estate Agent</option>
+				<option value="RecyclingCenter">Recycling Center</option>
+				<option value="SelfStorage">Self Storage</option>
+				<option value="ShoppingCenter">Shopping Center</option>
+				<option value="SportsActivityLocation">Sports Activity Location</option>
+				<option value="Store">Store</option>
+				<option value="TelevisionStation">Television Station</option>
+				<option value="TouristInformationCenter">Tourist Information Center</option>
+				<option value="TravelAgency">Travel Agency</option>
+			</select>
+			<span id="businessTypeUnlock" class="material-symbols-outlined" onclick="unlockBusinessType();">lock_open</span>
+			<span id="businessTypeLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockBusinessType();">lock</span>
+			<p id="businessTypeValueDisplay" style="display: none;"></p>
+			<button id="clearBusinessType" onclick="clearBusinessType();">Clear</button>
 
-					<!-- Business Type -->
-					<div class="var">
-						<span id="warningBusinessType" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="businessType">Business Type</label>
-						<span class="material-symbols-outlined" onclick='alert("The type of structure that best represents your business")'>info</span>
-						<select id="businessType" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: none;">
-							<option value="AnimalShelter">Animal Shelter</option>
-							<option value="AutomotiveBusiness">Automotive Business</option>
-							<option value="ChildCare">Child Care</option>
-							<option value="Dentist">Dentist</option>
-							<option value="DryCleaningOrLaundry">Dry Cleaning Or Laundry</option>
-							<option value="EmergencyService">Emergency Service</option>
-							<option value="EmploymentAgency">Employment Agency</option>
-							<option value="EntertainmentBusiness">Entertainment Business</option>
-							<option value="FinancialService">Financial Service</option>
-							<option value="FoodEstablishment">Food Establishment</option>
-							<option value="GovernmentOffice">Government Office</option>
-							<option value="HealthAndBeautyBusiness">Health And Beauty Business</option>
-							<option value="HomeAndConstructionBusiness">Home And Construction Business</option>
-							<option value="InternetCafe">Internet Cafe</option>
-							<option value="LegalService">Legal Service</option>
-							<option value="Library">Library</option>
-							<option value="LodgingBusiness">Lodging Business</option>
-							<option value="MedicalOrganization">Medical Organization</option>
-							<option value="ProfessionalService">Professional Service</option>
-							<option value="RadioStation">Radio Station</option>
-							<option value="RealEstateAgent">Real Estate Agent</option>
-							<option value="RecyclingCenter">Recycling Center</option>
-							<option value="SelfStorage">Self Storage</option>
-							<option value="ShoppingCenter">Shopping Center</option>
-							<option value="SportsActivityLocation">Sports Activity Location</option>
-							<option value="Store">Store</option>
-							<option value="TelevisionStation">Television Station</option>
-							<option value="TouristInformationCenter">Tourist Information Center</option>
-							<option value="TravelAgency">Travel Agency</option>
-						</select>
-						<span id="businessTypeUnlock" class="material-symbols-outlined" onclick="unlockBusinessType();">lock_open</span>
-						<span id="businessTypeLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockBusinessType();">lock</span>
-						<p id="businessTypeValueDisplay" style="display: none;"></p>
-						<button id="clearBusinessType" onclick="clearBusinessType();">Clear</button>
-
-					</div>
-
-					<!-- Slogan -->
-					<div class="var">
-						<span id="warningSlogan" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="slogan">Slogan</label>
-						<span class="material-symbols-outlined" onclick='alert("The slogan is a short phrase that is used to describe your business. It should be catchy and memorable.")'>info</span>
-						<input type="text" id="slogan" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="sloganUnlock" class="material-symbols-outlined" onclick="unlockSlogan();">lock_open</span>
-						<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan();">lock</span>
-						<button id="clearSlogan" onclick="clearSlogan();">Clear</button>
-					</div>
-
-					<!-- Mission Statement -->
-					<div class="var">
-						<span id="warningMissionStatement" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="missionStatement">Mission Statement</label>
-						<span class="material-symbols-outlined" onclick='alert("The mission statement is a short phrase that describes the purpose of your business. It should be short and to the point.")'>info</span>
-						<input type="text" id="missionStatement" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="missionStatementUnlock" class="material-symbols-outlined" onclick="unlockMissionStatement();">lock_open</span>
-						<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement();">lock</span>
-						<button id="clearMissionStatement" onclick="clearMissionStatement();">Clear</button>
-					</div>
-
-					<!-- Value Proposition -->
-					<div class="var">
-						<span id="warningValueProposition" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="valueProp">Value Proposition</label>
-						<span class="material-symbols-outlined" onclick='alert("The value proposition is a short phrase that describes the value your business provides to your customers. It should be short and to the point.")'>info</span>
-						<input type="text" id="valueProp" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
-						<span id="valuePropUnlock" class="material-symbols-outlined" onclick="unlockValueProp();">lock_open</span>
-						<span id="valuePropLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockValueProp();">lock</span>
-						<button id="clearValueProp" onclick="clearValueProp();">Clear</button>
-					</div>
-
-				</div>
-			</div>
 		</div>
-	</div>
+
+		<!-- Slogan -->
+		<div class="var">
+			<span id="warningSlogan" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="slogan">Slogan</label>
+			<span class="material-symbols-outlined" onclick='alert("The slogan is a short phrase that is used to describe your business. It should be catchy and memorable.")'>info</span>
+			<input type="text" id="slogan" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="sloganUnlock" class="material-symbols-outlined" onclick="unlockSlogan();">lock_open</span>
+			<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan();">lock</span>
+			<button id="clearSlogan" onclick="clearSlogan();">Clear</button>
+		</div>
+
+		<!-- Mission Statement -->
+		<div class="var">
+			<span id="warningMissionStatement" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="missionStatement">Mission Statement</label>
+			<span class="material-symbols-outlined" onclick='alert("The mission statement is a short phrase that describes the purpose of your business. It should be short and to the point.")'>info</span>
+			<input type="text" id="missionStatement" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="missionStatementUnlock" class="material-symbols-outlined" onclick="unlockMissionStatement();">lock_open</span>
+			<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement();">lock</span>
+			<button id="clearMissionStatement" onclick="clearMissionStatement();">Clear</button>
+		</div>
+
+		<!-- Value Proposition -->
+		<div class="var">
+			<span id="warningValueProposition" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="valueProp">Value Proposition</label>
+			<span class="material-symbols-outlined" onclick='alert("The value proposition is a short phrase that describes the value your business provides to your customers. It should be short and to the point.")'>info</span>
+			<input type="text" id="valueProp" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+			<span id="valuePropUnlock" class="material-symbols-outlined" onclick="unlockValueProp();">lock_open</span>
+			<span id="valuePropLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockValueProp();">lock</span>
+			<button id="clearValueProp" onclick="clearValueProp();">Clear</button>
+		</div>
+	</details>
 
 	<!-- Social Media -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleSocialMedia" class="toggle" type="checkbox">
-		<label for="collapsibleSocialMedia" class="lbl-toggle">Social Media</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
-					<h3>Facebook</h3>
+	<details>
+		<summary>
+			Social Media
+		</summary>
+		<h3>Facebook</h3>
 
-					<!-- Facebook URL -->
-					<div class="var">
-						<span id="warningFacebookURL" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="facebookUrl">URL</label>
-						<span class="material-symbols-outlined" onclick="alert('The primary Facebook URL page for your company')">info</span>
-						<input id="facebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="facebookUrlUnlock" class="material-symbols-outlined" onclick="unlockFacebookUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUrlLock" class="material-symbols-outlined" onclick="lockFacebookUrl();">lock</span>
-						<button id="clearFacebookUrl" onclick="clearFacebookUrl();">Clear</button>
-					</div>
-
-					<!-- Facebook Username -->
-					<div class="var">
-						<span id="warningFacebookUsername" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="facebookUsername">Username</label>
-						<span class="material-symbols-outlined" onclick="alert('The username for your Facebook page')">info</span>
-						<input id="facebookUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="facebookUsernameUnlock" class="material-symbols-outlined" onclick="unlockFacebookUsername();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUsernameLock" class="material-symbols-outlined" onclick="lockFacebookUsername();">lock</span>
-						<button id="clearFacebookUsername" onclick="clearFacebookUsername();">Clear</button>
-					</div>
-
-					<h3>Instagram</h3>
-
-					<!-- Instagram URL -->
-					<div class="var">
-						<span id="warningInstagramURL" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="instagramUrl">URL</label>
-						<span class="material-symbols-outlined" onclick="alert('The primary Instagram URL page for your company')">info</span>
-						<input id="instagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="instagramUrlUnlock" class="material-symbols-outlined" onclick="unlockInstagramUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUrlLock" class="material-symbols-outlined" onclick="lockInstagramUrl();" >lock</span>
-						<button id="clearInstagramUrl" onclick="clearInstagramUrl();">Clear</button>
-					</div>
-
-					<!-- Instagram Username -->
-					<div class="var">
-						<span id="warningInstagramUsername" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="instagramUsername">Username</label>
-						<span class="material-symbols-outlined" onclick="alert('The username for your Instagram page')">info</span>
-						<input id="instagramUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<img src="" alt="" height="30px" width="30" id="instagramProfilePic" style="display: none;">
-						<span id="instagramUsernameUnlock" class="material-symbols-outlined" onclick="unlockInstagramUsername();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUsernameLock" class="material-symbols-outlined" onclick="lockInstagramUsername();">lock</span>
-						<button id="clearInstagramUsername" onclick="clearInstagramUsername();">Clear</button>
-					</div>
-
-					<h3>LinkedIn</h3>
-
-					<!-- LinkedIn URL -->
-					<div class="var">
-						<span id="warningLinkedinURL" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="linkedinUrl">URL</label>
-						<span class="material-symbols-outlined" onclick="alert('The primary LinkedIn URL page for your company')">info</span>
-						<input id="linkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="linkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUrlLock" class="material-symbols-outlined" onclick="lockLinkedinUrl();">lock</span>
-						<button id="clearLinkedinURL" onclick="clearLinkedinUrl();">Clear</button>
-					</div>
-
-					<!-- LinkedIn Username -->
-					<div class="var">
-						<span id="warningLinkedinUsername" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="linkedinUsername">Username</label>
-						<span class="material-symbols-outlined" onclick="alert('The username for your LinkedIn page')">info</span>
-						<input id="linkedinUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="linkedinUsernameUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUsername();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUsernameLock" class="material-symbols-outlined" onclick="lockLinkedinUsername();">lock</span>
-						<button id="clearLinkedinUsername" onclick="clearLinkedinUsername();">Clear</button>
-					</div>
-
-					<h3>Twitter</h3>
-
-					<!-- Twitter URL -->
-					<div class="var">
-						<span id="warningTwitterURL" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="twitterUrl">URL</label>
-						<span class="material-symbols-outlined" onclick="alert('The primary Twitter URL page for your company')">info</span>
-						<input id="twitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="twitterUrlUnlock" class="material-symbols-outlined" onclick="unlockTwitterUrl()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUrlLock" class="material-symbols-outlined" onclick="lockTwitterUrl();">lock</span>
-						<button id="clearTwitterUrl" onclick="clearTwitterUrl();">Clear</button>
-					</div>
-
-					<!-- Twitter Username -->
-					<div class="var">
-						<span id="warningTwitterUsername" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="twitterUsername">Username</label>
-						<span class="material-symbols-outlined" onclick="alert('The username for your Twitter page')">info</span>
-						<input id="twitterUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="twitterUsernameUnlock" class="material-symbols-outlined" onclick="unlockTwitterUsername();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUsernameLock" class="material-symbols-outlined" onclick="lockTwitterUsername();">lock</span>
-						<button id="clearTwitterUsername" onclick="clearTwitterUsername();">Clear</button>
-					</div>
-
-					<h3>TikTok</h3>
-
-					<!-- TikTok URL -->
-					<div class="var">
-						<span id="warningTiktokURL" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="tiktokUrl">URL</label>
-						<span class="material-symbols-outlined" onclick="alert('The primary TikTok URL page for your company')">info</span>
-						<input id="tiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockTiktokUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUrlLock" class="material-symbols-outlined" onclick="lockTiktokUrl();">lock</span>
-						<button id="clearTiktokURL" onclick="clearTiktokUrl();">Clear</button>
-					</div>
-
-					<!-- TikTok Username -->
-					<div class="var">
-						<span id="warningTiktokUsername" class="material-symbols-outlined" style="display: none;">warning</span>
-						<label for="tiktokUsername">Username</label>
-						<span class="material-symbols-outlined" onclick="alert('The username for your TikTok page')">info</span>
-						<input id="tiktokUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tiktokUsernameUnlock" class="material-symbols-outlined" onclick="unlockTiktokUsername();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUsernameLock" class="material-symbols-outlined" onclick="lockTiktokUsername();">lock</span>
-						<button id="clearTiktokUsername" onclick="clearTiktokUsername();">Clear</button>
-					</div>
-
-				</div>
-			</div>
+		<!-- Facebook URL -->
+		<div class="var">
+			<span id="warningFacebookURL" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="facebookUrl">URL</label>
+			<span class="material-symbols-outlined" onclick="alert('The primary Facebook URL page for your company')">info</span>
+			<input id="facebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="facebookUrlUnlock" class="material-symbols-outlined" onclick="unlockFacebookUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUrlLock" class="material-symbols-outlined" onclick="lockFacebookUrl();">lock</span>
+			<button id="clearFacebookUrl" onclick="clearFacebookUrl();">Clear</button>
 		</div>
-	</div>
+
+		<!-- Facebook Username -->
+		<div class="var">
+			<span id="warningFacebookUsername" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="facebookUsername">Username</label>
+			<span class="material-symbols-outlined" onclick="alert('The username for your Facebook page')">info</span>
+			<input id="facebookUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="facebookUsernameUnlock" class="material-symbols-outlined" onclick="unlockFacebookUsername();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUsernameLock" class="material-symbols-outlined" onclick="lockFacebookUsername();">lock</span>
+			<button id="clearFacebookUsername" onclick="clearFacebookUsername();">Clear</button>
+		</div>
+
+		<h3>Instagram</h3>
+
+		<!-- Instagram URL -->
+		<div class="var">
+			<span id="warningInstagramURL" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="instagramUrl">URL</label>
+			<span class="material-symbols-outlined" onclick="alert('The primary Instagram URL page for your company')">info</span>
+			<input id="instagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="instagramUrlUnlock" class="material-symbols-outlined" onclick="unlockInstagramUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUrlLock" class="material-symbols-outlined" onclick="lockInstagramUrl();" >lock</span>
+			<button id="clearInstagramUrl" onclick="clearInstagramUrl();">Clear</button>
+		</div>
+
+		<!-- Instagram Username -->
+		<div class="var">
+			<span id="warningInstagramUsername" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="instagramUsername">Username</label>
+			<span class="material-symbols-outlined" onclick="alert('The username for your Instagram page')">info</span>
+			<input id="instagramUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<img src="" alt="" height="30px" width="30" id="instagramProfilePic" style="display: none;">
+			<span id="instagramUsernameUnlock" class="material-symbols-outlined" onclick="unlockInstagramUsername();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUsernameLock" class="material-symbols-outlined" onclick="lockInstagramUsername();">lock</span>
+			<button id="clearInstagramUsername" onclick="clearInstagramUsername();">Clear</button>
+		</div>
+
+		<h3>LinkedIn</h3>
+
+		<!-- LinkedIn URL -->
+		<div class="var">
+			<span id="warningLinkedinURL" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="linkedinUrl">URL</label>
+			<span class="material-symbols-outlined" onclick="alert('The primary LinkedIn URL page for your company')">info</span>
+			<input id="linkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="linkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUrlLock" class="material-symbols-outlined" onclick="lockLinkedinUrl();">lock</span>
+			<button id="clearLinkedinURL" onclick="clearLinkedinUrl();">Clear</button>
+		</div>
+
+		<!-- LinkedIn Username -->
+		<div class="var">
+			<span id="warningLinkedinUsername" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="linkedinUsername">Username</label>
+			<span class="material-symbols-outlined" onclick="alert('The username for your LinkedIn page')">info</span>
+			<input id="linkedinUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="linkedinUsernameUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUsername();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUsernameLock" class="material-symbols-outlined" onclick="lockLinkedinUsername();">lock</span>
+			<button id="clearLinkedinUsername" onclick="clearLinkedinUsername();">Clear</button>
+		</div>
+
+		<h3>Twitter</h3>
+
+		<!-- Twitter URL -->
+		<div class="var">
+			<span id="warningTwitterURL" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="twitterUrl">URL</label>
+			<span class="material-symbols-outlined" onclick="alert('The primary Twitter URL page for your company')">info</span>
+			<input id="twitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="twitterUrlUnlock" class="material-symbols-outlined" onclick="unlockTwitterUrl()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUrlLock" class="material-symbols-outlined" onclick="lockTwitterUrl();">lock</span>
+			<button id="clearTwitterUrl" onclick="clearTwitterUrl();">Clear</button>
+		</div>
+
+		<!-- Twitter Username -->
+		<div class="var">
+			<span id="warningTwitterUsername" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="twitterUsername">Username</label>
+			<span class="material-symbols-outlined" onclick="alert('The username for your Twitter page')">info</span>
+			<input id="twitterUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="twitterUsernameUnlock" class="material-symbols-outlined" onclick="unlockTwitterUsername();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUsernameLock" class="material-symbols-outlined" onclick="lockTwitterUsername();">lock</span>
+			<button id="clearTwitterUsername" onclick="clearTwitterUsername();">Clear</button>
+		</div>
+
+		<h3>TikTok</h3>
+
+		<!-- TikTok URL -->
+		<div class="var">
+			<span id="warningTiktokURL" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="tiktokUrl">URL</label>
+			<span class="material-symbols-outlined" onclick="alert('The primary TikTok URL page for your company')">info</span>
+			<input id="tiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="tiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockTiktokUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUrlLock" class="material-symbols-outlined" onclick="lockTiktokUrl();">lock</span>
+			<button id="clearTiktokURL" onclick="clearTiktokUrl();">Clear</button>
+		</div>
+
+		<!-- TikTok Username -->
+		<div class="var">
+			<span id="warningTiktokUsername" class="material-symbols-outlined" style="display: none;">warning</span>
+			<label for="tiktokUsername">Username</label>
+			<span class="material-symbols-outlined" onclick="alert('The username for your TikTok page')">info</span>
+			<input id="tiktokUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="tiktokUsernameUnlock" class="material-symbols-outlined" onclick="unlockTiktokUsername();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUsernameLock" class="material-symbols-outlined" onclick="lockTiktokUsername();">lock</span>
+			<button id="clearTiktokUsername" onclick="clearTiktokUsername();">Clear</button>
+		</div>
+	</details>
 
 	<!-- Brand -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleBrand" class="toggle" type="checkbox">
-		<label for="collapsibleBrand" class="lbl-toggle">Brand</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
+	<details>
+		<summary>
+			Brand
+		</summary>
+		<h3>Logos</h3>
 
-					<h3>Logos</h3>
-
-					<!-- Square Logo -->
-					<div class="var">
-						<span id="warningSquareLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="squareLogo">Square Logo</label>
-						<span class="material-symbols-outlined" onclick='alert("A logo that represents your business where the height is equal to the length")'>info</span>
-						<input id="squareLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showSquareImage()">
-						<span id="squareLogoUnlock" class="material-symbols-outlined" onclick="unlockSquareLogo(); ">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="squareLogoLock" class="material-symbols-outlined" onclick="lockSquareLogo();">lock</span>
-						<img alt="" src="" style="padding: 0 10px 0 10px; display: none;" height="32px" width="32px" id="uploadedSquareImage">
-						<p id="squareLogoValueDisplay" style="display: none;"></p>
-						<img id="squareLogoBro" style="padding-left: 20px;" alt="Square Logo" src="">
-						<button id="squareLogoClear" onclick="clearSquareLogo();">Clear</button>
-					</div>
-
-					<!-- Full Logo -->
-					<div class="var">
-						<span id="warningFullLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="fullLogo">Full Logo</label>
-						<span class="material-symbols-outlined" onclick='alert("Your full-sized business logo")'>info</span>
-						<input id="fullLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showFullImage()">
-						<span id="fullLogoUnlock" class="material-symbols-outlined" onclick="unlockFullLogo();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fullLogoLock" class="material-symbols-outlined" onclick="lockFullLogo();">lock</span>
-						<img alt="" src="" style="padding: 0 10px 0 10px; max-height: 200px; max-width: 200px;" id="uploadedFullImage">
-						<p id="fullLogoValueDisplay" style="display: none;"></p>
-						<img id="fullLogoBro" style="padding-left: 20px;" alt="Full Logo" src="">
-						<button id="fullLogoClear" onclick="clearFullLogo();">Clear</button>
-					</div>
-
-					<h3>Colors</h3>
-
-					<!-- Primary Color -->
-					<div class="var">
-						<span id="warningPrimaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="primaryColor">Primary Color</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary color of your business")'>info</span>
-						<input id="primaryColor" type="color" style="display: none;">
-						<span id="primaryColorUnlock" class="material-symbols-outlined" onclick="unlockPrimaryColor();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryColorLock" class="material-symbols-outlined" onclick="lockPrimaryColor();">lock</span>
-						<p id="primaryColorValueDisplay"></p>
-						<div id="primaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
-						<button id="primaryColorClear" onclick="clearPrimaryColor();">Clear</button>
-					</div>
-
-					<!-- Secondary Color -->
-					<div class="var">
-						<span id="warningSecondaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="secondaryColor">Secondary Color</label>
-						<span class="material-symbols-outlined" onclick='alert("The secondary color of your business")'>info</span>
-						<input id="secondaryColor" type="color" style="display: none;">
-						<span id="secondaryColorUnlock" class="material-symbols-outlined" onclick="unlockSecondaryColor();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryColorLock" class="material-symbols-outlined" onclick="lockSecondaryColor();">lock</span>
-						<p id="secondaryColorValueDisplay"></p>
-						<div id="secondaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
-						<button id="secondaryColorClear" onclick="clearSecondaryColor();">Clear</button>
-					</div>
-
-					<!-- Tertiary Color -->
-					<div class="var">
-						<span id="warningTertiaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="tertiaryColor">Tertiary Color</label>
-						<span class="material-symbols-outlined" onclick='alert("The tertiary color of your business")'>info</span>
-						<input id="tertiaryColor" type="color" style="display: none;">
-						<span id="tertiaryColorUnlock" class="material-symbols-outlined" onclick="unlockTertiaryColor();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryColorLock" class="material-symbols-outlined" onclick="lockTertiaryColor();">lock</span>
-						<p id="tertiaryColorValueDisplay"></p>
-						<div id="tertiaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
-						<button id="tertiaryColorClear" onclick="clearTertiaryColor();">Clear</button>
-					</div>
-
-					<h3>Fonts</h3>
-
-					<!-- Primary Font -->
-					<div class="var">
-						<span id="warningPrimaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="primaryFont">Primary Font</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary font of your business")'>info</span>
-						<input id="primaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1; this.style.fontFamily = this.value">
-						<span id="primaryFontUnlock" class="material-symbols-outlined" onclick="unlockPrimaryFont(); ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryFontLock" class="material-symbols-outlined" onclick="lockPrimaryFont();">lock</span>
-						<button id="primaryFontClear" onclick="clearPrimaryFont();">Clear</button>
-					</div>
-
-					<!-- Secondary Font -->
-					<div class="var">
-						<span id="warningSecondaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="secondaryFont">Secondary Font</label>
-						<span class="material-symbols-outlined" onclick='alert("The secondary font of your business")'>info</span>
-						<input id="secondaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="secondaryFontUnlock" class="material-symbols-outlined" onclick="unlockSecondaryFont(); ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryFontLock" class="material-symbols-outlined" onclick="lockSecondaryFont();">lock</span>
-						<button id="secondaryFontClear" onclick="clearSecondaryFont();">Clear</button>
-					</div>
-
-					<!-- Tertiary Font -->
-					<div class="var">
-						<span id="warningTertiaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="tertiaryFont">Tertiary Font</label>
-						<span class="material-symbols-outlined" onclick='alert("The tertiary font of your business")'>info</span>
-						<input id="tertiaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="tertiaryFontUnlock" class="material-symbols-outlined" onclick="unlockTertiaryFont(); ">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryFontLock" class="material-symbols-outlined" onclick="lockTertiaryFont();">lock</span>
-						<button id="tertiaryFontClear" onclick="clearTertiaryFont();">Clear</button>
-					</div>
-
-				</div>
-			</div>
+		<!-- Square Logo -->
+		<div class="var">
+			<span id="warningSquareLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="squareLogo">Square Logo</label>
+			<span class="material-symbols-outlined" onclick='alert("A logo that represents your business where the height is equal to the length")'>info</span>
+			<input id="squareLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showSquareImage()">
+			<span id="squareLogoUnlock" class="material-symbols-outlined" onclick="unlockSquareLogo(); ">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="squareLogoLock" class="material-symbols-outlined" onclick="lockSquareLogo();">lock</span>
+			<img alt="" src="" style="padding: 0 10px 0 10px; display: none;" height="32px" width="32px" id="uploadedSquareImage">
+			<p id="squareLogoValueDisplay" style="display: none;"></p>
+			<img id="squareLogoBro" style="padding-left: 20px;" alt="Square Logo" src="">
+			<button id="squareLogoClear" onclick="clearSquareLogo();">Clear</button>
 		</div>
-	</div>
+
+		<!-- Full Logo -->
+		<div class="var">
+			<span id="warningFullLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="fullLogo">Full Logo</label>
+			<span class="material-symbols-outlined" onclick='alert("Your full-sized business logo")'>info</span>
+			<input id="fullLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showFullImage()">
+			<span id="fullLogoUnlock" class="material-symbols-outlined" onclick="unlockFullLogo();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fullLogoLock" class="material-symbols-outlined" onclick="lockFullLogo();">lock</span>
+			<img alt="" src="" style="padding: 0 10px 0 10px; max-height: 200px; max-width: 200px;" id="uploadedFullImage">
+			<p id="fullLogoValueDisplay" style="display: none;"></p>
+			<img id="fullLogoBro" style="padding-left: 20px;" alt="Full Logo" src="">
+			<button id="fullLogoClear" onclick="clearFullLogo();">Clear</button>
+		</div>
+
+		<h3>Colors</h3>
+
+		<!-- Primary Color -->
+		<div class="var">
+			<span id="warningPrimaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="primaryColor">Primary Color</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary color of your business")'>info</span>
+			<input id="primaryColor" type="color" style="display: none;">
+			<span id="primaryColorUnlock" class="material-symbols-outlined" onclick="unlockPrimaryColor();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryColorLock" class="material-symbols-outlined" onclick="lockPrimaryColor();">lock</span>
+			<p id="primaryColorValueDisplay"></p>
+			<div id="primaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
+			<button id="primaryColorClear" onclick="clearPrimaryColor();">Clear</button>
+		</div>
+
+		<!-- Secondary Color -->
+		<div class="var">
+			<span id="warningSecondaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="secondaryColor">Secondary Color</label>
+			<span class="material-symbols-outlined" onclick='alert("The secondary color of your business")'>info</span>
+			<input id="secondaryColor" type="color" style="display: none;">
+			<span id="secondaryColorUnlock" class="material-symbols-outlined" onclick="unlockSecondaryColor();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryColorLock" class="material-symbols-outlined" onclick="lockSecondaryColor();">lock</span>
+			<p id="secondaryColorValueDisplay"></p>
+			<div id="secondaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
+			<button id="secondaryColorClear" onclick="clearSecondaryColor();">Clear</button>
+		</div>
+
+		<!-- Tertiary Color -->
+		<div class="var">
+			<span id="warningTertiaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="tertiaryColor">Tertiary Color</label>
+			<span class="material-symbols-outlined" onclick='alert("The tertiary color of your business")'>info</span>
+			<input id="tertiaryColor" type="color" style="display: none;">
+			<span id="tertiaryColorUnlock" class="material-symbols-outlined" onclick="unlockTertiaryColor();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryColorLock" class="material-symbols-outlined" onclick="lockTertiaryColor();">lock</span>
+			<p id="tertiaryColorValueDisplay"></p>
+			<div id="tertiaryColorValueDisplayColor" style="height: 25px; width: 25px; background-color: transparent;"></div>
+			<button id="tertiaryColorClear" onclick="clearTertiaryColor();">Clear</button>
+		</div>
+
+		<h3>Fonts</h3>
+
+		<!-- Primary Font -->
+		<div class="var">
+			<span id="warningPrimaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="primaryFont">Primary Font</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary font of your business")'>info</span>
+			<input id="primaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1; this.style.fontFamily = this.value">
+			<span id="primaryFontUnlock" class="material-symbols-outlined" onclick="unlockPrimaryFont(); ">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryFontLock" class="material-symbols-outlined" onclick="lockPrimaryFont();">lock</span>
+			<button id="primaryFontClear" onclick="clearPrimaryFont();">Clear</button>
+		</div>
+
+		<!-- Secondary Font -->
+		<div class="var">
+			<span id="warningSecondaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="secondaryFont">Secondary Font</label>
+			<span class="material-symbols-outlined" onclick='alert("The secondary font of your business")'>info</span>
+			<input id="secondaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="secondaryFontUnlock" class="material-symbols-outlined" onclick="unlockSecondaryFont(); ">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryFontLock" class="material-symbols-outlined" onclick="lockSecondaryFont();">lock</span>
+			<button id="secondaryFontClear" onclick="clearSecondaryFont();">Clear</button>
+		</div>
+
+		<!-- Tertiary Font -->
+		<div class="var">
+			<span id="warningTertiaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="tertiaryFont">Tertiary Font</label>
+			<span class="material-symbols-outlined" onclick='alert("The tertiary font of your business")'>info</span>
+			<input id="tertiaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="tertiaryFontUnlock" class="material-symbols-outlined" onclick="unlockTertiaryFont(); ">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryFontLock" class="material-symbols-outlined" onclick="lockTertiaryFont();">lock</span>
+			<button id="tertiaryFontClear" onclick="clearTertiaryFont();">Clear</button>
+		</div>
+	</details>
 
 	<!-- Offerings -->
-	<div class="wrap-collapsible">
-		<input id="collapsibleOfferings" class="toggle" type="checkbox">
-		<label for="collapsibleOfferings" class="lbl-toggle">Offerings</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
-					<h3>Offer 1</h3>
+	<details>
+		<summary>
+			Offers
+		</summary>
+		<h3>Offer 1</h3>
 
-					<!-- Offer 1 Name -->
-					<div class="var">
-						<span id="warningOffer1Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Name">Offer 1 Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
-						<input id="offer1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1NameUnlock" class="material-symbols-outlined" onclick="unlockOffer1Name();">lock_open</span>
-						<span id="offer1NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Name();">lock</span>
-						<button id="offer1NameClear" onclick="clearOffer1Name();">Clear</button>
-					</div>
-
-					<!-- Offer 1 Price -->
-					<div class="var">
-						<span id="warningOffer1Price" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Price">Offer 1 Price</label>
-						<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
-						<input id="offer1Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer1Price();">lock_open</span>
-						<span id="offer1PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Price();">lock</span>
-						<button id="offer1PriceClear" onclick="clearOffer1Price();">Clear</button>
-					</div>
-
-					<!-- Offer 1 Feature -->
-					<div class="var">
-						<span id="warningOffer1Feature" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Feature">Offer 1 Feature</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
-						<input id="offer1Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer1Feature();">lock_open</span>
-						<span id="offer1FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Feature();">lock</span>
-						<button id="offer1FeatureClear" onclick="clearOffer1Feature();">Clear</button>
-					</div>
-
-					<!-- Offer 1 Benefit -->
-					<div class="var">
-						<span id="warningOffer1Benefit" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Benefit">Offer 1 Benefit</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
-						<input id="offer1Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer1Benefit();">lock_open</span>
-						<span id="offer1BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Benefit();">lock</span>
-						<button id="offer1BenefitClear" onclick="clearOffer1Benefit();">Clear</button>
-					</div>
-
-					<!-- Offer 1 Solution -->
-					<div class="var">
-						<span id="warningOffer1Solution" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Solution">Offer 1 Solution</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
-						<input id="offer1Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Solution();">lock_open</span>
-						<span id="offer1SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Solution();">lock</span>
-						<button id="offer1SolutionClear" onclick="clearOffer1Solution();">Clear</button>
-					</div>
-
-					<!-- Offer 1 Description -->
-					<div class="var">
-						<span id="warningOffer1Description" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Description">Offer 1 Description</label>
-						<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
-						<input id="offer1Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer1DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Description();">lock_open</span>
-						<span id="offer1DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Description();">lock</span>
-						<button id="offer1DescriptionClear" onclick="clearOffer1Description();">Clear</button>
-					</div>
-
-					<!-- Offer 1 Image -->
-					<div class="var">
-						<span id="warningOffer1Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer1Image">Offer 1 Image</label>
-						<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
-						<input id="offer1Image" type="file" value="" style="display: none;">
-						<span id="offer1ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer1Image();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer1ImageLock" class="material-symbols-outlined" onclick="lockOffer1Image();">lock</span>
-						<p id="offer1ImageValueDisplay" style="display: none;"></p>
-						<button id="offer1ImageClear" onclick="clearOffer1Image();">Clear</button>
-					</div>
-
-					<h3>Offer 2</h3>
-
-					<!-- Offer 2 Name -->
-					<div class="var">
-						<span id="warningOffer2Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Name">Offer 2 Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
-						<input id="offer2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2NameUnlock" class="material-symbols-outlined" onclick="unlockOffer2Name();">lock_open</span>
-						<span id="offer2NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Name() ">lock</span>
-						<button id="offer2NameClear" onclick="clearOffer2Name();">Clear</button>
-					</div>
-
-					<!-- Offer 2 Price -->
-					<div class="var">
-						<span id="warningOffer2Price" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Price">Offer 2 Price</label>
-						<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
-						<input id="offer2Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer2Price();">lock_open</span>
-						<span id="offer2PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Price();">lock</span>
-						<button id="offer2PriceClear" onclick="clearOffer2Price();">Clear</button>
-					</div>
-
-					<!-- Offer 2 Feature -->
-					<div class="var">
-						<span id="warningOffer2Feature" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Feature">Offer 2 Feature</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
-						<input id="offer2Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer2Feature();">lock_open</span>
-						<span id="offer2FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Feature();">lock</span>
-						<button id="offer2FeatureClear" onclick="clearOffer2Feature();">Clear</button>
-					</div>
-
-					<!-- Offer 2 Benefit -->
-					<div class="var">
-						<span id="warningOffer2Benefit" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Benefit">Offer 2 Benefit</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
-						<input id="offer2Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer2Benefit();">lock_open</span>
-						<span id="offer2BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Benefit();">lock</span>
-						<button id="offer2BenefitClear" onclick="clearOffer2Benefit();">Clear</button>
-					</div>
-
-					<!-- Offer 2 Solution -->
-					<div class="var">
-						<span id="warningOffer2Solution" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Solution">Offer 2 Solution</label>
-						<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
-						<input id="offer2Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Solution();">lock_open</span>
-						<span id="offer2SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Solution();">lock</span>
-						<button id="offer2SolutionClear" onclick="clearOffer2Solution();">Clear</button>
-					</div>
-
-					<!-- Offer 2 Description -->
-					<div class="var">
-						<span id="warningOffer2Description" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Description">Offer 2 Description</label>
-						<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
-						<input id="offer2Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="offer2DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Description();">lock_open</span>
-						<span id="offer2DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Description();">lock</span>
-						<button id="offer2DescriptionClear" onclick="clearOffer2Description();">Clear</button>
-					</div>
-
-					<!-- Offer 2 Image -->
-					<div class="var">
-						<span id="warningOffer2Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="offer2Image">Offer 2 Image</label>
-						<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
-						<input id="offer2Image" type="file" value="" style="display: none;">
-						<span id="offer2ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer2Image();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer2ImageLock" class="material-symbols-outlined" onclick="lockOffer2Image();">lock</span>
-						<p id="offer2ImageValueDisplay" style="display: none;"></p>
-						<button id="offer2ImageClear" onclick="clearOffer2Image();">Clear</button>
-					</div>
-				</div>
-			</div>
+		<!-- Offer 1 Name -->
+		<div class="var">
+			<span id="warningOffer1Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Name">Offer 1 Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
+			<input id="offer1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer1NameUnlock" class="material-symbols-outlined" onclick="unlockOffer1Name();">lock_open</span>
+			<span id="offer1NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Name();">lock</span>
+			<button id="offer1NameClear" onclick="clearOffer1Name();">Clear</button>
 		</div>
-	</div>
+
+		<!-- Offer 1 Price -->
+		<div class="var">
+			<span id="warningOffer1Price" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Price">Offer 1 Price</label>
+			<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
+			<input id="offer1Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer1PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer1Price();">lock_open</span>
+			<span id="offer1PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Price();">lock</span>
+			<button id="offer1PriceClear" onclick="clearOffer1Price();">Clear</button>
+		</div>
+
+		<!-- Offer 1 Feature -->
+		<div class="var">
+			<span id="warningOffer1Feature" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Feature">Offer 1 Feature</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
+			<input id="offer1Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer1FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer1Feature();">lock_open</span>
+			<span id="offer1FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Feature();">lock</span>
+			<button id="offer1FeatureClear" onclick="clearOffer1Feature();">Clear</button>
+		</div>
+
+		<!-- Offer 1 Benefit -->
+		<div class="var">
+			<span id="warningOffer1Benefit" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Benefit">Offer 1 Benefit</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
+			<input id="offer1Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer1BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer1Benefit();">lock_open</span>
+			<span id="offer1BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Benefit();">lock</span>
+			<button id="offer1BenefitClear" onclick="clearOffer1Benefit();">Clear</button>
+		</div>
+
+		<!-- Offer 1 Solution -->
+		<div class="var">
+			<span id="warningOffer1Solution" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Solution">Offer 1 Solution</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
+			<input id="offer1Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer1SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Solution();">lock_open</span>
+			<span id="offer1SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Solution();">lock</span>
+			<button id="offer1SolutionClear" onclick="clearOffer1Solution();">Clear</button>
+		</div>
+
+		<!-- Offer 1 Description -->
+		<div class="var">
+			<span id="warningOffer1Description" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Description">Offer 1 Description</label>
+			<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
+			<input id="offer1Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer1DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Description();">lock_open</span>
+			<span id="offer1DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Description();">lock</span>
+			<button id="offer1DescriptionClear" onclick="clearOffer1Description();">Clear</button>
+		</div>
+
+		<!-- Offer 1 Image -->
+		<div class="var">
+			<span id="warningOffer1Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer1Image">Offer 1 Image</label>
+			<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
+			<input id="offer1Image" type="file" value="" style="display: none;">
+			<span id="offer1ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer1Image();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer1ImageLock" class="material-symbols-outlined" onclick="lockOffer1Image();">lock</span>
+			<p id="offer1ImageValueDisplay" style="display: none;"></p>
+			<button id="offer1ImageClear" onclick="clearOffer1Image();">Clear</button>
+		</div>
+
+		<h3>Offer 2</h3>
+
+		<!-- Offer 2 Name -->
+		<div class="var">
+			<span id="warningOffer2Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Name">Offer 2 Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
+			<input id="offer2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer2NameUnlock" class="material-symbols-outlined" onclick="unlockOffer2Name();">lock_open</span>
+			<span id="offer2NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Name() ">lock</span>
+			<button id="offer2NameClear" onclick="clearOffer2Name();">Clear</button>
+		</div>
+
+		<!-- Offer 2 Price -->
+		<div class="var">
+			<span id="warningOffer2Price" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Price">Offer 2 Price</label>
+			<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
+			<input id="offer2Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer2PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer2Price();">lock_open</span>
+			<span id="offer2PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Price();">lock</span>
+			<button id="offer2PriceClear" onclick="clearOffer2Price();">Clear</button>
+		</div>
+
+		<!-- Offer 2 Feature -->
+		<div class="var">
+			<span id="warningOffer2Feature" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Feature">Offer 2 Feature</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
+			<input id="offer2Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer2FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer2Feature();">lock_open</span>
+			<span id="offer2FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Feature();">lock</span>
+			<button id="offer2FeatureClear" onclick="clearOffer2Feature();">Clear</button>
+		</div>
+
+		<!-- Offer 2 Benefit -->
+		<div class="var">
+			<span id="warningOffer2Benefit" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Benefit">Offer 2 Benefit</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
+			<input id="offer2Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer2BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer2Benefit();">lock_open</span>
+			<span id="offer2BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Benefit();">lock</span>
+			<button id="offer2BenefitClear" onclick="clearOffer2Benefit();">Clear</button>
+		</div>
+
+		<!-- Offer 2 Solution -->
+		<div class="var">
+			<span id="warningOffer2Solution" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Solution">Offer 2 Solution</label>
+			<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
+			<input id="offer2Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer2SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Solution();">lock_open</span>
+			<span id="offer2SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Solution();">lock</span>
+			<button id="offer2SolutionClear" onclick="clearOffer2Solution();">Clear</button>
+		</div>
+
+		<!-- Offer 2 Description -->
+		<div class="var">
+			<span id="warningOffer2Description" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Description">Offer 2 Description</label>
+			<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
+			<input id="offer2Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="offer2DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Description();">lock_open</span>
+			<span id="offer2DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Description();">lock</span>
+			<button id="offer2DescriptionClear" onclick="clearOffer2Description();">Clear</button>
+		</div>
+
+		<!-- Offer 2 Image -->
+		<div class="var">
+			<span id="warningOffer2Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="offer2Image">Offer 2 Image</label>
+			<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
+			<input id="offer2Image" type="file" value="" style="display: none;">
+			<span id="offer2ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer2Image();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer2ImageLock" class="material-symbols-outlined" onclick="lockOffer2Image();">lock</span>
+			<p id="offer2ImageValueDisplay" style="display: none;"></p>
+			<button id="offer2ImageClear" onclick="clearOffer2Image();">Clear</button>
+		</div>
+	</details>
 
 	<!-- People -->
-	<div class="wrap-collapsible">
-		<input id="collapsiblePeople" class="toggle" type="checkbox">
-		<label for="collapsiblePeople" class="lbl-toggle">People</label>
-		<div class="collapsible-content">
-			<div class="content-inner">
-				<div class="varGroup">
+	<details>
+		<summary>
+			People
+		</summary>
+		<h3>Person 1</h3>
 
-					<h3>Person 1</h3>
-
-					<!-- Person 1 Name -->
-					<div class="var">
-						<span id="warningPerson1Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1Name">Person 1 Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
-						<input id="person1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1NameUnlock" class="material-symbols-outlined" onclick="unlockPerson1Name();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1NameLock" class="material-symbols-outlined" onclick="lockPerson1Name();">lock</span>
-						<button id="person1NameClear" onclick="clearPerson1Name();">Clear</button>
-					</div>
-
-					<!-- Person 1 Title -->
-					<div class="var">
-						<span id="warningPerson1Title" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1Title">Person 1 Title</label>
-						<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
-						<input id="person1Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson1Title();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TitleLock" class="material-symbols-outlined" onclick="lockPerson1Title();">lock</span>
-						<button id="person1TitleClear" onclick="clearPerson1Title();">Clear</button>
-					</div>
-
-					<!-- Person 1 Headshot -->
-					<div class="var">
-						<span id="warningPerson1Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1Headshot">Person 1 Headshot</label>
-						<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
-						<input id="person1Headshot" type="file" accept="image/*" value="" style="display: none;">
-						<span id="person1HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson1Headshot();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1HeadshotLock" class="material-symbols-outlined" onclick="lockPerson1Headshot();">lock</span>
-						<p id="person1HeadshotValueDisplay" style="display: none;"></p>
-						<button id="person1HeadshotClear" onclick="clearPerson1Headshot();">Clear</button>
-					</div>
-
-					<!-- Person 1 Facebook URL -->
-					<div class="var">
-						<span id="warningPerson1Facebook" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1FacebookUrl">Person 1 Facebook URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
-						<input id="person1FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1FacebookUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson1FacebookUrl();">lock</span>
-						<button id="person1FacebookUrlClear" onclick="clearPerson1FacebookUrl();">Clear</button>
-					</div>
-
-					<!-- Person 1 Instagram URL -->
-					<div class="var">
-						<span id="warningPerson1Instagram" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1InstagramUrl">Person 1 Instagram URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
-						<input id="person1InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1InstagramUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson1InstagramUrl();">lock</span>
-						<button id="person1InstagramUrlClear" onclick="clearPerson1InstagramUrl();">Clear</button>
-					</div>
-
-					<!-- Person 1 LinkedIn URL -->
-					<div class="var">
-						<span id="warningPerson1Linkedin" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1LinkedinUrl">Person 1 LinkedIn URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
-						<input id="person1LinkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1LinkedinUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson1LinkedinUrl();">lock</span>
-						<button id="person1LinkedinUrlClear" onclick="clearPerson1LinkedinUrl();">Clear</button>
-					</div>
-
-					<!-- Person 1 Twitter URL -->
-					<div class="var">
-						<span id="warningPerson1Twitter" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1TwitterUrl">Person 1 Twitter URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
-						<input id="person1TwitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TwitterUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson1TwitterUrl()">lock</span>
-						<button id="person1TwitterUrlClear" onclick="clearPerson1TwitterUrl();">Clear</button>
-					</div>
-
-					<!-- Person 1 TikTok URL -->
-					<div class="var">
-						<span id="warningPerson1Tiktok" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person1TiktokUrl">Person 1 TikTok URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
-						<input id="person1TiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person1TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TiktokUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson1TiktokUrl();">lock</span>
-						<button id="person1TiktokUrlClear" onclick="clearPerson1TiktokUrl();">Clear</button>
-					</div>
-
-					<h3>Person 2</h3>
-
-					<!-- Person 2 Name -->
-					<div class="var">
-						<span id="warningPerson2Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2Name">Person 2 Name</label>
-						<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
-						<input id="person2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2NameUnlock" class="material-symbols-outlined" onclick="unlockPerson2Name();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2NameLock" class="material-symbols-outlined" onclick="lockPerson2Name();">lock</span>
-						<button id="person2NameClear" onclick="clearPerson2Name();">Clear</button>
-					</div>
-
-					<!-- Person 2 Title -->
-					<div class="var">
-						<span id="warningPerson2Title" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2Title">Person 2 Title</label>
-						<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
-						<input id="person2Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson2Title();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TitleLock" class="material-symbols-outlined" onclick="lockPerson2Title();">lock</span>
-						<button id="person2TitleClear" onclick="clearPerson2Title();">Clear</button>
-					</div>
-
-					<!-- Person 2 Headshot -->
-					<div class="var">
-						<span id="warningPerson2Headshot" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2Headshot">Person 2 Headshot</label>
-						<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
-						<input id="person2Headshot" type="file" accept="image/*" value="" style="display: none;">
-						<span id="person2HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson2Headshot();">lock_open</span>
-						<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2HeadshotLock" class="material-symbols-outlined" onclick="lockPerson2Headshot();">lock</span>
-						<p id="person2HeadshotValueDisplay" style="display: none;"></p>
-						<button id="person2HeadshotClear" onclick="clearPerson2Headshot();">Clear</button>
-					</div>
-
-					<!-- Person 2 Facebook URL -->
-					<div class="var">
-						<span id="warningPerson2FacebookUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2FacebookUrl">Person 2 Facebook URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
-						<input id="person2FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2FacebookUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson2FacebookUrl()">lock</span>
-						<button id="person2FacebookUrlClear" onclick="clearPerson2FacebookUrl();">Clear</button>
-					</div>
-
-					<!-- Person 2 Instagram URL -->
-					<div class="var">
-						<span id="warningPerson2InstagramUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2InstagramUrl">Person 2 Instagram URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
-						<input id="person2InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
-						<span id="person2InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2InstagramUrl()">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson2InstagramUrl();">lock</span>
-						<button id="person2InstagramUrlClear" onclick="clearPerson2InstagramUrl();">Clear</button>
-					</div>
-
-					<!-- Person 2 LinkedIn URL -->
-					<div class="var">
-						<span id="warningPerson2LinkedinUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2LinkedinUrl">Person 2 LinkedIn URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
-						<input id="person2LinkedinUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
-						<span id="person2LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2LinkedinUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson2LinkedinUrl();">lock</span>
-						<button id="person2LinkedinUrlClear" onclick="clearPerson2LinkedinUrl();">Clear</button>
-					</div>
-
-					<!-- Person 2 Twitter URL -->
-					<div class="var">
-						<span id="warningPerson2TwitterUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2TwitterUrl">Person 2 Twitter URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
-						<input id="person2TwitterUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
-						<span id="person2TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TwitterUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson2TwitterUrl()">lock</span>
-						<button id="person2TwitterUrlClear" onclick="clearPerson2TwitterUrl();">Clear</button>
-					</div>
-
-					<!-- Person 2 TikTok URL -->
-					<div class="var">
-						<span id="warningPerson2TiktokUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
-						<label for="person2TiktokUrl">Person 2 TikTok URL</label>
-						<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
-						<input id="person2TiktokUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
-						<span id="person2TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TiktokUrl();">lock_open</span>
-						<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson2TiktokUrl();">lock</span>
-						<button id="person2TiktokUrlClear" onclick="clearPerson2TiktokUrl();">Clear</button>
-					</div>
-
-				</div>
-			</div>
+		<!-- Person 1 Name -->
+		<div class="var">
+			<span id="warningPerson1Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1Name">Person 1 Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
+			<input id="person1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1NameUnlock" class="material-symbols-outlined" onclick="unlockPerson1Name();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1NameLock" class="material-symbols-outlined" onclick="lockPerson1Name();">lock</span>
+			<button id="person1NameClear" onclick="clearPerson1Name();">Clear</button>
 		</div>
-	</div>
+
+		<!-- Person 1 Title -->
+		<div class="var">
+			<span id="warningPerson1Title" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1Title">Person 1 Title</label>
+			<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
+			<input id="person1Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson1Title();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TitleLock" class="material-symbols-outlined" onclick="lockPerson1Title();">lock</span>
+			<button id="person1TitleClear" onclick="clearPerson1Title();">Clear</button>
+		</div>
+
+		<!-- Person 1 Headshot -->
+		<div class="var">
+			<span id="warningPerson1Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1Headshot">Person 1 Headshot</label>
+			<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
+			<input id="person1Headshot" type="file" accept="image/*" value="" style="display: none;">
+			<span id="person1HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson1Headshot();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1HeadshotLock" class="material-symbols-outlined" onclick="lockPerson1Headshot();">lock</span>
+			<p id="person1HeadshotValueDisplay" style="display: none;"></p>
+			<button id="person1HeadshotClear" onclick="clearPerson1Headshot();">Clear</button>
+		</div>
+
+		<!-- Person 1 Facebook URL -->
+		<div class="var">
+			<span id="warningPerson1Facebook" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1FacebookUrl">Person 1 Facebook URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
+			<input id="person1FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1FacebookUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson1FacebookUrl();">lock</span>
+			<button id="person1FacebookUrlClear" onclick="clearPerson1FacebookUrl();">Clear</button>
+		</div>
+
+		<!-- Person 1 Instagram URL -->
+		<div class="var">
+			<span id="warningPerson1Instagram" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1InstagramUrl">Person 1 Instagram URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
+			<input id="person1InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1InstagramUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson1InstagramUrl();">lock</span>
+			<button id="person1InstagramUrlClear" onclick="clearPerson1InstagramUrl();">Clear</button>
+		</div>
+
+		<!-- Person 1 LinkedIn URL -->
+		<div class="var">
+			<span id="warningPerson1Linkedin" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1LinkedinUrl">Person 1 LinkedIn URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
+			<input id="person1LinkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1LinkedinUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson1LinkedinUrl();">lock</span>
+			<button id="person1LinkedinUrlClear" onclick="clearPerson1LinkedinUrl();">Clear</button>
+		</div>
+
+		<!-- Person 1 Twitter URL -->
+		<div class="var">
+			<span id="warningPerson1Twitter" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1TwitterUrl">Person 1 Twitter URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
+			<input id="person1TwitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TwitterUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson1TwitterUrl()">lock</span>
+			<button id="person1TwitterUrlClear" onclick="clearPerson1TwitterUrl();">Clear</button>
+		</div>
+
+		<!-- Person 1 TikTok URL -->
+		<div class="var">
+			<span id="warningPerson1Tiktok" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person1TiktokUrl">Person 1 TikTok URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
+			<input id="person1TiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person1TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TiktokUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson1TiktokUrl();">lock</span>
+			<button id="person1TiktokUrlClear" onclick="clearPerson1TiktokUrl();">Clear</button>
+		</div>
+
+		<h3>Person 2</h3>
+
+		<!-- Person 2 Name -->
+		<div class="var">
+			<span id="warningPerson2Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2Name">Person 2 Name</label>
+			<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
+			<input id="person2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person2NameUnlock" class="material-symbols-outlined" onclick="unlockPerson2Name();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2NameLock" class="material-symbols-outlined" onclick="lockPerson2Name();">lock</span>
+			<button id="person2NameClear" onclick="clearPerson2Name();">Clear</button>
+		</div>
+
+		<!-- Person 2 Title -->
+		<div class="var">
+			<span id="warningPerson2Title" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2Title">Person 2 Title</label>
+			<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
+			<input id="person2Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person2TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson2Title();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TitleLock" class="material-symbols-outlined" onclick="lockPerson2Title();">lock</span>
+			<button id="person2TitleClear" onclick="clearPerson2Title();">Clear</button>
+		</div>
+
+		<!-- Person 2 Headshot -->
+		<div class="var">
+			<span id="warningPerson2Headshot" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2Headshot">Person 2 Headshot</label>
+			<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
+			<input id="person2Headshot" type="file" accept="image/*" value="" style="display: none;">
+			<span id="person2HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson2Headshot();">lock_open</span>
+			<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2HeadshotLock" class="material-symbols-outlined" onclick="lockPerson2Headshot();">lock</span>
+			<p id="person2HeadshotValueDisplay" style="display: none;"></p>
+			<button id="person2HeadshotClear" onclick="clearPerson2Headshot();">Clear</button>
+		</div>
+
+		<!-- Person 2 Facebook URL -->
+		<div class="var">
+			<span id="warningPerson2FacebookUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2FacebookUrl">Person 2 Facebook URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
+			<input id="person2FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person2FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2FacebookUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson2FacebookUrl()">lock</span>
+			<button id="person2FacebookUrlClear" onclick="clearPerson2FacebookUrl();">Clear</button>
+		</div>
+
+		<!-- Person 2 Instagram URL -->
+		<div class="var">
+			<span id="warningPerson2InstagramUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2InstagramUrl">Person 2 Instagram URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
+			<input id="person2InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+			<span id="person2InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2InstagramUrl()">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson2InstagramUrl();">lock</span>
+			<button id="person2InstagramUrlClear" onclick="clearPerson2InstagramUrl();">Clear</button>
+		</div>
+
+		<!-- Person 2 LinkedIn URL -->
+		<div class="var">
+			<span id="warningPerson2LinkedinUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2LinkedinUrl">Person 2 LinkedIn URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
+			<input id="person2LinkedinUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
+			<span id="person2LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2LinkedinUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson2LinkedinUrl();">lock</span>
+			<button id="person2LinkedinUrlClear" onclick="clearPerson2LinkedinUrl();">Clear</button>
+		</div>
+
+		<!-- Person 2 Twitter URL -->
+		<div class="var">
+			<span id="warningPerson2TwitterUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2TwitterUrl">Person 2 Twitter URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
+			<input id="person2TwitterUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
+			<span id="person2TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TwitterUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson2TwitterUrl()">lock</span>
+			<button id="person2TwitterUrlClear" onclick="clearPerson2TwitterUrl();">Clear</button>
+		</div>
+
+		<!-- Person 2 TikTok URL -->
+		<div class="var">
+			<span id="warningPerson2TiktokUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
+			<label for="person2TiktokUrl">Person 2 TikTok URL</label>
+			<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
+			<input id="person2TiktokUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
+			<span id="person2TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TiktokUrl();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson2TiktokUrl();">lock</span>
+			<button id="person2TiktokUrlClear" onclick="clearPerson2TiktokUrl();">Clear</button>
+		</div>
+	</details>
 
 </div>
 
@@ -1325,101 +1265,30 @@
 <!-- New Content Tab -->
 <div id="newContent" class="w3-container w3-display-container city" style="display:none">
 
-		<!-- Inputs -->
-		<div id="inputs" class="column30Percent" style="user-select: none;">
-
-		<!-- Event Title -->
-		<div style="align-items: center;">
-			<label for="inputEventTitle">Event Title</label>
-			<input id="inputEventTitle" type="text" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
-		</div>
-
-		<!-- Event Date -->
-		<div style="align-items: center; justify-content: space-between;">
-			<label for="inputEventDate">Date</label>
-			<input id="inputEventDate" type="date" oninput="eventDateUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDateClear();">x</a>
-		</div>
-
-		<!-- Event Time -->
-		<div style="align-items: center; justify-content: space-between;">
-			<label for="inputEventTime">Time</label>
-			<input id="inputEventTime" type="time" oninput="eventTimeUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTimeClear();">x</a>
-		</div>
-
-		<!-- Event Location -->
-		<div style="align-items: center;">
-			<label for="inputEventLocation">Location</label>
-			<input id="inputEventLocation" type="text" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
-			<img id="linkLocation" title="Load Address" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
-		</div>
-
-		<!-- Event Organization -->
-		<div style="align-items: center;">
-			<label for="inputEventOrganization">Organization</label>
-			<input id="inputEventOrganization" type="text" onkeyup="eventOrganizationUpdate(); placeHashtagsAsSelected();">
-			<a  title="Clear field" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">x</a>
-		</div>
-
-		<!-- Event Host -->
-		<div style="align-items: center;">
-			<label for="inputEventHost">Host</label>
-			<input id="inputEventHost" type="text" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
-			<img id="linkHost" title="Load Founder Name" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
-		</div>
-
-		<!-- Event Description -->
-		<div style="align-items: center;">
-			<label for="inputEventDescription">Description</label>
-			<input id="inputEventDescription" type="text" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
-		</div>
-
-		<!-- Event Link -->
-		<div style="align-items: center;">
-			<label for="inputEventLink">Link</label>
-			<input id="inputEventLink" type="url" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
-			<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
-			<img id="linkLink" title="Load Website URL" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
-		</div>
-
-		<!-- Event Primary Color -->
-		<div style="align-items: center;">
-			<label for="inputEventPrimaryColor">Primary Color</label>
-			<input id="inputEventPrimaryColor" type="color" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">x</a>
-			<img id="linkPrimarycolor" title="Load Primary Color" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
-		</div>
-
-		<!-- Event Logo -->
-		<div style="align-items: center;">
-			<label for="inputEventLogo">Logo</label>
-			<input id="inputEventLogo" type="file" style="width: 170px" oninput="eventLogoUpdate(); placeHashtagsAsSelected();">
-			<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLogoClear();">x</a>
-		</div>
-
-	</div>
-
 		<!-- Outputs -->
-		<div id="outputs" class="column3" style="max-height: 100vh; overflow: scroll; user-select: none; box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9); -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9); -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);">
+		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
 
 			<!-- Output Tabs -->
-			<div style="padding-bottom: 10px; margin: -.6rem -.6rem 0 -.6rem; ">
-				<button class="socialTab" onclick="openCity(event, 'TitleTab')">Title<span id="tabExclamationTitle" class="material-symbols-outlined">exclamation</span><span id="tabDoneTitle" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'DateTab')">Date<span id="tabExclamationDate" class="material-symbols-outlined">exclamation</span><span id="tabDoneDate" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'TimeTab')">Time<span id="tabExclamationTime" class="material-symbols-outlined">exclamation</span><span id="tabDoneTime" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'LocationTab')">Location<span id="tabExclamationLocation" class="material-symbols-outlined">exclamation</span><span id="tabDoneLocation" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'OrganizationTab')">Organization<span id="tabExclamationOrganization" class="material-symbols-outlined">exclamation</span><span id="tabDoneOrganization" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'HostTab')">Host<span id="tabExclamationHost" class="material-symbols-outlined">exclamation</span><span id="tabDoneHost" class="material-symbols-outlined" style="display: none;">done</span></button>
+			<div>
+				<button class="socialTab" onclick="openCity(event, 'TitleTab'); document.getElementById('inputEventTitle').focus();">Title<span id="tabExclamationTitle" class="material-symbols-outlined">exclamation</span><span id="tabDoneTitle" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'DateTab'); document.getElementById('inputEventDate').focus();">Date<span id="tabExclamationDate" class="material-symbols-outlined">exclamation</span><span id="tabDoneDate" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'TimeTab');  document.getElementById('inputEventTime').focus();">Time<span id="tabExclamationTime" class="material-symbols-outlined">exclamation</span><span id="tabDoneTime" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'LocationTab'); document.getElementById('inputEventLocation').focus();">Location<span id="tabExclamationLocation" class="material-symbols-outlined">exclamation</span><span id="tabDoneLocation" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'OrganizationTab'); document.getElementById('inputEventOrganization').focus();">Organization<span id="tabExclamationOrganization" class="material-symbols-outlined">exclamation</span><span id="tabDoneOrganization" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'HostTab');  document.getElementById('inputEventHost').focus();">Host<span id="tabDescriptionHost" class="material-symbols-outlined">exclamation</span><span id="tabDoneHost" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'DescriptionTab'); document.getElementById('inputEventDescription').focus();">Description<span id="tabDescriptionTime" class="material-symbols-outlined">exclamation</span><span id="tabDoneDescription" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'LinkTab'); document.getElementById('inputEventLink').focus();">Link<span id="tabExclamationLink" class="material-symbols-outlined">exclamation</span><span id="tabDoneLink" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'ColorTab'); document.getElementById('inputEventColor').focus();">Color<span id="tabExclamationColor" class="material-symbols-outlined">exclamation</span><span id="tabDoneColor" class="material-symbols-outlined" style="display: none;">done</span></button>
+				<button class="socialTab" onclick="openCity(event, 'LogoTab'); document.getElementById('inputEventLogo').focus();">Logo<span id="tabExclamationLogo" class="material-symbols-outlined">exclamation</span><span id="tabDoneLogo" class="material-symbols-outlined" style="display: none;">done</span></button>
 			</div>
 
-			<!-- Title Output -->
+			<!-- Title -->
 			<div id="TitleTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventTitle" class="cleanCursorInput" type="text" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
+				</div>
+
 				<div id="hasTitle" style="display: none; line-height: 2em;">
 					<div>
 						<p title="Click to select" onmouseover="considerTitleOutput1();" onmouseleave="clearTitleConsideration();" onclick="selectTitleOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTitle1">Are you ready for the <text class="title chip"></text>?</p>
@@ -1439,8 +1308,12 @@
 				</div>
 			</div>
 
-			<!-- Date Output -->
+			<!-- Date -->
 			<div id="DateTab" class="tabcontent">
+				<div style="align-items: center; justify-content: space-between;">
+					<input id="inputEventDate" class="cleanCursorInput" type="date" oninput="eventDateUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDateClear();">x</a>
+				</div>
 				<div id="hasDate" style="display: none; line-height: 2em;">
 					<div>
 						<p title="Click to select" onmouseover="considerDateOutput1();" onmouseleave="clearDateConsideration();" onclick="selectDateOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDate1">This event will take place on <text class="date chip"></text>!</p>
@@ -1460,8 +1333,12 @@
 				</div>
 			</div>
 
-			<!-- Time Output -->
+			<!-- Time -->
 			<div id="TimeTab" class="tabcontent">
+				<div style="align-items: center; justify-content: space-between;">
+					<input id="inputEventTime" class="cleanCursorInput" type="time" oninput="eventTimeUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTimeClear();">x</a>
+				</div>
 				<div id="hasTime" style="display: none; line-height: 2em;">
 					<div>
 						<p title="Click to select" onmouseover="considerTimeOutput1();" onmouseleave="clearTimeConsideration();" onclick="selectTimeOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTime1">This even will start at <text class="time chip"></text>.</p>
@@ -1481,8 +1358,13 @@
 				</div>
 			</div>
 
-			<!-- Location Output -->
+			<!-- Location -->
 			<div id="LocationTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventLocation" class="cleanCursorInput" type="text" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
+					<img id="linkLocation" title="Load Address" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
+				</div>
 				<div id="hasLocation" style="display: none; line-height: 2em;">
 					<div>
 						<p title="Click to select" onmouseover="considerLocationOutput1();" onmouseleave="clearLocationConsideration();" onclick="selectLocationOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasLocation1">This event will be located at <text class="location chip"></text>.</p>
@@ -1502,8 +1384,12 @@
 				</div>
 			</div>
 
-			<!-- Organization Output -->
+			<!-- Organization -->
 			<div id="OrganizationTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventOrganization" class="cleanCursorInput" type="text" onkeyup="eventOrganizationUpdate(); placeHashtagsAsSelected();">
+					<a  title="Clear field" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">x</a>
+				</div>
 				<div id="hasOrganization" style="display: none; line-height: 2em;">
 					<div>
 						<p title="Click to select" onmouseover="considerOrganizationOutput1();" onmouseleave="clearOrganizationConsideration();" onclick="selectOrganizationOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasOrganization1">The event is hosted by <text class="organization chip"></text>.</p>
@@ -1523,8 +1409,13 @@
 				</div>
 			</div>
 
-			<!-- Host Output -->
+			<!-- Host -->
 			<div id="HostTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventHost" class="cleanCursorInput" type="text" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
+					<img id="linkHost" title="Load Founder Name" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
+				</div>
 				<div id="hasHost" style="display: none; line-height: 2em;">
 					<div>
 						<p title="Click to select" onmouseover="considerHostOutput1();" onmouseleave="clearHostConsideration();" onclick="selectHostOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasHost1"><text class="host chip"></text> will be there to greet you at the door!</p>
@@ -1544,20 +1435,52 @@
 				</div>
 			</div>
 
-			<!-- Description Output -->
-			<div id="hasDescription" style="display: none; line-height: 2em;">
-				<div>
-					<p style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDescription1"><text class="description chip"></text></p>
+			<!-- Description -->
+			<div id="DescriptionTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventDescription" class="cleanCursorInput" type="text" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
+				</div>
+				<div id="hasDescription" style="display: none; line-height: 2em;">
+					<div>
+						<p style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDescription1"><text class="description chip"></text></p>
+					</div>
 				</div>
 			</div>
 
-			<!-- Link Output-->
-			<div id="hasLink" style="display: none; line-height: 2em;"></div>
+			<!-- Link -->
+			<div id="LinkTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventLink" class="cleanCursorInput" type="url" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
+					<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
+					<img id="linkLink" title="Load Website URL" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
+				</div>
+				<div id="hasLink" style="display: none; line-height: 2em;"></div>
+			</div>
+
+			<!-- Color -->
+			<div id="ColorTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventPrimaryColor" class="cleanCursorInput" type="color" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">x</a>
+					<img id="linkPrimarycolor" title="Load Primary Color" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
+				</div>
+			</div>
+
+			<!-- Logo -->
+			<div id="LogoTab" class="tabcontent">
+				<div style="align-items: center;">
+					<input id="inputEventLogo" class="cleanCursorInput" type="file" style="width: 170px" oninput="eventLogoUpdate(); placeHashtagsAsSelected();">
+					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLogoClear();">x</a>
+				</div>
+			</div>
+
 
 		</div>
 
 		<!-- Finals -->
-		<div id="final" class="column36Dot6Percent" style="user-select: none;">
+		<div id="final" class="column2" style="user-select: none;">
 
 			<!-- IMAGES -->
 			<!-- Final Image (Horizontal) -->
