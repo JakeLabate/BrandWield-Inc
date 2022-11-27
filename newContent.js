@@ -42,7 +42,7 @@ function eventTitleUpdate () {
 		}
 		// if the titleElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < titleElements.length; i++) {
-			if (titleElements[i].closest("#finalImageHorizontal") || titleElements[i].closest("#finalImageVertical") || titleElements[i].closest("#finalImageSquare")) {
+			if (titleElements[i].closest("#finalImageHorizontal") || titleElements[i].closest("#finalImageVertical") || titleElements[i].closest("#finalImageSquare") || titleElements[i].closest("#finalImageStory")) {
 				titleElements[i].style.backgroundColor = "transparent";
 				titleElements[i].classList.remove("chip");
 				titleElements[i].innerHTML = outputEventTitle.value + "<br>";
@@ -88,7 +88,7 @@ function eventDateUpdate () {
 		}
 		// if the dateElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < dateElements.length; i++) {
-			if (dateElements[i].closest("#finalImageHorizontal") || dateElements[i].closest("#finalImageVertical") || dateElements[i].closest("#finalImageSquare")) {
+			if (dateElements[i].closest("#finalImageHorizontal") || dateElements[i].closest("#finalImageVertical") || dateElements[i].closest("#finalImageSquare") || dateElements[i].closest("#finalImageStory")) {
 				dateElements[i].style.backgroundColor = "transparent";
 				dateElements[i].classList.remove("chip");
 				dateElements[i].innerHTML = outputEventDate.value + "<br>";
@@ -130,7 +130,7 @@ function eventTimeUpdate () {
 		}
 		// if the timeElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < timeElements.length; i++) {
-			if (timeElements[i].closest("#finalImageHorizontal") || timeElements[i].closest("#finalImageVertical") || timeElements[i].closest("#finalImageSquare")) {
+			if (timeElements[i].closest("#finalImageHorizontal") || timeElements[i].closest("#finalImageVertical") || timeElements[i].closest("#finalImageSquare") || timeElements[i].closest("#finalImageStory")) {
 				timeElements[i].style.backgroundColor = "transparent";
 				timeElements[i].classList.remove("chip");
 				timeElements[i].innerHTML = outputEventTime.value + "<br>";
@@ -166,7 +166,7 @@ function eventLocationUpdate () {
 		}
 		// if the locationElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < locationElements.length; i++) {
-			if (locationElements[i].closest("#finalImageHorizontal") || locationElements[i].closest("#finalImageVertical") || locationElements[i].closest("#finalImageSquare")) {
+			if (locationElements[i].closest("#finalImageHorizontal") || locationElements[i].closest("#finalImageVertical") || locationElements[i].closest("#finalImageSquare") || locationElements[i].closest("#finalImageStory")) {
 				locationElements[i].style.backgroundColor = "transparent";
 				locationElements[i].classList.remove("chip");
 				locationElements[i].innerHTML = outputEventLocation.value + "<br>";
@@ -210,7 +210,7 @@ function eventOrganizationUpdate () {
 		}
 		// if the organizationElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < organizationElements.length; i++) {
-			if (organizationElements[i].closest("#finalImageHorizontal") || organizationElements[i].closest("#finalImageVertical") || organizationElements[i].closest("#finalImageSquare")) {
+			if (organizationElements[i].closest("#finalImageHorizontal") || organizationElements[i].closest("#finalImageVertical") || organizationElements[i].closest("#finalImageSquare") || organizationElements[i].closest("#finalImageStory")) {
 				organizationElements[i].style.backgroundColor = "transparent";
 				organizationElements[i].classList.remove("chip");
 				organizationElements[i].innerHTML = outputEventOrganization.value + "<br>";
@@ -233,10 +233,14 @@ function eventHostUpdate () {
 
 	// Set the active tab to the Host tab
 	openCity(event, 'HostTab');
+
 	// Remove the added 'active' attribute that is added as a result of the above function... it causes the tab & field to be highlighted
 	document.getElementById("inputEventHost").classList.remove("active");
 
+	// set output shortcut variable
 	let outputEventHost = document.getElementById("inputEventHost");
+
+	// as long as the value is SOMETHING...
 	if (outputEventHost.value != null && outputEventHost.value.length > 0) {
 		// find all elements with the class name 'host' and update their innerHTML to the value of the input
 		let hostElements = document.getElementsByClassName("host");
@@ -254,7 +258,7 @@ function eventHostUpdate () {
 		document.getElementById("hasHost").style.display = "inline";
 		// if the hostElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < hostElements.length; i++) {
-			if (hostElements[i].closest("#finalImageHorizontal") || hostElements[i].closest("#finalImageVertical") || hostElements[i].closest("#finalImageSquare")) {
+			if (hostElements[i].closest("#finalImageHorizontal") || hostElements[i].closest("#finalImageVertical") || hostElements[i].closest("#finalImageSquare") || hostElements[i].closest("#finalImageStory")) {
 				hostElements[i].style.backgroundColor = "transparent";
 				hostElements[i].classList.remove("chip");
 				hostElements[i].innerHTML = outputEventHost.value + "<br>";
@@ -297,7 +301,7 @@ function eventDescriptionUpdate () {
 		}
 		// if the dateElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < descriptionElements.length; i++) {
-			if (descriptionElements[i].closest("#finalImageHorizontal") || descriptionElements[i].closest("#finalImageVertical") || descriptionElements[i].closest("#finalImageSquare")) {
+			if (descriptionElements[i].closest("#finalImageHorizontal") || descriptionElements[i].closest("#finalImageVertical") || descriptionElements[i].closest("#finalImageSquare") || descriptionElements[i].closest("#finalImageStory")) {
 				descriptionElements[i].style.backgroundColor = "transparent";
 				descriptionElements[i].classList.remove("chip");
 			}
@@ -407,7 +411,7 @@ function eventPrimarycolorUpdate () {
 		}
 		// if the primarycolorElements[i] are inside the #finalImageHorizontal, #finalImageVertical, or #finalImageSquare, do not leave the changed the border color
 		for (let i = 0; i < primarycolorElements.length; i++) {
-			if (primarycolorElements[i].closest("#finalImageHorizontal") || primarycolorElements[i].closest("#finalImageVertical") || primarycolorElements[i].closest("#finalImageSquare")) {
+			if (primarycolorElements[i].closest("#finalImageHorizontal") || primarycolorElements[i].closest("#finalImageVertical") || primarycolorElements[i].closest("#finalImageSquare") || primarycolorElements[i].closest("#finalImageStory")) {
 				setTimeout(function() {
 					primarycolorElements[i].style.border = "none";
 				}, 1000);
@@ -445,8 +449,9 @@ function eventLogoUpdate () {
 		}
 		if(localStorage.getItem("image"))
 			document.getElementById("horizontalImageLogoHere").setAttribute("src", localStorage.getItem("image"))
-		document.getElementById("verticalImageLogoHere").setAttribute("src", localStorage.getItem("image"))
-		document.getElementById("squareImageLogoHere").setAttribute("src", localStorage.getItem("image"))
+			document.getElementById("verticalImageLogoHere").setAttribute("src", localStorage.getItem("image"))
+			document.getElementById("squareImageLogoHere").setAttribute("src", localStorage.getItem("image"))
+			document.getElementById("storyImageLogoHere").setAttribute("src", localStorage.getItem("image"))
 	} else {
 		let logoElements = document.getElementsByClassName("logo");
 		for (let i = 0; i < logoElements.length; i++) {
@@ -650,212 +655,6 @@ function generateHashtagsForDescription () {
 	document.getElementById("hashtagsHereForDescription").innerText = uniq.join(" ");
 
 }
-
-// Copy to clipboard
-// hasTitle
-function copyToClipboardHasTitle1() {
-	let copyText = document.getElementById("copyToClipboardHasTitle1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTitle2() {
-	let copyText = document.getElementById("copyToClipboardHasTitle2").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTitle3() {
-	let copyText = document.getElementById("copyToClipboardHasTitle3").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTitle4() {
-	let copyText = document.getElementById("copyToClipboardHasTitle4").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTitle5() {
-	let copyText = document.getElementById("copyToClipboardHasTitle5").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-// hasDate
-function copyToClipboardHasDate1() {
-	let copyText = document.getElementById("copyToClipboardHasDate1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasDate2() {
-	let copyText = document.getElementById("copyToClipboardHasDate2").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasDate3() {
-	let copyText = document.getElementById("copyToClipboardHasDate3").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasDate4() {
-	let copyText = document.getElementById("copyToClipboardHasDate4").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasDate5() {
-	let copyText = document.getElementById("copyToClipboardHasDate5").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-// hasTime
-function copyToClipboardHasTime1() {
-	let copyText = document.getElementById("copyToClipboardHasTime1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTime2() {
-	let copyText = document.getElementById("copyToClipboardHasTime2").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTime3() {
-	let copyText = document.getElementById("copyToClipboardHasTime3").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTime4() {
-	let copyText = document.getElementById("copyToClipboardHasTime4").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasTime5() {
-	let copyText = document.getElementById("copyToClipboardHasTime5").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-// hasLocation
-function copyToClipboardHasLocation1() {
-	let copyText = document.getElementById("copyToClipboardHasLocation1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasLocation2() {
-	let copyText = document.getElementById("copyToClipboardHasLocation2").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasLocation3() {
-	let copyText = document.getElementById("copyToClipboardHasLocation3").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasLocation4() {
-	let copyText = document.getElementById("copyToClipboardHasLocation4").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasLocation5() {
-	let copyText = document.getElementById("copyToClipboardHasLocation5").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-// hasOrganization
-function copyToClipboardHasOrganization1() {
-	let copyText = document.getElementById("copyToClipboardHasOrganization1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasOrganization2() {
-	let copyText = document.getElementById("copyToClipboardHasOrganization2").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasOrganization3() {
-	let copyText = document.getElementById("copyToClipboardHasOrganization3").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasOrganization4() {
-	let copyText = document.getElementById("copyToClipboardHasOrganization4").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasOrganization5() {
-	let copyText = document.getElementById("copyToClipboardHasOrganization5").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-// hasHost
-function copyToClipboardHasHost1() {
-	let copyText = document.getElementById("copyToClipboardHasHost1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasHost2() {
-	let copyText = document.getElementById("copyToClipboardHasHost2").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasHost3() {
-	let copyText = document.getElementById("copyToClipboardHasHost3").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasHost4() {
-	let copyText = document.getElementById("copyToClipboardHasHost4").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-function copyToClipboardHasHost5() {
-	let copyText = document.getElementById("copyToClipboardHasHost5").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-// hasDescription
-function copyToClipboardHasDescription1() {
-	let copyText = document.getElementById("copyToClipboardHasHost1").innerText;
-	navigator.clipboard.writeText(copyText).then(() => {
-		alert("Copied:\n" + copyText);
-	});
-}
-
-// Hashtags
-function copyToClipboardHashtags () {
-	let copyText = document.getElementById("hashtagsHere").innerText;
- 	navigator.clipboard.writeText(copyText).then(() => {
- 		alert("Copied:\n" + copyText);
- 	});
-	placeHashtagsAsSelected();
- }
-
-
 
 // Add links as input fields from brand data
 // Location
@@ -1595,13 +1394,10 @@ function screenshotAllImages() {
 	screenshotHorizontalFinal();
 	screenshotVerticalFinal();
 	screenshotSquareFinal();
+	screenshotStoryFinal();
 }
 function screenshotHorizontalFinal() {
 	// Set input & output
-
-
-
-
 	let screenshotTakeable = document.getElementById('finalImageHorizontal');
 	let screenshotPlaceable = document.getElementById('output');
 
@@ -1671,7 +1467,30 @@ function screenshotSquareFinal() {
 		window.location = imageData;
 	}, 3000);
 }
+function screenshotStoryFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageStory');
+	let screenshotPlaceable = document.getElementById('output');
 
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotStory');
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		// select ALL canvas elements, and for each one, get the dataURL and download it
+		var canvas = Array.from(document.querySelectorAll('.screenshotStory')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotStory', imageData);
+		window.location = imageData;
+	}, 4000);
+}
 
 // SAVE CONTENT FILES
 function saveContentFiles () {

@@ -1483,24 +1483,21 @@
 		<div id="final" class="column2" style="user-select: none;">
 
 			<!-- IMAGES -->
-			<!-- Final Image (Horizontal) -->
 			<div id="finalImageHorizontal" class="imageColors">
-							<text id="finalTitleHorizontal" class="title"></text>
-							<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text>
-							<text class="showOnTime">Time: </text><text id="finalTimeHorizontal" class="time"></text>
-							<text class="showOnLocation">Location: </text><text id="finalLocationHorizontal" class="location"></text>
-							<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationHorizontal" class="organization"></text>
-							<text class="showOnHost">Hosted by: </text><text id="finalHostHorizontal" class="host"></text>
-							<div>
-								<img height="60" width="60" id="horizontalImageQRHere" alt="" src="" />
-							</div>
-							<div>
-								<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
-							</div>
+				<text id="finalTitleHorizontal" class="title"></text>
+				<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text>
+				<text class="showOnTime">Time: </text><text id="finalTimeHorizontal" class="time"></text>
+				<text class="showOnLocation">Location: </text><text id="finalLocationHorizontal" class="location"></text>
+				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationHorizontal" class="organization"></text>
+				<text class="showOnHost">Hosted by: </text><text id="finalHostHorizontal" class="host"></text>
+				<div>
+					<img height="60" width="60" id="horizontalImageQRHere" alt="" src="" />
+				</div>
+				<div>
+					<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
+				</div>
 
-						</div>
-			<div id="finalImageHorizontalPlatforms">1200h X 630w</div>
-			<!-- Final Image (Vertical) -->
+			</div>
 			<div id="finalImageVertical" class="imageColors">
 							<text id="finalTitleVertical" class="title"></text>
 							<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
@@ -1515,8 +1512,6 @@
 								<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
 							</div>
 						</div>
-			<div id="finalImageVerticalPlatforms">1350h X 1080w</div>
-			<!-- Final Image (Square) -->
 			<div id="finalImageSquare" class="imageColors">
 							<text id="finalTitleSquare" class="title"></text>
 							<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
@@ -1531,10 +1526,24 @@
 								<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
 							</div>
 						</div>
-			<div id="finalImageSquarePlatforms">1000h X 1000w</div>
+			<div id="finalImageStory" class="imageColors">
+				<text id="finalTitleStory" class="title"></text>
+				<text class="showOnDate">Date: </text><text id="finalDateStory" class="date"></text>
+				<text class="showOnTime">Time: </text><text id="finalTimeStory" class="time"></text>
+				<text class="showOnLocation">Location: </text><text id="finalLocationStory" class="location"></text>
+				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationStory" class="organization"></text>
+				<text class="showOnHost">Hosted by: </text><text id="finalHostStory" class="host"></text>
+				<div>
+					<img height="60" width="60" id="storyImageQRHere" alt="" src="" />
+				</div>
+				<div>
+					<img class="showOnLogo" height="60" width="60" id="storyImageLogoHere" alt="" src="" />
+				</div>
+
+			</div>
 
 			<!-- TEXT -->
-			<div style="position: relative; top: 480px;">
+			<div style="position: relative; top: 380px;">
 				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
 					<text id="selectedTitleOutput"></text><text id="consideredTitleOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-title-sentence}}&nbsp;</text>
 					<text id="selectedDateOutput"></text><text id="consideredDateOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-date-sentence}}&nbsp;</text>
@@ -1558,9 +1567,8 @@
 				<div id="output"></div>
 			</div>
 
-				<!-- Social Sendables -->
-				<div id="socialSendables">
-				<!-- Social Sendables Tab Script -->
+			<!-- Social Sendables -->
+			<div id="socialSendables">
 				<script>
 					function openSocialTab(evt, cityName) {
 						var i, socialTabContent, tablinks;
@@ -1575,7 +1583,6 @@
 						document.getElementById(cityName).style.display = "block";
 					}
 				</script>
-				<!-- Social Sendables Clickable Tabs -->
 				<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
 					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/facebookWhite.png" /></button>
 					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/linkedinWhite.png" /></button>
@@ -1766,7 +1773,6 @@
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
 				</div>
-
 			</div>
 
 		</div>

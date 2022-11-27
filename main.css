@@ -1,16 +1,16 @@
 :root {
 
-    /* COLORS */
+    /* BRAND COLORS */
     --primaryColor: #737373;
     --secondaryColor: #737373;
     --tertiaryColor: #737373;
 
-    /* FONTS */
+    /* BRAND FONTS */
     --primaryFont: 'Montserrat', sans-serif;
     --secondaryFont: 'Roboto', sans-serif;
-    --tertiaryFont: Comic Sans MS, Comic Sans, cursive;
+    --tertiaryFont: 'Comic Sans', sans-serif;
 
-    /* SOCIAL MEDIA ASSETS */
+    /* SOCIAL MEDIA COLORS */
     --facebookColor: #3b5998;
     --twitterColor: #1da1f2;
     --instagramColor: #e1306c;
@@ -41,12 +41,6 @@
 #photo {
     border: 4px solid green;
     padding: 4px;
-}
-
-
-/* Not working for some reason */
-div[id="outputs"] {
-    font-size: 14px !important;
 }
 
 a {
@@ -86,7 +80,6 @@ label {
     padding-right: 5px;
 }
 
-/* ALl inputs */
 input {
     height: 30px;
     font-weight: bold;
@@ -313,10 +306,10 @@ p[id*="copyToClipboardHas"]:hover {
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
     position: absolute;
-    top: 190px;
-    right: 420px;
+    top: 247px;
+    right: 523px;
+    transition: .3s ease-in-out;
 }
-
 #finalImageHorizontal:hover {
     scale: 1.03;
     transition: .3s ease-in-out;
@@ -325,18 +318,19 @@ p[id*="copyToClipboardHas"]:hover {
 }
 
 #finalImageSquare {
-    height: 216px;
-    width: 216px;
+    height: 180px;
+    width: 180px;
     border: 2px solid #000000;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
-    z-index: 400;
+    z-index: 9999;
     position: absolute;
-    top: 120px;
-    right: 218px;
+    top: 200px;
+    right: 355px;
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
+    transition: .3s ease-in-out;
 }
 #finalImageSquare:hover {
     scale: 1.03;
@@ -346,8 +340,30 @@ p[id*="copyToClipboardHas"]:hover {
 }
 
 #finalImageVertical {
-    height: 270px;
-    width: 216px;
+    height: 225px;
+    width: 180px;
+    border: 2px solid #000000;
+    padding: 10px 10px 10px 10px;
+    background-color: #fff;
+    position: absolute;
+    right: 184px;
+    top: 167px;
+    z-index: 999;
+    box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
+    -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
+    -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
+    transition: .3s ease-in-out;
+}
+#finalImageVertical:hover {
+    scale: 1.03;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    z-index: 999999;
+}
+
+#finalImageStory {
+    height: 320px;
+    width: 180px;
     border: 2px solid #000000;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
@@ -358,39 +374,13 @@ p[id*="copyToClipboardHas"]:hover {
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
+    transition: .3s ease-in-out;
 }
-#finalImageVertical:hover {
+#finalImageStory:hover {
     scale: 1.03;
     transition: .3s ease-in-out;
     cursor: pointer;
     z-index: 999999;
-}
-
-/* Social media platform icons under the images */
-#finalImageVerticalPlatforms {
-    position: absolute;
-    right: 120px;
-    z-index: 50;
-    top: 525px;
-    align-items: center;
-    font-size: 13px;
-}
-#finalImageHorizontalPlatforms {
-    position: absolute;
-    align-items: center;
-    margin-top: 5px;
-    font-size: 13px;
-    z-index: 60;
-    top: 255px;
-    right: 318px;
-}
-#finalImageSquarePlatforms {
-    position: absolute;
-    right: 372px;
-    z-index: 50;
-    top: 545px;
-    align-items: center;
-    font-size: 13px;
 }
 
 .socialMediaIcon {
@@ -475,6 +465,33 @@ p[id*="copyToClipboardHas"]:hover {
     word-wrap: break-word;
 }
 #finalHostVertical {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+#finalTitleStory {
+    font-size: 30px;
+    font-weight: bolder;
+    word-wrap: break-word;
+    padding: 0 0 5px 0;
+}
+#finalDateStory {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+#finalTimeStory {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+#finalLocationStory {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+#finalOrganizationStory {
+    font-size: 20px;
+    word-wrap: break-word;
+}
+#finalHostStory {
     font-size: 20px;
     word-wrap: break-word;
 }
