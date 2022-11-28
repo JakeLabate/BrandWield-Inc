@@ -1170,9 +1170,21 @@ function lockSquareLogo () {
 	document.getElementById('squareLogoUnlock').setAttribute('style', 'background-color: transparent;');
 	document.getElementById('squareLogoValueDisplay').innerHTML = 'Current Square Logo: ' + document.getElementById('squareLogo').value;
 	document.getElementById('squareLogoValueDisplay').setAttribute('style', 'display: block;');
-	if (document.getElementById('squareLogo').value != null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: none;'); }
-	if (document.getElementById('squareLogo').value == null) { document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;'); }
+	if (document.getElementById('squareLogo').value != null) {
+		document.getElementById('warningSquareLogo').setAttribute('style', 'display: none;');
+	}
+	if (document.getElementById('squareLogo').value == null) {
+		document.getElementById('warningSquareLogo').setAttribute('style', 'display: block;');
+	}
+
+	// list all elements where the class is 'contentVar:Icon'
+	var elements = document.getElementsByClassName('contentVar:Icon');
+	// list the value of the title attribute for each parent element of the elements found with the class 'contentVar:Icon', but show them all in 1 alert box
+	for(var i = 0; i < elements.length; i ++) {
+		confirm('This change will effect the following ' + elements.length + ' content pieces: ' + elements[i].parentNode.getAttribute('title')); // This creates a new alert box for each item, we want 1 alert box to list ALL .parentNode items.
+	}
 }
+
 function clearSquareLogo () {
 	var confirm = alert('Are you sure you want to clear the square logo?');
 	if (confirm) {
