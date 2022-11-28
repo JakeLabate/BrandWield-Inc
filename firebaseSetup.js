@@ -585,7 +585,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('founderName', snapshot.val().founderName);
 		document.getElementById('founderName').value = snapshot.val().founderName;
 		document.getElementById('founderName').size = document.getElementById('founderName').value.length + 1;
-		document.getElementById('draggableFounderName').innerHTML = 'Founder Name: ' + snapshot.val().founderName;
 	} else {
 		document.getElementById('founder').placeholder = 'John Doe';
 		document.getElementById('warningFounderName').style.display = 'block';
@@ -595,7 +594,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		// set local storage
 		localStorage.setItem('foundingDate', snapshot.val().foundingDate);
 		document.getElementById('foundingDate').value = snapshot.val().foundingDate;
-		document.getElementById('draggableFoundingDate').innerHTML = 'Founding Date: ' + snapshot.val().foundingDate;
 	} else {
 		document.getElementById('foundingDate').placeholder = '2017';
 		document.getElementById('warningFoundingDate').style.display = 'block';
@@ -605,7 +603,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
 		document.getElementById('tradeBusinessName').value = snapshot.val().tradeBusinessName;
 		document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').value.length + 1;
-		document.getElementById('draggableTradeBusinessName').innerHTML = 'Trade Business Name: ' + snapshot.val().tradeBusinessName;
 
 	} else {
 		document.getElementById('tradeBusinessName').placeholder = 'John\'s Tacos';
@@ -617,7 +614,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
 		document.getElementById('legalBusinessName').value = snapshot.val().legalBusinessName;
 		document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').value.length + 1;
-		document.getElementById('draggableLegalBusinessName').innerHTML = 'Legal Business Name: ' + snapshot.val().legalBusinessName;
 
 	} else {
 		document.getElementById('legalBusinessName').placeholder = 'John\'s Tacos LLC';
@@ -631,7 +627,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('businessType', snapshot.val().businessType);
 		document.getElementById('businessType').value = snapshot.val().businessType;
 		document.getElementById('businessType').size = document.getElementById('businessType').value.length + 1;
-		document.getElementById('draggableBusinessType').innerHTML = 'Business Type: ' + snapshot.val().businessType;
 
 	} else {
 		document.getElementById('businessType').placeholder = 'Restaurant';
@@ -642,7 +637,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('slogan', snapshot.val().slogan);
 		document.getElementById('slogan').value = snapshot.val().slogan;
 		document.getElementById('slogan').size = document.getElementById('slogan').value.length + 1;
-		document.getElementById('draggableSlogan').innerHTML = 'Slogan: ' + snapshot.val().slogan;
 	} else {
 		document.getElementById('slogan').placeholder = 'The Best Tacos in Town';
 		document.getElementById('warningSlogan').style.display = 'block';
@@ -653,7 +647,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('missionStatement', snapshot.val().missionStatement);
 		document.getElementById('missionStatement').value = snapshot.val().missionStatement;
 		document.getElementById('missionStatement').size = document.getElementById('missionStatement').value.length + 1;
-		document.getElementById('draggableMissionStatement').innerHTML = 'Mission Statement: ' + snapshot.val().missionStatement;
 	} else {
 		document.getElementById('missionStatement').placeholder = 'To provide the best tacos in town';
 		document.getElementById('warningMissionStatement').style.display = 'block';
@@ -664,7 +657,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('valueProp', snapshot.val().valueProp);
 		document.getElementById('valueProp').value = snapshot.val().valueProp;
 		document.getElementById('valueProp').size = document.getElementById('valueProp').value.length + 1;
-		document.getElementById('draggableValueProp').innerHTML = 'Value Proposition: ' + snapshot.val().valueProp;
 	} else {
 		document.getElementById('valueProp').placeholder = 'We make tacos with only the finest and freshest ingredients';
 		document.getElementById('warningValueProp').style.display = 'block';

@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JakeLabate/BrandWield-Inc">
-    <img src="brandwieldLogos/squareLogo.png" alt="Logo" width="80" height="100%" />
+    <img src="media/brandwieldLogos/squareLogo.png" alt="Logo" width="80" height="100%" />
   </a>
 
 # BrandWield Inc.

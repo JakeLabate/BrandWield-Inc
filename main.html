@@ -7,7 +7,7 @@
 	<meta name="title" content="BrandWield | Making content vision and content production, synonymous">
 	<meta name="description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="brandwieldLogos/squareLogo.png">
+	<link rel="icon" type="image/png" href="media/brandwieldLogos/squareLogo.png">
 	<meta name="robots" content="index, follow">
 	<script type="application/ld+json">
 		{
@@ -50,7 +50,6 @@
 	<script type="module" src="firebaseSetup.js"></script>
 
 	<!-- JavaScript -->
-	<script src="navbar.js"></script>
 	<script src="myBrand.js"></script>
 	<script src="newContent.js"></script>
 
@@ -1273,6 +1272,7 @@
 				<div style="align-items: center;">
 					<input id="inputEventTitle" class="cleanCursorInput" type="text" placeholder="Title of event" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
+					<span id="titleSentimentAnalysis" class="chip" style="user-select: none; display: none;"></span>
 				</div>
 
 				<div id="hasTitle" style="display: none; line-height: 2em;">
@@ -1349,7 +1349,7 @@
 				<div style="align-items: center;">
 					<input id="inputEventLocation" class="cleanCursorInput" type="text" placeholder="Location of event" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
-					<img id="linkLocation" title="Load Address" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
+					<img id="linkLocation" title="Load Address" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
 				</div>
 				<div id="hasLocation" style="display: none; line-height: 2em;">
 					<div>
@@ -1400,7 +1400,7 @@
 				<div style="align-items: center;">
 					<input id="inputEventHost" class="cleanCursorInput" type="text" placeholder="Host (person) of event" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
-					<img id="linkHost" title="Load Founder Name" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
+					<img id="linkHost" title="Load Founder Name" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
 				</div>
 				<div id="hasHost" style="display: none; line-height: 2em;">
 					<div>
@@ -1426,6 +1426,7 @@
 				<div style="align-items: center;">
 					<input id="inputEventDescription" class="cleanCursorInput" type="text" placeholder="Description of event" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
+					<span id="descriptionSentimentAnalysis" class="chip" style="user-select: none; display: none;"></span>
 				</div>
 				<div id="hasDescription" style="display: none; line-height: 2em;">
 					<div>
@@ -1440,7 +1441,7 @@
 					<input id="inputEventLink" class="cleanCursorInput" type="url" placeholder="Link to register for/preview event" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
 					<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
-					<img id="linkLink" title="Load Website URL" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
+					<img id="linkLink" title="Load Website URL" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
 				</div>
 				<div id="hasLink" style="display: none; line-height: 2em;"></div>
 			</div>
@@ -1450,7 +1451,7 @@
 				<div style="align-items: center;">
 					<input id="inputEventPrimaryColor" class="cleanCursorInput" type="color" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">x</a>
-					<img id="linkPrimarycolor" title="Load Primary Color" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
+					<img id="linkPrimarycolor" title="Load Primary Color" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
 				</div>
 			</div>
 
@@ -1465,7 +1466,7 @@
 
 		</div>
 
-		<!-- Finals -->
+		<!-- Final -->
 		<div id="final" class="column2" style="user-select: none;">
 
 			<!-- IMAGES -->
@@ -1484,33 +1485,33 @@
 				</div>
 			</div>
 			<div id="finalImageVertical" class="imageColors">
-							<text id="finalTitleVertical" class="title"></text>
-							<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
-							<text class="showOnTime">Time: </text><text id="finalTimeVertical" class="time"></text>
-							<text class="showOnLocation">Location: </text><text id="finalLocationVertical" class="location"></text>
-							<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationVertical" class="organization"></text>
-							<text class="showOnHost">Hosted by: </text><text id="finalHostVertical" class="host"></text>
-							<div>
-								<img height="60" width="60" id="verticalImageQRHere" alt="" src="" />
-							</div>
-							<div>
-								<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
-							</div>
-						</div>
+				<text id="finalTitleVertical" class="title"></text>
+				<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
+				<text class="showOnTime">Time: </text><text id="finalTimeVertical" class="time"></text>
+				<text class="showOnLocation">Location: </text><text id="finalLocationVertical" class="location"></text>
+				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationVertical" class="organization"></text>
+				<text class="showOnHost">Hosted by: </text><text id="finalHostVertical" class="host"></text>
+				<div>
+					<img height="60" width="60" id="verticalImageQRHere" alt="" src="" />
+				</div>
+				<div>
+					<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
+				</div>
+			</div>
 			<div id="finalImageSquare" class="imageColors">
-							<text id="finalTitleSquare" class="title"></text>
-							<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
-							<text class="showOnTime">Time: </text><text id="finalTimeSquare" class="time"></text>
-							<text class="showOnLocation">Location: </text><text id="finalLocationSquare" class="location"></text>
-							<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationSquare" class="organization"></text>
-							<text class="showOnHost">Hosted by: </text><text id="finalHostSquare" class="host"></text>
-							<div>
-								<img height="60" width="60" id="squareImageQRHere" alt="" src=""/>
-							</div>
-							<div>
-								<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
-							</div>
-						</div>
+				<text id="finalTitleSquare" class="title"></text>
+				<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
+				<text class="showOnTime">Time: </text><text id="finalTimeSquare" class="time"></text>
+				<text class="showOnLocation">Location: </text><text id="finalLocationSquare" class="location"></text>
+				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationSquare" class="organization"></text>
+				<text class="showOnHost">Hosted by: </text><text id="finalHostSquare" class="host"></text>
+				<div>
+					<img height="60" width="60" id="squareImageQRHere" alt="" src=""/>
+				</div>
+				<div>
+					<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
+				</div>
+			</div>
 			<div id="finalImageStory" class="imageColors">
 				<text id="finalTitleStory" class="title"></text>
 				<text class="showOnDate">Date: </text><text id="finalDateStory" class="date"></text>
@@ -1547,7 +1548,7 @@
 					</text>
 				</p>
 				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-				<button class="copyTextButton" onclick="saveContentFiles(); screenshotAllImages();">Save Content</button>
+				<button class="copyTextButton" onclick="downloadContent();">Download Content</button>
 				<div id="output"></div>
 			</div>
 
@@ -1568,14 +1569,14 @@
 					}
 				</script>
 				<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/facebookWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/linkedinWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/twitterWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/emailWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/redditWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/tumblrWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/telegramWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="socialMediaIcons/whatsappWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/facebookWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/linkedinWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/twitterWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/emailWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/redditWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/tumblrWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/telegramWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/whatsappWhite.png" /></button>
 					<!-- Facebook -->
 					<div id="tabFacebook" class="socialTabContent">
 						<!-- Share Via Facebook -->
@@ -1766,14 +1767,14 @@
 <!-- Integrations Tab -->
 <div id="integrations" class="tabby">
 <h2>My Integrations</h2>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 </div>
 
 </body>

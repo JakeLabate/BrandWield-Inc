@@ -1,5 +1,6 @@
 
 // Output Content Tabs
+
 function openCity(evt, outputTabName) {
 	let i, tabcontent, tablinks;
 	tabcontent = document.getElementsByClassName("tabcontent");
@@ -14,7 +15,6 @@ function openCity(evt, outputTabName) {
 	evt.currentTarget.className += " active";
 
 }
-
 
 // Variable input changes
 function eventTitleUpdate () {
@@ -53,7 +53,10 @@ function eventTitleUpdate () {
 		let text = document.getElementById("inputEventTitle").value;
 		let titleWords = text.split(" ");
 		localStorage.setItem('titleWords', titleWords);
+
 		generateHashtagsForTitle();
+		eventTitleSentimentAnalysis();
+
 	} else {
 		let titleElements = document.getElementsByClassName("title");
 		for (let i = 0; i < titleElements.length; i++) {
@@ -312,8 +315,11 @@ function eventDescriptionUpdate () {
 		let text = document.getElementById("inputEventDescription").value;
 		let descriptionWords = text.split(" ");
 		localStorage.setItem('descriptionWords', descriptionWords);
+
 		generateHashtagsForDescription();
 		placeDescriptionAsSelected();
+		eventDescriptionSentimentAnalysis();
+
 	} else {
 		let descriptionElements = document.getElementsByClassName("description");
 		for (let i = 0; i < descriptionElements.length; i++) {
@@ -1391,115 +1397,13 @@ function placeHashtagsAsSelected () {
 // Screenshot
 // Input: <div id="photo"><button onclick="screenshot();">Take Screenshot</button></div>
 // Output: <div id="output"></div>
-function screenshotAllImages() {
-	screenshotHorizontalFinal();
-	screenshotVerticalFinal();
-	screenshotSquareFinal();
-	screenshotStoryFinal();
-}
-function screenshotHorizontalFinal() {
-	// Set input & output
-	let screenshotTakeable = document.getElementById('finalImageHorizontal');
-	let screenshotPlaceable = document.getElementById('output');
 
-	// Call the CDN function
-	html2canvas(screenshotTakeable).then ( function (canvas) {
-		screenshotPlaceable.appendChild(canvas);
-		canvas.classList.add('screenshotHorizontal');
-		Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
-	});
-
-	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
-	document.getElementById("output").style.display = "none";
-
-	// Download image files
-	setTimeout(function() {
-		var canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
-		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-		// set imageData to localStorage
-		localStorage.setItem('latestScreenshotHorizontal', imageData);
-		window.location = imageData;
-	}, 1000);
-}
-function screenshotVerticalFinal() {
-	// Set input & output
-	let screenshotTakeable = document.getElementById('finalImageVertical');
-	let screenshotPlaceable = document.getElementById('output');
-
-	// Call the CDN function
-	html2canvas(screenshotTakeable).then ( function (canvas) {
-		screenshotPlaceable.appendChild(canvas);
-		canvas.classList.add('screenshotVertical');
-	});
-
-	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
-	document.getElementById("output").style.display = "none";
-
-	// Download image files
-	setTimeout(function() {
-		var canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
-		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-		// set imageData to localStorage
-		localStorage.setItem('latestScreenshotVertical', imageData);
-		window.location = imageData;
-	}, 2000);
-}
-function screenshotSquareFinal() {
-	// Set input & output
-	let screenshotTakeable = document.getElementById('finalImageSquare');
-	let screenshotPlaceable = document.getElementById('output');
-
-	// Call the CDN function
-	html2canvas(screenshotTakeable).then ( function (canvas) {
-		screenshotPlaceable.appendChild(canvas);
-		canvas.classList.add('screenshotSquare');
-	});
-
-	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
-	document.getElementById("output").style.display = "none";
-
-	// Download image files
-	setTimeout(function() {
-		// select ALL canvas elements, and for each one, get the dataURL and download it
-		var canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
-		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-		// set imageData to localStorage
-		localStorage.setItem('latestScreenshotSquare', imageData);
-		window.location = imageData;
-	}, 3000);
-}
-function screenshotStoryFinal() {
-	// Set input & output
-	let screenshotTakeable = document.getElementById('finalImageStory');
-	let screenshotPlaceable = document.getElementById('output');
-
-	// Call the CDN function
-	html2canvas(screenshotTakeable).then ( function (canvas) {
-		screenshotPlaceable.appendChild(canvas);
-		canvas.classList.add('screenshotStory');
-	});
-
-	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
-	document.getElementById("output").style.display = "none";
-
-	// Download image files
-	setTimeout(function() {
-		// select ALL canvas elements, and for each one, get the dataURL and download it
-		var canvas = Array.from(document.querySelectorAll('.screenshotStory')).pop();
-		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-		// set imageData to localStorage
-		localStorage.setItem('latestScreenshotStory', imageData);
-		window.location = imageData;
-	}, 4000);
-}
-
-// SAVE CONTENT FILES
-function saveContentFiles () {
+function downloadFinalTextBlob() {
 
 	// Get the content
 	let blobHtml =
 
-`<!DOCTYPE html>
+		`<!DOCTYPE html>
 	<html lang="en">
 		<head>
 
@@ -1554,6 +1458,193 @@ function saveContentFiles () {
 	a.click();
 	document.body.removeChild(a);
 
+}
+function downloadHorizontalImageFinal() {
+
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageHorizontal');
+	let screenshotPlaceable = document.getElementById('output');
+
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotHorizontal');
+		Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		var canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotHorizontal', imageData);
+		window.location = imageData;
+	}, 1000);
+}
+function downloadVerticalImageFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageVertical');
+	let screenshotPlaceable = document.getElementById('output');
+
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotVertical');
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		var canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotVertical', imageData);
+		window.location = imageData;
+	}, 2000);
+}
+function downloadSquareImageFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageSquare');
+	let screenshotPlaceable = document.getElementById('output');
+
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotSquare');
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		// select ALL canvas elements, and for each one, get the dataURL and download it
+		var canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotSquare', imageData);
+		window.location = imageData;
+	}, 3000);
+}
+function downloadStoryImageFinal() {
+	// Set input & output
+	let screenshotTakeable = document.getElementById('finalImageStory');
+	let screenshotPlaceable = document.getElementById('output');
+
+	// Call the CDN function
+	html2canvas(screenshotTakeable).then ( function (canvas) {
+		screenshotPlaceable.appendChild(canvas);
+		canvas.classList.add('screenshotStory');
+	});
+
+	// Hide to output, so it doesn't show on the page --> needs to be after the CDN call so it can be appended and captured first
+	document.getElementById("output").style.display = "none";
+
+	// Download image files
+	setTimeout(function() {
+		// select ALL canvas elements, and for each one, get the dataURL and download it
+		var canvas = Array.from(document.querySelectorAll('.screenshotStory')).pop();
+		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		// set imageData to localStorage
+		localStorage.setItem('latestScreenshotStory', imageData);
+		window.location = imageData;
+	}, 4000);
+}
+
+function downloadContent() {
+	downloadHorizontalImageFinal();
+	downloadSquareImageFinal();
+	downloadVerticalImageFinal();
+	downloadStoryImageFinal();
+	downloadFinalTextBlob();
+}
+
+function eventTitleSentimentAnalysis() {
+
+	// Get the text
+	let text = document.getElementById("inputEventTitle").value;
+
+	// Set the API key
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
+		},
+		body: '{"language":"english","text":"' + text + '"}'
+	};
+
+	fetch('https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1', options)
+	.then(response => response.json())
+	.then(data => {
+
+		if (text.length > 1) {
+			document.getElementById("titleSentimentAnalysis").innerText = data.sentiment;
+			document.getElementById("titleSentimentAnalysis").style.display = "inline";
+
+			if (data.sentiment == "positive") {
+				document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkgreen";
+				document.getElementById("titleSentimentAnalysis").style.color = "white";
+			} else if (data.sentiment == "negative") {
+				document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkred"
+				document.getElementById("titleSentimentAnalysis").style.color = "white";
+			} else if (data.sentiment == "neutral") {
+				document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkblue"
+				document.getElementById("titleSentimentAnalysis").style.color = "white";
+			}
+		}
+		else {
+			document.getElementById("titleSentimentAnalysis").style.display = "none";
+		}
+	})
+	.catch(err => console.error(err));
+}
+function eventDescriptionSentimentAnalysis() {
+
+	// Get the text
+	let text = document.getElementById("inputEventDescription").value;
+
+	// Set the API key
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
+		},
+		body: '{"language":"english","text":"' + text + '"}'
+	};
+
+	fetch('https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1', options)
+	.then(response => response.json())
+	.then(data => {
+
+		if (text.length > 1) {
+			document.getElementById("descriptionSentimentAnalysis").innerText = data.sentiment;
+			document.getElementById("descriptionSentimentAnalysis").style.display = "inline";
+
+			if (data.sentiment == "positive") {
+				document.getElementById("descriptionSentimentAnalysis").style.backgroundColor = "darkgreen";
+				document.getElementById("descriptionSentimentAnalysis").style.color = "white";
+			} else if (data.sentiment == "negative") {
+				document.getElementById("descriptionSentimentAnalysis").style.backgroundColor = "darkred"
+				document.getElementById("descriptionSentimentAnalysis").style.color = "white";
+			} else if (data.sentiment == "neutral") {
+				document.getElementById("descriptionSentimentAnalysis").style.backgroundColor = "darkblue"
+				document.getElementById("descriptionSentimentAnalysis").style.color = "white";
+			}
+		}
+		else {
+			document.getElementById("descriptionSentimentAnalysis").style.display = "none";
+		}
+	})
+	.catch(err => console.error(err));
 }
 
 
