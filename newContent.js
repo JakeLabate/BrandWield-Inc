@@ -1,6 +1,5 @@
 
 // Output Content Tabs
-
 function openCity(evt, outputTabName) {
 	let i, tabcontent, tablinks;
 	tabcontent = document.getElementsByClassName("tabcontent");

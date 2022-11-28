@@ -78,20 +78,7 @@
 <div id="navBar" style="height: 55px;">
 	<!-- Brand Search -->
 	<div id="brandSearch">
-		<input id="brandSearchInput" class="cleanCursorInput" type="search" placeholder="Search your brand..." list="brandSearchList" size="33" oninput="this.size = this.value.length + 7; if (this.size < 33) {this.size = 33}">
-		<datalist id="brandSearchList">
-			<!-- Values are added from the .appendChild functions in firebaseSetup.js...
-			loading brand variables (both .innerHTML & 'value' are searchable) -->
-			<optgroup id="contactOptGroup" label="Contact"></optgroup>
-			<optgroup id="addressOptGroup" label="Address"></optgroup>
-			<optgroup id="foundingOptGroup" label="Founding"></optgroup>
-			<optgroup id="hoursOfOperationOptGroup" label="Hours of Operation"></optgroup>
-			<optgroup id="basicOptGroup" label="Basic"></optgroup>
-			<optgroup id="socialOptGroup" label="Social"></optgroup>
-			<optgroup id="brandOptGroup" label="Brand"></optgroup>
-			<optgroup id="offeringsOptGroup" label="Offerings"></optgroup>
-			<optgroup id="peopleOptGroup" label="People"></optgroup>
-		</datalist>
+		<input id="brandSearchInput" class="cleanCursorInput" type="search" placeholder="Search your brand..." list="brandSearchFullList" size="33" oninput="this.size = this.value.length + 7; if (this.size < 33) {this.size = 33}">
 	</div>
 	<text class="navTab" onclick="selectContentType('brand')">Brand</text>
 	<text class="navTab" onclick="selectContentType('content')">Content</text>
@@ -1194,28 +1181,32 @@
 		<h3>Social Media Banners</h3>
 		<div>
 			<h4>Facebook</h4>
-			<div id="facebookBannerImage" style="width: 820px; height: 312px; border: 2px solid #000000">
+			<div id="facebookBannerImage" title="Facebook Banner" style="width: 820px; height: 312px; border: 2px solid #000000">
 				<div id="facebookBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 369px; height: 190px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 120px; left: 0;">Logo safe area</div>
+				<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
 			</div>
 		</div>
 		<div>
 			<h4>LinkedIn</h4>
-			<div id="linkedinBannerImage" style="width: 1128px; height: 191px; border: 2px solid #000000">
+			<div id="linkedinBannerImage" title="LinkedIn Banner" style="width: 1128px; height: 191px; border: 2px solid #000000">
 				<div id="linkedinBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 203px; height: 114px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 73px; left: 0;">Logo safe area</div>
+				<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
 			</div>
 		</div>
 		<div>
 			<h4>Twitter</h4>
-			<div id="twitterBannerImage" style="width: 1500px; height: 500px; border: 2px solid #000000">
+			<div id="twitterBannerImage" title="Twitter Banner" style="width: 1500px; height: 500px; border: 2px solid #000000">
 				<div id="twitterBannerNotchSafArea" style="color: white; background-color: #5d5d5d; width: 1496px; height: 125px; border-bottom: 2px solid #000000; position: relative; top: 0;">Notch safe area</div>
 				<div id="twitterBannerMobileNavLeftSafeArea" style="color: white; background-color: #5d5d5d; width: 300px; height: 175px; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Mobile nav left safe area (same area on right side, but we are having issues blocking off that space like we did here on the left side.)</div>
 				<div id="twitterBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 450px; height: 198px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Logo safe area</div>
+				<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
 			</div>
 		</div>
 		<div>
 			<h4>YouTube</h4>
-			<div id="youtubeBannerImage" style="width: 2048px; height: 326px; border: 2px solid #000000">
+			<div id="youtubeBannerImage" title="YouTube Banner" style="width: 2048px; height: 326px; border: 2px solid #000000">
 				<div id="youtubeBannerSocialLinksSafeArea" style="color: white; background-color: #5d5d5d; width: 326px; height: 80px; border-top: 2px solid #000000; border-left: 2px solid #000000; position: relative; top: 244px; left: 1720px;">Social links safe area</div>
+				<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
 			</div>
 		</div>
 	</div>
@@ -1229,12 +1220,13 @@
 				<h5>Front</h5>
 				<div id="businessCard1FrontImage" title="Business Card 1: Front" style="width: 700px; height: 400px; border: 2px solid #000000">
 					<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
-					<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
 				</div>
 			</div>
 			<div>
 				<h5>Back</h5>
-				<div id="businessCard1BackImage" style="width: 700px; height: 400px; border: 2px solid #000000"></div>
+				<div id="businessCard1BackImage" title="Business Card 1: Back" style="width: 700px; height: 400px; border: 2px solid #000000">
+					<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -1244,7 +1236,9 @@
 		<h3>Letter Heads</h3>
 		<div>
 			<h4>Letter Head 1</h4>
-			<div id="letterHead1" style="width: 816px; height: 1056px; border: 2px solid #000000"></div>
+			<div id="letterHead1" title="Letter Head 1" style="width: 816px; height: 1056px; border: 2px solid #000000">
+				<img class="contentVar:Icon" alt="" src="media/brandwieldLogos/squareLogo.png"/>
+			</div>
 		</div>
 	</div>
 
@@ -1780,7 +1774,26 @@
 	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 </div>
 
-<div id="popup" style="height: 300px; width: 300px; background-color: #5d5d5d"></div>
+<!-- STORAGE -->
+<datalist id="brandSearchFullList">
+	<optgroup id="contactOptGroup" label="Contact"></optgroup>
+	<optgroup id="addressOptGroup" label="Address"></optgroup>
+	<optgroup id="foundingOptGroup" label="Founding"></optgroup>
+	<optgroup id="hoursOfOperationOptGroup" label="Hours of Operation"></optgroup>
+	<optgroup id="basicOptGroup" label="Basic"></optgroup>
+	<optgroup id="socialOptGroup" label="Social"></optgroup>
+	<optgroup id="brandOptGroup" label="Brand"></optgroup>
+	<optgroup id="offeringsOptGroup" label="Offerings"></optgroup>
+	<optgroup id="peopleOptGroup" label="People"></optgroup>
+</datalist>
+<datalist id="brandSearchTypeList">
+	<optgroup id="textOptGroup" label="Text"></optgroup>
+	<optgroup id="dateOptGroup" label="Dates"></optgroup>
+	<optgroup id="colorOptGroup" label="Colors"></optgroup>
+	<optgroup id="urlOptGroup" label="URLs"></optgroup>
+	<optgroup id="telOptGroup" label="Phone Numbers"></optgroup>
+	<optgroup id="emailOptGroup" label="Emails"></optgroup>
+</datalist>
 
 </body>
 </html>

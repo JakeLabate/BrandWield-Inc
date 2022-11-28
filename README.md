@@ -14,7 +14,7 @@
 // audit BrandWield's mission statement
 function auditMissionStatement () {
 	if (contentMarketer.vision != contentMarketer.production) {
-		brandWield.mission = 'incomplete'
+		brandWield.mission.status = 'incomplete'
 	}
 	else {
 		reviseMissionStatement
@@ -31,7 +31,7 @@ let yourEquity = '40%'
 let yourNetWorth = brandWieldEval * yourEquity;
 
 // propose a partnership
-if (you.goal == 'worldDomination' && you.futureTitle == 'coFounder' && you.intellengenct == 'fuckingBrilliant' && you.ambition == 'unlimited' && you.personality == 'genuine') 
+if (you.goal == 'worldDomination' && you.futureTitle == 'coFounder' && you.iq > 130 && you.ambition == 'unlimited' && you.personality == 'genuine') 
 {
     // rejoice
     document.getElementById('you.happiness').value = 'BrandWield Inc.';
