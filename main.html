@@ -54,6 +54,18 @@
 	<script src="myBrand.js"></script>
 	<script src="newContent.js"></script>
 
+	<!-- Navigation Bar Script -->
+	<script>
+		function selectContentType(tabby) {
+			let i;
+			let x = document.getElementsByClassName("tabby");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			document.getElementById(tabby).style.display = "block";
+		}
+	</script>
+
 	<!-- HTML2Canvas Screenshot Capture -->
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
@@ -63,59 +75,33 @@
 </head>
 <body>
 
-<!-- Search Bar -->
-<div id="searchBar" style="height: 55px">
-
-	<!-- Brand Icon -->
-	<img id="logoIcon" alt="Brand Logo" src="brandwieldLogos/squareLogo.png" onmouseover="onmouseoverBrandWieldIcon();" onclick="onclickBrandWieldIcon();"/>
-
-	<!-- Brand Icon Dropdown -->
-	<div id="brandDropdown" class="dropzone" onmouseleave="this.style.display = 'none';"><br>
-		<b id="draggableContactInfoSectionHeader" onmouseover="onmouseoverDraggableContactInfoSection();">Contact Info:</b><br><br><b id="draggableContactInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableContactInfoSection();">
-			<!-- Edit Button showing the potential feature of editing brand info in the 'brandbar' -->
-			<span class="material-symbols-outlined edit" onclick="document.getElementById('draggablePrimaryContactPhone').style.backgroundColor = '#fff'">edit</span>
-			<span id="draggablePrimaryContactPhone" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggablePrimaryContactEmail" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggablePrimaryContactWebsite" class="draggableBrandVar chip" draggable="true"></span><br><br>
-		</b>
-		<b id="draggableFoundingInfoSectionHeader" onmouseover="onmouseoverDraggableFoundingInfoSection();">Founding Info:</b><br><br><b id="draggableFoundingInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableFoundingInfoSection();">
-			<span id="draggableFounderName" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggableFoundingDate" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggableTradeBusinessName" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggableLegalBusinessName" class="draggableBrandVar chip" draggable="true"></span><br><br>
-		</b>
-		<b id="draggableBusinessInfoSectionHeader" onmouseover="onmouseoverDraggableBusinessInfoSection();">Business Info:</b><br><br><b id="draggableBusinessInfoSection" style="display: none;" onmouseleave="onmouseleaveDraggableBusinessInfoSection();">
-			<span id="draggableBusinessType" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggableSlogan" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggableMissionStatement" class="draggableBrandVar chip" draggable="true"></span><br><br>
-			<span id="draggableValueProp" class="draggableBrandVar chip" draggable="true"></span><br><br>
-		</b>
+<!-- Nav Bar -->
+<div id="navBar" style="height: 55px;">
+	<!-- Brand Search -->
+	<div id="brandSearch">
+		<input id="brandSearchInput" class="cleanCursorInput" type="search" placeholder="Search your brand..." list="brandSearchList" size="33" oninput="this.size = this.value.length + 7; if (this.size < 33) {this.size = 33}">
+		<datalist id="brandSearchList">
+			<!-- Values are added from the .appendChild functions in firebaseSetup.js...
+			loading brand variables (both .innerHTML & 'value' are searchable) -->
+			<optgroup id="contactOptGroup" label="Contact"></optgroup>
+			<optgroup id="addressOptGroup" label="Address"></optgroup>
+			<optgroup id="foundingOptGroup" label="Founding"></optgroup>
+			<optgroup id="hoursOfOperationOptGroup" label="Hours of Operation"></optgroup>
+			<optgroup id="basicOptGroup" label="Basic"></optgroup>
+			<optgroup id="socialOptGroup" label="Social"></optgroup>
+			<optgroup id="brandOptGroup" label="Brand"></optgroup>
+			<optgroup id="offeringsOptGroup" label="Offerings"></optgroup>
+			<optgroup id="peopleOptGroup" label="People"></optgroup>
+		</datalist>
 	</div>
-
-	<!-- Settings Tab (currently just 'integration') -->
-	<span class="material-symbols-outlined" onclick="selectContentType('integrations')" style="position: absolute; right: 12px; top: 16px">settings</span>
-
-</div>
-
-<!-- Tabs -->
-<script>
-	function selectContentType(cityName) {
-		let i;
-		let x = document.getElementsByClassName("city");
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";
-		}
-		document.getElementById(cityName).style.display = "block";
-	}
-</script>
-<div class="tabs">
-	<button class="tab" onclick="selectContentType('brand')">My Brand</button>
-	<button class="tab" onclick="selectContentType('content')">My Content</button>
-	<button class="tab" onclick="selectContentType('newContent')">New Content</button>
+	<text class="navTab" onclick="selectContentType('brand')">Brand</text>
+	<text class="navTab" onclick="selectContentType('content')">Content</text>
+	<text class="navTab" onclick="selectContentType('newContent')">New Content</text>
+	<text class="navTab" onclick="selectContentType('integrations')">Integration</text>
 </div>
 
 <!-- Brand Tab -->
-<div id="brand" class="w3-container w3-display-container city">
+<div id="brand" class="tabby">
 
 	<!-- Contact -->
 	<details>
@@ -1130,7 +1116,7 @@
 </div>
 
 <!-- Content Tab -->
-<div id="content" class="w3-container w3-display-container city" style="display:none">
+<div id="content" class="tabby">
 	<h2>My Content</h2>
 
 	<br><br>
@@ -1176,25 +1162,25 @@
 					<tbody>
 					<tr>
 						<td style="vertical-align: middle; width: 428px;">
-							<p style="margin: 0px; font-size: 14px; color: #3176b5; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><em><strong>Debbie&nbsp;O'Dell</strong></em></p>
+							<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><em><strong>Debbie&nbsp;O'Dell</strong></em></p>
 							<table style="font-family: 'Times New Roman';">
 								<tbody>
 								<tr>
 									<td style="vertical-align: middle; width: 428px;">
-										<p style="margin: 0px; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';">&nbsp;</p>
-										<p style="margin: 0px; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><em><strong>County Electric Construction Inc.</strong></em></p>
-										<p style="margin: 0px; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><span style="color: #7b7d9d; font-style: italic;"><strong>102 Central Avenue, Bridgeport, CT 06607</strong></span></p>
-										<p style="color: #7b7d9d; margin: 0px; font-size: 14px; line-height: 18px; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif'; font-style: italic;"><a style="color: #3176b5;" title="Call County Electric" href="tel:203-367-7500" target="_blank" rel="noopener"><strong>203-367-7500</strong></a><br /><a style="color: #3176b5 !important; font-weight: bold; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';" title="Visit County Electric Website" href="https://www.county-electric.com" target="_blank">www.county-electric.com</a></p>
+										<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';">&nbsp;</p>
+										<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><em><strong>County Electric Construction Inc.</strong></em></p>
+										<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><span style="color: #7b7d9d; font-style: italic;"><strong>102 Central Avenue, Bridgeport, CT 06607</strong></span></p>
+										<p style="color: #7b7d9d; margin: 0; font-size: 14px; line-height: 18px; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif'; font-style: italic;"><a style="color: #3176b5;" title="Call County Electric" href="tel:203-367-7500" target="_blank" rel="noopener"><strong>203-367-7500</strong></a><br /><a style="color: #3176b5 !important; font-weight: bold; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';" title="Visit County Electric Website" href="https://www.county-electric.com" target="_blank">www.county-electric.com</a></p>
 									</td>
 								</tr>
 								</tbody>
 							</table>
 							<br />
-							<p style="color: #7b7d9d; margin: 0px; font-size: 14px; line-height: 18px; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif'; font-style: italic;">&nbsp;</p>
+							<p style="color: #7b7d9d; margin: 0; font-size: 14px; line-height: 18px; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif'; font-style: italic;">&nbsp;</p>
 						</td>
 					</tr>
 					<tr>
-						<td style="vertical-align: top;"><a title="Visit County Electric Website" href="https://www.county-electric.com" target="_blank"><img style="max-width: 250px; display: inline-block;" src="https://uploads-ssl.webflow.com/622fa7e7f563138da06751e0/625828c68575cf75ee436cba_CENEWLOGO(2917%20%C3%97%201124%20px)-p-500.png" /></a></td>
+						<td style="vertical-align: top;"><a title="Visit County Electric Website" href="https://www.county-electric.com" target="_blank"><img alt="" style="max-width: 250px; display: inline-block;" src="https://uploads-ssl.webflow.com/622fa7e7f563138da06751e0/625828c68575cf75ee436cba_CENEWLOGO(2917%20%C3%97%201124%20px)-p-500.png" /></a></td>
 					</tr>
 					</tbody>
 				</table>
@@ -1263,7 +1249,7 @@
 </div>
 
 <!-- New Content Tab -->
-<div id="newContent" class="w3-container w3-display-container city" style="display:none">
+<div id="newContent" class="tabby">
 
 		<!-- Outputs -->
 		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
@@ -1285,7 +1271,7 @@
 			<!-- Title -->
 			<div id="TitleTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventTitle" class="cleanCursorInput" type="text" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventTitle" class="cleanCursorInput" type="text" placeholder="Title of event" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
 				</div>
 
@@ -1361,7 +1347,7 @@
 			<!-- Location -->
 			<div id="LocationTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventLocation" class="cleanCursorInput" type="text" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventLocation" class="cleanCursorInput" type="text" placeholder="Location of event" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
 					<img id="linkLocation" title="Load Address" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
 				</div>
@@ -1387,7 +1373,7 @@
 			<!-- Organization -->
 			<div id="OrganizationTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventOrganization" class="cleanCursorInput" type="text" onkeyup="eventOrganizationUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventOrganization" class="cleanCursorInput" type="text" placeholder="Organization hosting event" onkeyup="eventOrganizationUpdate(); placeHashtagsAsSelected();">
 					<a  title="Clear field" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">x</a>
 				</div>
 				<div id="hasOrganization" style="display: none; line-height: 2em;">
@@ -1412,7 +1398,7 @@
 			<!-- Host -->
 			<div id="HostTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventHost" class="cleanCursorInput" type="text" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventHost" class="cleanCursorInput" type="text" placeholder="Host (person) of event" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
 					<img id="linkHost" title="Load Founder Name" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
 				</div>
@@ -1438,7 +1424,7 @@
 			<!-- Description -->
 			<div id="DescriptionTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventDescription" class="cleanCursorInput" type="text" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventDescription" class="cleanCursorInput" type="text" placeholder="Description of event" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
 				</div>
 				<div id="hasDescription" style="display: none; line-height: 2em;">
@@ -1451,7 +1437,7 @@
 			<!-- Link -->
 			<div id="LinkTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventLink" class="cleanCursorInput" type="url" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventLink" class="cleanCursorInput" type="url" placeholder="Link to register for/preview event" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
 					<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
 					<img id="linkLink" title="Load Website URL" src="otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
@@ -1496,7 +1482,6 @@
 				<div>
 					<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
 				</div>
-
 			</div>
 			<div id="finalImageVertical" class="imageColors">
 							<text id="finalTitleVertical" class="title"></text>
@@ -1539,7 +1524,6 @@
 				<div>
 					<img class="showOnLogo" height="60" width="60" id="storyImageLogoHere" alt="" src="" />
 				</div>
-
 			</div>
 
 			<!-- TEXT -->
@@ -1552,7 +1536,7 @@
 					<text id="selectedOrganizationOutput"></text><text id="consideredOrganizationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-organization-sentence}}&nbsp;</text>
 					<text id="selectedHostOutput"></text><text id="consideredHostOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-host-sentence}}&nbsp;</text>
 					<text id="selectedDescriptionOutput"></text><text id="consideredDescriptionOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-description}}&nbsp;</text>
-					<text id="hashtagsContainer" style="display: none;"><br>
+					<text id="hashtagsContainer"><br>
 						<text id="hashtagsHere" class="hashtagsHere">
 							<text id="hashtagsHereForTitle"></text>
 							<text id="hashtagsHereForLocation"></text>
@@ -1562,7 +1546,7 @@
 						</text>
 					</text>
 				</p>
-				<span contenteditable="false" style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 				<button class="copyTextButton" onclick="saveContentFiles(); screenshotAllImages();">Save Content</button>
 				<div id="output"></div>
 			</div>
@@ -1780,7 +1764,7 @@
 </div>
 
 <!-- Integrations Tab -->
-<div id="integrations" class="w3-container w3-display-container city" style="display:none">
+<div id="integrations" class="tabby">
 <h2>My Integrations</h2>
 	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
 	<div class="integration" style="align-items: center;"><img alt="" src="socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>

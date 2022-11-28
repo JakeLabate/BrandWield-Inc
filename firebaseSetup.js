@@ -39,7 +39,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().squareLogo != null) {
 		// set local storage
 		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
-		document.getElementById('logoIcon').src = snapshot.val().squareLogo;
+
 		document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
 		document.getElementById('squareLogoBro').style.maxWidth = '32px';
 		document.getElementById('squareLogoBro').style.maxHeight = '32px';
@@ -59,6 +59,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().facebookUrl != null) {
 		// set local storage
 		localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Facebook URL';
+
 		document.getElementById('facebookUrl').value = snapshot.val().facebookUrl;
 		document.getElementById('facebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
 	} else {
@@ -69,6 +74,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().facebookUsername != null) {
 		// set local storage
 		localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUsername);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Facebook Username';
+
 		document.getElementById('facebookUsername').value = snapshot.val().facebookUsername;
 		document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').value.length + 1;
 	} else {
@@ -79,6 +89,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().instagramUrl != null) {
 		// set local storage
 		localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Instagram URL';
+
 		document.getElementById('instagramUrl').value = snapshot.val().instagramUrl;
 		document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').value.length + 1;
 	} else {
@@ -89,6 +104,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().instagramUsername != null) {
 		// set local storage
 		localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUsername);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Instagram Username';
+
 		document.getElementById('instagramUsername').value = snapshot.val().instagramUsername;
 		document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').value.length + 1;
 	} else {
@@ -99,6 +119,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().linkedinUrl != null) {
 		// set local storage
 		localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'LinkedIn URL';
+
 		document.getElementById('linkedinUrl').value = snapshot.val().linkedinUrl;
 		document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').value.length + 1;
 	} else {
@@ -109,6 +134,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().linkedinUsername != null) {
 		// set local storage
 		localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUsername);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'LinkedIn Username';
+
 		document.getElementById('linkedinUsername').value = snapshot.val().linkedinUsername;
 		document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').value.length + 1;
 	} else {
@@ -119,6 +149,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().twitterUrl != null) {
 		// set local storage
 		localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Twitter URL';
+
 		document.getElementById('twitterUrl').value = snapshot.val().twitterUrl;
 		document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').value.length + 1;
 	} else {
@@ -129,6 +164,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().twitterUsername != null) {
 		// set local storage
 		localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUsername);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Twitter Username';
+
 		document.getElementById('twitterUsername').value = snapshot.val().twitterUsername;
 		document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').value.length + 1;
 	} else {
@@ -139,6 +179,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().tiktokUrl != null) {
 		// set local storage
 		localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'TikTok Url';
+
 		document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
 		document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
 	} else {
@@ -149,6 +194,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().tiktokUsername != null) {
 		// set local storage
 		localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUsername);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'TikTok Username';
+
 		document.getElementById('tiktokUsername').value = snapshot.val().tiktokUsername;
 		document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').value.length + 1;
 	} else {
@@ -161,6 +211,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().primaryColor != null) {
 		// set local storage
 		localStorage.setItem('primaryColor', snapshot.val().primaryColor);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('brandOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
+		document.getElementById('brandOptGroup').lastChild.innerHTML = 'Primary Color';
+
 		document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
 		document.getElementById('primaryColor').value = snapshot.val().primaryColor;
 		document.getElementById('inputEventPrimaryColor').value = '#ffffff';
@@ -179,6 +234,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().secondaryColor != null) {
 		// set local storage
 		localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('brandOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
+		document.getElementById('brandOptGroup').lastChild.innerHTML = 'Secondary Color';
+
 		document.documentElement.style.setProperty('--secondaryColor', snapshot.val().secondaryColor);
 		document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
 		document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
@@ -195,6 +255,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().tertiaryColor != null) {
 		// set local storage
 		localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('brandOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
+		document.getElementById('brandOptGroup').lastChild.innerHTML = 'Tertiary Color';
+
 		document.documentElement.style.setProperty('--tertiaryColor', snapshot.val().tertiaryColor);
 		document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
 		document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
@@ -213,6 +278,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().primaryFont != null) {
 		// set local storage
 		localStorage.setItem('primaryFont', snapshot.val().primaryFont);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryFont);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Tertiary Font';
+
 		document.documentElement.style.setProperty('--primaryFont', snapshot.val().primaryFont);
 		document.getElementById('primaryFont').value = snapshot.val().primaryFont;
 		document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
@@ -224,6 +294,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().secondaryFont != null) {
 		// set local storage
 		localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryFont);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Secondary Font';
+
 		document.documentElement.style.setProperty('--secondaryFont', snapshot.val().secondaryFont);
 		document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
 		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
@@ -235,6 +310,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().tertiaryFont != null) {
 		// set local storage
 		localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryFont);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Font';
+
 		document.documentElement.style.setProperty('--tertiaryFont', snapshot.val().tertiaryFont);
 		document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
 		document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
@@ -248,9 +328,13 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().primaryContactPhone != null) {
 		// set local storage
 		localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactPhone);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Contact Phone';
+
 		document.getElementById('primaryContactPhone').value = snapshot.val().primaryContactPhone;
 		document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').value.length + 1;
-		document.getElementById('draggablePrimaryContactPhone').innerHTML = 'Contact Phone: ' + snapshot.val().primaryContactPhone;
 	} else {
 		document.getElementById('primaryContactPhone').placeholder = '555-555-5555';
 		document.getElementById('warningPrimaryContactPhone').style.display = 'block';
@@ -259,9 +343,13 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().primaryContactEmail != null) {
 		// set local storage
 		localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactEmail);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Contact Email';
+
 		document.getElementById('primaryContactEmail').value = snapshot.val().primaryContactEmail;
 		document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').value.length + 2;
-		document.getElementById('draggablePrimaryContactEmail').innerHTML = 'Contact Email: ' + snapshot.val().primaryContactEmail;
 	} else {
 		document.getElementById('primaryContactEmail').placeholder = 'sampleemail@gmail.com';
 		document.getElementById('warningPrimaryContactEmail').style.display = 'block';
@@ -270,9 +358,13 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().primaryContactWebsite != null) {
 		// set local storage
 		localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactWebsite);
+		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Contact Website';
+
 		document.getElementById('primaryContactWebsite').value = snapshot.val().primaryContactWebsite;
 		document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').value.length + 1;
-		document.getElementById('draggablePrimaryContactWebsite').innerHTML = 'Contact Website: ' + snapshot.val().primaryContactWebsite;
 	} else {
 		document.getElementById('primaryContactWebsite').placeholder = 'https://www.mySite.com';
 		document.getElementById('warningPrimaryContactWebsite').style.display = 'block';
@@ -281,8 +373,14 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// Address
 	if (snapshot.val().officeAddressStreet1 != null) {
+		console.log('officeAddressStreet1');
 		// set local storage
 		localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet1);
+		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Street 1';
+
 		document.getElementById('officeAddressStreet1').value = snapshot.val().officeAddressStreet1;
 		document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').value.length + 1;
 	} else {
@@ -293,6 +391,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().officeAddressStreet2 != null) {
 		// set local storage
 		localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet2);
+		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Street 2';
+
 		document.getElementById('officeAddressStreet2').value = snapshot.val().officeAddressStreet2;
 		document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').value.length + 1;
 	} else {
@@ -303,6 +406,12 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().officeAddressCity != null) {
 		// set local storage
 		localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCity);
+		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address City';
+
 		document.getElementById('officeAddressCity').value = snapshot.val().officeAddressCity;
 		document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').value.length + 1;
 	} else {
@@ -313,6 +422,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().officeAddressState != null) {
 		// set local storage
 		localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressState);
+		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address State';
+
 		document.getElementById('officeAddressState').value = snapshot.val().officeAddressState;
 		document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').value.length + 1;
 	} else {
@@ -323,6 +437,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().officeAddressZip != null) {
 		// set local storage
 		localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressZip);
+		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Zip';
+
 		document.getElementById('officeAddressZip').value = snapshot.val().officeAddressZip;
 		document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').value.length + 1;
 	} else {
@@ -333,6 +452,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.val().officeAddressCountry != null) {
 		// set local storage
 		localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
+
+		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCountry);
+		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Country';
+
 		document.getElementById('officeAddressCountry').value = snapshot.val().officeAddressCountry;
 		document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').value.length + 1;
 	} else {

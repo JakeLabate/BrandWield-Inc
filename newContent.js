@@ -15,6 +15,7 @@ function openCity(evt, outputTabName) {
 
 }
 
+
 // Variable input changes
 function eventTitleUpdate () {
 
