@@ -1,6 +1,9 @@
+console.log("firebaseSetup.js loaded");
+
 // Import CDN Resources
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
 
 // Firebase Config
 const firebaseConfig = {
@@ -33,359 +36,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		console.log("No Brand Returned");
 	}
 
-	// Set Brand Variables in BrandWield App if they exist
-
-	// squareLogo
-	if (snapshot.val().squareLogo != null) {
-		// set local storage
-		localStorage.setItem('squareLogo', snapshot.val().squareLogo);
-
-		document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
-		document.getElementById('squareLogoBro').style.maxWidth = '32px';
-		document.getElementById('squareLogoBro').style.maxHeight = '32px';
-	} else {
-	}
-	// fullLogo
-	if (snapshot.val().fullLogo != null) {
-		// set local storage
-		localStorage.setItem('fullLogo', snapshot.val().fullLogo);
-		document.getElementById('fullLogoBro').src = snapshot.val().fullLogo;
-		document.getElementById('fullLogoBro').style.maxWidth = '250px';
-		document.getElementById('fullLogoBro').style.maxHeight = '250px';
-	} else {
-	}
-
-	// Social Media
-	if (snapshot.val().facebookUrl != null) {
-		// set local storage
-		localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
-
-		// Create an 'option' element under the 'brandList(s)' for search reference in the Brand Search
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Facebook URL';
-		document.getElementById('urlOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
-		document.getElementById('urlOptGroup').lastChild.innerHTML = 'Facebook URL';
-
-		document.getElementById('facebookUrl').value = snapshot.val().facebookUrl;
-		document.getElementById('facebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
-	} else {
-		document.getElementById('facebookUrl').placeholder = 'https://facebook.com/myPage';
-		document.getElementById('warningFacebookURL').style.display = 'block';
-		document.getElementById('facebookUrl').size = document.getElementById('facebookUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().facebookUsername != null) {
-		// set local storage
-		localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUsername);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Facebook Username';
-
-		document.getElementById('facebookUsername').value = snapshot.val().facebookUsername;
-		document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').value.length + 1;
-	} else {
-		document.getElementById('facebookUsername').placeholder = 'myPage';
-		document.getElementById('warningFacebookUsername').style.display = 'block';
-		document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').placeholder.length + 1;
-	}
-	if (snapshot.val().instagramUrl != null) {
-		// set local storage
-		localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Instagram URL';
-		document.getElementById('urlOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
-		document.getElementById('urlOptGroup').lastChild.innerHTML = 'Instagram URL';
-
-		document.getElementById('instagramUrl').value = snapshot.val().instagramUrl;
-		document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').value.length + 1;
-	} else {
-		document.getElementById('instagramUrl').placeholder = 'https://instagram.com/myPage';
-		document.getElementById('warningInstagramURL').style.display = 'block';
-		document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().instagramUsername != null) {
-		// set local storage
-		localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUsername);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Instagram Username';
-
-		document.getElementById('instagramUsername').value = snapshot.val().instagramUsername;
-		document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').value.length + 1;
-	} else {
-		document.getElementById('instagramUsername').placeholder = 'myPage';
-		document.getElementById('warningInstagramUsername').style.display = 'block';
-		document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').placeholder.length + 1;
-	}
-	if (snapshot.val().linkedinUrl != null) {
-		// set local storage
-		localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'LinkedIn URL';
-		document.getElementById('urlOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
-		document.getElementById('urlOptGroup').lastChild.innerHTML = 'LinkedIn URL';
-
-		document.getElementById('linkedinUrl').value = snapshot.val().linkedinUrl;
-		document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').value.length + 1;
-	} else {
-		document.getElementById('linkedinUrl').placeholder = 'https://linkedin.com/myPage';
-		document.getElementById('warningLinkedinURL').style.display = 'block';
-		document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().linkedinUsername != null) {
-		// set local storage
-		localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUsername);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'LinkedIn Username';
-
-		document.getElementById('linkedinUsername').value = snapshot.val().linkedinUsername;
-		document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').value.length + 1;
-	} else {
-		document.getElementById('linkedinUsername').placeholder = 'myPage';
-		document.getElementById('warningLinkedinUsername').style.display = 'block';
-		document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').placeholder.length + 1;
-	}
-	if (snapshot.val().twitterUrl != null) {
-		// set local storage
-		localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Twitter URL';
-		document.getElementById('urlOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
-		document.getElementById('urlOptGroup').lastChild.innerHTML = 'Twitter URL';
-
-		document.getElementById('twitterUrl').value = snapshot.val().twitterUrl;
-		document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').value.length + 1;
-	} else {
-		document.getElementById('twitterUrl').placeholder = 'https://twitter.com/myPage';
-		document.getElementById('warningTwitterURL').style.display = 'block';
-		document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().twitterUsername != null) {
-		// set local storage
-		localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUsername);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Twitter Username';
-
-		document.getElementById('twitterUsername').value = snapshot.val().twitterUsername;
-		document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').value.length + 1;
-	} else {
-		document.getElementById('twitterUsername').placeholder = 'myPage';
-		document.getElementById('warningTwitterUsername').style.display = 'block';
-		document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').placeholder.length + 1;
-	}
-	if (snapshot.val().tiktokUrl != null) {
-		// set local storage
-		localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'TikTok Url';
-		document.getElementById('urlOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
-		document.getElementById('urlOptGroup').lastChild.innerHTML = 'TikTok URL';
-
-		document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
-		document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
-	} else {
-		document.getElementById('tiktokUrl').placeholder = 'https://tiktok.com/myPage';
-		document.getElementById('warningTiktokURL').style.display = 'block';
-		document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().tiktokUsername != null) {
-		// set local storage
-		localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUsername);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'TikTok Username';
-
-		document.getElementById('tiktokUsername').value = snapshot.val().tiktokUsername;
-		document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').value.length + 1;
-	} else {
-		document.getElementById('tiktokUsername').placeholder = 'myPage';
-		document.getElementById('warningTiktokUsername').style.display = 'block';
-		document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').placeholder.length + 1;
-	}
-
-	// Colors
-	if (snapshot.val().primaryColor != null) {
-		// set local storage
-		localStorage.setItem('primaryColor', snapshot.val().primaryColor);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('brandOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
-		document.getElementById('brandOptGroup').lastChild.innerHTML = 'Primary Color';
-		document.getElementById('colorOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
-		document.getElementById('colorOptGroup').lastChild.innerHTML = 'PrimaryColor';
-
-		document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
-		document.getElementById('primaryColor').value = snapshot.val().primaryColor;
-		document.getElementById('inputEventPrimaryColor').value = '#ffffff';
-		document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
-		document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
-		document.getElementById('primaryColorValueDisplayColor').style.backgroundColor = document.getElementById('primaryColor').value;
-		document.getElementById('primaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
-		document.getElementById('primaryColorValueDisplayColor').style.borderRadius = '25px';
-		document.getElementById('primaryColorValueDisplayColor').style.borderWidth = '3px';
-		document.getElementById('primaryColorValueDisplayColor').style.borderStyle = 'solid'
-
-	} else {
-		document.getElementById('primaryColor').placeholder = '#1d1d6e';
-		document.getElementById('warningPrimaryColor').style.display = 'block';
-	}
-	if (snapshot.val().secondaryColor != null) {
-		// set local storage
-		localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('brandOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
-		document.getElementById('brandOptGroup').lastChild.innerHTML = 'Secondary Color';
-		document.getElementById('colorOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
-		document.getElementById('colorOptGroup').lastChild.innerHTML = 'Secondary Color';
-
-		document.documentElement.style.setProperty('--secondaryColor', snapshot.val().secondaryColor);
-		document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
-		document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
-		document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
-		document.getElementById('secondaryColorValueDisplayColor').style.backgroundColor = document.getElementById('secondaryColor').value;
-		document.getElementById('secondaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
-		document.getElementById('secondaryColorValueDisplayColor').style.borderRadius = '25px';
-		document.getElementById('secondaryColorValueDisplayColor').style.borderWidth = '3px';
-		document.getElementById('secondaryColorValueDisplayColor').style.borderStyle = 'solid'
-	} else {
-		document.getElementById('secondaryColor').placeholder = '#136513';
-		document.getElementById('warningSecondaryColor').style.display = 'block';
-	}
-	if (snapshot.val().tertiaryColor != null) {
-		// set local storage
-		localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('brandOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
-		document.getElementById('brandOptGroup').lastChild.innerHTML = 'Tertiary Color';
-		document.getElementById('colorOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
-		document.getElementById('colorOptGroup').lastChild.innerHTML = 'Tertiary Color';
-
-		document.documentElement.style.setProperty('--tertiaryColor', snapshot.val().tertiaryColor);
-		document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
-		document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
-		document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
-		document.getElementById('tertiaryColorValueDisplayColor').style.backgroundColor = document.getElementById('tertiaryColor').value;
-		document.getElementById('tertiaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
-		document.getElementById('tertiaryColorValueDisplayColor').style.borderRadius = '25px';
-		document.getElementById('tertiaryColorValueDisplayColor').style.borderWidth = '3px';
-		document.getElementById('tertiaryColorValueDisplayColor').style.borderStyle = 'solid'
-	} else {
-		document.getElementById('tertiaryColor').placeholder = '#9d2626';
-		document.getElementById('warningTertiaryColor').style.display = 'block';
-	}
-
-	// Fonts
-	if (snapshot.val().primaryFont != null) {
-		// set local storage
-		localStorage.setItem('primaryFont', snapshot.val().primaryFont);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryFont);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Tertiary Font';
-
-		document.documentElement.style.setProperty('--primaryFont', snapshot.val().primaryFont);
-		document.getElementById('primaryFont').value = snapshot.val().primaryFont;
-		document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
-	} else {
-		document.getElementById('primaryFont').placeholder = 'Arial';
-		document.getElementById('warningPrimaryFont').style.display = 'block';
-		document.getElementById('primaryFont').size = document.getElementById('primaryFont').placeholder.length + 1;
-	}
-	if (snapshot.val().secondaryFont != null) {
-		// set local storage
-		localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryFont);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Secondary Font';
-
-		document.documentElement.style.setProperty('--secondaryFont', snapshot.val().secondaryFont);
-		document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
-		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
-	} else {
-		document.getElementById('secondaryFont').placeholder = 'Arial';
-		document.getElementById('warningSecondaryFont').style.display = 'block';
-		document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').placeholder.length + 1;
-	}
-	if (snapshot.val().tertiaryFont != null) {
-		// set local storage
-		localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryFont);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Font';
-
-		document.documentElement.style.setProperty('--tertiaryFont', snapshot.val().tertiaryFont);
-		document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
-		document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
-	} else {
-		document.getElementById('tertiaryFont').placeholder = 'Arial';
-		document.getElementById('warningTertiaryFont').style.display = 'block';
-		document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').placeholder.length + 1;
-	}
-
-	// Contact Info
-	if (snapshot.val().primaryContactPhone != null) {
-		// set local storage
-		localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactPhone);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Contact Phone';
-
-		document.getElementById('primaryContactPhone').value = snapshot.val().primaryContactPhone;
-		document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').value.length + 1;
-	} else {
-		document.getElementById('primaryContactPhone').placeholder = '555-555-5555';
-		document.getElementById('warningPrimaryContactPhone').style.display = 'block';
-		document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').placeholder.length + 1;
-	}
-	if (snapshot.val().primaryContactEmail != null) {
-		// set local storage
-		localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactEmail);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Contact Email';
-
-		document.getElementById('primaryContactEmail').value = snapshot.val().primaryContactEmail;
-		document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').value.length + 2;
-	} else {
-		document.getElementById('primaryContactEmail').placeholder = 'sampleemail@gmail.com';
-		document.getElementById('warningPrimaryContactEmail').style.display = 'block';
-		document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').placeholder.length + 3;
-	}
-	if (snapshot.val().primaryContactWebsite != null) {
-		// set local storage
-		localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('contactOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactWebsite);
-		document.getElementById('contactOptGroup').lastChild.innerHTML = 'Primary Contact Website';
-
-		document.getElementById('primaryContactWebsite').value = snapshot.val().primaryContactWebsite;
-		document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').value.length + 1;
-	} else {
-		document.getElementById('primaryContactWebsite').placeholder = 'https://www.mySite.com';
-		document.getElementById('warningPrimaryContactWebsite').style.display = 'block';
-		document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').placeholder.length + 1;
-	}
+	loadEverything ();
 
 	// Address
 	if (snapshot.val().officeAddressStreet1 != null) {
@@ -394,8 +45,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
 
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet1);
-		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Street 1';
+		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet1);
+		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 1';
 
 		document.getElementById('officeAddressStreet1').value = snapshot.val().officeAddressStreet1;
 		document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').value.length + 1;
@@ -409,8 +60,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
 
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet2);
-		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Street 2';
+		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet2);
+		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 2';
 
 		document.getElementById('officeAddressStreet2').value = snapshot.val().officeAddressStreet2;
 		document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').value.length + 1;
@@ -425,8 +76,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
 
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCity);
-		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address City';
+		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCity);
+		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address City';
 
 		document.getElementById('officeAddressCity').value = snapshot.val().officeAddressCity;
 		document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').value.length + 1;
@@ -440,8 +91,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
 
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressState);
-		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address State';
+		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressState);
+		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address State';
 
 		document.getElementById('officeAddressState').value = snapshot.val().officeAddressState;
 		document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').value.length + 1;
@@ -455,8 +106,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
 
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressZip);
-		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Zip';
+		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressZip);
+		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Zip';
 
 		document.getElementById('officeAddressZip').value = snapshot.val().officeAddressZip;
 		document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').value.length + 1;
@@ -470,8 +121,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
 
 		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('addressOptGroup').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCountry);
-		document.getElementById('addressOptGroup').lastChild.innerHTML = 'Office Address Country';
+		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCountry);
+		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Country';
 
 		document.getElementById('officeAddressCountry').value = snapshot.val().officeAddressCountry;
 		document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').value.length + 1;
@@ -981,5 +632,452 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	//       document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
     //        document.getElementById('warningOffer2Image').style.display = 'block';
 	//  }
+
+
+	// Social Media
+	function loadFacebookUrl () {
+		if (snapshot.val().facebookUrl != null) {
+			// set local storage
+			localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
+
+			// Create an 'option' element under the 'brandList(s)' for search reference in the Brand Search
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Facebook URL';
+			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
+			document.getElementById('valueTypeURL').lastChild.innerHTML = 'Facebook URL';
+
+			document.getElementById('facebookUrl').value = snapshot.val().facebookUrl;
+			document.getElementById('facebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
+		} else {
+			document.getElementById('facebookUrl').placeholder = 'https://facebook.com/myPage';
+			document.getElementById('warningFacebookURL').style.display = 'block';
+			document.getElementById('facebookUrl').size = document.getElementById('facebookUrl').placeholder.length + 1;
+		}
+
+
+
+
+
+
+
+
+
+	}
+	function loadFacebookUsername () {
+		if (snapshot.val().facebookUsername != null) {
+			// set local storage
+			localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUsername);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Facebook Username';
+
+			document.getElementById('facebookUsername').value = snapshot.val().facebookUsername;
+			document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').value.length + 1;
+		} else {
+			document.getElementById('facebookUsername').placeholder = 'myPage';
+			document.getElementById('warningFacebookUsername').style.display = 'block';
+			document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').placeholder.length + 1;
+		}
+	}
+	function loadInstagramUrl () {
+		if (snapshot.val().instagramUrl != null) {
+			// set local storage
+			localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Instagram URL';
+			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
+			document.getElementById('valueTypeURL').lastChild.innerHTML = 'Instagram URL';
+
+			document.getElementById('instagramUrl').value = snapshot.val().instagramUrl;
+			document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').value.length + 1;
+		} else {
+			document.getElementById('instagramUrl').placeholder = 'https://instagram.com/myPage';
+			document.getElementById('warningInstagramURL').style.display = 'block';
+			document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').placeholder.length + 1;
+		}
+	}
+	function loadInstagramUsername() {
+		if (snapshot.val().instagramUsername != null) {
+			// set local storage
+			localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUsername);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Instagram Username';
+
+			document.getElementById('instagramUsername').value = snapshot.val().instagramUsername;
+			document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').value.length + 1;
+		} else {
+			document.getElementById('instagramUsername').placeholder = 'myPage';
+			document.getElementById('warningInstagramUsername').style.display = 'block';
+			document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').placeholder.length + 1;
+		}
+	}
+	function loadLinkedinUrl () {
+		if (snapshot.val().linkedinUrl != null) {
+			// set local storage
+			localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
+			document.getElementById('valueAll').lastChild.innerHTML = 'LinkedIn URL';
+			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
+			document.getElementById('valueTypeURL').lastChild.innerHTML = 'LinkedIn URL';
+
+			document.getElementById('linkedinUrl').value = snapshot.val().linkedinUrl;
+			document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').value.length + 1;
+		} else {
+			document.getElementById('linkedinUrl').placeholder = 'https://linkedin.com/myPage';
+			document.getElementById('warningLinkedinURL').style.display = 'block';
+			document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').placeholder.length + 1;
+		}
+	}
+	function loadLinkedinUsername () {
+		if (snapshot.val().linkedinUsername != null) {
+			// set local storage
+			localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUsername);
+			document.getElementById('valueAll').lastChild.innerHTML = 'LinkedIn Username';
+
+			document.getElementById('linkedinUsername').value = snapshot.val().linkedinUsername;
+			document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').value.length + 1;
+		} else {
+			document.getElementById('linkedinUsername').placeholder = 'myPage';
+			document.getElementById('warningLinkedinUsername').style.display = 'block';
+			document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').placeholder.length + 1;
+		}
+	}
+	function loadTwitterUrl() {
+		if (snapshot.val().twitterUrl != null) {
+			// set local storage
+			localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Twitter URL';
+			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
+			document.getElementById('valueTypeURL').lastChild.innerHTML = 'Twitter URL';
+
+			document.getElementById('twitterUrl').value = snapshot.val().twitterUrl;
+			document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').value.length + 1;
+		} else {
+			document.getElementById('twitterUrl').placeholder = 'https://twitter.com/myPage';
+			document.getElementById('warningTwitterURL').style.display = 'block';
+			document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').placeholder.length + 1;
+		}
+	}
+	function loadTwitterUsername () {
+		if (snapshot.val().twitterUsername != null) {
+			// set local storage
+			localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUsername);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Twitter Username';
+
+			document.getElementById('twitterUsername').value = snapshot.val().twitterUsername;
+			document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').value.length + 1;
+		} else {
+			document.getElementById('twitterUsername').placeholder = 'myPage';
+			document.getElementById('warningTwitterUsername').style.display = 'block';
+			document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').placeholder.length + 1;
+		}
+	}
+	function loadTiktokUrl () {
+		if (snapshot.val().tiktokUrl != null) {
+			// set local storage
+			localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
+			document.getElementById('valueAll').lastChild.innerHTML = 'TikTok Url';
+			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
+			document.getElementById('valueTypeURL').lastChild.innerHTML = 'TikTok URL';
+
+			document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
+			document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
+		} else {
+			document.getElementById('tiktokUrl').placeholder = 'https://tiktok.com/myPage';
+			document.getElementById('warningTiktokURL').style.display = 'block';
+			document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').placeholder.length + 1;
+		}
+	}
+	function loadTiktokUsername () {
+		if (snapshot.val().tiktokUsername != null) {
+			// set local storage
+			localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUsername);
+			document.getElementById('valueAll').lastChild.innerHTML = 'TikTok Username';
+
+			document.getElementById('tiktokUsername').value = snapshot.val().tiktokUsername;
+			document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').value.length + 1;
+		} else {
+			document.getElementById('tiktokUsername').placeholder = 'myPage';
+			document.getElementById('warningTiktokUsername').style.display = 'block';
+			document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').placeholder.length + 1;
+		}
+	}
+	function loadSocialMedia () {
+		loadFacebookUrl();
+		loadFacebookUsername();
+		loadInstagramUrl();
+		loadInstagramUsername();
+		loadLinkedinUrl();
+		loadLinkedinUsername();
+		loadTwitterUrl();
+		loadTwitterUsername();
+		loadTiktokUrl();
+		loadTiktokUsername();
+	}
+
+	// Logos
+	function loadSquareLogo() {
+		// square logo
+		if (snapshot.val().squareLogo != null) {
+			// set local storage
+			localStorage.setItem('squareLogo', snapshot.val().squareLogo);
+
+			document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
+			document.getElementById('squareLogoBro').style.maxWidth = '32px';
+			document.getElementById('squareLogoBro').style.maxHeight = '32px';
+		} else {
+		}
+	}
+	function loadFullLogo () {
+		// fullLogo
+		if (snapshot.val().fullLogo != null) {
+			// set local storage
+			localStorage.setItem('fullLogo', snapshot.val().fullLogo);
+			document.getElementById('fullLogoBro').src = snapshot.val().fullLogo;
+			document.getElementById('fullLogoBro').style.maxWidth = '250px';
+			document.getElementById('fullLogoBro').style.maxHeight = '250px';
+		} else {
+		}
+	}
+	function loadLogos () {
+		loadSquareLogo();
+		loadFullLogo();
+	}
+
+	// Colors
+	function loadPrimaryColor () {
+		console.log('loadPrimaryColor(); Loaded');
+		// Colors
+		if (snapshot.val().primaryColor != null) {
+			// set local storage
+			localStorage.setItem('primaryColor', snapshot.val().primaryColor);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Color';
+			document.getElementById('valueTypeColor').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
+			document.getElementById('valueTypeColor').lastChild.innerHTML = 'PrimaryColor';
+
+			document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
+			document.getElementById('primaryColor').value = snapshot.val().primaryColor;
+			document.getElementById('inputEventPrimaryColor').value = '#ffffff';
+			document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
+			document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
+			document.getElementById('primaryColorValueDisplayColor').style.backgroundColor = document.getElementById('primaryColor').value;
+			document.getElementById('primaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
+			document.getElementById('primaryColorValueDisplayColor').style.borderRadius = '25px';
+			document.getElementById('primaryColorValueDisplayColor').style.borderWidth = '3px';
+			document.getElementById('primaryColorValueDisplayColor').style.borderStyle = 'solid'
+
+		} else {
+			document.getElementById('primaryColor').placeholder = '#1d1d6e';
+			document.getElementById('warningPrimaryColor').style.display = 'block';
+		}
+	}
+	function loadSecondaryColor () {
+		if (snapshot.val().secondaryColor != null) {
+			// set local storage
+			localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Secondary Color';
+			document.getElementById('valueTypeColor').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
+			document.getElementById('valueTypeColor').lastChild.innerHTML = 'Secondary Color';
+
+			document.documentElement.style.setProperty('--secondaryColor', snapshot.val().secondaryColor);
+			document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
+			document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
+			document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
+			document.getElementById('secondaryColorValueDisplayColor').style.backgroundColor = document.getElementById('secondaryColor').value;
+			document.getElementById('secondaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
+			document.getElementById('secondaryColorValueDisplayColor').style.borderRadius = '25px';
+			document.getElementById('secondaryColorValueDisplayColor').style.borderWidth = '3px';
+			document.getElementById('secondaryColorValueDisplayColor').style.borderStyle = 'solid'
+		} else {
+			document.getElementById('secondaryColor').placeholder = '#136513';
+			document.getElementById('warningSecondaryColor').style.display = 'block';
+		}
+	}
+	function loadTertiaryColor () {
+		if (snapshot.val().tertiaryColor != null) {
+			// set local storage
+			localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Tertiary Color';
+			document.getElementById('valueTypeColor').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
+			document.getElementById('valueTypeColor').lastChild.innerHTML = 'Tertiary Color';
+
+			document.documentElement.style.setProperty('--tertiaryColor', snapshot.val().tertiaryColor);
+			document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
+			document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
+			document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
+			document.getElementById('tertiaryColorValueDisplayColor').style.backgroundColor = document.getElementById('tertiaryColor').value;
+			document.getElementById('tertiaryColorValueDisplayColor').style.borderColor = '#1E1E1EFF';
+			document.getElementById('tertiaryColorValueDisplayColor').style.borderRadius = '25px';
+			document.getElementById('tertiaryColorValueDisplayColor').style.borderWidth = '3px';
+			document.getElementById('tertiaryColorValueDisplayColor').style.borderStyle = 'solid'
+		} else {
+			document.getElementById('tertiaryColor').placeholder = '#9d2626';
+			document.getElementById('warningTertiaryColor').style.display = 'block';
+		}
+	}
+	function loadColors () {
+		loadPrimaryColor();
+		loadSecondaryColor();
+		loadTertiaryColor();
+	}
+
+	// Fonts
+	function loadPrimaryFont () {
+		if (snapshot.val().primaryFont != null) {
+			// set local storage
+			localStorage.setItem('primaryFont', snapshot.val().primaryFont);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryFont);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Tertiary Font';
+
+			document.documentElement.style.setProperty('--primaryFont', snapshot.val().primaryFont);
+			document.getElementById('primaryFont').value = snapshot.val().primaryFont;
+			document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
+		} else {
+			document.getElementById('primaryFont').placeholder = 'Arial';
+			document.getElementById('warningPrimaryFont').style.display = 'block';
+			document.getElementById('primaryFont').size = document.getElementById('primaryFont').placeholder.length + 1;
+		}
+	}
+	function loadSecondaryFont () {
+		if (snapshot.val().secondaryFont != null) {
+			// set local storage
+			localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryFont);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Secondary Font';
+
+			document.documentElement.style.setProperty('--secondaryFont', snapshot.val().secondaryFont);
+			document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
+			document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
+		} else {
+			document.getElementById('secondaryFont').placeholder = 'Arial';
+			document.getElementById('warningSecondaryFont').style.display = 'block';
+			document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').placeholder.length + 1;
+		}
+	}
+	function loadTertiaryFont () {
+		if (snapshot.val().tertiaryFont != null) {
+			// set local storage
+			localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryFont);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Font';
+
+			document.documentElement.style.setProperty('--tertiaryFont', snapshot.val().tertiaryFont);
+			document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
+			document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
+		} else {
+			document.getElementById('tertiaryFont').placeholder = 'Arial';
+			document.getElementById('warningTertiaryFont').style.display = 'block';
+			document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').placeholder.length + 1;
+		}
+	}
+	function loadFonts () {
+		loadPrimaryFont();
+		loadSecondaryFont();
+		loadTertiaryFont();
+	}
+
+	// Contact
+	function loadPrimaryContactPhone () {
+		if (snapshot.val().primaryContactPhone != null) {
+			// set local storage
+			localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactPhone);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Contact Phone';
+
+			document.getElementById('primaryContactPhone').value = snapshot.val().primaryContactPhone;
+			document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').value.length + 1;
+		} else {
+			document.getElementById('primaryContactPhone').placeholder = '555-555-5555';
+			document.getElementById('warningPrimaryContactPhone').style.display = 'block';
+			document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').placeholder.length + 1;
+		}
+	}
+	function loadPrimaryContactEmail () {
+		if (snapshot.val().primaryContactEmail != null) {
+			// set local storage
+			localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactEmail);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Contact Email';
+
+			document.getElementById('primaryContactEmail').value = snapshot.val().primaryContactEmail;
+			document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').value.length + 2;
+		} else {
+			document.getElementById('primaryContactEmail').placeholder = 'sampleemail@gmail.com';
+			document.getElementById('warningPrimaryContactEmail').style.display = 'block';
+			document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').placeholder.length + 3;
+		}
+	}
+	function loadPrimaryContactWebsite () {
+		if (snapshot.val().primaryContactWebsite != null) {
+			// set local storage
+			localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactWebsite);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Contact Website';
+
+			document.getElementById('primaryContactWebsite').value = snapshot.val().primaryContactWebsite;
+			document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').value.length + 1;
+		} else {
+			document.getElementById('primaryContactWebsite').placeholder = 'https://www.mySite.com';
+			document.getElementById('warningPrimaryContactWebsite').style.display = 'block';
+			document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').placeholder.length + 1;
+		}
+	}
+	function loadContact () {
+		loadPrimaryContactPhone();
+		loadPrimaryContactEmail();
+		loadPrimaryContactWebsite();
+	}
+
+	// Load Everything
+	function loadEverything () {
+		loadSocialMedia ();
+		loadLogos ();
+		loadColors ();
+		loadFonts ();
+		loadContact ();
+	}
 
 });

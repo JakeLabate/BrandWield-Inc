@@ -1,3 +1,4 @@
+console.log("newContent.js loaded");
 
 // Output Content Tabs
 function openCity(evt, outputTabName) {
@@ -547,8 +548,14 @@ function generateHashtagsForTitle () {
 	// remove all non-alphanumeric characters
 	let titleWordsLowerNoSpecial = titleWordsLower.replace(/[^a-z0-9]/gi, ' ');
 
+	// remove all 'words' that are 1 or 2 characters long
+	let titleWordsLowerNoSpecialNoJunk = titleWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+	// remove fluffy words
+	let titleWordsLowerNoSpecialNoJunkNoCommon = titleWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
 	// add a '#' to the beginning of each word
-	let titleWordsHashtag = titleWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
+	let titleWordsHashtag = titleWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let titleWordsHashtagNoCommas = titleWordsHashtag.replace(/,/g, ' ');
@@ -572,8 +579,14 @@ function generateHashtagsForLocation () {
 	// remove all non-alphanumeric characters
 	let locationWordsLowerNoSpecial = locationWordsLower.replace(/[^a-z0-9]/gi, ' ');
 
+	// remove all 'words' that are 1 or 2 characters long
+	let locationWordsLowerNoSpecialNoJunk = locationWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+	// remove fluffy words
+	let locationWordsLowerNoSpecialNoJunkNoCommon = locationWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
 	// add a '#' to the beginning of each word
-	let locationWordsHashtag = locationWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
+	let locationWordsHashtag = locationWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let locationWordsHashtagNoCommas = locationWordsHashtag.replace(/,/g, ' ');
@@ -600,8 +613,14 @@ function generateHashtagsForOrganization () {
 	// add a '#' to the beginning of each word
 	let organizationWordsHashtag = organizationWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
 
+	// remove all 'words' that are 1 or 2 characters long
+	let organizationWordsLowerNoSpecialNoJunk = organizationWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+	// remove fluffy words
+	let organizationWordsLowerNoSpecialNoJunkNoCommon = organizationWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
 	// replace all commas in the string with a space
-	let organizationWordsHashtagNoCommas = organizationWordsHashtag.replace(/,/g, ' ');
+	let organizationWordsHashtagNoCommas = organizationWordsLowerNoSpecialNoJunkNoCommon.replace(/,/g, ' ');
 
 	// remove duplicate hashtags
 	let noDuplicates = organizationWordsHashtagNoCommas.split(" ");
@@ -622,8 +641,14 @@ function generateHashtagsForHost () {
 	// remove all non-alphanumeric characters
 	let hostWordsLowerNoSpecial = hostWordsLower.replace(/[^a-z0-9]/gi, ' ');
 
+	// remove all 'words' that are 1 or 2 characters long
+	let hostWordsLowerNoSpecialNoJunk = hostWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+	// remove fluffy words
+	let hostWordsLowerNoSpecialNoJunkNoCommon = hostWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
 	// add a '#' to the beginning of each word
-	let hostWordsHashtag = hostWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
+	let hostWordsHashtag = hostWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let hostWordsHashtagNoCommas = hostWordsHashtag.replace(/,/g, ' ');
@@ -647,8 +672,14 @@ function generateHashtagsForDescription () {
 	// remove all non-alphanumeric characters
 	let descriptionWordsLowerNoSpecial = descriptionWordsLower.replace(/[^a-z0-9]/gi, ' ');
 
+	// remove all 'words' that are 1 or 2 characters long
+	let descriptionWordsLowerNoSpecialNoJunk = descriptionWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+	// remove fluffy words
+	let descriptionWordsLowerNoSpecialNoJunkNoCommon = descriptionWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
 	// add a '#' to the beginning of each word
-	let descriptionWordsHashtag = descriptionWordsLowerNoSpecial.replace(/\b(\w)/g, '#$1');
+	let descriptionWordsHashtag = descriptionWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
 
 	// replace all commas in the string with a space
 	let descriptionWordsHashtagNoCommas = descriptionWordsHashtag.replace(/,/g, ' ');
@@ -1561,6 +1592,19 @@ function downloadContent() {
 	downloadVerticalImageFinal();
 	downloadStoryImageFinal();
 	downloadFinalTextBlob();
+}
+function emailContent() {
+	admin
+	.firestore()
+	.collection("jake@labate.io")
+	.add({
+		to: "someone@example.com",
+		message: {
+			subject: "Hello from Firebase!",
+			text: "This is the plaintext section of the email body.",
+			html: "This is the <code>HTML</code> section of the email body.",
+		},
+	});
 }
 
 function eventTitleSentimentAnalysis() {

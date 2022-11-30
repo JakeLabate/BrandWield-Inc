@@ -1,3 +1,5 @@
+console.log('myBrand.js loaded');
+
 // FOUNDING INFO
 // founderName
 function unlockFounderName() {
