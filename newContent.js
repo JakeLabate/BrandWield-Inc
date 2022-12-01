@@ -319,6 +319,7 @@ function eventDescriptionUpdate () {
 		generateHashtagsForDescription();
 		placeDescriptionAsSelected();
 		eventDescriptionSentimentAnalysis();
+		finalTextEntityAnalysis();
 
 	} else {
 		let descriptionElements = document.getElementsByClassName("description");
@@ -552,7 +553,7 @@ function generateHashtagsForTitle () {
 	let titleWordsLowerNoSpecialNoJunk = titleWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
 
 	// remove fluffy words
-	let titleWordsLowerNoSpecialNoJunkNoCommon = titleWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+	let titleWordsLowerNoSpecialNoJunkNoCommon = titleWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|why|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
 
 	// add a '#' to the beginning of each word
 	let titleWordsHashtag = titleWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
@@ -1607,6 +1608,7 @@ function emailContent() {
 	});
 }
 
+// Text Sentiment Analysis API (unlimited free calls)
 function eventTitleSentimentAnalysis() {
 
 	// Get the text
@@ -1689,6 +1691,25 @@ function eventDescriptionSentimentAnalysis() {
 	})
 	.catch(err => console.error(err));
 }
+
+// Text Entity Analysis API (unlimited free calls)
+function finalTextEntityAnalysis() {
+	let text = document.getElementById("inputEventDescription");
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
+		},
+		body: '{"language":"english","text":"' + text + '"}'
+	};
+	fetch('https://text-analysis12.p.rapidapi.com/ner/api/v1.1', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
+
 
 
 
