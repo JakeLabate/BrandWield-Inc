@@ -284,6 +284,22 @@ img {
     scale: 1;
 }
 
+.cleanCursorInputTextarea {
+    font-weight: bold;
+    overflow: visible;
+    margin: 8px 8px 8px 8px;
+    font-size: 14px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    transition: .2s ease-in-out;
+    outline: none;
+    padding: 20px 18px 20px 18px;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+}
+
 
 /* Columns & Rows */
 .column2 {

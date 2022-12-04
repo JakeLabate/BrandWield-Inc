@@ -4,14 +4,16 @@ console.log("firebaseSetup.js loaded");
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 
-// Firebase configuration
+// Firebase Config
 const firebaseConfig = {
-	apiKey: "AIzaSyBCepZ7J4E-Mxs_8KcsmEr6ORY-LKkCAZk",
-	authDomain: "brandwield-inc.firebaseapp.com",
-	projectId: "brandwield-inc",
-	storageBucket: "brandwield-inc.appspot.com",
-	messagingSenderId: "362550827804",
-	appId: "1:362550827804:web:9ab5b70f5a7c5edea4f8d9"
+	apiKey: "AIzaSyAPuMZxmsEfVmwrFhVNrpbVkbudksJQWxM",
+	authDomain: "labate-firestore.firebaseapp.com",
+	databaseURL: "https://labate-firestore-default-rtdb.firebaseio.com",
+	projectId: "labate-firestore",
+	storageBucket: "labate-firestore.appspot.com",
+	messagingSenderId: "544978849115",
+	appId: "1:544978849115:web:c3d13f876cbc58ec1cde7e",
+	measurementId: "G-SC3X25RVX1"
 };
 
 // Initialize Firebase
@@ -20,8 +22,6 @@ const db = getDatabase();
 
 // Get Brand Variables
 const dbRef = ref(getDatabase());
-
-// Load User Brand
 const brand = 'BrandWield';
 get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.exists()) {
@@ -1081,29 +1081,3 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 });
-
-// Load Assets (BrandWield Assets)
-get(child(dbRef, 'assets')).then((snapshot) => {
-
-	// Console Log Loading Status
-	if (snapshot.exists()) {
-		console.log('BrandWield Assets Fetched');
-		console.log(snapshot.val());
-	} else {
-		console.log('BrandWield Assets NOT Fetched');
-	}
-
-	// Place Assets
-
-
-	function placeMyBrand() {
-
-	}
-
-	function placeNewContent() {
-
-	}
-
-
-});
-

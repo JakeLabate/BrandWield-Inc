@@ -76,7 +76,7 @@
 	<div class="navTab" onclick="selectContentType('brand'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b'; // Color change to purple not working for these tabs">Brand</div>
 	<div class="navTab" onclick="selectContentType('content'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Content</div>
 	<div class="navTab" onclick="selectContentType('newContent'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">New Content</div>
-	<div class="navTab" onclick="realiseSentence(); selectContentType('settings'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Settings</div>
+	<div class="navTab" onclick="selectContentType('settings'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Settings</div>
 </div>
 
 <!-- Brand Tab -->
@@ -1258,123 +1258,270 @@
 
 		<!-- Outputs -->
 		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
-			<label for="contentTypeSelect">Select Content Type</label>
-			<select id="contentTypeSelect" class="cleanCursorInput">
-				<option value="genericPostFields">Generic Post</option>
-				<option value="updateFields">Update</option>
-				<option value="salePromotionFields">Sale/Promotion</option>
-				<option value="eventPromotionFields">Event Promotion</option>
-				<option value="testimonialReviewFields">Testimonial/Review</option>
-			</select>
+			<span style="display: flex; align-items: center;">
+				<label for="contentTypeSelect">Content Type</label>
+				<select id="contentTypeSelect" class="cleanCursorInput">
+					<option value="genericPostFields">Generic Post</option>
+					<option value="companyUpdateFields">Company Update</option>
+					<option value="salePromotionFields">Sale/Promotion</option>
+					<option value="eventPromotionFields">Event Promotion</option>
+					<option value="testimonialReviewFields">Testimonial/Review</option>
+				</select>
+			</span>
 
 			<div id="contentTypeFieldOptions">
 
 				<!-- Generic Post -->
 				<div id="genericPostFields" class="contentTypeFieldOption">
 
+					<!-- Hook -->
+					<span style="display: flex; align-items: center;">
+						<label for="genericPostHook" style="width: 100px;">Hook</label>
+						<span id="genericPostHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick="">info</span>
+						<input id="genericPostHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
+
 					<!-- Title -->
-					<label for="genericPostTitle">Title</label>
-					<input id="genericPostTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+					<span style="display: flex; align-items: center;">
+						<label for="genericPostTitle" style="width: 100px;">Title</label>
+						<span id="genericPostTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="genericPostTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Body -->
-					<label for="genericPostBody">Body</label>
-					<textarea id="genericPostBody" class="cleanCursorInput" placeholder="Body"></textarea>
+					<span style="display: flex; align-items: center;">
+						<label for="genericPostBody" style="width: 100px;">Body</label>
+						<span id="genericPostBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+					</span>
+
+					<!-- Link -->
+					<span style="display: flex; align-items: center;">
+						<label for="genericPostLink" style="width: 100px;">Link</label>
+						<span id="genericPostLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="genericPostLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="genericPostLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostLink').value = null;"/>
+						<img id="genericPostLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostLink').value = localStorage.getItem('primaryContactWebsite')"/>
+					</span>
 
 				</div>
 
 				<!-- Update -->
-				<div id="updateFields" class="contentTypeFieldOption">
+				<div id="companyUpdateFields" class="contentTypeFieldOption">
+
+					<!-- Hook -->
+					<span style="display: flex; align-items: center;">
+						<label for="companyUpdateHook" style="width: 100px;">Hook</label>
+						<span id="companyUpdateHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="companyUpdateHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Title -->
-					<label for="updateTitle">Title</label>
-					<input id="updateTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+					<span style="display: flex; align-items: center;">
+						<label for="companyUpdateTitle" style="width: 100px;">Title</label>
+						<span id="companyUpdateTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="companyUpdateTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Date -->
-					<label for="updateDate">Date</label>
-					<input id="updateDate" type="date" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="companyUpdateDate" style="width: 100px;">Date</label>
+						<span id="companyUpdateDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="companyUpdateDate" type="date" class="cleanCursorInput" />
+					</span>
 
 					<!-- Body -->
-					<label for="updateBody">Body</label>
-					<textarea id="updateBody" class="cleanCursorInput" placeholder="Body"></textarea>
+					<span style="display: flex; align-items: center;">
+						<label for="companyUpdateBody" style="width: 100px;">Body</label>
+						<span id="companyUpdateBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+					</span>
+
+					<!-- Link -->
+					<span style="display: flex; align-items: center;">
+						<label for="companyUpdateLink" style="width: 100px;">Link</label>
+						<span id="companyUpdateLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="companyUpdateLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/updates/bestUpdateEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="companyUpdateLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateLink').value = null;"/>
+						<img id="companyUpdateLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateLink').value = localStorage.getItem('primaryContactWebsite')"/>
+					</span>
 
 				</div>
 
 				<!-- Sale/Promotion -->
 				<div id="salePromotionFields" class="contentTypeFieldOption">
 
+					<!-- Hook -->
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionHook" style="width: 100px;">Hook</label>
+						<span id="salePromotionHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="salePromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
+
 					<!-- Title -->
-					<label for="salePromotionTitle">Title</label>
-					<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionTitle" style="width: 100px;">Title</label>
+						<span id="salePromotionTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Product or Service -->
-					<label for="salePromotionProductOrService">Product or Service</label>
-					<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" />
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionProductOrService" style="width: 100px;">Product or Service</label>
+						<span id="salePromotionProductOrServiceInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Start Date -->
-					<label for="salePromotionStartDate">Start Date</label>
-					<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionStartDate" style="width: 100px;">Start Date</label>
+						<span id="salePromotionStartDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+					</span>
 
 					<!-- End Date -->
-					<label for="salePromotionEndDate">End Date</label>
-					<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionEndDate" style="width: 100px;">End Date</label>
+						<span id="salePromotionEndDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+					</span>
 
 					<!-- Body -->
-					<label for="salePromotionBody">Body</label>
-					<textarea id="salePromotionBody" class="cleanCursorInput" placeholder="Body"></textarea>
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionBody" style="width: 100px;">Body</label>
+						<span id="salePromotionBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+					</span>
+
+					<!-- Link -->
+					<span style="display: flex; align-items: center;">
+						<label for="salePromotionLink" style="width: 100px;">Link</label>
+						<span id="salePromotionLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="salePromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/promotions/bestDealEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="salePromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionLink').value = null;"/>
+						<img id="salePromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
+					</span>
 
 				</div>
 
 				<!-- Event Promotion -->
 				<div id="eventPromotionFields" class="contentTypeFieldOption">
 
+					<!-- Hook -->
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionHook" style="width: 100px;">Hook</label>
+						<span id="eventPromotionHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="eventPromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
+
 					<!-- Title -->
-					<label for="eventPromotionTitle">Title</label>
-					<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionTitle" style="width: 100px;">Title</label>
+						<span id="eventPromotionTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Start Date -->
-					<label for="eventPromotionStartDate">Start Date</label>
-					<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionStartDate" style="width: 100px;">Start Date</label>
+						<span id="eventPromotionStartDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+					</span>
 
 					<!-- End Date -->
-					<label for="eventPromotionEndDate">End Date</label>
-					<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionEndDate" style="width: 100px;">End Date</label>
+						<span id="eventPromotionEndDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+					</span>
 
 					<!-- Location -->
-					<label for="eventPromotionLocation">Location</label>
-					<input id="eventPromotionLocation" type="text" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionLocation" style="width: 100px;">Location</label>
+						<span id="eventPromotionLocationInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="58" placeholder="123 Main Street Boston, MA style" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLocation').value = null;" />
+						<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLocation').value = localStorage.getItem('officeAddressStreet1') + ' ' + localStorage.getItem('officeAddressCity') + ' ' + localStorage.getItem('officeAddressState')"/>
+					</span>
 
 					<!-- Body -->
-					<label for="eventPromotionBody">Body</label>
-					<textarea id="eventPromotionBody" class="cleanCursorInput" placeholder="Body"></textarea>
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionBody" style="width: 100px;">Body</label>
+						<span id="eventPromotionBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+					</span>
+
+					<!-- Link -->
+					<span style="display: flex; align-items: center;">
+						<label for="eventPromotionLink" style="width: 100px;">Link</label>
+						<span id="eventPromotionLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="eventPromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/events/bestEventEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="eventPromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLink').value = null;" />
+						<img id="eventPromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
+					</span>
 
 				</div>
 
 				<!-- Testimonial / Review -->
 				<div id="testimonialReviewFields" class="contentTypeFieldOption">
 
+					<!-- Hook -->
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewHook" style="width: 100px;">Hook</label>
+						<span id="testimonialReviewHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
+
 					<!-- Author Name -->
-					<label for="testimonialReviewAuthorName">Author Name</label>
-					<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" />
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewAuthorName" style="width: 100px;">Author Name</label>
+						<span id="testimonialReviewAuthorNameInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Author Headshot -->
-					<label for="testimonialReviewAuthorHeadshot">Author Headshot</label>
-					<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewAuthorHeadshot" style="width: 100px;">Author Headshot</label>
+						<span id="testimonialReviewAuthorHeadshotInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="58" />
+					</span>
 
 					<!-- Author Title -->
-					<label for="testimonialReviewAuthorTitle">Author Title</label>
-					<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" />
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewAuthorTitle" style="width: 100px;">Author Title</label>
+						<span id="testimonialReviewAuthorTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Author Company -->
-					<label for="testimonialReviewAuthorCompany">Author Company</label>
-					<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" />
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewAuthorCompany" style="width: 100px;">Author Company</label>
+						<span id="testimonialReviewAuthorCompanyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+					</span>
 
 					<!-- Date -->
-					<label for="testimonialReviewDate">Date</label>
-					<input id="testimonialReviewDate" type="date" class="cleanCursorInput" />
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewDate" style="width: 100px;">Date</label>
+						<span id="testimonialReviewDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewDate" type="date" class="cleanCursorInput" />
+					</span>
 
 					<!-- Body -->
-					<label for="testimonialReviewBody">Body</label>
-					<textarea id="testimonialReviewBody" class="cleanCursorInput" placeholder="Michael Scott is the bestest most amazingest boss I ever had!"></textarea>
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewBody" style="width: 100px;">Body</label>
+						<span id="testimonialReviewBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Michael Scott is the bestest most amazingest boss I ever had!"></textarea>
+					</span>
+
+					<!-- Link -->
+					<span style="display: flex; align-items: center;">
+						<label for="testimonialReviewLink" style="width: 100px;">Link</label>
+						<span id="testimonialReviewLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<input id="testimonialReviewLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/reviews/bestReviewEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="testimonialReviewLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewLink').value = null;"/>
+						<img id="testimonialReviewLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewLink').value = localStorage.getItem('primaryContactWebsite')"/>
+					</span>
 
 				</div>
 
@@ -1678,7 +1825,6 @@
 				</p>
 				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 				<button class="copyTextButton" onclick="downloadContent();">Download Content</button>
-				<button class="copyTextButton" onclick="emailContent();">Copy Content</button>
 				<div id="output"></div>
 			</div>
 

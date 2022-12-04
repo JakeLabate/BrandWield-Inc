@@ -1594,19 +1594,6 @@ function downloadContent() {
 	downloadStoryImageFinal();
 	downloadFinalTextBlob();
 }
-function emailContent() {
-	admin
-	.firestore()
-	.collection("jake@labate.io")
-	.add({
-		to: "someone@example.com",
-		message: {
-			subject: "Hello from Firebase!",
-			text: "This is the plaintext section of the email body.",
-			html: "This is the <code>HTML</code> section of the email body.",
-		},
-	});
-}
 
 // Text Sentiment Analysis API (unlimited free calls)
 function eventTitleSentimentAnalysis() {
@@ -1777,9 +1764,3 @@ function realiseSentence() {
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 }
-
-
-
-
-
-
