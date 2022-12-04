@@ -56,11 +56,8 @@
 	<!-- Navigation Bar Script -->
 	<script>
 		function selectContentType(tabby) {
-			let i;
-			let x = document.getElementsByClassName("tabby");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
+			let i; let x = document.getElementsByClassName("tabby");
+			for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
 			document.getElementById(tabby).style.display = "block";
 		}
 	</script>
@@ -76,11 +73,10 @@
 
 <!-- Nav Bar -->
 <div id="navBar" style="height: 55px; display: flex; justify-content: space-around;">
-	<div class="navTab" onclick="selectContentType('brand')">Brand</div>
-	<div class="navTab" onclick="selectContentType('content')">Content</div>
-	<div class="navTab" onclick="selectContentType('newContent')">New Content</div>
-	<div class="navTab" onclick="selectContentType('settings')">Settings</div>
-
+	<div class="navTab" onclick="selectContentType('brand'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b'; // Color change to purple not working for these tabs">Brand</div>
+	<div class="navTab" onclick="selectContentType('content'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Content</div>
+	<div class="navTab" onclick="selectContentType('newContent'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">New Content</div>
+	<div class="navTab" onclick="realiseSentence(); selectContentType('settings'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Settings</div>
 </div>
 
 <!-- Brand Tab -->
@@ -97,9 +93,14 @@
 			<label for="primaryContactPhone">Phone</label>
 			<span class="material-symbols-outlined" onclick="alert('Your company phone number is the number that will be displayed on your website. This number will be used for all calls to your company.')">info</span>
 			<input id="primaryContactPhone" title="Primary Contact Phone" type="tel" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-			<span id="primaryContactPhoneUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactPhone()">lock_open</span>
-			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactPhoneLock" class="material-symbols-outlined" onclick="lockPrimaryContactPhone()">lock</span>
-			<button id="clearPrimaryContactPhone" onclick="clearPrimaryContactPhone()">Clear</button>
+			<select id="primaryContactPhoneFormat">
+				<option value="xxx-xxx-xxxx" title="(No global code, no parenthesis) - Best for a clean look and NOT doing international business">xxx-xxx-xxxx</option>
+				<option value="(xxx)-xxx-xxxx" title="(No global code, parenthesis) - Best to clarify your area code and NOT doing international business">(xxx)-xxx-xxxx</option>
+				<option value="x-xxx-xxx-xxxx" title="(Global code, no parenthesis) - Best for doing international business">x-xxx-xxx-xxxx</option>
+			</select>
+			<span id="primaryContactPhoneUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactPhone();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactPhoneLock" class="material-symbols-outlined" onclick="lockPrimaryContactPhone();">lock</span>
+			<button id="clearPrimaryContactPhone" onclick="clearPrimaryContactPhone();">Clear</button>
 		</div>
 
 		<!-- Email -->
@@ -108,9 +109,13 @@
 			<label for="primaryContactEmail">Email</label>
 			<span class="material-symbols-outlined" onclick="alert('Your company email address is the email address that will be displayed on your website. This email address will be used for all emails to your company.')">info</span>
 			<input id="primaryContactEmail" type="email" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-			<span id="primaryContactEmailUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactEmail()">lock_open</span>
-			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactEmailLock" class="material-symbols-outlined" onclick="lockPrimaryContactEmail()">lock</span>
-			<button id="clearPrimaryContactEmail" onclick="clearPrimaryContactEmail()">Clear</button>
+			<select id="primaryContactEmailFormat">
+				<option value="jake@brandwield.com" title="(All lowercase) - Best for reducing errors">jake@brandwield.com</option>
+				<option value="jake@BrandWield.com" title="(Camel-case) - Best for reader legibility">jake@BrandWield.com</option>
+			</select>
+			<span id="primaryContactEmailUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactEmail();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactEmailLock" class="material-symbols-outlined" onclick="lockPrimaryContactEmail();">lock</span>
+			<button id="clearPrimaryContactEmail" onclick="clearPrimaryContactEmail();">Clear</button>
 		</div>
 
 		<!-- Website -->
@@ -119,9 +124,16 @@
 			<label for="primaryContactWebsite">Website</label>
 			<span class="material-symbols-outlined" onclick="alert('Your company website is the website that will be displayed on your website. This website will be used for all links to your company.')">info</span>
 			<input id="primaryContactWebsite" type="url" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-			<span id="primaryContactWebsiteUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactWebsite()">lock_open</span>
-			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactWebsiteLock" class="material-symbols-outlined" onclick="lockPrimaryContactWebsite()">lock</span>
-			<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite()">Clear</button>
+			<select id="primaryContactWebsiteFormat">
+				<option value="https://www.website.com" title="(https, subdomain) - Use only if you are sure your site has an SSL certificate AND you have a subdomain">https://www.website.com</option>
+				<option value="https://website.com" title="(https, no subdomain) - Use only if you are sure your site has an SSL certificate AND you have no subdomain">https://website.com</option>
+				<option value="http://www.website.com" title="(http, subdomain) - Use only if your site has no SSL certificate AND you have a subdomain">http://www.website.com</option>
+				<option value="http://website.com" title="(http, no subdomain) - Use only if your site has no SSL certificate AND you have no subdomain">http://website.com</option>
+				<option value="website.com" title="(No protocol, no subdomain) - Best for a clean, memorable look">website.com</option>
+			</select>
+			<span id="primaryContactWebsiteUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactWebsite();">lock_open</span>
+			<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactWebsiteLock" class="material-symbols-outlined" onclick="lockPrimaryContactWebsite();">lock</span>
+			<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite();">Clear</button>
 		</div>
 	</details>
 
@@ -1141,12 +1153,12 @@
 			</div>
 			<div style="max-width: 50vw; overflow: scroll;">
 				<!-- Signature Start -->
-				<table style="color: #000000; font-family: 'Times New Roman'; font-size: medium;">
+				<table style="color: #000000; font-size: medium;">
 					<tbody>
 					<tr>
 						<td style="vertical-align: middle; width: 428px;">
 							<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><em><strong>Debbie&nbsp;O'Dell</strong></em></p>
-							<table style="font-family: 'Times New Roman';">
+							<table>
 								<tbody>
 								<tr>
 									<td style="vertical-align: middle; width: 428px;">
@@ -1246,6 +1258,129 @@
 
 		<!-- Outputs -->
 		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
+			<label for="contentTypeSelect">Select Content Type</label>
+			<select id="contentTypeSelect" class="cleanCursorInput">
+				<option value="genericPostFields">Generic Post</option>
+				<option value="updateFields">Update</option>
+				<option value="salePromotionFields">Sale/Promotion</option>
+				<option value="eventPromotionFields">Event Promotion</option>
+				<option value="testimonialReviewFields">Testimonial/Review</option>
+			</select>
+
+			<div id="contentTypeFieldOptions">
+
+				<!-- Generic Post -->
+				<div id="genericPostFields" class="contentTypeFieldOption">
+
+					<!-- Title -->
+					<label for="genericPostTitle">Title</label>
+					<input id="genericPostTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+
+					<!-- Body -->
+					<label for="genericPostBody">Body</label>
+					<textarea id="genericPostBody" class="cleanCursorInput" placeholder="Body"></textarea>
+
+				</div>
+
+				<!-- Update -->
+				<div id="updateFields" class="contentTypeFieldOption">
+
+					<!-- Title -->
+					<label for="updateTitle">Title</label>
+					<input id="updateTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+
+					<!-- Date -->
+					<label for="updateDate">Date</label>
+					<input id="updateDate" type="date" class="cleanCursorInput" />
+
+					<!-- Body -->
+					<label for="updateBody">Body</label>
+					<textarea id="updateBody" class="cleanCursorInput" placeholder="Body"></textarea>
+
+				</div>
+
+				<!-- Sale/Promotion -->
+				<div id="salePromotionFields" class="contentTypeFieldOption">
+
+					<!-- Title -->
+					<label for="salePromotionTitle">Title</label>
+					<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+
+					<!-- Product or Service -->
+					<label for="salePromotionProductOrService">Product or Service</label>
+					<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" />
+
+					<!-- Start Date -->
+					<label for="salePromotionStartDate">Start Date</label>
+					<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+
+					<!-- End Date -->
+					<label for="salePromotionEndDate">End Date</label>
+					<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+
+					<!-- Body -->
+					<label for="salePromotionBody">Body</label>
+					<textarea id="salePromotionBody" class="cleanCursorInput" placeholder="Body"></textarea>
+
+				</div>
+
+				<!-- Event Promotion -->
+				<div id="eventPromotionFields" class="contentTypeFieldOption">
+
+					<!-- Title -->
+					<label for="eventPromotionTitle">Title</label>
+					<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" />
+
+					<!-- Start Date -->
+					<label for="eventPromotionStartDate">Start Date</label>
+					<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+
+					<!-- End Date -->
+					<label for="eventPromotionEndDate">End Date</label>
+					<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+
+					<!-- Location -->
+					<label for="eventPromotionLocation">Location</label>
+					<input id="eventPromotionLocation" type="text" class="cleanCursorInput" />
+
+					<!-- Body -->
+					<label for="eventPromotionBody">Body</label>
+					<textarea id="eventPromotionBody" class="cleanCursorInput" placeholder="Body"></textarea>
+
+				</div>
+
+				<!-- Testimonial / Review -->
+				<div id="testimonialReviewFields" class="contentTypeFieldOption">
+
+					<!-- Author Name -->
+					<label for="testimonialReviewAuthorName">Author Name</label>
+					<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" />
+
+					<!-- Author Headshot -->
+					<label for="testimonialReviewAuthorHeadshot">Author Headshot</label>
+					<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" />
+
+					<!-- Author Title -->
+					<label for="testimonialReviewAuthorTitle">Author Title</label>
+					<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" />
+
+					<!-- Author Company -->
+					<label for="testimonialReviewAuthorCompany">Author Company</label>
+					<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" />
+
+					<!-- Date -->
+					<label for="testimonialReviewDate">Date</label>
+					<input id="testimonialReviewDate" type="date" class="cleanCursorInput" />
+
+					<!-- Body -->
+					<label for="testimonialReviewBody">Body</label>
+					<textarea id="testimonialReviewBody" class="cleanCursorInput" placeholder="Michael Scott is the bestest most amazingest boss I ever had!"></textarea>
+
+				</div>
+
+			</div>
+
+
 
 			<!-- Output Tabs -->
 			<div>
@@ -1264,7 +1399,7 @@
 			<!-- Title -->
 			<div id="TitleTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventTitle" class="cleanCursorInput" type="text" placeholder="Title of event" onkeyup="eventTitleUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventTitle" class="cleanCursorInput" type="text" placeholder="Title of event" size="50" onkeyup="this.size = this.value.length + 4; eventTitleUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
 					<span id="titleSentimentAnalysis" class="chip" style="user-select: none; display: none;"></span>
 				</div>
@@ -1291,7 +1426,7 @@
 			<!-- Date -->
 			<div id="DateTab" class="tabcontent">
 				<div style="align-items: center; justify-content: space-between;">
-					<input id="inputEventDate" class="cleanCursorInput" type="date" oninput="eventDateUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventDate" class="cleanCursorInput" type="date" size="50" oninput="eventDateUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDateClear();">x</a>
 				</div>
 				<div id="hasDate" style="display: none; line-height: 2em;">
@@ -1316,7 +1451,7 @@
 			<!-- Time -->
 			<div id="TimeTab" class="tabcontent">
 				<div style="align-items: center; justify-content: space-between;">
-					<input id="inputEventTime" class="cleanCursorInput" type="time" oninput="eventTimeUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventTime" class="cleanCursorInput" type="time" size="50" oninput="eventTimeUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTimeClear();">x</a>
 				</div>
 				<div id="hasTime" style="display: none; line-height: 2em;">
@@ -1341,7 +1476,7 @@
 			<!-- Location -->
 			<div id="LocationTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventLocation" class="cleanCursorInput" type="text" placeholder="Location of event" onkeyup="eventLocationUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventLocation" class="cleanCursorInput" type="text" placeholder="Location of event" size="50" onkeyup="this.size = this.value.length + 4; eventLocationUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
 					<img id="linkLocation" title="Load Address" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
 				</div>
@@ -1367,7 +1502,7 @@
 			<!-- Organization -->
 			<div id="OrganizationTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventOrganization" class="cleanCursorInput" type="text" placeholder="Organization hosting event" onkeyup="eventOrganizationUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventOrganization" class="cleanCursorInput" type="text" placeholder="Organization hosting event" onkeyup="this.size = this.value.length + 4; eventOrganizationUpdate(); placeHashtagsAsSelected();">
 					<a  title="Clear field" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">x</a>
 				</div>
 				<div id="hasOrganization" style="display: none; line-height: 2em;">
@@ -1392,7 +1527,7 @@
 			<!-- Host -->
 			<div id="HostTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventHost" class="cleanCursorInput" type="text" placeholder="Host (person) of event" onkeyup="eventHostUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventHost" class="cleanCursorInput" type="text" placeholder="Host (person) of event" size="50" onkeyup="this.size = this.value.length + 4; eventHostUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
 					<img id="linkHost" title="Load Founder Name" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
 				</div>
@@ -1418,7 +1553,7 @@
 			<!-- Description -->
 			<div id="DescriptionTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventDescription" class="cleanCursorInput" type="text" placeholder="Description of event" onkeyup="eventDescriptionUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventDescription" class="cleanCursorInput" type="text" placeholder="Description of event" size="50" onkeyup="this.size = this.value.length + 4; eventDescriptionUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
 					<span id="descriptionSentimentAnalysis" class="chip" style="user-select: none; display: none;"></span>
 				</div>
@@ -1432,7 +1567,7 @@
 			<!-- Link -->
 			<div id="LinkTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventLink" class="cleanCursorInput" type="url" placeholder="Link to register for/preview event" onkeyup="eventLinkUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventLink" class="cleanCursorInput" type="url" placeholder="Link to register for/preview event" size="50" onkeyup="this.size = this.value.length + 4; eventLinkUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
 					<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
 					<img id="linkLink" title="Load Website URL" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
@@ -1443,7 +1578,7 @@
 			<!-- Color -->
 			<div id="ColorTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventPrimaryColor" class="cleanCursorInput" type="color" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventPrimaryColor" class="cleanCursorInput" type="color" style="padding: 0;" size="50" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">x</a>
 					<img id="linkPrimarycolor" title="Load Primary Color" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
 				</div>
@@ -1452,7 +1587,7 @@
 			<!-- Logo -->
 			<div id="LogoTab" class="tabcontent">
 				<div style="align-items: center;">
-					<input id="inputEventLogo" class="cleanCursorInput" type="file" style="width: 170px" oninput="eventLogoUpdate(); placeHashtagsAsSelected();">
+					<input id="inputEventLogo" class="cleanCursorInput" type="file" style="width: 250px; padding: 10px 10px 10px 10px;" size="50" oninput="this.size = this.value.length + 4; eventLogoUpdate(); placeHashtagsAsSelected();">
 					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLogoClear();">x</a>
 				</div>
 			</div>
@@ -1527,9 +1662,9 @@
 					<text id="selectedTitleOutput"></text><text id="consideredTitleOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-title-sentence}}&nbsp;</text>
 					<text id="selectedDateOutput"></text><text id="consideredDateOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-date-sentence}}&nbsp;</text>
 					<text id="selectedTimeOutput"></text><text id="consideredTimeOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-time-sentence}}&nbsp;</text>
-					<text id="selectedLocationOutput"></text><text id="consideredLocationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-location-sentence}}&nbsp;</text>
+					<text id="selectedLocationOutput"></text><text id="consideredLocationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-location-sentence}}&nbsp;</text><br><br>
 					<text id="selectedOrganizationOutput"></text><text id="consideredOrganizationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-organization-sentence}}&nbsp;</text>
-					<text id="selectedHostOutput"></text><text id="consideredHostOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-host-sentence}}&nbsp;</text>
+					<text id="selectedHostOutput"></text><text id="consideredHostOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-host-sentence}}&nbsp;</text><br><br>
 					<text id="selectedDescriptionOutput"></text><text id="consideredDescriptionOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-description}}&nbsp;</text>
 					<text id="hashtagsContainer"><br>
 						<text id="hashtagsHere" class="hashtagsHere">

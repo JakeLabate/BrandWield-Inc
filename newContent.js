@@ -1710,6 +1710,74 @@ function finalTextEntityAnalysis() {
 	.catch(err => console.error(err));
 }
 
+// Sentence Generator API - SET UP FOR 'EVENT'
+function realiseSentence() {
+
+	let object = 'Fairfield Networking Dinner'; // REQ - they are acted upon
+	let objnum = 'singular'; // 'singular' or 'plural'
+	let objdet = 'the'; // the object determiner (ex: a, an, the) use '-' for auto-generation
+	let objmod = 'networking'; //  an adjective of the object (ex: big, small, red)
+
+	let subject = 'you'; // REQ - the doer of the verb
+	let subjnum = 'singular'; // 'singular' or 'plural'
+	let subjdet = '-'; // the subject determiner (ex: a, an, the) use '-' for auto-generation
+
+	let verb = 'attend'; //  REQ - It's what ya do!
+	let tense = 'future'; // 'past', 'present' or 'future'
+
+	let sentencetype = 'whosubj'; // declaration by default
+
+	// let progressive = '';
+	// let modal = '';
+	// let passive = '';
+	// let perfect = '';
+	// let negated = '';
+
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'linguatools-sentence-generating.p.rapidapi.com'
+		}
+	};
+
+	// API DOCS --> https://linguatools.org/language-apis/sentence-generating-api/
+	fetch('https://linguatools-sentence-generating.p.rapidapi.com/realise?' +
+
+		'object=' + object + // REQ - any noun or pronoun. If the object is a pronoun set objdet=- and use the base form of the pronoun (e.g. she instead of her). Possible base forms are: I, you, he, she, it, we, they. This will be automatically replaced by me, you, him, her, it, us, them. Set objnum=plural to get the plural forms (e. g. object=he and objdet=- and objnum=plural yields them).
+		'&subject=' + subject + // REQ - any noun or pronoun
+		'&verb=' + verb + // REQ - any verb, including phrase-verbs like 'start out'
+
+		// Object-related
+		'&objdet=' + objdet + // Specifies the object’s determiner (a, the, –). Default is „a“. Use objdet=- to generate an object without determiner.
+		'&objnum=' + objnum + // 'singular' or 'plural' - Default is singular. A value of plural is overridden by objdet=a.
+		'&objmod=' + objmod + // An adjective modifying the object
+
+		// Subject-related
+		'&subjnum=' + subjnum + // 'singular' or 'plural' - 'plural' is overridden of subjdet=a.
+		'&subjdet=' + subjdet + // Specifies the subject’s number (a, the, –). Default is „the“. Use subjdet=- to generate a subject without determiner.
+
+		// Verb-related
+		'&tense=' + tense + // 'past' 'present' or 'future' - Default is 'present'
+
+		'&sentencetype=' + sentencetype // Default is a declarative sentence
+		// 'yesno' generates a yes/no-question
+		// 'whatobj' generates a WH-question for the object
+		// 'whosubj' generates a WH-question for the subject
+
+	    // UNUSED PARAMETERS for now
+		// '&modal=' + modal + // Specifies a modal verb modifying the verb (can, may, must, ought, shall, should, would). Only allowed for present tense. If tense=past or tense=future is set then the parameter modal will be ignored.
+		// '&passive=' + passive + // &passive=passive generates a sentence in passive voice. The object is set as subject and the subject becomes the by-object.
+		// '&progressive=' + progressive + // &progressive=progressive sets the progressive (continuous) tense
+		// '&perfect=' + perfect + // &perfect=perfect sets the perfect tense
+		// '&negated=' + negated // &negated=negated generates a negated sentence
+
+		,options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
+
 
 
 

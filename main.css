@@ -36,6 +36,12 @@
     box-sizing: border-box;
     font-family: Montserrat, sans-serif;
     font-size: 16px;
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 #photo {
@@ -145,7 +151,7 @@ label {
 }
 
 input {
-    height: 30px;
+    height: 40px;
     font-weight: bold;
     margin: 4px 5px 4px 5px;
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
@@ -616,18 +622,16 @@ p[id*="copyToClipboardHas"]:hover {
 .tabby {
     display: none;
     position: relative;
-    top: 55px;
 }
 
 #navBar {
-    position: fixed;
+    position: relative;
     top: 0;
+    display: flex;
     background-color: #ffffff;
     justify-content: space-between;
     width: 100%;
     color: #000000;
-    margin-left: -12px;
-    padding: 0 8px 0 8px;
     align-items: center;
     z-index: 1000;
     box-shadow: 5px 10px #888888;
@@ -637,9 +641,15 @@ p[id*="copyToClipboardHas"]:hover {
 
 
 .navTab {
-    color: #000000;
+    color: #ffffff;
     transition: .1s ease-in-out;
-
+    height: 100%;
+    width: 100%;
+    background-color: #c2c2c2;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
 }
 
 .navTab:hover {
@@ -648,9 +658,7 @@ p[id*="copyToClipboardHas"]:hover {
     cursor: pointer;
 }
 
-.navTab:active {
-    background-color: #4b2929;
-}
+
 
 
 
@@ -959,5 +967,4 @@ pre code {
 #businessTypeValueDisplay {
     font-size: 12px;
 }
-
 

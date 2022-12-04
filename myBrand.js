@@ -750,6 +750,7 @@ function clearSundayClosingTime () {
 		confirm.close();
 	}
 }
+
 // BASIC
 // businessType
 function unlockBusinessType () {
@@ -861,6 +862,7 @@ function clearValueProp () {
 		confirm.close();
 	}
 }
+
 // SOCIAL MEDIA
 // facebookUrl
 function unlockFacebookUrl () {
@@ -1157,6 +1159,7 @@ function clearTiktokUsername () {
 		confirm.close();
 	}
 }
+
 // BRAND
 // squareLogo
 function unlockSquareLogo () {
@@ -1253,6 +1256,7 @@ function showFullImage() {
 	if(localStorage.getItem("image"))
 		document.getElementById("uploadedFullImage").setAttribute("src", localStorage.getItem("image"));
 }
+
 // COLORS
 // primaryColor
 function unlockPrimaryColor () {
@@ -1359,6 +1363,7 @@ function clearTertiaryColor () {
 		confirm.close();
 	}
 }
+
 // FONTS
 // primaryFont
 function unlockPrimaryFont () {
@@ -1445,6 +1450,7 @@ function clearTertiaryFont () {
 		confirm.close();
 	}
 }
+
 // PEOPLE
 // person1
 // person1Name
@@ -1902,7 +1908,6 @@ function clearPerson2TiktokUrl () {
 	}
 }
 
-
 // OFFERS
 // offer1
 // offer1Name
@@ -2103,6 +2108,7 @@ function clearOffer1Image () {
 		confirm.close();
 	}
 }
+
 // offer2
 // offer2Name
 function unlockOffer2Name () {
@@ -2302,6 +2308,3 @@ function clearOffer2Image () {
 		confirm.close();
 	}
 }
-
-
-
