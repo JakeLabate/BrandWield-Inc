@@ -62,6 +62,146 @@
 		}
 	</script>
 
+	<!-- Rapid API Links Shortener -->
+	<script>
+		// Rapid API - URL Links Shortener
+		function shortenUrlCompanyUpdateLink() {
+
+			// If the user has not entered a URL, alert them to do so.
+			if (document.getElementById("companyUpdateLink").value == "") {
+				alert("Please enter a URL to shorten.");
+				return;
+			}
+
+			let url = document.getElementById("companyUpdateLink").value;
+			let domain = "my.brandwield.com";
+
+			const options = {
+				method: 'GET',
+				headers: {
+					accept: 'application/json',
+					apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				}
+			};
+
+			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+			.then(response => response.json())
+			.then(response =>
+				document.getElementById("companyUpdateLink").value = response.shortUrl
+			)
+			.catch(error => console.log(error));
+
+		}
+		function shortenUrlGenericPostLink() {
+
+			// If the user has not entered a URL, alert them to do so.
+			if (document.getElementById("genericPostLink").value == "") {
+				alert("Please enter a URL to shorten.");
+				return;
+			}
+
+			let url = document.getElementById("genericPostLink").value;
+			let domain = "my.brandwield.com";
+
+			const options = {
+				method: 'GET',
+				headers: {
+					accept: 'application/json',
+					apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				}
+			};
+
+			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+			.then(response => response.json())
+			.then(response =>
+				document.getElementById("genericPostLink").value = response.shortUrl
+			)
+			.catch(error => console.log(error));
+
+		}
+		function shortenUrlSalePromotionLink() {
+
+			// If the user has not entered a URL, alert them to do so.
+			if (document.getElementById("salePromotionLink").value == "") {
+				alert("Please enter a URL to shorten.");
+				return;
+			}
+
+			let url = document.getElementById("salePromotionLink").value;
+			let domain = "my.brandwield.com";
+
+			const options = {
+				method: 'GET',
+				headers: {
+					accept: 'application/json',
+					apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				}
+			};
+
+			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+			.then(response => response.json())
+			.then(response =>
+				document.getElementById("salePromotionLink").value = response.shortUrl
+			)
+			.catch(error => console.log(error));
+
+		}
+		function shortenUrlEventPromotionLink() {
+
+			// If the user has not entered a URL, alert them to do so.
+			if (document.getElementById("eventPromotionLink").value == "") {
+				alert("Please enter a URL to shorten.");
+				return;
+			}
+
+			let url = document.getElementById("eventPromotionLink").value;
+			let domain = "my.brandwield.com";
+
+			const options = {
+				method: 'GET',
+				headers: {
+					accept: 'application/json',
+					apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				}
+			};
+
+			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+			.then(response => response.json())
+			.then(response =>
+				document.getElementById("eventPromotionLink").value = response.shortUrl
+			)
+			.catch(error => console.log(error));
+
+		}
+		function shortenUrlTestimonialReviewLink() {
+
+			// If the user has not entered a URL, alert them to do so.
+			if (document.getElementById("testimonialReviewLink").value == "") {
+				alert("Please enter a URL to shorten.");
+				return;
+			}
+
+			let url = document.getElementById("testimonialReviewLink").value;
+			let domain = "my.brandwield.com";
+
+			const options = {
+				method: 'GET',
+				headers: {
+					accept: 'application/json',
+					apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				}
+			};
+
+			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+			.then(response => response.json())
+			.then(response =>
+				document.getElementById("testimonialReviewLink").value = response.shortUrl
+			)
+			.catch(error => console.log(error));
+
+		}
+	</script>
+
 	<!-- HTML2Canvas Screenshot Capture -->
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
@@ -1277,30 +1417,36 @@
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
 						<label for="genericPostHook" style="width: 100px;">Hook</label>
-						<span id="genericPostHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick="">info</span>
-						<input id="genericPostHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="genericPostHookInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="genericPostHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="genericPostHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostHook').value = null;"/>
 					</span>
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
 						<label for="genericPostTitle" style="width: 100px;">Title</label>
-						<span id="genericPostTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="genericPostTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="genericPostTitleInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="genericPostTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="genericPostTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostTitle').value = null;"/>
 					</span>
 
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
 						<label for="genericPostBody" style="width: 100px;">Body</label>
-						<span id="genericPostBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="genericPostBodyInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostBody').value = null;"/>
 					</span>
 
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
 						<label for="genericPostLink" style="width: 100px;">Link</label>
-						<span id="genericPostLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="genericPostLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="genericPostLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="genericPostLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="genericPostLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostLink').value = null;"/>
+						<img id="genericPostLinkQRPreview" alt="" src="" style="height: 25px; width: 25px; margin-left: 10px;" />
+						<img id="genericPostLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin-left: 10px;" onclick="qrCodeGenericPostLink()"/>
+						<img id="genericPostLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlGenericPostLink();"/>
 						<img id="genericPostLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('genericPostLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
 
@@ -1312,37 +1458,42 @@
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateHook" style="width: 100px;">Hook</label>
-						<span id="companyUpdateHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="companyUpdateHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="companyUpdateHookInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="companyUpdateHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="companyUpdateHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateHook').value = null;"/>
 					</span>
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateTitle" style="width: 100px;">Title</label>
-						<span id="companyUpdateTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="companyUpdateTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="companyUpdateTitleInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="companyUpdateTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="companyUpdateTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateTitle').value = null;"/>
 					</span>
 
 					<!-- Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateDate" style="width: 100px;">Date</label>
-						<span id="companyUpdateDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="companyUpdateDateInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="companyUpdateDate" type="date" class="cleanCursorInput" />
+						<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateDate').value = null;"/>
 					</span>
 
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateBody" style="width: 100px;">Body</label>
-						<span id="companyUpdateBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="companyUpdateBodyInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateBody').value = null;"/>
 					</span>
 
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateLink" style="width: 100px;">Link</label>
-						<span id="companyUpdateLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="companyUpdateLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/updates/bestUpdateEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="companyUpdateLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="companyUpdateLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/updates/bestUpdateEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="companyUpdateLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateLink').value = null;"/>
+						<img id="companyUpdateLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlCompanyUpdateLink();"/>
 						<img id="companyUpdateLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
 
@@ -1354,51 +1505,58 @@
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionHook" style="width: 100px;">Hook</label>
-						<span id="salePromotionHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="salePromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="salePromotionHookInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="salePromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="salePromotionHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionHook').value = null;"/>
 					</span>
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionTitle" style="width: 100px;">Title</label>
-						<span id="salePromotionTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="salePromotionTitleInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="salePromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionTitle').value = null;"/>
 					</span>
 
 					<!-- Product or Service -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionProductOrService" style="width: 100px;">Product or Service</label>
-						<span id="salePromotionProductOrServiceInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="salePromotionProductOrServiceInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionProductOrService').value = null;"/>
 					</span>
 
 					<!-- Start Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionStartDate" style="width: 100px;">Start Date</label>
-						<span id="salePromotionStartDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="salePromotionStartDateIno" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+						<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionStartDate').value = null;"/>
 					</span>
 
 					<!-- End Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionEndDate" style="width: 100px;">End Date</label>
-						<span id="salePromotionEndDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="salePromotionEndDateInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+						<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionEndDate').value = null;"/>
 					</span>
 
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionBody" style="width: 100px;">Body</label>
-						<span id="salePromotionBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="salePromotionBodyInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<img id="salePromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionBody').value = null;"/>
 					</span>
 
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionLink" style="width: 100px;">Link</label>
-						<span id="salePromotionLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="salePromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/promotions/bestDealEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="salePromotionLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="salePromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/promotions/bestDealEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="salePromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionLink').value = null;"/>
+						<img id="salePromotionLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlSalePromotionLink();"/>
 						<img id="salePromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
 
@@ -1410,36 +1568,40 @@
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionHook" style="width: 100px;">Hook</label>
-						<span id="eventPromotionHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="eventPromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="eventPromotionHookInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="eventPromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="eventPromotionHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionHook').value = null;"/>
 					</span>
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionTitle" style="width: 100px;">Title</label>
-						<span id="eventPromotionTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="eventPromotionTitleInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="eventPromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionTitle').value = null;"/>
 					</span>
 
 					<!-- Start Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionStartDate" style="width: 100px;">Start Date</label>
-						<span id="eventPromotionStartDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="eventPromotionStartDateInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+						<img id="eventPromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionStartDate').value = null;"/>
 					</span>
 
 					<!-- End Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionEndDate" style="width: 100px;">End Date</label>
-						<span id="eventPromotionEndDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="eventPromotionEndDateInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+						<img id="eventPromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionEndDate').value = null;"/>
 					</span>
 
 					<!-- Location -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionLocation" style="width: 100px;">Location</label>
-						<span id="eventPromotionLocationInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="58" placeholder="123 Main Street Boston, MA style" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="eventPromotionLocationInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="58" placeholder="123 Main Street Boston, MA style" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLocation').value = null;" />
 						<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLocation').value = localStorage.getItem('officeAddressStreet1') + ' ' + localStorage.getItem('officeAddressCity') + ' ' + localStorage.getItem('officeAddressState')"/>
 					</span>
@@ -1447,16 +1609,18 @@
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionBody" style="width: 100px;">Body</label>
-						<span id="eventPromotionBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="eventPromotionBodyInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<img id="eventPromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionBody').value = null;"/>
 					</span>
 
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionLink" style="width: 100px;">Link</label>
-						<span id="eventPromotionLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="eventPromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/events/bestEventEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="eventPromotionLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="eventPromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/events/bestEventEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="eventPromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLink').value = null;" />
+						<img id="eventPromotionLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlEventPromotionLink();"/>
 						<img id="eventPromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
 
@@ -1468,58 +1632,66 @@
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewHook" style="width: 100px;">Hook</label>
-						<span id="testimonialReviewHookInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="testimonialReviewHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="testimonialReviewHookInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="testimonialReviewHook" type="text" class="cleanCursorInput" placeholder="Hook" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="testimonialReviewHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewHook').value = null;"/>
 					</span>
 
 					<!-- Author Name -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorName" style="width: 100px;">Author Name</label>
-						<span id="testimonialReviewAuthorNameInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="testimonialReviewAuthorInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="testimonialReviewAuthorNameClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewAuthorName').value = null;"/>
 					</span>
 
 					<!-- Author Headshot -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorHeadshot" style="width: 100px;">Author Headshot</label>
-						<span id="testimonialReviewAuthorHeadshotInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="testimonialReviewAuthorHeadshotInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="58" />
+						<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewAuthorHeadshot').value = null;"/>
 					</span>
 
 					<!-- Author Title -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorTitle" style="width: 100px;">Author Title</label>
-						<span id="testimonialReviewAuthorTitleInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="testimonialReviewAuthorTitleInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="testimonialReviewAuthorTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewAuthorTitle').value = null;"/>
 					</span>
 
 					<!-- Author Company -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorCompany" style="width: 100px;">Author Company</label>
-						<span id="testimonialReviewAuthorCompanyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="testimonialReviewAuthorCompanyInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+						<img id="testimonialReviewAuthorCompanyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewAuthorCompany').value = null;"/>
 					</span>
 
 					<!-- Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewDate" style="width: 100px;">Date</label>
-						<span id="testimonialReviewDateInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="testimonialReviewDateInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="testimonialReviewDate" type="date" class="cleanCursorInput" />
+						<img id="testimonialReviewDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewDate').value = null;"/>
 					</span>
 
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewBody" style="width: 100px;">Body</label>
-						<span id="testimonialReviewBodyInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
+						<img id="testimonialReviewBodyInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Michael Scott is the bestest most amazingest boss I ever had!"></textarea>
+						<img id="testimonialReviewBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewBody').value = null;"/>
 					</span>
 
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewLink" style="width: 100px;">Link</label>
-						<span id="testimonialReviewLinkInfo" class="material-symbols-outlined" style="height: 25px; width: 25px; margin-left: 10px;" onclick=''>info</span>
-						<input id="testimonialReviewLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/reviews/bestReviewEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58};" />
+						<img id="testimonialReviewLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="testimonialReviewLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/reviews/bestReviewEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="testimonialReviewLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewLink').value = null;"/>
+						<img id="testimonialReviewLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlTestimonialReviewLink();"/>
 						<img id="testimonialReviewLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
 
@@ -2098,6 +2270,8 @@
 <datalist id="valueTypeEmail"></datalist>
 <datalist id="valueTypeAddress"></datalist>
 -->
+
+
 
 </body>
 </html>
