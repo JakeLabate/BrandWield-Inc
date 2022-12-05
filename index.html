@@ -1480,6 +1480,7 @@
 				</select>
 			</span>
 
+			<!-- Content Type Field Collections -->
 			<div id="contentTypeFieldOptions">
 
 				<!-- Generic Post -->
@@ -1742,7 +1743,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorHeadshot" style="width: 100px;">Author Headshot</label>
 						<img id="testimonialReviewAuthorHeadshotInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="58" />
+						<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="58" style="height: 60px;" />
 						<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorHeadshot').value = null;"/>
 					</span>
 
@@ -1798,216 +1799,31 @@
 
 			</div>
 
+			<!-- Global Content Fields -->
+			<div id="globalContentFields">
 
+				<!-- Color -->
+				<span style="display: flex; align-items: center;">
+					<label for="primaryColorGlobal" style="width: 100px;">Color</label>
+					<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+					<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+					<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
+					<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+						<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = localStorage.getItem('primaryColor')"/>
+					</span>
+				</span>
 
-			<!-- Output Tabs -->
-			<div>
-				<button class="socialTab" onclick="openCity(event, 'TitleTab'); document.getElementById('inputEventTitle').focus();">Title<span id="tabExclamationTitle" class="material-symbols-outlined">exclamation</span><span id="tabDoneTitle" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'DateTab'); document.getElementById('inputEventDate').focus();">Date<span id="tabExclamationDate" class="material-symbols-outlined">exclamation</span><span id="tabDoneDate" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'TimeTab'); document.getElementById('inputEventTime').focus();">Time<span id="tabExclamationTime" class="material-symbols-outlined">exclamation</span><span id="tabDoneTime" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'LocationTab'); document.getElementById('inputEventLocation').focus();">Location<span id="tabExclamationLocation" class="material-symbols-outlined">exclamation</span><span id="tabDoneLocation" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'OrganizationTab'); document.getElementById('inputEventOrganization').focus();">Organization<span id="tabExclamationOrganization" class="material-symbols-outlined">exclamation</span><span id="tabDoneOrganization" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'HostTab');  document.getElementById('inputEventHost').focus();">Host<span id="tabDescriptionHost" class="material-symbols-outlined">exclamation</span><span id="tabDoneHost" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'DescriptionTab'); document.getElementById('inputEventDescription').focus();">Description<span id="tabDescriptionTime" class="material-symbols-outlined">exclamation</span><span id="tabDoneDescription" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'LinkTab'); document.getElementById('inputEventLink').focus();">Link<span id="tabExclamationLink" class="material-symbols-outlined">exclamation</span><span id="tabDoneLink" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'ColorTab'); document.getElementById('inputEventColor').focus();">Color<span id="tabExclamationColor" class="material-symbols-outlined">exclamation</span><span id="tabDoneColor" class="material-symbols-outlined" style="display: none;">done</span></button>
-				<button class="socialTab" onclick="openCity(event, 'LogoTab'); document.getElementById('inputEventLogo').focus();">Logo<span id="tabExclamationLogo" class="material-symbols-outlined">exclamation</span><span id="tabDoneLogo" class="material-symbols-outlined" style="display: none;">done</span></button>
-			</div>
+				<!-- Logo -->
+				<span style="display: flex; align-items: center;">
+					<label for="squareLogoGlobal" style="width: 100px;">Logo</label>
+					<img id="squareLogoGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+					<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="58" style="height: 60px;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
+					<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = null;"/>
+					<span id="squareLogoGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+						<img id="squareLogoGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = localStorage.getItem('squareLogo')"/>
+					</span>
+				</span>
 
-			<!-- Title -->
-			<div id="TitleTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventTitle" class="cleanCursorInput" type="text" placeholder="Title of event" size="50" onkeyup="this.size = this.value.length + 4; eventTitleUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTitleClear();">x</a>
-					<span id="titleSentimentAnalysis" class="chip" style="user-select: none; display: none;"></span>
-				</div>
-
-				<div id="hasTitle" style="display: none; line-height: 2em;">
-					<div>
-						<p title="Click to select" onmouseover="considerTitleOutput1();" onmouseleave="clearTitleConsideration();" onclick="selectTitleOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTitle1">Are you ready for the <text class="title chip"></text>?</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTitleOutput2();" onmouseleave="clearTitleConsideration();" onclick="selectTitleOutput2();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTitle2">We are hosting an event! Will you be at the <text class="title chip"></text>?</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTitleOutput3();" onmouseleave="clearTitleConsideration();" onclick="selectTitleOutput3();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTitle3">We will see you at the <text class="title chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTitleOutput4();" onmouseleave="clearTitleConsideration();" onclick="selectTitleOutput4();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTitle4">We are hosting an event; will you be there? Don't miss the <text class="title chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTitleOutput5();" onmouseleave="clearTitleConsideration();" onclick="selectTitleOutput5();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTitle5">The <text class="title chip"></text> is right around the corner. Will you be there?</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Date -->
-			<div id="DateTab" class="tabcontent">
-				<div style="align-items: center; justify-content: space-between;">
-					<input id="inputEventDate" class="cleanCursorInput" type="date" size="50" oninput="eventDateUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDateClear();">x</a>
-				</div>
-				<div id="hasDate" style="display: none; line-height: 2em;">
-					<div>
-						<p title="Click to select" onmouseover="considerDateOutput1();" onmouseleave="clearDateConsideration();" onclick="selectDateOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDate1">This event will take place on <text class="date chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerDateOutput2();" onmouseleave="clearDateConsideration();" onclick="selectDateOutput2();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDate2">Are you busy on <text class="date chip"></text>?</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerDateOutput3();" onmouseleave="clearDateConsideration();" onclick="selectDateOutput3();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDate3">Mark your calendar for <text class="date chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerDateOutput4();" onmouseleave="clearDateConsideration();" onclick="selectDateOutput4();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDate4">Set aside some time on <text class="date chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerDateOutput5();" onmouseleave="clearDateConsideration();" onclick="selectDateOutput5();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDate5"><text class="date chip"></text> is closer than you think!</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Time -->
-			<div id="TimeTab" class="tabcontent">
-				<div style="align-items: center; justify-content: space-between;">
-					<input id="inputEventTime" class="cleanCursorInput" type="time" size="50" oninput="eventTimeUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventTimeClear();">x</a>
-				</div>
-				<div id="hasTime" style="display: none; line-height: 2em;">
-					<div>
-						<p title="Click to select" onmouseover="considerTimeOutput1();" onmouseleave="clearTimeConsideration();" onclick="selectTimeOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTime1">This even will start at <text class="time chip"></text>.</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTimeOutput2();" onmouseleave="clearTimeConsideration();" onclick="selectTimeOutput2();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTime2">Be there for <text class="time chip"></text> sharp!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTimeOutput3();" onmouseleave="clearTimeConsideration();" onclick="selectTimeOutput3();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTime3">Be there by <text class="time chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTimeOutput4();" onmouseleave="clearTimeConsideration();" onclick="selectTimeOutput4();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTime4">We formally start at <text class="time chip"></text>.</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerTimeOutput5();" onmouseleave="clearTimeConsideration();" onclick="selectTimeOutput5();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasTime5">It will start at <text class="time chip"></text>!</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Location -->
-			<div id="LocationTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventLocation" class="cleanCursorInput" type="text" placeholder="Location of event" size="50" onkeyup="this.size = this.value.length + 4; eventLocationUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLocationClear();">x</a>
-					<img id="linkLocation" title="Load Address" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLocation();" onmouseleave="onmouseleaveLinkLocation();" onclick="onclickLinkLocation();">
-				</div>
-				<div id="hasLocation" style="display: none; line-height: 2em;">
-					<div>
-						<p title="Click to select" onmouseover="considerLocationOutput1();" onmouseleave="clearLocationConsideration();" onclick="selectLocationOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasLocation1">This event will be located at <text class="location chip"></text>.</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerLocationOutput2();" onmouseleave="clearLocationConsideration();" onclick="selectLocationOutput2();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasLocation2">This event will take place at <text class="location chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerLocationOutput3();" onmouseleave="clearLocationConsideration();" onclick="selectLocationOutput3();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasLocation3">See you at <text class="location chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerLocationOutput4();" onmouseleave="clearLocationConsideration();" onclick="selectLocationOutput4();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasLocation4">Be sure you know where to go! The event will take place at <text class="location chip"></text>.</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerLocationOutput5();" onmouseleave="clearLocationConsideration();" onclick="selectLocationOutput5();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasLocation5">Have you ever been to <text class="location chip"></text>? We are hosting the event there!</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Organization -->
-			<div id="OrganizationTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventOrganization" class="cleanCursorInput" type="text" placeholder="Organization hosting event" onkeyup="this.size = this.value.length + 4; eventOrganizationUpdate(); placeHashtagsAsSelected();">
-					<a  title="Clear field" style="position: relative; right: 5px;" onclick="eventOrganizationClear();">x</a>
-				</div>
-				<div id="hasOrganization" style="display: none; line-height: 2em;">
-					<div>
-						<p title="Click to select" onmouseover="considerOrganizationOutput1();" onmouseleave="clearOrganizationConsideration();" onclick="selectOrganizationOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasOrganization1">The event is hosted by <text class="organization chip"></text>.</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerOrganizationOutput2();" onmouseleave="clearOrganizationConsideration();" onclick="selectOrganizationOutput2();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasOrganization2">Have you ever been to a <text class="organization chip"></text> event?</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerOrganizationOutput3();" onmouseleave="clearOrganizationConsideration();" onclick="selectOrganizationOutput3();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasOrganization3">The <text class="organization chip"></text> is hosting the event!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerOrganizationOutput4();" onmouseleave="clearOrganizationConsideration();" onclick="selectOrganizationOutput4();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasOrganization4">Organized by the <text class="organization chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerOrganizationOutput5();" onmouseleave="clearOrganizationConsideration();" onclick="selectOrganizationOutput5();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasOrganization5">This event is made possible by <text class="organization chip"></text>!</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Host -->
-			<div id="HostTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventHost" class="cleanCursorInput" type="text" placeholder="Host (person) of event" size="50" onkeyup="this.size = this.value.length + 4; eventHostUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventHostClear();">x</a>
-					<img id="linkHost" title="Load Founder Name" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkHost();" onmouseleave="onmouseleaveLinkHost();" onclick="onclickLinkHost();">
-				</div>
-				<div id="hasHost" style="display: none; line-height: 2em;">
-					<div>
-						<p title="Click to select" onmouseover="considerHostOutput1();" onmouseleave="clearHostConsideration();" onclick="selectHostOutput1();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasHost1"><text class="host chip"></text> will be there to greet you at the door!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerHostOutput2();" onmouseleave="clearHostConsideration();" onclick="selectHostOutput2();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasHost2"><text class="host chip"></text> will be there to welcome you!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerHostOutput3();" onmouseleave="clearHostConsideration();" onclick="selectHostOutput3();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasHost3">Contact <text class="host chip"></text> if you have any questions!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerHostOutput4();" onmouseleave="clearHostConsideration();" onclick="selectHostOutput4();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasHost4">Looking for more information? Contact <text class="host chip"></text>!</p>
-					</div>
-					<div>
-						<p title="Click to select" onmouseover="considerHostOutput5();" onmouseleave="clearHostConsideration();" onclick="selectHostOutput5();" style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasHost5"><text class="host chip"></text> can answer any of your questions ahead of time!</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Description -->
-			<div id="DescriptionTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventDescription" class="cleanCursorInput" type="text" placeholder="Description of event" size="50" onkeyup="this.size = this.value.length + 4; eventDescriptionUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventDescriptionClear();">x</a>
-					<span id="descriptionSentimentAnalysis" class="chip" style="user-select: none; display: none;"></span>
-				</div>
-				<div id="hasDescription" style="display: none; line-height: 2em;">
-					<div>
-						<p style="cursor: pointer; padding: 10px 14px 10px 14px; border-top: 1px solid #e1e1e1" id="copyToClipboardHasDescription1"><text class="description chip"></text></p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Link -->
-			<div id="LinkTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventLink" class="cleanCursorInput" type="url" placeholder="Link to register for/preview event" size="50" onkeyup="this.size = this.value.length + 4; eventLinkUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLinkClear();">x</a>
-					<img id="qrPreview" src="" alt="" height="30px" width="30px" style="display: none;"/>
-					<img id="linkLink" title="Load Website URL" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkLink();" onmouseleave="onmouseleaveLinkLink();" onclick="onclickLinkLink();">
-				</div>
-				<div id="hasLink" style="display: none; line-height: 2em;"></div>
-			</div>
-
-			<!-- Color -->
-			<div id="ColorTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventPrimaryColor" class="cleanCursorInput" type="color" style="padding: 0;" size="50" oninput="eventPrimarycolorUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventPrimarycolorClear();">x</a>
-					<img id="linkPrimarycolor" title="Load Primary Color" src="media/otherIcons/link.svg" alt="Link" width="30" height="30" onmouseover="onmouseoverLinkPrimarycolor();" onmouseleave="onmouseleaveLinkPrimarycolor();" onclick="onclickLinkPrimarycolor();">
-				</div>
-			</div>
-
-			<!-- Logo -->
-			<div id="LogoTab" class="tabcontent">
-				<div style="align-items: center;">
-					<input id="inputEventLogo" class="cleanCursorInput" type="file" style="width: 250px; padding: 10px 10px 10px 10px;" size="50" oninput="this.size = this.value.length + 4; eventLogoUpdate(); placeHashtagsAsSelected();">
-					<a title="Clear field" style="position: relative; right: 5px;" onclick="eventLogoClear();">x</a>
-				</div>
 			</div>
 
 
@@ -2322,54 +2138,7 @@
 	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
 	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
 	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
-
-	<div class="flex-container">
-		<div class="flex-row">
-			<div class="flex-item">dvi 1</div>
-			<div class="flex-item">div 2</div>
-			<div class="flex-item">div 3</div>
-		</div>
-		<div class="flex-row">
-			<div class="flex-item">div 4</div>
-			<div class="flex-item">dvi 5</div>
-		</div>
-		<div class="flex-column">
-			<div class="flex-item">div 6</div>
-			<div class="flex-item">div 7</div>
-		</div>
-		<div class="flex-column">
-			<div class="flex-item">div 8</div>
-			<div class="flex-item">div 9</div>
-		</div>
-
-
-
-
-
-	</div>
-
-
-
 </div>
-
-<!-- STORAGE -->
-
-<!--
-<div id="brandSearch">
-	<input id="brandSearchInput" class="cleanCursorInput" type="search" placeholder="Search your brand..." list="valueAll" size="33" oninput="this.size = this.value.length + 7; if (this.size < 33) {this.size = 33}">
-</div>
-<datalist id="valueAll"></datalist>
-<datalist id="valueTypeText"></datalist>
-<datalist id="valueTypeDate"></datalist>
-<datalist id="valueTypeColor"></datalist>
-<datalist id="valueTypeFont"></datalist>
-<datalist id="valueTypeImage"></datalist>
-<datalist id="valueTypeURL"></datalist>
-<datalist id="valueTypeTel"></datalist>
-<datalist id="valueTypeEmail"></datalist>
-<datalist id="valueTypeAddress"></datalist>
--->
-
 
 
 </body>
