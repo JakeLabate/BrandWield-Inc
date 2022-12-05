@@ -65,40 +65,7 @@
 	<!-- Rapid API Links Shortener -->
 	<script>
 		// Rapid API - URL Links Shortener
-		function shortenUrlCompanyUpdateLink() {
-
-			// If the user has not entered a URL, alert them to do so.
-			if (document.getElementById("companyUpdateLink").value == "") {
-				alert("Please enter a URL to shorten.");
-				return;
-			}
-
-			let url = document.getElementById("companyUpdateLink").value;
-			let domain = "my.brandwield.com";
-
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					apikey: '65338792cfa94d94ac9a01788bdefc3d'
-				}
-			};
-
-			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-			.then(response => response.json())
-			.then(response =>
-				document.getElementById("companyUpdateLink").value = response.shortUrl
-			)
-			.catch(error => console.log(error));
-
-		}
 		function shortenUrlGenericPostLink() {
-
-			// If the user has not entered a URL, alert them to do so.
-			if (document.getElementById("genericPostLink").value == "") {
-				alert("Please enter a URL to shorten.");
-				return;
-			}
 
 			let url = document.getElementById("genericPostLink").value;
 			let domain = "my.brandwield.com";
@@ -119,13 +86,28 @@
 			.catch(error => console.log(error));
 
 		}
-		function shortenUrlSalePromotionLink() {
+		function shortenUrlCompanyUpdateLink() {
 
-			// If the user has not entered a URL, alert them to do so.
-			if (document.getElementById("salePromotionLink").value == "") {
-				alert("Please enter a URL to shorten.");
-				return;
-			}
+			let url = document.getElementById("companyUpdateLink").value;
+			let domain = "my.brandwield.com";
+
+			const options = {
+				method: 'GET',
+				headers: {
+					accept: 'application/json',
+					apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				}
+			};
+
+			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+			.then(response => response.json())
+			.then(response =>
+				document.getElementById("companyUpdateLink").value = response.shortUrl
+			)
+			.catch(error => console.log(error));
+
+		}
+		function shortenUrlSalePromotionLink() {
 
 			let url = document.getElementById("salePromotionLink").value;
 			let domain = "my.brandwield.com";
@@ -148,12 +130,6 @@
 		}
 		function shortenUrlEventPromotionLink() {
 
-			// If the user has not entered a URL, alert them to do so.
-			if (document.getElementById("eventPromotionLink").value == "") {
-				alert("Please enter a URL to shorten.");
-				return;
-			}
-
 			let url = document.getElementById("eventPromotionLink").value;
 			let domain = "my.brandwield.com";
 
@@ -174,12 +150,6 @@
 
 		}
 		function shortenUrlTestimonialReviewLink() {
-
-			// If the user has not entered a URL, alert them to do so.
-			if (document.getElementById("testimonialReviewLink").value == "") {
-				alert("Please enter a URL to shorten.");
-				return;
-			}
 
 			let url = document.getElementById("testimonialReviewLink").value;
 			let domain = "my.brandwield.com";
@@ -1493,6 +1463,8 @@
 						<img id="companyUpdateLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="companyUpdateLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/updates/bestUpdateEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="companyUpdateLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateLink').value = null;"/>
+						<img id="companyUpdateLinkQRPreview" alt="" src="" style="height: 25px; width: 25px; margin-left: 10px;" />
+						<img id="companyUpdateLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin-left: 10px;" onclick="qrCodeCompanyUpdateLink()"/>
 						<img id="companyUpdateLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlCompanyUpdateLink();"/>
 						<img id="companyUpdateLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('companyUpdateLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
@@ -1556,6 +1528,8 @@
 						<img id="salePromotionLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="salePromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/promotions/bestDealEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="salePromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionLink').value = null;"/>
+						<img id="salePromotionLinkQRPreview" alt="" src="" style="height: 25px; width: 25px; margin-left: 10px;" />
+						<img id="salePromotionLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin-left: 10px;" onclick="qrCodeSalePromotionLink()"/>
 						<img id="salePromotionLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlSalePromotionLink();"/>
 						<img id="salePromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('salePromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
@@ -1620,6 +1594,8 @@
 						<img id="eventPromotionLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="eventPromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/events/bestEventEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="eventPromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLink').value = null;" />
+						<img id="eventPromotionLinkQRPreview" alt="" src="" style="height: 25px; width: 25px; margin-left: 10px;" />
+						<img id="eventPromotionLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin-left: 10px;" onclick="qrCodeEventPromotionLink()"/>
 						<img id="eventPromotionLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlEventPromotionLink();"/>
 						<img id="eventPromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('eventPromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>
@@ -1691,6 +1667,8 @@
 						<img id="testimonialReviewLinkInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="testimonialReviewLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/reviews/bestReviewEver" size="58" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 58}" />
 						<img id="testimonialReviewLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewLink').value = null;"/>
+						<img id="testimonialReviewLinkQRPreview" alt="" src="" style="height: 25px; width: 25px; margin-left: 10px;" />
+						<img id="testimonialReviewLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin-left: 10px;" onclick="qrCodeTestimonialReviewLink()"/>
 						<img id="testimonialReviewLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="shortenUrlTestimonialReviewLink();"/>
 						<img id="testimonialReviewLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin-left: 10px;" onclick="document.getElementById('testimonialReviewLink').value = localStorage.getItem('primaryContactWebsite')"/>
 					</span>

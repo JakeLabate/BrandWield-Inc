@@ -1765,113 +1765,6 @@ function realiseSentence() {
 	.catch(err => console.error(err));
 }
 
-// Rapid API - URL Links Shortener
-function shortenUrlCompanyUpdateLink() {
-
-	let url = document.getElementById("companyUpdateLink").value;
-	let domain = "my.brandwield.com";
-
-	const options = {
-		method: 'GET',
-		headers: {
-			accept: 'application/json',
-			apikey: '65338792cfa94d94ac9a01788bdefc3d'
-		}
-	};
-
-	fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-	.then(response => response.json())
-	.then(response =>
-		document.getElementById("companyUpdateLink").value = response.shortUrl
-	)
-	.catch(error => console.log(error));
-
-}
-function shortenUrlGenericPostLink() {
-
-	let url = document.getElementById("genericPostLink").value;
-	let domain = "my.brandwield.com";
-
-	const options = {
-		method: 'GET',
-		headers: {
-			accept: 'application/json',
-			apikey: '65338792cfa94d94ac9a01788bdefc3d'
-		}
-	};
-
-	fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-	.then(response => response.json())
-	.then(response =>
-		document.getElementById("genericPostLink").value = response.shortUrl
-	)
-	.catch(error => console.log(error));
-
-}
-function shortenUrlSalePromotionLink() {
-
-	let url = document.getElementById("salePromotionLink").value;
-	let domain = "my.brandwield.com";
-
-	const options = {
-		method: 'GET',
-		headers: {
-			accept: 'application/json',
-			apikey: '65338792cfa94d94ac9a01788bdefc3d'
-		}
-	};
-
-	fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-	.then(response => response.json())
-	.then(response =>
-		document.getElementById("salePromotionLink").value = response.shortUrl
-	)
-	.catch(error => console.log(error));
-
-}
-function shortenUrlEventPromotionLink() {
-
-	let url = document.getElementById("eventPromotionLink").value;
-	let domain = "my.brandwield.com";
-
-	const options = {
-		method: 'GET',
-		headers: {
-			accept: 'application/json',
-			apikey: '65338792cfa94d94ac9a01788bdefc3d'
-		}
-	};
-
-	fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-	.then(response => response.json())
-	.then(response =>
-		document.getElementById("eventPromotionLink").value = response.shortUrl
-	)
-	.catch(error => console.log(error));
-
-}
-function shortenUrlTestimonialReviewLink() {
-
-	let url = document.getElementById("testimonialReviewLink").value;
-	let domain = "my.brandwield.com";
-
-	const options = {
-		method: 'GET',
-		headers: {
-			accept: 'application/json',
-			apikey: '65338792cfa94d94ac9a01788bdefc3d'
-		}
-	};
-
-	fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-	.then(response => response.json())
-	.then(response =>
-		document.getElementById("testimonialReviewLink").value = response.shortUrl
-	)
-	.catch(error => console.log(error));
-
-}
-
 function qrCodeGenericPostLink() {
 
 	let url = document.getElementById("genericPostLink").value;
@@ -1892,5 +1785,86 @@ function qrCodeGenericPostLink() {
 	.catch(err => console.error(err));
 
 }
+function qrCodeCompanyUpdateLink() {
+
+	let url = document.getElementById("companyUpdateLink").value;
+
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
+		},
+		body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
+	};
+
+	fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
+	.then(response => response.json())
+	.then(data => document.getElementById("companyUpdateLinkQRPreview").src = data.qrcode)
+	.catch(err => console.error(err));
+
+}
+function qrCodeSalePromotionLink() {
+
+	let url = document.getElementById("salePromotionLink").value;
+
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
+		},
+		body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
+	};
+
+	fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
+	.then(response => response.json())
+	.then(data => document.getElementById("salePromotionLinkQRPreview").src = data.qrcode)
+	.catch(err => console.error(err));
+
+}
+function qrCodeEventPromotionLink() {
+
+	let url = document.getElementById("eventPromotionLink").value;
+
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
+		},
+		body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
+	};
+
+	fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
+	.then(response => response.json())
+	.then(data => document.getElementById("eventPromotionLinkQRPreview").src = data.qrcode)
+	.catch(err => console.error(err));
+
+}
+function qrCodeTestimonialReviewLink() {
+
+	let url = document.getElementById("testimonialReviewLink").value;
+
+	const options = {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json',
+			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+			'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
+		},
+		body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
+	};
+
+	fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
+	.then(response => response.json())
+	.then(data => document.getElementById("testimonialReviewLinkQRPreview").src = data.qrcode)
+	.catch(err => console.error(err));
+
+}
+
 
 
