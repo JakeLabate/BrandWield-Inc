@@ -13,10 +13,10 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "Organization",
-			"@id": "https://brandwield.com/#organization",
+			"@id": "https://app.brandwield.com/#organization",
 			"name": "BrandWield",
 			"legalName": "BrandWield Inc.",
-			"url": "https://brandwield.com",
+			"url": "https://app.brandwield.com",
 			"slogan": "Making content vision and content production, synonymous",
 			"foundingDate": "2022",
 			"brand":  {
@@ -65,9 +65,9 @@
 	<!-- Rapid API Links Shortener -->
 	<script>
 		// Rapid API - URL Links Shortener
-		function shortenUrlGenericPostLink() {
+		function linkGlobalShorten() {
 
-			let url = document.getElementById("genericPostLink").value;
+			let url = document.getElementById("linkGlobal").value;
 			let domain = "my.brandwield.com";
 
 			const options = {
@@ -86,94 +86,11 @@
 			.catch(error => console.log(error));
 
 		}
-		function shortenUrlCompanyUpdateLink() {
 
-			let url = document.getElementById("companyUpdateLink").value;
-			let domain = "my.brandwield.com";
-
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					apikey: '65338792cfa94d94ac9a01788bdefc3d'
-				}
-			};
-
-			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-			.then(response => response.json())
-			.then(response =>
-				document.getElementById("companyUpdateLink").value = response.shortUrl
-			)
-			.catch(error => console.log(error));
-
-		}
-		function shortenUrlSalePromotionLink() {
-
-			let url = document.getElementById("salePromotionLink").value;
-			let domain = "my.brandwield.com";
-
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					apikey: '65338792cfa94d94ac9a01788bdefc3d'
-				}
-			};
-
-			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-			.then(response => response.json())
-			.then(response =>
-				document.getElementById("salePromotionLink").value = response.shortUrl
-			)
-			.catch(error => console.log(error));
-
-		}
-		function shortenUrlEventPromotionLink() {
-
-			let url = document.getElementById("eventPromotionLink").value;
-			let domain = "my.brandwield.com";
-
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					apikey: '65338792cfa94d94ac9a01788bdefc3d'
-				}
-			};
-
-			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-			.then(response => response.json())
-			.then(response =>
-				document.getElementById("eventPromotionLink").value = response.shortUrl
-			)
-			.catch(error => console.log(error));
-
-		}
-		function shortenUrlTestimonialReviewLink() {
-
-			let url = document.getElementById("testimonialReviewLink").value;
-			let domain = "my.brandwield.com";
-
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					apikey: '65338792cfa94d94ac9a01788bdefc3d'
-				}
-			};
-
-			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-			.then(response => response.json())
-			.then(response =>
-				document.getElementById("testimonialReviewLink").value = response.shortUrl
-			)
-			.catch(error => console.log(error));
-
-		}
 		// Generate QR Code
-		function qrCodeGenericPostLink() {
+		function linkGlobalQR() {
 
-			let url = document.getElementById("genericPostLink").value;
+			let url = document.getElementById("linkGlobal").value;
 
 			const options = {
 				method: 'POST',
@@ -188,86 +105,6 @@
 			fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
 			.then(response => response.json())
 			.then(data => document.getElementById("genericPostLinkQRPreview").src = data.qrcode)
-			.catch(err => console.error(err));
-
-		}
-		function qrCodeCompanyUpdateLink() {
-
-			let url = document.getElementById("companyUpdateLink").value;
-
-			const options = {
-				method: 'POST',
-				headers: {
-					'content-type': 'application/json',
-					'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-					'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
-				},
-				body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
-			};
-
-			fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
-			.then(response => response.json())
-			.then(data => document.getElementById("companyUpdateLinkQRPreview").src = data.qrcode)
-			.catch(err => console.error(err));
-
-		}
-		function qrCodeSalePromotionLink() {
-
-			let url = document.getElementById("salePromotionLink").value;
-
-			const options = {
-				method: 'POST',
-				headers: {
-					'content-type': 'application/json',
-					'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-					'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
-				},
-				body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
-			};
-
-			fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
-			.then(response => response.json())
-			.then(data => document.getElementById("salePromotionLinkQRPreview").src = data.qrcode)
-			.catch(err => console.error(err));
-
-		}
-		function qrCodeEventPromotionLink() {
-
-			let url = document.getElementById("eventPromotionLink").value;
-
-			const options = {
-				method: 'POST',
-				headers: {
-					'content-type': 'application/json',
-					'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-					'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
-				},
-				body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
-			};
-
-			fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
-			.then(response => response.json())
-			.then(data => document.getElementById("eventPromotionLinkQRPreview").src = data.qrcode)
-			.catch(err => console.error(err));
-
-		}
-		function qrCodeTestimonialReviewLink() {
-
-			let url = document.getElementById("testimonialReviewLink").value;
-
-			const options = {
-				method: 'POST',
-				headers: {
-					'content-type': 'application/json',
-					'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-					'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
-				},
-				body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
-			};
-
-			fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
-			.then(response => response.json())
-			.then(data => document.getElementById("testimonialReviewLinkQRPreview").src = data.qrcode)
 			.catch(err => console.error(err));
 
 		}
@@ -1470,8 +1307,9 @@
 		<!-- Outputs -->
 		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
 			<span style="display: flex; align-items: center;">
-				<label for="contentTypeSelect">Content Type</label>
-				<select id="contentTypeSelect" class="cleanCursorInput">
+				<label for="contentTypeSelect" style="width: 134px;">Content Type</label>
+				<select id="contentTypeSelect" class="cleanCursorInput" onchange="valueSelectorUpdate();">
+					<option value="" selected>Select Content Type</option>
 					<option value="genericPostFields">Generic Post</option>
 					<option value="companyUpdateFields">Company Update</option>
 					<option value="salePromotionFields">Sale/Promotion</option>
@@ -1483,16 +1321,29 @@
 			<!-- Content Type Field Collections -->
 			<div id="contentTypeFieldOptions">
 
-				<!-- Generic Post -->
-				<div id="genericPostFields" class="contentTypeFieldOption">
+				<!-- Global Content Fields (Start) -->
+				<div id="globalContentFieldsStart" style="display: none;">
 
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
-						<label for="genericPostHook" style="width: 100px;">Hook</label>
-						<img id="genericPostHookInfo" style="height: 23px; width: 23px; margin-left: 10px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="genericPostHook" type="text" class="cleanCursorInput" placeholder="Hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="genericPostHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostHook').value = null;"/>
+						<label for="hookGlobal" style="width: 100px;">Hook</label>
+						<img id="hookGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookGlobal').value = null;"/>
 					</span>
+
+					<!-- Hook Resolution -->
+					<span style="display: flex; align-items: center;">
+						<label for="hookResolutionGlobal" style="width: 100px;">Hook Resolution</label>
+						<img id="hookResolutionGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookResolutionGlobal').value = null;"/>
+					</span>
+
+				</div>
+
+				<!-- Generic Post -->
+				<div id="genericPostFields" class="contentTypeFieldOption" style="display: none;">
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
@@ -1510,34 +1361,10 @@
 						<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostBody').value = null;"/>
 					</span>
 
-					<!-- Link -->
-					<span style="display: flex; align-items: center;">
-						<label for="genericPostLink" style="width: 100px;">Link</label>
-						<img id="genericPostLinkInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="genericPostLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="genericPostLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostLink').value = null;"/>
-						<span id="genericPostQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="genericPostLinkQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
-							<img id="genericPostLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="qrCodeGenericPostLink()"/>
-						</span>
-						<span id="genericPostLinkSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="genericPostLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="shortenUrlGenericPostLink();"/>
-							<img id="genericPostLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostLink').value = localStorage.getItem('primaryContactWebsite')"/>
-						</span>
-					</span>
-
 				</div>
 
 				<!-- Update -->
-				<div id="companyUpdateFields" class="contentTypeFieldOption">
-
-					<!-- Hook -->
-					<span style="display: flex; align-items: center;">
-						<label for="companyUpdateHook" style="width: 100px;">Hook</label>
-						<img id="companyUpdateHookInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="companyUpdateHook" type="text" class="cleanCursorInput" placeholder="Hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="companyUpdateHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateHook').value = null;"/>
-					</span>
+				<div id="companyUpdateFields" class="contentTypeFieldOption" style="display: none;">
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
@@ -1563,34 +1390,10 @@
 						<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateBody').value = null;"/>
 					</span>
 
-					<!-- Link -->
-					<span style="display: flex; align-items: center;">
-						<label for="companyUpdateLink" style="width: 100px;">Link</label>
-						<img id="companyUpdateLinkInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="companyUpdateLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/updates/bestUpdateEver" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="companyUpdateLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateLink').value = null;"/>
-						<span id="companyUpdateQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="companyUpdateLinkQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
-							<img id="companyUpdateLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="qrCodeCompanyUpdateLink()"/>
-						</span>
-						<span id="companyUpdateLinkSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="companyUpdateLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="shortenUrlCompanyUpdateLink();"/>
-							<img id="companyUpdateLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateLink').value = localStorage.getItem('primaryContactWebsite')"/>
-						</span>
-					</span>
-
 				</div>
 
 				<!-- Sale/Promotion -->
-				<div id="salePromotionFields" class="contentTypeFieldOption">
-
-					<!-- Hook -->
-					<span style="display: flex; align-items: center;">
-						<label for="salePromotionHook" style="width: 100px;">Hook</label>
-						<img id="salePromotionHookInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="salePromotionHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionHook').value = null;"/>
-					</span>
+				<div id="salePromotionFields" class="contentTypeFieldOption" style="display: none;">
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
@@ -1632,34 +1435,10 @@
 						<img id="salePromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionBody').value = null;"/>
 					</span>
 
-					<!-- Link -->
-					<span style="display: flex; align-items: center;">
-						<label for="salePromotionLink" style="width: 100px;">Link</label>
-						<img id="salePromotionLinkInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/promotions/bestDealEver" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="salePromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionLink').value = null;"/>
-						<span id="salePromotionQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="salePromotionLinkQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
-							<img id="salePromotionLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="qrCodeSalePromotionLink()"/>
-						</span>
-						<span id="salePromotionLinkSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="salePromotionLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="shortenUrlSalePromotionLink();"/>
-							<img id="salePromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
-						</span>
-					</span>
-
 				</div>
 
 				<!-- Event Promotion -->
-				<div id="eventPromotionFields" class="contentTypeFieldOption">
-
-					<!-- Hook -->
-					<span style="display: flex; align-items: center;">
-						<label for="eventPromotionHook" style="width: 100px;">Hook</label>
-						<img id="eventPromotionHookInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionHook" type="text" class="cleanCursorInput" placeholder="Hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="eventPromotionHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionHook').value = null;"/>
-					</span>
+				<div id="eventPromotionFields" class="contentTypeFieldOption" style="display: none;">
 
 					<!-- Title -->
 					<span style="display: flex; align-items: center;">
@@ -1702,34 +1481,10 @@
 						<img id="eventPromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionBody').value = null;"/>
 					</span>
 
-					<!-- Link -->
-					<span style="display: flex; align-items: center;">
-						<label for="eventPromotionLink" style="width: 100px;">Link</label>
-						<img id="eventPromotionLinkInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/events/bestEventEver" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="eventPromotionLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionLink').value = null;" />
-						<span id="eventPromotionQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="eventPromotionLinkQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
-							<img id="eventPromotionLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="qrCodeEventPromotionLink()"/>
-						</span>
-						<span id="eventPromotionLinkSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="eventPromotionLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="shortenUrlEventPromotionLink();"/>
-							<img id="eventPromotionLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionLink').value = localStorage.getItem('primaryContactWebsite')"/>
-						</span>
-					</span>
-
 				</div>
 
 				<!-- Testimonial / Review -->
-				<div id="testimonialReviewFields" class="contentTypeFieldOption">
-
-					<!-- Hook -->
-					<span style="display: flex; align-items: center;">
-						<label for="testimonialReviewHook" style="width: 100px;">Hook</label>
-						<img id="testimonialReviewHookInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewHook" type="text" class="cleanCursorInput" placeholder="Hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="testimonialReviewHookClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewHook').value = null;"/>
-					</span>
+				<div id="testimonialReviewFields" class="contentTypeFieldOption" style="display: none;">
 
 					<!-- Author Name -->
 					<span style="display: flex; align-items: center;">
@@ -1779,31 +1534,29 @@
 						<img id="testimonialReviewBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewBody').value = null;"/>
 					</span>
 
+				</div>
+
+				<!-- Global Content Fields (End) -->
+				<div id="globalContentFieldsEnd" style="display: none;">
+
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
-						<label for="testimonialReviewLink" style="width: 100px;">Link</label>
-						<img id="testimonialReviewLinkInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewLink" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/reviews/bestReviewEver" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="testimonialReviewLinkClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewLink').value = null;"/>
-						<span id="testimonialReviewQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="testimonialReviewLinkQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
-							<img id="testimonialReviewLinkQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="qrCodeTestimonialReviewLink()"/>
+						<label for="linkGlobal" style="width: 100px;">Link</label>
+						<img id="linkGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="linkGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('linkGlobal').value = null;"/>
+						<span id="linkGlobalQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+							<img id="linkGlobalQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
+							<img id="linkGlobalQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="linkGlobalQR();"/>
 						</span>
-						<span id="testimonialReviewLinkSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="testimonialReviewLinkShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="shortenUrlTestimonialReviewLink();"/>
-							<img id="testimonialReviewLinkGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewLink').value = localStorage.getItem('primaryContactWebsite')"/>
+						<span id="linkGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+							<img id="linkGlobalShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="linkGlobalShorten();"/>
+							<img id="linkGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('linkGlobal').value = localStorage.getItem('primaryContactWebsite')"/>
 						</span>
 					</span>
 
-				</div>
-
-			</div>
-
-			<!-- Global Content Fields -->
-			<div id="globalContentFields">
-
-				<!-- Color -->
-				<span style="display: flex; align-items: center;">
+					<!-- Color -->
+					<span style="display: flex; align-items: center;">
 					<label for="primaryColorGlobal" style="width: 100px;">Color</label>
 					<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 					<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
@@ -1813,8 +1566,8 @@
 					</span>
 				</span>
 
-				<!-- Logo -->
-				<span style="display: flex; align-items: center;">
+					<!-- Logo -->
+					<span style="display: flex; align-items: center;">
 					<label for="squareLogoGlobal" style="width: 100px;">Logo</label>
 					<img id="squareLogoGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 					<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
@@ -1824,7 +1577,13 @@
 					</span>
 				</span>
 
+				</div>
+
+				<div style="height: 300px; width: 300px; background-color: #1db954" onclick="showBrandPopup();"></div>
+
 			</div>
+
+
 
 
 		</div>
@@ -2140,5 +1899,134 @@
 	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 </div>
 
+<!-- Brand Popup-->
+<div id="brandPopup">
+	<input id="brandSearch" class="cleanCursorInput" type="search" size="40" placeholder="search your brand..." list="searchBrand" onkeyup="updateBrandSearch();" />
+	<img alt="" src="media/otherIcons/clear.svg" height="25" width="25" onclick="clearBrandSearch();"/>
+	<div id="brandRecommendations">
+
+		<!-- ways to narrow suggestions:
+		- field type ( text, url, file, color, etc. )
+		-->
+
+	</div>
+	<div id="brandList">
+
+		<!-- list all brand assets in a simple (maybe dropdown select?) list -->
+		<!-- need to set up populating the <options> in the <datalist> from the firebaseSetup.js file -->
+
+	</div>
+</div>
+
+<!-- Brand Popup-->
+<script>
+
+	function showBrandPopup() {
+		// clear the search bar value
+		clearBrandSearch();
+		// show the #popup div and set its position to the mouse position
+		document.getElementById('brandPopup').style.display = 'block';
+		document.getElementById('brandPopup').style.top = event.clientY + 'px';
+		document.getElementById('brandPopup').style.left = event.clientX + 'px';
+	}
+
+	function updateBrandSearch() {
+		// get the value of the search bar
+		const brandSearchValue = document.getElementById('brandSearch').value;
+		console.log(brandSearchValue); // used as a placeholder for now --> function will be finished later
+
+		// value of the search bar should be used as placer or a preview value for where THAT variable will populate in the final assets??
+
+	}
+
+	function clearBrandSearch() {
+		// clear the search bar value
+		document.getElementById("brandSearch").value = "";
+
+		// value of the search bar should populate as the value for where THAT variable will populate in the final assets??
+
+	}
+
+/*
+
+// Issue with the event lister below --> as a user hover overs a search option revealed by updateBrandSearch(), the event listener will trigger and the popup will disappear
+
+	// event listener
+	// close the #popup div if the user moves the mouse away from it
+	document.getElementById('brandPopup').onmouseleave = function() {
+		document.getElementById('brandPopup').style.display = 'none';
+	}
+
+*/
+
+</script>
+
+<!-- Content Type Selection -->
+<script>
+	const valueSelector = document.getElementById("contentTypeSelect");
+
+	const genericPostFields = document.getElementById("genericPostFields");
+	const companyUpdateFields = document.getElementById("companyUpdateFields");
+	const salePromotionFields = document.getElementById("salePromotionFields");
+	const eventPromotionFields = document.getElementById("eventPromotionFields");
+	const testimonialReviewFields = document.getElementById("testimonialReviewFields");
+
+	const globalContentFieldsStart = document.getElementById("globalContentFieldsStart");
+	const globalContentFieldsEnd = document.getElementById("globalContentFieldsEnd");
+
+	function valueSelectorUpdate() {
+		if (valueSelector.value === 'genericPostFields') {
+			genericPostFields.style.display = 'block';
+			companyUpdateFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'companyUpdateFields') {
+			companyUpdateFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'salePromotionFields') {
+			salePromotionFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			companyUpdateFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'eventPromotionFields') {
+			eventPromotionFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			companyUpdateFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'testimonialReviewFields') {
+			testimonialReviewFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			companyUpdateFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		}
+	}
+</script>
+
+<datalist id="searchBrand">
+	<option value="primaryColor">asfasfsadf</option>
+	<option value="companyUpdateFields">Company Update</option>
+	<option value="salePromotionFields">Sale Promotion</option>
+	<option value="eventPromotionFields">Event Promotion</option>
+	<option value="testimonialReviewFields">Testimonial/Review</option>
+</datalist>
+
 </body>
+
 </html>

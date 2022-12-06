@@ -31,6 +31,9 @@
 
 }
 
+/* if the screen width is smaller than 1550, hide everything */
+@media screen and (max-width: 1550px) { body { display: none; } }
+
 /* Everything */
 * {
     box-sizing: border-box;
@@ -982,5 +985,22 @@ pre code {
 
 #businessTypeValueDisplay {
     font-size: 12px;
+}
+
+#brandPopup {
+    display: none;
+    position: absolute;
+    height: 200px;
+    width: 400px;
+
+    background-color: white;
+    border: 3px solid #1da1f2;
+    border-radius: 5px;
+
+    box-shadow: #5d5d5d 0px 0px 10px;
+    -webkit-box-shadow: #5d5d5d 0px 0px 10px;
+    -moz-box-shadow: #5d5d5d 0px 0px 10px;
+
+    z-index: 100;
 }
 
