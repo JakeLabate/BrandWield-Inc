@@ -233,7 +233,7 @@ button[id*='clear']:hover, button[id*='Clear']:hover, .clearButton:hover {
 }
 
 img {
-    z-index: 9999999;
+    z-index: 1;
 }
 
 .tabs {
@@ -1001,6 +1001,16 @@ pre code {
     -webkit-box-shadow: #5d5d5d 0px 0px 10px;
     -moz-box-shadow: #5d5d5d 0px 0px 10px;
 
-    z-index: 100;
+    z-index: 9999;
+}
+
+.brandRecommendationInnerText {
+    font-weight: bold;
+
+}
+
+.brandRecommendationValue {
+    font-weight: bold;
+
 }
 

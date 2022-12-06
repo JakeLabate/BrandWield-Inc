@@ -873,12 +873,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		if (snapshot.val().primaryColor != null) {
 			// set local storage
 			localStorage.setItem('primaryColor', snapshot.val().primaryColor);
-
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Color';
-			document.getElementById('valueTypeColor').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
-			document.getElementById('valueTypeColor').lastChild.innerHTML = 'PrimaryColor';
+			// set to brandLists
+			document.getElementById('brandColors').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
+			document.getElementById('brandColors').lastChild.innerHTML = 'Primary Color';
 
 			document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
 			document.getElementById('primaryColor').value = snapshot.val().primaryColor;

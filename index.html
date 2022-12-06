@@ -59,6 +59,9 @@
 			let i; let x = document.getElementsByClassName("tabby");
 			for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
 			document.getElementById(tabby).style.display = "block";
+
+			// set the focus the 'hookGlobal' field, as it is the first field for all content types --> ONLY need this if the user is creating new content
+			document.getElementById('hookGlobal').focus()
 		}
 	</script>
 
@@ -1304,7 +1307,7 @@
 <!-- New Content Tab -->
 <div id="newContent" class="tabby">
 
-		<!-- Outputs -->
+		<!-- Inputs -->
 		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
 			<span style="display: flex; align-items: center;">
 				<label for="contentTypeSelect" style="width: 134px;">Content Type</label>
@@ -1408,7 +1411,7 @@
 						<label for="salePromotionProductOrService" style="width: 100px;">Product or Service</label>
 						<img id="salePromotionProductOrServiceInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionProductOrService').value = null;"/>
+						<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 					</span>
 
 					<!-- Start Date -->
@@ -1470,7 +1473,7 @@
 						<img id="eventPromotionLocationInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="40" placeholder="123 Main Street Boston, MA style" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionLocation').value = null;" />
-						<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionLocation').value = localStorage.getItem('officeAddressStreet1') + ' ' + localStorage.getItem('officeAddressCity') + ' ' + localStorage.getItem('officeAddressState')"/>
+						<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 					</span>
 
 					<!-- Body -->
@@ -1551,35 +1554,33 @@
 						</span>
 						<span id="linkGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="linkGlobalShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="linkGlobalShorten();"/>
-							<img id="linkGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('linkGlobal').value = localStorage.getItem('primaryContactWebsite')"/>
+							<img id="linkGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 						</span>
 					</span>
 
 					<!-- Color -->
 					<span style="display: flex; align-items: center;">
-					<label for="primaryColorGlobal" style="width: 100px;">Color</label>
-					<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-					<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-					<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
-					<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-						<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = localStorage.getItem('primaryColor')"/>
+						<label for="primaryColorGlobal" style="width: 100px;">Color</label>
+						<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
+						<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+							<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
+						</span>
 					</span>
-				</span>
 
 					<!-- Logo -->
 					<span style="display: flex; align-items: center;">
-					<label for="squareLogoGlobal" style="width: 100px;">Logo</label>
-					<img id="squareLogoGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-					<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-					<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = null;"/>
-					<span id="squareLogoGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-						<img id="squareLogoGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = localStorage.getItem('squareLogo')"/>
+						<label for="squareLogoGlobal" style="width: 100px;">Logo</label>
+						<img id="squareLogoGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = null;"/>
+						<span id="squareLogoGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+							<img id="squareLogoGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
+						</span>
 					</span>
-				</span>
 
 				</div>
-
-				<div style="height: 300px; width: 300px; background-color: #1db954" onclick="showBrandPopup();"></div>
 
 			</div>
 
@@ -1588,7 +1589,7 @@
 
 		</div>
 
-		<!-- Final -->
+		<!-- Outputs -->
 		<div id="final" class="column2" style="user-select: none;">
 
 			<!-- IMAGES -->
@@ -1901,14 +1902,9 @@
 
 <!-- Brand Popup-->
 <div id="brandPopup">
-	<input id="brandSearch" class="cleanCursorInput" type="search" size="40" placeholder="search your brand..." list="searchBrand" onkeyup="updateBrandSearch();" />
+	<input id="brandSearch" class="cleanCursorInput" type="search" size="40" placeholder="search your brand..." list="brandColors" onkeyup="updateBrandSearch();" />
 	<img alt="" src="media/otherIcons/clear.svg" height="25" width="25" onclick="clearBrandSearch();"/>
 	<div id="brandRecommendations">
-
-		<!-- ways to narrow suggestions:
-		- field type ( text, url, file, color, etc. )
-		-->
-
 	</div>
 	<div id="brandList">
 
@@ -1922,18 +1918,56 @@
 <script>
 
 	function showBrandPopup() {
+
 		// clear the search bar value
 		clearBrandSearch();
+
 		// show the #popup div and set its position to the mouse position
 		document.getElementById('brandPopup').style.display = 'block';
 		document.getElementById('brandPopup').style.top = event.clientY + 'px';
 		document.getElementById('brandPopup').style.left = event.clientX + 'px';
+
+		// set the focus to the search bar
+		document.getElementById('brandSearch').focus();
+
+		// based on the field usage, populate assign the appropriate list to the search bar
+		document.getElementById('brandSearch').setAttribute('list', 'brandFonts'); //  for now, placeholder is 'brandFonts'
+
 	}
 
 	function updateBrandSearch() {
+
 		// get the value of the search bar
 		const brandSearchValue = document.getElementById('brandSearch').value;
-		console.log(brandSearchValue); // used as a placeholder for now --> function will be finished later
+
+		// for each option in the 'list' of the input, that the search matches, append it to the #brandRecommendations div
+		if (brandSearchValue.length > 0) {
+
+			for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+
+				// in the search value matches the value OR the label OR the innerText of the option,
+				if (document.getElementById('brandSearch').list.options[i].value.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
+					document.getElementById('brandSearch').list.options[i].label.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
+					document.getElementById('brandSearch').list.options[i].innerText.toLowerCase().includes(brandSearchValue.toLowerCase())
+
+				) {
+
+					// append the option to the #brandRecommendations div
+					document.getElementById('brandRecommendations').innerHTML *=
+						'<div class="brandRecommendation">' +
+							'<span class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</span>' +
+							'&nbsp;<span class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</span>' +
+						'</div>';
+
+				}
+			}
+		} else {
+		}
+
+
+
+
+
 
 		// value of the search bar should be used as placer or a preview value for where THAT variable will populate in the final assets??
 
@@ -1975,6 +2009,7 @@
 	const globalContentFieldsEnd = document.getElementById("globalContentFieldsEnd");
 
 	function valueSelectorUpdate() {
+
 		if (valueSelector.value === 'genericPostFields') {
 			genericPostFields.style.display = 'block';
 			companyUpdateFields.style.display = 'none';
@@ -2016,16 +2051,29 @@
 			globalContentFieldsStart.style.display = 'block';
 			globalContentFieldsEnd.style.display = 'block';
 		}
+
+		// set the focus the 'hookGlobal' field, as it is the first field for all content types
+		document.getElementById('hookGlobal').focus(); // not sure why it does not work on the first click, if placed in the top of the function
+
 	}
 </script>
 
-<datalist id="searchBrand">
-	<option value="primaryColor">asfasfsadf</option>
-	<option value="companyUpdateFields">Company Update</option>
-	<option value="salePromotionFields">Sale Promotion</option>
-	<option value="eventPromotionFields">Event Promotion</option>
-	<option value="testimonialReviewFields">Testimonial/Review</option>
+<datalist id="brandColors">8
+	<option value="4">6</option>
+	<option value="5">7</option>
 </datalist>
+<datalist id="brandFonts">
+	<option value="8">8</option>
+	<option value="88">88</option>
+	<option value="888">888</option>
+	<option value="8888">8888</option>
+	<option value="88888">88888</option>
+</datalist>
+<datalist id="brandImages">
+</datalist>
+<datalist id="brandSocialMedia">
+</datalist>
+
 
 </body>
 
