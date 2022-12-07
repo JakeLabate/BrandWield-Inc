@@ -89,7 +89,6 @@
 			.catch(error => console.log(error));
 
 		}
-
 		// Generate QR Code
 		function linkGlobalQR() {
 
@@ -112,6 +111,9 @@
 
 		}
 	</script>
+
+	<!-- Confetti -->
+	<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 
 	<!-- HTML2Canvas Screenshot Capture -->
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
@@ -1348,14 +1350,6 @@
 				<!-- Generic Post -->
 				<div id="genericPostFields" class="contentTypeFieldOption" style="display: none;">
 
-					<!-- Title -->
-					<span style="display: flex; align-items: center;">
-						<label for="genericPostTitle" style="width: 100px;">Title</label>
-						<img id="genericPostTitleInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="genericPostTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="genericPostTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostTitle').value = null;"/>
-					</span>
-
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
 						<label for="genericPostBody" style="width: 100px;">Body</label>
@@ -1369,12 +1363,12 @@
 				<!-- Update -->
 				<div id="companyUpdateFields" class="contentTypeFieldOption" style="display: none;">
 
-					<!-- Title -->
+					<!-- Headline -->
 					<span style="display: flex; align-items: center;">
-						<label for="companyUpdateTitle" style="width: 100px;">Title</label>
-						<img id="companyUpdateTitleInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="companyUpdateTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="companyUpdateTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateTitle').value = null;"/>
+						<label for="companyUpdateHeadline" style="width: 100px;">Title</label>
+						<img id="companyUpdateHeadlineInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="Headline" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateHeadline').value = null;"/>
 					</span>
 
 					<!-- Date -->
@@ -1542,6 +1536,17 @@
 				<!-- Global Content Fields (End) -->
 				<div id="globalContentFieldsEnd" style="display: none;">
 
+					<!-- Call to Action -->
+					<span style="display: flex; align-items: center;">
+						<label for="callToActionGlobal" style="width: 100px;">Call to Action</label>
+						<img id="callToActionGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="callToActionGlobal" type="url" class="cleanCursorInput" placeholder="" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="callToActionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('callToActionGlobal').value = null;"/>
+						<span id="callToActionGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+							<img id="callToActionGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
+						</span>
+					</span>
+
 					<!-- Link -->
 					<span style="display: flex; align-items: center;">
 						<label for="linkGlobal" style="width: 100px;">Link</label>
@@ -1558,14 +1563,25 @@
 						</span>
 					</span>
 
-					<!-- Color -->
+					<!-- Primary Color -->
 					<span style="display: flex; align-items: center;">
-						<label for="primaryColorGlobal" style="width: 100px;">Color</label>
+						<label for="primaryColorGlobal" style="width: 100px;">Primary Color</label>
 						<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
 						<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
+						</span>
+					</span>
+
+					<!-- Secondary Color -->
+					<span style="display: flex; align-items: center;">
+						<label for="secondaryColorGlobal" style="width: 100px;">Secondary Color</label>
+						<img id="secondaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
+						<input id="secondaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<img id="secondaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('secondaryColorGlobal').value = null;"/>
+						<span id="secondaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
+							<img id="secondaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 						</span>
 					</span>
 
@@ -1671,7 +1687,7 @@
 					</text>
 				</p>
 				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-				<button class="copyTextButton" onclick="downloadContent();">Download Content</button>
+				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
 				<div id="output"></div>
 			</div>
 
@@ -1902,14 +1918,149 @@
 
 <!-- Brand Popup-->
 <div id="brandPopup">
-	<input id="brandSearch" class="cleanCursorInput" type="search" size="40" placeholder="search your brand..." list="brandColors" onkeyup="updateBrandSearch();" />
+	<!-- Need to find a way to remove the default black list that is generated (i think by the browser)... using it would kinda suck as it does not match the rest of the UI -->
+	<input id="brandSearch" class="cleanCursorInput" type="search" size="40" placeholder="search your brand..." onkeyup="updateBrandSearch();" />
 	<img alt="" src="media/otherIcons/clear.svg" height="25" width="25" onclick="clearBrandSearch();"/>
-	<div id="brandRecommendations">
-	</div>
+	<div id="brandRecommendations"></div>
 	<div id="brandList">
 
-		<!-- list all brand assets in a simple (maybe dropdown select?) list -->
-		<!-- need to set up populating the <options> in the <datalist> from the firebaseSetup.js file -->
+		<!-- We also want to set the other select values to the default item onchange -->
+		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
+			<datalist id="brandColors">
+				<option value="" selected>Colors</option>
+				<option value="red">Red</option>
+				<option value="blue">Blue</option>
+				<option value="green">Green</option>
+				<option value="yellow" >Yellow</option>
+				<option value="orange">Orange</option>
+				<option value="purple">Purple</option>
+				<option value="pink">Pink</option>
+				<option value="brown">Brown</option>
+				<option value="black">Black</option>
+				<option value="white">White</option>
+				<option value="gray">Gray</option>
+			</datalist>
+		</select>
+		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
+			<datalist id="brandFonts">
+				<option value="" selected>Fonts</option>
+				<option value="Arial">Arial</option>
+				<option value="Times New Roman">Times New Roman</option>
+				<option value="Courier New">Courier New</option>
+				<option value="Verdana">Verdana</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Impact">Impact</option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
+				<option value="Trebuchet MS">Trebuchet MS</option>
+				<option value="Lucida Console">Lucida Console</option>
+				<option value="Palatino Linotype">Palatino Linotype</option>
+				<option value="Bookman Old Style">Bookman Old Style</option>
+				<option value="Garamond">Garamond</option>
+				<option value="Arial Black">Arial Black</option>
+				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+				<option value="MS Sans Serif">MS Sans Serif</option>
+				<option value="MS Serif">MS Serif</option>
+				<option value="Symbol">Symbol</option>
+				<option value="Webdings">Webdings</option>
+				<option value="Wingdings">Wingdings</option>
+			</datalist>
+		</select>
+		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
+			<datalist id="branLogos">
+				<option value="" selected>Logos</option>
+				<option value="Arial">Arial</option>
+				<option value="Times New Roman">Times New Roman</option>
+				<option value="Courier New">Courier New</option>
+				<option value="Verdana">Verdana</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Impact">Impact</option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
+				<option value="Trebuchet MS">Trebuchet MS</option>
+				<option value="Lucida Console">Lucida Console</option>
+				<option value="Palatino Linotype">Palatino Linotype</option>
+				<option value="Bookman Old Style">Bookman Old Style</option>
+				<option value="Garamond">Garamond</option>
+				<option value="Arial Black">Arial Black</option>
+				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+				<option value="MS Sans Serif">MS Sans Serif</option>
+				<option value="MS Serif">MS Serif</option>
+				<option value="Symbol">Symbol</option>
+				<option value="Webdings">Webdings</option>
+				<option value="Wingdings">Wingdings</option>
+			</datalist>
+		</select>
+		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
+			<datalist id="brandPeople">
+				<option value="" selected>People</option>
+				<option value="Arial">Arial</option>
+				<option value="Times New Roman">Times New Roman</option>
+				<option value="Courier New">Courier New</option>
+				<option value="Verdana">Verdana</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Impact">Impact</option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
+				<option value="Trebuchet MS">Trebuchet MS</option>
+				<option value="Lucida Console">Lucida Console</option>
+				<option value="Palatino Linotype">Palatino Linotype</option>
+				<option value="Bookman Old Style">Bookman Old Style</option>
+				<option value="Garamond">Garamond</option>
+				<option value="Arial Black">Arial Black</option>
+				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+				<option value="MS Sans Serif">MS Sans Serif</option>
+				<option value="MS Serif">MS Serif</option>
+				<option value="Symbol">Symbol</option>
+				<option value="Webdings">Webdings</option>
+				<option value="Wingdings">Wingdings</option>
+			</datalist>
+		</select>
+		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
+			<datalist id="brandOffers">
+				<option value="" selected>Offers</option>
+				<option value="Arial">Arial</option>
+				<option value="Times New Roman">Times New Roman</option>
+				<option value="Courier New">Courier New</option>
+				<option value="Verdana">Verdana</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Impact">Impact</option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
+				<option value="Trebuchet MS">Trebuchet MS</option>
+				<option value="Lucida Console">Lucida Console</option>
+				<option value="Palatino Linotype">Palatino Linotype</option>
+				<option value="Bookman Old Style">Bookman Old Style</option>
+				<option value="Garamond">Garamond</option>
+				<option value="Arial Black">Arial Black</option>
+				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+				<option value="MS Sans Serif">MS Sans Serif</option>
+				<option value="MS Serif">MS Serif</option>
+				<option value="Symbol">Symbol</option>
+				<option value="Webdings">Webdings</option>
+				<option value="Wingdings">Wingdings</option>
+			</datalist>
+		</select>
+		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
+			<datalist id="brandSocialMedia">
+				<option value="" selected>Social Media</option>
+				<option value="Arial">Arial</option>
+				<option value="Times New Roman">Times New Roman</option>
+				<option value="Courier New">Courier New</option>
+				<option value="Verdana">Verdana</option>
+				<option value="Georgia">Georgia</option>
+				<option value="Impact">Impact</option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
+				<option value="Trebuchet MS">Trebuchet MS</option>
+				<option value="Lucida Console">Lucida Console</option>
+				<option value="Palatino Linotype">Palatino Linotype</option>
+				<option value="Bookman Old Style">Bookman Old Style</option>
+				<option value="Garamond">Garamond</option>
+				<option value="Arial Black">Arial Black</option>
+				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+				<option value="MS Sans Serif">MS Sans Serif</option>
+				<option value="MS Serif">MS Serif</option>
+				<option value="Symbol">Symbol</option>
+				<option value="Webdings">Webdings</option>
+				<option value="Wingdings">Wingdings</option>
+			</datalist>
+		</select>
 
 	</div>
 </div>
@@ -1919,8 +2070,9 @@
 
 	function showBrandPopup() {
 
-		// clear the search bar value
+		// clear the search bar value & any recommendations
 		clearBrandSearch();
+		clearBrandRecommendations();
 
 		// show the #popup div and set its position to the mouse position
 		document.getElementById('brandPopup').style.display = 'block';
@@ -1931,8 +2083,12 @@
 		document.getElementById('brandSearch').focus();
 
 		// based on the field usage, populate assign the appropriate list to the search bar
-		document.getElementById('brandSearch').setAttribute('list', 'brandFonts'); //  for now, placeholder is 'brandFonts'
+		document.getElementById('brandSearch').setAttribute('list', 'brandy'); //  for now, placeholder is 'brandColors'
 
+	}
+
+	function closeBrandPopup() {
+		document.getElementById('brandPopup').style.display = 'none';
 	}
 
 	function updateBrandSearch() {
@@ -1943,6 +2099,8 @@
 		// for each option in the 'list' of the input, that the search matches, append it to the #brandRecommendations div
 		if (brandSearchValue.length > 0) {
 
+			clearBrandRecommendations();
+
 			for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 
 				// in the search value matches the value OR the label OR the innerText of the option,
@@ -1950,24 +2108,20 @@
 					document.getElementById('brandSearch').list.options[i].label.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
 					document.getElementById('brandSearch').list.options[i].innerText.toLowerCase().includes(brandSearchValue.toLowerCase())
 
-				) {
-
-					// append the option to the #brandRecommendations div
-					document.getElementById('brandRecommendations').innerHTML *=
-						'<div class="brandRecommendation">' +
+				)  {
+					// for each search result, show a div with the label and value of the option
+					document.getElementById('brandRecommendations').innerHTML +=
+						'<div class="brandRecommendation" onclick="brandSearchValue = this.innerHTML">' +
 							'<span class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</span>' +
 							'&nbsp;<span class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</span>' +
 						'</div>';
-
 				}
 			}
 		} else {
+
+			clearBrandRecommendations();
+
 		}
-
-
-
-
-
 
 		// value of the search bar should be used as placer or a preview value for where THAT variable will populate in the final assets??
 
@@ -1980,18 +2134,11 @@
 		// value of the search bar should populate as the value for where THAT variable will populate in the final assets??
 
 	}
-
-/*
-
-// Issue with the event lister below --> as a user hover overs a search option revealed by updateBrandSearch(), the event listener will trigger and the popup will disappear
-
-	// event listener
-	// close the #popup div if the user moves the mouse away from it
-	document.getElementById('brandPopup').onmouseleave = function() {
-		document.getElementById('brandPopup').style.display = 'none';
+	function clearBrandRecommendations() {
+		// clear the #brandRecommendations div
+		document.getElementById('brandRecommendations').innerHTML = '';
 	}
-
-*/
+	function resetBrandLists() {}
 
 </script>
 
@@ -2058,23 +2205,15 @@
 	}
 </script>
 
-<datalist id="brandColors">8
-	<option value="4">6</option>
-	<option value="5">7</option>
+<!-- Datalists inside <select> elements will not be searchable as the 'list' attribute value,
+so we need to place them here, not sure why, I guess we create 2 identical data sets for now?
+1 here for search and 1 for the brandRecommendations? -->
+<datalist id="brandy">
+	<option value="1">Apple</option>
+	<option value="1">Banana</option>
+	<option value="1">Cherry</option>
+	<option value="1">Durian</option>
 </datalist>
-<datalist id="brandFonts">
-	<option value="8">8</option>
-	<option value="88">88</option>
-	<option value="888">888</option>
-	<option value="8888">8888</option>
-	<option value="88888">88888</option>
-</datalist>
-<datalist id="brandImages">
-</datalist>
-<datalist id="brandSocialMedia">
-</datalist>
-
-
 </body>
 
 </html>

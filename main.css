@@ -990,18 +990,40 @@ pre code {
 #brandPopup {
     display: none;
     position: absolute;
-    height: 200px;
+
+    min-height: 200px;
+    max-height: max-content;
+
     width: 400px;
 
     background-color: white;
     border: 3px solid #1da1f2;
     border-radius: 5px;
 
+    padding-bottom: 10px;
+
     box-shadow: #5d5d5d 0px 0px 10px;
     -webkit-box-shadow: #5d5d5d 0px 0px 10px;
     -moz-box-shadow: #5d5d5d 0px 0px 10px;
 
     z-index: 9999;
+}
+
+.brandRecommendation {
+    cursor: pointer;
+    background-color: white;
+    transition: .1s ease-in-out;
+
+    padding: 5px 10px 5px 10px;
+}
+.brandRecommendation:hover {
+    scale: 1.03;
+    transition: .1s ease-in-out;
+    border-radius: 40px;
+
+    box-shadow: #5d5d5d 0px 0px 10px;
+    -webkit-box-shadow: #5d5d5d 0px 0px 10px;
+    -moz-box-shadow: #5d5d5d 0px 0px 10px;
 }
 
 .brandRecommendationInnerText {
@@ -1013,4 +1035,31 @@ pre code {
     font-weight: bold;
 
 }
+
+#brandList {
+    border-top: 1px solid #c2c2c2;
+    background-color: white;
+    padding: 10px;
+}
+
+#brandList:hover {
+
+}
+
+.cleanCursorInputSmall {
+    height: 28px;
+    font-weight: bold;
+    margin: 2px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    transition: .2s ease-in-out;
+    outline: none;
+    padding: 3px;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+}
+
+
 
