@@ -1344,6 +1344,9 @@
 						<img id="hookGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="40" onkeyup="hookGlobalUpdate();" />
 						<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookGlobal').value = null;"/>
+						<button onclick="hookGlobalFontPriority1();">L</button>
+						<button onclick="hookGlobalFontPriority2();">M</button>
+						<button onclick="hookGlobalFontPriority3();">S</button>
 					</span>
 
 					<!-- Hook Resolution -->
@@ -1352,6 +1355,9 @@
 						<img id="hookResolutionGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="40" onkeyup="hookResolutionGlobalUpdate();" />
 						<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookResolutionGlobal').value = null;"/>
+						<button onclick="hookResolutionGlobalFontPriority1();">L</button>
+						<button onclick="hookResolutionGlobalFontPriority2();">M</button>
+						<button onclick="hookResolutionGlobalFontPriority3();">S</button>
 					</span>
 
 				</div>
@@ -1452,9 +1458,6 @@
 						<img id="eventPromotionTitleInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="eventPromotionTitleUpdate();" />
 						<img id="eventPromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionTitle').value = null;"/>
-						<button onclick="fontPriority1();">1</button>
-						<button onclick="fontPriority2();">2</button>
-						<button onclick="fontPriority3();">3</button>
 					</span>
 
 					<!-- Start Date -->
@@ -1554,6 +1557,9 @@
 						<img id="callToActionGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="callToActionGlobal" type="url" class="cleanCursorInput" placeholder="" size="40" onkeyup="callToActionGlobalUpdate();" />
 						<img id="callToActionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('callToActionGlobal').value = null;"/>
+						<button onclick="callToActionFontPriority1();">L</button>
+						<button onclick="callToActionFontPriority2();">M</button>
+						<button onclick="callToActionFontPriority3();">S</button>
 						<span id="callToActionGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="callToActionGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 						</span>
@@ -2026,15 +2032,122 @@
 
 <!-- Integrations Tab -->
 <div id="settings" class="tabby">
-<h2>Settings</h2>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-	<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
+	<div id="accountIntegrations" style="padding: 20px;">
+		<h3>Integrations</h3>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div><div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
+	</div>
+	<div id="accountNewContentSettings" style="padding: 20px;">
+
+		<!-- Formats -->
+		<h3>Content Field Formats</h3>
+		<div id="dateFormat">
+			<text>Date Format</text>
+			<select id="dateFormatSelect" onchange="changeDateFormat();">
+				<script>
+					function changeDateFormat() {
+
+						// get date format
+						let dateFormat = document.getElementById('dateFormatSelect').value;
+
+						// set date format to local storage
+						localStorage.setItem('dateFormat', dateFormat);
+
+					}
+				</script>
+				<optgroup label="Numeric (month first)">
+					<option title="Month-Day-Year with leading zeros" value="MM/DD/YY">02/17/2009</option>
+					<option title="Month-Day-Year with no leading zeros" value="M/D/YY">2/17/2009</option>
+				</optgroup>
+				<optgroup label="Numeric (day first)">
+					<option title="Day-Month-Year with leading zeros" value="DD/MM/YY">17/02/2009</option>
+					<option title="Day-Month-Year with no leading zeros" value="D/M/YY">17/2/2009</option>
+				</optgroup>
+				<optgroup label="Textual (Month abbr.)">
+					<option title="Month abbreviation, Day with leading zeros, Year" value="Mon-DD-YYYY">Feb 17, 2009</option>
+					<option title="Day with leading zeros, Month abbreviation, Year" value="DD-Mon-YYYY">17 Feb, 2009</option>
+				</optgroup>
+				<optgroup label="Textual (Month full)">
+					<option title="Month name-Day-Year with no leading zeros" value="Month D, Yr">February 17, 2009</option>
+					<option title="Day-Month name-Year" value="D, Month, Yr">17 February, 2009</option>
+				</optgroup>
+			</select>
+		</div>
+		<div id="timeFormat">
+			<text>Time Format</text>
+			<select id="timeFormatSelect" onchange="changeTimeFormat();">
+				<script>
+					function changeTimeFormat() {
+
+						// get time format
+						let timeFormat = document.getElementById('timeFormatSelect').value;
+
+						// set time format to local storage
+						localStorage.setItem('timeFormat', timeFormat);
+
+					}
+				</script>
+				<option title="Time is based on a 24 hour system. This is frequently referred to as 'military time'" value="HH:MM">14:18</option>
+				<option title="Time is based on a 12 hour system. AM or PM is given" value="HH:MM XM">02:18 PM</option>
+			</select>
+		</div>
+
+		<!-- Defaults -->
+		<h3>Content Field Default Values</h3>
+		<div id="primaryColorDefault">
+			<text>Primary Color Default</text>;
+			<input type="color" class="cleanCursorInput"  style="padding: 0;" oninput="changePrimaryColorDefault();"/>
+			<button onclick="showBrandPopup()">Get from Brand</button>
+			<script>
+				function changePrimaryColorDefault() {
+
+					// get primary color default
+					let primaryColorDefault = document.getElementById('primaryColorDefaultInput').value;
+
+					// set primary color default to local storage
+					localStorage.setItem('primaryColorDefault', primaryColorDefault);
+
+				}
+			</script>
+		</div>
+		<div id="fontColorDefault">
+			<text>Font Color Default</text>
+			<input type="color" class="cleanCursorInput" style="padding: 0;" oninput="changeFontColorDefault();"/>
+			<button onclick="showBrandPopup()">Get from Brand</button>
+			<script>
+				function changeFontColorDefault() {
+
+					// get font color default
+					let fontColorDefault = document.getElementById('fontColorDefaultInput').value;
+
+					// set font color default to local storage
+					localStorage.setItem('fontColorDefault', fontColorDefault);
+
+				}
+			</script>
+		</div>
+		<div id="logoDefault">
+			<input type="file" class="cleanCursorInput" style="padding: 10px;" onchange="changeLogoDefault();"/>
+			<button onclick="showBrandPopup()">Get from Brand</button>
+			<script>
+				function changeLogoDefault() {
+
+					// get logo default
+					let logoDefault = document.getElementById('logoDefaultInput').value;
+
+					// set logo default to local storage
+					localStorage.setItem('logoDefault', logoDefault);
+
+				}
+			</script>
+		</div>
+
+	</div>
 </div>
 
 <!-- Brand Popup-->
@@ -2329,7 +2442,7 @@
 <!-- Display Fields on Assets -->
 <script>
 
-	// Global Starts
+	// Field Updates
 	function hookGlobalUpdate() {
 		// for all elements with the 'hookGlobalHere' class, set the innerHTML to the value of the 'hookGlobal' field
 		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
@@ -2351,7 +2464,6 @@
 		hookResolutionGlobalHashtagsUpdate();
 	}
 
-	// Generic Post
 	function genericPostBodyUpdate() {
 		// for all elements with the 'genericPostBodyHere' class, set the innerHTML to the value of the 'genericPostBody' field
 		const genericPostBodyHere = document.getElementsByClassName('genericPostBodyHere');
@@ -2363,7 +2475,6 @@
 		genericPostHashtagsUpdate();
 	}
 
-	// Company Update
 	function companyUpdateHeadlineUpdate() {
 		// for all elements with the 'companyUpdateHeadlineHere' class, set the innerHTML to the value of the 'companyUpdateHeadline' field
 		const companyUpdateHeadlineHere = document.getElementsByClassName('companyUpdateHeadlineHere');
@@ -2404,7 +2515,6 @@
 		companyUpdateBodyHashtagsUpdate();
 	}
 
-	// Sale/Promotion
 	function salePromotionTitleUpdate() {
 		// for all elements with the 'salePromotionTitleHere' class, set the innerHTML to the value of the 'salePromotionTitle' field
 		const salePromotionTitleHere = document.getElementsByClassName('salePromotionTitleHere');
@@ -2476,7 +2586,6 @@
 		salePromotionBodyHashtagsUpdate();
 	}
 
-	// Event Promotion
 	function eventPromotionTitleUpdate() {
 		// for all elements with the 'eventPromotionTitleHere' class, set the innerHTML to the value of the 'eventPromotionTitle' field
 		const eventPromotionTitleHere = document.getElementsByClassName('eventPromotionTitleHere');
@@ -2548,7 +2657,6 @@
 		eventPromotionBodyHashtagsUpdate();
 	}
 
-	// Testimonial Review
 	function testimonialReviewAuthorNameUpdate() {
 		// for all elements with the 'testimonialReviewAuthorNameHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorName' field
 		const testimonialReviewAuthorNameHere = document.getElementsByClassName('testimonialReviewAuthorNameHere');
@@ -2615,7 +2723,6 @@
 		testimonialReviewBodyHashtagsUpdate();
 	}
 
-	// Global Ends
 	function callToActionGlobalUpdate() {
 		// for all elements with the 'callToActionGlobalHere' class, set the innerHTML to the value of the 'callToActionGlobal' field
 		const callToActionGlobalHere = document.getElementsByClassName('callToActionGlobalHere');
@@ -2684,7 +2791,6 @@
 		}
 	}
 
-	// dif var?
 	function fontColorGlobalUpdate () {
 
 		// set variable
@@ -2697,60 +2803,6 @@
 		document.getElementById('finalImageStory').style.color = fontColor;
 
 	}
-
-	// font priority
-	function fontPriority1() {
-
-		let elementId = '';
-		let text = document.getElementById('eventPromotionTitle').value;
-		let fontSize = 24;
-		let fontWeight = 700;
-
-		// select all elemnts with the class of 'eventPromotionTitleHere', but only if they are not inside the 'finalText' element
-
-		// set the font priority
-		let element = document.querySelectorAll('.eventPromotionTitleHere:not(#finalText .eventPromotionTitleHere)');
-		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
-		}
-
-
-	}
-	function fontPriority2() {
-
-		let elementId = '';
-		let text = document.getElementById('eventPromotionTitle').value;
-		let fontSize = 18;
-		let fontWeight = 500;
-
-		// set the font priority
-		let element = document.querySelectorAll('.eventPromotionTitleHere:not(#finalText .eventPromotionTitleHere)');
-		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
-		}
-
-	}
-	function fontPriority3() {
-
-		let elementId = '';
-		let text = document.getElementById('eventPromotionTitle').value;
-		let fontSize = 12;
-		let fontWeight = 300;
-
-		// set the font priority
-		let element = document.querySelectorAll('.eventPromotionTitleHere:not(#finalText .eventPromotionTitleHere)');
-		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
-		}
-
-	}
-
-
-
-
 
 	// Hashtags
 	function hookGlobalHashtagsUpdate() {
@@ -3207,6 +3259,148 @@
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = uniq.join(" ");
+	}
+
+	// font priority
+	function hookGlobalFontPriority1() {
+
+		// set variables
+		let text = document.getElementById('hookGlobal').value;
+		let fontSize = 24;
+		let fontWeight = 700;
+
+		// set the font priority
+		let element = document.querySelectorAll('.hookGlobalHere:not(#finalText .hookGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+
+	}
+	function hookGlobalFontPriority2() {
+
+		// set variables
+		let text = document.getElementById('hookGlobal').value;
+		let fontSize = 18;
+		let fontWeight = 500;
+
+		// set the font priority
+		let element = document.querySelectorAll('.hookGlobalHere:not(#finalText .hookGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+	function hookGlobalFontPriority3() {
+
+		// set variables
+		let text = document.getElementById('hookGlobal').value;
+		let fontSize = 12;
+		let fontWeight = 300;
+
+		// set the font priority
+		let element = document.querySelectorAll('.hookGlobalHere:not(#finalText .hookGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+
+	function hookResolutionGlobalFontPriority1() {
+
+		// set variables
+		let text = document.getElementById('hookResolutionGlobal').value;
+		let fontSize = 24;
+		let fontWeight = 700;
+
+		// set the font priority
+		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+
+	}
+	function hookResolutionGlobalFontPriority2() {
+
+		// set variables
+		let text = document.getElementById('hookResolutionGlobal').value;
+		let fontSize = 18;
+		let fontWeight = 500;
+
+		// set the font priority
+		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+	function hookResolutionGlobalFontPriority3() {
+
+		// set variables
+		let text = document.getElementById('hookResolutionGlobal').value;
+		let fontSize = 12;
+		let fontWeight = 300;
+
+		// set the font priority
+		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+
+	function callToActionFontPriority1() {
+
+		// set variables
+		let text = document.getElementById('callToActionGlobal').value;
+		let fontSize = 24;
+		let fontWeight = 700;
+
+		// set the font priority
+		let element = document.querySelectorAll('.callToActionGlobalHere:not(#finalText .callToActionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+
+	}
+	function callToActionFontPriority2() {
+
+		// set variables
+		let text = document.getElementById('callToActionGlobal').value;
+		let fontSize = 18;
+		let fontWeight = 500;
+
+		// set the font priority
+		let element = document.querySelectorAll('.callToActionGlobalHere:not(#finalText .callToActionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+	function callToActionFontPriority3() {
+
+		// set variables
+		let text = document.getElementById('callToActionGlobal').value;
+		let fontSize = 12;
+		let fontWeight = 300;
+
+		// set the font priority
+		let element = document.querySelectorAll('.callToActionGlobalHere:not(#finalText .callToActionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
 	}
 
 </script>
