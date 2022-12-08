@@ -822,6 +822,7 @@ function placeDescriptionAsSelected () {
 }, 1000);
 }
 
+
 // Hashtags
 function placeHashtagsAsSelected () {
 	document.getElementById("selectedHashtagsOutput").innerHTML = '<br><br>' + document.getElementById("hashtagsHere").innerText;
@@ -833,7 +834,6 @@ function placeHashtagsAsSelected () {
 // Screenshot
 // Input: <div id="photo"><button onclick="screenshot();">Take Screenshot</button></div>
 // Output: <div id="output"></div>
-
 function downloadFinalTextBlob() {
 
 	// Get the content
@@ -885,6 +885,7 @@ function downloadFinalTextBlob() {
 	// Create a new Blob (html)
 	const blob = new Blob([blobHtml], { type: "text/html" });
 
+
 	// Download the newly created Blob
 	const url = URL.createObjectURL(blob);
 	const a = document.createElement("a");
@@ -915,9 +916,12 @@ function downloadHorizontalImageFinal() {
 	setTimeout(function() {
 		var canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		var a = document.createElement('a');
+		a.href = imageData;
+		a.download = 'Horizontal Image';
+		a.click();
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotHorizontal', imageData);
-		window.location = imageData;
 	}, 1000);
 }
 function downloadVerticalImageFinal() {
@@ -938,12 +942,17 @@ function downloadVerticalImageFinal() {
 	setTimeout(function() {
 		var canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		var a = document.createElement('a');
+		a.href = imageData;
+		a.download = 'Vertical Image';
+		a.click();
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotVertical', imageData);
-		window.location = imageData;
 	}, 2000);
 }
 function downloadSquareImageFinal() {
+
+
 	// Set input & output
 	let screenshotTakeable = document.getElementById('finalImageSquare');
 	let screenshotPlaceable = document.getElementById('output');
@@ -962,11 +971,18 @@ function downloadSquareImageFinal() {
 		// select ALL canvas elements, and for each one, get the dataURL and download it
 		var canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		var a = document.createElement('a');
+		a.href = imageData;
+		a.download = 'Square Image';
+		a.click();
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotSquare', imageData);
-		window.location = imageData;
 	}, 3000);
 }
+
+
+
+
 function downloadStoryImageFinal() {
 	// Set input & output
 	let screenshotTakeable = document.getElementById('finalImageStory');
@@ -986,9 +1002,12 @@ function downloadStoryImageFinal() {
 		// select ALL canvas elements, and for each one, get the dataURL and download it
 		var canvas = Array.from(document.querySelectorAll('.screenshotStory')).pop();
 		var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
+		var a = document.createElement('a');
+		a.href = imageData;
+		a.download = 'Story Image';
+		a.click();
 		// set imageData to localStorage
 		localStorage.setItem('latestScreenshotStory', imageData);
-		window.location = imageData;
 	}, 4000);
 }
 
