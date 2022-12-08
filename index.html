@@ -2032,8 +2032,9 @@
 
 <!-- Integrations Tab -->
 <div id="settings" class="tabby">
+
 	<div id="accountIntegrations" style="padding: 20px;">
-		<h3>Integrations</h3>
+		<h3>Integrations (just a dummy UI for now)</h3>
 		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
 		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
 		<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
@@ -2132,7 +2133,8 @@
 			</script>
 		</div>
 		<div id="logoDefault">
-			<input type="file" class="cleanCursorInput" style="padding: 10px;" onchange="changeLogoDefault();"/>
+			<label for="logoDefaultInput">Logo Default</label>
+			<input id="logoDefaultInput" type="file" class="cleanCursorInput" style="padding: 10px;" onchange="changeLogoDefault();"/>
 			<button onclick="showBrandPopup()">Get from Brand</button>
 			<script>
 				function changeLogoDefault() {
@@ -2435,6 +2437,7 @@
 
 		// set the focus the 'hookGlobal' field, as it is the first field for all content types
 		document.getElementById('hookGlobal').focus(); // not sure why it does not work on the first click, if placed in the top of the function
+		clearAllFields (); // also won't work if place at top of function --> result is the dropdown select has to effect
 
 	}
 </script>
@@ -3400,6 +3403,46 @@
 			element[i].style.fontSize = fontSize + 'px';
 			element[i].style.fontWeight = fontWeight;
 		}
+
+	}
+
+	// global new content functions
+	function clearAllFields () {
+
+		document.getElementById("hookGlobal").value = "";
+		document.getElementById("hookResolutionGlobal").value = "";
+
+		document.getElementById("genericPostBody").value = "";
+
+		document.getElementById("companyUpdateHeadline").value = "";
+		document.getElementById("companyUpdateDate").value = "";
+		document.getElementById("companyUpdateBody").value = "";
+
+		document.getElementById("salePromotionTitle").value = "";
+		document.getElementById("salePromotionProductOrService").value = "";
+		document.getElementById("salePromotionStateDate").value = "";
+		document.getElementById("salePromotionEndDate").value = "";
+		document.getElementById("salePromotionBody").value = "";
+
+		document.getElementById("eventPromotionTitle").value = "";
+		document.getElementById("eventPromotionStartDate").value = "";
+		document.getElementById("eventPromotionEndDate").value = "";
+		document.getElementById("eventPromotionLocation").value = "";
+		document.getElementById("eventPromotionBody").value = "";
+
+		document.getElementById("testimonialReviewAuthorName").value = ""
+
+		document.getElementById("testimonialReviewAuthorHeadshot").value = "";
+		document.getElementById("testimonialReviewAuthorTitle").value = "";
+		document.getElementById("testimonialReviewAuthorCompany").value = "";
+		document.getElementById("testimonialReviewBody").value = "";
+
+		// These 4 fields are not clearing for some reason -->
+		// for now, i am just trying to trigger this at the bottom of the valueSelectorUpdate() function (wont work if placed in top of function)
+		document.getElementById("callToActionGlobal").value = "";
+		document.getElementById("linkGlobal").value = "";
+		document.getElementById("primaryColorGlobal").value = "";
+		document.getElementById("squareLogoGlobal").value = "";
 
 	}
 
