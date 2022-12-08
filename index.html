@@ -1773,7 +1773,7 @@
 					<!-- Testimonial / Review -->
 					<text class="testimonialReviewAuthorNameHere"></text>
 					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>xt
 					<text class="testimonialReviewAuthorCompanyHere"></text>
 					<text class="testimonialReviewAuthorDateHere"></text>
 					<text class="testimonialReviewBodyHere"></text>
@@ -1784,21 +1784,26 @@
 
 					<!-- Hashtags -->
 					<text id="hashtagsHere">
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
+						<text id="hookGlobalHashtagsHere"></text>
+						<text id="hookResolutionGlobalHashtagsHere"></text>
+
+						<text id="genericPostBodyHashtagsHere"></text>
+
+						<text id="companyUpdateHeadlineHashtagsHere"></text>
+						<text id="companyUpdateBodyHashtagsHere"></text>
+
+						<text id="salePromotionTitleHashtagsHere"></text>
+						<text id="salePromotionProductOrServiceHashtagsHere"></text>
+						<text id="salePromotionBodyHashtagsHere"></text>
+
+						<text id="eventPromotionTitleHashtagsHere"></text>
+						<text id="eventPromotionLocationHashtagsHere"></text>
+						<text id="eventPromotionBodyHashtagsHere"></text>
+
+						<text id="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text id="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text id="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text id="testimonialReviewBodyHashtagsHere"></text>
 					</text>
 
 				</p>
@@ -2331,6 +2336,9 @@
 		for(let i = 0; i < hookGlobalHere.length; i ++) {
 			hookGlobalHere[i].innerHTML = document.getElementById('hookGlobal').value;
 		}
+
+		// update hashtags
+		hookGlobalHashtagsUpdate();
 	}
 	function hookResolutionGlobalUpdate() {
 		// for all elements with the 'hookResolutionGlobalHere' class, set the innerHTML to the value of the 'hookResolutionGlobal' field
@@ -2338,6 +2346,9 @@
 		for (let i = 0; i < hookResolutionGlobalHere.length; i++) {
 			hookResolutionGlobalHere[i].innerHTML = document.getElementById('hookResolutionGlobal').value;
 		}
+
+		// update hashtags
+		hookResolutionGlobalHashtagsUpdate();
 	}
 
 	// Generic Post
@@ -2347,6 +2358,9 @@
 		for (let i = 0; i < genericPostBodyHere.length; i++) {
 			genericPostBodyHere[i].innerHTML = document.getElementById('genericPostBody').value;
 		}
+
+		// update hashtags
+		genericPostHashtagsUpdate();
 	}
 
 	// Company Update
@@ -2356,6 +2370,9 @@
 		for (let i = 0; i < companyUpdateHeadlineHere.length; i++) {
 			companyUpdateHeadlineHere[i].innerHTML = document.getElementById('companyUpdateHeadline').value;
 		}
+
+		// update hashtags
+		companyUpdateHeadlineHashtagsUpdate();
 	}
 	function companyUpdateDateUpdate() {
 		// for all elements with the 'companyUpdateDateHere' class, set the innerHTML to the value of the 'companyUpdateDate' field
@@ -2374,6 +2391,7 @@
 		for (let i = 0; i < companyUpdateDateHere.length; i++) {
 			companyUpdateDateHere[i].innerHTML = formattedDate;
 		}
+
 	}
 	function companyUpdateBodyUpdate() {
 		// for all elements with the 'companyUpdateBodyHere' class, set the innerHTML to the value of the 'companyUpdateBody' field
@@ -2381,6 +2399,9 @@
 		for (let i = 0; i < companyUpdateBodyHere.length; i++) {
 			companyUpdateBodyHere[i].innerHTML = document.getElementById('companyUpdateBody').value;
 		}
+
+		// update hashtags
+		companyUpdateBodyHashtagsUpdate();
 	}
 
 	// Sale/Promotion
@@ -2390,6 +2411,9 @@
 		for (let i = 0; i < salePromotionTitleHere.length; i++) {
 			salePromotionTitleHere[i].innerHTML = document.getElementById('salePromotionTitle').value;
 		}
+
+		// update hashtags
+		salePromotionTitleHashtagsUpdate();
 	}
 	function salePromotionProductOrServiceUpdate() {
 		// for all elements with the 'salePromotionProductOrServiceHere' class, set the innerHTML to the value of the 'salePromotionDate' field
@@ -2397,6 +2421,9 @@
 		for (let i = 0; i < salePromotionProductOrServiceHere.length; i++) {
 			salePromotionProductOrServiceHere[i].innerHTML = document.getElementById('salePromotionProductOrService').value;
 		}
+
+		// update hashtags
+		salePromotionProductOrServiceHashtagsUpdate();
 	}
 	function salePromotionStartDateUpdate() {
 		// for all elements with the 'salePromotionStartDateHere' class, set the innerHTML to the value of the 'salePromotionStartDate' field
@@ -2444,6 +2471,9 @@
 		for (let i = 0; i < salePromotionBodyHere.length; i++) {
 			salePromotionBodyHere[i].innerHTML = document.getElementById('salePromotionBody').value;
 		}
+
+		// update hashtags
+		salePromotionBodyHashtagsUpdate();
 	}
 
 	// Event Promotion
@@ -2453,6 +2483,9 @@
 		for (let i = 0; i < eventPromotionTitleHere.length; i++) {
 			eventPromotionTitleHere[i].innerHTML = document.getElementById('eventPromotionTitle').value;
 		}
+
+		// update hashtags
+		eventPromotionTitleHashtagsUpdate();
 	}
 	function eventPromotionStartDateUpdate() {
 		// for all elements with the 'eventPromotionStartDateHere' class, set the innerHTML to the value of the 'eventPromotionStartDate' field
@@ -2500,6 +2533,9 @@
 		for (let i = 0; i < eventPromotionLocationHere.length; i++) {
 			eventPromotionLocationHere[i].innerHTML = document.getElementById('eventPromotionLocation').value;
 		}
+
+		// update hashtags
+		eventPromotionLocationHashtagsUpdate();
 	}
 	function eventPromotionBodyUpdate() {
 		// for all elements with the 'eventPromotionBodyHere' class, set the innerHTML to the value of the 'eventPromotionBody' field
@@ -2507,6 +2543,9 @@
 		for (let i = 0; i < eventPromotionBodyHere.length; i++) {
 			eventPromotionBodyHere[i].innerHTML = document.getElementById('eventPromotionBody').value;
 		}
+
+		// update hashtags
+		eventPromotionBodyHashtagsUpdate();
 	}
 
 	// Testimonial Review
@@ -2516,6 +2555,9 @@
 		for (let i = 0; i < testimonialReviewAuthorNameHere.length; i++) {
 			testimonialReviewAuthorNameHere[i].innerHTML = document.getElementById('testimonialReviewAuthorName').value;
 		}
+
+		// update hashtags
+		testimonialReviewAuthorNameHashtagsUpdate();
 	}
 	function testimonialReviewAuthorHeadshotUpdate() {
 		// for all elements with the 'testimonialReviewAuthorHeadshotHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorHeadshot' field
@@ -2530,6 +2572,9 @@
 		for (let i = 0; i < testimonialReviewAuthorTitleHere.length; i++) {
 			testimonialReviewAuthorTitleHere[i].innerHTML = document.getElementById('testimonialReviewAuthorTitle').value;
 		}
+
+		// update hashtags
+		testimonialReviewAuthorTitleHashtagsUpdate();
 	}
 	function testimonialReviewAuthorCompanyUpdate() {
 		// for all elements with the 'testimonialReviewAuthorCompanyHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorCompany' field
@@ -2537,6 +2582,9 @@
 		for (let i = 0; i < testimonialReviewAuthorCompanyHere.length; i++) {
 			testimonialReviewAuthorCompanyHere[i].innerHTML = document.getElementById('testimonialReviewAuthorCompany').value;
 		}
+
+		// update hashtags
+		testimonialReviewAuthorCompanyHashtagsUpdate();
 	}
 	function testimonialReviewDateUpdate() {
 		// for all elements with the 'testimonialReviewDateHere' class, set the innerHTML to the value of the 'testimonialReviewDate' field
@@ -2562,6 +2610,9 @@
 		for (let i = 0; i < testimonialReviewBodyHere.length; i++) {
 			testimonialReviewBodyHere[i].innerHTML = document.getElementById('testimonialReviewBody').value;
 		}
+
+		// update hashtags
+		testimonialReviewBodyHashtagsUpdate();
 	}
 
 	// Global Ends
@@ -2698,37 +2749,464 @@
 	}
 
 
-	// Hashtags
-	function hashtagsUpdate() {
-		// make 'hashtagsContainer' visible
-		document.getElementById("hashtagsContainer").style.display = 'block';
 
-		let input = '';// get the field that is being used as in input
+
+
+	// Hashtags
+	function hookGlobalHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('hookGlobal').value;
 
 		// set the words to all lowercase
-		let locationWordsLower = localStorage.getItem(input).toLowerCase();
+		let inputLower = input.toLowerCase();
 
 		// remove all non-alphanumeric characters
-		let locationWordsLowerNoSpecial = locationWordsLower.replace(/[^a-z0-9]/gi, ' ');
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
 
 		// remove all 'words' that are 1 or 2 characters long
-		let locationWordsLowerNoSpecialNoJunk = locationWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
 
 		// remove fluffy words
-		let locationWordsLowerNoSpecialNoJunkNoCommon = locationWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
 
 		// add a '#' to the beginning of each word
-		let locationWordsHashtag = locationWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
 
 		// replace all commas in the string with a space
-		let locationWordsHashtagNoCommas = locationWordsHashtag.replace(/,/g, ' ');
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
 
 		// remove duplicate hashtags
-		let noDuplicates = locationWordsHashtagNoCommas.split(" ");
-		uniq = [...new Set(noDuplicates)];
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
-		document.getElementById("hashtagsHereForLocation").innerText = uniq.join(" ");
+		document.getElementById("hookGlobalHashtagsHere").innerText = uniq.join(" ");
+	}
+	function hookResolutionGlobalHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('hookResolutionGlobal').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("hookResolutionGlobalHashtagsHere").innerText = uniq.join(" ");
+	}
+
+	function genericPostHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('genericPostBody').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("genericPostBodyHashtagsHere").innerText = uniq.join(" ");
+	}
+
+	function companyUpdateHeadlineHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('companyUpdateHeadline').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("companyUpdateHeadlineHashtagsHere").innerText = uniq.join(" ");
+	}
+	function companyUpdateBodyHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('companyUpdateBody').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("companyUpdateBodyHashtagsHere").innerText = uniq.join(" ");
+	}
+
+	function salePromotionTitleHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('salePromotionTitle').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("salePromotionTitleHashtagsHere").innerText = uniq.join(" ");
+	}
+	function salePromotionBodyHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('salePromotionBody').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("salePromotionBodyHashtagsHere").innerText = uniq.join(" ");
+	}
+	function salePromotionProductOrServiceHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('salePromotionProductOrService').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("salePromotionProductOrServiceHashtagsHere").innerText = uniq.join(" ");
+	}
+
+	function eventPromotionTitleHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('eventPromotionTitle').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("eventPromotionTitleHashtagsHere").innerText = uniq.join(" ");
+	}
+	function eventPromotionLocationHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('eventPromotionLocation').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("eventPromotionLocationHashtagsHere").innerText = uniq.join(" ");
+	}
+	function eventPromotionBodyHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('eventPromotionBody').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("eventPromotionBodyHashtagsHere").innerText = uniq.join(" ");
+	}
+
+	function testimonialReviewAuthorNameHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('testimonialReviewAuthorName').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("testimonialReviewAuthorNameHashtagsHere").innerText = uniq.join(" ");
+	}
+	function testimonialReviewAuthorTitleHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('testimonialReviewAuthorTitle').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("testimonialReviewAuthorTitleHashtagsHere").innerText = uniq.join(" ");
+	}
+	function testimonialReviewAuthorCompanyHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('testimonialReviewAuthorCompany').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("testimonialReviewAuthorCompanyHashtagsHere").innerText = uniq.join(" ");
+	}
+	function testimonialReviewBodyHashtagsUpdate() {
+
+		// set variable
+		let input = document.getElementById('testimonialReviewBody').value;
+
+		// set the words to all lowercase
+		let inputLower = input.toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let inputLowerNoSpecial = inputLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let inputLowerNoSpecialNoJunk = inputLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let inputLowerNoSpecialNoJunkNoCommon = inputLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let inputLowerNoSpecialNoJunkNoCommonWithHash = inputLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace = inputLowerNoSpecialNoJunkNoCommonWithHash.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
+		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = uniq.join(" ");
 	}
 
 </script>
@@ -2743,7 +3221,7 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="1">Cherry</option>
 	<option value="1">Durian</option>
 </datalist>
-<div id="sliderContainer"></div>
+
 
 </body>
 
