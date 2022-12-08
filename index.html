@@ -1384,7 +1384,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateDate" style="width: 100px;">Date</label>
 						<img id="companyUpdateDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg"/>
-						<input id="companyUpdateDate" type="date" class="cleanCursorInput" onchange="companyUpdateDateUpdate();"/>
+						<input id="companyUpdateDate" type="date" class="cleanCursorInput" oninput="companyUpdateDateUpdate();"/>
 						<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateDate').value = null;"/>
 					</span>
 
@@ -1421,7 +1421,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionStartDate" style="width: 100px;">Start Date</label>
 						<img id="salePromotionStartDateIno" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" onchange="salePromotionStartDateUpdate();"/>
+						<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" oninput="salePromotionStartDateUpdate();"/>
 						<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionStartDate').value = null;"/>
 					</span>
 
@@ -1429,7 +1429,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionEndDate" style="width: 100px;">End Date</label>
 						<img id="salePromotionEndDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" onchange="salePromotionEndDateUpdate();"/>
+						<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" oninput="salePromotionEndDateUpdate();"/>
 						<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionEndDate').value = null;"/>
 					</span>
 
@@ -1461,7 +1461,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionStartDate" style="width: 100px;">Start Date</label>
 						<img id="eventPromotionStartDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" onchange="eventPromotionStartDateUpdate();"/>
+						<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" oninput="eventPromotionStartDateUpdate();"/>
 						<img id="eventPromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionStartDate').value = null;"/>
 					</span>
 
@@ -1469,7 +1469,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionEndDate" style="width: 100px;">End Date</label>
 						<img id="eventPromotionEndDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" onchange="eventPromotionEndDateUpdate();"/>
+						<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" oninput="eventPromotionEndDateUpdate();"/>
 						<img id="eventPromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionEndDate').value = null;"/>
 					</span>
 
@@ -1531,7 +1531,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewDate" style="width: 100px;">Date</label>
 						<img id="testimonialReviewDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewDate" type="date" class="cleanCursorInput" onchange="testimonialReviewDateUpdate();"/>
+						<input id="testimonialReviewDate" type="date" class="cleanCursorInput" oninput="testimonialReviewDateUpdate();"/>
 						<img id="testimonialReviewDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewDate').value = null;"/>
 					</span>
 
@@ -2360,8 +2360,19 @@
 	function companyUpdateDateUpdate() {
 		// for all elements with the 'companyUpdateDateHere' class, set the innerHTML to the value of the 'companyUpdateDate' field
 		const companyUpdateDateHere = document.getElementsByClassName('companyUpdateDateHere');
+
+		// convert the date to a more readable format
+		const date = new Date(document.getElementById('companyUpdateDate').value);
+		const options = {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+		}
+
+		const formattedDate = date.toLocaleDateString('en-US', options);
+
 		for (let i = 0; i < companyUpdateDateHere.length; i++) {
-			companyUpdateDateHere[i].innerHTML = document.getElementById('companyUpdateDate').value;
+			companyUpdateDateHere[i].innerHTML = formattedDate;
 		}
 	}
 	function companyUpdateBodyUpdate() {
@@ -2390,15 +2401,41 @@
 	function salePromotionStartDateUpdate() {
 		// for all elements with the 'salePromotionStartDateHere' class, set the innerHTML to the value of the 'salePromotionStartDate' field
 		const salePromotionStartDateHere = document.getElementsByClassName('salePromotionStartDateHere');
+
+		// convert the date to a more readable format
+		const date = new Date(document.getElementById('salePromotionStartDate').value);
+		const options = {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+			hour: 'numeric',
+			minute: 'numeric',
+		}
+
+		const formattedDate = date.toLocaleDateString('en-US', options);
+
 		for (let i = 0; i < salePromotionStartDateHere.length; i++) {
-			salePromotionStartDateHere[i].innerHTML = document.getElementById('salePromotionStartDate').value;
+			salePromotionStartDateHere[i].innerHTML = formattedDate;
 		}
 	}
 	function salePromotionEndDateUpdate() {
 		// for all elements with the 'salePromotionEndDateHere' class, set the innerHTML to the value of the 'salePromotionEndDate' field
 		const salePromotionEndDateHere = document.getElementsByClassName('salePromotionEndDateHere');
+
+		// convert the date to a more readable format
+		const date = new Date(document.getElementById('salePromotionEndDate').value);
+		const options = {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+			hour: 'numeric',
+			minute: 'numeric',
+		}
+
+		const formattedDate = date.toLocaleDateString('en-US', options);
+
 		for (let i = 0; i < salePromotionEndDateHere.length; i++) {
-			salePromotionEndDateHere[i].innerHTML = document.getElementById('salePromotionEndDate').value;
+			salePromotionEndDateHere[i].innerHTML = formattedDate;
 		}
 	}
 	function salePromotionBodyUpdate() {
@@ -2420,15 +2457,41 @@
 	function eventPromotionStartDateUpdate() {
 		// for all elements with the 'eventPromotionStartDateHere' class, set the innerHTML to the value of the 'eventPromotionStartDate' field
 		const eventPromotionStartDateHere = document.getElementsByClassName('eventPromotionStartDateHere');
+
+		// convert the date to a more readable format
+		const date = new Date(document.getElementById('eventPromotionStartDate').value);
+		const options = {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+			hour: 'numeric',
+			minute: 'numeric',
+		}
+
+		const formattedDate = date.toLocaleDateString('en-US', options);
+
 		for (let i = 0; i < eventPromotionStartDateHere.length; i++) {
-			eventPromotionStartDateHere[i].innerHTML = document.getElementById('eventPromotionStartDate').value;
+			eventPromotionStartDateHere[i].innerHTML = formattedDate;
 		}
 	}
 	function eventPromotionEndDateUpdate() {
 		// for all elements with the 'eventPromotionEndDateHere' class, set the innerHTML to the value of the 'eventPromotionEndDate' field
 		const eventPromotionEndDateHere = document.getElementsByClassName('eventPromotionEndDateHere');
+
+		// convert the date to a more readable format
+		const date = new Date(document.getElementById('eventPromotionEndDate').value);
+		const options = {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+			hour: 'numeric',
+			minute: 'numeric',
+		}
+
+		const formattedDate = date.toLocaleDateString('en-US', options);
+
 		for (let i = 0; i < eventPromotionEndDateHere.length; i++) {
-			eventPromotionEndDateHere[i].innerHTML = document.getElementById('eventPromotionEndDate').value;
+			eventPromotionEndDateHere[i].innerHTML = formattedDate;
 		}
 	}
 	function eventPromotionLocationUpdate() {
@@ -2478,8 +2541,19 @@
 	function testimonialReviewDateUpdate() {
 		// for all elements with the 'testimonialReviewDateHere' class, set the innerHTML to the value of the 'testimonialReviewDate' field
 		const testimonialReviewDateHere = document.getElementsByClassName('testimonialReviewDateHere');
+
+		// convert the date to a more readable format
+		const date = new Date(document.getElementById('testimonialReviewDate').value);
+		const options = {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+		}
+
+		const formattedDate = date.toLocaleDateString('en-US', options);
+
 		for (let i = 0; i < testimonialReviewDateHere.length; i++) {
-			testimonialReviewDateHere[i].innerHTML = document.getElementById('testimonialReviewDate').value;
+			testimonialReviewDateHere[i].innerHTML = formattedDate;
 		}
 	}
 	function testimonialReviewBodyUpdate() {

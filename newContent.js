@@ -979,10 +979,6 @@ function downloadSquareImageFinal() {
 		localStorage.setItem('latestScreenshotSquare', imageData);
 	}, 3000);
 }
-
-
-
-
 function downloadStoryImageFinal() {
 	// Set input & output
 	let screenshotTakeable = document.getElementById('finalImageStory');
@@ -1010,7 +1006,6 @@ function downloadStoryImageFinal() {
 		localStorage.setItem('latestScreenshotStory', imageData);
 	}, 4000);
 }
-
 function downloadContent() {
 	downloadHorizontalImageFinal();
 	downloadSquareImageFinal();
