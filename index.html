@@ -1577,8 +1577,9 @@
 						<label for="primaryColorGlobal" style="width: 100px;">Primary Color</label>
 						<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" oninput="primaryColorGlobalUpdate();" />
-						<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step="1" oninput="primaryColorGlobalDirectionUpdate();">
-						<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step="1" oninput="primaryColorGlobalDirectionInvasion();">
+						<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" oninput="fontColorGlobalUpdate();" />
+						<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
+						<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step=".1" oninput="primaryColorGlobalDirectionInvasion();">
 						<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
 						<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
@@ -2553,6 +2554,18 @@
 			primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
 
 		}
+	}
+	function fontColorGlobalUpdate () {
+
+		// set variable
+		let fontColor = document.getElementById("fontColorGlobal").value;
+
+		// set the font colors of the images
+		document.getElementById('finalImageHorizontal').style.color = fontColor;
+		document.getElementById('finalImageSquare').style.color = fontColor;
+		document.getElementById('finalImageVertical').style.color = fontColor;
+		document.getElementById('finalImageStory').style.color = fontColor;
+
 	}
 
 	// Hashtags

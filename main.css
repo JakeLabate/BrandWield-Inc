@@ -686,7 +686,9 @@ p[id*="copyToClipboardHas"]:hover {
 
 input[type="range"] {
     transition: 0s;
-    padding: 0 !important;"
+    padding: 0 !important;
+    -webkit-appearance: none;
+    height: 5px;
 }
 
 
