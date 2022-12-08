@@ -1323,8 +1323,7 @@
 			<span style="display: flex; align-items: center;">
 				<label for="contentTypeSelect" style="width: 134px;">Content Type</label>
 				<select id="contentTypeSelect" class="cleanCursorInput" onchange="valueSelectorUpdate();">
-					<option value="" selected>Select Content Type</option>
-					<option value="genericPostFields">Generic Post</option>
+					<option value="genericPostFields" selected>Generic Post</option>
 					<option value="companyUpdateFields">Company Update</option>
 					<option value="salePromotionFields">Sale/Promotion</option>
 					<option value="eventPromotionFields">Event Promotion</option>
@@ -1336,7 +1335,7 @@
 			<div id="contentTypeFieldOptions">
 
 				<!-- Global Content Fields (Start) -->
-				<div id="globalContentFieldsStart" style="display: none;">
+				<div id="globalContentFieldsStart" style="display: block;">
 
 					<!-- Hook -->
 					<span style="display: flex; align-items: center;">
@@ -1363,7 +1362,7 @@
 				</div>
 
 				<!-- Generic Post -->
-				<div id="genericPostFields" class="contentTypeFieldOption" style="display: none;">
+				<div id="genericPostFields" class="contentTypeFieldOption" style="display: block;">
 
 					<!-- Body -->
 					<span style="display: flex; align-items: center;">
@@ -1549,7 +1548,7 @@
 				</div>
 
 				<!-- Global Content Fields (End) -->
-				<div id="globalContentFieldsEnd" style="display: none;">
+				<div id="globalContentFieldsEnd" style="display: block;">
 
 					<!-- Call to Action -->
 					<span style="display: flex; align-items: center;">
@@ -1718,30 +1717,25 @@
 				<text class="hookGlobalHere"></text>
 				<text class="hookResolutionGlobalHere"></text>
 				<!-- Generic Post -->
-				<text class="genericPostBodyHere"></text>
 				<!-- Company Update -->
 				<text class="companyUpdateHeadlineHere"></text>
 				<text class="companyUpdateDateHere"></text>
-				<text class="companyUpdateBodyHere"></text>
 				<!-- Sale/Promotion -->
 				<text class="salePromotionTitleHere"></text>
 				<text class="salePromotionProductOrServiceHere"></text>
 				<text class="salePromotionStartDateHere"></text>
 				<text class="salePromotionEndDateHere"></text>
-				<text class="salePromotionBodyHere"></text>
 				<!-- Event Promotion-->
 				<text class="eventPromotionTitleHere"></text>
 				<text class="eventPromotionStartDateHere"></text>
 				<text class="eventPromotionEndDateHere"></text>
 				<text class="eventPromotionLocationHere"></text>
-				<text class="eventPromotionBodyHere"></text>
 				<!-- Testimonial / Review -->
 				<text class="testimonialReviewAuthorNameHere"></text>
 				<text class="testimonialReviewAuthorHeadshotHere"></text>
 				<text class="testimonialReviewAuthorTitleHere"></text>
 				<text class="testimonialReviewAuthorCompanyHere"></text>
 				<text class="testimonialReviewAuthorDateHere"></text>
-				<text class="testimonialReviewBodyHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
 			</div>
@@ -1779,7 +1773,7 @@
 					<!-- Testimonial / Review -->
 					<text class="testimonialReviewAuthorNameHere"></text>
 					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>xt
+					<text class="testimonialReviewAuthorTitleHere"></text>
 					<text class="testimonialReviewAuthorCompanyHere"></text>
 					<text class="testimonialReviewAuthorDateHere"></text>
 					<text class="testimonialReviewBodyHere"></text>
@@ -1789,6 +1783,8 @@
 					<text class="linkGlobalHere"></text>
 
 					<!-- Hashtags -->
+					<br>
+					<br>
 					<text id="hashtagsHere">
 						<text id="hookGlobalHashtagsHere"></text>
 						<text id="hookResolutionGlobalHashtagsHere"></text>
@@ -3438,7 +3434,7 @@
 		document.getElementById("testimonialReviewBody").value = "";
 
 		// These 4 fields are not clearing for some reason -->
-		// for now, i am just trying to trigger this at the bottom of the valueSelectorUpdate() function (wont work if placed in top of function)
+		// for now, i am just trying to trigger this at the bottom of the valueSelectorUpdate() function above (won't work if placed in top of the function)
 		document.getElementById("callToActionGlobal").value = "";
 		document.getElementById("linkGlobal").value = "";
 		document.getElementById("primaryColorGlobal").value = "";
@@ -3446,9 +3442,11 @@
 
 	}
 
+	// 
+
 </script>
 
-<!-- Datalists inside <select> elements will not be searchable as the 'list' attribute value,
+<!-- 'list' inside <select> elements will not be searchable as the 'list' attribute value,
 so we need to place them here, not sure why, I guess we create 2 identical data sets for now?
 1 here for search and 1 for the brandRecommendations? -->
 
