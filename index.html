@@ -55,12 +55,10 @@
 
 	<!-- Navigation Bar Script -->
 	<script>
-		function selectContentType(tabby) {
+		function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
 			let i; let x = document.getElementsByClassName("tabby");
 			for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
 			document.getElementById(tabby).style.display = "block";
-
-			// set the focus the 'hookGlobal' field, as it is the first field for all content types --> ONLY need this if the user is creating new content
 			document.getElementById('hookGlobal').focus()
 		}
 	</script>
@@ -1344,7 +1342,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="hookGlobal" style="width: 100px;">Hook</label>
 						<img id="hookGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="40" onkeyup="hookGlobalUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookGlobal').value = null;"/>
 					</span>
 
@@ -1352,7 +1350,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="hookResolutionGlobal" style="width: 100px;">Hook Resolution</label>
 						<img id="hookResolutionGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="40" onkeyup="hookResolutionGlobalUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookResolutionGlobal').value = null;"/>
 					</span>
 
@@ -1365,7 +1363,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="genericPostBody" style="width: 100px;">Body</label>
 						<img id="genericPostBodyInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="genericPostBodyUpdate();"></textarea>
 						<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostBody').value = null;"/>
 					</span>
 
@@ -1378,15 +1376,15 @@
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateHeadline" style="width: 100px;">Headline</label>
 						<img id="companyUpdateHeadlineInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="Headline" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="Headline" size="40" onkeyup="companyUpdateHeadlineUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateHeadline').value = null;"/>
 					</span>
 
 					<!-- Date -->
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateDate" style="width: 100px;">Date</label>
-						<img id="companyUpdateDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="companyUpdateDate" type="date" class="cleanCursorInput" />
+						<img id="companyUpdateDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg"/>
+						<input id="companyUpdateDate" type="date" class="cleanCursorInput" onchange="companyUpdateDateUpdate();"/>
 						<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateDate').value = null;"/>
 					</span>
 
@@ -1394,7 +1392,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="companyUpdateBody" style="width: 100px;">Body</label>
 						<img id="companyUpdateBodyInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="companyUpdateBodyUpdate();"></textarea>
 						<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateBody').value = null;"/>
 					</span>
 
@@ -1407,7 +1405,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionTitle" style="width: 100px;">Title</label>
 						<img id="salePromotionTitleInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="salePromotionTitleUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="salePromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionTitle').value = null;"/>
 					</span>
 
@@ -1415,7 +1413,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionProductOrService" style="width: 100px;">Product or Service</label>
 						<img id="salePromotionProductOrServiceInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="40" onkeyup="salePromotionProductOrServiceUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 					</span>
 
@@ -1423,7 +1421,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionStartDate" style="width: 100px;">Start Date</label>
 						<img id="salePromotionStartDateIno" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+						<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" onchange="salePromotionStartDateUpdate();"/>
 						<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionStartDate').value = null;"/>
 					</span>
 
@@ -1431,7 +1429,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionEndDate" style="width: 100px;">End Date</label>
 						<img id="salePromotionEndDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+						<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" onchange="salePromotionEndDateUpdate();"/>
 						<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionEndDate').value = null;"/>
 					</span>
 
@@ -1439,7 +1437,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="salePromotionBody" style="width: 100px;">Body</label>
 						<img id="salePromotionBodyInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="salePromotionBodyUpdate();"></textarea>
 						<img id="salePromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionBody').value = null;"/>
 					</span>
 
@@ -1452,7 +1450,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionTitle" style="width: 100px;">Title</label>
 						<img id="eventPromotionTitleInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="eventPromotionTitleUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="eventPromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionTitle').value = null;"/>
 					</span>
 
@@ -1460,7 +1458,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionStartDate" style="width: 100px;">Start Date</label>
 						<img id="eventPromotionStartDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" />
+						<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" onchange="eventPromotionStartDateUpdate();"/>
 						<img id="eventPromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionStartDate').value = null;"/>
 					</span>
 
@@ -1468,7 +1466,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionEndDate" style="width: 100px;">End Date</label>
 						<img id="eventPromotionEndDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" />
+						<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" onchange="eventPromotionEndDateUpdate();"/>
 						<img id="eventPromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionEndDate').value = null;"/>
 					</span>
 
@@ -1476,7 +1474,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionLocation" style="width: 100px;">Location</label>
 						<img id="eventPromotionLocationInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="40" placeholder="123 Main Street Boston, MA style" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="40" placeholder="123 Main Street Boston, MA style" onkeyup="eventPromotionLocationUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionLocation').value = null;" />
 						<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 					</span>
@@ -1485,7 +1483,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="eventPromotionBody" style="width: 100px;">Body</label>
 						<img id="eventPromotionBodyInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body"></textarea>
+						<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="eventPromotionBodyUpdate();"></textarea>
 						<img id="eventPromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionBody').value = null;"/>
 					</span>
 
@@ -1498,7 +1496,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorName" style="width: 100px;">Author Name</label>
 						<img id="testimonialReviewAuthorInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" size="40" onkeyup="testimonialReviewAuthorNameUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="testimonialReviewAuthorNameClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorName').value = null;"/>
 					</span>
 
@@ -1506,7 +1504,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorHeadshot" style="width: 100px;">Author Headshot</label>
 						<img id="testimonialReviewAuthorHeadshotInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="40" style="height: 60px;" />
+						<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
 						<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorHeadshot').value = null;"/>
 					</span>
 
@@ -1514,7 +1512,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorTitle" style="width: 100px;">Author Title</label>
 						<img id="testimonialReviewAuthorTitleInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" size="40" onkeyup="testimonialReviewAuthorTitleUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="testimonialReviewAuthorTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorTitle').value = null;"/>
 					</span>
 
@@ -1522,7 +1520,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewAuthorCompany" style="width: 100px;">Author Company</label>
 						<img id="testimonialReviewAuthorCompanyInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" size="40" onkeyup="testimonialReviewAuthorCompanyUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="testimonialReviewAuthorCompanyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorCompany').value = null;"/>
 					</span>
 
@@ -1530,7 +1528,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewDate" style="width: 100px;">Date</label>
 						<img id="testimonialReviewDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="testimonialReviewDate" type="date" class="cleanCursorInput" />
+						<input id="testimonialReviewDate" type="date" class="cleanCursorInput" onchange="testimonialReviewDateUpdate();"/>
 						<img id="testimonialReviewDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewDate').value = null;"/>
 					</span>
 
@@ -1538,7 +1536,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="testimonialReviewBody" style="width: 100px;">Body</label>
 						<img id="testimonialReviewBodyInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Michael Scott is the bestest most amazingest boss I ever had!"></textarea>
+						<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Michael Scott is the bestest most amazingest boss I ever had!" onkeyup="testimonialReviewBodyUpdate();"></textarea>
 						<img id="testimonialReviewBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewBody').value = null;"/>
 					</span>
 
@@ -1551,7 +1549,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="callToActionGlobal" style="width: 100px;">Call to Action</label>
 						<img id="callToActionGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="callToActionGlobal" type="url" class="cleanCursorInput" placeholder="" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="callToActionGlobal" type="url" class="cleanCursorInput" placeholder="" size="40" onkeyup="callToActionGlobalUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="callToActionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('callToActionGlobal').value = null;"/>
 						<span id="callToActionGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="callToActionGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
@@ -1562,7 +1560,7 @@
 					<span style="display: flex; align-items: center;">
 						<label for="linkGlobal" style="width: 100px;">Link</label>
 						<img id="linkGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="40" onkeyup="linkGlobalUpdate(); this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="linkGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('linkGlobal').value = null;"/>
 						<span id="linkGlobalQRSpan" style="display: flex; align-items: center; border: 2px solid #2691a9; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="linkGlobalQRPreview" alt="" src="media/otherIcons/photo.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" />
@@ -1602,9 +1600,6 @@
 				</div>
 
 			</div>
-
-
-
 
 		</div>
 
@@ -1672,13 +1667,45 @@
 			<!-- TEXT -->
 			<div style="position: relative; top: 380px;">
 				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<text id="selectedTitleOutput"></text><text id="consideredTitleOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-title-sentence}}&nbsp;</text>
-					<text id="selectedDateOutput"></text><text id="consideredDateOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-date-sentence}}&nbsp;</text>
-					<text id="selectedTimeOutput"></text><text id="consideredTimeOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-time-sentence}}&nbsp;</text>
-					<text id="selectedLocationOutput"></text><text id="consideredLocationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-location-sentence}}&nbsp;</text><br><br>
-					<text id="selectedOrganizationOutput"></text><text id="consideredOrganizationOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-organization-sentence}}&nbsp;</text>
-					<text id="selectedHostOutput"></text><text id="consideredHostOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-host-sentence}}&nbsp;</text><br><br>
-					<text id="selectedDescriptionOutput"></text><text id="consideredDescriptionOutput" contenteditable="false" style="color:#8c8c8c">&nbsp;{{event-description}}&nbsp;</text>
+
+					<!-- Global Start -->
+					<text class="hookGlobalHere"></text>
+					<text class="hookResolutionGlobalHere"></text>
+
+					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+
+					<!-- Company Update -->
+					<text class="companyUpdateHeadlineHere"></text>
+					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+
+					<!-- Sale/Promotion -->
+					<text class="salePromotionTitleHere"></text>
+					<text class="salePromotionProductOrServiceHere"></text>
+					<text class="salePromotionStartDateHere"></text>
+					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+
+					<!-- Event Promotion-->
+					<text class="eventPromotionTitleHere"></text>
+					<text class="eventPromotionStartDateHere"></text>
+					<text class="eventPromotionEndDateHere"></text>
+					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+
+					<!-- Testimonial / Review -->
+					<text class="testimonialReviewAuthorNameHere"></text>
+					<text class="testimonialReviewAuthorHeadshotHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorCompanyHere"></text>
+					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+
+					<!-- Global End -->
+					<text class="callToActionGlobalHere"></text>
+					<text class="linkGlobalHere"></text>
+
 					<text id="hashtagsContainer"><br>
 						<text id="hashtagsHere" class="hashtagsHere">
 							<text id="hashtagsHereForTitle"></text>
@@ -1688,6 +1715,7 @@
 							<text id="hashtagsHereForDescription"></text>
 						</text>
 					</text>
+
 				</p>
 				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
@@ -2213,105 +2241,184 @@
 
 	// Global Starts
 	function hookGlobalUpdate() {
-		document.getElementById('hookGlobalHere').innerHTML = document.getElementById('hookGlobal').value;
+		// for all elements with the 'hookGlobalHere' class, set the innerHTML to the value of the 'hookGlobal' field
+		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
+		for(let i = 0; i < hookGlobalHere.length; i ++) {
+			hookGlobalHere[i].innerHTML = document.getElementById('hookGlobal').value;
+		}
 	}
 	function hookResolutionGlobalUpdate() {
-		document.getElementById('hookResolutionGlobalHere').innerHTML = document.getElementById('hookResolutionGlobal').value;
+		// for all elements with the 'hookResolutionGlobalHere' class, set the innerHTML to the value of the 'hookResolutionGlobal' field
+		const hookResolutionGlobalHere = document.getElementsByClassName('hookResolutionGlobalHere');
+		for (let i = 0; i < hookResolutionGlobalHere.length; i++) {
+			hookResolutionGlobalHere[i].innerHTML = document.getElementById('hookResolutionGlobal').value;
+		}
 	}
 
 	// Generic Post
 	function genericPostBodyUpdate() {
-		document.getElementById("genericPostBodyHere").innerHTML = document.getElementById("genericPostBody").value;
+		// for all elements with the 'genericPostBodyHere' class, set the innerHTML to the value of the 'genericPostBody' field
+		const genericPostBodyHere = document.getElementsByClassName('genericPostBodyHere');
+		for (let i = 0; i < genericPostBodyHere.length; i++) {
+			genericPostBodyHere[i].innerHTML = document.getElementById('genericPostBody').value;
+		}
 	}
 
 	// Company Update
-	function companyUpdateTitleUpdate() {
-		document.getElementById('companyUpdateHeadlineHere').innerHTML = document.getElementById('companyUpdateTitle').value;
+	function companyUpdateHeadlineUpdate() {
+		// for all elements with the 'companyUpdateHeadlineHere' class, set the innerHTML to the value of the 'companyUpdateHeadline' field
+		const companyUpdateHeadlineHere = document.getElementsByClassName('companyUpdateHeadlineHere');
+		for (let i = 0; i < companyUpdateHeadlineHere.length; i++) {
+			companyUpdateHeadlineHere[i].innerHTML = document.getElementById('companyUpdateHeadline').value;
+		}
 	}
 	function companyUpdateDateUpdate() {
-		document.getElementById('companyUpdateHeadlineHere').innerHTML = document.getElementById('comapanyUpdateDate').value;
+		// for all elements with the 'companyUpdateDateHere' class, set the innerHTML to the value of the 'companyUpdateDate' field
+		const companyUpdateDateHere = document.getElementsByClassName('companyUpdateDateHere');
+		for (let i = 0; i < companyUpdateDateHere.length; i++) {
+			companyUpdateDateHere[i].innerHTML = document.getElementById('companyUpdateDate').value;
+		}
 	}
 	function companyUpdateBodyUpdate() {
-
-		let companyUpdateBody = document.getElementById("companyUpdateBody").value;
-		let companyUpdateBodyHere = document.getElementById("companyUpdateBodyHere");
-		companyUpdateBodyHere.innerHTML = companyUpdateBody;
-
+		// for all elements with the 'companyUpdateBodyHere' class, set the innerHTML to the value of the 'companyUpdateBody' field
+		const companyUpdateBodyHere = document.getElementsByClassName('companyUpdateBodyHere');
+		for (let i = 0; i < companyUpdateBodyHere.length; i++) {
+			companyUpdateBodyHere[i].innerHTML = document.getElementById('companyUpdateBody').value;
+		}
 	}
 
 	// Sale/Promotion
 	function salePromotionTitleUpdate() {
-		document.getElementById('salePromotionTitleHere').innerHTML = document.getElementById('salePromotionTitle').value;
+		// for all elements with the 'salePromotionTitleHere' class, set the innerHTML to the value of the 'salePromotionTitle' field
+		const salePromotionTitleHere = document.getElementsByClassName('salePromotionTitleHere');
+		for (let i = 0; i < salePromotionTitleHere.length; i++) {
+			salePromotionTitleHere[i].innerHTML = document.getElementById('salePromotionTitle').value;
+		}
 	}
-	function salePromotionDateUpdate() {
-		document.getElementById('salePromotionStartDateHere').innerHTML = document.getElementById('salePromotionDate').value;
+	function salePromotionProductOrServiceUpdate() {
+		// for all elements with the 'salePromotionProductOrServiceHere' class, set the innerHTML to the value of the 'salePromotionDate' field
+		const salePromotionProductOrServiceHere = document.getElementsByClassName('salePromotionProductOrServiceHere');
+		for (let i = 0; i < salePromotionProductOrServiceHere.length; i++) {
+			salePromotionProductOrServiceHere[i].innerHTML = document.getElementById('salePromotionProductOrService').value;
+		}
 	}
 	function salePromotionStartDateUpdate() {
-		document.getElementById('salePromotionStartDateHere').innerHTML = document.getElementById('salePromotionStartDate').value;
-
+		// for all elements with the 'salePromotionStartDateHere' class, set the innerHTML to the value of the 'salePromotionStartDate' field
+		const salePromotionStartDateHere = document.getElementsByClassName('salePromotionStartDateHere');
+		for (let i = 0; i < salePromotionStartDateHere.length; i++) {
+			salePromotionStartDateHere[i].innerHTML = document.getElementById('salePromotionStartDate').value;
+		}
 	}
 	function salePromotionEndDateUpdate() {
-		document.getElementById('salePromotionEndDateHere').innerHTML = document.getElementById('salePromotionEndDate').value;
+		// for all elements with the 'salePromotionEndDateHere' class, set the innerHTML to the value of the 'salePromotionEndDate' field
+		const salePromotionEndDateHere = document.getElementsByClassName('salePromotionEndDateHere');
+		for (let i = 0; i < salePromotionEndDateHere.length; i++) {
+			salePromotionEndDateHere[i].innerHTML = document.getElementById('salePromotionEndDate').value;
+		}
 	}
 	function salePromotionBodyUpdate() {
-
-		let salePromotionBody = document.getElementById("salePromotionBody").value;
-		let salePromotionBodyHere = document.getElementById("salePromotionBodyHere");
-		salePromotionBodyHere.innerHTML = salePromotionBody;
-
+		// for all elements with the 'salePromotionBodyHere' class, set the innerHTML to the value of the 'salePromotionBody' field
+		const salePromotionBodyHere = document.getElementsByClassName('salePromotionBodyHere');
+		for (let i = 0; i < salePromotionBodyHere.length; i++) {
+			salePromotionBodyHere[i].innerHTML = document.getElementById('salePromotionBody').value;
+		}
 	}
 
 	// Event Promotion
 	function eventPromotionTitleUpdate() {
-		document.getElementById('eventPromotionTitleHere').innerHTML = document.getElementById('eventPromotionTitle').value;
+		// for all elements with the 'eventPromotionTitleHere' class, set the innerHTML to the value of the 'eventPromotionTitle' field
+		const eventPromotionTitleHere = document.getElementsByClassName('eventPromotionTitleHere');
+		for (let i = 0; i < eventPromotionTitleHere.length; i++) {
+			eventPromotionTitleHere[i].innerHTML = document.getElementById('eventPromotionTitle').value;
+		}
 	}
 	function eventPromotionStartDateUpdate() {
-		document.getElementById('eventPromotionStartStartDateHere').innerHTML = document.getElementById('eventPromotionStartDate').value;
+		// for all elements with the 'eventPromotionStartDateHere' class, set the innerHTML to the value of the 'eventPromotionStartDate' field
+		const eventPromotionStartDateHere = document.getElementsByClassName('eventPromotionStartDateHere');
+		for (let i = 0; i < eventPromotionStartDateHere.length; i++) {
+			eventPromotionStartDateHere[i].innerHTML = document.getElementById('eventPromotionStartDate').value;
+		}
 	}
 	function eventPromotionEndDateUpdate() {
-		document.getElementById('eventPromotionEndDateHere').innerHTML = document.getElementById('eventPromotionEndDate').value;
+		// for all elements with the 'eventPromotionEndDateHere' class, set the innerHTML to the value of the 'eventPromotionEndDate' field
+		const eventPromotionEndDateHere = document.getElementsByClassName('eventPromotionEndDateHere');
+		for (let i = 0; i < eventPromotionEndDateHere.length; i++) {
+			eventPromotionEndDateHere[i].innerHTML = document.getElementById('eventPromotionEndDate').value;
+		}
 	}
 	function eventPromotionLocationUpdate() {
-		document.getElementById('eventPromotionLocationHere').innerHTML = document.getElementById('eventPromotionLocation').value;
+		// for all elements with the 'eventPromotionLocationHere' class, set the innerHTML to the value of the 'eventPromotionLocation' field
+		const eventPromotionLocationHere = document.getElementsByClassName('eventPromotionLocationHere');
+		for (let i = 0; i < eventPromotionLocationHere.length; i++) {
+			eventPromotionLocationHere[i].innerHTML = document.getElementById('eventPromotionLocation').value;
+		}
 	}
 	function eventPromotionBodyUpdate() {
-
-		let eventPromotionBody = document.getElementById("eventPromotionBody").value;
-		let eventPromotionBodyHere = document.getElementById("eventPromotionBodyHere");
-		eventPromotionBodyHere.innerHTML = eventPromotionBody;
-
+		// for all elements with the 'eventPromotionBodyHere' class, set the innerHTML to the value of the 'eventPromotionBody' field
+		const eventPromotionBodyHere = document.getElementsByClassName('eventPromotionBodyHere');
+		for (let i = 0; i < eventPromotionBodyHere.length; i++) {
+			eventPromotionBodyHere[i].innerHTML = document.getElementById('eventPromotionBody').value;
+		}
 	}
 
 	// Testimonial Review
 	function testimonialReviewAuthorNameUpdate() {
-		document.getElementById('testimonialReviewAuthorNameHere').innerHTML = document.getElementById('testimonialReviewAuthorName').value;
+		// for all elements with the 'testimonialReviewAuthorNameHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorName' field
+		const testimonialReviewAuthorNameHere = document.getElementsByClassName('testimonialReviewAuthorNameHere');
+		for (let i = 0; i < testimonialReviewAuthorNameHere.length; i++) {
+			testimonialReviewAuthorNameHere[i].innerHTML = document.getElementById('testimonialReviewAuthorName').value;
+		}
 	}
 	function testimonialReviewAuthorHeadshotUpdate() {
-		document.getElementById('testimonialReviewAuthorHeadshotHere').innerHTML = document.getElementById('testimonialReviewAuthorHeadshot').value;
+		// for all elements with the 'testimonialReviewAuthorHeadshotHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorHeadshot' field
+		const testimonialReviewAuthorHeadshotHere = document.getElementsByClassName('testimonialReviewAuthorHeadshotHere');
+		for (let i = 0; i < testimonialReviewAuthorHeadshotHere.length; i++) {
+			testimonialReviewAuthorHeadshotHere[i].innerHTML = document.getElementById('testimonialReviewAuthorHeadshot').value;
+		}
 	}
 	function testimonialReviewAuthorTitleUpdate() {
-		document.getElementById('testimonialReviewAuthorTitleHere').innerHTML = document.getElementById('testimonialReviewAuthorTitle').value;
+		// for all elements with the 'testimonialReviewAuthorTitleHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorTitle' field
+		const testimonialReviewAuthorTitleHere = document.getElementsByClassName('testimonialReviewAuthorTitleHere');
+		for (let i = 0; i < testimonialReviewAuthorTitleHere.length; i++) {
+			testimonialReviewAuthorTitleHere[i].innerHTML = document.getElementById('testimonialReviewAuthorTitle').value;
+		}
 	}
 	function testimonialReviewAuthorCompanyUpdate() {
-		document.getElementById('testimonialReviewAuthorCompanyHere').innerHTML = document.getElementById('testimonialReviewAuthorCompany').value;
+		// for all elements with the 'testimonialReviewAuthorCompanyHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorCompany' field
+		const testimonialReviewAuthorCompanyHere = document.getElementsByClassName('testimonialReviewAuthorCompanyHere');
+		for (let i = 0; i < testimonialReviewAuthorCompanyHere.length; i++) {
+			testimonialReviewAuthorCompanyHere[i].innerHTML = document.getElementById('testimonialReviewAuthorCompany').value;
+		}
 	}
 	function testimonialReviewDateUpdate() {
-		document.getElementById('testimonialReviewDateHere').innerHTML = document.getElementById('testimonialReviewDate').value;
+		// for all elements with the 'testimonialReviewDateHere' class, set the innerHTML to the value of the 'testimonialReviewDate' field
+		const testimonialReviewDateHere = document.getElementsByClassName('testimonialReviewDateHere');
+		for (let i = 0; i < testimonialReviewDateHere.length; i++) {
+			testimonialReviewDateHere[i].innerHTML = document.getElementById('testimonialReviewDate').value;
+		}
 	}
 	function testimonialReviewBodyUpdate() {
-
-		let testimonialReviewBody = document.getElementById("testimonialReviewBody").value;
-		let testimonialReviewBodyHere = document.getElementById("testimonialReviewBodyHere");
-		testimonialReviewBodyHere.innerHTML = testimonialReviewBody;
-
+		// for all elements with the 'testimonialReviewBodyHere' class, set the innerHTML to the value of the 'testimonialReviewBody' field
+		const testimonialReviewBodyHere = document.getElementsByClassName('testimonialReviewBodyHere');
+		for (let i = 0; i < testimonialReviewBodyHere.length; i++) {
+			testimonialReviewBodyHere[i].innerHTML = document.getElementById('testimonialReviewBody').value;
+		}
 	}
 
 	// Global Ends
 	function callToActionGlobalUpdate() {
-		document.getElementById('callToActionGlobalHere').innerHTML = document.getElementById('callToActionGlobal').value;
+		// for all elements with the 'callToActionGlobalHere' class, set the innerHTML to the value of the 'callToActionGlobal' field
+		const callToActionGlobalHere = document.getElementsByClassName('callToActionGlobalHere');
+		for (let i = 0; i < callToActionGlobalHere.length; i++) {
+			callToActionGlobalHere[i].innerHTML = document.getElementById('callToActionGlobal').value;
+		}
 	}
 	function linkGlobalUpdate() {
-		document.getElementById('linkGlobalHere').innerHTML = document.getElementById('linkGlobal').value;
+		// for all elements with the 'linkGlobalHere' class, set the innerHTML to the value of the 'linkGlobal' field
+		const linkGlobalHere = document.getElementsByClassName('linkGlobalHere');
+		for (let i = 0; i < linkGlobalHere.length; i++) {
+			linkGlobalHere[i].innerHTML = document.getElementById('linkGlobal').value;
+		}
 	}
 	function primaryColorGlobalUpdate () {
 
@@ -2363,11 +2470,45 @@
 		}
 	}
 
+	// Hashtags
+	function hashtagsUpdate() {
+		// make 'hashtagsContainer' visible
+		document.getElementById("hashtagsContainer").style.display = 'block';
+
+		let input = '';// get the field that is being used as in input
+
+		// set the words to all lowercase
+		let locationWordsLower = localStorage.getItem(input).toLowerCase();
+
+		// remove all non-alphanumeric characters
+		let locationWordsLowerNoSpecial = locationWordsLower.replace(/[^a-z0-9]/gi, ' ');
+
+		// remove all 'words' that are 1 or 2 characters long
+		let locationWordsLowerNoSpecialNoJunk = locationWordsLowerNoSpecial.replace(/\b\w{1,2}\b/g, '');
+
+		// remove fluffy words
+		let locationWordsLowerNoSpecialNoJunkNoCommon = locationWordsLowerNoSpecialNoJunk.replace(/\b(the|and|that|have|for|not|with|you|this|but|his|from|they|say|her|she|will|one|all|would|there|their|what|out|about|who|get|which|when|make|can|like|time|just|him|know|take|into|year|your|good|some|could|them|see|other|than|then|now|only|come|its|over|also|back|after|use|two|how|our|well|way|even|new|want|because|any|these|give|day|most)\b/g, '');
+
+		// add a '#' to the beginning of each word
+		let locationWordsHashtag = locationWordsLowerNoSpecialNoJunkNoCommon.replace(/\b(\w)/g, '#$1');
+
+		// replace all commas in the string with a space
+		let locationWordsHashtagNoCommas = locationWordsHashtag.replace(/,/g, ' ');
+
+		// remove duplicate hashtags
+		let noDuplicates = locationWordsHashtagNoCommas.split(" ");
+		uniq = [...new Set(noDuplicates)];
+
+		// place the hashtags in the hashtagsContainer
+		document.getElementById("hashtagsHereForLocation").innerText = uniq.join(" ");
+	}
+
 </script>
 
 <!-- Datalists inside <select> elements will not be searchable as the 'list' attribute value,
 so we need to place them here, not sure why, I guess we create 2 identical data sets for now?
 1 here for search and 1 for the brandRecommendations? -->
+
 <datalist id="brandy">
 	<option value="1">Apple</option>
 	<option value="1">Banana</option>
@@ -2375,28 +2516,6 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="1">Durian</option>
 </datalist>
 
-<!-- Color code from image API -->
-<script>
-	function colorFromImage() {
-
-		const data = new FormData();
-		data.append("file", );
-
-		const options = {
-			method: 'POST',
-			headers: {
-				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-				'X-RapidAPI-Host': 'picture-colors-api.p.rapidapi.com'
-			},
-			body: data
-		};
-
-		fetch('https://picture-colors-api.p.rapidapi.com/', options)
-		.then(response => response.json())
-		.then(response => console.log(response))
-		.catch(err => console.error(err));
-	}
-</script>
 </body>
 
 </html>
