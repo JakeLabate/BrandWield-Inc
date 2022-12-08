@@ -55,16 +55,26 @@
 
 	<!-- Navigation Bar Script -->
 	<script>
+
+		// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
+		document.addEventListener('keydown', function(event) {
+			if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
+				showBrandPopup(); // does not open where the mouse cursor is --> need to fix
+			}
+		});
 		function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
 			let i; let x = document.getElementsByClassName("tabby");
 			for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
 			document.getElementById(tabby).style.display = "block";
 			document.getElementById('hookGlobal').focus()
 		}
+
 	</script>
+
 
 	<!-- Rapid API Links Shortener -->
 	<script>
+
 		// Rapid API - URL Links Shortener
 		function linkGlobalShorten() {
 
@@ -87,6 +97,7 @@
 			.catch(error => console.log(error));
 
 		}
+
 		// Generate QR Code
 		function linkGlobalQR() {
 
@@ -108,16 +119,6 @@
 			.catch(err => console.error(err));
 
 		}
-	</script>
-
-	<script>
-
-		// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
-		document.addEventListener('keydown', function(event) {
-			if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
-				showBrandPopup(); // does not open where the mouse cursor is --> need to fix
-			}
-		});
 
 	</script>
 
@@ -1383,6 +1384,9 @@
 						<img id="companyUpdateHeadlineInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="Headline" size="40" onkeyup="companyUpdateHeadlineUpdate();" />
 						<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateHeadline').value = null;"/>
+						<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
+						<button onclick="companyUpdateHeadlineFontPriority2();">M</button>
+						<button onclick="companyUpdateHeadlineFontPriority3();">S</button>
 					</span>
 
 					<!-- Date -->
@@ -1391,6 +1395,9 @@
 						<img id="companyUpdateDateInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg"/>
 						<input id="companyUpdateDate" type="date" class="cleanCursorInput" oninput="companyUpdateDateUpdate();"/>
 						<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateDate').value = null;"/>
+						<button onclick="companyUpdateDateFontPriority1();">L</button>
+						<button onclick="companyUpdateDateFontPriority2();">M</button>
+						<button onclick="companyUpdateDateFontPriority3();">S</button>
 					</span>
 
 					<!-- Body -->
@@ -1621,30 +1628,25 @@
 				<text class="hookGlobalHere"></text>
 				<text class="hookResolutionGlobalHere"></text>
 				<!-- Generic Post -->
-				<text class="genericPostBodyHere"></text>
 				<!-- Company Update -->
 				<text class="companyUpdateHeadlineHere"></text>
 				<text class="companyUpdateDateHere"></text>
-				<text class="companyUpdateBodyHere"></text>
 				<!-- Sale/Promotion -->
 				<text class="salePromotionTitleHere"></text>
 				<text class="salePromotionProductOrServiceHere"></text>
 				<text class="salePromotionStartDateHere"></text>
 				<text class="salePromotionEndDateHere"></text>
-				<text class="salePromotionBodyHere"></text>
 				<!-- Event Promotion-->
 				<text class="eventPromotionTitleHere"></text>
 				<text class="eventPromotionStartDateHere"></text>
 				<text class="eventPromotionEndDateHere"></text>
 				<text class="eventPromotionLocationHere"></text>
-				<text class="eventPromotionBodyHere"></text>
 				<!-- Testimonial / Review -->
 				<text class="testimonialReviewAuthorNameHere"></text>
 				<text class="testimonialReviewAuthorHeadshotHere"></text>
 				<text class="testimonialReviewAuthorTitleHere"></text>
 				<text class="testimonialReviewAuthorCompanyHere"></text>
 				<text class="testimonialReviewAuthorDateHere"></text>
-				<text class="testimonialReviewBodyHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
 			</div>
@@ -1653,30 +1655,25 @@
 				<text class="hookGlobalHere"></text>
 				<text class="hookResolutionGlobalHere"></text>
 				<!-- Generic Post -->
-				<text class="genericPostBodyHere"></text>
 				<!-- Company Update -->
 				<text class="companyUpdateHeadlineHere"></text>
 				<text class="companyUpdateDateHere"></text>
-				<text class="companyUpdateBodyHere"></text>
 				<!-- Sale/Promotion -->
 				<text class="salePromotionTitleHere"></text>
 				<text class="salePromotionProductOrServiceHere"></text>
 				<text class="salePromotionStartDateHere"></text>
 				<text class="salePromotionEndDateHere"></text>
-				<text class="salePromotionBodyHere"></text>
 				<!-- Event Promotion-->
 				<text class="eventPromotionTitleHere"></text>
 				<text class="eventPromotionStartDateHere"></text>
 				<text class="eventPromotionEndDateHere"></text>
 				<text class="eventPromotionLocationHere"></text>
-				<text class="eventPromotionBodyHere"></text>
 				<!-- Testimonial / Review -->
 				<text class="testimonialReviewAuthorNameHere"></text>
 				<text class="testimonialReviewAuthorHeadshotHere"></text>
 				<text class="testimonialReviewAuthorTitleHere"></text>
 				<text class="testimonialReviewAuthorCompanyHere"></text>
 				<text class="testimonialReviewAuthorDateHere"></text>
-				<text class="testimonialReviewBodyHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
 			</div>
@@ -1685,30 +1682,25 @@
 				<text class="hookGlobalHere"></text>
 				<text class="hookResolutionGlobalHere"></text>
 				<!-- Generic Post -->
-				<text class="genericPostBodyHere"></text>
 				<!-- Company Update -->
 				<text class="companyUpdateHeadlineHere"></text>
 				<text class="companyUpdateDateHere"></text>
-				<text class="companyUpdateBodyHere"></text>
 				<!-- Sale/Promotion -->
 				<text class="salePromotionTitleHere"></text>
 				<text class="salePromotionProductOrServiceHere"></text>
 				<text class="salePromotionStartDateHere"></text>
 				<text class="salePromotionEndDateHere"></text>
-				<text class="salePromotionBodyHere"></text>
 				<!-- Event Promotion-->
 				<text class="eventPromotionTitleHere"></text>
 				<text class="eventPromotionStartDateHere"></text>
 				<text class="eventPromotionEndDateHere"></text>
 				<text class="eventPromotionLocationHere"></text>
-				<text class="eventPromotionBodyHere"></text>
 				<!-- Testimonial / Review -->
 				<text class="testimonialReviewAuthorNameHere"></text>
 				<text class="testimonialReviewAuthorHeadshotHere"></text>
 				<text class="testimonialReviewAuthorTitleHere"></text>
 				<text class="testimonialReviewAuthorCompanyHere"></text>
 				<text class="testimonialReviewAuthorDateHere"></text>
-				<text class="testimonialReviewBodyHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
 			</div>
@@ -3307,7 +3299,6 @@
 		}
 
 	}
-
 	function hookResolutionGlobalFontPriority1() {
 
 		// set variables
@@ -3348,6 +3339,101 @@
 
 		// set the font priority
 		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+
+	// none for genericPost as it just has a body
+
+	function companyUpdateHeadlineFontPriority1() {
+
+		// set variables
+		let text = document.getElementById('companyUpdateHeadline').value;
+		let fontSize = 24;
+		let fontWeight = 700;
+
+		// set the font priority
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere:not(#finalText .companyUpdateHeadlineHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+
+	}
+	function companyUpdateHeadlineFontPriority2() {
+
+		// set variables
+		let text = document.getElementById('companyUpdateHeadline').value;
+		let fontSize = 18;
+		let fontWeight = 500;
+
+		// set the font priority
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere:not(#finalText .companyUpdateHeadlineHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+	function companyUpdateHeadlineFontPriority3() {
+
+		// set variables
+		let text = document.getElementById('companyUpdateHeadline').value;
+		let fontSize = 12;
+		let fontWeight = 300;
+
+		// set the font priority
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere:not(#finalText .companyUpdateHeadlineHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+	function companyUpdateDateFontPriority1() {
+
+		// set variables
+		let text = document.getElementById('companyUpdateDate').value;
+		let fontSize = 24;
+		let fontWeight = 700;
+
+		// set the font priority
+		let element = document.querySelectorAll('.companyUpdateDateHere:not(#finalText .companyUpdateDateHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+
+	}
+	function companyUpdateDateFontPriority2() {
+
+		// set variables
+		let text = document.getElementById('companyUpdateDate').value;
+		let fontSize = 18;
+		let fontWeight = 500;
+
+		// set the font priority
+		let element = document.querySelectorAll('.companyUpdateDateHere:not(#finalText .companyUpdateDateHere)');
+		for (let i = 0; i < element.length; i++) {
+			element[i].style.fontSize = fontSize + 'px';
+			element[i].style.fontWeight = fontWeight;
+		}
+
+	}
+	function companyUpdateDateFontPriority3() {
+
+		// set variables
+		let text = document.getElementById('companyUpdateDate').value;
+		let fontSize = 12;
+		let fontWeight = 300;
+
+		// set the font priority
+		let element = document.querySelectorAll('.companyUpdateDateHere:not(#finalText .companyUpdateDateHere)');
 		for (let i = 0; i < element.length; i++) {
 			element[i].style.fontSize = fontSize + 'px';
 			element[i].style.fontWeight = fontWeight;
@@ -3442,7 +3528,7 @@
 
 	}
 
-	// 
+	//
 
 </script>
 
