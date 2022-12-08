@@ -112,6 +112,17 @@
 		}
 	</script>
 
+	<script>
+
+		// load on dom start
+		document.addEventListener('keydown', function(event) {
+			if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
+				showBrandPopup(); // does not open where the mouse cursor is --> need to fix
+			}
+		});
+
+	</script>
+
 	<!-- Confetti -->
 	<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 
@@ -1365,7 +1376,7 @@
 
 					<!-- Headline -->
 					<span style="display: flex; align-items: center;">
-						<label for="companyUpdateHeadline" style="width: 100px;">Title</label>
+						<label for="companyUpdateHeadline" style="width: 100px;">Headline</label>
 						<img id="companyUpdateHeadlineInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="Headline" size="40" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
 						<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateHeadline').value = null;"/>
@@ -1567,22 +1578,14 @@
 					<span style="display: flex; align-items: center;">
 						<label for="primaryColorGlobal" style="width: 100px;">Primary Color</label>
 						<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" oninput="primaryColorGlobalUpdate();" />
+						<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" oninput="primaryColorGlobalDirectionUpdate();">
+						<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" min="0" max="100" oninput="primaryColorGlobalDirectionInvasion();">
 						<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
 						<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 						</span>
-					</span>
 
-					<!-- Secondary Color -->
-					<span style="display: flex; align-items: center;">
-						<label for="secondaryColorGlobal" style="width: 100px;">Secondary Color</label>
-						<img id="secondaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="secondaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
-						<img id="secondaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('secondaryColorGlobal').value = null;"/>
-						<span id="secondaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
-							<img id="secondaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
-						</span>
 					</span>
 
 					<!-- Logo -->
@@ -1609,7 +1612,7 @@
 		<div id="final" class="column2" style="user-select: none;">
 
 			<!-- IMAGES -->
-			<div id="finalImageHorizontal" class="imageColors">
+			<div id="finalImageHorizontal" class="primaryColorGlobalHere secondaryColorGlobalHere">
 				<text id="finalTitleHorizontal" class="title"></text>
 				<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text>
 				<text class="showOnTime">Time: </text><text id="finalTimeHorizontal" class="time"></text>
@@ -1623,7 +1626,7 @@
 					<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
 				</div>
 			</div>
-			<div id="finalImageVertical" class="imageColors">
+			<div id="finalImageVertical" class="primaryColorGlobalHere secondaryColorGlobalHere">
 				<text id="finalTitleVertical" class="title"></text>
 				<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
 				<text class="showOnTime">Time: </text><text id="finalTimeVertical" class="time"></text>
@@ -1637,7 +1640,7 @@
 					<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
 				</div>
 			</div>
-			<div id="finalImageSquare" class="imageColors">
+			<div id="finalImageSquare" class="primaryColorGlobalHere secondaryColorGlobalHere">
 				<text id="finalTitleSquare" class="title"></text>
 				<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
 				<text class="showOnTime">Time: </text><text id="finalTimeSquare" class="time"></text>
@@ -1651,7 +1654,7 @@
 					<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
 				</div>
 			</div>
-			<div id="finalImageStory" class="imageColors">
+			<div id="finalImageStory" class="primaryColorGlobalHere secondaryColorGlobalHere">
 				<text id="finalTitleStory" class="title"></text>
 				<text class="showOnDate">Date: </text><text id="finalDateStory" class="date"></text>
 				<text class="showOnTime">Time: </text><text id="finalTimeStory" class="time"></text>
@@ -2205,6 +2208,163 @@
 	}
 </script>
 
+<!-- Display Fields on Assets -->
+<script>
+
+	// Global Starts
+	function hookGlobalUpdate() {
+		document.getElementById('hookGlobalHere').innerHTML = document.getElementById('hookGlobal').value;
+	}
+	function hookResolutionGlobalUpdate() {
+		document.getElementById('hookResolutionGlobalHere').innerHTML = document.getElementById('hookResolutionGlobal').value;
+	}
+
+	// Generic Post
+	function genericPostBodyUpdate() {
+		document.getElementById("genericPostBodyHere").innerHTML = document.getElementById("genericPostBody").value;
+	}
+
+	// Company Update
+	function companyUpdateTitleUpdate() {
+		document.getElementById('companyUpdateHeadlineHere').innerHTML = document.getElementById('companyUpdateTitle').value;
+	}
+	function companyUpdateDateUpdate() {
+		document.getElementById('companyUpdateHeadlineHere').innerHTML = document.getElementById('comapanyUpdateDate').value;
+	}
+	function companyUpdateBodyUpdate() {
+
+		let companyUpdateBody = document.getElementById("companyUpdateBody").value;
+		let companyUpdateBodyHere = document.getElementById("companyUpdateBodyHere");
+		companyUpdateBodyHere.innerHTML = companyUpdateBody;
+
+	}
+
+	// Sale/Promotion
+	function salePromotionTitleUpdate() {
+		document.getElementById('salePromotionTitleHere').innerHTML = document.getElementById('salePromotionTitle').value;
+	}
+	function salePromotionDateUpdate() {
+		document.getElementById('salePromotionStartDateHere').innerHTML = document.getElementById('salePromotionDate').value;
+	}
+	function salePromotionStartDateUpdate() {
+		document.getElementById('salePromotionStartDateHere').innerHTML = document.getElementById('salePromotionStartDate').value;
+
+	}
+	function salePromotionEndDateUpdate() {
+		document.getElementById('salePromotionEndDateHere').innerHTML = document.getElementById('salePromotionEndDate').value;
+	}
+	function salePromotionBodyUpdate() {
+
+		let salePromotionBody = document.getElementById("salePromotionBody").value;
+		let salePromotionBodyHere = document.getElementById("salePromotionBodyHere");
+		salePromotionBodyHere.innerHTML = salePromotionBody;
+
+	}
+
+	// Event Promotion
+	function eventPromotionTitleUpdate() {
+		document.getElementById('eventPromotionTitleHere').innerHTML = document.getElementById('eventPromotionTitle').value;
+	}
+	function eventPromotionStartDateUpdate() {
+		document.getElementById('eventPromotionStartStartDateHere').innerHTML = document.getElementById('eventPromotionStartDate').value;
+	}
+	function eventPromotionEndDateUpdate() {
+		document.getElementById('eventPromotionEndDateHere').innerHTML = document.getElementById('eventPromotionEndDate').value;
+	}
+	function eventPromotionLocationUpdate() {
+		document.getElementById('eventPromotionLocationHere').innerHTML = document.getElementById('eventPromotionLocation').value;
+	}
+	function eventPromotionBodyUpdate() {
+
+		let eventPromotionBody = document.getElementById("eventPromotionBody").value;
+		let eventPromotionBodyHere = document.getElementById("eventPromotionBodyHere");
+		eventPromotionBodyHere.innerHTML = eventPromotionBody;
+
+	}
+
+	// Testimonial Review
+	function testimonialReviewAuthorNameUpdate() {
+		document.getElementById('testimonialReviewAuthorNameHere').innerHTML = document.getElementById('testimonialReviewAuthorName').value;
+	}
+	function testimonialReviewAuthorHeadshotUpdate() {
+		document.getElementById('testimonialReviewAuthorHeadshotHere').innerHTML = document.getElementById('testimonialReviewAuthorHeadshot').value;
+	}
+	function testimonialReviewAuthorTitleUpdate() {
+		document.getElementById('testimonialReviewAuthorTitleHere').innerHTML = document.getElementById('testimonialReviewAuthorTitle').value;
+	}
+	function testimonialReviewAuthorCompanyUpdate() {
+		document.getElementById('testimonialReviewAuthorCompanyHere').innerHTML = document.getElementById('testimonialReviewAuthorCompany').value;
+	}
+	function testimonialReviewDateUpdate() {
+		document.getElementById('testimonialReviewDateHere').innerHTML = document.getElementById('testimonialReviewDate').value;
+	}
+	function testimonialReviewBodyUpdate() {
+
+		let testimonialReviewBody = document.getElementById("testimonialReviewBody").value;
+		let testimonialReviewBodyHere = document.getElementById("testimonialReviewBodyHere");
+		testimonialReviewBodyHere.innerHTML = testimonialReviewBody;
+
+	}
+
+	// Global Ends
+	function callToActionGlobalUpdate() {
+		document.getElementById('callToActionGlobalHere').innerHTML = document.getElementById('callToActionGlobal').value;
+	}
+	function linkGlobalUpdate() {
+		document.getElementById('linkGlobalHere').innerHTML = document.getElementById('linkGlobal').value;
+	}
+	function primaryColorGlobalUpdate () {
+
+		let primaryColor = document.getElementById("primaryColorGlobal");
+		let primaryColorDirection = document.getElementById("primaryColorGlobalDirection").value;
+		let primaryColorInvasion = document.getElementById("primaryColorGlobalInvasion").value;
+
+		if (primaryColor.value != null) {
+
+			// for each of the elements, update the primary color on the asset with the class of 'primaryColorGlobalHere'
+			let primaryColorGlobalHere = document.getElementsByClassName("primaryColorGlobalHere");
+			for(let i = 0; i < primaryColorGlobalHere.length; i ++) {
+
+				primaryColorGlobalHere[i].backgroundColor = primaryColor.value;
+				primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
+				console.log(primaryColor.value);
+
+			}
+		}
+	}
+	function primaryColorGlobalDirectionUpdate() {
+
+		let primaryColorDirection = document.getElementById("primaryColorGlobalDirection").value;
+		let primaryColorInvasion = document.getElementById("primaryColorGlobalInvasion").value;
+
+		// for each of the elements, update the primary color on the asset with the class of 'primaryColorGlobalHere'
+		let primaryColorGlobalHere = document.getElementsByClassName("primaryColorGlobalHere");
+		for(let i = 0; i < primaryColorGlobalHere.length; i ++) {
+
+			// set the primaryColorDirection to the background image of the element
+			primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
+			console.log(primaryColorDirection);
+
+		}
+	}
+	function primaryColorGlobalDirectionInvasion() {
+
+		let primaryColorInvasion = document.getElementById("primaryColorGlobalInvasion").value;
+		let primaryColorDirection = document.getElementById("primaryColorGlobalDirection").value;
+
+		// for each of the elements, update the primary color on the asset with the class of 'primaryColorGlobalHere'
+		let primaryColorGlobalHere = document.getElementsByClassName("primaryColorGlobalHere");
+		for(let i = 0; i < primaryColorGlobalHere.length; i ++) {
+
+			// set the primaryColorGlobalInvasion to the background image of the element
+			primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
+			console.log(primaryColorInvasion);
+
+		}
+	}
+
+</script>
+
 <!-- Datalists inside <select> elements will not be searchable as the 'list' attribute value,
 so we need to place them here, not sure why, I guess we create 2 identical data sets for now?
 1 here for search and 1 for the brandRecommendations? -->
@@ -2214,6 +2374,29 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="1">Cherry</option>
 	<option value="1">Durian</option>
 </datalist>
+
+<!-- Color code from image API -->
+<script>
+	function colorFromImage() {
+
+		const data = new FormData();
+		data.append("file", );
+
+		const options = {
+			method: 'POST',
+			headers: {
+				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+				'X-RapidAPI-Host': 'picture-colors-api.p.rapidapi.com'
+			},
+			body: data
+		};
+
+		fetch('https://picture-colors-api.p.rapidapi.com/', options)
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err));
+	}
+</script>
 </body>
 
 </html>
