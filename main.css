@@ -398,6 +398,7 @@ p[id*="copyToClipboardHas"]:hover {
     top: 247px;
     right: 523px;
     transition: .3s ease-in-out;
+    word-wrap: break-word;
 }
 #finalImageHorizontal:hover {
     scale: 1.03;
@@ -420,6 +421,7 @@ p[id*="copyToClipboardHas"]:hover {
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
     transition: .3s ease-in-out;
+    word-wrap: break-word;
 }
 #finalImageSquare:hover {
     scale: 1.03;
@@ -442,6 +444,7 @@ p[id*="copyToClipboardHas"]:hover {
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
     transition: .3s ease-in-out;
+    word-wrap: break-word;
 }
 #finalImageVertical:hover {
     scale: 1.03;
@@ -464,6 +467,7 @@ p[id*="copyToClipboardHas"]:hover {
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
     transition: .3s ease-in-out;
+    word-wrap: break-word;
 }
 #finalImageStory:hover {
     scale: 1.03;
@@ -680,8 +684,10 @@ p[id*="copyToClipboardHas"]:hover {
 
 
 
-
-
+input[type="range"] {
+    transition: 0s;
+    padding: 0 !important;"
+}
 
 
 #logoIcon {

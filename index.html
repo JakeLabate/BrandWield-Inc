@@ -112,7 +112,7 @@
 
 	<script>
 
-		// load on dom start
+		// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
 		document.addEventListener('keydown', function(event) {
 			if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
 				showBrandPopup(); // does not open where the mouse cursor is --> need to fix
@@ -1577,8 +1577,8 @@
 						<label for="primaryColorGlobal" style="width: 100px;">Primary Color</label>
 						<img id="primaryColorGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
 						<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" oninput="primaryColorGlobalUpdate();" />
-						<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" oninput="primaryColorGlobalDirectionUpdate();">
-						<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" min="0" max="100" oninput="primaryColorGlobalDirectionInvasion();">
+						<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step="1" oninput="primaryColorGlobalDirectionUpdate();">
+						<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step="1" oninput="primaryColorGlobalDirectionInvasion();">
 						<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
 						<span id="primaryColorGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
@@ -1607,61 +1607,133 @@
 		<div id="final" class="column2" style="user-select: none;">
 
 			<!-- IMAGES -->
-			<div id="finalImageHorizontal" class="primaryColorGlobalHere secondaryColorGlobalHere">
-				<text id="finalTitleHorizontal" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateHorizontal" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeHorizontal" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationHorizontal" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationHorizontal" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostHorizontal" class="host"></text>
-				<div>
-					<img height="60" width="60" id="horizontalImageQRHere" alt="" src="" />
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="horizontalImageLogoHere" alt="" src="" />
-				</div>
+			<div id="finalImageHorizontal" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<text class="genericPostBodyHere"></text>
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<text class="companyUpdateBodyHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<text class="salePromotionBodyHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<text class="eventPromotionBodyHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<text class="testimonialReviewBodyHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
 			</div>
-			<div id="finalImageVertical" class="primaryColorGlobalHere secondaryColorGlobalHere">
-				<text id="finalTitleVertical" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateVertical" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeVertical" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationVertical" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationVertical" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostVertical" class="host"></text>
-				<div>
-					<img height="60" width="60" id="verticalImageQRHere" alt="" src="" />
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="verticalImageLogoHere" alt="" src=""/>
-				</div>
+			<div id="finalImageVertical" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<text class="genericPostBodyHere"></text>
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<text class="companyUpdateBodyHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<text class="salePromotionBodyHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<text class="eventPromotionBodyHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<text class="testimonialReviewBodyHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
 			</div>
-			<div id="finalImageSquare" class="primaryColorGlobalHere secondaryColorGlobalHere">
-				<text id="finalTitleSquare" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateSquare" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeSquare" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationSquare" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationSquare" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostSquare" class="host"></text>
-				<div>
-					<img height="60" width="60" id="squareImageQRHere" alt="" src=""/>
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="squareImageLogoHere" alt="" src=""/>
-				</div>
+			<div id="finalImageSquare" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<text class="genericPostBodyHere"></text>
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<text class="companyUpdateBodyHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<text class="salePromotionBodyHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<text class="eventPromotionBodyHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<text class="testimonialReviewBodyHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
 			</div>
-			<div id="finalImageStory" class="primaryColorGlobalHere secondaryColorGlobalHere">
-				<text id="finalTitleStory" class="title"></text>
-				<text class="showOnDate">Date: </text><text id="finalDateStory" class="date"></text>
-				<text class="showOnTime">Time: </text><text id="finalTimeStory" class="time"></text>
-				<text class="showOnLocation">Location: </text><text id="finalLocationStory" class="location"></text>
-				<text class="showOnOrganization">Organized by: </text><text id="finalOrganizationStory" class="organization"></text>
-				<text class="showOnHost">Hosted by: </text><text id="finalHostStory" class="host"></text>
-				<div>
-					<img height="60" width="60" id="storyImageQRHere" alt="" src="" />
-				</div>
-				<div>
-					<img class="showOnLogo" height="60" width="60" id="storyImageLogoHere" alt="" src="" />
-				</div>
+			<div id="finalImageStory" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<text class="genericPostBodyHere"></text>
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<text class="companyUpdateBodyHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<text class="salePromotionBodyHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<text class="eventPromotionBodyHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<text class="testimonialReviewBodyHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
 			</div>
 
 			<!-- TEXT -->
@@ -1706,14 +1778,23 @@
 					<text class="callToActionGlobalHere"></text>
 					<text class="linkGlobalHere"></text>
 
-					<text id="hashtagsContainer"><br>
-						<text id="hashtagsHere" class="hashtagsHere">
-							<text id="hashtagsHereForTitle"></text>
-							<text id="hashtagsHereForLocation"></text>
-							<text id="hashtagsHereForOrganization"></text>
-							<text id="hashtagsHereForHost"></text>
-							<text id="hashtagsHereForDescription"></text>
-						</text>
+					<!-- Hashtags -->
+					<text id="hashtagsHere">
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
 					</text>
 
 				</p>
@@ -2422,6 +2503,7 @@
 	}
 	function primaryColorGlobalUpdate () {
 
+		// set variables
 		let primaryColor = document.getElementById("primaryColorGlobal");
 		let primaryColorDirection = document.getElementById("primaryColorGlobalDirection").value;
 		let primaryColorInvasion = document.getElementById("primaryColorGlobalInvasion").value;
@@ -2434,13 +2516,13 @@
 
 				primaryColorGlobalHere[i].backgroundColor = primaryColor.value;
 				primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
-				console.log(primaryColor.value);
 
 			}
 		}
 	}
 	function primaryColorGlobalDirectionUpdate() {
 
+		// set variables
 		let primaryColorDirection = document.getElementById("primaryColorGlobalDirection").value;
 		let primaryColorInvasion = document.getElementById("primaryColorGlobalInvasion").value;
 
@@ -2450,12 +2532,16 @@
 
 			// set the primaryColorDirection to the background image of the element
 			primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
-			console.log(primaryColorDirection);
+
+			// add 90 degrees to the primaryColorDirection
+			let primaryColorDirectionMinus90 = parseInt(primaryColorDirection) + 270;
+			document.getElementById("primaryColorGlobalInvasion").style.transform = 'rotate(' + primaryColorDirectionMinus90 + 'deg)';
 
 		}
 	}
 	function primaryColorGlobalDirectionInvasion() {
 
+		// set variables
 		let primaryColorInvasion = document.getElementById("primaryColorGlobalInvasion").value;
 		let primaryColorDirection = document.getElementById("primaryColorGlobalDirection").value;
 
@@ -2465,7 +2551,6 @@
 
 			// set the primaryColorGlobalInvasion to the background image of the element
 			primaryColorGlobalHere[i].style.background = "linear-gradient(" + primaryColorDirection + "deg, " + primaryColorGlobalHere[i].backgroundColor + " 0%, " + primaryColorGlobalHere[i].backgroundColor + " " + primaryColorInvasion + "%, #ffffff 0%, #ffffff 100%)";
-			console.log(primaryColorInvasion);
 
 		}
 	}
@@ -2515,6 +2600,7 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="1">Cherry</option>
 	<option value="1">Durian</option>
 </datalist>
+<div id="sliderContainer"></div>
 
 </body>
 
