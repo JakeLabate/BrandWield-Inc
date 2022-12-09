@@ -2437,7 +2437,6 @@
 		// update hashtags
 		hookResolutionGlobalHashtagsUpdate();
 	}
-
 	function genericPostBodyUpdate() {
 		// for all elements with the 'genericPostBodyHere' class, set the innerHTML to the value of the 'genericPostBody' field
 		const genericPostBodyHere = document.getElementsByClassName('genericPostBodyHere');
@@ -2448,7 +2447,6 @@
 		// update hashtags
 		genericPostHashtagsUpdate();
 	}
-
 	function companyUpdateHeadlineUpdate() {
 		// for all elements with the 'companyUpdateHeadlineHere' class, set the innerHTML to the value of the 'companyUpdateHeadline' field
 		const companyUpdateHeadlineHere = document.getElementsByClassName('companyUpdateHeadlineHere');
@@ -2488,7 +2486,6 @@
 		// update hashtags
 		companyUpdateBodyHashtagsUpdate();
 	}
-
 	function salePromotionTitleUpdate() {
 		// for all elements with the 'salePromotionTitleHere' class, set the innerHTML to the value of the 'salePromotionTitle' field
 		const salePromotionTitleHere = document.getElementsByClassName('salePromotionTitleHere');
@@ -2559,7 +2556,6 @@
 		// update hashtags
 		salePromotionBodyHashtagsUpdate();
 	}
-
 	function eventPromotionTitleUpdate() {
 		// for all elements with the 'eventPromotionTitleHere' class, set the innerHTML to the value of the 'eventPromotionTitle' field
 		const eventPromotionTitleHere = document.getElementsByClassName('eventPromotionTitleHere');
@@ -2630,7 +2626,6 @@
 		// update hashtags
 		eventPromotionBodyHashtagsUpdate();
 	}
-
 	function testimonialReviewAuthorNameUpdate() {
 		// for all elements with the 'testimonialReviewAuthorNameHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorName' field
 		const testimonialReviewAuthorNameHere = document.getElementsByClassName('testimonialReviewAuthorNameHere');
@@ -2696,7 +2691,6 @@
 		// update hashtags
 		testimonialReviewBodyHashtagsUpdate();
 	}
-
 	function callToActionGlobalUpdate() {
 		// for all elements with the 'callToActionGlobalHere' class, set the innerHTML to the value of the 'callToActionGlobal' field
 		const callToActionGlobalHere = document.getElementsByClassName('callToActionGlobalHere');
@@ -2704,7 +2698,6 @@
 			callToActionGlobalHere[i].innerHTML = document.getElementById('callToActionGlobal').value;
 		}
 	}
-
 	function linkGlobalUpdate() {
 		// for all elements with the 'linkGlobalHere' class, set the innerHTML to the value of the 'linkGlobal' field
 		const linkGlobalHere = document.getElementsByClassName('linkGlobalHere');
@@ -2712,7 +2705,6 @@
 			linkGlobalHere[i].innerHTML = document.getElementById('linkGlobal').value;
 		}
 	}
-
 	function primaryColorGlobalUpdate () {
 
 		// set variables
@@ -2766,7 +2758,6 @@
 
 		}
 	}
-
 	function fontColorGlobalUpdate () {
 
 		// set variable
@@ -2779,7 +2770,6 @@
 		document.getElementById('finalImageStory').style.color = fontColor;
 
 	}
-
 	function squareLogoGlobalUpdate() {
 
 		let squareLogoGlobal = document.getElementById("squareLogoGlobal");
@@ -2854,7 +2844,6 @@
 			squareLogoGlobalHere[i].style.right = '5px';
 		}
 	}
-
 	function squareLogoGlobalSizeUpdate() {
 
 		// get variables
@@ -2929,7 +2918,6 @@
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("hookResolutionGlobalHashtagsHere").innerText = uniq.join(" ");
 	}
-
 	function genericPostHashtagsUpdate() {
 
 		// set variable
@@ -2960,7 +2948,6 @@
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("genericPostBodyHashtagsHere").innerText = uniq.join(" ");
 	}
-
 	function companyUpdateHeadlineHashtagsUpdate() {
 
 		// set variable
@@ -3021,7 +3008,6 @@
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("companyUpdateBodyHashtagsHere").innerText = uniq.join(" ");
 	}
-
 	function salePromotionTitleHashtagsUpdate() {
 
 		// set variable
@@ -3112,7 +3098,6 @@
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("salePromotionProductOrServiceHashtagsHere").innerText = uniq.join(" ");
 	}
-
 	function eventPromotionTitleHashtagsUpdate() {
 
 		// set variable
@@ -3203,7 +3188,6 @@
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("eventPromotionBodyHashtagsHere").innerText = uniq.join(" ");
 	}
-
 	function testimonialReviewAuthorNameHashtagsUpdate() {
 
 		// set variable
@@ -3418,9 +3402,7 @@
 		}
 
 	}
-
 	// none for genericPost as it just has a body
-
 	function companyUpdateHeadlineFontPriority1() {
 
 		// set variables
@@ -3513,7 +3495,6 @@
 		}
 
 	}
-
 	function callToActionFontPriority1() {
 
 		// set variables
@@ -3561,7 +3542,7 @@
 
 	}
 
-	// global new content functions
+	// clear
 	function clearAllFields () {
 
 		document.getElementById("hookGlobal").value = "";
@@ -3600,10 +3581,6 @@
 		document.getElementById("squareLogoGlobal").value = "";
 
 	}
-
-
-
-
 
 </script>
 
