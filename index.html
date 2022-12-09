@@ -1253,227 +1253,227 @@
 	<!-- New Content Tab -->
 	<div id="newContent" class="tabby">
 
-			<!-- Inputs -->
-			<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
-				<span style="display: flex; align-items: center;">
-					<label for="contentTypeSelect" style="width: 134px;">Content Type</label>
-					<select id="contentTypeSelect" class="cleanCursorInput" onchange="valueSelectorUpdate();">
-						<option value="genericPostFields" selected>Generic Post</option>
-						<option value="companyUpdateFields">Company Update</option>
-						<option value="salePromotionFields">Sale/Promotion</option>
-						<option value="eventPromotionFields">Event Promotion</option>
-						<option value="testimonialReviewFields">Testimonial/Review</option>
-					</select>
-				</span>
+		<!-- Inputs -->
+		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
+			<span style="display: flex; align-items: center;">
+				<label for="contentTypeSelect" style="width: 134px;">Content Type</label>
+				<select id="contentTypeSelect" class="cleanCursorInput" onchange="valueSelectorUpdate();">
+							<option value="genericPostFields" selected>Generic Post</option>
+							<option value="companyUpdateFields">Company Update</option>
+							<option value="salePromotionFields">Sale/Promotion</option>
+							<option value="eventPromotionFields">Event Promotion</option>
+							<option value="testimonialReviewFields">Testimonial/Review</option>
+						</select>
+			</span>
 
-				<!-- Content Type Field Collections -->
-				<div id="contentTypeFieldOptions">
+			<!-- Content Type Field Collections -->
+			<div id="contentTypeFieldOptions">
 
-					<!-- Global Content Fields (Start) -->
-					<div id="globalContentFieldsStart" style="display: block;">
+				<!-- Global Content Fields (Start) -->
+				<div id="globalContentFieldsStart" style="display: block;">
 
-						<!-- Hook -->
-						<span style="display: flex; align-items: center;">
+					<!-- Hook -->
+					<span style="display: flex; align-items: center;">
 							<label for="hookGlobal" style="width: 100px;">Hook</label>
 							<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="40" onkeyup="hookGlobalUpdate();" />
-							<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookGlobal').value = null;"/>
+							<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearHookGlobal();"/>
 							<button onclick="hookGlobalFontPriority1();">L</button>
 							<button onclick="hookGlobalFontPriority2();">M</button>
 							<button onclick="hookGlobalFontPriority3();">S</button>
 						</span>
 
-						<!-- Hook Resolution -->
-						<span style="display: flex; align-items: center;">
+					<!-- Hook Resolution -->
+					<span style="display: flex; align-items: center;">
 							<label for="hookResolutionGlobal" style="width: 100px;">Hook Resolution</label>
 							<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="40" onkeyup="hookResolutionGlobalUpdate();" />
-							<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('hookResolutionGlobal').value = null;"/>
+							<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearHookResolutionGlobal();"/>
 							<button onclick="hookResolutionGlobalFontPriority1();">L</button>
 							<button onclick="hookResolutionGlobalFontPriority2();">M</button>
 							<button onclick="hookResolutionGlobalFontPriority3();">S</button>
 						</span>
 
-					</div>
+				</div>
 
-					<!-- Generic Post -->
-					<div id="genericPostFields" class="contentTypeFieldOption" style="display: block;">
+				<!-- Generic Post -->
+				<div id="genericPostFields" class="contentTypeFieldOption" style="display: block;">
 
-						<!-- Body -->
-						<span style="display: flex; align-items: center;">
+					<!-- Body -->
+					<span style="display: flex; align-items: center;">
 							<label for="genericPostBody" style="width: 100px;">Body</label>
 							<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="genericPostBodyUpdate();"></textarea>
-							<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('genericPostBody').value = null;"/>
+							<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearGenericPostBody();"/>
 						</span>
 
-					</div>
+				</div>
 
-					<!-- Update -->
-					<div id="companyUpdateFields" class="contentTypeFieldOption" style="display: none;">
+				<!-- Update -->
+				<div id="companyUpdateFields" class="contentTypeFieldOption" style="display: none;">
 
-						<!-- Headline -->
-						<span style="display: flex; align-items: center;">
+					<!-- Headline -->
+					<span style="display: flex; align-items: center;">
 							<label for="companyUpdateHeadline" style="width: 100px;">Headline</label>
 							<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="Headline" size="40" onkeyup="companyUpdateHeadlineUpdate();" />
-							<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateHeadline').value = null;"/>
+							<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearCompanyUpdateHeadline();"/>
 							<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
 							<button onclick="companyUpdateHeadlineFontPriority2();">M</button>
 							<button onclick="companyUpdateHeadlineFontPriority3();">S</button>
 						</span>
 
-						<!-- Date -->
-						<span style="display: flex; align-items: center;">
+					<!-- Date -->
+					<span style="display: flex; align-items: center;">
 							<label for="companyUpdateDate" style="width: 100px;">Date</label>
 							<input id="companyUpdateDate" type="date" class="cleanCursorInput" oninput="companyUpdateDateUpdate();"/>
-							<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateDate').value = null;"/>
+							<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearCompanyUpdateDate();"/>
 							<button onclick="companyUpdateDateFontPriority1();">L</button>
 							<button onclick="companyUpdateDateFontPriority2();">M</button>
 							<button onclick="companyUpdateDateFontPriority3();">S</button>
 						</span>
 
-						<!-- Body -->
-						<span style="display: flex; align-items: center;">
+					<!-- Body -->
+					<span style="display: flex; align-items: center;">
 							<label for="companyUpdateBody" style="width: 100px;">Body</label>
 							<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="companyUpdateBodyUpdate();"></textarea>
-							<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('companyUpdateBody').value = null;"/>
+							<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearCompanyUpdateBody();"/>
 						</span>
 
-					</div>
+				</div>
 
-					<!-- Sale/Promotion -->
-					<div id="salePromotionFields" class="contentTypeFieldOption" style="display: none;">
+				<!-- Sale/Promotion -->
+				<div id="salePromotionFields" class="contentTypeFieldOption" style="display: none;">
 
-						<!-- Title -->
-						<span style="display: flex; align-items: center;">
+					<!-- Title -->
+					<span style="display: flex; align-items: center;">
 							<label for="salePromotionTitle" style="width: 100px;">Title</label>
 							<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="salePromotionTitleUpdate();" />
-							<img id="salePromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionTitle').value = null;"/>
+							<img id="salePromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearSalePromotionTitle();"/>
 						</span>
 
-						<!-- Product or Service -->
-						<span style="display: flex; align-items: center;">
+					<!-- Product or Service -->
+					<span style="display: flex; align-items: center;">
 							<label for="salePromotionProductOrService" style="width: 100px;">Product or Service</label>
 							<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="Product or service being promoted" size="40" onkeyup="salePromotionProductOrServiceUpdate();" />
-							<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
+							<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearSalePromotionProductOrService();"/>
 						</span>
 
-						<!-- Start Date -->
-						<span style="display: flex; align-items: center;">
+					<!-- Start Date -->
+					<span style="display: flex; align-items: center;">
 							<label for="salePromotionStartDate" style="width: 100px;">Start Date</label>
 							<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" oninput="salePromotionStartDateUpdate();"/>
-							<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionStartDate').value = null;"/>
+							<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearSalePromotionStateDate();"/>
 						</span>
 
-						<!-- End Date -->
-						<span style="display: flex; align-items: center;">
+					<!-- End Date -->
+					<span style="display: flex; align-items: center;">
 							<label for="salePromotionEndDate" style="width: 100px;">End Date</label>
 							<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" oninput="salePromotionEndDateUpdate();"/>
-							<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionEndDate').value = null;"/>
+							<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearSalePromotionEndDate();"/>
 						</span>
 
-						<!-- Body -->
-						<span style="display: flex; align-items: center;">
+					<!-- Body -->
+					<span style="display: flex; align-items: center;">
 							<label for="salePromotionBody" style="width: 100px;">Body</label>
 							<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="salePromotionBodyUpdate();"></textarea>
-							<img id="salePromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('salePromotionBody').value = null;"/>
+							<img id="salePromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearSalePromotionBody();"/>
 						</span>
 
-					</div>
+				</div>
 
-					<!-- Event Promotion -->
-					<div id="eventPromotionFields" class="contentTypeFieldOption" style="display: none;">
+				<!-- Event Promotion -->
+				<div id="eventPromotionFields" class="contentTypeFieldOption" style="display: none;">
 
-						<!-- Title -->
-						<span style="display: flex; align-items: center;">
+					<!-- Title -->
+					<span style="display: flex; align-items: center;">
 							<label for="eventPromotionTitle" style="width: 100px;">Title</label>
 							<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="Title" size="40" onkeyup="eventPromotionTitleUpdate();" />
-							<img id="eventPromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionTitle').value = null;"/>
+							<img id="eventPromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearEventPromotionTitle();"/>
 						</span>
 
-						<!-- Start Date -->
-						<span style="display: flex; align-items: center;">
+					<!-- Start Date -->
+					<span style="display: flex; align-items: center;">
 							<label for="eventPromotionStartDate" style="width: 100px;">Start Date</label>
 							<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" oninput="eventPromotionStartDateUpdate();"/>
-							<img id="eventPromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionStartDate').value = null;"/>
+							<img id="eventPromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearEventPromotionStartDate();"/>
 						</span>
 
-						<!-- End Date -->
-						<span style="display: flex; align-items: center;">
+					<!-- End Date -->
+					<span style="display: flex; align-items: center;">
 							<label for="eventPromotionEndDate" style="width: 100px;">End Date</label>
 							<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" oninput="eventPromotionEndDateUpdate();"/>
-							<img id="eventPromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionEndDate').value = null;"/>
+							<img id="eventPromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearEventPromotionEndDate();"/>
 						</span>
 
-						<!-- Location -->
-						<span style="display: flex; align-items: center;">
+					<!-- Location -->
+					<span style="display: flex; align-items: center;">
 							<label for="eventPromotionLocation" style="width: 100px;">Location</label>
 							<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="40" placeholder="123 Main Street Boston, MA style" onkeyup="eventPromotionLocationUpdate();" />
-							<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionLocation').value = null;" />
+							<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearEventPromotionLocation();" />
 							<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 						</span>
 
-						<!-- Body -->
-						<span style="display: flex; align-items: center;">
+					<!-- Body -->
+					<span style="display: flex; align-items: center;">
 							<label for="eventPromotionBody" style="width: 100px;">Body</label>
 							<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Body" onkeyup="eventPromotionBodyUpdate();"></textarea>
-							<img id="eventPromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('eventPromotionBody').value = null;"/>
+							<img id="eventPromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearEventPromotionBody();"/>
 						</span>
 
-					</div>
+				</div>
 
-					<!-- Testimonial / Review -->
-					<div id="testimonialReviewFields" class="contentTypeFieldOption" style="display: none;">
+				<!-- Testimonial / Review -->
+				<div id="testimonialReviewFields" class="contentTypeFieldOption" style="display: none;">
 
-						<!-- Author Name -->
-						<span style="display: flex; align-items: center;">
+					<!-- Author Name -->
+					<span style="display: flex; align-items: center;">
 							<label for="testimonialReviewAuthorName" style="width: 100px;">Author Name</label>
 							<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="Kevin Malone" size="40" onkeyup="testimonialReviewAuthorNameUpdate();" />
-							<img id="testimonialReviewAuthorNameClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorName').value = null;"/>
+							<img id="testimonialReviewAuthorNameClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearTestimonialReviewAuthorName();"/>
 						</span>
 
-						<!-- Author Headshot -->
-						<span style="display: flex; align-items: center;">
+					<!-- Author Headshot -->
+					<span style="display: flex; align-items: center;">
 							<label for="testimonialReviewAuthorHeadshot" style="width: 100px;">Author Headshot</label>
 							<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
-							<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorHeadshot').value = null;"/>
+							<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearTestimonialReviewAuthorHeadshot();"/>
 						</span>
 
-						<!-- Author Title -->
-						<span style="display: flex; align-items: center;">
+					<!-- Author Title -->
+					<span style="display: flex; align-items: center;">
 							<label for="testimonialReviewAuthorTitle" style="width: 100px;">Author Title</label>
 							<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="Accountant" size="40" onkeyup="testimonialReviewAuthorTitleUpdate();" />
-							<img id="testimonialReviewAuthorTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorTitle').value = null;"/>
+							<img id="testimonialReviewAuthorTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearTestimonialReviewAuthorTitle();"/>
 						</span>
 
-						<!-- Author Company -->
-						<span style="display: flex; align-items: center;">
+					<!-- Author Company -->
+					<span style="display: flex; align-items: center;">
 							<label for="testimonialReviewAuthorCompany" style="width: 100px;">Author Company</label>
 							<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="Dunder Mifflin" size="40" onkeyup="testimonialReviewAuthorCompanyUpdate();" />
-							<img id="testimonialReviewAuthorCompanyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewAuthorCompany').value = null;"/>
+							<img id="testimonialReviewAuthorCompanyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearTestimonialReviewAuthorCompany();"/>
 						</span>
 
-						<!-- Date -->
-						<span style="display: flex; align-items: center;">
+					<!-- Date -->
+					<span style="display: flex; align-items: center;">
 							<label for="testimonialReviewDate" style="width: 100px;">Date</label>
 							<input id="testimonialReviewDate" type="date" class="cleanCursorInput" oninput="testimonialReviewDateUpdate();"/>
-							<img id="testimonialReviewDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewDate').value = null;"/>
+							<img id="testimonialReviewDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearTestimonialReviewDate();"/>
 						</span>
 
-						<!-- Body -->
-						<span style="display: flex; align-items: center;">
+					<!-- Body -->
+					<span style="display: flex; align-items: center;">
 							<label for="testimonialReviewBody" style="width: 100px;">Body</label>
 							<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="57" placeholder="Michael Scott is the bestest most amazingest boss I ever had!" onkeyup="testimonialReviewBodyUpdate();"></textarea>
-							<img id="testimonialReviewBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('testimonialReviewBody').value = null;"/>
+							<img id="testimonialReviewBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearTestimonialReviewBody();"/>
 						</span>
 
-					</div>
+				</div>
 
-					<!-- Global Content Fields (End) -->
-					<div id="globalContentFieldsEnd" style="display: block;">
+				<!-- Global Content Fields (End) -->
+				<div id="globalContentFieldsEnd" style="display: block;">
 
-						<!-- Call to Action -->
-						<span style="display: flex; align-items: center;">
+					<!-- Call to Action -->
+					<span style="display: flex; align-items: center;">
 							<label for="callToActionGlobal" style="width: 100px;">Call to Action</label>
 							<input id="callToActionGlobal" type="url" class="cleanCursorInput" placeholder="" size="40" onkeyup="callToActionGlobalUpdate();" />
-							<img id="callToActionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('callToActionGlobal').value = null;"/>
+							<img id="callToActionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearCallToActionGlobal();"/>
 							<button onclick="callToActionFontPriority1();">L</button>
 							<button onclick="callToActionFontPriority2();">M</button>
 							<button onclick="callToActionFontPriority3();">S</button>
@@ -1482,18 +1482,18 @@
 							</span>
 						</span>
 
-						<!-- Link -->
-						<span style="display: flex; align-items: center;">
+					<!-- Link -->
+					<span style="display: flex; align-items: center;">
 							<label for="linkGlobal" style="width: 100px;">Link</label>
 							<input id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://myWebsite.com/blog/bestBlogPost" size="40" onkeyup="linkGlobalUpdate();" />
-							<img id="linkGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('linkGlobal').value = null;"/>
+							<img id="linkGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="clearLinkGlobal();"/>
 							<img id="linkGlobalQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 5px 0 5px;" onclick="linkGlobalQR();"/>
 							<img id="linkGlobalShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="linkGlobalShorten();"/>
 							<img id="linkGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
 						</span>
 
-						<!-- Primary Color -->
-						<span style="display: flex; align-items: center;">
+					<!-- Primary Color -->
+					<span style="display: flex; align-items: center;">
 							<label for="primaryColorGlobal" style="width: 100px;">Primary Color</label>
 							<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" oninput="primaryColorGlobalUpdate();" />
 							<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="padding: 0;" oninput="fontColorGlobalUpdate();" />
@@ -1505,8 +1505,8 @@
 							</span>
 						</span>
 
-						<!-- Logo -->
-						<span style="display: flex; align-items: center;">
+					<!-- Logo -->
+					<span style="display: flex; align-items: center;">
 							<label for="squareLogoGlobal" style="width: 100px;">Logo</label>
 							<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onchange="squareLogoGlobalUpdate()" />
 							<div>
@@ -1525,413 +1525,413 @@
 							</span>
 						</span>
 
-					</div>
-
 				</div>
 
 			</div>
 
-			<!-- Outputs -->
-			<div id="final" class="column2" style="user-select: none;">
+		</div>
 
-				<!-- IMAGES -->
-				<div id="finalImageHorizontal" class="primaryColorGlobalHere">
+		<!-- Outputs -->
+		<div id="final" class="column2" style="user-select: none;">
+
+			<!-- IMAGES -->
+			<div id="finalImageHorizontal" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+
+			</div>
+			<div id="finalImageVertical" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+			</div>
+			<div id="finalImageSquare" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+			</div>
+			<div id="finalImageStory" class="primaryColorGlobalHere">
+				<!-- Global Start -->
+				<text class="hookGlobalHere"></text>
+				<text class="hookResolutionGlobalHere"></text>
+				<!-- Generic Post -->
+				<!-- Company Update -->
+				<text class="companyUpdateHeadlineHere"></text>
+				<text class="companyUpdateDateHere"></text>
+				<!-- Sale/Promotion -->
+				<text class="salePromotionTitleHere"></text>
+				<text class="salePromotionProductOrServiceHere"></text>
+				<text class="salePromotionStartDateHere"></text>
+				<text class="salePromotionEndDateHere"></text>
+				<!-- Event Promotion-->
+				<text class="eventPromotionTitleHere"></text>
+				<text class="eventPromotionStartDateHere"></text>
+				<text class="eventPromotionEndDateHere"></text>
+				<text class="eventPromotionLocationHere"></text>
+				<!-- Testimonial / Review -->
+				<text class="testimonialReviewAuthorNameHere"></text>
+				<text class="testimonialReviewAuthorHeadshotHere"></text>
+				<text class="testimonialReviewAuthorTitleHere"></text>
+				<text class="testimonialReviewAuthorCompanyHere"></text>
+				<text class="testimonialReviewAuthorDateHere"></text>
+				<!-- Global End -->
+				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+			</div>
+
+			<!-- TEXT -->
+			<div style="position: relative; top: 400px;">
+				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+
 					<!-- Global Start -->
 					<text class="hookGlobalHere"></text>
 					<text class="hookResolutionGlobalHere"></text>
+
 					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+
 					<!-- Company Update -->
 					<text class="companyUpdateHeadlineHere"></text>
 					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+
 					<!-- Sale/Promotion -->
 					<text class="salePromotionTitleHere"></text>
 					<text class="salePromotionProductOrServiceHere"></text>
 					<text class="salePromotionStartDateHere"></text>
 					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+
 					<!-- Event Promotion-->
 					<text class="eventPromotionTitleHere"></text>
 					<text class="eventPromotionStartDateHere"></text>
 					<text class="eventPromotionEndDateHere"></text>
 					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+
 					<!-- Testimonial / Review -->
 					<text class="testimonialReviewAuthorNameHere"></text>
 					<text class="testimonialReviewAuthorHeadshotHere"></text>
 					<text class="testimonialReviewAuthorTitleHere"></text>
 					<text class="testimonialReviewAuthorCompanyHere"></text>
 					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+
 					<!-- Global End -->
 					<text class="callToActionGlobalHere"></text>
-					<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+					<text class="linkGlobalHere"></text>
 
-				</div>
-				<div id="finalImageVertical" class="primaryColorGlobalHere">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
-				</div>
-				<div id="finalImageSquare" class="primaryColorGlobalHere">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
-				</div>
-				<div id="finalImageStory" class="primaryColorGlobalHere">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
-				</div>
+					<!-- Hashtags -->
+					<br>
+					<br>
+					<text id="hashtagsHere">
+						<text id="hookGlobalHashtagsHere"></text>
+						<text id="hookResolutionGlobalHashtagsHere"></text>
 
-				<!-- TEXT -->
-				<div style="position: relative; top: 400px;">
-					<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+						<text id="genericPostBodyHashtagsHere"></text>
 
-						<!-- Global Start -->
-						<text class="hookGlobalHere"></text>
-						<text class="hookResolutionGlobalHere"></text>
+						<text id="companyUpdateHeadlineHashtagsHere"></text>
+						<text id="companyUpdateBodyHashtagsHere"></text>
 
-						<!-- Generic Post -->
-						<text class="genericPostBodyHere"></text>
+						<text id="salePromotionTitleHashtagsHere"></text>
+						<text id="salePromotionProductOrServiceHashtagsHere"></text>
+						<text id="salePromotionBodyHashtagsHere"></text>
 
-						<!-- Company Update -->
-						<text class="companyUpdateHeadlineHere"></text>
-						<text class="companyUpdateDateHere"></text>
-						<text class="companyUpdateBodyHere"></text>
+						<text id="eventPromotionTitleHashtagsHere"></text>
+						<text id="eventPromotionLocationHashtagsHere"></text>
+						<text id="eventPromotionBodyHashtagsHere"></text>
 
-						<!-- Sale/Promotion -->
-						<text class="salePromotionTitleHere"></text>
-						<text class="salePromotionProductOrServiceHere"></text>
-						<text class="salePromotionStartDateHere"></text>
-						<text class="salePromotionEndDateHere"></text>
-						<text class="salePromotionBodyHere"></text>
+						<text id="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text id="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text id="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text id="testimonialReviewBodyHashtagsHere"></text>
+					</text>
 
-						<!-- Event Promotion-->
-						<text class="eventPromotionTitleHere"></text>
-						<text class="eventPromotionStartDateHere"></text>
-						<text class="eventPromotionEndDateHere"></text>
-						<text class="eventPromotionLocationHere"></text>
-						<text class="eventPromotionBodyHere"></text>
+				</p>
+				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
+				<div id="output"></div>
+			</div>
 
-						<!-- Testimonial / Review -->
-						<text class="testimonialReviewAuthorNameHere"></text>
-						<text class="testimonialReviewAuthorHeadshotHere"></text>
-						<text class="testimonialReviewAuthorTitleHere"></text>
-						<text class="testimonialReviewAuthorCompanyHere"></text>
-						<text class="testimonialReviewAuthorDateHere"></text>
-						<text class="testimonialReviewBodyHere"></text>
-
-						<!-- Global End -->
-						<text class="callToActionGlobalHere"></text>
-						<text class="linkGlobalHere"></text>
-
-						<!-- Hashtags -->
-						<br>
-						<br>
-						<text id="hashtagsHere">
-							<text id="hookGlobalHashtagsHere"></text>
-							<text id="hookResolutionGlobalHashtagsHere"></text>
-
-							<text id="genericPostBodyHashtagsHere"></text>
-
-							<text id="companyUpdateHeadlineHashtagsHere"></text>
-							<text id="companyUpdateBodyHashtagsHere"></text>
-
-							<text id="salePromotionTitleHashtagsHere"></text>
-							<text id="salePromotionProductOrServiceHashtagsHere"></text>
-							<text id="salePromotionBodyHashtagsHere"></text>
-
-							<text id="eventPromotionTitleHashtagsHere"></text>
-							<text id="eventPromotionLocationHashtagsHere"></text>
-							<text id="eventPromotionBodyHashtagsHere"></text>
-
-							<text id="testimonialReviewAuthorNameHashtagsHere"></text>
-							<text id="testimonialReviewAuthorTitleHashtagsHere"></text>
-							<text id="testimonialReviewAuthorCompanyHashtagsHere"></text>
-							<text id="testimonialReviewBodyHashtagsHere"></text>
-						</text>
-
-					</p>
-					<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-					<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
-					<div id="output"></div>
-				</div>
-
-				<!-- Social Sendables -->
-				<div id="socialSendables">
-					<script>
-						function openSocialTab(evt, cityName) {
-							var i, socialTabContent, tablinks;
-							socialTabContent = document.getElementsByClassName("socialTabContent");
-							for (i = 0; i < socialTabContent.length; i++) {
-								socialTabContent[i].style.display = "none";
-							}
-							tablinks = document.getElementsByClassName("tablinks");
-							for (i = 0; i < tablinks.length; i++) {
-								tablinks[i].className = tablinks[i].className.replace(" active", "");
-							}
-							document.getElementById(cityName).style.display = "block";
+			<!-- Social Sendables -->
+			<div id="socialSendables">
+				<script>
+					function openSocialTab(evt, cityName) {
+						var i, socialTabContent, tablinks;
+						socialTabContent = document.getElementsByClassName("socialTabContent");
+						for (i = 0; i < socialTabContent.length; i++) {
+							socialTabContent[i].style.display = "none";
 						}
-					</script>
-					<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/facebookWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/linkedinWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/twitterWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/emailWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/redditWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/tumblrWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/telegramWhite.png" /></button>
-						<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/whatsappWhite.png" /></button>
-						<!-- Facebook -->
-						<div id="tabFacebook" class="socialTabContent">
-							<!-- Share Via Facebook -->
-							<div onclick="
+						tablinks = document.getElementsByClassName("tablinks");
+						for (i = 0; i < tablinks.length; i++) {
+							tablinks[i].className = tablinks[i].className.replace(" active", "");
+						}
+						document.getElementById(cityName).style.display = "block";
+					}
+				</script>
+				<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/facebookWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/linkedinWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/twitterWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/emailWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/redditWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/tumblrWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/telegramWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/whatsappWhite.png" /></button>
+					<!-- Facebook -->
+					<div id="tabFacebook" class="socialTabContent">
+						<!-- Share Via Facebook -->
+						<div onclick="
 									// prepare & set facebook post parameters
 									let u = document.getElementById('inputEventLink').value;
 									document.getElementById('shareViaFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + u
 								">
-								Preview<br><br>
-								<div id="facebookPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- facebook link -->
-								<a title="Share Via Facebook"
-								   id="shareViaFacebook"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--facebookColor)">Share to Facebook</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- Linkedin -->
-						<div id="tabLinkedin" class="socialTabContent">
-							<!-- Share Via LinkedIn -->
-							<div onclick="
+							Preview<br><br>
+							<div id="facebookPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- facebook link -->
+							<a title="Share Via Facebook"
+							   id="shareViaFacebook"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--facebookColor)">Share to Facebook</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- Linkedin -->
+					<div id="tabLinkedin" class="socialTabContent">
+						<!-- Share Via LinkedIn -->
+						<div onclick="
 									// prepare & set linkedin post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let title = document.getElementById('inputEventTitle').value; // not shown in shared link
 									let summary = document.getElementById('inputEventDescription').value; // link not working when added
 									document.getElementById('shareViaLinkedin').href = 'https://linkedin.com/shareArticle?url=' + url + '&title=' + title
 								">
-								Preview<br><br>
-								<div id="linkedinPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- linkedin link -->
-								<a title="Share Via Linkedin"
-								   id="shareViaLinkedin"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--linkedinColor)">Share to LinkedIn</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- Twitter -->
-						<div id="tabTwitter" class="socialTabContent">
-							<!-- Share Via Twitter -->
-							<div onclick="
+							Preview<br><br>
+							<div id="linkedinPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- linkedin link -->
+							<a title="Share Via Linkedin"
+							   id="shareViaLinkedin"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--linkedinColor)">Share to LinkedIn</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- Twitter -->
+					<div id="tabTwitter" class="socialTabContent">
+						<!-- Share Via Twitter -->
+						<div onclick="
 									// prepare & set twitter post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let text = 'text to share';
 									let hashtags = 'hashtag1,hashtag2';
 									document.getElementById('shareViaTwitter').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text + '&hashtags=' + hashtags
 								">
-								Preview<br><br>
-								<div id="twitterPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- twitter link -->
-								<a title="Share Via Twitter"
-								   id="shareViaTwitter"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--twitterColor)">Share to Twitter</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- Email -->
-						<div id="tabEmail" class="socialTabContent">
-							<!-- Share Via Email -->
-							<div onclick="
+							Preview<br><br>
+							<div id="twitterPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- twitter link -->
+							<a title="Share Via Twitter"
+							   id="shareViaTwitter"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--twitterColor)">Share to Twitter</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- Email -->
+					<div id="tabEmail" class="socialTabContent">
+						<!-- Share Via Email -->
+						<div onclick="
 									// prepare & set email parameters
 									let email = 'brandwield@gmail.com';
 									let subject = document.getElementById('inputEventTitle').value;
 									let body = document.getElementById('inputEventLink').value;
 									document.getElementById('shareViaEmail').href = 'mailto:?' + email + '&subject=' + subject + '&body=' + body
 								">
-								Preview<br><br>
-								<div id="emailPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- email link -->
-								<a title="Share Via Email"
-								   id="shareViaEmail"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--googleColor)">Share to Email</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- Reddit -->
-						<div id="tabReddit" class="socialTabContent">
-							<!-- Share Via Reddit -->
-							<div onclick="
+							Preview<br><br>
+							<div id="emailPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- email link -->
+							<a title="Share Via Email"
+							   id="shareViaEmail"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--googleColor)">Share to Email</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- Reddit -->
+					<div id="tabReddit" class="socialTabContent">
+						<!-- Share Via Reddit -->
+						<div onclick="
 									// prepare & set reddit post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let title = document.getElementById('inputEventTitle').value;
 									document.getElementById('shareViaTwitter').href = 'https://www.reddit.com/submit?url=' + url + '&title=' + title
 								">
-								Preview<br><br>
-								<div id="redditPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- reddit link -->
-								<a title="Share Via Reddit"
-								   id="shareViaReddit"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--redditColor)">Share to Reddit</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- Tumblr -->
-						<div id="tabTumblr" class="socialTabContent">
-							<!-- Share Via Tumblr -->
-							<div onclick="
+							Preview<br><br>
+							<div id="redditPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- reddit link -->
+							<a title="Share Via Reddit"
+							   id="shareViaReddit"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--redditColor)">Share to Reddit</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- Tumblr -->
+					<div id="tabTumblr" class="socialTabContent">
+						<!-- Share Via Tumblr -->
+						<div onclick="
 									// prepare & set tumblr post parameters
 									let canonicalUrl = document.getElementById('inputEventLink').value;
 									let caption = document.getElementById('inputEventTitle').value;
 									let tags = 'tag1,tag2';
 									document.getElementById('shareViaTwitter').href = 'https://www.tumblr.com/widgets/share/tool' + '?canonicalUrl=' + canonicalUrl + '&caption=' + caption + '&tags=' + tags
 								">
-								Preview<br><br>
-								<div id="tumblrPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- tumblr link -->
-								<a title="Share Via Tumblr"
-								   id="shareViaTumblr"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--tumblrColor)">Share to Tumblr</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- Telegram -->
-						<div id="tabTelegram" class="socialTabContent">
-							<!-- Share Via Telegram -->
-							<div onclick="
+							Preview<br><br>
+							<div id="tumblrPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- tumblr link -->
+							<a title="Share Via Tumblr"
+							   id="shareViaTumblr"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--tumblrColor)">Share to Tumblr</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- Telegram -->
+					<div id="tabTelegram" class="socialTabContent">
+						<!-- Share Via Telegram -->
+						<div onclick="
 									// prepare & set telegram post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let text = document.getElementById('inputEventTitle').value;
 									document.getElementById('shareViaTwitter').href = 'https://t.me/share/url' + '?url=' + url + '&text=' + text
 								">
-								Preview<br><br>
-								<div id="telegramPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							Preview<br><br>
+							<div id="telegramPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 
-								<!-- telegram link -->
-								<a title="Share Via Telegram"
-								   id="shareViaTelegram"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--telegramColor)">Share to Telegram</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
-						<!-- WhatsApp -->
-						<div id="tabWhatsapp" class="socialTabContent">
-							<!-- Share Via WhatsApp -->
-							<div onclick="
+							<!-- telegram link -->
+							<a title="Share Via Telegram"
+							   id="shareViaTelegram"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--telegramColor)">Share to Telegram</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
+					</div>
+					<!-- WhatsApp -->
+					<div id="tabWhatsapp" class="socialTabContent">
+						<!-- Share Via WhatsApp -->
+						<div onclick="
 									// prepare & set whatsapp post parameters
 									let url = document.getElementById('inputEventLink').value; // param not found - link added via 'text' param
 									let text = document.getElementById('inputEventTitle').value;
 									document.getElementById('shareViaTwitter').href = 'https://wa.me/' + '?text=' + text + ' ' + url
 								">
-								Preview<br><br>
-								<div id="whatsappPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
-								<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-								<!-- whatsapp link -->
-								<a title="Share Via WhatsApp"
-								   id="shareViaWhatsapp"
-								   class="shareToSocial"
-								   target="_blank"
-								   href="">
-									<button class="shareButton" style="background-color: var(--whatsappColor)">Share to WhatsApp</button>
-								</a>
-							</div><span class="material-symbols-outlined">info</span>
-						</div>
+							Preview<br><br>
+							<div id="whatsappPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
+							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+							<!-- whatsapp link -->
+							<a title="Share Via WhatsApp"
+							   id="shareViaWhatsapp"
+							   class="shareToSocial"
+							   target="_blank"
+							   href="">
+								<button class="shareButton" style="background-color: var(--whatsappColor)">Share to WhatsApp</button>
+							</a>
+						</div><span class="material-symbols-outlined">info</span>
 					</div>
 				</div>
-
 			</div>
+
+		</div>
 
 	</div>
 
@@ -2161,6 +2161,159 @@
 
 <!-- JavaScript -->
 <script>
+
+	// Rapid API - URL Links Shortener
+	function linkGlobalShorten() {
+
+		let url = document.getElementById("linkGlobal").value;
+		let domain = "my.brandwield.com";
+
+		const options = {
+			method: 'GET',
+			headers: {
+				accept: 'application/json',
+				apikey: '65338792cfa94d94ac9a01788bdefc3d'
+			}
+		};
+
+		fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+		.then(response => response.json())
+		.then(response =>
+			document.getElementById("linkGlobal").value = response.shortUrl
+		)
+		.catch(error => console.log(error));
+
+	}
+	// Generate QR Code
+	function linkGlobalQR() {
+
+		let url = document.getElementById("linkGlobal").value;
+
+		const options = {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+				'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
+			},
+			body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
+		};
+
+		fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
+		.then(response => response.json())
+		.then(data => document.getElementById("genericPostLinkQRPreview").src = data.qrcode)
+		.catch(err => console.error(err));
+
+	}
+	// Text Sentiment Analysis API (unlimited free calls)
+	function sentimentAnalysis() {
+
+		// Get the text
+		let text = document.getElementById("inputEventTitle").value;
+
+		// Set the API key
+		const options = {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+				'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
+			},
+			body: '{"language":"english","text":"' + text + '"}'
+		};
+
+		fetch('https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1', options)
+		.then(response => response.json())
+		.then(data => {
+
+			if (text.length > 1) {
+				document.getElementById("titleSentimentAnalysis").innerText = data.sentiment;
+				document.getElementById("titleSentimentAnalysis").style.display = "inline";
+
+				if (data.sentiment == "positive") {
+					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkgreen";
+					document.getElementById("titleSentimentAnalysis").style.color = "white";
+				} else if (data.sentiment == "negative") {
+					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkred"
+					document.getElementById("titleSentimentAnalysis").style.color = "white";
+				} else if (data.sentiment == "neutral") {
+					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkblue"
+					document.getElementById("titleSentimentAnalysis").style.color = "white";
+				}
+			}
+			else {
+				document.getElementById("titleSentimentAnalysis").style.display = "none";
+			}
+		})
+		.catch(err => console.error(err));
+	}
+	// Sentence Generator API - SET UP FOR 'EVENT'
+	function realiseSentence() {
+
+		let object = 'Fairfield Networking Dinner'; // REQ - they are acted upon
+		let objnum = 'singular'; // 'singular' or 'plural'
+		let objdet = 'the'; // the object determiner (ex: a, an, the) use '-' for auto-generation
+		let objmod = 'networking'; //  an adjective of the object (ex: big, small, red)
+
+		let subject = 'you'; // REQ - the doer of the verb
+		let subjnum = 'singular'; // 'singular' or 'plural'
+		let subjdet = '-'; // the subject determiner (ex: a, an, the) use '-' for auto-generation
+
+		let verb = 'attend'; //  REQ - It's what ya do!
+		let tense = 'future'; // 'past', 'present' or 'future'
+
+		let sentencetype = 'whosubj'; // declaration by default
+
+		// let progressive = '';
+		// let modal = '';
+		// let passive = '';
+		// let perfect = '';
+		// let negated = '';
+
+		const options = {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
+				'X-RapidAPI-Host': 'linguatools-sentence-generating.p.rapidapi.com'
+			}
+		};
+
+		// API DOCS --> https://linguatools.org/language-apis/sentence-generating-api/
+		fetch('https://linguatools-sentence-generating.p.rapidapi.com/realise?' +
+
+			'object=' + object + // REQ - any noun or pronoun. If the object is a pronoun set objdet=- and use the base form of the pronoun (e.g. she instead of her). Possible base forms are: I, you, he, she, it, we, they. This will be automatically replaced by me, you, him, her, it, us, them. Set objnum=plural to get the plural forms (e. g. object=he and objdet=- and objnum=plural yields them).
+			'&subject=' + subject + // REQ - any noun or pronoun
+			'&verb=' + verb + // REQ - any verb, including phrase-verbs like 'start out'
+
+			// Object-related
+			'&objdet=' + objdet + // Specifies the object’s determiner (a, the, –). Default is „a“. Use objdet=- to generate an object without determiner.
+			'&objnum=' + objnum + // 'singular' or 'plural' - Default is singular. A value of plural is overridden by objdet=a.
+			'&objmod=' + objmod + // An adjective modifying the object
+
+			// Subject-related
+			'&subjnum=' + subjnum + // 'singular' or 'plural' - 'plural' is overridden of subjdet=a.
+			'&subjdet=' + subjdet + // Specifies the subject’s number (a, the, –). Default is „the“. Use subjdet=- to generate a subject without determiner.
+
+			// Verb-related
+			'&tense=' + tense + // 'past' 'present' or 'future' - Default is 'present'
+
+			'&sentencetype=' + sentencetype // Default is a declarative sentence
+			// 'yesno' generates a yes/no-question
+			// 'whatobj' generates a WH-question for the object
+			// 'whosubj' generates a WH-question for the subject
+
+			// UNUSED PARAMETERS for now
+			// '&modal=' + modal + // Specifies a modal verb modifying the verb (can, may, must, ought, shall, should, would). Only allowed for present tense. If tense=past or tense=future is set then the parameter modal will be ignored.
+			// '&passive=' + passive + // &passive=passive generates a sentence in passive voice. The object is set as subject and the subject becomes the by-object.
+			// '&progressive=' + progressive + // &progressive=progressive sets the progressive (continuous) tense
+			// '&perfect=' + perfect + // &perfect=perfect sets the perfect tense
+			// '&negated=' + negated // &negated=negated generates a negated sentence
+
+			,options)
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err));
+	}
 
 	// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
 	document.addEventListener('keydown', function(event) {
@@ -3220,7 +3373,6 @@
 		}
 
 	}
-	// none for genericPost as it just has a body
 	function companyUpdateHeadlineFontPriority1() {
 
 		// set variables
@@ -3362,185 +3514,250 @@
 
 	// clear
 	function clearAllFields (){
+		clearHookGlobal();
+		clearHookResolutionGlobal();
+		clearGenericPostBody();
+		clearCompanyUpdateHeadline();
+		clearCompanyUpdateDate();
+		clearCompanyUpdateBody();
+		clearSalePromotionTitle();
+		clearSalePromotionProductOrService();
+		clearSalePromotionStateDate();
+		clearSalePromotionEndDate();
+		clearSalePromotionBody();
+		clearEventPromotionTitle();
+		clearEventPromotionStartDate();
+		clearEventPromotionEndDate();
+		clearEventPromotionLocation();
+		clearEventPromotionBody();
+		clearTestimonialReviewAuthorName();
+		clearTestimonialReviewAuthorTitle();
+		clearTestimonialReviewAuthorCompany();
+		clearTestimonialReviewAuthorHeadshot();
+		clearTestimonialReviewAuthorDate();
+		clearTestimonialReviewBody();
+		clearCallToActionGlobal();
+		clearLinkGlobal();
+		clearPrimaryColorGlobal();
+		clearFontColorGlobal();
+		clearSquareLogoGlobal();
+	}
+	function clearHookGlobal(){
 		document.getElementById("hookGlobal").value = "";
+		// for all elements with the class of hookGlobalHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.hookGlobalHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearHookResolutionGlobal(){
 		document.getElementById("hookResolutionGlobal").value = "";
+		// for all elements with the class of hookResolutionGlobalHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.hookResolutionGlobalHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearGenericPostBody(){
 		document.getElementById("genericPostBody").value = "";
+		// for all elements with the class of genericPostBodyHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.genericPostBodyHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearCompanyUpdateHeadline(){
 		document.getElementById("companyUpdateHeadline").value = "";
+		// for all elements with the class of companyUpdateHeadlineHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearCompanyUpdateDate(){
 		document.getElementById("companyUpdateDate").value = "";
+		// for all elements with the class of companyUpdateDateHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.companyUpdateDateHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearCompanyUpdateBody(){
 		document.getElementById("companyUpdateBody").value = "";
+		// for all elements with the class of companyUpdateBodyHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.companyUpdateBodyHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearSalePromotionTitle(){
 		document.getElementById("salePromotionTitle").value = "";
+		// for all elements with the class of salePromotionTitleHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.salePromotionTitleHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearSalePromotionProductOrService(){
 		document.getElementById("salePromotionProductOrService").value = "";
+		// for all elements with the class of salePromotionProductOrServiceHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.salePromotionProductOrServiceHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearSalePromotionStateDate(){
 		document.getElementById("salePromotionStateDate").value = "";
+		// for all elements with the class of salePromotionStateDateHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.salePromotionStateDateHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearSalePromotionEndDate() {
 		document.getElementById("salePromotionEndDate").value = "";
+		// for all elements with the class of salePromotionEndDateHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.salePromotionEndDateHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearSalePromotionBody(){
 		document.getElementById("salePromotionBody").value = "";
+		// for all elements with the class of salePromotionBodyHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.salePromotionBodyHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearEventPromotionTitle(){
 		document.getElementById("eventPromotionTitle").value = "";
+		// for all elements with the class of eventPromotionTitleHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.eventPromotionTitleHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearEventPromotionStartDate(){
 		document.getElementById("eventPromotionStartDate").value = "";
+		// for all elements with the class of eventPromotionTimeHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.eventPromotionStartDateHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearEventPromotionEndDate(){
 		document.getElementById("eventPromotionEndDate").value = "";
+		// for all elements with the class of eventPromotionCostHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.eventPromotionEndDateHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearEventPromotionLocation(){
 		document.getElementById("eventPromotionLocation").value = "";
+		// for all elements with the class of eventPromotionLocationHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.eventPromotionLocationHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearEventPromotionBody(){
 		document.getElementById("eventPromotionBody").value = "";
-		document.getElementById("testimonialReviewAuthorName").value = ""
-		document.getElementById("testimonialReviewAuthorHeadshot").value = "";
+		// for all elements with the class of eventPromotionBodyHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.eventPromotionBodyHere');
+		for (let i = 0; i < element.length; i++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearTestimonialReviewAuthorName() {
+		document.getElementById("testimonialReviewAuthorName").value = "";
+		// for all elements with the class of testimonialReviewAuthorNameHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.testimonialReviewAuthorNameHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearTestimonialReviewAuthorTitle() {
 		document.getElementById("testimonialReviewAuthorTitle").value = "";
+		// for all elements with the class of testimonialReviewAuthorTitleHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.testimonialReviewAuthorTitleHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearTestimonialReviewAuthorCompany() {
 		document.getElementById("testimonialReviewAuthorCompany").value = "";
+		// for all elements with the class of testimonialReviewAuthorCompanyHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.testimonialReviewAuthorCompanyHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearTestimonialReviewAuthorHeadshot() {
+		document.getElementById("testimonialReviewAuthorHeadshot").value = "";
+		// for all elements with the class of testimonialReviewAuthorLocationHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.testimonialReviewAuthorHeadshotHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearTestimonialReviewDate() {
+		document.getElementById("testimonialReviewDate").value = "";
+		// for all elements with the class of testimonialReviewAuthorLocationHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.testimonialReviewDateHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearTestimonialReviewBody() {
 		document.getElementById("testimonialReviewBody").value = "";
-		// These 4 fields are not clearing for some reason -->
-		// for now, i am just trying to trigger this at the bottom of the valueSelectorUpdate() function above (won't work if placed in top of the function)
+		// for all elements with the class of testimonialReviewAuthorBodyHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.testimonialReviewBodyHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearCallToActionGlobal() {
 		document.getElementById("callToActionGlobal").value = "";
+		// for all elements with the class of callToActionGlobalHere, set the innerHTML to an empty string
+		let element = document.querySelectorAll('.callToActionGlobalHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+		}
+	}
+	function clearLinkGlobal() {
 		document.getElementById("linkGlobal").value = "";
+		// for all elements with the class of linkGlobalHere, set the innerHTML & src to an empty string
+		let element = document.querySelectorAll('.linkGlobalHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].innerHTML = "";
+			element[i].src = "";
+		}
+	}
+	function clearPrimaryColorGlobal() {
 		document.getElementById("primaryColorGlobal").value = "";
+		// for all elements with the class of primaryColorGlobalHere, set the innerHTML & src to an empty string
+		let element = document.querySelectorAll('.primaryColorGlobalHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].value = "";
+		}
+	}
+	function clearFontColorGlobal() {
+		document.getElementById("fontColorGlobal").value = "";
+		// for all elements with the class of fontColorGlobalHere, set the value to an empty string
+		let element = document.querySelectorAll('.fontColorGlobalHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].value = "";
+		}
+	}
+	function clearSquareLogoGlobal() {
 		document.getElementById("squareLogoGlobal").value = "";
-	}
-	// Rapid API - URL Links Shortener
-	function linkGlobalShorten() {
-
-		let url = document.getElementById("linkGlobal").value;
-		let domain = "my.brandwield.com";
-
-		const options = {
-			method: 'GET',
-			headers: {
-				accept: 'application/json',
-				apikey: '65338792cfa94d94ac9a01788bdefc3d'
-			}
-		};
-
-		fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-		.then(response => response.json())
-		.then(response =>
-			document.getElementById("linkGlobal").value = response.shortUrl
-		)
-		.catch(error => console.log(error));
-
-	}
-	// Generate QR Code
-	function linkGlobalQR() {
-
-		let url = document.getElementById("linkGlobal").value;
-
-		const options = {
-			method: 'POST',
-			headers: {
-				'content-type': 'application/json',
-				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-				'X-RapidAPI-Host': 'qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com'
-			},
-			body: '{"data":"' + url + '","size":200,"margin":0,"color":"#F4511E","colorAlpha":100,"backgroundColor":"#FFFFFF","backgroundColorAlpha":100,"eyeOneInnerColor":"#F57C00","eyeOneOuterColor":"#B71C1C","eyeTwoInnerColor":"#F57C00","eyeTwoOuterColor":"#B71C1C","eyeThreeInnerColor":"#F57C00","eyeThreeOuterColor":"#B71C1C","eyeStyle":"circle","blockStyle":"round","errorCorrectionLevel":"Q","encoding":"UTF-8"}'
-		};
-
-		fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
-		.then(response => response.json())
-		.then(data => document.getElementById("genericPostLinkQRPreview").src = data.qrcode)
-		.catch(err => console.error(err));
-
-	}
-	// Text Sentiment Analysis API (unlimited free calls)
-	function sentimentAnalysis() {
-
-		// Get the text
-		let text = document.getElementById("inputEventTitle").value;
-
-		// Set the API key
-		const options = {
-			method: 'POST',
-			headers: {
-				'content-type': 'application/json',
-				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-				'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
-			},
-			body: '{"language":"english","text":"' + text + '"}'
-		};
-
-		fetch('https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1', options)
-		.then(response => response.json())
-		.then(data => {
-
-			if (text.length > 1) {
-				document.getElementById("titleSentimentAnalysis").innerText = data.sentiment;
-				document.getElementById("titleSentimentAnalysis").style.display = "inline";
-
-				if (data.sentiment == "positive") {
-					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkgreen";
-					document.getElementById("titleSentimentAnalysis").style.color = "white";
-				} else if (data.sentiment == "negative") {
-					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkred"
-					document.getElementById("titleSentimentAnalysis").style.color = "white";
-				} else if (data.sentiment == "neutral") {
-					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkblue"
-					document.getElementById("titleSentimentAnalysis").style.color = "white";
-				}
-			}
-			else {
-				document.getElementById("titleSentimentAnalysis").style.display = "none";
-			}
-		})
-		.catch(err => console.error(err));
-	}
-	// Sentence Generator API - SET UP FOR 'EVENT'
-	function realiseSentence() {
-
-		let object = 'Fairfield Networking Dinner'; // REQ - they are acted upon
-		let objnum = 'singular'; // 'singular' or 'plural'
-		let objdet = 'the'; // the object determiner (ex: a, an, the) use '-' for auto-generation
-		let objmod = 'networking'; //  an adjective of the object (ex: big, small, red)
-
-		let subject = 'you'; // REQ - the doer of the verb
-		let subjnum = 'singular'; // 'singular' or 'plural'
-		let subjdet = '-'; // the subject determiner (ex: a, an, the) use '-' for auto-generation
-
-		let verb = 'attend'; //  REQ - It's what ya do!
-		let tense = 'future'; // 'past', 'present' or 'future'
-
-		let sentencetype = 'whosubj'; // declaration by default
-
-		// let progressive = '';
-		// let modal = '';
-		// let passive = '';
-		// let perfect = '';
-		// let negated = '';
-
-		const options = {
-			method: 'GET',
-			headers: {
-				'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-				'X-RapidAPI-Host': 'linguatools-sentence-generating.p.rapidapi.com'
-			}
-		};
-
-		// API DOCS --> https://linguatools.org/language-apis/sentence-generating-api/
-		fetch('https://linguatools-sentence-generating.p.rapidapi.com/realise?' +
-
-			'object=' + object + // REQ - any noun or pronoun. If the object is a pronoun set objdet=- and use the base form of the pronoun (e.g. she instead of her). Possible base forms are: I, you, he, she, it, we, they. This will be automatically replaced by me, you, him, her, it, us, them. Set objnum=plural to get the plural forms (e. g. object=he and objdet=- and objnum=plural yields them).
-			'&subject=' + subject + // REQ - any noun or pronoun
-			'&verb=' + verb + // REQ - any verb, including phrase-verbs like 'start out'
-
-			// Object-related
-			'&objdet=' + objdet + // Specifies the object’s determiner (a, the, –). Default is „a“. Use objdet=- to generate an object without determiner.
-			'&objnum=' + objnum + // 'singular' or 'plural' - Default is singular. A value of plural is overridden by objdet=a.
-			'&objmod=' + objmod + // An adjective modifying the object
-
-			// Subject-related
-			'&subjnum=' + subjnum + // 'singular' or 'plural' - 'plural' is overridden of subjdet=a.
-			'&subjdet=' + subjdet + // Specifies the subject’s number (a, the, –). Default is „the“. Use subjdet=- to generate a subject without determiner.
-
-			// Verb-related
-			'&tense=' + tense + // 'past' 'present' or 'future' - Default is 'present'
-
-			'&sentencetype=' + sentencetype // Default is a declarative sentence
-			// 'yesno' generates a yes/no-question
-			// 'whatobj' generates a WH-question for the object
-			// 'whosubj' generates a WH-question for the subject
-
-			// UNUSED PARAMETERS for now
-			// '&modal=' + modal + // Specifies a modal verb modifying the verb (can, may, must, ought, shall, should, would). Only allowed for present tense. If tense=past or tense=future is set then the parameter modal will be ignored.
-			// '&passive=' + passive + // &passive=passive generates a sentence in passive voice. The object is set as subject and the subject becomes the by-object.
-			// '&progressive=' + progressive + // &progressive=progressive sets the progressive (continuous) tense
-			// '&perfect=' + perfect + // &perfect=perfect sets the perfect tense
-			// '&negated=' + negated // &negated=negated generates a negated sentence
-
-			,options)
-		.then(response => response.json())
-		.then(response => console.log(response))
-		.catch(err => console.error(err));
+		// for all elements with the class of squareLogoGlobalHere, set the src to an empty string
+		let element = document.querySelectorAll('.squareLogoGlobalHere');
+		for(let i = 0; i < element.length; i ++) {
+			element[i].src = "";
+		}
 	}
 
 	// Brand popup
@@ -3865,7 +4082,5 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="1">Durian</option>
 </datalist>
 
-
 </body>
-
 </html>
