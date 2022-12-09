@@ -1606,7 +1606,16 @@
 					<span style="display: flex; align-items: center;">
 						<label for="squareLogoGlobal" style="width: 100px;">Logo</label>
 						<img id="squareLogoGlobalInfo" style="height: 23px; width: 23px; margin: 0 5px 0 5px;" src="media/otherIcons/info.svg" onclick="" />
-						<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onkeyup="this.size = this.value.length * 1.15; if (this.value.length < 2) {this.size = 40}" />
+						<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 60px;" onchange="squareLogoGlobalUpdate()" />
+						<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" oninput="squareLogoGlobalSizeUpdate();">
+						<div>
+							<input id="squareLogoGlobalTopLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopLeft();">
+							<input id="squareLogoGlobalBottomLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomLeft();">
+						</div>
+						<div>
+							<input id="squareLogoGlobalTopRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopRight();">
+							<input id="squareLogoGlobalBottomRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomRight();" checked>
+						</div>
 						<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = null;"/>
 						<span id="squareLogoGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
 							<img id="squareLogoGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="showBrandPopup();"/>
@@ -1649,6 +1658,8 @@
 				<text class="testimonialReviewAuthorDateHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; position: absolute; bottom: 5px; right: 5px;" />
+
 			</div>
 			<div id="finalImageVertical" class="primaryColorGlobalHere">
 				<!-- Global Start -->
@@ -1676,6 +1687,7 @@
 				<text class="testimonialReviewAuthorDateHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; position: absolute; bottom: 5px; right: 5px;" />
 			</div>
 			<div id="finalImageSquare" class="primaryColorGlobalHere">
 				<!-- Global Start -->
@@ -1703,6 +1715,7 @@
 				<text class="testimonialReviewAuthorDateHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; position: absolute; bottom: 5px; right: 5px;" />
 			</div>
 			<div id="finalImageStory" class="primaryColorGlobalHere">
 				<!-- Global Start -->
@@ -1730,10 +1743,11 @@
 				<text class="testimonialReviewAuthorDateHere"></text>
 				<!-- Global End -->
 				<text class="callToActionGlobalHere"></text>
+				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; position: absolute; bottom: 5px; right: 5px;" />
 			</div>
 
 			<!-- TEXT -->
-			<div style="position: relative; top: 380px;">
+			<div style="position: relative; top: 400px;">
 				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
 
 					<!-- Global Start -->
@@ -2721,6 +2735,7 @@
 			callToActionGlobalHere[i].innerHTML = document.getElementById('callToActionGlobal').value;
 		}
 	}
+
 	function linkGlobalUpdate() {
 		// for all elements with the 'linkGlobalHere' class, set the innerHTML to the value of the 'linkGlobal' field
 		const linkGlobalHere = document.getElementsByClassName('linkGlobalHere');
@@ -2728,6 +2743,7 @@
 			linkGlobalHere[i].innerHTML = document.getElementById('linkGlobal').value;
 		}
 	}
+
 	function primaryColorGlobalUpdate () {
 
 		// set variables
@@ -2792,6 +2808,93 @@
 		document.getElementById('finalImageSquare').style.color = fontColor;
 		document.getElementById('finalImageVertical').style.color = fontColor;
 		document.getElementById('finalImageStory').style.color = fontColor;
+
+	}
+
+	function squareLogoGlobalUpdate() {
+
+		let squareLogoGlobal = document.getElementById("squareLogoGlobal");
+		if (squareLogoGlobal.value != null && squareLogoGlobal.value.length > 0) {
+
+			const file = document.querySelector('#squareLogoGlobal').files[0];
+			var reader = new FileReader();
+
+			reader.readAsDataURL(file);
+			reader.onload = function () {
+				var base64 = reader.result;
+				localStorage.setItem('squareLogoGlobal', base64);
+
+				// for all items with the class of 'squareLogoGlobalHere', set the src to the base64
+				const squareLogoGlobalHere = document.getElementsByClassName('squareLogoGlobalHere');
+				for (let i = 0; i < squareLogoGlobalHere.length; i++) {
+					squareLogoGlobalHere[i].src = base64;
+				}
+			}
+		}
+	}
+	function squareLogoGlobalTopLeft() {
+		document.getElementById('squareLogoGlobalBottomRight').checked = false;
+		document.getElementById('squareLogoGlobalBottomLeft').checked = false;
+		document.getElementById('squareLogoGlobalTopRight').checked = false;
+		// for all items with the class of 'squareLogoGlobalHere'
+		const squareLogoGlobalHere = document.getElementsByClassName('squareLogoGlobalHere');
+		for (let i = 0; i < squareLogoGlobalHere.length; i++) {
+			squareLogoGlobalHere[i].style.top = '5x';
+			squareLogoGlobalHere[i].style.bottom = null;
+			squareLogoGlobalHere[i].style.left = '5px';
+			squareLogoGlobalHere[i].style.right = null;
+		}
+	}
+	function squareLogoGlobalBottomLeft() {
+		document.getElementById('squareLogoGlobalBottomRight').checked = false;
+		document.getElementById('squareLogoGlobalTopRight').checked = false;
+		document.getElementById('squareLogoGlobalTopLeft').checked = false;
+		// for all items with the class of 'squareLogoGlobalHere'
+		const squareLogoGlobalHere = document.getElementsByClassName('squareLogoGlobalHere');
+		for (let i = 0; i < squareLogoGlobalHere.length; i++) {
+			squareLogoGlobalHere[i].style.top = null;
+			squareLogoGlobalHere[i].style.bottom = '5px';
+			squareLogoGlobalHere[i].style.left = '5px';
+			squareLogoGlobalHere[i].style.right = null;
+		}
+	}
+	function squareLogoGlobalTopRight() {
+		document.getElementById('squareLogoGlobalBottomRight').checked = false;
+		document.getElementById('squareLogoGlobalBottomLeft').checked = false;
+		document.getElementById('squareLogoGlobalTopLeft').checked = false;
+		// for all items with the class of 'squareLogoGlobalHere'
+		const squareLogoGlobalHere = document.getElementsByClassName('squareLogoGlobalHere');
+		for (let i = 0; i < squareLogoGlobalHere.length; i++) {
+			squareLogoGlobalHere[i].style.top = '5x';
+			squareLogoGlobalHere[i].style.bottom = null;
+			squareLogoGlobalHere[i].style.left = null;
+			squareLogoGlobalHere[i].style.right = '5px';
+		}
+	}
+	function squareLogoGlobalBottomRight() {
+		document.getElementById('squareLogoGlobalTopRight').checked = false;
+		document.getElementById('squareLogoGlobalBottomLeft').checked = false;
+		document.getElementById('squareLogoGlobalTopLeft').checked = false;
+		// for all items with the class of 'squareLogoGlobalHere'
+		const squareLogoGlobalHere = document.getElementsByClassName('squareLogoGlobalHere');
+		for (let i = 0; i < squareLogoGlobalHere.length; i++) {
+			squareLogoGlobalHere[i].style.top = null;
+			squareLogoGlobalHere[i].style.bottom = '5px';
+			squareLogoGlobalHere[i].style.left = null;
+			squareLogoGlobalHere[i].style.right = '5px';
+		}
+	}
+
+	function squareLogoGlobalSizeUpdate() {
+
+		// get variables
+		let squareLogoGlobalSize = document.getElementById("squareLogoGlobalSize").value;
+		let squareLogoGlobalHere = document.getElementsByClassName("squareLogoGlobalHere");
+
+		for (let i = 0; i < squareLogoGlobalHere.length; i++) {
+			squareLogoGlobalHere[i].style.height = squareLogoGlobalSize + 'px';
+			squareLogoGlobalHere[i].style.width = squareLogoGlobalSize + 'px';
+		}
 
 	}
 
@@ -3528,7 +3631,9 @@
 
 	}
 
-	//
+
+
+
 
 </script>
 

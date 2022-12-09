@@ -1074,5 +1074,12 @@ pre code {
     background: #f0f0f0;
 }
 
+input[type="checkbox"] {
+    display: block !important;
+    height: 20px !important;
+    width: 20px !important;
+    margin: 3px !important;
+}
+
 
 
