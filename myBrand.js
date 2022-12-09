@@ -2308,3 +2308,4 @@ function clearOffer2Image () {
 		confirm.close();
 	}
 }
+

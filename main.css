@@ -274,19 +274,16 @@ img {
     border-radius: 0;
     background: #f0f0f0;
 }
-
 .cleanCursorInput:hover {
     background: #f0f0f0;
     transition: .2s ease-in-out;
     scale: 1;
 }
-
 .cleanCursorInput:focus {
     background: #f0f0f0;
     transition: .2s ease-in-out;
     scale: 1;
 }
-
 .cleanCursorInputTextarea {
     font-weight: bold;
     overflow: visible;
