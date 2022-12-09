@@ -200,7 +200,7 @@ function downloadContent() {
 }
 
 // Text Sentiment Analysis API (unlimited free calls)
-function eventTitleSentimentAnalysis() {
+function sentimentAnalysis() {
 
 	// Get the text
 	let text = document.getElementById("inputEventTitle").value;
@@ -239,65 +239,6 @@ function eventTitleSentimentAnalysis() {
 			document.getElementById("titleSentimentAnalysis").style.display = "none";
 		}
 	})
-	.catch(err => console.error(err));
-}
-function eventDescriptionSentimentAnalysis() {
-
-	// Get the text
-	let text = document.getElementById("inputEventDescription").value;
-
-	// Set the API key
-	const options = {
-		method: 'POST',
-		headers: {
-			'content-type': 'application/json',
-			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-			'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
-		},
-		body: '{"language":"english","text":"' + text + '"}'
-	};
-
-	fetch('https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1', options)
-	.then(response => response.json())
-	.then(data => {
-
-		if (text.length > 1) {
-			document.getElementById("descriptionSentimentAnalysis").innerText = data.sentiment;
-			document.getElementById("descriptionSentimentAnalysis").style.display = "inline";
-
-			if (data.sentiment == "positive") {
-				document.getElementById("descriptionSentimentAnalysis").style.backgroundColor = "darkgreen";
-				document.getElementById("descriptionSentimentAnalysis").style.color = "white";
-			} else if (data.sentiment == "negative") {
-				document.getElementById("descriptionSentimentAnalysis").style.backgroundColor = "darkred"
-				document.getElementById("descriptionSentimentAnalysis").style.color = "white";
-			} else if (data.sentiment == "neutral") {
-				document.getElementById("descriptionSentimentAnalysis").style.backgroundColor = "darkblue"
-				document.getElementById("descriptionSentimentAnalysis").style.color = "white";
-			}
-		}
-		else {
-			document.getElementById("descriptionSentimentAnalysis").style.display = "none";
-		}
-	})
-	.catch(err => console.error(err));
-}
-
-// Text Entity Analysis API (unlimited free calls)
-function finalTextEntityAnalysis() {
-	let text = document.getElementById("inputEventDescription");
-	const options = {
-		method: 'POST',
-		headers: {
-			'content-type': 'application/json',
-			'X-RapidAPI-Key': '0759e0a5f5msh13ea66780939408p189da2jsne987576d688f',
-			'X-RapidAPI-Host': 'text-analysis12.p.rapidapi.com'
-		},
-		body: '{"language":"english","text":"' + text + '"}'
-	};
-	fetch('https://text-analysis12.p.rapidapi.com/ner/api/v1.1', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
 	.catch(err => console.error(err));
 }
 
