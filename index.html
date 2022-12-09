@@ -71,32 +71,10 @@
 
 	</script>
 
-
 	<!-- Rapid API Links Shortener -->
 	<script>
 
-		// Rapid API - URL Links Shortener
-		function linkGlobalShorten() {
 
-			let url = document.getElementById("linkGlobal").value;
-			let domain = "my.brandwield.com";
-
-			const options = {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					apikey: '65338792cfa94d94ac9a01788bdefc3d'
-				}
-			};
-
-			fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
-			.then(response => response.json())
-			.then(response =>
-				document.getElementById("genericPostLink").value = response.shortUrl
-			)
-			.catch(error => console.log(error));
-
-		}
 
 		// Generate QR Code
 		function linkGlobalQR() {
@@ -1583,7 +1561,7 @@
 							<input id="squareLogoGlobalTopRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopRight();">
 							<input id="squareLogoGlobalBottomRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomRight();" checked>
 						</div>
-						<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" oninput="squareLogoGlobalSizeUpdate();">
+						<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" style="width: 50px;" oninput="squareLogoGlobalSizeUpdate();">
 
 						<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 5px 0 5px;" onclick="document.getElementById('squareLogoGlobal').value = null;"/>
 						<span id="squareLogoGlobalSpan" style="display: flex; align-items: center; border: 2px solid #26a926; border-radius: 50px; padding: 0 5px 0 5px; margin: 0 8px 0 8px;">
@@ -2272,82 +2250,6 @@
 	</div>
 </div>
 
-<!-- Brand Popup-->
-<script>
-
-	function showBrandPopup() {
-
-		// clear the search bar value & any recommendations
-		clearBrandSearch();
-		clearBrandRecommendations();
-
-		// show the #popup div and set its position to the mouse position
-		document.getElementById('brandPopup').style.display = 'block';
-		document.getElementById('brandPopup').style.top = event.clientY + 'px';
-		document.getElementById('brandPopup').style.left = event.clientX + 'px';
-
-		// set the focus to the search bar
-		document.getElementById('brandSearch').focus();
-
-		// based on the field usage, populate assign the appropriate list to the search bar
-		document.getElementById('brandSearch').setAttribute('list', 'brandy'); //  for now, placeholder is 'brandColors'
-
-	}
-
-	function closeBrandPopup() {
-		document.getElementById('brandPopup').style.display = 'none';
-	}
-
-	function updateBrandSearch() {
-
-		// get the value of the search bar
-		const brandSearchValue = document.getElementById('brandSearch').value;
-
-		// for each option in the 'list' of the input, that the search matches, append it to the #brandRecommendations div
-		if (brandSearchValue.length > 0) {
-
-			clearBrandRecommendations();
-
-			for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
-
-				// in the search value matches the value OR the label OR the innerText of the option,
-				if (document.getElementById('brandSearch').list.options[i].value.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
-					document.getElementById('brandSearch').list.options[i].label.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
-					document.getElementById('brandSearch').list.options[i].innerText.toLowerCase().includes(brandSearchValue.toLowerCase())
-
-				)  {
-					// for each search result, show a div with the label and value of the option
-					document.getElementById('brandRecommendations').innerHTML +=
-						'<div class="brandRecommendation" onclick="brandSearchValue = this.innerHTML">' +
-							'<span class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</span>' +
-							'&nbsp;<span class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</span>' +
-						'</div>';
-				}
-			}
-		} else {
-
-			clearBrandRecommendations();
-
-		}
-
-		// value of the search bar should be used as placer or a preview value for where THAT variable will populate in the final assets??
-
-	}
-
-	function clearBrandSearch() {
-		// clear the search bar value
-		document.getElementById("brandSearch").value = "";
-
-		// value of the search bar should populate as the value for where THAT variable will populate in the final assets??
-
-	}
-	function clearBrandRecommendations() {
-		// clear the #brandRecommendations div
-		document.getElementById('brandRecommendations').innerHTML = '';
-	}
-	function resetBrandLists() {}
-
-</script>
 
 <!-- Content Type Selection -->
 <script>
@@ -3581,6 +3483,98 @@
 		document.getElementById("squareLogoGlobal").value = "";
 
 	}
+	// Rapid API - URL Links Shortener
+	function linkGlobalShorten() {
+
+		let url = document.getElementById("linkGlobal").value;
+		let domain = "my.brandwield.com";
+
+		const options = {
+			method: 'GET',
+			headers: {
+				accept: 'application/json',
+				apikey: '65338792cfa94d94ac9a01788bdefc3d'
+			}
+		};
+
+		fetch('https://api.rebrandly.com/v1/links/new?destination=' + url + '&domain[fullName]=' + domain, options)
+		.then(response => response.json())
+		.then(response =>
+			document.getElementById("linkGlobal").value = response.shortUrl
+		)
+		.catch(error => console.log(error));
+
+	}
+
+	// Brand popup
+	function showBrandPopup() {
+
+		// clear the search bar value & any recommendations
+		clearBrandSearch();
+		clearBrandRecommendations();
+
+		// show the #popup div and set its position to the mouse position
+		document.getElementById('brandPopup').style.display = 'block';
+		document.getElementById('brandPopup').style.top = event.clientY + 'px';
+		document.getElementById('brandPopup').style.left = event.clientX + 'px';
+
+		// set the focus to the search bar
+		document.getElementById('brandSearch').focus();
+
+		// based on the field usage, populate assign the appropriate list to the search bar
+		document.getElementById('brandSearch').setAttribute('list', 'brandy'); //  for now, placeholder is 'brandColors'
+
+	}
+	function closeBrandPopup() {
+		document.getElementById('brandPopup').style.display = 'none';
+	}
+	function updateBrandSearch() {
+
+		// get the value of the search bar
+		const brandSearchValue = document.getElementById('brandSearch').value;
+
+		// for each option in the 'list' of the input, that the search matches, append it to the #brandRecommendations div
+		if (brandSearchValue.length > 0) {
+
+			clearBrandRecommendations();
+
+			for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+
+				// in the search value matches the value OR the label OR the innerText of the option,
+				if (document.getElementById('brandSearch').list.options[i].value.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
+					document.getElementById('brandSearch').list.options[i].label.toLowerCase().includes(brandSearchValue.toLowerCase()) ||
+					document.getElementById('brandSearch').list.options[i].innerText.toLowerCase().includes(brandSearchValue.toLowerCase())
+
+				)  {
+					// for each search result, show a div with the label and value of the option
+					document.getElementById('brandRecommendations').innerHTML +=
+						'<div class="brandRecommendation" onclick="brandSearchValue = this.innerHTML">' +
+						'<span class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</span>' +
+						'&nbsp;<span class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</span>' +
+						'</div>';
+				}
+			}
+		} else {
+
+			clearBrandRecommendations();
+
+		}
+
+		// value of the search bar should be used as placer or a preview value for where THAT variable will populate in the final assets??
+
+	}
+	function clearBrandSearch() {
+		// clear the search bar value
+		document.getElementById("brandSearch").value = "";
+
+		// value of the search bar should populate as the value for where THAT variable will populate in the final assets??
+
+	}
+	function clearBrandRecommendations() {
+		// clear the #brandRecommendations div
+		document.getElementById('brandRecommendations').innerHTML = '';
+	}
+	function resetBrandLists() {}
 
 </script>
 
