@@ -31,8 +31,8 @@
 
 }
 
-/* if the screen width is smaller than 1550, hide everything */
-@media screen and (max-width: 1550px) { body { display: none; } }
+/* if the screen width is smaller than 1425, hide everything */
+@media screen and (max-width: 1425px) { body { display: none; } }
 
 /* Everything */
 * {
