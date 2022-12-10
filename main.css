@@ -31,8 +31,8 @@
 
 }
 
-/* if the screen width is smaller than 1300, hide everything */
-@media screen and (max-width: 1300px) { body { display: none; } }
+/* if the screen width is smaller than 1150, hide everything */
+@media screen and (max-width: 1150px) { body { display: none; } }
 
 /* Everything */
 * {
@@ -848,16 +848,6 @@ a.link {
      padding: 20px 20px 20px 20px;
  }
 
-div[id*="PostPreview"] {}
-#facebookPostPreview {}
-#linkedinPostPreview {}
-#twitterPostPreview {}
-#emailPostPreview {}
-#redditPostPreview {}
-#tumblrPostPreview {}
-#telegramPostPreview {}
-#whatsappPostPreview {}
-
 .shareButton {
     padding: 12px 17px 12px 17px;
     font-weight: bolder;
@@ -1124,4 +1114,9 @@ input[type="checkbox"] {
     padding-left: 0 !important;
     margin-left: 0 !important;
 }
+.noRightPaddingOrMargin {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
+
 
