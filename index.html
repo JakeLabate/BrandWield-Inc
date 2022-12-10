@@ -2437,9 +2437,8 @@
 		getFromBrand[i].src = squareLogo;
 		getFromBrand[i].style.borderRadius = "50%";
 		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
-		if (squareLogo == null || squareLogo == "") {
+		if (squareLogo == null || squareLogo == "" || squareLogo == "undefined" || squareLogo == 'null') {
 			getFromBrand.src = 'media/otherIcons/link.svg';
-		} else {
 		}
 	}
 
