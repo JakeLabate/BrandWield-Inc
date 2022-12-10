@@ -2428,12 +2428,16 @@
 	}
 
 	// load 'squareLogo' image as 'Get from brand' image in 'new content' (circle + shadow)
+	// set backup as link icon
 	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
+	let squareLogo = localStorage.getItem('squareLogo');
 	for (let i = 0; i < getFromBrand.length; i++) {
-		getFromBrand[i].src = localStorage.getItem('squareLogo');
+		getFromBrand[i].src = squareLogo;
 		getFromBrand[i].style.borderRadius = "50%";
 		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
-	}
+		if (squareLogo == null || squareLogo == "") {
+			getFromBrand.src = 'media/otherIcons/link.svg';
+		}
 
 	// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
 	document.addEventListener('keydown', function(event) {
