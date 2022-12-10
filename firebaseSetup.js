@@ -18,14 +18,16 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+console.log(app);
 const db = getDatabase();
+console.log(db);
 
 // Get Brand Variables
 const dbRef = ref(getDatabase());
 const brand = 'BrandWield';
 get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.exists()) {
-		if (snapshot.val().legalBusinessName != null || snapshot.val().legalBusinessName != '') {
+		if (snapshot.val().legalBusinessName !== null || snapshot.val().legalBusinessName !== '') {
 			console.log('Brand Returned: ' + snapshot.val().legalBusinessName);
 		} else {
 			console.log('Brand Returned!');
@@ -1068,7 +1070,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		loadPrimaryContactWebsite();
 	}
 
-	// Load Everything
+	// Load User Brand
 	function loadUserBrand () {
 		loadSocialMedia ();
 		loadLogos ();

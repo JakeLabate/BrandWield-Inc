@@ -88,11 +88,6 @@
 				<label for="primaryContactPhone">Phone</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company phone number is the number that will be displayed on your website. This number will be used for all calls to your company.')">info</span>
 				<input id="primaryContactPhone" title="Primary Contact Phone" type="tel" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-				<select id="primaryContactPhoneFormat">
-					<option value="xxx-xxx-xxxx" title="(No global code, no parenthesis) - Best for a clean look and NOT doing international business">xxx-xxx-xxxx</option>
-					<option value="(xxx)-xxx-xxxx" title="(No global code, parenthesis) - Best to clarify your area code and NOT doing international business">(xxx)-xxx-xxxx</option>
-					<option value="x-xxx-xxx-xxxx" title="(Global code, no parenthesis) - Best for doing international business">x-xxx-xxx-xxxx</option>
-				</select>
 				<span id="primaryContactPhoneUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactPhone();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactPhoneLock" class="material-symbols-outlined" onclick="lockPrimaryContactPhone();">lock</span>
 				<button id="clearPrimaryContactPhone" onclick="clearPrimaryContactPhone();">Clear</button>
@@ -104,10 +99,6 @@
 				<label for="primaryContactEmail">Email</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company email address is the email address that will be displayed on your website. This email address will be used for all emails to your company.')">info</span>
 				<input id="primaryContactEmail" type="email" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-				<select id="primaryContactEmailFormat">
-					<option value="jake@brandwield.com" title="(All lowercase) - Best for reducing errors">jake@brandwield.com</option>
-					<option value="jake@BrandWield.com" title="(Camel-case) - Best for reader legibility">jake@BrandWield.com</option>
-				</select>
 				<span id="primaryContactEmailUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactEmail();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactEmailLock" class="material-symbols-outlined" onclick="lockPrimaryContactEmail();">lock</span>
 				<button id="clearPrimaryContactEmail" onclick="clearPrimaryContactEmail();">Clear</button>
@@ -119,13 +110,6 @@
 				<label for="primaryContactWebsite">Website</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company website is the website that will be displayed on your website. This website will be used for all links to your company.')">info</span>
 				<input id="primaryContactWebsite" type="url" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
-				<select id="primaryContactWebsiteFormat">
-					<option value="https://www.website.com" title="(https, subdomain) - Use only if you are sure your site has an SSL certificate AND you have a subdomain">https://www.website.com</option>
-					<option value="https://website.com" title="(https, no subdomain) - Use only if you are sure your site has an SSL certificate AND you have no subdomain">https://website.com</option>
-					<option value="http://www.website.com" title="(http, subdomain) - Use only if your site has no SSL certificate AND you have a subdomain">http://www.website.com</option>
-					<option value="http://website.com" title="(http, no subdomain) - Use only if your site has no SSL certificate AND you have no subdomain">http://website.com</option>
-					<option value="website.com" title="(No protocol, no subdomain) - Best for a clean, memorable look">website.com</option>
-				</select>
 				<span id="primaryContactWebsiteUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactWebsite();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactWebsiteLock" class="material-symbols-outlined" onclick="lockPrimaryContactWebsite();">lock</span>
 				<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite();">Clear</button>
@@ -1156,11 +1140,11 @@
 								<table>
 									<tbody>
 									<tr>
-										<td style="vertical-align: middle; width: 428px;">
-											<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';">&nbsp;</p>
-											<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><em><strong>County Electric Construction Inc.</strong></em></p>
-											<p style="margin: 0; font-size: 14px; color: #3176b5; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';"><span style="color: #7b7d9d; font-style: italic;"><strong>102 Central Avenue, Bridgeport, CT 06607</strong></span></p>
-											<p style="color: #7b7d9d; margin: 0; font-size: 14px; line-height: 18px; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif'; font-style: italic;"><a style="color: #3176b5;" title="Call County Electric" href="tel:203-367-7500" target="_blank" rel="noopener"><strong>203-367-7500</strong></a><br /><a style="color: #3176b5 !important; font-weight: bold; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';" title="Visit County Electric Website" href="https://www.county-electric.com" target="_blank">www.county-electric.com</a></p>
+										<td style="vertical-align: middle; width: 428px; font-family: Montserrat,monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';">
+											<p style="margin: 0; font-size: 14px; color: #3176b5;">&nbsp</p>
+											<p style="margin: 0; font-size: 14px; color: #3176b5;"><em><strong>County Electric Construction Inc.</strong></em></p>
+											<p style="margin: 0; font-size: 14px; color: #3176b5;"><span style="color: #7b7d9d; font-style: italic;"><strong>102 Central Avenue, Bridgeport, CT 06607</strong></span></p>
+											<p style="margin: 0; font-size: 14px; color: #7b7d9d; line-height: 18px; font-style: italic;"><a style="color: #3176b5;" title="Call County Electric" href="tel:203-367-7500" target="_blank" rel="noopener"><strong>203-367-7500</strong></a><br /><a style="color: #3176b5 !important; font-weight: bold; font-family: Montserrat,Monospace,'Helvetica Neue',Helvetica,Arial,'sans-serif';" title="Visit County Electric Website" href="https://www.county-electric.com" target="_blank">www.county-electric.com</a></p>
 										</td>
 									</tr>
 									</tbody>
@@ -1508,7 +1492,7 @@
 					<span class="newContentVar">
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-								<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 60px; padding-right: 73px !important; height: 40px; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
+								<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
 								<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewAuthorHeadshot();"/>
 							</span>
 							<span class="flex-justify-content-end">
@@ -1599,9 +1583,9 @@
 					<span class="newContentVar">
 						<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
+								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img alt="" src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; padding-left: 0 !important;" oninput="primaryColorGlobalUpdate();" />
+								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important;" oninput="primaryColorGlobalUpdate();" />
 								<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearPrimaryColorGlobal();"/>
 							</span>
@@ -1615,9 +1599,9 @@
 					<span class="newContentVar">
 						<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
+								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img alt="" src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; padding-left: 0 !important;" oninput="fontColorGlobalUpdate();" />
+								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important;" oninput="fontColorGlobalUpdate();" />
 								<img id="fontColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="fontColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearFontColorGlobal();"/>
 							</span>
@@ -1634,14 +1618,14 @@
 								<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSquareLogoGlobal();"/>
 							</span>
 							<span class="flex-justify-content-end">
-								<div>
+								<span>
 									<input id="squareLogoGlobalTopLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopLeft();">
 									<input id="squareLogoGlobalBottomLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomLeft();">
-								</div>
-								<div>
+								</span>
+								<span>
 									<input id="squareLogoGlobalTopRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopRight();">
 									<input id="squareLogoGlobalBottomRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomRight();" checked>
-								</div>
+								</span>
 								<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" style="width: 50px;" oninput="squareLogoGlobalSizeUpdate();">
 							</span>
 						</span>
@@ -1685,7 +1669,6 @@
 						<!-- Global End -->
 						<text class="callToActionGlobalHere"></text>
 						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
-
 					</div>
 					<div id="finalImageVertical" class="primaryColorGlobalHere">
 						<!-- Global Start -->
@@ -1783,33 +1766,27 @@
 			<!-- TEXT -->
 			<div>
 				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-
 					<!-- Global Start -->
 					<text class="hookGlobalHere"></text>
 					<text class="hookResolutionGlobalHere"></text>
-
 					<!-- Generic Post -->
 					<text class="genericPostBodyHere"></text>
-
 					<!-- Company Update -->
 					<text class="companyUpdateHeadlineHere"></text>
 					<text class="companyUpdateDateHere"></text>
 					<text class="companyUpdateBodyHere"></text>
-
 					<!-- Sale/Promotion -->
 					<text class="salePromotionTitleHere"></text>
 					<text class="salePromotionProductOrServiceHere"></text>
 					<text class="salePromotionStartDateHere"></text>
 					<text class="salePromotionEndDateHere"></text>
 					<text class="salePromotionBodyHere"></text>
-
 					<!-- Event Promotion-->
 					<text class="eventPromotionTitleHere"></text>
 					<text class="eventPromotionStartDateHere"></text>
 					<text class="eventPromotionEndDateHere"></text>
 					<text class="eventPromotionLocationHere"></text>
 					<text class="eventPromotionBodyHere"></text>
-
 					<!-- Testimonial / Review -->
 					<text class="testimonialReviewAuthorNameHere"></text>
 					<text class="testimonialReviewAuthorHeadshotHere"></text>
@@ -1817,37 +1794,29 @@
 					<text class="testimonialReviewAuthorCompanyHere"></text>
 					<text class="testimonialReviewAuthorDateHere"></text>
 					<text class="testimonialReviewBodyHere"></text>
-
 					<!-- Global End -->
 					<text class="callToActionGlobalHere"></text>
 					<text class="linkGlobalHere"></text>
-
 					<!-- Hashtags -->
 					<br>
 					<br>
 					<text id="hashtagsHere">
 						<text id="hookGlobalHashtagsHere"></text>
 						<text id="hookResolutionGlobalHashtagsHere"></text>
-
 						<text id="genericPostBodyHashtagsHere"></text>
-
 						<text id="companyUpdateHeadlineHashtagsHere"></text>
 						<text id="companyUpdateBodyHashtagsHere"></text>
-
 						<text id="salePromotionTitleHashtagsHere"></text>
 						<text id="salePromotionProductOrServiceHashtagsHere"></text>
 						<text id="salePromotionBodyHashtagsHere"></text>
-
 						<text id="eventPromotionTitleHashtagsHere"></text>
 						<text id="eventPromotionLocationHashtagsHere"></text>
 						<text id="eventPromotionBodyHashtagsHere"></text>
-
 						<text id="testimonialReviewAuthorNameHashtagsHere"></text>
 						<text id="testimonialReviewAuthorTitleHashtagsHere"></text>
 						<text id="testimonialReviewAuthorCompanyHashtagsHere"></text>
 						<text id="testimonialReviewBodyHashtagsHere"></text>
 					</text>
-
 				</p>
 				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
 				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
@@ -1858,7 +1827,7 @@
 			<div id="socialSendables" style="display: none;">
 				<script>
 					function openSocialTab(evt, cityName) {
-						var i, socialTabContent, tablinks;
+						let i, socialTabContent, tablinks;
 						socialTabContent = document.getElementsByClassName("socialTabContent");
 						for (i = 0; i < socialTabContent.length; i++) {
 							socialTabContent[i].style.display = "none";
@@ -1905,10 +1874,10 @@
 						<!-- Share Via LinkedIn -->
 						<div onclick="
 									// prepare & set linkedin post parameters
-									let url = document.getElementById('inputEventLink').value;
-									let title = document.getElementById('inputEventTitle').value; // not shown in shared link
-									let summary = document.getElementById('inputEventDescription').value; // link not working when added
-									document.getElementById('shareViaLinkedin').href = 'https://linkedin.com/shareArticle?url=' + url + '&title=' + title
+									let url = 'placeholder.value';
+									let title = 'placeholder.value'; // not shown in shared link
+									let summary = 'placeholder.value'; // link not working when added
+									document.getElementById('shareViaLinkedin').href = 'https://linkedin.com/shareArticle?url=' + url + '&title=' + title + '&summary=' + summary
 								">
 							Preview<br><br>
 							<div id="linkedinPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
@@ -2070,13 +2039,13 @@
 	<div id="settings" class="tabby">
 		<div id="accountIntegrations" style="padding: 20px;">
 			<h3>Integrations (just a dummy UI for now)</h3>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div><div class="integration" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div><div class="var" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 		</div>
 		<div id="accountNewContentSettings" style="padding: 20px;">
 
@@ -2157,15 +2126,6 @@
 				<option value="" selected>Colors</option>
 				<option value="red">Red</option>
 				<option value="blue">Blue</option>
-				<option value="green">Green</option>
-				<option value="yellow" >Yellow</option>
-				<option value="orange">Orange</option>
-				<option value="purple">Purple</option>
-				<option value="pink">Pink</option>
-				<option value="brown">Brown</option>
-				<option value="black">Black</option>
-				<option value="white">White</option>
-				<option value="gray">Gray</option>
 			</datalist>
 		</select>
 		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
@@ -2173,23 +2133,6 @@
 				<option value="" selected>Fonts</option>
 				<option value="Arial">Arial</option>
 				<option value="Times New Roman">Times New Roman</option>
-				<option value="Courier New">Courier New</option>
-				<option value="Verdana">Verdana</option>
-				<option value="Georgia">Georgia</option>
-				<option value="Impact">Impact</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
-				<option value="Trebuchet MS">Trebuchet MS</option>
-				<option value="Lucida Console">Lucida Console</option>
-				<option value="Palatino Linotype">Palatino Linotype</option>
-				<option value="Bookman Old Style">Bookman Old Style</option>
-				<option value="Garamond">Garamond</option>
-				<option value="Arial Black">Arial Black</option>
-				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-				<option value="MS Sans Serif">MS Sans Serif</option>
-				<option value="MS Serif">MS Serif</option>
-				<option value="Symbol">Symbol</option>
-				<option value="Webdings">Webdings</option>
-				<option value="Wingdings">Wingdings</option>
 			</datalist>
 		</select>
 		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
@@ -2197,47 +2140,12 @@
 				<option value="" selected>Logos</option>
 				<option value="Arial">Arial</option>
 				<option value="Times New Roman">Times New Roman</option>
-				<option value="Courier New">Courier New</option>
-				<option value="Verdana">Verdana</option>
-				<option value="Georgia">Georgia</option>
-				<option value="Impact">Impact</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
-				<option value="Trebuchet MS">Trebuchet MS</option>
-				<option value="Lucida Console">Lucida Console</option>
-				<option value="Palatino Linotype">Palatino Linotype</option>
-				<option value="Bookman Old Style">Bookman Old Style</option>
-				<option value="Garamond">Garamond</option>
-				<option value="Arial Black">Arial Black</option>
-				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-				<option value="MS Sans Serif">MS Sans Serif</option>
-				<option value="MS Serif">MS Serif</option>
-				<option value="Symbol">Symbol</option>
-				<option value="Webdings">Webdings</option>
-				<option value="Wingdings">Wingdings</option>
 			</datalist>
 		</select>
 		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
 			<datalist id="brandPeople">
 				<option value="" selected>People</option>
 				<option value="Arial">Arial</option>
-				<option value="Times New Roman">Times New Roman</option>
-				<option value="Courier New">Courier New</option>
-				<option value="Verdana">Verdana</option>
-				<option value="Georgia">Georgia</option>
-				<option value="Impact">Impact</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
-				<option value="Trebuchet MS">Trebuchet MS</option>
-				<option value="Lucida Console">Lucida Console</option>
-				<option value="Palatino Linotype">Palatino Linotype</option>
-				<option value="Bookman Old Style">Bookman Old Style</option>
-				<option value="Garamond">Garamond</option>
-				<option value="Arial Black">Arial Black</option>
-				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-				<option value="MS Sans Serif">MS Sans Serif</option>
-				<option value="MS Serif">MS Serif</option>
-				<option value="Symbol">Symbol</option>
-				<option value="Webdings">Webdings</option>
-				<option value="Wingdings">Wingdings</option>
 			</datalist>
 		</select>
 		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
@@ -2245,23 +2153,6 @@
 				<option value="" selected>Offers</option>
 				<option value="Arial">Arial</option>
 				<option value="Times New Roman">Times New Roman</option>
-				<option value="Courier New">Courier New</option>
-				<option value="Verdana">Verdana</option>
-				<option value="Georgia">Georgia</option>
-				<option value="Impact">Impact</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
-				<option value="Trebuchet MS">Trebuchet MS</option>
-				<option value="Lucida Console">Lucida Console</option>
-				<option value="Palatino Linotype">Palatino Linotype</option>
-				<option value="Bookman Old Style">Bookman Old Style</option>
-				<option value="Garamond">Garamond</option>
-				<option value="Arial Black">Arial Black</option>
-				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-				<option value="MS Sans Serif">MS Sans Serif</option>
-				<option value="MS Serif">MS Serif</option>
-				<option value="Symbol">Symbol</option>
-				<option value="Webdings">Webdings</option>
-				<option value="Wingdings">Wingdings</option>
 			</datalist>
 		</select>
 		<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
@@ -2269,23 +2160,6 @@
 				<option value="" selected>Social Media</option>
 				<option value="Arial">Arial</option>
 				<option value="Times New Roman">Times New Roman</option>
-				<option value="Courier New">Courier New</option>
-				<option value="Verdana">Verdana</option>
-				<option value="Georgia">Georgia</option>
-				<option value="Impact">Impact</option>
-				<option value="Comic Sans MS">Comic Sans MS</option>
-				<option value="Trebuchet MS">Trebuchet MS</option>
-				<option value="Lucida Console">Lucida Console</option>
-				<option value="Palatino Linotype">Palatino Linotype</option>
-				<option value="Bookman Old Style">Bookman Old Style</option>
-				<option value="Garamond">Garamond</option>
-				<option value="Arial Black">Arial Black</option>
-				<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-				<option value="MS Sans Serif">MS Sans Serif</option>
-				<option value="MS Serif">MS Serif</option>
-				<option value="Symbol">Symbol</option>
-				<option value="Webdings">Webdings</option>
-				<option value="Wingdings">Wingdings</option>
 			</datalist>
 		</select>
 
@@ -2303,7 +2177,7 @@
 		getFromBrand[i].src = squareLogo;
 		getFromBrand[i].style.borderRadius = "50%";
 		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
-		if (squareLogo == null || squareLogo == "" || squareLogo == "undefined" || squareLogo == 'null') {
+		if (squareLogo === null || squareLogo === "" || squareLogo === "undefined" || squareLogo === undefined || squareLogo === 'null') {
 			getFromBrand.src = 'media/otherIcons/link.svg';
 		}
 	}
@@ -2395,11 +2269,12 @@
 		let url = document.getElementById("linkGlobal").value;
 		let domain = "my.brandwield.com";
 
+		const apikey = '65338792cfa94d94ac9a01788bdefc3d';
 		const options = {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
-				apikey: '65338792cfa94d94ac9a01788bdefc3d'
+				apikey: apikey
 			}
 		};
 
@@ -2452,23 +2327,28 @@
 		.then(response => response.json())
 		.then(data => {
 
-			if (text.length > 1) {
-				document.getElementById("titleSentimentAnalysis").innerText = data.sentiment;
-				document.getElementById("titleSentimentAnalysis").style.display = "inline";
 
-				if (data.sentiment == "positive") {
-					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkgreen";
-					document.getElementById("titleSentimentAnalysis").style.color = "white";
-				} else if (data.sentiment == "negative") {
-					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkred"
-					document.getElementById("titleSentimentAnalysis").style.color = "white";
-				} else if (data.sentiment == "neutral") {
-					document.getElementById("titleSentimentAnalysis").style.backgroundColor = "darkblue"
-					document.getElementById("titleSentimentAnalysis").style.color = "white";
+			if (text.length > 1) {
+
+				let textId = 'placeholder';
+				let tone = data.sentiment;
+
+				document.getElementById(textId).innerText = tone;
+				document.getElementById(textId).style.display = "inline";
+
+				if (tone === "positive") {
+					document.getElementById(textId).style.backgroundColor = "darkgreen";
+					document.getElementById(textId).style.color = "white";
+				} else if (tone === "negative") {
+					document.getElementById(textId).style.backgroundColor = "darkred"
+					document.getElementById(textId).style.color = "white";
+				} else if (tone === "neutral") {
+					document.getElementById(textId).style.backgroundColor = "darkblue"
+					document.getElementById(textId).style.color = "white";
 				}
 			}
 			else {
-				document.getElementById("titleSentimentAnalysis").style.display = "none";
+				document.getElementById(textId).style.display = "none";
 			}
 		})
 		.catch(err => console.error(err));
@@ -2507,7 +2387,7 @@
 		// API DOCS --> https://linguatools.org/language-apis/sentence-generating-api/
 		fetch('https://linguatools-sentence-generating.p.rapidapi.com/realise?' +
 
-			'object=' + object + // REQ - any noun or pronoun. If the object is a pronoun set objdet=- and use the base form of the pronoun (e.g. she instead of her). Possible base forms are: I, you, he, she, it, we, they. This will be automatically replaced by me, you, him, her, it, us, them. Set objnum=plural to get the plural forms (e. g. object=he and objdet=- and objnum=plural yields them).
+			'object=' + object + // REQ - any noun or pronoun. If the object is a pronoun set objdet=- and use the base form of the pronoun (e.g. she instead of her). Possible base forms are: I, you, he, she, it, we, they. This will be automatically replaced by me, you, him, her, it, us, them. Set objnum=plural to get the plural forms (ex. object=he and objdet=- and objnum=plural yields them).
 			'&subject=' + subject + // REQ - any noun or pronoun
 			'&verb=' + verb + // REQ - any verb, including phrase-verbs like 'start out'
 
@@ -2517,7 +2397,7 @@
 			'&objmod=' + objmod + // An adjective modifying the object
 
 			// Subject-related
-			'&subjnum=' + subjnum + // 'singular' or 'plural' - 'plural' is overridden of subjdet=a.
+			'&subjnum=' + subjnum + // 'singular' or 'plural' - 'plural' is overridden of subjdet=a
 			'&subjdet=' + subjdet + // Specifies the subject’s number (a, the, –). Default is „the“. Use subjdet=- to generate a subject without determiner.
 
 			// Verb-related
@@ -2541,7 +2421,7 @@
 		.catch(err => console.error(err));
 	}
 
-	// preview final images with small 'dummy' divs
+	// preview newContent finalImages with small 'dummy' divs
 	function previewFinalImageHorizontal() {
 		document.getElementById("finalImageHorizontal").style.display = "block"; // block
 		document.getElementById("finalImageSquare").style.display = "none";
@@ -2567,7 +2447,7 @@
 		document.getElementById("finalImageStory").style.display = "block"; //block
 	}
 
-	// Field Updates
+	// newContent field updates
 	function hookGlobalUpdate() {
 		// for all elements with the 'hookGlobalHere' class, set the innerHTML to the value of the 'hookGlobal' field
 		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
@@ -2577,7 +2457,6 @@
 
 		// update hashtags
 		hookGlobalHashtagsUpdate();
-		removeDuplicateHashtags();
 	}
 	function hookResolutionGlobalUpdate() {
 		// for all elements with the 'hookResolutionGlobalHere' class, set the innerHTML to the value of the 'hookResolutionGlobal' field
@@ -2588,7 +2467,6 @@
 
 		// update hashtags
 		hookResolutionGlobalHashtagsUpdate();
-		removeDuplicateHashtags();
 	}
 	function genericPostBodyUpdate() {
 		// for all elements with the 'genericPostBodyHere' class, set the innerHTML to the value of the 'genericPostBody' field
@@ -2599,7 +2477,6 @@
 
 		// update hashtags
 		genericPostHashtagsUpdate();
-		removeDuplicateHashtags();
 	}
 	function companyUpdateHeadlineUpdate() {
 		// for all elements with the 'companyUpdateHeadlineHere' class, set the innerHTML to the value of the 'companyUpdateHeadline' field
@@ -2936,11 +2813,11 @@
 		if (squareLogoGlobal.value != null && squareLogoGlobal.value.length > 0) {
 
 			const file = document.querySelector('#squareLogoGlobal').files[0];
-			var reader = new FileReader();
+			let reader = new FileReader();
 
 			reader.readAsDataURL(file);
 			reader.onload = function () {
-				var base64 = reader.result;
+				let base64 = reader.result;
 				localStorage.setItem('squareLogoGlobal', base64);
 
 				// for all items with the class of 'squareLogoGlobalHere', set the src to the base64
@@ -3017,7 +2894,7 @@
 
 	}
 
-	// Hashtags
+	// update newContent hashtags
 	function hookGlobalHashtagsUpdate() {
 
 		// set variable
@@ -3043,7 +2920,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("hookGlobalHashtagsHere").innerText = uniq.join(" ");
@@ -3073,7 +2950,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("hookResolutionGlobalHashtagsHere").innerText = uniq.join(" ");
@@ -3103,7 +2980,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("genericPostBodyHashtagsHere").innerText = uniq.join(" ");
@@ -3133,7 +3010,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("companyUpdateHeadlineHashtagsHere").innerText = uniq.join(" ");
@@ -3163,7 +3040,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("companyUpdateBodyHashtagsHere").innerText = uniq.join(" ");
@@ -3193,7 +3070,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("salePromotionTitleHashtagsHere").innerText = uniq.join(" ");
@@ -3223,7 +3100,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("salePromotionBodyHashtagsHere").innerText = uniq.join(" ");
@@ -3253,7 +3130,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("salePromotionProductOrServiceHashtagsHere").innerText = uniq.join(" ");
@@ -3283,7 +3160,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("eventPromotionTitleHashtagsHere").innerText = uniq.join(" ");
@@ -3313,7 +3190,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("eventPromotionLocationHashtagsHere").innerText = uniq.join(" ");
@@ -3343,7 +3220,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("eventPromotionBodyHashtagsHere").innerText = uniq.join(" ");
@@ -3373,7 +3250,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("testimonialReviewAuthorNameHashtagsHere").innerText = uniq.join(" ");
@@ -3403,7 +3280,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("testimonialReviewAuthorTitleHashtagsHere").innerText = uniq.join(" ");
@@ -3433,7 +3310,7 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("testimonialReviewAuthorCompanyHashtagsHere").innerText = uniq.join(" ");
@@ -3463,17 +3340,16 @@
 
 		// remove duplicate hashtags
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
-		uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
+		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
 		// place the hashtags in the hashtagsContainer
 		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = uniq.join(" ");
 	}
 
-	// font priority
+	// select font priority for newContent fields
 	function hookGlobalFontPriority1() {
 
 		// set variables
-		let text = document.getElementById('hookGlobal').value;
 		let fontSize = 24;
 		let fontWeight = 700;
 
@@ -3504,7 +3380,6 @@
 	function hookGlobalFontPriority3() {
 
 		// set variables
-		let text = document.getElementById('hookGlobal').value;
 		let fontSize = 12;
 		let fontWeight = 300;
 
@@ -3519,7 +3394,6 @@
 	function hookResolutionGlobalFontPriority1() {
 
 		// set variables
-		let text = document.getElementById('hookResolutionGlobal').value;
 		let fontSize = 24;
 		let fontWeight = 700;
 
@@ -3529,7 +3403,6 @@
 			element[i].style.fontSize = fontSize + 'px';
 			element[i].style.fontWeight = fontWeight;
 		}
-
 
 	}
 	function hookResolutionGlobalFontPriority2() {
@@ -3550,7 +3423,6 @@
 	function hookResolutionGlobalFontPriority3() {
 
 		// set variables
-		let text = document.getElementById('hookResolutionGlobal').value;
 		let fontSize = 12;
 		let fontWeight = 300;
 
@@ -3565,7 +3437,6 @@
 	function companyUpdateHeadlineFontPriority1() {
 
 		// set variables
-		let text = document.getElementById('companyUpdateHeadline').value;
 		let fontSize = 24;
 		let fontWeight = 700;
 
@@ -3581,7 +3452,6 @@
 	function companyUpdateHeadlineFontPriority2() {
 
 		// set variables
-		let text = document.getElementById('companyUpdateHeadline').value;
 		let fontSize = 18;
 		let fontWeight = 500;
 
@@ -3611,7 +3481,6 @@
 	function companyUpdateDateFontPriority1() {
 
 		// set variables
-		let text = document.getElementById('companyUpdateDate').value;
 		let fontSize = 24;
 		let fontWeight = 700;
 
@@ -3642,7 +3511,6 @@
 	function companyUpdateDateFontPriority3() {
 
 		// set variables
-		let text = document.getElementById('companyUpdateDate').value;
 		let fontSize = 12;
 		let fontWeight = 300;
 
@@ -3657,7 +3525,6 @@
 	function callToActionFontPriority1() {
 
 		// set variables
-		let text = document.getElementById('callToActionGlobal').value;
 		let fontSize = 24;
 		let fontWeight = 700;
 
@@ -3673,7 +3540,6 @@
 	function callToActionFontPriority2() {
 
 		// set variables
-		let text = document.getElementById('callToActionGlobal').value;
 		let fontSize = 18;
 		let fontWeight = 500;
 
@@ -3688,7 +3554,6 @@
 	function callToActionFontPriority3() {
 
 		// set variables
-		let text = document.getElementById('callToActionGlobal').value;
 		let fontSize = 12;
 		let fontWeight = 300;
 
@@ -3701,7 +3566,7 @@
 
 	}
 
-	// clear
+	// clear newContent fields
 	function clearAllFields (){
 		clearHookGlobal();
 		clearHookResolutionGlobal();
@@ -3950,7 +3815,7 @@
 		}
 	}
 
-	// fields in images?
+	// place/remove newContent fields in final images
 	function hookGlobalInImages() {
 
 		// if the checkbox is checked
@@ -3968,10 +3833,10 @@
 			let element = document.querySelectorAll('.hookGlobalHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -3995,10 +3860,10 @@
 			let element = document.querySelectorAll('.hookResolutionGlobalHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4022,10 +3887,10 @@
 			let element = document.querySelectorAll('.callToActionGlobalHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4049,10 +3914,10 @@
 			let element = document.querySelectorAll('.companyUpdateHeadlineHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4077,10 +3942,10 @@
 			let element = document.querySelectorAll('.companyUpdateDateHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4105,10 +3970,10 @@
 			let element = document.querySelectorAll('.salePromotionTitleHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4133,10 +3998,10 @@
 			let element = document.querySelectorAll('.salePromotionProductOrServiceHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4161,10 +4026,10 @@
 			let element = document.querySelectorAll('.salePromotionStartDateHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
@@ -4189,18 +4054,16 @@
 			let element = document.querySelectorAll('.salePromotionEndDateHere');
 			for(let i = 0; i < element.length; i ++) {
 				if (
-					element[i].parentElement.id == 'finalImageHorizontal' ||
-					element[i].parentElement.id == 'finalImageVertical' ||
-					element[i].parentElement.id == 'finalImageSquare' ||
-					element[i].parentElement.id == 'finalImageStory'
+					element[i].parentElement.id === 'finalImageHorizontal' ||
+					element[i].parentElement.id === 'finalImageVertical' ||
+					element[i].parentElement.id === 'finalImageSquare' ||
+					element[i].parentElement.id === 'finalImageStory'
 				) {
 					element[i].style.display = 'none';
 				}
 			}
 		}
-
 	}
-
 
 	// Brand popup
 	function showBrandPopup() {
@@ -4272,7 +4135,7 @@
 	}
 	function resetBrandLists() {}
 
-	// HTML2Canvas Screenshot & Blobs
+	// content downloads --> blobs, files etc.
 	function downloadFinalTextBlob() {
 
 		// Get the content
@@ -4293,13 +4156,6 @@
 		}
 			body {
 			padding: 20px 20px 20px 20px;
-		}
-			.dateAndTime {
-			color: #000000;
-			text-decoration: underline;
-		}
-			.legalBusinessName {
-			font-weight: bolder;
 		}
 		</style>
 
@@ -4352,9 +4208,9 @@
 
 		// Download image files
 		setTimeout(function() {
-			var canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
-			var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-			var a = document.createElement('a');
+			let canvas = Array.from(document.querySelectorAll('.screenshotHorizontal')).pop();
+			let imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+			let a = document.createElement('a');
 			a.href = imageData;
 			a.download = 'Horizontal Image';
 			a.click();
@@ -4378,9 +4234,9 @@
 
 		// Download image files
 		setTimeout(function() {
-			var canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
-			var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-			var a = document.createElement('a');
+			let canvas = Array.from(document.querySelectorAll('.screenshotVertical')).pop();
+			let imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+			let a = document.createElement('a');
 			a.href = imageData;
 			a.download = 'Vertical Image';
 			a.click();
@@ -4407,9 +4263,9 @@
 		// Download image files
 		setTimeout(function() {
 			// select ALL canvas elements, and for each one, get the dataURL and download it
-			var canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
-			var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-			var a = document.createElement('a');
+			let canvas = Array.from(document.querySelectorAll('.screenshotSquare')).pop();
+			let imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+			let a = document.createElement('a');
 			a.href = imageData;
 			a.download = 'Square Image';
 			a.click();
@@ -4434,9 +4290,9 @@
 		// Download image files
 		setTimeout(function() {
 			// select ALL canvas elements, and for each one, get the dataURL and download it
-			var canvas = Array.from(document.querySelectorAll('.screenshotStory')).pop();
-			var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream", 1.0);
-			var a = document.createElement('a');
+			let canvas = Array.from(document.querySelectorAll('.screenshotStory')).pop();
+			let imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+			let a = document.createElement('a');
 			a.href = imageData;
 			a.download = 'Story Image';
 			a.click();
@@ -4453,7 +4309,7 @@
 	}
 
 	// SETTINGS
-	// Formats
+	// default value formats
 	function changeDateFormat() {
 
 		// get date format
@@ -4472,7 +4328,7 @@
 		localStorage.setItem('timeFormat', timeFormat);
 
 	}
-	// Default Now-ContentValues
+	// default newContent field values
 	function changeLinkDefault() {
 
 		// get primary color default
@@ -4520,7 +4376,7 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="1">Apple</option>
 	<option value="1">Banana</option>
 	<option value="1">Cherry</option>
-	<option value="1">Durian</option>
+	<option value="1">Tomato</option>
 </datalist>
 
 </body>

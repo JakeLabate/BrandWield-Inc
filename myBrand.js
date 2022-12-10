@@ -1183,15 +1183,14 @@ function lockSquareLogo () {
 	}
 
 	// list all elements where the class is 'contentVar:Icon'
-	var elements = document.getElementsByClassName('contentVar:Icon');
+	let elements = document.getElementsByClassName('contentVar:Icon');
 	// list the value of the title attribute for each parent element of the elements found with the class 'contentVar:Icon', but show them all in 1 alert box
-	for(var i = 0; i < elements.length; i ++) {
+	for(let i = 0; i < elements.length; i ++) {
 		confirm('This change will effect the following ' + elements.length + ' content pieces: ' + elements[i].parentNode.getAttribute('title')); // This creates a new alert box for each item, we want 1 alert box to list ALL .parentNode item titles.
 	}
 }
 function clearSquareLogo () {
-	var confirm = alert('Are you sure you want to clear the square logo?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the square logo?') === true) {
 		document.getElementById('squareLogo').value = '';
 		document.getElementById('squareLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1232,8 +1231,7 @@ function lockFullLogo () {
 	if (document.getElementById('fullLogo').value == null) { document.getElementById('warningFullLogo').setAttribute('style', 'display: block;'); }
 }
 function clearFullLogo () {
-	var confirm = alert('Are you sure you want to clear the full logo?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the full logo?') === true) {
 		document.getElementById('fullLogo').value = '';
 		document.getElementById('fullLogo').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1281,8 +1279,7 @@ function lockPrimaryColor () {
 	if (document.getElementById('primaryColor').value.length < 1) { document.getElementById('warningPrimaryColor').setAttribute('style', 'display: block;'); }
 }
 function clearPrimaryColor () {
-	var confirm = alert('Are you sure you want to clear the primary color?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the primary color?') === true) {
 		document.getElementById('primaryColor').value = '';
 		document.getElementById('primaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1316,8 +1313,7 @@ function lockSecondaryColor () {
 	if (document.getElementById('secondaryColor').value.length < 1) { document.getElementById('warningSecondaryColor').setAttribute('style', 'display: block;'); }
 }
 function clearSecondaryColor () {
-	var confirm = alert('Are you sure you want to clear the secondary color?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the secondary color?') === true) {
 		document.getElementById('secondaryColor').value = '';
 		document.getElementById('secondaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1351,8 +1347,7 @@ function lockTertiaryColor () {
 	if (document.getElementById('tertiaryColor').value.length < 1) { document.getElementById('warningTertiaryColor').setAttribute('style', 'display: block;'); }
 }
 function clearTertiaryColor () {
-	var confirm = alert('Are you sure you want to clear the tertiary color?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the tertiary color?') === true) {
 		document.getElementById('tertiaryColor').value = '';
 		document.getElementById('tertiaryColor').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1382,8 +1377,7 @@ function lockPrimaryFont () {
 	if (document.getElementById('primaryFont').value.length < 1) { document.getElementById('warningPrimaryFont').setAttribute('style', 'display: block;'); }
 }
 function clearPrimaryFont () {
-	let confirm = alert('Are you sure you want to clear the primary font?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the primary font color?') === true) {
 		document.getElementById('primaryFont').value = '';
 		document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1410,8 +1404,7 @@ function lockSecondaryFont () {
 	if (document.getElementById('secondaryFont').value.length < 1) { document.getElementById('warningSecondaryFont').setAttribute('style', 'display: block;'); }
 }
 function clearSecondaryFont () {
-	let confirm = alert('Are you sure you want to clear the secondary font?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the secondary font?') === true) {
 		document.getElementById('secondaryFont').value = '';
 		document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1438,8 +1431,7 @@ function lockTertiaryFont () {
 	if (document.getElementById('tertiaryFont').value.length < 1) { document.getElementById('warningTertiaryFont').setAttribute('style', 'display: block;'); }
 }
 function clearTertiaryFont () {
-	let confirm = alert('Are you sure you want to clear the tertiary font?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the tertiary font?') === true) {
 		document.getElementById('tertiaryFont').value = '';
 		document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1469,8 +1461,7 @@ function lockPerson1Name () {
 	if (document.getElementById('person1Name').value.length < 1) { document.getElementById('warningPerson1Name').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1Name () {
-	let confirm = alert('Are you sure you want to clear the person 1 name?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 name color?') === true) {
 		document.getElementById('person1Name').value = '';
 		document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1497,8 +1488,7 @@ function lockPerson1Title () {
 	if (document.getElementById('person1Title').value.length < 1) { document.getElementById('warningPerson1Title').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1Title () {
-	let confirm = alert('Are you sure you want to clear the person 1 title?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 title ?') === true) {
 		document.getElementById('person1Title').value = '';
 		document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1527,8 +1517,7 @@ function lockPerson1Headshot () {
 	if (document.getElementById('person1Headshot').value == null) { document.getElementById('warningPerson1Image').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1Headshot () {
-	let confirm = alert('Are you sure you want to clear the person 1 headshot?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 headshot ?') === true) {
 		document.getElementById('person1Headshot').value = '';
 		document.getElementById('person1Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
 		setTimeout(function() {
@@ -1555,8 +1544,7 @@ function lockPerson1FacebookUrl () {
 	if (document.getElementById('person1FacebookUrl').value.length < 1) { document.getElementById('warningPerson1Facebook').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1FacebookUrl () {
-	let confirm = alert('Are you sure you want to clear the person 1 Facebook URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 Facebook URL ?') === true) {
 		document.getElementById('person1FacebookUrl').value = '';
 		document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1583,8 +1571,7 @@ function lockPerson1InstagramUrl () {
 	if (document.getElementById('person1InstagramUrl').value.length < 1) { document.getElementById('warningPerson1Instagram').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1InstagramUrl () {
-	let confirm = alert('Are you sure you want to clear the person 1 Instagram URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 Instagram URL ?') === true) {
 		document.getElementById('person1InstagramUrl').value = '';
 		document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1611,8 +1598,7 @@ function lockPerson1LinkedinUrl () {
 	if (document.getElementById('person1LinkedinUrl').value.length < 1) { document.getElementById('warningPerson1Linkedin').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1LinkedinUrl () {
-	let confirm = alert('Are you sure you want to clear the person 1 LinkedIn URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 LinkedIn URL ?') === true) {
 		document.getElementById('person1LinkedinUrl').value = '';
 		document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1639,8 +1625,7 @@ function lockPerson1TwitterUrl () {
 	if (document.getElementById('person1TwitterUrl').value.length < 1) { document.getElementById('warningPerson1Twitter').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1TwitterUrl () {
-	let confirm = alert('Are you sure you want to clear the person 1 Twitter URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 Twitter URL?') === true) {
 		document.getElementById('person1TwitterUrl').value = '';
 		document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1667,8 +1652,7 @@ function lockPerson1TiktokUrl () {
 	if (document.getElementById('person1TiktokUrl').value.length < 1) { document.getElementById('warningPerson1Tiktok').setAttribute('style', 'display: block;'); }
 }
 function clearPerson1TiktokUrl () {
-	let confirm = alert('Are you sure you want to clear the person 1 TikTok URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 TikTok URL?') === true) {
 		document.getElementById('person1TiktokUrl').value = '';
 		document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1697,8 +1681,7 @@ function lockPerson2Name () {
 	if (document.getElementById('person2Name').value.length < 1) { document.getElementById('warningPerson2Name').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2Name () {
-	let confirm = alert('Are you sure you want to clear the person 2 name?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 name?') === true) {
 		document.getElementById('person2Name').value = '';
 		document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1725,8 +1708,7 @@ function lockPerson2Title () {
 	if (document.getElementById('person2Title').value.length < 1) { document.getElementById('warningPerson2Title').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2Title () {
-	let confirm = alert('Are you sure you want to clear the person 2 title?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 title?') === true) {
 		document.getElementById('person2Title').value = '';
 		document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1755,8 +1737,7 @@ function lockPerson2Headshot () {
 	if (document.getElementById('person2Headshot').value == null) { document.getElementById('warningPerson2Image').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2Headshot () {
-	let confirm = alert('Are you sure you want to clear the person 2 headshot?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 headshot?') === true) {
 		document.getElementById('person2Headshot').value = '';
 		document.getElementById('person2Headshot').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
 		setTimeout(function() {
@@ -1783,8 +1764,7 @@ function lockPerson2FacebookUrl () {
 	if (document.getElementById('person2FacebookUrl').value.length < 1) { document.getElementById('warningPerson2Facebook').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2FacebookUrl () {
-	let confirm = alert('Are you sure you want to clear the person 2 Facebook URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 Facebook URL?') === true) {
 		document.getElementById('person2FacebookUrl').value = '';
 		document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1811,8 +1791,7 @@ function lockPerson2InstagramUrl () {
 	if (document.getElementById('person2InstagramUrl').value.length < 1) { document.getElementById('warningPerson2Instagram').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2InstagramUrl () {
-	let confirm = alert('Are you sure you want to clear the person 2 Instagram URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 Instagram URL?') === true) {
 		document.getElementById('person2InstagramUrl').value = '';
 		document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1839,8 +1818,7 @@ function lockPerson2LinkedinUrl () {
 	if (document.getElementById('person2LinkedinUrl').value.length < 1) { document.getElementById('warningPerson2Linkedin').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2LinkedinUrl () {
-	let confirm = alert('Are you sure you want to clear the person 2 LinkedIn URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 LinkedIn URL?') === true) {
 		document.getElementById('person2LinkedinUrl').value = '';
 		document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1867,8 +1845,7 @@ function lockPerson2TwitterUrl () {
 	if (document.getElementById('person2TwitterUrl').value.length < 1) { document.getElementById('warningPerson2Twitter').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2TwitterUrl () {
-	let confirm = alert('Are you sure you want to clear the person 2 Twitter URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 2 Twitter URL?') === true) {
 		document.getElementById('person2TwitterUrl').value = '';
 		document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1895,8 +1872,7 @@ function lockPerson2TiktokUrl () {
 	if (document.getElementById('person2TiktokUrl').value.length < 1) { document.getElementById('warningPerson2Tiktok').setAttribute('style', 'display: block;'); }
 }
 function clearPerson2TiktokUrl () {
-	let confirm = alert('Are you sure you want to clear the person 2 TikTok URL?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the person 1 TikTok URL?') === true) {
 		document.getElementById('person2TiktokUrl').value = '';
 		document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1926,8 +1902,7 @@ function lockOffer1Name () {
 	if (document.getElementById('offer1Name').value.length < 1) { document.getElementById('warningOffer1Name').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Name () {
-	let confirm = alert('Are you sure you want to clear the offer 1 name?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 name?') === true) {
 		document.getElementById('offer1Name').value = '';
 		document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1954,8 +1929,7 @@ function lockOffer1Price () {
 	if (document.getElementById('offer1Price').value.length < 1) { document.getElementById('warningOffer1Price').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Price () {
-	let confirm = alert('Are you sure you want to clear the offer 1 price?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 price?') === true) {
 		document.getElementById('offer1Price').value = '';
 		document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -1982,8 +1956,7 @@ function lockOffer1Feature () {
 	if (document.getElementById('offer1Feature').value.length < 1) { document.getElementById('warningOffer1Feature').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Feature () {
-	let confirm = alert('Are you sure you want to clear the offer 1 feature?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 feature?') === true) {
 		document.getElementById('offer1Feature').value = '';
 		document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2010,8 +1983,7 @@ function lockOffer1Benefit () {
 	if (document.getElementById('offer1Benefit').value.length < 1) { document.getElementById('warningOffer1Benefit').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Benefit () {
-	let confirm = alert('Are you sure you want to clear the offer 1 benefit?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 benefit?') === true) {
 		document.getElementById('offer1Benefit').value = '';
 		document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2038,8 +2010,7 @@ function lockOffer1Solution () {
 	if (document.getElementById('offer1Solution').value.length < 1) { document.getElementById('warningOffer1Solution').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Solution () {
-	let confirm = alert('Are you sure you want to clear the offer 1 solution?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 solution?') === true) {
 		document.getElementById('offer1Solution').value = '';
 		document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2066,8 +2037,7 @@ function lockOffer1Description () {
 	if (document.getElementById('offer1Description').value.length < 1) { document.getElementById('warningOffer1Description').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Description () {
-	let confirm = alert('Are you sure you want to clear the offer 1 description?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 description?') === true) {
 		document.getElementById('offer1Description').value = '';
 		document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2096,8 +2066,7 @@ function lockOffer1Image () {
 	if (document.getElementById('offer1Image').value == null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: block;'); }
 }
 function clearOffer1Image () {
-	let confirm = alert('Are you sure you want to clear the offer 1 image?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 1 image?') === true) {
 		document.getElementById('offer1Image').value = '';
 		document.getElementById('offer1Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
 		setTimeout(function() {
@@ -2126,8 +2095,7 @@ function lockOffer2Name () {
 	if (document.getElementById('offer2Name').value.length < 1) { document.getElementById('warningOffer2Name').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Name () {
-	let confirm = alert('Are you sure you want to clear the offer 2 name?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 name?') === true) {
 		document.getElementById('offer2Name').value = '';
 		document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2154,8 +2122,7 @@ function lockOffer2Price () {
 	if (document.getElementById('offer2Price').value.length < 1) { document.getElementById('warningOffer2Price').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Price () {
-	let confirm = alert('Are you sure you want to clear the offer 2 price?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 price?') === true) {
 		document.getElementById('offer2Price').value = '';
 		document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2182,8 +2149,7 @@ function lockOffer2Feature () {
 	if (document.getElementById('offer2Feature').value.length < 1) { document.getElementById('warningOffer2Feature').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Feature () {
-	let confirm = alert('Are you sure you want to clear the offer 2 feature?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 feature?') === true) {
 		document.getElementById('offer2Feature').value = '';
 		document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2210,8 +2176,7 @@ function lockOffer2Benefit () {
 	if (document.getElementById('offer2Benefit').value.length < 1) { document.getElementById('warningOffer2Benefit').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Benefit () {
-	let confirm = alert('Are you sure you want to clear the offer 2 benefit?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 benefit?') === true) {
 		document.getElementById('offer2Benefit').value = '';
 		document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2238,8 +2203,7 @@ function lockOffer2Solution () {
 	if (document.getElementById('offer2Solution').value.length < 1) { document.getElementById('warningOffer2Solution').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Solution () {
-	let confirm = alert('Are you sure you want to clear the offer 2 solution?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 solution?') === true) {
 		document.getElementById('offer2Solution').value = '';
 		document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2266,8 +2230,7 @@ function lockOffer2Description () {
 	if (document.getElementById('offer2Description').value.length < 1) { document.getElementById('warningOffer2Description').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Description () {
-	let confirm = alert('Are you sure you want to clear the offer 2 description?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 description?') === true) {
 		document.getElementById('offer2Description').value = '';
 		document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred;');
 		setTimeout(function() {
@@ -2296,8 +2259,7 @@ function lockOffer2Image () {
 	if (document.getElementById('offer2Image').value == null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: block;'); }
 }
 function clearOffer2Image () {
-	let confirm = alert('Are you sure you want to clear the offer 2 image?');
-	if (confirm) {
+	if (confirm('Are you sure you want to clear the offer 2 image?') === true) {
 		document.getElementById('offer2Image').value = '';
 		document.getElementById('offer2Image').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkred; display: block;');
 		setTimeout(function() {

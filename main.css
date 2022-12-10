@@ -365,8 +365,7 @@ img {
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
-    transition: .3s ease-in-out;
-    transition: color .0s;
+    transition: .3s ease-in-out, color .0s;
     word-wrap: break-word;
 }
 #finalImageHorizontal:hover {
@@ -377,7 +376,7 @@ img {
 }
 #finalImageHorizontalDummy {
     width: 60px;
-    height: 25.2px;
+    height: 25px;
     border: 1px solid #232323;
     margin: 3px;
     transition: all .2s ease-in-out;
@@ -402,8 +401,7 @@ img {
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
-    transition: .3s ease-in-out;
-    transition: color .0s;
+    transition: .3s ease-in-out, color .0s;
     word-wrap: break-word;
 }
 #finalImageSquare:hover {
@@ -439,8 +437,7 @@ img {
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
-    transition: .3s ease-in-out;
-    transition: color .0s;
+    transition: .3s ease-in-out, color .0s;
     word-wrap: break-word;
 
 }
@@ -477,8 +474,7 @@ img {
     box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
     -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
     -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
-    transition: .3s ease-in-out;
-    transition: color .0s;
+    transition: .3s ease-in-out, color .0s;
     word-wrap: break-word;
 }
 #finalImageStory:hover {
@@ -882,30 +878,10 @@ pre code {
     padding: 5px;
 }
 
-.integration {
-    display: flex;
-    padding: 10px 10px 10px 10px;
-    border-radius: 40px;
-    box-shadow: 5px 10px #888888;
-    -webkit-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-    -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-    margin: 8px auto;
-    font-weight: bold;
-    align-items: center;
-    font-size: 16px;
-    transition: .1s;
-    position: relative;
-    background-color: #fff;
-}
 #connectToInstagramButton, #connectToYoutubeButton {
     box-shadow: 5px 10px #888888;
     -webkit-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
     -moz-box-shadow: 0 0 15px -9px rgba(0,0,0,0.90);
-}
-
-
-.wrap-collabsible {
-    margin: 10px 20px 10px 20px;
 }
 
 .lbl-toggle {
@@ -1023,9 +999,9 @@ pre code {
 
     padding-bottom: 10px;
 
-    box-shadow: #5d5d5d 0px 0px 10px;
-    -webkit-box-shadow: #5d5d5d 0px 0px 10px;
-    -moz-box-shadow: #5d5d5d 0px 0px 10px;
+    box-shadow: #5d5d5d 0 0 10px;
+    -webkit-box-shadow: #5d5d5d 0 0 10px;
+    -moz-box-shadow: #5d5d5d 0 0 10px;
 
     z-index: 9999;
 }
@@ -1042,16 +1018,14 @@ pre code {
     transition: .1s ease-in-out;
     border-radius: 40px;
 
-    box-shadow: #5d5d5d 0px 0px 10px;
-    -webkit-box-shadow: #5d5d5d 0px 0px 10px;
-    -moz-box-shadow: #5d5d5d 0px 0px 10px;
+    box-shadow: #5d5d5d 0 0 10px;
+    -webkit-box-shadow: #5d5d5d 0 0 10px;
+    -moz-box-shadow: #5d5d5d 0 0 10px;
 }
-
 .brandRecommendationInnerText {
     font-weight: bold;
 
 }
-
 .brandRecommendationValue {
     font-weight: bold;
 
@@ -1062,7 +1036,6 @@ pre code {
     background-color: white;
     padding: 10px;
 }
-
 #brandList:hover {
 
 }
@@ -1119,4 +1092,82 @@ input[type="checkbox"] {
     margin-right: 0 !important;
 }
 
+#finalImageHorizontal > text.hookGlobalHere {}
+#finalImageHorizontal > text.hookResolutionGlobalHere {}
+#finalImageHorizontal > text.companyUpdateHeadlineHere {}
+#finalImageHorizontal > text.companyUpdateDateHere {}
+#finalImageHorizontal > text.salePromotionTitleHere {}
+#finalImageHorizontal > text.salePromotionProductOrServiceHere {}
+#finalImageHorizontal > text.salePromotionStartDateHere {}
+#finalImageHorizontal > text.salePromotionEndDateHere {}
+#finalImageHorizontal > text.eventPromotionTitleHere {}
+#finalImageHorizontal > text.eventPromotionStartDateHere {}
+#finalImageHorizontal > text.eventPromotionEndDateHere {}
+#finalImageHorizontal > text.eventPromotionLocationHere {}
+#finalImageHorizontal > text.testimonialReviewAuthorNameHere {}
+#finalImageHorizontal > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageHorizontal > text.testimonialReviewAuthorTitleHere {}
+#finalImageHorizontal > text.testimonialReviewAuthorCompanyHere {}
+#finalImageHorizontal > text.testimonialReviewAuthorDateHere {}
+#finalImageHorizontal > text.callToActionGlobalHere {}
+#finalImageHorizontal > img.squareLogoGlobalHere {}
 
+#finalImageSquare > text.hookGlobalHere {}
+#finalImageSquare > text.hookResolutionGlobalHere {}
+#finalImageSquare > text.companyUpdateHeadlineHere {}
+#finalImageSquare > text.companyUpdateDateHere {}
+#finalImageSquare > text.salePromotionTitleHere {}
+#finalImageSquare > text.salePromotionProductOrServiceHere {}
+#finalImageSquare > text.salePromotionStartDateHere {}
+#finalImageSquare > text.salePromotionEndDateHere {}
+#finalImageSquare > text.eventPromotionTitleHere {}
+#finalImageSquare > text.eventPromotionStartDateHere {}
+#finalImageSquare > text.eventPromotionEndDateHere {}
+#finalImageSquare > text.eventPromotionLocationHere {}
+#finalImageSquare > text.testimonialReviewAuthorNameHere {}
+#finalImageSquare > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageSquare > text.testimonialReviewAuthorTitleHere {}
+#finalImageSquare > text.testimonialReviewAuthorCompanyHere {}
+#finalImageSquare > text.testimonialReviewAuthorDateHere {}
+#finalImageSquare > text.callToActionGlobalHere {}
+#finalImageSquare > img.squareLogoGlobalHere {}
+
+#finalImageVertical > text.hookGlobalHere {}
+#finalImageVertical > text.hookResolutionGlobalHere {}
+#finalImageVertical > text.companyUpdateHeadlineHere {}
+#finalImageVertical > text.companyUpdateDateHere {}
+#finalImageVertical > text.salePromotionTitleHere {}
+#finalImageVertical > text.salePromotionProductOrServiceHere {}
+#finalImageVertical > text.salePromotionStartDateHere {}
+#finalImageVertical > text.salePromotionEndDateHere {}
+#finalImageVertical > text.eventPromotionTitleHere {}
+#finalImageVertical > text.eventPromotionStartDateHere {}
+#finalImageVertical > text.eventPromotionEndDateHere {}
+#finalImageVertical > text.eventPromotionLocationHere {}
+#finalImageVertical > text.testimonialReviewAuthorNameHere {}
+#finalImageVertical > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageVertical > text.testimonialReviewAuthorTitleHere {}
+#finalImageVertical > text.testimonialReviewAuthorCompanyHere {}
+#finalImageVertical > text.testimonialReviewAuthorDateHere {}
+#finalImageVertical > text.callToActionGlobalHere {}
+#finalImageVertical > img.squareLogoGlobalHere {}
+
+#finalImageStory > text.hookGlobalHere {}
+#finalImageStory > text.hookResolutionGlobalHere {}
+#finalImageStory > text.companyUpdateHeadlineHere {}
+#finalImageStory > text.companyUpdateDateHere {}
+#finalImageStory > text.salePromotionTitleHere {}
+#finalImageStory > text.salePromotionProductOrServiceHere {}
+#finalImageStory > text.salePromotionStartDateHere {}
+#finalImageStory > text.salePromotionEndDateHere {}
+#finalImageStory > text.eventPromotionTitleHere {}
+#finalImageStory > text.eventPromotionStartDateHere {}
+#finalImageStory > text.eventPromotionEndDateHere {}
+#finalImageStory > text.eventPromotionLocationHere {}
+#finalImageStory > text.testimonialReviewAuthorNameHere {}
+#finalImageStory > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageStory > text.testimonialReviewAuthorTitleHere {}
+#finalImageStory > text.testimonialReviewAuthorCompanyHere {}
+#finalImageStory > text.testimonialReviewAuthorDateHere {}
+#finalImageStory > text.callToActionGlobalHere {}
+#finalImageStory > img.squareLogoGlobalHere {}
