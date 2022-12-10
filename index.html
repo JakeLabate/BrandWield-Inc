@@ -1254,7 +1254,7 @@
 		<!-- Inputs -->
 		<div id="outputs" class="column65PercentWidth" style="max-height: 100vh; overflow: scroll; user-select: none;">
 
-			<span style="display: flex; align-items: center;">
+			<span class="flex-align-items-center">
 				<select id="contentTypeSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px !important; margin-left: 0;" onchange="valueSelectorUpdate();">
 							<option value="genericPostFields" selected>Generic Post</option>
 							<option value="companyUpdateFields">Company Update</option>
@@ -1272,12 +1272,12 @@
 
 					<!-- Hook -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="cleanCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookGlobalUpdate();" />
 							<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearHookGlobal();"/>
 						</span>
-						<span style="display: flex; flex-direction: row; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 							<button onclick="hookGlobalFontPriority1();">L</button>
 							<button onclick="hookGlobalFontPriority2();">M</button>
 							<button onclick="hookGlobalFontPriority3();">S</button>
@@ -1287,12 +1287,12 @@
 
 					<!-- Hook Resolution -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookResolutionGlobalUpdate();" />
 							<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearHookResolutionGlobal();"/>
 						</span>
-						<span style="display: flex; flex-direction: row; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 							<button onclick="hookResolutionGlobalFontPriority1();">L</button>
 							<button onclick="hookResolutionGlobalFontPriority2();">M</button>
 							<button onclick="hookResolutionGlobalFontPriority3();">S</button>
@@ -1307,7 +1307,7 @@
 
 					<!-- Body -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
+						<span class="flex-align-items-center">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="genericPostBodyUpdate();"></textarea>
 							<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearGenericPostBody();"/>
@@ -1322,12 +1322,12 @@
 
 					<!-- Headline -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="update headline" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="companyUpdateHeadlineUpdate();" />
 							<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearCompanyUpdateHeadline();"/>
 						</span>
-						<span style="display: flex; flex-direction: row; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 							<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
 							<button onclick="companyUpdateHeadlineFontPriority2();">M</button>
 							<button onclick="companyUpdateHeadlineFontPriority3();">S</button>
@@ -1337,12 +1337,12 @@
 
 					<!-- Date -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="companyUpdateDate" type="date" class="cleanCursorInput" placeholder="update date" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="companyUpdateDateUpdate();"/>
 							<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearCompanyUpdateDate();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<button onclick="companyUpdateDateFontPriority1();">L</button>
 								<button onclick="companyUpdateDateFontPriority2();">M</button>
 								<button onclick="companyUpdateDateFontPriority3();">S</button>
@@ -1352,12 +1352,12 @@
 
 					<!-- Body -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
+						<span class="flex-align-items-center">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of update" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="companyUpdateBodyUpdate();"></textarea>
 							<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearCompanyUpdateBody();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
@@ -1368,12 +1368,12 @@
 
 					<!-- Title -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="promotion name/headline" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="salePromotionTitleUpdate();" />
 							<img id="salePromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionTitle();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<input id="salePromotionTitleInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionTitleInImages();" checked>
 
 							</span>
@@ -1381,12 +1381,12 @@
 
 					<!-- Product or Service -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="product/service being promoted" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="salePromotionProductOrServiceUpdate();" />
 							<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionProductOrService();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<input id="salePromotionProductOrServiceInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionProductOrServiceInImages();" checked>
 
 							</span>
@@ -1394,36 +1394,36 @@
 
 					<!-- Start Date -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="sale start date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="salePromotionStartDateUpdate();"/>
 							<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionStartDate();"/>
 						</span>
-						<span style="display: flex; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 							<input id="salePromotionStartDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionStartDateInImages();" checked>
 						</span>
 					</span>
 
 					<!-- End Date -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="sale end date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="salePromotionEndDateUpdate();"/>
 							<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionEndDate();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<input id="salePromotionEndDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionEndDateInImages();" checked>
 							</span>
 						</span>
 
 					<!-- Body -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
+						<span class="flex-align-items-center">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="sale/promotion body" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="salePromotionBodyUpdate();"></textarea>
 							<img id="salePromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionBody();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
@@ -1434,57 +1434,57 @@
 
 					<!-- Title -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="event title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionTitleUpdate();" />
 							<img id="eventPromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearEventPromotionTitle();"/>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 					</span>
 
 					<!-- Start Date -->
 					<span class="newContentVar">
-							<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+							<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 								<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="start date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="eventPromotionStartDateUpdate();"/>
 								<img id="eventPromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearEventPromotionStartDate();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- End Date -->
 					<span class="newContentVar">
-							<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+							<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 								<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="end date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="eventPromotionEndDateUpdate();"/>
 								<img id="eventPromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearEventPromotionEndDate();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- Location -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/location.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/location.svg" height="20" width="20" /></span>
 							<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="50" placeholder="location ('Online', '123 Main St, etc)" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionLocationUpdate();" />
 							<img id="eventPromotionLocationGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 							<img id="eventPromotionLocationClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearEventPromotionLocation();" />
 						</span>
-						<span style="display: flex; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 						</span>
 						</span>
 
 					<!-- Body -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
+						<span class="flex-align-items-center">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="event body (description, etc)" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionBodyUpdate();"></textarea>
 							<img id="eventPromotionBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearEventPromotionBody();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
@@ -1495,67 +1495,67 @@
 
 					<!-- Author Name -->
 					<span class="newContentVar">
-							<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="author name" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewAuthorNameUpdate();" />
 								<img id="testimonialReviewAuthorNameClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewAuthorName();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- Author Headshot -->
 					<span class="newContentVar">
-							<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+							<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 60px; padding-right: 73px !important; height: 40px; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
 								<img id="testimonialReviewAuthorHeadshotClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewAuthorHeadshot();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- Author Title -->
 					<span class="newContentVar">
-							<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="author title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewAuthorTitleUpdate();" />
 								<img id="testimonialReviewAuthorTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewAuthorTitle();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- Author Company -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="author company" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="testimonialReviewAuthorCompanyUpdate();" />
 							<img id="testimonialReviewAuthorCompanyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewAuthorCompany();"/>
 						</span>
-						<span style="display: flex; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 						</span>
 					</span>
 
 					<!-- Date -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="testimonialReviewDate" type="date" class="cleanCursorInput" placeholder="date of review" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="testimonialReviewDateUpdate();"/>
 							<img id="testimonialReviewDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewDate();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- Body -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
+						<span class="flex-align-items-center">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of testimonial" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewBodyUpdate();"></textarea>
 							<img id="testimonialReviewBodyClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearTestimonialReviewBody();"/>
 						</span>
-						<span style="display: flex; justify-content: flex-end;">
+						<span class="flex-justify-content-end">
 						</span>
 					</span>
 
@@ -1567,13 +1567,13 @@
 					<!-- Call to Action -->
 					<span class="newContentVar">
 
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="callToActionGlobal" type="url" class="cleanCursorInput" placeholder="call to action" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="callToActionGlobalUpdate();" />
 							<img id="callToActionGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 							<img id="callToActionGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearCallToActionGlobal();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<button onclick="callToActionFontPriority1();">L</button>
 								<button onclick="callToActionFontPriority2();">M</button>
 								<button onclick="callToActionFontPriority3();">S</button>
@@ -1583,13 +1583,13 @@
 
 					<!-- Link -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+							<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
 							<input id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://www.example.com" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="linkGlobalUpdate();" />
 							<img id="linkGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 							<img id="linkGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearLinkGlobal();"/>
 						</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<img id="linkGlobalQR" alt="" src="media/otherIcons/qrCode.svg" style="height: 20px; width: 20px; margin: 0 10px 0 0;" onclick="linkGlobalQR();"/>
 								<img id="linkGlobalShorten" alt="" src="media/otherIcons/shortenLink.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="linkGlobalShorten();"/>
 							</span>
@@ -1597,15 +1597,15 @@
 
 					<!-- Primary Color -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; padding-left: 0 !important;" oninput="primaryColorGlobalUpdate();" />
 								<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearPrimaryColorGlobal();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
 								<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step=".1" oninput="primaryColorGlobalDirectionInvasion();">
 							</span>
@@ -1613,27 +1613,27 @@
 
 					<!-- Text Color -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; padding-left: 0 !important;" oninput="fontColorGlobalUpdate();" />
 								<img id="fontColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="fontColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearFontColorGlobal();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 							</span>
 						</span>
 
 					<!-- Logo -->
 					<span class="newContentVar">
-						<span style="display: flex; align-items: center;">
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+						<span class="flex-align-items-center">
+								<span class="clearCursorInputIcon"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo" onchange="squareLogoGlobalUpdate()" />
 								<img id="squareLogoGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="squareLogoGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSquareLogoGlobal();"/>
 							</span>
-							<span style="display: flex; justify-content: flex-end;">
+							<span class="flex-justify-content-end">
 								<div>
 									<input id="squareLogoGlobalTopLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopLeft();">
 									<input id="squareLogoGlobalBottomLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomLeft();">
@@ -2144,7 +2144,7 @@
 <!-- Brand Popup-->
 <div id="brandPopup">
 	<!-- Need to find a way to remove the default black list that is generated (i think by the browser)... using it would kinda suck as it does not match the rest of the UI -->
-	<span style="display: flex; align-items: center;">
+	<span class="flex-align-items-center">
 		<input id="brandSearch" class="cleanCursorInput" type="search" size="40" placeholder="search your brand..." onkeyup="updateBrandSearch();" />
 		<img alt="" src="media/otherIcons/clear.svg" height="25" width="25" style="margin-left: 6px;" onclick="closeBrandPopup();"/>
 	</span>

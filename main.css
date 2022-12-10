@@ -1098,3 +1098,22 @@ input[type="checkbox"] {
     width: 20px !important;
     margin: 3px !important;
 }
+
+.flex-align-items-center {
+    display: flex;
+    align-items: center;
+}
+.flex-justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.clearCursorInputIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
