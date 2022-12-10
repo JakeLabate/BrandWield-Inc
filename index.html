@@ -2801,7 +2801,14 @@
 
 			}
 		}
+
+		// set the color of the range slider for range inputs
+		document.querySelectorAll('input[type="range"]').forEach(function (thumb) {
+			thumb.style.backgroundColor = primaryColor.value;
+		});
+
 	}
+
 	function primaryColorGlobalDirectionUpdate() {
 
 		// set variables
