@@ -2513,13 +2513,11 @@
 		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
 		for(let i = 0; i < hookGlobalHere.length; i ++) {
 			hookGlobalHere[i].innerHTML = document.getElementById('hookGlobal').value;
-
-
-
 		}
 
 		// update hashtags
 		hookGlobalHashtagsUpdate();
+		removeDuplicateHashtags();
 	}
 	function hookResolutionGlobalUpdate() {
 		// for all elements with the 'hookResolutionGlobalHere' class, set the innerHTML to the value of the 'hookResolutionGlobal' field
@@ -2530,6 +2528,7 @@
 
 		// update hashtags
 		hookResolutionGlobalHashtagsUpdate();
+		removeDuplicateHashtags();
 	}
 	function genericPostBodyUpdate() {
 		// for all elements with the 'genericPostBodyHere' class, set the innerHTML to the value of the 'genericPostBody' field
@@ -2540,6 +2539,7 @@
 
 		// update hashtags
 		genericPostHashtagsUpdate();
+		removeDuplicateHashtags();
 	}
 	function companyUpdateHeadlineUpdate() {
 		// for all elements with the 'companyUpdateHeadlineHere' class, set the innerHTML to the value of the 'companyUpdateHeadline' field
@@ -4096,12 +4096,11 @@
 		// Create a new Blob (html)
 		const blob = new Blob([blobHtml], { type: "text/html" });
 
-
 		// Download the newly created Blob
 		const url = URL.createObjectURL(blob);
 		const a = document.createElement("a");
 		a.href = url;
-		a.download = "BrandWiled Content";
+		a.download = "Content Copywriting";
 		document.body.appendChild(a);
 		a.click();
 		document.body.removeChild(a);
