@@ -294,7 +294,7 @@ img {
     -moz-box-shadow: none;
     transition: .2s ease-in-out;
     outline: none;
-    padding: 20px 18px 20px 18px;
+    padding: 10px 18px 20px 18px;
     border: none;
     border-radius: 0;
     background: #f0f0f0;
