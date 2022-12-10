@@ -1108,12 +1108,20 @@ input[type="checkbox"] {
     justify-content: flex-end;
 }
 
-.clearCursorInputIcon {
+.cleanCursorInputIcon {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     background-color: #f0f0f0;
     padding: 10px;
+}
+.padding-bottom-103 {
+    padding-bottom: 103px;
+}
+
+.noLeftPaddingOrMargin {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
 
