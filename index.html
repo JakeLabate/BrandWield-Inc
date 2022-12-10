@@ -1252,7 +1252,7 @@
 	<div id="newContent" class="tabby">
 
 		<!-- Inputs -->
-		<div id="outputs" class="column2" style="max-height: 100vh; overflow: scroll; user-select: none;">
+		<div id="outputs" class="column65PercentWidth" style="max-height: 100vh; overflow: scroll; user-select: none;">
 
 			<span style="display: flex; align-items: center;">
 				<select id="contentTypeSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px !important; margin-left: 0;" onchange="valueSelectorUpdate();">
@@ -1271,7 +1271,7 @@
 				<div id="globalContentFieldsStart" style="display: block;">
 
 					<!-- Hook -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookGlobalUpdate();" />
@@ -1286,7 +1286,7 @@
 					</span>
 
 					<!-- Hook Resolution -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookResolutionGlobalUpdate();" />
@@ -1306,7 +1306,7 @@
 				<div id="genericPostFields" class="contentTypeFieldOption finalImage" style="display: block;">
 
 					<!-- Body -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="genericPostBodyUpdate();"></textarea>
@@ -1321,7 +1321,7 @@
 				<div id="companyUpdateFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Headline -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="update headline" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="companyUpdateHeadlineUpdate();" />
@@ -1331,11 +1331,12 @@
 							<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
 							<button onclick="companyUpdateHeadlineFontPriority2();">M</button>
 							<button onclick="companyUpdateHeadlineFontPriority3();">S</button>
+							<input id="companyUpdateHeadlineInImages" type="checkbox" height="50px" width="50px;" onchange="companyUpdateHeadlineInImages();" checked>
 						</span>
 					</span>
 
 					<!-- Date -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="companyUpdateDate" type="date" class="cleanCursorInput" placeholder="update date" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="companyUpdateDateUpdate();"/>
@@ -1345,11 +1346,12 @@
 								<button onclick="companyUpdateDateFontPriority1();">L</button>
 								<button onclick="companyUpdateDateFontPriority2();">M</button>
 								<button onclick="companyUpdateDateFontPriority3();">S</button>
+								<input id="companyUpdateDateInImages" type="checkbox" height="50px" width="50px;" onchange="companyUpdateDateInImages();" checked>
 							</span>
 						</span>
 
 					<!-- Body -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of update" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="companyUpdateBodyUpdate();"></textarea>
@@ -1365,51 +1367,57 @@
 				<div id="salePromotionFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Title -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="promotion name/headline" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="salePromotionTitleUpdate();" />
 							<img id="salePromotionTitleClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionTitle();"/>
 						</span>
 							<span style="display: flex; justify-content: flex-end;">
+								<input id="salePromotionTitleInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionTitleInImages();" checked>
+
 							</span>
 						</span>
 
 					<!-- Product or Service -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="product/service being promoted" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="salePromotionProductOrServiceUpdate();" />
 							<img id="salePromotionProductOrServiceClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionProductOrService();"/>
 						</span>
 							<span style="display: flex; justify-content: flex-end;">
+								<input id="salePromotionProductOrServiceInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionProductOrServiceInImages();" checked>
+
 							</span>
 						</span>
 
 					<!-- Start Date -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="sale start date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="salePromotionStartDateUpdate();"/>
 							<img id="salePromotionStartDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionStartDate();"/>
 						</span>
 						<span style="display: flex; justify-content: flex-end;">
+							<input id="salePromotionStartDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionStartDateInImages();" checked>
 						</span>
 					</span>
 
 					<!-- End Date -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="sale end date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="salePromotionEndDateUpdate();"/>
 							<img id="salePromotionEndDateClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearSalePromotionEndDate();"/>
 						</span>
 							<span style="display: flex; justify-content: flex-end;">
+								<input id="salePromotionEndDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionEndDateInImages();" checked>
 							</span>
 						</span>
 
 					<!-- Body -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="sale/promotion body" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="salePromotionBodyUpdate();"></textarea>
@@ -1425,7 +1433,7 @@
 				<div id="eventPromotionFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Title -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="event title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionTitleUpdate();" />
@@ -1436,7 +1444,7 @@
 					</span>
 
 					<!-- Start Date -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 							<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 								<input id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="start date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="eventPromotionStartDateUpdate();"/>
@@ -1447,7 +1455,7 @@
 						</span>
 
 					<!-- End Date -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 							<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 								<input id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="end date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="eventPromotionEndDateUpdate();"/>
@@ -1458,7 +1466,7 @@
 						</span>
 
 					<!-- Location -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/location.svg" height="20" width="20" /></span>
 							<input id="eventPromotionLocation" type="text" class="cleanCursorInput" size="50" placeholder="location ('Online', '123 Main St, etc)" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionLocationUpdate();" />
@@ -1470,7 +1478,7 @@
 						</span>
 
 					<!-- Body -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="event body (description, etc)" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionBodyUpdate();"></textarea>
@@ -1486,7 +1494,7 @@
 				<div id="testimonialReviewFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Author Name -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 							<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="author name" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewAuthorNameUpdate();" />
@@ -1497,7 +1505,7 @@
 						</span>
 
 					<!-- Author Headshot -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 							<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 60px; padding-right: 73px !important; height: 40px; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
@@ -1508,7 +1516,7 @@
 						</span>
 
 					<!-- Author Title -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 							<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="author title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewAuthorTitleUpdate();" />
@@ -1519,7 +1527,7 @@
 						</span>
 
 					<!-- Author Company -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="author company" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="testimonialReviewAuthorCompanyUpdate();" />
@@ -1530,7 +1538,7 @@
 					</span>
 
 					<!-- Date -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input id="testimonialReviewDate" type="date" class="cleanCursorInput" placeholder="date of review" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="testimonialReviewDateUpdate();"/>
@@ -1541,7 +1549,7 @@
 						</span>
 
 					<!-- Body -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px; padding-bottom: 103px"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of testimonial" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewBodyUpdate();"></textarea>
@@ -1557,7 +1565,7 @@
 				<div id="globalContentFieldsEnd" style="display: block;">
 
 					<!-- Call to Action -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
@@ -1574,7 +1582,7 @@
 						</span>
 
 					<!-- Link -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 							<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
 							<input id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://www.example.com" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="linkGlobalUpdate();" />
@@ -1588,14 +1596,14 @@
 						</span>
 
 					<!-- Primary Color -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; padding-left: 0 !important;" oninput="primaryColorGlobalUpdate();" />
 								<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
-								<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="document.getElementById('primaryColorGlobal').value = null;"/>
+								<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearPrimaryColorGlobal();"/>
 							</span>
 							<span style="display: flex; justify-content: flex-end;">
 								<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
@@ -1604,21 +1612,21 @@
 						</span>
 
 					<!-- Text Color -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; padding-left: 0 !important;" oninput="fontColorGlobalUpdate();" />
 								<img id="fontColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
-								<img id="fontColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="document.getElementById('fontColorGlobal').value = null;"/>
+								<img id="fontColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearFontColorGlobal();"/>
 							</span>
 							<span style="display: flex; justify-content: flex-end;">
 							</span>
 						</span>
 
 					<!-- Logo -->
-					<span style="display: flex; align-items: center; justify-content: space-between;">
+					<span class="newContentVar">
 						<span style="display: flex; align-items: center;">
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding: 10px;"><img src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo" onchange="squareLogoGlobalUpdate()" />
@@ -1645,125 +1653,135 @@
 		</div>
 
 		<!-- Outputs -->
-		<div id="final" class="column2" style="user-select: none;">
+		<div id="final" class="column35PercentWidth" style="user-select: none;">
 
 			<!-- IMAGES -->
-			<div id="finalImageHorizontal" class="primaryColorGlobalHere">
-				<!-- Global Start -->
-				<text class="hookGlobalHere"></text>
-				<text class="hookResolutionGlobalHere"></text>
-				<!-- Generic Post -->
-				<!-- Company Update -->
-				<text class="companyUpdateHeadlineHere"></text>
-				<text class="companyUpdateDateHere"></text>
-				<!-- Sale/Promotion -->
-				<text class="salePromotionTitleHere"></text>
-				<text class="salePromotionProductOrServiceHere"></text>
-				<text class="salePromotionStartDateHere"></text>
-				<text class="salePromotionEndDateHere"></text>
-				<!-- Event Promotion-->
-				<text class="eventPromotionTitleHere"></text>
-				<text class="eventPromotionStartDateHere"></text>
-				<text class="eventPromotionEndDateHere"></text>
-				<text class="eventPromotionLocationHere"></text>
-				<!-- Testimonial / Review -->
-				<text class="testimonialReviewAuthorNameHere"></text>
-				<text class="testimonialReviewAuthorHeadshotHere"></text>
-				<text class="testimonialReviewAuthorTitleHere"></text>
-				<text class="testimonialReviewAuthorCompanyHere"></text>
-				<text class="testimonialReviewAuthorDateHere"></text>
-				<!-- Global End -->
-				<text class="callToActionGlobalHere"></text>
-				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+			<div id="finalImages">
+				<div id="finalImageShowcase" style="display: flex; align-items: center; justify-content: center; height: 650px; width: 100%;">
+					<div id="finalImageHorizontal" class="primaryColorGlobalHere">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<!-- Generic Post -->
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<!-- Global End -->
+						<text class="callToActionGlobalHere"></text>
+						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
 
-			</div>
-			<div id="finalImageVertical" class="primaryColorGlobalHere">
-				<!-- Global Start -->
-				<text class="hookGlobalHere"></text>
-				<text class="hookResolutionGlobalHere"></text>
-				<!-- Generic Post -->
-				<!-- Company Update -->
-				<text class="companyUpdateHeadlineHere"></text>
-				<text class="companyUpdateDateHere"></text>
-				<!-- Sale/Promotion -->
-				<text class="salePromotionTitleHere"></text>
-				<text class="salePromotionProductOrServiceHere"></text>
-				<text class="salePromotionStartDateHere"></text>
-				<text class="salePromotionEndDateHere"></text>
-				<!-- Event Promotion-->
-				<text class="eventPromotionTitleHere"></text>
-				<text class="eventPromotionStartDateHere"></text>
-				<text class="eventPromotionEndDateHere"></text>
-				<text class="eventPromotionLocationHere"></text>
-				<!-- Testimonial / Review -->
-				<text class="testimonialReviewAuthorNameHere"></text>
-				<text class="testimonialReviewAuthorHeadshotHere"></text>
-				<text class="testimonialReviewAuthorTitleHere"></text>
-				<text class="testimonialReviewAuthorCompanyHere"></text>
-				<text class="testimonialReviewAuthorDateHere"></text>
-				<!-- Global End -->
-				<text class="callToActionGlobalHere"></text>
-				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
-			</div>
-			<div id="finalImageSquare" class="primaryColorGlobalHere">
-				<!-- Global Start -->
-				<text class="hookGlobalHere"></text>
-				<text class="hookResolutionGlobalHere"></text>
-				<!-- Generic Post -->
-				<!-- Company Update -->
-				<text class="companyUpdateHeadlineHere"></text>
-				<text class="companyUpdateDateHere"></text>
-				<!-- Sale/Promotion -->
-				<text class="salePromotionTitleHere"></text>
-				<text class="salePromotionProductOrServiceHere"></text>
-				<text class="salePromotionStartDateHere"></text>
-				<text class="salePromotionEndDateHere"></text>
-				<!-- Event Promotion-->
-				<text class="eventPromotionTitleHere"></text>
-				<text class="eventPromotionStartDateHere"></text>
-				<text class="eventPromotionEndDateHere"></text>
-				<text class="eventPromotionLocationHere"></text>
-				<!-- Testimonial / Review -->
-				<text class="testimonialReviewAuthorNameHere"></text>
-				<text class="testimonialReviewAuthorHeadshotHere"></text>
-				<text class="testimonialReviewAuthorTitleHere"></text>
-				<text class="testimonialReviewAuthorCompanyHere"></text>
-				<text class="testimonialReviewAuthorDateHere"></text>
-				<!-- Global End -->
-				<text class="callToActionGlobalHere"></text>
-				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
-			</div>
-			<div id="finalImageStory" class="primaryColorGlobalHere">
-				<!-- Global Start -->
-				<text class="hookGlobalHere"></text>
-				<text class="hookResolutionGlobalHere"></text>
-				<!-- Generic Post -->
-				<!-- Company Update -->
-				<text class="companyUpdateHeadlineHere"></text>
-				<text class="companyUpdateDateHere"></text>
-				<!-- Sale/Promotion -->
-				<text class="salePromotionTitleHere"></text>
-				<text class="salePromotionProductOrServiceHere"></text>
-				<text class="salePromotionStartDateHere"></text>
-				<text class="salePromotionEndDateHere"></text>
-				<!-- Event Promotion-->
-				<text class="eventPromotionTitleHere"></text>
-				<text class="eventPromotionStartDateHere"></text>
-				<text class="eventPromotionEndDateHere"></text>
-				<text class="eventPromotionLocationHere"></text>
-				<!-- Testimonial / Review -->
-				<text class="testimonialReviewAuthorNameHere"></text>
-				<text class="testimonialReviewAuthorHeadshotHere"></text>
-				<text class="testimonialReviewAuthorTitleHere"></text>
-				<text class="testimonialReviewAuthorCompanyHere"></text>
-				<text class="testimonialReviewAuthorDateHere"></text>
-				<!-- Global End -->
-				<text class="callToActionGlobalHere"></text>
-				<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+					</div>
+					<div id="finalImageVertical" class="primaryColorGlobalHere">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<!-- Generic Post -->
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<!-- Global End -->
+						<text class="callToActionGlobalHere"></text>
+						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+					</div>
+					<div id="finalImageSquare" class="primaryColorGlobalHere">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<!-- Generic Post -->
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<!-- Global End -->
+						<text class="callToActionGlobalHere"></text>
+						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+					</div>
+					<div id="finalImageStory" class="primaryColorGlobalHere">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<!-- Generic Post -->
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<!-- Global End -->
+						<text class="callToActionGlobalHere"></text>
+						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: absolute; bottom: 5px; right: 5px;" />
+					</div>
+				</div>
+				<aside style="display: flex; align-items: flex-end; justify-content: flex-end;">
+					<div id="finalImageHorizontalDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageHorizontal();"></div>
+					<div id="finalImageSquareDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageSquare();"></div>
+					<div id="finalImageVerticalDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageVertical();"></div>
+					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageStory();"></div>
+				</aside>
 			</div>
 
 			<!-- TEXT -->
-			<div style="position: relative; top: 400px;">
+			<div>
 				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
 
 					<!-- Global Start -->
@@ -1837,7 +1855,7 @@
 			</div>
 
 			<!-- Social Sendables -->
-			<div id="socialSendables">
+			<div id="socialSendables" style="display: none;">
 				<script>
 					function openSocialTab(evt, cityName) {
 						var i, socialTabContent, tablinks;
@@ -2277,6 +2295,100 @@
 <!-- JavaScript -->
 <script>
 
+	// load 'squareLogo' image as 'Get from brand' image in 'new content' (circle + shadow)
+	// set backup as link icon
+	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
+	let squareLogo = localStorage.getItem('squareLogo');
+	for (let i = 0; i < getFromBrand.length; i++) {
+		getFromBrand[i].src = squareLogo;
+		getFromBrand[i].style.borderRadius = "50%";
+		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
+		if (squareLogo == null || squareLogo == "" || squareLogo == "undefined" || squareLogo == 'null') {
+			getFromBrand.src = 'media/otherIcons/link.svg';
+		}
+	}
+
+	// set all color input values to #ffffff
+	let colorInputs = document.querySelectorAll('input[type="color"]');
+	for (let i = 0; i < colorInputs.length; i++) {
+		colorInputs[i].value = "#ffffff";
+	}
+
+	// show the horizontal image in the 'new content' section
+	document.getElementById('finalImageHorizontal').style.display = "block";
+
+	// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
+	document.addEventListener('keydown', function(event) {
+		if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
+			showBrandPopup(); // does not open where the mouse cursor is --> need to fix
+		}
+	});
+	function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
+		let i; let x = document.getElementsByClassName("tabby");
+		for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+		document.getElementById(tabby).style.display = "block";
+		document.getElementById('hookGlobal').focus()
+	}
+
+	// Content Type Selector
+	const valueSelector = document.getElementById("contentTypeSelect");
+	const globalContentFieldsStart = document.getElementById("globalContentFieldsStart");
+	const genericPostFields = document.getElementById("genericPostFields");
+	const companyUpdateFields = document.getElementById("companyUpdateFields");
+	const salePromotionFields = document.getElementById("salePromotionFields");
+	const eventPromotionFields = document.getElementById("eventPromotionFields");
+	const testimonialReviewFields = document.getElementById("testimonialReviewFields");
+	const globalContentFieldsEnd = document.getElementById("globalContentFieldsEnd");
+	function valueSelectorUpdate() {
+
+		if (valueSelector.value === 'genericPostFields') {
+			genericPostFields.style.display = 'block';
+			companyUpdateFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'companyUpdateFields') {
+			companyUpdateFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'salePromotionFields') {
+			salePromotionFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			companyUpdateFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'eventPromotionFields') {
+			eventPromotionFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			companyUpdateFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			testimonialReviewFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		} else if (valueSelector.value === 'testimonialReviewFields') {
+			testimonialReviewFields.style.display = 'block';
+			genericPostFields.style.display = 'none';
+			companyUpdateFields.style.display = 'none';
+			salePromotionFields.style.display = 'none';
+			eventPromotionFields.style.display = 'none';
+			globalContentFieldsStart.style.display = 'block';
+			globalContentFieldsEnd.style.display = 'block';
+		}
+
+		// set the focus the 'hookGlobal' field, as it is the first field for all content types
+		document.getElementById('hookGlobal').focus(); // not sure why it does not work on the first click, if placed in the top of the function
+		clearAllFields (); // also won't work if place at top of function --> result is the dropdown select has to effect
+
+	}
+
 	// Rapid API - URL Links Shortener
 	function linkGlobalShorten() {
 
@@ -2429,89 +2541,30 @@
 		.catch(err => console.error(err));
 	}
 
-	// load 'squareLogo' image as 'Get from brand' image in 'new content' (circle + shadow)
-	// set backup as link icon
-	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
-	let squareLogo = localStorage.getItem('squareLogo');
-	for (let i = 0; i < getFromBrand.length; i++) {
-		getFromBrand[i].src = squareLogo;
-		getFromBrand[i].style.borderRadius = "50%";
-		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
-		if (squareLogo == null || squareLogo == "" || squareLogo == "undefined" || squareLogo == 'null') {
-			getFromBrand.src = 'media/otherIcons/link.svg';
-		}
+	// preview final images with small 'dummy' divs
+	function previewFinalImageHorizontal() {
+		document.getElementById("finalImageHorizontal").style.display = "block"; // block
+		document.getElementById("finalImageSquare").style.display = "none";
+		document.getElementById("finalImageVertical").style.display = "none";
+		document.getElementById("finalImageStory").style.display = "none";
 	}
-
-	// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
-	document.addEventListener('keydown', function(event) {
-		if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
-			showBrandPopup(); // does not open where the mouse cursor is --> need to fix
-		}
-	});
-	function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
-		let i; let x = document.getElementsByClassName("tabby");
-		for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
-		document.getElementById(tabby).style.display = "block";
-		document.getElementById('hookGlobal').focus()
+	function previewFinalImageSquare() {
+		document.getElementById("finalImageHorizontal").style.display = "none";
+		document.getElementById("finalImageSquare").style.display = "block"; //block
+		document.getElementById("finalImageVertical").style.display = "none";
+		document.getElementById("finalImageStory").style.display = "none";
 	}
-
-	// Content Type Selector
-	const valueSelector = document.getElementById("contentTypeSelect");
-	const globalContentFieldsStart = document.getElementById("globalContentFieldsStart");
-	const genericPostFields = document.getElementById("genericPostFields");
-	const companyUpdateFields = document.getElementById("companyUpdateFields");
-	const salePromotionFields = document.getElementById("salePromotionFields");
-	const eventPromotionFields = document.getElementById("eventPromotionFields");
-	const testimonialReviewFields = document.getElementById("testimonialReviewFields");
-	const globalContentFieldsEnd = document.getElementById("globalContentFieldsEnd");
-	function valueSelectorUpdate() {
-
-		if (valueSelector.value === 'genericPostFields') {
-			genericPostFields.style.display = 'block';
-			companyUpdateFields.style.display = 'none';
-			salePromotionFields.style.display = 'none';
-			eventPromotionFields.style.display = 'none';
-			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
-		} else if (valueSelector.value === 'companyUpdateFields') {
-			companyUpdateFields.style.display = 'block';
-			genericPostFields.style.display = 'none';
-			salePromotionFields.style.display = 'none';
-			eventPromotionFields.style.display = 'none';
-			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
-		} else if (valueSelector.value === 'salePromotionFields') {
-			salePromotionFields.style.display = 'block';
-			genericPostFields.style.display = 'none';
-			companyUpdateFields.style.display = 'none';
-			eventPromotionFields.style.display = 'none';
-			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
-		} else if (valueSelector.value === 'eventPromotionFields') {
-			eventPromotionFields.style.display = 'block';
-			genericPostFields.style.display = 'none';
-			companyUpdateFields.style.display = 'none';
-			salePromotionFields.style.display = 'none';
-			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
-		} else if (valueSelector.value === 'testimonialReviewFields') {
-			testimonialReviewFields.style.display = 'block';
-			genericPostFields.style.display = 'none';
-			companyUpdateFields.style.display = 'none';
-			salePromotionFields.style.display = 'none';
-			eventPromotionFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
-		}
-
-		// set the focus the 'hookGlobal' field, as it is the first field for all content types
-		document.getElementById('hookGlobal').focus(); // not sure why it does not work on the first click, if placed in the top of the function
-		clearAllFields (); // also won't work if place at top of function --> result is the dropdown select has to effect
-
+	function previewFinalImageVertical() {
+		document.getElementById("finalImageHorizontal").style.display = "none";
+		document.getElementById("finalImageSquare").style.display = "none";
+		document.getElementById("finalImageVertical").style.display = "block"; //block
+		document.getElementById("finalImageStory").style.display = "none";
+	}
+	function previewFinalImageStory() {
+		document.getElementById("finalImageHorizontal").style.display = "none";
+		document.getElementById("finalImageSquare").style.display = "none";
+		document.getElementById("finalImageVertical").style.display = "none";
+		document.getElementById("finalImageStory").style.display = "block"; //block
 	}
 
 	// Field Updates
@@ -2831,7 +2884,6 @@
 		});
 
 	}
-
 	function primaryColorGlobalDirectionUpdate() {
 
 		// set variables
@@ -3873,19 +3925,19 @@
 		}
 	}
 	function clearPrimaryColorGlobal() {
-		document.getElementById("primaryColorGlobal").value = "";
+		document.getElementById("primaryColorGlobal").value = "#ffffff";
 		// for all elements with the class of primaryColorGlobalHere, set the innerHTML & src to an empty string
 		let element = document.querySelectorAll('.primaryColorGlobalHere');
 		for(let i = 0; i < element.length; i ++) {
-			element[i].value = "";
+			element[i].value = "#ffffff";
 		}
 	}
 	function clearFontColorGlobal() {
-		document.getElementById("fontColorGlobal").value = "";
+		document.getElementById("fontColorGlobal").value = "#ffffff";
 		// for all elements with the class of fontColorGlobalHere, set the value to an empty string
 		let element = document.querySelectorAll('.fontColorGlobalHere');
 		for(let i = 0; i < element.length; i ++) {
-			element[i].value = "";
+			element[i].value = "#ffffff";
 		}
 	}
 	function clearSquareLogoGlobal() {
@@ -3980,6 +4032,175 @@
 			}
 		}
 	}
+	function companyUpdateHeadlineInImages() {
+
+		// if the checkbox is checked
+		if (document.getElementById("companyUpdateHeadlineInImages").checked) {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.companyUpdateHeadlineHere');
+			for(let i = 0; i < element.length; i ++) {
+				element[i].style.display = 'inline';
+			}
+		}
+		else {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.companyUpdateHeadlineHere');
+			for(let i = 0; i < element.length; i ++) {
+				if (
+					element[i].parentElement.id == 'finalImageHorizontal' ||
+					element[i].parentElement.id == 'finalImageVertical' ||
+					element[i].parentElement.id == 'finalImageSquare' ||
+					element[i].parentElement.id == 'finalImageStory'
+				) {
+					element[i].style.display = 'none';
+				}
+			}
+		}
+
+	}
+	function companyUpdateDateInImages() {
+
+		// if the checkbox is checked
+		if (document.getElementById("companyUpdateDateInImages").checked) {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.companyUpdateDateHere');
+			for(let i = 0; i < element.length; i ++) {
+				element[i].style.display = 'inline';
+			}
+		}
+		else {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.companyUpdateDateHere');
+			for(let i = 0; i < element.length; i ++) {
+				if (
+					element[i].parentElement.id == 'finalImageHorizontal' ||
+					element[i].parentElement.id == 'finalImageVertical' ||
+					element[i].parentElement.id == 'finalImageSquare' ||
+					element[i].parentElement.id == 'finalImageStory'
+				) {
+					element[i].style.display = 'none';
+				}
+			}
+		}
+
+	}
+	function salePromotionTitleInImages() {
+
+		// if the checkbox is checked
+		if (document.getElementById("salePromotionTitleInImages").checked) {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionTitleHere');
+			for(let i = 0; i < element.length; i ++) {
+				element[i].style.display = 'inline';
+			}
+		}
+		else {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionTitleHere');
+			for(let i = 0; i < element.length; i ++) {
+				if (
+					element[i].parentElement.id == 'finalImageHorizontal' ||
+					element[i].parentElement.id == 'finalImageVertical' ||
+					element[i].parentElement.id == 'finalImageSquare' ||
+					element[i].parentElement.id == 'finalImageStory'
+				) {
+					element[i].style.display = 'none';
+				}
+			}
+		}
+
+	}
+	function salePromotionProductOrServiceInImages() {
+
+		// if the checkbox is checked
+		if (document.getElementById("salePromotionProductOrServiceInImages").checked) {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionProductOrServiceHere');
+			for(let i = 0; i < element.length; i ++) {
+				element[i].style.display = 'inline';
+			}
+		}
+		else {
+
+			// list all elements with the clas
+			let element = document.querySelectorAll('.salePromotionProductOrServiceHere');
+			for(let i = 0; i < element.length; i ++) {
+				if (
+					element[i].parentElement.id == 'finalImageHorizontal' ||
+					element[i].parentElement.id == 'finalImageVertical' ||
+					element[i].parentElement.id == 'finalImageSquare' ||
+					element[i].parentElement.id == 'finalImageStory'
+				) {
+					element[i].style.display = 'none';
+				}
+			}
+		}
+
+	}
+	function salePromotionStartDateInImages() {
+
+		// if the checkbox is checked
+		if (document.getElementById("salePromotionStartDateInImages").checked) {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionStartDateHere');
+			for(let i = 0; i < element.length; i ++) {
+				element[i].style.display = 'inline';
+			}
+		}
+		else {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionStartDateHere');
+			for(let i = 0; i < element.length; i ++) {
+				if (
+					element[i].parentElement.id == 'finalImageHorizontal' ||
+					element[i].parentElement.id == 'finalImageVertical' ||
+					element[i].parentElement.id == 'finalImageSquare' ||
+					element[i].parentElement.id == 'finalImageStory'
+				) {
+					element[i].style.display = 'none';
+				}
+			}
+		}
+
+	}
+	function salePromotionEndDateInImages() {
+
+		// if the checkbox is checked
+		if (document.getElementById("salePromotionEndDateInImages").checked) {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionEndDateHere');
+			for(let i = 0; i < element.length; i ++) {
+				element[i].style.display = 'inline';
+			}
+		}
+		else {
+
+			// list all elements with the class
+			let element = document.querySelectorAll('.salePromotionEndDateHere');
+			for(let i = 0; i < element.length; i ++) {
+				if (
+					element[i].parentElement.id == 'finalImageHorizontal' ||
+					element[i].parentElement.id == 'finalImageVertical' ||
+					element[i].parentElement.id == 'finalImageSquare' ||
+					element[i].parentElement.id == 'finalImageStory'
+				) {
+					element[i].style.display = 'none';
+				}
+			}
+		}
+
+	}
+
 
 	// Brand popup
 	function showBrandPopup() {
