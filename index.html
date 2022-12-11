@@ -1240,16 +1240,16 @@
 
 			<span class="flex-align-items-center">
 				<select id="contentTypeSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px !important; margin-left: 0;" onchange="valueSelectorUpdate();">
-							<option value="genericPostFields" selected>Generic Post</option>
-							<option value="companyUpdateFields">Company Update</option>
-							<option value="salePromotionFields">Sale/Promotion</option>
-							<option value="eventPromotionFields">Event Promotion</option>
-							<option value="testimonialReviewFields">Testimonial/Review</option>
-						</select>
+					<option value="genericPostFields" selected>Generic Post</option>
+					<option value="companyUpdateFields">Company Update</option>
+					<option value="salePromotionFields">Sale/Promotion</option>
+					<option value="eventPromotionFields">Event Promotion</option>
+					<option value="testimonialReviewFields">Testimonial/Review</option>
+				</select>
 			</span>
 
 			<!-- Content Type Field Collections -->
-			<div id="contentTypeFieldOptions">
+			<div id="contentTypeFieldOptions" style="user-select: none">
 
 				<!-- Global Content Fields (Start) -->
 				<div id="globalContentFieldsStart" style="display: block;">
@@ -1585,7 +1585,8 @@
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img alt="" src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important;" oninput="primaryColorGlobalUpdate();" />
+								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="primaryColorGlobalUpdate();" />
+								<span id="primaryColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">&nbsp;</span>
 								<img id="primaryColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="primaryColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearPrimaryColorGlobal();"/>
 							</span>
@@ -1601,7 +1602,8 @@
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img alt="" src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important;" oninput="fontColorGlobalUpdate();" />
+								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="fontColorGlobalUpdate();" />
+								<span id="fontColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">&nbsp;</span>
 								<img id="fontColorGlobalGet" alt="" src="media/otherIcons/link.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="showBrandPopup();"/>
 								<img id="fontColorGlobalClear" alt="" src="media/otherIcons/clear.svg" style="height: 25px; width: 25px; margin: 0 10px 0 0;" onclick="clearFontColorGlobal();"/>
 							</span>
@@ -1670,34 +1672,6 @@
 						<text class="callToActionGlobalHere"></text>
 						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 					</div>
-					<div id="finalImageVertical" class="primaryColorGlobalHere">
-						<!-- Global Start -->
-						<text class="hookGlobalHere"></text>
-						<text class="hookResolutionGlobalHere"></text>
-						<!-- Generic Post -->
-						<!-- Company Update -->
-						<text class="companyUpdateHeadlineHere"></text>
-						<text class="companyUpdateDateHere"></text>
-						<!-- Sale/Promotion -->
-						<text class="salePromotionTitleHere"></text>
-						<text class="salePromotionProductOrServiceHere"></text>
-						<text class="salePromotionStartDateHere"></text>
-						<text class="salePromotionEndDateHere"></text>
-						<!-- Event Promotion-->
-						<text class="eventPromotionTitleHere"></text>
-						<text class="eventPromotionStartDateHere"></text>
-						<text class="eventPromotionEndDateHere"></text>
-						<text class="eventPromotionLocationHere"></text>
-						<!-- Testimonial / Review -->
-						<text class="testimonialReviewAuthorNameHere"></text>
-						<text class="testimonialReviewAuthorHeadshotHere"></text>
-						<text class="testimonialReviewAuthorTitleHere"></text>
-						<text class="testimonialReviewAuthorCompanyHere"></text>
-						<text class="testimonialReviewAuthorDateHere"></text>
-						<!-- Global End -->
-						<text class="callToActionGlobalHere"></text>
-						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
-					</div>
 					<div id="finalImageSquare" class="primaryColorGlobalHere">
 						<!-- Global Start -->
 						<text class="hookGlobalHere"></text>
@@ -1725,6 +1699,34 @@
 						<!-- Global End -->
 						<text class="callToActionGlobalHere"></text>
 						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
+					</div>
+					<div id="finalImageVertical" class="primaryColorGlobalHere">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<!-- Generic Post -->
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<!-- Global End -->
+						<text class="callToActionGlobalHere"></text>
+						<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 					</div>
 					<div id="finalImageStory" class="primaryColorGlobalHere">
 						<!-- Global Start -->
@@ -2170,13 +2172,13 @@
 <script>
 
 	// load 'squareLogo' image as 'Get from brand' image in 'new content' (circle + shadow)
-	// set backup as link icon
 	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
 	let squareLogo = localStorage.getItem('squareLogo');
 	for (let i = 0; i < getFromBrand.length; i++) {
 		getFromBrand[i].src = squareLogo;
 		getFromBrand[i].style.borderRadius = "50%";
 		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
+		// set backup as link icon
 		if (squareLogo === null || squareLogo === "" || squareLogo === "undefined" || squareLogo === undefined || squareLogo === 'null') {
 			getFromBrand.src = 'media/otherIcons/link.svg';
 		}
@@ -2760,6 +2762,9 @@
 			thumb.style.backgroundColor = primaryColor.value;
 		});
 
+		// set value display next to selector
+		document.getElementById("primaryColorGlobalValueDisplay").innerHTML = primaryColor.value;
+
 	}
 	function primaryColorGlobalDirectionUpdate() {
 
@@ -2805,6 +2810,9 @@
 		document.getElementById('finalImageSquare').style.color = fontColor;
 		document.getElementById('finalImageVertical').style.color = fontColor;
 		document.getElementById('finalImageStory').style.color = fontColor;
+
+		// set value display next to selector
+		document.getElementById("fontColorGlobalValueDisplay").innerHTML = fontColor;
 
 	}
 	function squareLogoGlobalUpdate() {
@@ -3791,6 +3799,7 @@
 	}
 	function clearPrimaryColorGlobal() {
 		document.getElementById("primaryColorGlobal").value = "#ffffff";
+		document.getElementById("primaryColorGlobalValueDisplay").innerText = "#ffffff";
 		// for all elements with the class of primaryColorGlobalHere, set the innerHTML & src to an empty string
 		let element = document.querySelectorAll('.primaryColorGlobalHere');
 		for(let i = 0; i < element.length; i ++) {
@@ -3799,6 +3808,7 @@
 	}
 	function clearFontColorGlobal() {
 		document.getElementById("fontColorGlobal").value = "#ffffff";
+		document.getElementById("fontColorGlobalValueDisplay").innerText = "#ffffff";
 		// for all elements with the class of fontColorGlobalHere, set the value to an empty string
 		let element = document.querySelectorAll('.fontColorGlobalHere');
 		for(let i = 0; i < element.length; i ++) {
