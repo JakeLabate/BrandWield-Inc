@@ -1171,3 +1171,49 @@ input[type="checkbox"] {
 #finalImageStory > text.testimonialReviewAuthorDateHere {}
 #finalImageStory > text.callToActionGlobalHere {}
 #finalImageStory > img.squareLogoGlobalHere {}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -150px;
+    background-color: #333;
+    color: #fff;
+    text-align: center; 
+    border-radius: 8px; 
+    padding: 16px; 
+    position: fixed;
+    z-index: 9999999999; 
+    left: 50%; 
+    top: 40px;
+    font-size: 1.2rem;
+}
+
+#snackbar.show {
+    visibility: visible; 
+    -webkit-animation: fadein 1s, fadeout 1s 4.5s;
+    animation: fadein 1s, fadeout 1s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 40px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 40px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 40px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 40px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+.hidden{
+	display: none;
+}
