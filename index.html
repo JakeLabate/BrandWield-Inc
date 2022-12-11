@@ -2175,7 +2175,7 @@
 
 	</div>
 </div>
-
+<div id="snackbar"></div>
 <!-- JavaScript -->
 <script>
 
@@ -4420,6 +4420,8 @@
     })
 	}
 
+	let firstOverflowWarning = true; // To make sure overflow warning is shown only once
+	
 	// This method reduces the font size iteratively unless the overflow is rectified.
 	function fixOverflow(parent){
 		let overflowHappened = false;
@@ -4431,8 +4433,9 @@
 		}
 		
 		// Only show alert if overflow was fixed
-		if(overflowHappened){
-			alert("Font size will be reduced to prevent overflow");
+		if(overflowHappened && firstOverflowWarning){
+			showSnackbar({message: "Font size will be reduced to prevent overflow"});
+			firstOverflowWarning = false;
 		}
 	}
 
@@ -4450,6 +4453,16 @@
 		// Attach the observer to the image observer
 		observer.observe(el)
 	})
+
+	// Show the alert which does not require confirmation
+	function showSnackbar({message, timeout = 5000} = {}) {
+  let snackbar = document.getElementById("snackbar");
+	snackbar.innerText = message
+  snackbar.className = "show";
+
+		// Hide it after 5 seconds...
+		setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, timeout);
+	}
 
 
 </script>
