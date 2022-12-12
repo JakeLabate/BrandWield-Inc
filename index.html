@@ -64,12 +64,12 @@
 
 <header>
 	<!-- Nav Bar -->
-	<div id="navBar" style="height: 55px; display: flex; justify-content: space-around;">
+	<nav id="navBar" style="height: 55px; display: flex; justify-content: space-around;">
 		<div class="navTab" onclick="selectContentType('brand'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b'; // Color change to purple not working for these tabs">Brand</div>
 		<div class="navTab" onclick="selectContentType('content'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Content</div>
 		<div class="navTab" onclick="selectContentType('newContent'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">New Content</div>
 		<div class="navTab" onclick="selectContentType('settings'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Settings</div>
-	</div>
+	</nav>
 </header>
 
 <main>
@@ -1255,10 +1255,10 @@
 				<div id="globalContentFieldsStart" style="display: block;">
 
 					<!-- Hook -->
-					<span class="newContentVar">
+					<span id="newContentVarHookGlobal" class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookGlobalUpdate();" />
+							<input autocomplete="off" id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookGlobalUpdate();"/>
 							<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookGlobal();"/>
 						</span>
 						<span class="flex-justify-content-end">
@@ -1566,70 +1566,70 @@
 
 					<!-- Link -->
 					<span class="newContentVar">
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://www.example.com" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="linkGlobalUpdate();" />
-							<img id="linkGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
-							<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();"/>
-						</span>
-							<span class="flex-justify-content-end">
-								<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();"/>
-								<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();"/>
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
+								<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://www.example.com" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="linkGlobalUpdate();" />
+								<img id="linkGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
+								<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();"/>
 							</span>
-						</span>
+								<span class="flex-justify-content-end">
+									<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();"/>
+									<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();"/>
+								</span>
+							</span>
 
 					<!-- Logo -->
 					<span class="newContentVar">
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-							<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo" onchange="squareLogoGlobalUpdate()" />
-							<img id="squareLogoGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
-							<img id="squareLogoGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSquareLogoGlobal();"/>
-						</span>
-						<span class="flex-justify-content-end">
-							<span>
-								<input id="squareLogoGlobalTopLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopLeft();">
-								<input id="squareLogoGlobalBottomLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomLeft();">
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+								<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo" onchange="squareLogoGlobalUpdate()" />
+								<img id="squareLogoGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
+								<img id="squareLogoGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSquareLogoGlobal();"/>
 							</span>
-							<span>
-								<input id="squareLogoGlobalTopRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopRight();">
-								<input id="squareLogoGlobalBottomRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomRight();" checked>
+							<span class="flex-justify-content-end">
+								<span>
+									<input id="squareLogoGlobalTopLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopLeft();">
+									<input id="squareLogoGlobalBottomLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomLeft();">
+								</span>
+								<span>
+									<input id="squareLogoGlobalTopRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopRight();">
+									<input id="squareLogoGlobalBottomRight" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomRight();" checked>
+								</span>
+								<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" style="width: 50px;" oninput="squareLogoGlobalSizeUpdate();">
 							</span>
-							<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" style="width: 50px;" oninput="squareLogoGlobalSizeUpdate();">
 						</span>
-					</span>
 
 					<!-- Primary Color -->
 					<span class="newContentVar">
-						<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img alt="" src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-								<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#ffffff" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="primaryColorGlobalUpdate();" />
-								<span id="primaryColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#ffffff</span>
-								<img id="primaryColorGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
-								<img id="primaryColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearPrimaryColorGlobal();"/>
+							<span class="flex-align-items-center">
+									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
+									<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;">of</span>
+									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+									<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#ffffff" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="primaryColorGlobalUpdate();" />
+									<span id="primaryColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#ffffff</span>
+									<img id="primaryColorGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
+									<img id="primaryColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearPrimaryColorGlobal();"/>
+								</span>
+								<span class="flex-justify-content-end">
+									<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
+									<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step=".1" oninput="primaryColorGlobalDirectionInvasion();">
+								</span>
 							</span>
-							<span class="flex-justify-content-end">
-								<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
-								<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step=".1" oninput="primaryColorGlobalDirectionInvasion();">
-							</span>
-						</span>
 
 					<!-- Text Color -->
 					<span class="newContentVar">
-						<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
-								<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;"><img alt="" src="media/otherIcons/rightArrow.svg" height="20" width="20" /></span>
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-								<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="fontColorGlobalUpdate();" />
-								<span id="fontColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#000000</span>
-								<img id="fontColorGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
-								<img id="fontColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearFontColorGlobal();"/>
+							<span class="flex-align-items-center">
+									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
+									<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;">of</span>
+									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+									<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="fontColorGlobalUpdate();" />
+									<span id="fontColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#000000</span>
+									<img id="fontColorGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
+									<img id="fontColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearFontColorGlobal();"/>
+								</span>
+								<span class="flex-justify-content-end">
+								</span>
 							</span>
-							<span class="flex-justify-content-end">
-							</span>
-						</span>
 
 				</div>
 
@@ -2130,45 +2130,45 @@
 
 	<!-- We also want to set the other select values to the default item onchange -->
 	<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
-		<datalist id="brandColors">
+		<list id="brandColors">
 			<option value="" selected>Colors</option>
 			<option value="red">Red</option>
 			<option value="blue">Blue</option>
-		</datalist>
+		</list>
 	</select>
 	<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
-		<datalist id="brandFonts">
+		<list id="brandFonts">
 			<option value="" selected>Fonts</option>
 			<option value="Arial">Arial</option>
 			<option value="Times New Roman">Times New Roman</option>
-		</datalist>
+		</list>
 	</select>
 	<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
-		<datalist id="branLogos">
+		<list id="branLogos">
 			<option value="" selected>Logos</option>
 			<option value="Arial">Arial</option>
 			<option value="Times New Roman">Times New Roman</option>
-		</datalist>
+		</list>
 	</select>
 	<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
-		<datalist id="brandPeople">
+		<list id="brandPeople">
 			<option value="" selected>People</option>
 			<option value="Arial">Arial</option>
-		</datalist>
+		</list>
 	</select>
 	<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
-		<datalist id="brandOffers">
+		<list id="brandOffers">
 			<option value="" selected>Offers</option>
 			<option value="Arial">Arial</option>
 			<option value="Times New Roman">Times New Roman</option>
-		</datalist>
+		</list>
 	</select>
 	<select class="cleanCursorInputSmall" onchange="document.getElementById('brandSearch').value = this.value; clearBrandRecommendations();">
-		<datalist id="brandSocialMedia">
+		<list id="brandSocialMedia">
 			<option value="" selected>Social Media</option>
 			<option value="Arial">Arial</option>
 			<option value="Times New Roman">Times New Roman</option>
-		</datalist>
+		</list>
 	</select>
 
 </div>

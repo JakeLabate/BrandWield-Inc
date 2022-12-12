@@ -267,6 +267,15 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px 0 10px;
+    transition: .2s ease-in-out;
+    border-radius: 10px;
+    scale: 1;
+}
+
+.newContentVar:hover {
+    box-shadow: #5d5d5d 0 0 7px;
+    scale: 1.01;
 }
 
 .cleanCursorInput {
@@ -361,7 +370,6 @@ img {
     display: block;
     width: 480px;
     height: 252px;
-    border: 2px solid #000000;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
     z-index: 99999;
@@ -397,7 +405,6 @@ img {
     display: none;
     height: 360px;
     width: 360px;
-    border: 2px solid #000000;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
     z-index: 9999;
@@ -433,7 +440,6 @@ img {
     display: none;
     height: 450px;
     width: 360px;
-    border: 2px solid #000000;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
     z-index: 999;
@@ -470,7 +476,6 @@ img {
     display: none;
     height: 640px;
     width: 360px;
-    border: 2px solid #000000;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
     z-index: 50;
