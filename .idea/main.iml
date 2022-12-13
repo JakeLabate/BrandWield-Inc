@@ -11,5 +11,6 @@
     <orderEntry type="library" name="es6-promise" level="application" />
     <orderEntry type="library" name="html2canvas" level="application" />
     <orderEntry type="library" name="party-js" level="application" />
+    <orderEntry type="library" name="html2canvas" level="application" />
   </component>
 </module>

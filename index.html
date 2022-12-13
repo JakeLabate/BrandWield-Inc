@@ -2181,12 +2181,13 @@
 	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
 	let squareLogo = localStorage.getItem('squareLogo');
 	for (let i = 0; i < getFromBrand.length; i++) {
-		getFromBrand[i].src = squareLogo;
 		getFromBrand[i].style.borderRadius = "50%";
 		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
 		// set backup as link icon
 		if (squareLogo === null || squareLogo === "" || squareLogo === "undefined" || squareLogo === undefined || squareLogo === 'null') {
-			getFromBrand.src = 'media/otherIcons/link.svg';
+			getFromBrand[i].src = 'media/otherIcons/link.svg';
+		} else {
+			getFromBrand[i].src = squareLogo;
 		}
 	}
 
@@ -4429,7 +4430,7 @@
 	document.querySelectorAll('.finalImageWrapper').forEach( el => {
 		
 		const observer = new ResizeObserver((entries) => {
-			// Get the parent element of the image wrapper, i.e the container of the final image
+			// Get the parent element of the image wrapper, i.e. the container of the final image
 			const parentEl = entries[0].target.parentNode;
 
 			// Check and fix overflow
