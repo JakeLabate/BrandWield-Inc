@@ -2181,13 +2181,13 @@
 	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
 	let squareLogo = localStorage.getItem('squareLogo');
 	for (let i = 0; i < getFromBrand.length; i++) {
-		getFromBrand[i].style.borderRadius = "50%";
-		getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
 		// set backup as link icon
 		if (squareLogo === null || squareLogo === "" || squareLogo === "undefined" || squareLogo === undefined || squareLogo === 'null') {
 			getFromBrand[i].src = 'media/otherIcons/link.svg';
 		} else {
 			getFromBrand[i].src = squareLogo;
+			getFromBrand[i].style.borderRadius = "50%";
+			getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
 		}
 	}
 
@@ -2197,6 +2197,8 @@
 			showBrandPopup(); // does not open where the mouse cursor is --> need to fix
 		}
 	});
+
+	// select content type
 	function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
 		let i; let x = document.getElementsByClassName("tabby");
 		for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
