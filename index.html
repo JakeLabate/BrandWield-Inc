@@ -1239,7 +1239,7 @@
 		<div id="outputs" class="column65PercentWidth" style="max-height: 100vh; overflow: scroll; user-select: none;">
 
 			<span class="flex-align-items-center">
-				<select id="contentTypeSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px 10px 5px 10px !important; margin-left: 0;" onchange="valueSelectorUpdate();">
+				<select id="contentTypeSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px 10px 5px 10px !important; margin-left: 5px;" onchange="valueSelectorUpdate();">
 					<option value="genericPostFields" selected>Generic Post</option>
 					<option value="companyUpdateFields">Company Update</option>
 					<option value="salePromotionFields">Sale/Promotion</option>
@@ -2062,7 +2062,7 @@
 			<h3>Content Field Formats</h3>
 			<div id="dateFormat">
 				<text>Date Format</text>
-				<select id="dateFormatSelect" onchange="changeDateFormat();">
+				<select id="dateFormatSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px 10px 5px 10px !important; margin-left: 5px;" onchange="changeDateFormat();">
 					<optgroup label="Numeric (month first)">
 						<option title="Month-Day-Year with leading zeros" value="MM/DD/YY">02/17/2009</option>
 						<option title="Month-Day-Year with no leading zeros" value="M/D/YY">2/17/2009</option>
@@ -2083,9 +2083,7 @@
 			</div>
 			<div id="timeFormat">
 				<text>Time Format</text>
-				<select id="timeFormatSelect" onchange="changeTimeFormat();">
-					<script>
-					</script>
+				<select id="timeFormatSelect" class="cleanCursorInput" style="font-size: 14px; padding: 5px 10px 5px 10px !important; margin-left: 5px;" onchange="changeTimeFormat();">
 					<option title="Time is based on a 24 hour system. This is frequently referred to as 'military time'" value="HH:MM">14:18</option>
 					<option title="Time is based on a 12 hour system. AM or PM is given" value="HH:MM XM">02:18 PM</option>
 				</select>
@@ -2094,12 +2092,12 @@
 			<!-- Defaults -->
 			<h3>Content Field Default Values</h3>
 			<div id="primaryLinkDefault">
-				<text>Link Default</text>;
+				<text>Link Default</text>
 				<input id="primaryDefaultLinkInput" type="url" class="cleanCursorInput" oninput="changeLinkDefault();"/>
 				<button onclick="showBrandPopup()">Get from Brand</button>
 			</div>
 			<div id="primaryColorDefault">
-				<text>Primary Color Default</text>;
+				<text>Primary Color Default</text>
 				<input type="color" class="cleanCursorInput"  style="padding: 0;" oninput="changePrimaryColorDefault();"/>
 				<button onclick="showBrandPopup()">Get from Brand</button>
 			</div>
@@ -4336,7 +4334,7 @@
 	}
 
 	// SETTINGS
-	// default value formats
+	// default newContent field value formats
 	function changeDateFormat() {
 
 		// get date format
