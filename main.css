@@ -1005,7 +1005,7 @@ input[type="checkbox"] {
 #finalImageHorizontal > text.eventPromotionEndDateHere {}
 #finalImageHorizontal > text.eventPromotionLocationHere {}
 #finalImageHorizontal > text.testimonialReviewAuthorNameHere {}
-#finalImageHorizontal > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageHorizontal > img.testimonialReviewAuthorHeadshotHere {}
 #finalImageHorizontal > text.testimonialReviewAuthorTitleHere {}
 #finalImageHorizontal > text.testimonialReviewAuthorCompanyHere {}
 #finalImageHorizontal > text.testimonialReviewAuthorDateHere {}
@@ -1025,7 +1025,7 @@ input[type="checkbox"] {
 #finalImageSquare > text.eventPromotionEndDateHere {}
 #finalImageSquare > text.eventPromotionLocationHere {}
 #finalImageSquare > text.testimonialReviewAuthorNameHere {}
-#finalImageSquare > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageSquare > img.testimonialReviewAuthorHeadshotHere {}
 #finalImageSquare > text.testimonialReviewAuthorTitleHere {}
 #finalImageSquare > text.testimonialReviewAuthorCompanyHere {}
 #finalImageSquare > text.testimonialReviewAuthorDateHere {}
@@ -1045,7 +1045,7 @@ input[type="checkbox"] {
 #finalImageVertical > text.eventPromotionEndDateHere {}
 #finalImageVertical > text.eventPromotionLocationHere {}
 #finalImageVertical > text.testimonialReviewAuthorNameHere {}
-#finalImageVertical > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageVertical > img.testimonialReviewAuthorHeadshotHere {}
 #finalImageVertical > text.testimonialReviewAuthorTitleHere {}
 #finalImageVertical > text.testimonialReviewAuthorCompanyHere {}
 #finalImageVertical > text.testimonialReviewAuthorDateHere {}
@@ -1065,7 +1065,7 @@ input[type="checkbox"] {
 #finalImageStory > text.eventPromotionEndDateHere {}
 #finalImageStory > text.eventPromotionLocationHere {}
 #finalImageStory > text.testimonialReviewAuthorNameHere {}
-#finalImageStory > text.testimonialReviewAuthorHeadshotHere {}
+#finalImageStory > img.testimonialReviewAuthorHeadshotHere {}
 #finalImageStory > text.testimonialReviewAuthorTitleHere {}
 #finalImageStory > text.testimonialReviewAuthorCompanyHere {}
 #finalImageStory > text.testimonialReviewAuthorDateHere {}

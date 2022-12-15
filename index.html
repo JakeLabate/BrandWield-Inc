@@ -9,6 +9,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="media/brandwieldLogos/squareLogo.png">
 	<meta name="robots" content="index, follow">
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="BrandWield | Making content vision and content production, synonymous">
+	<meta property="og:description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
+	<meta property="og:image" content="media/brandwieldLogos/squareLogo.png">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+	<meta property="og:image:alt" content="BrandWield Logo">
+	<meta property="og:url" content="https://app.brandwield.com/">
+	<meta property="og:site_name" content="BrandWield">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_US">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@brandwield">
+	<meta name="twitter:creator" content="@brandwield">
+	<meta name="twitter:title" content="BrandWield | Making content vision and content production, synonymous">
+
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -19,7 +38,7 @@
 			"url": "https://app.brandwield.com",
 			"slogan": "BrandWield, Making content vision and content production, synonymous",
 			"foundingDate": "2022",
-			"brand":  {
+			"brand": {
 				"@type": "Brand",
 				"@id": "https://brandwield.com/#brand",
 				"name": "BrandWield",
@@ -36,8 +55,41 @@
 			"founders": [
 				{
 					"@type": "Person",
-					"name": "Jake Labate"
+					"name": "Jake Labate",
+					"email": "brandwield@gmail.com",
+					"jobTitle": "Founder",
+					"worksFor": {
+						"@type": "Organization",
+						"name": "BrandWield"
+					},
+					"sameAs": [
+						"https://github,.com/JakeLabate"
+					]
 				}
+			],
+			"offers": {
+				"@type": "SoftwareApplication",
+				"@id": "https://app.brandwield.com/#product",
+				"name": "BrandWield",
+				"applicationCategory": "https://schema.org/SoftwareApplication",
+				"operatingSystem": "Windows, Mac, Linux",
+				"browserRequirements": [
+					"Requires JavaScript",
+					"Requires HTML5",
+					"Requires CSS3",
+					"Requires Cookies",
+					"Requires Local Storage",
+					"Requires Internet Connection",
+					"Requires Modern Browser",
+					"Requires Modern Operating System"
+				]
+			},
+			"sameAs": [
+				"https://github.com/JakeLabate/BrandWield-Inc",
+				"https://www.facebook.com/brandwield",
+				"https://www.instagram.com/brandwield",
+				"https://www.linkedin.com/company/brandwield",
+				"https://twitter.com/brandwield"
 			]
 		}
 	</script>
@@ -1569,12 +1621,13 @@
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://www.example.com" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="linkGlobalUpdate();" />
-								<img id="linkGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();"/>
-								<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();"/>
+								<img id="linkGlobalGet" class="newContentFieldEnhancement" alt="" src="media/otherIcons/link.svg" onclick="showBrandPopup();" />
+								<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();" />
 							</span>
 								<span class="flex-justify-content-end">
-									<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();"/>
-									<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();"/>
+									<img id="linkGlobalQRHere" class="newContentFieldEnhancement" alt="" src="" style="display: none;" />
+									<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();" />
+									<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();" />
 								</span>
 							</span>
 
@@ -1643,7 +1696,7 @@
 			<!-- IMAGES -->
 			<div id="finalImages">
 				<div id="finalImageShowcase" style="display: flex; align-items: center; justify-content: center; height: 650px; width: 100%;">
-					<div id="finalImageHorizontal" class="primaryColorGlobalHere">
+					<div id="finalImageHorizontal" class="primaryColorGlobalHere" >
 						<div class="finalImageWrapper">
 							<!-- Global Start -->
 							<text class="hookGlobalHere"></text>
@@ -2302,8 +2355,10 @@
 
 		fetch('https://qr-code-generator-with-logo-and-color-fancyqr.p.rapidapi.com/?action=simple', options)
 		.then(response => response.json())
-		.then(data => document.getElementById("genericPostLinkQRPreview").src = data.qrcode)
+		.then(data => document.getElementById("linkGlobalQRHere").src = data.qrcode)
 		.catch(err => console.error(err));
+
+		document.getElementById("linkGlobalQRHere").style.display = 'block';
 
 	}
 	// Text Sentiment Analysis API (unlimited free calls)
