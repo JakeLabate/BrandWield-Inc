@@ -101,6 +101,7 @@
 	<!-- Firebase Setup & My Brand JavaScript -->
 	<script type="module" src="firebaseSetup.js"></script>
 	<script src="myBrand.js"></script>
+	<script src="contextmenu.js"></script>
 
 	<!-- HTML2Canvas Screenshot Capture -->
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
@@ -2300,7 +2301,22 @@
   </form>
 </div>
 
+<!-- Notification bar -->
 <div id="snackbar"></div>
+
+<!-- newContentVar context menu -->
+<div id="newContentVarContextMenu"
+	 style="
+		display: none;
+		z-index: 999999999;
+		height: 100px;
+		width: 200px;
+		background-color: #1da1f2;
+	">
+</div>
+
+
+
 <!-- JavaScript -->
 <script>
 
