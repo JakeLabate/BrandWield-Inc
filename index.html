@@ -121,6 +121,8 @@
 		<div class="navTab" onclick="selectContentType('content'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Content</div>
 		<div class="navTab" onclick="selectContentType('newContent'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">New Content</div>
 		<div class="navTab" onclick="selectContentType('settings'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Settings</div>
+
+		<!-- The tab below is dedicated to authentication related links/buttons -->
 		<div class="navTab auth-tab-container">
 			<div id="nav-login" class="auth-tab hidden" onclick="toggleModal('modal-login')">Login</div>
 			<div id="nav-signup" class="auth-tab hidden" onclick="toggleModal('modal-signup')">Signup</div>
@@ -128,8 +130,8 @@
 				<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
 					<path
 						d="M10.8 35.05Q14 33 17.175 31.975 20.35 30.95 24 30.95q3.65 0 6.825 1.025Q34 33 37.3 35.05q2.15-2.8 3-5.45.85-2.65.85-5.6 0-7.3-4.925-12.225T24 6.85q-7.3 0-12.225 4.925T6.85 24q0 2.95.875 5.6.875 2.65 3.075 5.45ZM24 26.1q-3.15 0-5.3-2.15t-2.15-5.3q0-3.15 2.15-5.3T24 11.2q3.15 0 5.3 2.15t2.15 5.3q0 3.15-2.15 5.3T24 26.1Zm-.05 18.7q-4.25 0-8.05-1.65-3.8-1.65-6.625-4.5t-4.45-6.625Q3.2 28.25 3.2 23.95q0-4.25 1.65-8.025 1.65-3.775 4.5-6.6Q12.2 6.5 15.975 4.85 19.75 3.2 24.05 3.2q4.25 0 8.025 1.65 3.775 1.65 6.6 4.475 2.825 2.825 4.475 6.6Q44.8 19.7 44.8 24q0 4.25-1.65 8.025-1.65 3.775-4.475 6.625-2.825 2.85-6.6 4.5Q28.3 44.8 23.95 44.8Z" />
-				</svg>
-				<img  class="hidden"/>
+				</svg> <!-- Default icon when profile pic is missing -->
+				<img  class="hidden"/> <!-- This image will hold the profile pic if any -->
 				<div class="menu">
 					<div class="menu-name"></div>
 					<div class="menu-email"></div>
@@ -4635,40 +4637,49 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-window.auth = auth
-const provider = new GoogleAuthProvider()
+const provider = new GoogleAuthProvider(); // Initialize the google auth provider
 
 window.signup = async () => {
+	// Collect the data for sign up process:
 	const name = document.querySelector('#modal-signup input[name=name]').value.trim()
 	const email = document.querySelector('#modal-signup input[name=email]').value.trim()
+	// Password field is not trimmed as spaces can exist in password
 	const password = document.querySelector('#modal-signup input[name=password]').value
 	const signupButton = document.querySelector('#modal-signup button');
 
 	if(!name || !email){
+		// Return if name and email are empty
 		showSnackbar({message: 'Please enter the required fields'})
 		return;
 	}else if(password.length < 8){
+		// Return if password lenght is below 8 characters
 		showSnackbar({message: 'Password must be at least 8 characters'})
 		return;
 	}
 
-	signupButton.disabled = true;
+	signupButton.disabled = true; // This is done to prevent multiple calls to signup function
+
 	createUserWithEmailAndPassword(auth, email, password)
 	.then((userCredential) => {
-    // Signed in 
+    // Account created 
     const user = userCredential.user;
+		// Add name to the currentUser object
     return updateProfile(user,{
 			displayName: name
 		})
   })
 	.then(() => {
+		// Addition of name was successful
 		showSnackbar({message: 'Signup successful'})
+		// This is done separately because auth state is already changed, so we have to do it manually
 		document.querySelector('.menu-name').innerHTML = name
+		// Hide the signup modal
 		toggleModal('modal-signup')
 	})
 	.catch(err => {
 		console.log(err);
 		let errorMessage;
+		// Error handling based on error code.
 		switch(err.code){
 			case 'auth/email-already-in-use':
 				errorMessage = "This email is already in use!"
@@ -4676,31 +4687,38 @@ window.signup = async () => {
 			default:
 				errorMessage = 'Failed to signup. Please try again!'
 		}
-		
 		showSnackbar({ message: errorMessage })
+	})
+	.finally(() => {
+		// Re-enale the signup button
 		signupButton.disabled = false
 	})
 }
 
 window.login = async () => {
+	// Extract the email and password for login
 	const email = document.querySelector('#modal-login input[name=email]').value.trim()
 	const password = document.querySelector('#modal-login input[name=password]').value
 	const loginButton = document.querySelector('#modal-login button');
 
 	if(!email || !password){
+		// If data is missing, then throw an error
 		showSnackbar({message: 'Please enter the required fields'})
 		return;
 	}
 
-	loginButton.disabled = true;
+	loginButton.disabled = true; // Disable the login button to prevent multiple calls to login function
 	signInWithEmailAndPassword(auth, email, password)
 	.then(() => {
+		// Login successful
 		showSnackbar({message: 'Login successful'})
+		// Hide the Login Modal
 		toggleModal('modal-login')
 	})
 	.catch(err => {
 		console.log(err.code)
 		let errorMessage;
+		// Error handling based on error code
 		switch(err.code){
 			case 'auth/user-not-found':
 				errorMessage = "There is no account associated with this email!"
@@ -4713,43 +4731,54 @@ window.login = async () => {
 		}
 		
 		showSnackbar({ message: errorMessage })
+	})
+	.finally(() => {
+		// Re-enale the login button
 		loginButton.disabled = false
 	})
 }
 
-window.loginWithGoogle = function(closeModal= 'modal-login'){
+window.loginWithGoogle = function(closeModal= 'modal-login'){ // It is called from both login and signup forms
+	// Open a prompt for choosing google account
 	signInWithPopup(auth, provider).then(() => {
 		showSnackbar({message: `${closeModal === 'modal-login'? 'Login': 'Signup'} successful`})
+		// Close the modal that was opened
 		toggleModal(closeModal)
 	})
 }
 
-window.logout = function(){
+window.logout = function(){ // Function to logout users
 	signOut(auth)
 	.then(() => {
 		showSnackbar({message: 'Logout successful'})
 	})
 	.catch(err => {
+		// Logout is rarely failed, but still we should handle in case it happens
 		console.log(err)
 		showSnackbar({message: 'Failed to logout. Please try again'})
 	})
 }
 
-window.resetPassword = function(){
+window.resetPassword = function(){ // Function to reset password
+	// Extract email from the reset password form's input and trim it
 	const email = document.querySelector('#modal-reset input[name=email]').value.trim()
 	if(!email){
+		// Return when email is not entered
 		showSnackbar({message: 'Please enter the email'})
 		return;
 	}
 
+	// Send a reset password link to the user email
 	sendPasswordResetEmail(auth, email)
 	.then(() => {
 		showSnackbar({message: 'Password reset link sent. Please check you email!'})
+		// After showing the message, hide the reset form modal
 		toggleModal('modal-reset')
 	})
 	.catch((err) => {
 		console.log(err.code)
 		let errorMessage;
+		// Error handling based on error code
 		switch(err.code){
 			case 'auth/user-not-found':
 				errorMessage = "There is no account associated with this email!"
@@ -4762,35 +4791,52 @@ window.resetPassword = function(){
 	})
 }
 
+// Session management. When page is opened, it takes some time to figure out whether user is logged in or not
+// The process of finding log in status is asynchronous, so we need to subscribe to the following trigger and act accordingly
+// This method is triggered whenever the authentication status of user changes
 onAuthStateChanged(auth, user => {
+	// Get all the relevant tabs to show/hide then
 	const login = document.querySelector('#nav-login')
 	const signup = document.querySelector('#nav-signup')
 	const logout = document.querySelector('#nav-logout')
 	const svgNode = logout.querySelector('svg')
 	const imageNode = logout.querySelector('img');
 
+	// Based of authentication status, hide and show the relevant tabs:
+
 	if(user){
 		// We will enter this block if user is signed in
+		// Hide the login and signup tabs
 		login.classList.add('hidden');
 		signup.classList.add('hidden');
+		// Show the logout tab
 		logout.classList.remove('hidden');
 
 		if(user.photoURL){
+			// If the user has profile pic, then we will hide the generic icon and show the profile pic
 			logout.classList.add('has-img');
 			svgNode.classList.add('hidden');
 			imageNode.src = user.photoURL;
 			imageNode.classList.remove('hidden');
 		}
+
+		// The following changes are drop-down menu related:
 		if(user.displayName){
+			// The display name is present in most of the cases. The only case it is not present is when we signup
+			// As soon as we signup, this function is triggered (without waiting for name to saved).
+			// Thus we have to check whether the name is present or not before make DOM changes.
 			logout.querySelector('.menu-name').innerHTML = user.displayName;
 		}
 		logout.querySelector('.menu-email').innerHTML = user.email;
 	}else{
 		// We will enter this block if user is logged out
+		// Show login and signup tabs
 		login.classList.remove('hidden')
 		signup.classList.remove('hidden')
+		// Hide the logout tab
 		logout.classList.add('hidden')
 		logout.classList.remove('has-img')
+		// Hide the image and bring back generic profile icon, as the next user might not have a profile picture.
 		imageNode.classList.add('hidden')
 		svgNode.classList.remove('hidden')
 	}
