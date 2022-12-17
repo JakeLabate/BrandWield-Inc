@@ -63,7 +63,7 @@
 						"name": "BrandWield"
 					},
 					"sameAs": [
-						"https://github,.com/JakeLabate"
+						"https://github.com/JakeLabate"
 					]
 				}
 			],
@@ -131,8 +131,8 @@
 					<path
 						d="M10.8 35.05Q14 33 17.175 31.975 20.35 30.95 24 30.95q3.65 0 6.825 1.025Q34 33 37.3 35.05q2.15-2.8 3-5.45.85-2.65.85-5.6 0-7.3-4.925-12.225T24 6.85q-7.3 0-12.225 4.925T6.85 24q0 2.95.875 5.6.875 2.65 3.075 5.45ZM24 26.1q-3.15 0-5.3-2.15t-2.15-5.3q0-3.15 2.15-5.3T24 11.2q3.15 0 5.3 2.15t2.15 5.3q0 3.15-2.15 5.3T24 26.1Zm-.05 18.7q-4.25 0-8.05-1.65-3.8-1.65-6.625-4.5t-4.45-6.625Q3.2 28.25 3.2 23.95q0-4.25 1.65-8.025 1.65-3.775 4.5-6.6Q12.2 6.5 15.975 4.85 19.75 3.2 24.05 3.2q4.25 0 8.025 1.65 3.775 1.65 6.6 4.475 2.825 2.825 4.475 6.6Q44.8 19.7 44.8 24q0 4.25-1.65 8.025-1.65 3.775-4.475 6.625-2.825 2.85-6.6 4.5Q28.3 44.8 23.95 44.8Z" />
 				</svg> <!-- Default icon when profile pic is missing -->
-				<img  class="hidden"/> <!-- This image will hold the profile pic if any -->
-				<div class="menu">
+				<img alt="" class="hidden" src="" /> <!-- This image will hold the profile pic if any -->
+				<div class="menu" style="text-align: left">
 					<div class="menu-name"></div>
 					<div class="menu-email"></div>
 					<div class="logout-btn" onclick="logout()">Logout</div>
@@ -2247,18 +2247,18 @@
   <form>
     <h1>Signup</h1>
 
-    <label for="name">Name*</label>
-    <input type="text" placeholder="Enter your name" name="name" required>
+    <label for="signupName">Name*</label>
+    <input id="signupName" type="text" placeholder="Enter your name" name="name" required>
 
-    <label for="email">Email*</label>
-    <input type="text" placeholder="Enter your Email" name="email" required>
+    <label for="signupEmail">Email*</label>
+    <input id="signupEmail" type="text" placeholder="Enter your Email" name="email" required>
 
-    <label for="password">Password*</label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <label for="signupPassword">Password*</label>
+    <input id="signupPassword" type="password" placeholder="Enter Password" name="password" required>
 
     <button type="button" onclick="signup()">Signup</button>
 		<button type="button" class="btn-outline" onclick="loginWithGoogle('modal-signup')">
-			<img class="google-logo" src="https://www.maxpixel.net/static/photo/1x/Search-Engine-Icon-Google-Logo-Google-Search-Logo-1991840.png" />
+			<img alt="" class="google-logo" src="https://www.maxpixel.net/static/photo/1x/Search-Engine-Icon-Google-Logo-Google-Search-Logo-1991840.png" />
 			Sign up with Google
 		</button>
     <button type="button" class="btn-outline" onclick="toggleModal('modal-signup')" >Close</button>
@@ -2270,17 +2270,17 @@
   <form>
     <h1>Login</h1>
 
-    <label for="email">Email*</label>
-    <input type="text" placeholder="Enter your Email" name="email" required>
+    <label for="loginEmail">Email*</label>
+    <input id="loginEmail" type="text" placeholder="Enter your Email" name="email" required>
 
-    <label for="password">Password*</label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <label for="loginPassword">Password*</label>
+    <input id="loginPassword" type="password" placeholder="Enter Password" name="password" required>
 
 		<a onclick="toggleModal('modal-login');toggleModal('modal-reset')">Forgot Password?</a>
 
     <button type="button" onclick="login()">Login</button>
     <button type="button" class="btn-outline" onclick="loginWithGoogle('modal-login')">
-			<img class="google-logo" src="https://www.maxpixel.net/static/photo/1x/Search-Engine-Icon-Google-Logo-Google-Search-Logo-1991840.png" />
+			<img alt="" class="google-logo" src="https://www.maxpixel.net/static/photo/1x/Search-Engine-Icon-Google-Logo-Google-Search-Logo-1991840.png" />
 			Sign in with Google
 		</button>
     <button type="button" class="btn-outline" onclick="toggleModal('modal-login')" >Close</button>
@@ -2292,8 +2292,8 @@
   <form>
     <h1>Reset Password</h1>
 
-    <label for="email">Email*</label>
-    <input type="text" placeholder="Enter your Email" name="email" required>
+    <label for="resetEmail">Email*</label>
+    <input id="resetEmail" type="text" placeholder="Enter your Email" name="email" required>
 
     <button type="button" onclick="resetPassword()">Send Verification Link</button>
     <button type="button" class="btn-outline" onclick="toggleModal('modal-reset')" >Close</button>
@@ -4652,7 +4652,7 @@ window.signup = async () => {
 		showSnackbar({message: 'Please enter the required fields'})
 		return;
 	}else if(password.length < 8){
-		// Return if password lenght is below 8 characters
+		// Return if password length is below 8 characters
 		showSnackbar({message: 'Password must be at least 8 characters'})
 		return;
 	}
