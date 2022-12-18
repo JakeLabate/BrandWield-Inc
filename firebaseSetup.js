@@ -1077,4 +1077,83 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		loadContact ();
 	}
 
+
+
 });
+
+get(child(dbRef, 'assetTemplates/copy/email')).then((snapshot) => {
+	if (snapshot.exists()) {
+		console.log(snapshot.val());
+	} else {
+		console.log("No data available");
+	}
+
+	// console log the return
+	for (var key in snapshot.val()) {
+
+		console.log(snapshot.val()[key]);
+		let template = snapshot.val()[key];
+
+		// Create a new div for each project
+
+		let div = document.createElement('div');
+		div.setAttribute('class', 'emailTemplate');
+		div.innerHTML =
+
+			'<h4>' + template.name + '</h4><br>' +
+			'<p>' + template.text + '</p><br>';
+
+		// replace the placeholder values with the actual values
+		div.innerHTML = div.innerHTML.replace(/{{officeAddressStreet1}}/g, localStorage.getItem('officeAddressStreet1'));
+		div.innerHTML = div.innerHTML.replace(/{{officeAddressStreet2}}/g, localStorage.getItem('officeAddressStreet2'));
+		div.innerHTML = div.innerHTML.replace(/{{officeAddressCity}}/g, localStorage.getItem('officeAddressCity'));
+		div.innerHTML = div.innerHTML.replace(/{{officeAddressState}}/g, localStorage.getItem('officeAddressState'));
+		div.innerHTML = div.innerHTML.replace(/{{officeAddressZip}}/g, localStorage.getItem('officeAddressZip'));
+		div.innerHTML = div.innerHTML.replace(/{{officeAddressCountry}}/g, localStorage.getItem('officeAddressCountry'));
+
+		div.innerHTML = div.innerHTML.replace(/{{primaryContactPhone}}/g, localStorage.getItem('primaryContactPhone'));
+		div.innerHTML = div.innerHTML.replace(/{{primaryContactEmail}}/g, localStorage.getItem('primaryContactEmail'));
+		div.innerHTML = div.innerHTML.replace(/{{primaryContactWebsite}}/g, localStorage.getItem('primaryContactWebsite'));
+
+		div.innerHTML = div.innerHTML.replace(/{{facebookUrl}}/g, localStorage.getItem('facebookUrl'));
+		div.innerHTML = div.innerHTML.replace(/{{facebookUsername}}/g, localStorage.getItem('facebookUsername'));
+		div.innerHTML = div.innerHTML.replace(/{{instagramUrl}}/g, localStorage.getItem('instagramUrl'));
+		div.innerHTML = div.innerHTML.replace(/{{instagramUsername}}/g, localStorage.getItem('instagramUsername'));
+		div.innerHTML = div.innerHTML.replace(/{{linkedinUrl}}/g, localStorage.getItem('linkedinUrl'));
+		div.innerHTML = div.innerHTML.replace(/{{linkedinUsername}}/g, localStorage.getItem('linkedinUsername'));
+		div.innerHTML = div.innerHTML.replace(/{{twitterUrl}}/g, localStorage.getItem('twitterUrl'));
+		div.innerHTML = div.innerHTML.replace(/{{twitterUsername}}/g, localStorage.getItem('twitterUsername'));
+		div.innerHTML = div.innerHTML.replace(/{{tiktokUrl}}/g, localStorage.getItem('tiktokUrl'));
+		div.innerHTML = div.innerHTML.replace(/{{tiktokUsername}}/g, localStorage.getItem('tiktokUsername'));
+
+		div.innerHTML = div.innerHTML.replace(/{{mondayOpeningTime}}/g, localStorage.getItem('mondayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{mondayClosingTime}}/g, localStorage.getItem('mondayClosingTime'));
+		div.innerHTML = div.innerHTML.replace(/{{tuesdayOpeningTime}}/g, localStorage.getItem('tuesdayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{tuesdayClosingTime}}/g, localStorage.getItem('tuesdayClosingTime'));
+		div.innerHTML = div.innerHTML.replace(/{{wednesdayOpeningTime}}/g, localStorage.getItem('wednesdayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{wednesdayClosingTime}}/g, localStorage.getItem('wednesdayClosingTime'));
+		div.innerHTML = div.innerHTML.replace(/{{thursdayOpeningTime}}/g, localStorage.getItem('thursdayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{thursdayClosingTime}}/g, localStorage.getItem('thursdayClosingTime'));
+		div.innerHTML = div.innerHTML.replace(/{{fridayOpeningTime}}/g, localStorage.getItem('fridayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{fridayClosingTime}}/g, localStorage.getItem('fridayClosingTime'));
+		div.innerHTML = div.innerHTML.replace(/{{saturdayOpeningTime}}/g, localStorage.getItem('saturdayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{saturdayClosingTime}}/g, localStorage.getItem('saturdayClosingTime'));
+		div.innerHTML = div.innerHTML.replace(/{{sundayOpeningTime}}/g, localStorage.getItem('sundayOpeningTime'));
+		div.innerHTML = div.innerHTML.replace(/{{sundayClosingTime}}/g, localStorage.getItem('sundayClosingTime'));
+
+		div.innerHTML = div.innerHTML.replace(/{{founderName}}/g, localStorage.getItem('founderName'));
+		div.innerHTML = div.innerHTML.replace(/{{foundingDate}}/g, localStorage.getItem('foundingDate'));
+		div.innerHTML = div.innerHTML.replace(/{{tradeBusinessName}}/g, localStorage.getItem('tradeBusinessName'));
+		div.innerHTML = div.innerHTML.replace(/{{legalBusinessName}}/g, localStorage.getItem('legalBusinessName'));
+
+		div.innerHTML = div.innerHTML.replace(/{{businessType}}/g, localStorage.getItem('businessType'));
+		div.innerHTML = div.innerHTML.replace(/{{slogan}}/g, localStorage.getItem('slogan'));
+		div.innerHTML = div.innerHTML.replace(/{{missionStatement}}/g, localStorage.getItem('missionStatement'));
+		div.innerHTML = div.innerHTML.replace(/{{valueProp}}/g, localStorage.getItem('valueProp'));
+
+		// add the new div to the section with the id of "projects"
+		document.getElementById('copy/email').appendChild(div);
+
+	}}).catch((error) => {
+	console.error(error);
+	});

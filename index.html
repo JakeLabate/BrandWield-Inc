@@ -9,25 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="media/brandwieldLogos/squareLogo.png">
 	<meta name="robots" content="index, follow">
-
-	<!-- Open Graph -->
-	<meta property="og:title" content="BrandWield | Making content vision and content production, synonymous">
-	<meta property="og:description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
-	<meta property="og:image" content="media/brandwieldLogos/squareLogo.png">
-	<meta property="og:image:width" content="300">
-	<meta property="og:image:height" content="300">
-	<meta property="og:image:alt" content="BrandWield Logo">
-	<meta property="og:url" content="https://app.brandwield.com/">
-	<meta property="og:site_name" content="BrandWield">
-	<meta property="og:type" content="website">
-	<meta property="og:locale" content="en_US">
-
-	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@brandwield">
-	<meta name="twitter:creator" content="@brandwield">
-	<meta name="twitter:title" content="BrandWield | Making content vision and content production, synonymous">
-
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -94,12 +75,31 @@
 		}
 	</script>
 
+	<!-- Open Graph -->
+	<meta property="og:title" content="BrandWield | Making content vision and content production, synonymous">
+	<meta property="og:description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
+	<meta property="og:image" content="media/brandwieldLogos/squareLogo.png">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+	<meta property="og:image:alt" content="BrandWield Logo">
+	<meta property="og:url" content="https://app.brandwield.com/">
+	<meta property="og:site_name" content="BrandWield">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_US">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@brandwield">
+	<meta name="twitter:creator" content="@brandwield">
+	<meta name="twitter:title" content="BrandWield | Making content vision and content production, synonymous">
+
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 	<!-- Firebase Setup & My Brand JavaScript -->
 	<script type="module" src="firebaseSetup.js"></script>
+
 	<script src="myBrand.js"></script>
 	<script src="contextmenu.js"></script>
 
@@ -146,7 +146,7 @@
 <main>
 
 	<!-- Brand Tab -->
-	<div id="brand" class="tabby">
+	<section id="brand" class="tabby">
 
 		<!-- Contact -->
 		<details>
@@ -1158,10 +1158,10 @@
 			</div>
 		</details>
 
-	</div>
+	</section>
 
 	<!-- Content Tab -->
-	<div id="content" class="tabby">
+	<section id="content" class="tabby">
 		<h2>My Content</h2>
 
 		<br><br>
@@ -1301,10 +1301,15 @@
 			</div>
 		</div>
 
+	</section>
+
+	<div id="copy/email">
+
 	</div>
 
+
 	<!-- New Content Tab -->
-	<div id="newContent" class="tabby">
+	<section id="newContent" class="tabby">
 
 		<!-- Inputs -->
 		<div id="outputs" class="column65PercentWidth" style="max-height: 100vh; overflow: scroll; user-select: none;">
@@ -2114,10 +2119,10 @@
 
 		</div>
 
-	</div>
+	</section>
 
 	<!-- Settings Tab -->
-	<div id="settings" class="tabby">
+	<section id="settings" class="tabby">
 		<div id="accountIntegrations" style="padding: 20px;">
 			<h3>Integrations (just a dummy UI for now)</h3>
 			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
@@ -2185,7 +2190,7 @@
 			</div>
 
 		</div>
-	</div>
+	</section>
 
 </main>
 
@@ -3047,7 +3052,7 @@
 
 	}
 
-	// update newContent hashtags
+	// set newContent hashtags
 	function hookGlobalHashtagsUpdate() {
 
 		// set variable
@@ -3499,6 +3504,53 @@
 		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = uniq.join(" ");
 	}
 
+	// clear newContent hashtags
+	function clearHookGlobalHashtags() {
+		document.getElementById("hookGlobalHashtagsHere").innerText = "";
+	}
+	function clearHookResolutionGlobalHashtags() {
+		document.getElementById("hookResolutionGlobalHashtagsHere").innerText = "";
+	}
+	function clearGenericPostHashtags() {
+		document.getElementById("genericPostHashtagsHere").innerText = "";
+	}
+	function clearCompanyUpdateHeadlineHashtags() {
+		document.getElementById("companyUpdateHeadlineHashtagsHere").innerText = "";
+	}
+	function clearCompanyUpdateBodyHashtags() {
+		document.getElementById("companyUpdateBodyHashtagsHere").innerText = "";
+	}
+	function clearSalePromotionTitleHashtags() {
+		document.getElementById("salePostTitleHashtagsHere").innerText = "";
+	}
+	function clearSalePromotionBodyHashtags() {
+		document.getElementById("salePromotionBodyHashtagsHere").innerText = "";
+	}
+	function clearSalePromotionProductOrServiceHashtags() {
+		document.getElementById("salePromotionProductOrServiceHashtagsHere").innerText = "";
+	}
+	function clearEventPromotionTitleHashtags() {
+		document.getElementById("eventPromotionTitleHashtagsHere").innerText = "";
+	}
+	function clearEventPromotionLocationHashtags() {
+		document.getElementById("eventPromotionLocation").innerText = "";
+	}
+	function clearEventPromotionBodyHashtags() {
+		document.getElementById("eventPromotionBodyHashtagsHere").innerText = "";
+	}
+	function clearTestimonialReviewAuthorNameHashtags() {
+		document.getElementById("testimonialReviewAuthorNameHashtagsHere").innerText = "";
+	}
+	function clearTestimonialReviewAuthorTitleHashtags() {
+		document.getElementById("testimonialReviewAuthorTitleHashtagsHere").innerText = "";
+	}
+	function clearTestimonialReviewAuthorCompanyHashtags() {
+		document.getElementById("testimonialReviewAuthorCompanyHashtagsHere").innerText = "";
+	}
+	function clearTestimonialReviewBodyHashtags() {
+		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = "";
+	}
+
 	// select font priority for newContent fields
 	function hookGlobalFontPriority1() {
 
@@ -3717,6 +3769,8 @@
 
 	// clear newContent fields
 	function clearAllFields (){
+
+		// clear newContent fields
 		clearHookGlobal();
 		clearHookResolutionGlobal();
 		clearGenericPostBody();
@@ -3745,6 +3799,23 @@
 		clearFontColorGlobal();
 		clearSquareLogoGlobal();
 
+		// clear newContent hashtags
+		clearHookGlobalHashtags();
+		clearHookResolutionGlobalHashtags();
+		clearGenericPostHashtags();
+		clearCompanyUpdateHeadlineHashtags();
+		clearCompanyUpdateBodyHashtags();
+		clearSalePromotionTitleHashtags();
+		clearSalePromotionBodyHashtags();
+		clearSalePromotionProductOrServiceHashtags();
+		clearEventPromotionTitleHashtags();
+		clearEventPromotionLocationHashtags();
+		clearEventPromotionBodyHashtags();
+		clearTestimonialReviewAuthorNameHashtags();
+		clearTestimonialReviewAuthorTitleHashtags();
+		clearTestimonialReviewAuthorCompanyHashtags();
+		clearTestimonialReviewBodyHashtags();
+
 	}
 	function clearHookGlobal(){
 		document.getElementById("hookGlobal").value = "";
@@ -3753,6 +3824,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearHookGlobalHashtags();
 	}
 	function clearHookResolutionGlobal(){
 		document.getElementById("hookResolutionGlobal").value = "";
@@ -3761,6 +3833,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearHookResolutionGlobalHashtags();
 	}
 	function clearGenericPostBody(){
 		document.getElementById("genericPostBody").value = "";
@@ -3769,6 +3842,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearGenericPostHashtags();
 	}
 	function clearCompanyUpdateHeadline(){
 		document.getElementById("companyUpdateHeadline").value = "";
@@ -3777,6 +3851,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearCompanyUpdateHeadlineHashtags();
 	}
 	function clearCompanyUpdateDate(){
 		document.getElementById("companyUpdateDate").value = "";
@@ -3793,6 +3868,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearCompanyUpdateBodyHashtags();
 	}
 	function clearSalePromotionTitle(){
 		document.getElementById("salePromotionTitle").value = "";
@@ -3801,6 +3877,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearSalePromotionTitleHashtags();
 	}
 	function clearSalePromotionProductOrService(){
 		document.getElementById("salePromotionProductOrService").value = "";
@@ -3809,6 +3886,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearSalePromotionProductOrServiceHashtags();
 	}
 	function clearSalePromotionStartDate(){
 		document.getElementById("salePromotionStartDate").value = "";
@@ -3833,6 +3911,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearSalePromotionBodyHashtags();
 	}
 	function clearEventPromotionTitle(){
 		document.getElementById("eventPromotionTitle").value = "";
@@ -3841,6 +3920,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearEventPromotionTitleHashtags();
 	}
 	function clearEventPromotionStartDate(){
 		document.getElementById("eventPromotionStartDate").value = "";
@@ -3865,6 +3945,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearEventPromotionLocationHashtags();
 	}
 	function clearEventPromotionBody(){
 		document.getElementById("eventPromotionBody").value = "";
@@ -3873,6 +3954,7 @@
 		for (let i = 0; i < element.length; i++) {
 			element[i].innerHTML = "";
 		}
+		clearEventPromotionBodyHashtags();
 	}
 	function clearTestimonialReviewAuthorName() {
 		document.getElementById("testimonialReviewAuthorName").value = "";
@@ -3889,6 +3971,7 @@
 		for(let i = 0; i < element.length; i ++) {
 			element[i].innerHTML = "";
 		}
+		clearTestimonialReviewAuthorTitleHashtags();
 	}
 	function clearTestimonialReviewAuthorCompany() {
 		document.getElementById("testimonialReviewAuthorCompany").value = "";
@@ -3897,6 +3980,7 @@
 		for(let i = 0; i < element.length; i ++) {
 			element[i].innerHTML = "";
 		}
+		clearTestimonialReviewAuthorCompanyHashtags();
 	}
 	function clearTestimonialReviewAuthorHeadshot() {
 		document.getElementById("testimonialReviewAuthorHeadshot").value = "";
@@ -3921,6 +4005,7 @@
 		for(let i = 0; i < element.length; i ++) {
 			element[i].innerHTML = "";
 		}
+		clearTestimonialReviewBodyHashtags();
 	}
 	function clearCallToActionGlobal() {
 		document.getElementById("callToActionGlobal").value = "";
@@ -4710,7 +4795,6 @@ window.signup = async () => {
 		signupButton.disabled = false
 	})
 }
-
 window.login = async () => {
 	// Extract the email and password for login
 	const email = document.querySelector('#modal-login input[name=email]').value.trim()
@@ -4753,7 +4837,6 @@ window.login = async () => {
 		loginButton.disabled = false
 	})
 }
-
 window.loginWithGoogle = function(closeModal= 'modal-login'){ // It is called from both login and signup forms
 	// Open a prompt for choosing google account
 	signInWithPopup(auth, provider).then(() => {
@@ -4762,7 +4845,6 @@ window.loginWithGoogle = function(closeModal= 'modal-login'){ // It is called fr
 		toggleModal(closeModal)
 	})
 }
-
 window.logout = function(){ // Function to logout users
 	signOut(auth)
 	.then(() => {
@@ -4774,7 +4856,6 @@ window.logout = function(){ // Function to logout users
 		showSnackbar({message: 'Failed to logout. Please try again'})
 	})
 }
-
 window.resetPassword = function(){ // Function to reset password
 	// Extract email from the reset password form's input and trim it
 	const email = document.querySelector('#modal-reset input[name=email]').value.trim()
