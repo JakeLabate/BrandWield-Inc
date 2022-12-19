@@ -99,7 +99,6 @@
 
 	<!-- Firebase Setup & My Brand JavaScript -->
 	<script type="module" src="firebaseSetup.js"></script>
-
 	<script src="myBrand.js"></script>
 	<script src="contextmenu.js"></script>
 
@@ -1164,9 +1163,32 @@
 	<section id="content" class="tabby">
 		<h2>My Content</h2>
 
-		<br><br>
-		<div id="emailSignatures">
-			<h3>Email Signatures</h3>
+		<!-- Copywriting -->
+		<details>
+			<summary>
+				Copywriting
+			</summary>
+
+			<!-- Emails -->
+			<details>
+				<summary>Emails</summary>
+
+				<!-- Free Event -->
+				<details>
+					<summary>
+						Free Event
+					</summary>
+					<div id="copy/emails/freeEvent"></div>
+				</details>
+				<div id="copy/email"></div>
+			</details>
+		</details>
+
+		<!-- Email Signatures -->
+		<details>
+			<summary>
+				Email Signatures
+			</summary>
 			<h4>Email Signature 1</h4>
 			<div>
 				<div style="max-width: 50vw; overflow: scroll;">
@@ -1232,49 +1254,52 @@
 					<!-- / Signature End -->
 				</div>
 			</div>
+		</details>
 
-		</div>
-
-		<br><br>
-		<div id="socialMediaBanners">
-			<h3>Social Media Banners</h3>
-			<div>
-				<h4>Facebook</h4>
+		<!-- Social Media Banners -->
+		<details>
+			<summary>
+				Social Media Banners
+			</summary>
+			<details>
+				<summary>Facebook</summary>
 				<div id="facebookBannerImage" title="Facebook Banner" style="width: 820px; height: 312px; border: 2px solid #000000">
 					<div id="facebookBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 369px; height: 190px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 120px; left: 0;">Logo safe area</div>
 					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
 				</div>
-			</div>
-			<div>
-				<h4>LinkedIn</h4>
+			</details>
+			<details>
+				<summary>LinkedIn</summary>
 				<div id="linkedinBannerImage" title="LinkedIn Banner" style="width: 1128px; height: 191px; border: 2px solid #000000">
 					<div id="linkedinBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 203px; height: 114px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 73px; left: 0;">Logo safe area</div>
 					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
 				</div>
-			</div>
-			<div>
-				<h4>Twitter</h4>
+			</details>
+			<details>
+				<summary>Twitter</summary>
 				<div id="twitterBannerImage" title="Twitter Banner" style="width: 1500px; height: 500px; border: 2px solid #000000">
 					<div id="twitterBannerNotchSafArea" style="color: white; background-color: #5d5d5d; width: 1496px; height: 125px; border-bottom: 2px solid #000000; position: relative; top: 0;">Notch safe area</div>
 					<div id="twitterBannerMobileNavLeftSafeArea" style="color: white; background-color: #5d5d5d; width: 300px; height: 175px; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Mobile nav left safe area (same area on right side, but we are having issues blocking off that space like we did here on the left side.)</div>
 					<div id="twitterBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 450px; height: 198px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Logo safe area</div>
 					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
 				</div>
-			</div>
-			<div>
-				<h4>YouTube</h4>
+			</details>
+			<details>
+				<summary>YouTube</summary>
 				<div id="youtubeBannerImage" title="YouTube Banner" style="width: 2048px; height: 326px; border: 2px solid #000000">
 					<div id="youtubeBannerSocialLinksSafeArea" style="color: white; background-color: #5d5d5d; width: 326px; height: 80px; border-top: 2px solid #000000; border-left: 2px solid #000000; position: relative; top: 244px; left: 1720px;">Social links safe area</div>
 					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
 				</div>
-			</div>
-		</div>
+			</details>
+		</details>
 
-		<br><br>
-		<div id="businessCards">
-			<h3>Business Cards</h3>
-			<div>
-				<h4>Business Card 1</h4>
+		<!-- Business Cards -->
+		<details>
+			<summary>
+				Business Cards
+			</summary>
+			<details>
+				<summary>Business Card 1</summary>
 				<div>
 					<h5>Front</h5>
 					<div id="businessCard1FrontImage" title="Business Card 1: Front" style="width: 700px; height: 400px; border: 2px solid #000000">
@@ -1287,26 +1312,23 @@
 						<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
 					</div>
 				</div>
-			</div>
-		</div>
+			</details>
+		</details>
 
-		<br><br>
-		<div id="letterHeads">
-			<h3>Letter Heads</h3>
-			<div>
-				<h4>Letter Head 1</h4>
+		<!-- Letterheads -->
+		<details>
+			<summary>
+				Letterheads
+			</summary>
+			<details>
+				<summary>Letter Head 1</summary>
 				<div id="letterHead1" title="Letter Head 1" style="width: 816px; height: 1056px; border: 2px solid #000000">
 					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
 				</div>
-			</div>
-		</div>
+			</details>
+		</details>
 
 	</section>
-
-	<div id="copy/email">
-
-	</div>
-
 
 	<!-- New Content Tab -->
 	<section id="newContent" class="tabby">
@@ -2346,15 +2368,15 @@
 		}
 	});
 
-	// select content type
+	// select app section
 	function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
 		let i; let x = document.getElementsByClassName("tabby");
 		for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
 		document.getElementById(tabby).style.display = "block";
-		document.getElementById('hookGlobal').focus()
+		document.getElementById('hookGlobal').focus();
 	}
 
-	// Content Type Selector
+	// select newContent type
 	const valueSelector = document.getElementById("contentTypeSelect");
 	const globalContentFieldsStart = document.getElementById("globalContentFieldsStart");
 	const genericPostFields = document.getElementById("genericPostFields");
@@ -2364,47 +2386,38 @@
 	const testimonialReviewFields = document.getElementById("testimonialReviewFields");
 	const globalContentFieldsEnd = document.getElementById("globalContentFieldsEnd");
 	function valueSelectorUpdate() {
-
+		globalContentFieldsStart.style.display = 'block';
+		globalContentFieldsEnd.style.display = 'block';
 		if (valueSelector.value === 'genericPostFields') {
 			genericPostFields.style.display = 'block';
 			companyUpdateFields.style.display = 'none';
 			salePromotionFields.style.display = 'none';
 			eventPromotionFields.style.display = 'none';
 			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
 		} else if (valueSelector.value === 'companyUpdateFields') {
 			companyUpdateFields.style.display = 'block';
 			genericPostFields.style.display = 'none';
 			salePromotionFields.style.display = 'none';
 			eventPromotionFields.style.display = 'none';
 			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
 		} else if (valueSelector.value === 'salePromotionFields') {
 			salePromotionFields.style.display = 'block';
 			genericPostFields.style.display = 'none';
 			companyUpdateFields.style.display = 'none';
 			eventPromotionFields.style.display = 'none';
 			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
 		} else if (valueSelector.value === 'eventPromotionFields') {
 			eventPromotionFields.style.display = 'block';
 			genericPostFields.style.display = 'none';
 			companyUpdateFields.style.display = 'none';
 			salePromotionFields.style.display = 'none';
 			testimonialReviewFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
 		} else if (valueSelector.value === 'testimonialReviewFields') {
 			testimonialReviewFields.style.display = 'block';
 			genericPostFields.style.display = 'none';
 			companyUpdateFields.style.display = 'none';
 			salePromotionFields.style.display = 'none';
 			eventPromotionFields.style.display = 'none';
-			globalContentFieldsStart.style.display = 'block';
-			globalContentFieldsEnd.style.display = 'block';
 		}
 
 		// set the focus the 'hookGlobal' field, as it is the first field for all content types
@@ -2599,7 +2612,7 @@
 		document.getElementById("finalImageStory").style.display = "block"; //block
 	}
 
-	// newContent field updates
+	// update newContent fields
 	function hookGlobalUpdate() {
 		// for all elements with the 'hookGlobalHere' class, set the innerHTML to the value of the 'hookGlobal' field
 		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
@@ -4052,7 +4065,7 @@
 		}
 	}
 
-	// place/remove newContent fields in final images
+	// update newContent in images
 	function hookGlobalInImages() {
 
 		// if the checkbox is checked
@@ -4320,7 +4333,7 @@
 		}
 	}
 
-	// Brand popup
+	// brand popup
 	function showBrandPopup() {
 
 		// clear the search bar value & any recommendations
@@ -4738,7 +4751,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider(); // Initialize the google auth provider
+const provider = new GoogleAuthProvider(); // Initialize the Google auth provider
 
 window.signup = async () => {
 	// Collect the data for sign up process:
@@ -4791,7 +4804,7 @@ window.signup = async () => {
 		showSnackbar({ message: errorMessage })
 	})
 	.finally(() => {
-		// Re-enale the signup button
+		// Re-enable the signup button
 		signupButton.disabled = false
 	})
 }
@@ -4833,7 +4846,7 @@ window.login = async () => {
 		showSnackbar({ message: errorMessage })
 	})
 	.finally(() => {
-		// Re-enale the login button
+		// Re-enable the login button
 		loginButton.disabled = false
 	})
 }
@@ -4845,7 +4858,7 @@ window.loginWithGoogle = function(closeModal= 'modal-login'){ // It is called fr
 		toggleModal(closeModal)
 	})
 }
-window.logout = function(){ // Function to logout users
+window.logout = function(){ // Function to log out users
 	signOut(auth)
 	.then(() => {
 		showSnackbar({message: 'Logout successful'})
@@ -4919,9 +4932,9 @@ onAuthStateChanged(auth, user => {
 
 		// The following changes are drop-down menu related:
 		if(user.displayName){
-			// The display name is present in most of the cases. The only case it is not present is when we signup
-			// As soon as we signup, this function is triggered (without waiting for name to saved).
-			// Thus we have to check whether the name is present or not before make DOM changes.
+			// The display name is present in most of the cases. The only case it is not present is when we sign up
+			// As soon as we sign up, this function is triggered (without waiting for name to saved).
+			// Thus, we have to check whether the name is present or not before make DOM changes.
 			logout.querySelector('.menu-name').innerHTML = user.displayName;
 		}
 		logout.querySelector('.menu-email').innerHTML = user.email;

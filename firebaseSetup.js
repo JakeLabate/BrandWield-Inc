@@ -1091,17 +1091,17 @@ get(child(dbRef, 'assetTemplates/copy/email')).then((snapshot) => {
 	// console log the return
 	for (var key in snapshot.val()) {
 
-		console.log(snapshot.val()[key]);
-		let template = snapshot.val()[key];
+		let value = snapshot.val()[key];
 
 		// Create a new div for each project
-
 		let div = document.createElement('div');
 		div.setAttribute('class', 'emailTemplate');
 		div.innerHTML =
 
-			'<h4>' + template.name + '</h4><br>' +
-			'<p>' + template.text + '</p><br>';
+			'<details>' +
+				'<summary>' + key + '</summary><br>' +
+				'<span>' + value + '</span>' +
+			'</details>'
 
 		// replace the placeholder values with the actual values
 		div.innerHTML = div.innerHTML.replace(/{{officeAddressStreet1}}/g, localStorage.getItem('officeAddressStreet1'));
