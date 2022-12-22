@@ -641,10 +641,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
 
 			// Create an 'option' element under the 'brandList(s)' for search reference in the Brand Search
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Facebook URL';
-			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
-			document.getElementById('valueTypeURL').lastChild.innerHTML = 'Facebook URL';
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
+			document.getElementById('url').lastChild.innerHTML = 'Facebook URL';
 
 			document.getElementById('facebookUrl').value = snapshot.val().facebookUrl;
 			document.getElementById('facebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
@@ -653,24 +651,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			document.getElementById('warningFacebookURL').style.display = 'block';
 			document.getElementById('facebookUrl').size = document.getElementById('facebookUrl').placeholder.length + 1;
 		}
-
-
-
-
-
-
-
-
-
 	}
 	function loadFacebookUsername () {
 		if (snapshot.val().facebookUsername != null) {
 			// set local storage
 			localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
-
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUsername);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Facebook Username';
 
 			document.getElementById('facebookUsername').value = snapshot.val().facebookUsername;
 			document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').value.length + 1;
@@ -686,10 +671,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Instagram URL';
-			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
-			document.getElementById('valueTypeURL').lastChild.innerHTML = 'Instagram URL';
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
+			document.getElementById('url').lastChild.innerHTML = 'Instagram URL';
 
 			document.getElementById('instagramUrl').value = snapshot.val().instagramUrl;
 			document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').value.length + 1;
@@ -722,10 +705,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
-			document.getElementById('valueAll').lastChild.innerHTML = 'LinkedIn URL';
-			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
-			document.getElementById('valueTypeURL').lastChild.innerHTML = 'LinkedIn URL';
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
+			document.getElementById('url').lastChild.innerHTML = 'LinkedIn URL';
 
 			document.getElementById('linkedinUrl').value = snapshot.val().linkedinUrl;
 			document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').value.length + 1;
@@ -758,10 +739,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Twitter URL';
-			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
-			document.getElementById('valueTypeURL').lastChild.innerHTML = 'Twitter URL';
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
+			document.getElementById('url').lastChild.innerHTML = 'Twitter URL';
 
 			document.getElementById('twitterUrl').value = snapshot.val().twitterUrl;
 			document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').value.length + 1;
@@ -794,10 +773,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
-			document.getElementById('valueAll').lastChild.innerHTML = 'TikTok Url';
-			document.getElementById('valueTypeURL').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
-			document.getElementById('valueTypeURL').lastChild.innerHTML = 'TikTok URL';
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
+			document.getElementById('url').lastChild.innerHTML = 'TikTok Url';
 
 			document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
 			document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
@@ -844,6 +821,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			// set local storage
 			localStorage.setItem('squareLogo', snapshot.val().squareLogo);
 
+			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().squareLogo);
+			document.getElementById('file').lastChild.innerHTML = 'Square Logo';
+			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', snapshot.val().squareLogo);
+
 			document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
 			document.getElementById('squareLogoBro').style.maxWidth = '32px';
 			document.getElementById('squareLogoBro').style.maxHeight = '32px';
@@ -855,6 +836,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		if (snapshot.val().fullLogo != null) {
 			// set local storage
 			localStorage.setItem('fullLogo', snapshot.val().fullLogo);
+
+			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().fullLogo);
+			document.getElementById('file').lastChild.innerHTML = 'Full Logo';
+			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', snapshot.val().fullLogo);
+
 			document.getElementById('fullLogoBro').src = snapshot.val().fullLogo;
 			document.getElementById('fullLogoBro').style.maxWidth = '250px';
 			document.getElementById('fullLogoBro').style.maxHeight = '250px';
@@ -874,8 +860,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			// set local storage
 			localStorage.setItem('primaryColor', snapshot.val().primaryColor);
 			// set to brandLists
-			document.getElementById('brandColors').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
-			document.getElementById('brandColors').lastChild.innerHTML = 'Primary Color';
+			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
+			document.getElementById('color').lastChild.innerHTML = 'Primary Color';
 
 			document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
 			document.getElementById('primaryColor').value = snapshot.val().primaryColor;
@@ -899,10 +885,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Secondary Color';
-			document.getElementById('valueTypeColor').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
-			document.getElementById('valueTypeColor').lastChild.innerHTML = 'Secondary Color';
+			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
+			document.getElementById('color').lastChild.innerHTML = 'Secondary Color';
 
 			document.documentElement.style.setProperty('--secondaryColor', snapshot.val().secondaryColor);
 			document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
@@ -924,10 +908,8 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Tertiary Color';
-			document.getElementById('valueTypeColor').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
-			document.getElementById('valueTypeColor').lastChild.innerHTML = 'Tertiary Color';
+			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
+			document.getElementById('color').lastChild.innerHTML = 'Tertiary Color';
 
 			document.documentElement.style.setProperty('--tertiaryColor', snapshot.val().tertiaryColor);
 			document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;

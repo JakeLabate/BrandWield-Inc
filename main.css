@@ -234,9 +234,15 @@ img {
     height: 25px;
     width: 25px;
     margin: 0 10px 0 0;
+    transition: .1s ease-in-out;
+    border-radius: 50%;
 }
 .newContentFieldEnhancement:hover {
-
+    box-shadow:  5px 5px 12px #b5b5b5, -5px -5px 12px #ffffff;
+    transition: .1s ease-in-out;
+    scale: 1.1;
+    border-radius: 50%;
+    cursor: pointer
 }
 
 .tabs {
@@ -910,24 +916,30 @@ pre code {
     cursor: pointer;
     background-color: white;
     transition: .1s ease-in-out;
-
+    border-top: 1px solid #dcdcdc;
     padding: 5px 10px 5px 10px;
 }
 .brandRecommendation:hover {
     scale: 1.03;
     transition: .1s ease-in-out;
-    border-radius: 40px;
-
     box-shadow: #5d5d5d 0 0 10px;
     -webkit-box-shadow: #5d5d5d 0 0 10px;
     -moz-box-shadow: #5d5d5d 0 0 10px;
+    background-color: #f6f6f6;
 }
-.brandRecommendationInnerText {
-    font-weight: bold;
 
-}
 .brandRecommendationValue {
     font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+.brandRecommendationInnerText {
+    font-weight: bold;
+    font-size: 9px;
+    color: #9d9d9d;
 
 }
 
@@ -1193,7 +1205,7 @@ input[type="checkbox"] {
     color: #1da1f2;
     text-align: right;
     cursor: pointer;
-    margin: 8px 0px;
+    margin: 8px 0;
 }
 
 .google-logo{
@@ -1250,7 +1262,7 @@ input[type="checkbox"] {
     text-align: center;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
     right: 0;
@@ -1283,7 +1295,7 @@ input[type="checkbox"] {
 .menu-name{
     color: #7f8c8d;
     cursor: text;
-    margin: 4px 0px;
+    margin: 4px 0;
 }
 
 
