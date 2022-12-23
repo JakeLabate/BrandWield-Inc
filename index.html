@@ -2227,13 +2227,12 @@
 	<!-- Chrome ignores autocomplete="off" -->
 	<span style="display: flex; align-items: center; justify-content: start;">
 		<input autocomplete="off" id="brandSearch" class="cleanCursorInput" type="text" size="40" placeholder="search your brand..." onkeyup="updateBrandSearch();" />
-		<img alt="" src="media/otherIcons/clear.svg" height="25" width="25" style="margin-left: 6px;" onclick="closeBrandPopup();"/>
+		<img alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" style="margin-left: 6px;" onclick="closeBrandPopup();"/>
 	</span>
 	<span>
 		<span id="brandRecommendationsLabel" style="display: flex; align-items: center; justify-content: start; padding: 10px; font-size: 9px; color: #9d9d9d;"></span>
 		<span id="brandRecommendations"></span>
 	</span>
-	<div id="brandList"></div>
 </div>
 
 <!-- Signup form in a modal -->
@@ -2300,27 +2299,6 @@
 <!-- JavaScript -->
 <script>
 
-	// load 'squareLogo' image as 'Get from brand' image in 'new content' (circle + shadow)
-	let getFromBrand = document.querySelectorAll('img[id*="Get"]');
-	let squareLogo = localStorage.getItem('squareLogo');
-	for (let i = 0; i < getFromBrand.length; i++) {
-		// set backup as link icon
-		if (squareLogo === null || squareLogo === "" || squareLogo === "undefined" || squareLogo === undefined || squareLogo === 'null') {
-			getFromBrand[i].src = 'media/otherIcons/link.svg';
-		} else {
-			getFromBrand[i].src = squareLogo;
-			getFromBrand[i].style.borderRadius = "50%";
-			getFromBrand[i].style.boxShadow = "0 0 3px 0 rgba(0,0,0,0.5)";
-		}
-	}
-
-	// 'Cmd' + 'b' or 'Ctrl' + 'b' to open the brandPopup
-	document.addEventListener('keydown', function(event) {
-		if (event.ctrlKey && event.key === 'b' || event.metaKey && event.key === 'b') {
-			showBrandPopup(); // does not open where the mouse cursor is --> need to fix
-		}
-	});
-
 	// brandPopup event listener for .newContentVar inputs
 	let newContentVarInputs = document.querySelectorAll('.newContentVar input, .newContentVar textarea');
 	for (let i = 0; i < newContentVarInputs.length; i++) {
@@ -2331,16 +2309,62 @@
 			let inputType = event.target.type;
 			let brandSearch = document.getElementById('brandSearch');
 			// set label
-			document.getElementById('brandRecommendationsLabel').innerText = 'Field type: ' + inputType;
+			document.getElementById('brandRecommendationsLabel').innerText = 'Field type: ' + inputType.toUpperCase();
+
 			// set the 'list' attribute for the input field clicked
 			if (inputType === 'text' || inputType === 'textarea') {
 				brandSearch.setAttribute('list', 'text');
+
+				// for each option, show a div
+				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+					document.getElementById('brandRecommendations').innerHTML +=
+						'<div class="brandRecommendation" onmouseover="" onclick="">' +
+							'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+							'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
+						'</div>';
+				}
+
 			} else if (inputType === 'url') {
 				brandSearch.setAttribute('list', 'url')
+
+				// for each option, show a div
+				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+					document.getElementById('brandRecommendations').innerHTML +=
+						'<div class="brandRecommendation" onmouseover="" onclick="">' +
+							'<div>' +
+								'<div class="brandRecommendationInnerText" style="display: flex;"><img alt="" style="margin-right: 3px;" src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + document.getElementById('brandSearch').list.options[i].value + '" />' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+								'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
+							'</div>' +
+						'</div>';
+				}
+
 			} else if (inputType === 'color') {
 				brandSearch.setAttribute('list', 'color')
+
+				// for each option, show a div
+				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+					document.getElementById('brandRecommendations').innerHTML +=
+						'<div class="brandRecommendation" style="display: flex; align-items: center; justify-content: start;" onmouseover="" onclick="">' +
+							'<span style="background-color: ' + document.getElementById('brandSearch').list.options[i].value + '; height: 25px; width: 25px; border-radius: 50%; margin: 0 5px 0 0;"></span>' +
+							'<div>' +
+								'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+								'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
+							'</div>' +
+						'</div>';
+				}
+
 			} else if (inputType === 'file') {
 				brandSearch.setAttribute('list', 'file')
+
+				// for each option, show a div
+				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+					document.getElementById('brandRecommendations').innerHTML +=
+						'<div class="brandRecommendation" style="display: flex;" onmouseover="" onclick="">' +
+							'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+							'<img alt="" src="' + document.getElementById('brandSearch').list.options[i].value + '" height="50px" width="200px" style="object-fit: contain; margin: 0 5px 0 0;" />' +
+						'</div>';
+				}
+
 			} else if (inputType === 'date') {
 				brandSearch.setAttribute('list', 'date')
 			} else if (inputType === 'datetime-local') {
@@ -2354,16 +2378,7 @@
 			} else if (inputType === 'time') {
 				brandSearch.setAttribute('list', 'time')
 			}
-			// for each option, show a div with the label and value
-			for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
-				document.getElementById('brandRecommendations').innerHTML +=
-					'<div class="brandRecommendation" onmouseover="" onclick="">' +
-						'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
-						'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
-					'</div>';
-				}
-			}
-		)
+		});
 	}
 
 	// for any left click outside the brandPopup, close it
@@ -3827,23 +3842,6 @@
 		clearFontColorGlobal();
 		clearSquareLogoGlobal();
 
-		// clear newContent hashtags
-		clearHookGlobalHashtags();
-		clearHookResolutionGlobalHashtags();
-		clearGenericPostHashtags();
-		clearCompanyUpdateHeadlineHashtags();
-		clearCompanyUpdateBodyHashtags();
-		clearSalePromotionTitleHashtags();
-		clearSalePromotionBodyHashtags();
-		clearSalePromotionProductOrServiceHashtags();
-		clearEventPromotionTitleHashtags();
-		clearEventPromotionLocationHashtags();
-		clearEventPromotionBodyHashtags();
-		clearTestimonialReviewAuthorNameHashtags();
-		clearTestimonialReviewAuthorTitleHashtags();
-		clearTestimonialReviewAuthorCompanyHashtags();
-		clearTestimonialReviewBodyHashtags();
-
 	}
 	function clearHookGlobal(){
 		document.getElementById("hookGlobal").value = "";
@@ -4982,8 +4980,8 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 </datalist>
 
 <datalist id="color">
-	<option value="color">color</option>
-	<option value="color">color</option>
+	<option value="red">red</option>
+	<option value="blue">blue</option>
 </datalist>
 
 <datalist id="file">

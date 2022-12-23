@@ -774,7 +774,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
 			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
-			document.getElementById('url').lastChild.innerHTML = 'TikTok Url';
+			document.getElementById('url').lastChild.innerHTML = 'TikTok URL';
 
 			document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
 			document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
@@ -854,16 +854,13 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// Colors
 	function loadPrimaryColor () {
-		console.log('loadPrimaryColor(); Loaded');
-		// Colors
 		if (snapshot.val().primaryColor != null) {
 			// set local storage
 			localStorage.setItem('primaryColor', snapshot.val().primaryColor);
-			// set to brandLists
+
 			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
 			document.getElementById('color').lastChild.innerHTML = 'Primary Color';
 
-			document.documentElement.style.setProperty('--primaryColor', snapshot.val().primaryColor);
 			document.getElementById('primaryColor').value = snapshot.val().primaryColor;
 			document.getElementById('inputEventPrimaryColor').value = '#ffffff';
 			document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
@@ -884,11 +881,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			// set local storage
 			localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
 
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
 			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
 			document.getElementById('color').lastChild.innerHTML = 'Secondary Color';
 
-			document.documentElement.style.setProperty('--secondaryColor', snapshot.val().secondaryColor);
 			document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
 			document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
 			document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -907,11 +902,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			// set local storage
 			localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
 
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
 			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
 			document.getElementById('color').lastChild.innerHTML = 'Tertiary Color';
 
-			document.documentElement.style.setProperty('--tertiaryColor', snapshot.val().tertiaryColor);
 			document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
 			document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
 			document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
@@ -934,14 +927,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Fonts
 	function loadPrimaryFont () {
 		if (snapshot.val().primaryFont != null) {
-			// set local storage
 			localStorage.setItem('primaryFont', snapshot.val().primaryFont);
 
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryFont);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Tertiary Font';
+			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryFont);
+			document.getElementById('text').lastChild.innerHTML = 'Tertiary Font';
 
-			document.documentElement.style.setProperty('--primaryFont', snapshot.val().primaryFont);
 			document.getElementById('primaryFont').value = snapshot.val().primaryFont;
 			document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
 		} else {
@@ -955,11 +945,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			// set local storage
 			localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
 
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryFont);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Secondary Font';
+			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryFont);
+			document.getElementById('text').lastChild.innerHTML = 'Secondary Font';
 
-			document.documentElement.style.setProperty('--secondaryFont', snapshot.val().secondaryFont);
 			document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
 			document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
 		} else {
@@ -973,11 +961,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 			// set local storage
 			localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
 
-			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryFont);
-			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Font';
+			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryFont);
+			document.getElementById('text').lastChild.innerHTML = 'Primary Font';
 
-			document.documentElement.style.setProperty('--tertiaryFont', snapshot.val().tertiaryFont);
 			document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
 			document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
 		} else {

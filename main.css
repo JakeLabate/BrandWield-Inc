@@ -280,8 +280,7 @@ img {
 }
 
 .newContentVar:hover {
-    box-shadow: #5d5d5d 0 0 7px;
-    scale: 1.01;
+
 }
 
 .cleanCursorInput {
@@ -893,22 +892,15 @@ pre code {
 #brandPopup {
     display: none;
     position: absolute;
-
-    min-height: 200px;
+    min-height: 150px;
     max-height: max-content;
-
     width: 400px;
-
     background-color: white;
     border: 3px solid #1da1f2;
     border-radius: 5px;
-
-    padding-bottom: 10px;
-
     box-shadow: #5d5d5d 0 0 10px;
     -webkit-box-shadow: #5d5d5d 0 0 10px;
     -moz-box-shadow: #5d5d5d 0 0 10px;
-
     z-index: 9999;
 }
 
@@ -917,7 +909,7 @@ pre code {
     background-color: white;
     transition: .1s ease-in-out;
     border-top: 1px solid #dcdcdc;
-    padding: 5px 10px 5px 10px;
+    padding: 7px 10px 7px 10px;
 }
 .brandRecommendation:hover {
     scale: 1.03;
@@ -925,7 +917,6 @@ pre code {
     box-shadow: #5d5d5d 0 0 10px;
     -webkit-box-shadow: #5d5d5d 0 0 10px;
     -moz-box-shadow: #5d5d5d 0 0 10px;
-    background-color: #f6f6f6;
 }
 
 .brandRecommendationValue {
