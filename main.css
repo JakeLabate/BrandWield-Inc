@@ -148,21 +148,7 @@ label {
     padding-right: 5px;
 }
 input {
-    height: 40px;
-    font-weight: bold;
-    margin: 4px 5px 4px 5px;
-    box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
-    -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
-    -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
-    transition: .2s ease-in-out;
-    outline: none;
-    padding: 2px 10px 2px 10px;
-    border-width: 3px;
-    border-radius: 30px;
-    border-style: solid;
-    border-color: darkgreen;
-    font-size: 14px;
-    background: #ffffff;
+ font-size: 14px;
 }
 
 .var {
@@ -179,6 +165,21 @@ input {
     transition: .1s;
     position: relative;
     background-color: #fff;
+}
+.brandVarInput {
+    border: 3px solid darkgreen;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: bold;
+    margin: 4px 5px 4px 5px;
+    box-shadow: 4px 0 11px -2px rgba(52, 52, 52, 0.9);
+    -webkit-box-shadow: 4px 0 11px -2px rgba(75, 75, 75, 0.9);
+    -moz-box-shadow: 4px 0 11px -2px rgba(47, 47, 47, 0.9);
+    transition: .2s ease-in-out;
+    outline: none;
+    padding: 2px 10px 2px 10px;
+    font-size: 14px;
+    background: #ffffff;
 }
 
 input[type='checkbox'] {
@@ -278,10 +279,7 @@ img {
     border-radius: 10px;
     scale: 1;
 }
-
-.newContentVar:hover {
-
-}
+.newContentVar:hover {}
 
 .cleanCursorInput {
     height: 38px;

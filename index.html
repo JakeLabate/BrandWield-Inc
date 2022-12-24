@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta charset="UTF-8">
 	<title>BrandWield | Making content vision and content production, synonymous</title>
 	<meta name="title" content="BrandWield | Making content vision and content production, synonymous">
@@ -66,15 +65,10 @@
 				]
 			},
 			"sameAs": [
-				"https://github.com/JakeLabate/BrandWield-Inc",
-				"https://www.facebook.com/brandwield",
-				"https://www.instagram.com/brandwield",
-				"https://www.linkedin.com/company/brandwield",
-				"https://twitter.com/brandwield"
+				"https://github.com/JakeLabate/BrandWield-Inc"
 			]
 		}
 	</script>
-
 	<!-- Open Graph -->
 	<meta property="og:title" content="BrandWield | Making content vision and content production, synonymous">
 	<meta property="og:description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
@@ -86,33 +80,26 @@
 	<meta property="og:site_name" content="BrandWield">
 	<meta property="og:type" content="website">
 	<meta property="og:locale" content="en_US">
-
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@brandwield">
 	<meta name="twitter:creator" content="@brandwield">
 	<meta name="twitter:title" content="BrandWield | Making content vision and content production, synonymous">
-
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
 	<!-- JavaScript -->
 	<script type="module" src="firebaseSetup.js"></script>
 	<script src="myBrand.js"></script>
-
 	<!-- HTML2Canvas Screenshot Capture -->
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
 	<!-- Confetti -->
 	<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
-
 </head>
 <body>
-
 <header>
 	<!-- Nav Bar -->
 	<nav id="navBar" style="height: 55px; display: flex; justify-content: space-around;">
@@ -139,9 +126,7 @@
 			</div>
 	</nav>
 </header>
-
 <main>
-
 	<!-- Brand Tab -->
 	<section id="brand" class="tabby">
 
@@ -155,7 +140,7 @@
 				<span id="warningPrimaryContactPhone" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid phone number!');">warning</span>&nbsp;
 				<label for="primaryContactPhone">Phone</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company phone number is the number that will be displayed on your website. This number will be used for all calls to your company.')">info</span>
-				<input id="primaryContactPhone" title="Primary Contact Phone" type="tel" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="primaryContactPhone" class="brandVarInput" title="Primary Contact Phone" type="tel" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="primaryContactPhoneUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactPhone();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactPhoneLock" class="material-symbols-outlined" onclick="lockPrimaryContactPhone();">lock</span>
 				<button id="clearPrimaryContactPhone" onclick="clearPrimaryContactPhone();">Clear</button>
@@ -166,7 +151,7 @@
 				<span id="warningPrimaryContactEmail" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid email address!');">warning</span>&nbsp;
 				<label for="primaryContactEmail">Email</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company email address is the email address that will be displayed on your website. This email address will be used for all emails to your company.')">info</span>
-				<input id="primaryContactEmail" type="email" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="primaryContactEmail" class="brandVarInput" type="email" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="primaryContactEmailUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactEmail();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactEmailLock" class="material-symbols-outlined" onclick="lockPrimaryContactEmail();">lock</span>
 				<button id="clearPrimaryContactEmail" onclick="clearPrimaryContactEmail();">Clear</button>
@@ -177,7 +162,7 @@
 				<span id="warningPrimaryContactWebsite" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid website!');">warning</span>&nbsp;
 				<label for="primaryContactWebsite">Website</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company website is the website that will be displayed on your website. This website will be used for all links to your company.')">info</span>
-				<input id="primaryContactWebsite" type="url" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="primaryContactWebsite" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="primaryContactWebsiteUnlock" class="material-symbols-outlined" onclick="unlockPrimaryContactWebsite();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryContactWebsiteLock" class="material-symbols-outlined" onclick="lockPrimaryContactWebsite();">lock</span>
 				<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite();">Clear</button>
@@ -194,7 +179,7 @@
 				<span id="warningOfficeAddressStreet1" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address (street #1)!');">warning</span>&nbsp;
 				<label for="officeAddressStreet1">Office Address Street #1</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company office address street line #1')">info</span>
-				<input id="officeAddressStreet1" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="officeAddressStreet1" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="officeAddressStreet1Unlock" class="material-symbols-outlined" onclick="unlockOfficeAddressStreet1()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStreet1Lock" class="material-symbols-outlined" onclick="lockOfficeAddressStreet1()">lock</span>
 				<button id="clearOfficeAddressStreet1" onclick="clearOfficeAddressStreet1()">Clear</button>
@@ -205,7 +190,7 @@
 				<span id="warningOfficeAddressStreet2" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address (street #2)');">warning</span>&nbsp;
 				<label for="officeAddressStreet2">Office Address Street #2</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company office address street line #2')">info</span>
-				<input id="officeAddressStreet2" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="officeAddressStreet2" class="brandVarInput" type="text" value="" readonly>
 				<span id="officeAddressStreet2Unlock" class="material-symbols-outlined" onclick="unlockOfficeAddressStreet2()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStreet2Lock" class="material-symbols-outlined" onclick="lockOfficeAddressStreet2()">lock</span>
 				<button id="clearOfficeAddressStreet2" onclick="clearOfficeAddressStreet2()">Clear</button>
@@ -216,7 +201,7 @@
 				<span id="warningOfficeAddressCity" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address city!');">warning</span>&nbsp;
 				<label for="officeAddressCity">Office Address City</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company office address city')">info</span>
-				<input id="officeAddressCity" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="officeAddressCity" class="brandVarInput" type="text" value="" readonly>
 				<span id="officeAddressCityUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressCity()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressCityLock" class="material-symbols-outlined" onclick="lockOfficeAddressCity()">lock</span>
 				<button id="clearOfficeAddressCity" onclick="clearOfficeAddressCity()">Clear</button>
@@ -227,7 +212,7 @@
 				<span id="warningOfficeAddressState" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address state!');">warning</span>&nbsp;
 				<label for="officeAddressState">Office Address State</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company office address state')">info</span>
-				<input id="officeAddressState" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="officeAddressState" class="brandVarInput" type="text" value="" readonly>
 				<span id="officeAddressStateUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressState()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressStateLock" class="material-symbols-outlined" onclick="lockOfficeAddressState()">lock</span>
 				<button id="clearOfficeAddressState" onclick="clearOfficeAddressState()">Clear</button>
@@ -238,7 +223,7 @@
 				<span id="warningOfficeAddressZip" class="material-symbols-outlined" style="display: none;"  onclick="alert('Please enter a valid office address zip code!');">warning</span>&nbsp;
 				<label for="officeAddressZip">Office Address Zip Code</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company office address zip code')">info</span>
-				<input id="officeAddressZip" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="officeAddressZip" class="brandVarInput" type="text" value="" readonly>
 				<span id="officeAddressZipUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressZip()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressZipLock" class="material-symbols-outlined" onclick="lockOfficeAddressZip()">lock</span>
 				<button id="clearOfficeAddressZip" onclick="clearOfficeAddressZip()">Clear</button>
@@ -249,7 +234,7 @@
 				<span id="warningOfficeAddressCountry" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid office address country!');">warning</span>&nbsp;
 				<label for="officeAddressCountry">Office Address County</label>
 				<span class="material-symbols-outlined" onclick="alert('Your company office address country')">info</span>
-				<input id="officeAddressCountry" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="officeAddressCountry" class="brandVarInput" type="text" value="" readonly>
 				<span id="officeAddressCountryUnlock" class="material-symbols-outlined" onclick="unlockOfficeAddressCountry()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="officeAddressCountryLock" class="material-symbols-outlined" onclick="lockOfficeAddressCountry()">lock</span>
 				<button id="clearOfficeAddressCountry" onclick="clearOfficeAddressCountry()">Clear</button>
@@ -266,7 +251,7 @@
 				<span id="warningFounderName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid founder name!');">warning</span>&nbsp;
 				<label for="founderName">Founder Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The full name of the primary founder of your business")'>info</span>
-				<input id="founderName" type="text" value="" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="founderName" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="founderNameUnlock" class="material-symbols-outlined" onclick="unlockFounderName()">lock_open</span>
 				<span id="founderNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockFounderName()">lock</span>
 				<button id="clearFounderName" onclick="clearFounderName()">Clear</button>
@@ -277,7 +262,7 @@
 				<span id="warningFoundingDate" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid founding date');">warning</span>&nbsp;
 				<label for="foundingDate">Founding Date</label>
 				<span class="material-symbols-outlined" onclick='alert("The approx. date the company was founded")'>info</span>
-				<input id="foundingDate" type="date" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="foundingDate" class="brandVarInput" type="date" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="foundingDateUnlock" class="material-symbols-outlined" onclick="unlockFoundingDate()">lock_open</span>
 				<span id="foundingDateLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockFoundingDate()">lock</span>
 				<button id="clearFoundingDate" onclick="clearFoundingDate();">Clear</button>
@@ -288,7 +273,7 @@
 				<span id="warningTradeBusinessName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid business trade name!');">warning</span>&nbsp;
 				<label for="tradeBusinessName">Trade Business Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The referenced day-to-day name of your business")'>info</span>
-				<input id="tradeBusinessName" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="tradeBusinessName" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="tradeBusinessNameUnlock" class="material-symbols-outlined" onclick="unlockTradeBusinessName()">lock_open</span>
 				<span id="tradeBusinessNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;"  onclick="lockTradeBusinessName()">lock</span>
 				<button id="clearTradeBusinessName" onclick="clearTradeBusinessName()">Clear</button>
@@ -299,7 +284,7 @@
 				<span id="warningLegalBusinessName" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid legal business name!');">warning</span>&nbsp;
 				<label for="legalBusinessName">Legal Business Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The legally recognized name of your business")'>info</span>
-				<input id="legalBusinessName" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="legalBusinessName" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="legalBusinessNameUnlock" class="material-symbols-outlined" onclick="unlockLegalBusinessName()">lock_open</span>
 				<span id="legalBusinessNameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockLegalBusinessName()">lock</span>
 				<button id="clearLegalBusinessName" onclick="clearLegalBusinessName()">Clear</button>
@@ -318,7 +303,7 @@
 				<span id="warningMondayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a Monday opening time!');">warning</span>&nbsp;
 				<label for="mondayOpeningTime">Monday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Monday')">info</span>
-				<input id="mondayOpeningTime" type="time" value="" readonly>
+				<input id="mondayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="mondayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockMondayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="mondayOpeningTimeLock" class="material-symbols-outlined" onclick="lockMondayOpeningTime()">lock</span>
 				<button id="clearMondayOpeningTime" onclick="clearMondayOpeningTime()">Clear</button>
@@ -329,7 +314,7 @@
 				<span id="warningMondayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Monday closing time!');">warning</span>&nbsp;
 				<label for="mondayClosingTime">Monday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Monday')">info</span>
-				<input id="mondayClosingTime" type="time" value="" readonly>
+				<input id="mondayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="mondayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockMondayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="mondayClosingTimeLock" class="material-symbols-outlined" onclick="lockMondayClosingTime()">lock</span>
 				<button id="clearMondayClosingTime" onclick="clearMondayClosingTime()">Clear</button>
@@ -342,7 +327,7 @@
 				<span id="warningTuesdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Monday opening time!');">warning</span>&nbsp;
 				<label for="tuesdayOpeningTime">Tuesday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Tuesday')">info</span>
-				<input id="tuesdayOpeningTime" type="time" value="" readonly>
+				<input id="tuesdayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="tuesdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockTuesdayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tuesdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockTuesdayOpeningTime()">lock</span>
 				<button id="clearTuesdayOpeningTime" onclick="clearTuesdayOpeningTime()">Clear</button>
@@ -353,7 +338,7 @@
 				<span id="warningTuesdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Tuesday closing time!');">warning</span>&nbsp;
 				<label for="tuesdayClosingTime">Tuesday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Tuesday')">info</span>
-				<input id="tuesdayClosingTime" type="time" value="" readonly>
+				<input id="tuesdayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="tuesdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockTuesdayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tuesdayClosingTimeLock" class="material-symbols-outlined" onclick="lockTuesdayClosingTime()">lock</span>
 				<button id="clearTuesdayClosingTime" onclick="clearTuesdayClosingTime()">Clear</button>
@@ -366,7 +351,7 @@
 				<span id="warningWednesdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Wednesday opening time!');">warning</span>&nbsp;
 				<label for="wednesdayOpeningTime">Wednesday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Wednesday')">info</span>
-				<input id="wednesdayOpeningTime" type="time" value="" readonly>
+				<input id="wednesdayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="wednesdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockWednesdayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="wednesdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockWednesdayOpeningTime()">lock</span>
 				<button id="clearWednesdayOpeningTime" onclick="clearWednesdayOpeningTime()">Clear</button>
@@ -377,7 +362,7 @@
 				<span id="warningWednesdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Wednesday closing time!');">warning</span>&nbsp;
 				<label for="wednesdayClosingTime">Wednesday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Wednesday')">info</span>
-				<input id="wednesdayClosingTime" type="time" value="" readonly>
+				<input id="wednesdayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="wednesdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockWednesdayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="wednesdayClosingTimeLock" class="material-symbols-outlined" onclick="lockWednesdayClosingTime()">lock</span>
 				<button id="clearWednesdayClosingTime" onclick="clearWednesdayClosingTime()">Clear</button>
@@ -390,7 +375,7 @@
 				<span id="warningThursdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Thursday opening time!');">warning</span>&nbsp;
 				<label for="thursdayOpeningTime">Thursday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Thursday')">info</span>
-				<input id="thursdayOpeningTime" type="time" value="" readonly>
+				<input id="thursdayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="thursdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockThursdayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="thursdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockThursdayOpeningTime()">lock</span>
 				<button id="clearThursdayOpeningTime" onclick="clearThursdayOpeningTime()">Clear</button>
@@ -401,7 +386,7 @@
 				<span id="warningThursdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Thursday closing time!');">warning</span>&nbsp;
 				<label for="thursdayClosingTime">Thursday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Thursday')">info</span>
-				<input id="thursdayClosingTime" type="time" value="" readonly>
+				<input id="thursdayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="thursdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockThursdayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="thursdayClosingTimeLock" class="material-symbols-outlined" onclick="lockThursdayClosingTime()">lock</span>
 				<button id="clearThursdayClosingTime" onclick="clearThursdayClosingTime()">Clear</button>
@@ -414,7 +399,7 @@
 				<span id="warningFridayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Friday opening time!');">warning</span>&nbsp;
 				<label for="fridayOpeningTime">Friday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Friday')">info</span>
-				<input id="fridayOpeningTime" type="time" value="" readonly>
+				<input id="fridayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="fridayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockFridayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fridayOpeningTimeLock" class="material-symbols-outlined" onclick="lockFridayOpeningTime()">lock</span>
 				<button id="clearFridayOpeningTime" onclick="clearFridayOpeningTime()">Clear</button>
@@ -425,7 +410,7 @@
 				<span id="warningFridayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Friday closing time!');">warning</span>&nbsp;
 				<label for="fridayClosingTime">Friday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Friday')">info</span>
-				<input id="fridayClosingTime" type="time" value="" readonly>
+				<input id="fridayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="fridayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockFridayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fridayClosingTimeLock" class="material-symbols-outlined" onclick="lockFridayClosingTime()">lock</span>
 				<button id="clearFridayClosingTime" onclick="clearFridayClosingTime()">Clear</button>
@@ -438,7 +423,7 @@
 				<span id="warningSaturdayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Saturday opening time!');">warning</span>&nbsp;
 				<label for="saturdayOpeningTime">Saturday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Saturday')">info</span>
-				<input id="saturdayOpeningTime" type="time" value="" readonly>
+				<input id="saturdayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="saturdayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockSaturdayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="saturdayOpeningTimeLock" class="material-symbols-outlined" onclick="lockSaturdayOpeningTime()">lock</span>
 				<button id="clearSaturdayOpeningTime" onclick="clearSaturdayOpeningTime()">Clear</button>
@@ -449,7 +434,7 @@
 				<span id="warningSaturdayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Saturday closing time!');">warning</span>&nbsp;
 				<label for="saturdayClosingTime">Saturday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Saturday')">info</span>
-				<input id="saturdayClosingTime" type="time" value="" readonly>
+				<input id="saturdayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="saturdayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockSaturdayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="saturdayClosingTimeLock" class="material-symbols-outlined" onclick="lockSaturdayClosingTime()">lock</span>
 				<button id="clearSaturdayClosingTime" onclick="clearSaturdayClosingTime()">Clear</button>
@@ -462,7 +447,7 @@
 				<span id="warningSundayOpeningTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Sunday opening time!');">warning</span>&nbsp;
 				<label for="sundayOpeningTime">Sunday Opening Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company opens on Sunday')">info</span>
-				<input id="sundayOpeningTime" type="time" value="" readonly>
+				<input id="sundayOpeningTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="sundayOpeningTimeUnlock" class="material-symbols-outlined" onclick="unlockSundayOpeningTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="sundayOpeningTimeLock" class="material-symbols-outlined" onclick="lockSundayOpeningTime()">lock</span>
 				<button id="clearSundayOpeningTime" onclick="clearSundayOpeningTime()">Clear</button>
@@ -473,7 +458,7 @@
 				<span id="warningSundayClosingTime" class="material-symbols-outlined" style="display: none;" onclick="alert('Please enter a valid Sunday closing time!');">warning</span>&nbsp;
 				<label for="sundayClosingTime">Sunday Closing Time</label>
 				<span class="material-symbols-outlined" onclick="alert('The time your company closes on Sunday')">info</span>
-				<input id="sundayClosingTime" type="time" value="" readonly>
+				<input id="sundayClosingTime" class="brandVarInput" type="time" value="" readonly>
 				<span id="sundayClosingTimeUnlock" class="material-symbols-outlined" onclick="unlockSundayClosingTime()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="sundayClosingTimeLock" class="material-symbols-outlined" onclick="lockSundayClosingTime()">lock</span>
 				<button id="clearSundayClosingTime" onclick="clearSundayClosingTime()">Clear</button>
@@ -490,7 +475,7 @@
 				<span id="warningBusinessType" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="businessType">Business Type</label>
 				<span class="material-symbols-outlined" onclick='alert("The type of structure that best represents your business")'>info</span>
-				<select id="businessType" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen; display: none;">
+				<select id="businessType" class="brandVarInput" style="display: none;">
 					<option value="AnimalShelter">Animal Shelter</option>
 					<option value="AutomotiveBusiness">Automotive Business</option>
 					<option value="ChildCare">Child Care</option>
@@ -533,7 +518,7 @@
 				<span id="warningSlogan" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="slogan">Slogan</label>
 				<span class="material-symbols-outlined" onclick='alert("The slogan is a short phrase that is used to describe your business. It should be catchy and memorable.")'>info</span>
-				<input type="text" id="slogan" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="slogan" class="brandVarInput" type="text" onkeyup="this.size = this.value.length + 1" readonly>
 				<span id="sloganUnlock" class="material-symbols-outlined" onclick="unlockSlogan();">lock_open</span>
 				<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan();">lock</span>
 				<button id="clearSlogan" onclick="clearSlogan();">Clear</button>
@@ -544,7 +529,7 @@
 				<span id="warningMissionStatement" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="missionStatement">Mission Statement</label>
 				<span class="material-symbols-outlined" onclick='alert("The mission statement is a short phrase that describes the purpose of your business. It should be short and to the point.")'>info</span>
-				<input type="text" id="missionStatement" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="missionStatement" class="brandVarInput" type="text" onkeyup="this.size = this.value.length + 1" readonly>
 				<span id="missionStatementUnlock" class="material-symbols-outlined" onclick="unlockMissionStatement();">lock_open</span>
 				<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement();">lock</span>
 				<button id="clearMissionStatement" onclick="clearMissionStatement();">Clear</button>
@@ -555,7 +540,7 @@
 				<span id="warningValueProposition" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="valueProp">Value Proposition</label>
 				<span class="material-symbols-outlined" onclick='alert("The value proposition is a short phrase that describes the value your business provides to your customers. It should be short and to the point.")'>info</span>
-				<input type="text" id="valueProp" onkeyup="this.size = this.value.length + 1" style="border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;" readonly>
+				<input id="valueProp" class="brandVarInput" type="text" onkeyup="this.size = this.value.length + 1" readonly>
 				<span id="valuePropUnlock" class="material-symbols-outlined" onclick="unlockValueProp();">lock_open</span>
 				<span id="valuePropLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockValueProp();">lock</span>
 				<button id="clearValueProp" onclick="clearValueProp();">Clear</button>
@@ -574,7 +559,7 @@
 				<span id="warningFacebookURL" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="facebookUrl">URL</label>
 				<span class="material-symbols-outlined" onclick="alert('The primary Facebook URL page for your company')">info</span>
-				<input id="facebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="facebookUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="facebookUrlUnlock" class="material-symbols-outlined" onclick="unlockFacebookUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUrlLock" class="material-symbols-outlined" onclick="lockFacebookUrl();">lock</span>
 				<button id="clearFacebookUrl" onclick="clearFacebookUrl();">Clear</button>
@@ -585,7 +570,7 @@
 				<span id="warningFacebookUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="facebookUsername">Username</label>
 				<span class="material-symbols-outlined" onclick="alert('The username for your Facebook page')">info</span>
-				<input id="facebookUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="facebookUsername" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="facebookUsernameUnlock" class="material-symbols-outlined" onclick="unlockFacebookUsername();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="facebookUsernameLock" class="material-symbols-outlined" onclick="lockFacebookUsername();">lock</span>
 				<button id="clearFacebookUsername" onclick="clearFacebookUsername();">Clear</button>
@@ -598,7 +583,7 @@
 				<span id="warningInstagramURL" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="instagramUrl">URL</label>
 				<span class="material-symbols-outlined" onclick="alert('The primary Instagram URL page for your company')">info</span>
-				<input id="instagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="instagramUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="instagramUrlUnlock" class="material-symbols-outlined" onclick="unlockInstagramUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUrlLock" class="material-symbols-outlined" onclick="lockInstagramUrl();" >lock</span>
 				<button id="clearInstagramUrl" onclick="clearInstagramUrl();">Clear</button>
@@ -609,7 +594,7 @@
 				<span id="warningInstagramUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="instagramUsername">Username</label>
 				<span class="material-symbols-outlined" onclick="alert('The username for your Instagram page')">info</span>
-				<input id="instagramUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="instagramUsername" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<img src="" alt="" height="30px" width="30" id="instagramProfilePic" style="display: none;">
 				<span id="instagramUsernameUnlock" class="material-symbols-outlined" onclick="unlockInstagramUsername();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="instagramUsernameLock" class="material-symbols-outlined" onclick="lockInstagramUsername();">lock</span>
@@ -623,7 +608,7 @@
 				<span id="warningLinkedinURL" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="linkedinUrl">URL</label>
 				<span class="material-symbols-outlined" onclick="alert('The primary LinkedIn URL page for your company')">info</span>
-				<input id="linkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="linkedinUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="linkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUrlLock" class="material-symbols-outlined" onclick="lockLinkedinUrl();">lock</span>
 				<button id="clearLinkedinURL" onclick="clearLinkedinUrl();">Clear</button>
@@ -634,7 +619,7 @@
 				<span id="warningLinkedinUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="linkedinUsername">Username</label>
 				<span class="material-symbols-outlined" onclick="alert('The username for your LinkedIn page')">info</span>
-				<input id="linkedinUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="linkedinUsername" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="linkedinUsernameUnlock" class="material-symbols-outlined" onclick="unlockLinkedinUsername();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="linkedinUsernameLock" class="material-symbols-outlined" onclick="lockLinkedinUsername();">lock</span>
 				<button id="clearLinkedinUsername" onclick="clearLinkedinUsername();">Clear</button>
@@ -647,7 +632,7 @@
 				<span id="warningTwitterURL" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="twitterUrl">URL</label>
 				<span class="material-symbols-outlined" onclick="alert('The primary Twitter URL page for your company')">info</span>
-				<input id="twitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="twitterUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="twitterUrlUnlock" class="material-symbols-outlined" onclick="unlockTwitterUrl()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUrlLock" class="material-symbols-outlined" onclick="lockTwitterUrl();">lock</span>
 				<button id="clearTwitterUrl" onclick="clearTwitterUrl();">Clear</button>
@@ -658,7 +643,7 @@
 				<span id="warningTwitterUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="twitterUsername">Username</label>
 				<span class="material-symbols-outlined" onclick="alert('The username for your Twitter page')">info</span>
-				<input id="twitterUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="twitterUsername" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="twitterUsernameUnlock" class="material-symbols-outlined" onclick="unlockTwitterUsername();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="twitterUsernameLock" class="material-symbols-outlined" onclick="lockTwitterUsername();">lock</span>
 				<button id="clearTwitterUsername" onclick="clearTwitterUsername();">Clear</button>
@@ -671,7 +656,7 @@
 				<span id="warningTiktokURL" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="tiktokUrl">URL</label>
 				<span class="material-symbols-outlined" onclick="alert('The primary TikTok URL page for your company')">info</span>
-				<input id="tiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="tiktokUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="tiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockTiktokUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUrlLock" class="material-symbols-outlined" onclick="lockTiktokUrl();">lock</span>
 				<button id="clearTiktokURL" onclick="clearTiktokUrl();">Clear</button>
@@ -682,7 +667,7 @@
 				<span id="warningTiktokUsername" class="material-symbols-outlined" style="display: none;">warning</span>
 				<label for="tiktokUsername">Username</label>
 				<span class="material-symbols-outlined" onclick="alert('The username for your TikTok page')">info</span>
-				<input id="tiktokUsername" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="tiktokUsername" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="tiktokUsernameUnlock" class="material-symbols-outlined" onclick="unlockTiktokUsername();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tiktokUsernameLock" class="material-symbols-outlined" onclick="lockTiktokUsername();">lock</span>
 				<button id="clearTiktokUsername" onclick="clearTiktokUsername();">Clear</button>
@@ -701,7 +686,7 @@
 				<span id="warningSquareLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="squareLogo">Square Logo</label>
 				<span class="material-symbols-outlined" onclick='alert("A logo that represents your business where the height is equal to the length")'>info</span>
-				<input id="squareLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showSquareImage()">
+				<input id="squareLogo" class="brandVarInput" type="file" accept="image/*" value="" style="display: none;" oninput="showSquareImage()">
 				<span id="squareLogoUnlock" class="material-symbols-outlined" onclick="unlockSquareLogo(); ">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="squareLogoLock" class="material-symbols-outlined" onclick="lockSquareLogo();">lock</span>
 				<img alt="" src="" style="padding: 0 10px 0 10px; display: none;" height="32px" width="32px" id="uploadedSquareImage">
@@ -715,7 +700,7 @@
 				<span id="warningFullLogo" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="fullLogo">Full Logo</label>
 				<span class="material-symbols-outlined" onclick='alert("Your full-sized business logo")'>info</span>
-				<input id="fullLogo" type="file" accept="image/*" value="" style="display: none;" oninput="showFullImage()">
+				<input id="fullLogo" class="brandVarInput" type="file" accept="image/*" value="" style="display: none;" oninput="showFullImage()">
 				<span id="fullLogoUnlock" class="material-symbols-outlined" onclick="unlockFullLogo();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="fullLogoLock" class="material-symbols-outlined" onclick="lockFullLogo();">lock</span>
 				<img alt="" src="" style="padding: 0 10px 0 10px; max-height: 200px; max-width: 200px;" id="uploadedFullImage">
@@ -731,7 +716,7 @@
 				<span id="warningPrimaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="primaryColor">Primary Color</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary color of your business")'>info</span>
-				<input id="primaryColor" type="color" style="display: none;">
+				<input id="primaryColor" class="brandVarInput" type="color" style="display: none;">
 				<span id="primaryColorUnlock" class="material-symbols-outlined" onclick="unlockPrimaryColor();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryColorLock" class="material-symbols-outlined" onclick="lockPrimaryColor();">lock</span>
 				<p id="primaryColorValueDisplay"></p>
@@ -744,7 +729,7 @@
 				<span id="warningSecondaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="secondaryColor">Secondary Color</label>
 				<span class="material-symbols-outlined" onclick='alert("The secondary color of your business")'>info</span>
-				<input id="secondaryColor" type="color" style="display: none;">
+				<input id="secondaryColor" class="brandVarInput" type="color" style="display: none;">
 				<span id="secondaryColorUnlock" class="material-symbols-outlined" onclick="unlockSecondaryColor();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryColorLock" class="material-symbols-outlined" onclick="lockSecondaryColor();">lock</span>
 				<p id="secondaryColorValueDisplay"></p>
@@ -757,7 +742,7 @@
 				<span id="warningTertiaryColor" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="tertiaryColor">Tertiary Color</label>
 				<span class="material-symbols-outlined" onclick='alert("The tertiary color of your business")'>info</span>
-				<input id="tertiaryColor" type="color" style="display: none;">
+				<input id="tertiaryColor" class="brandVarInput" type="color" style="display: none;">
 				<span id="tertiaryColorUnlock" class="material-symbols-outlined" onclick="unlockTertiaryColor();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryColorLock" class="material-symbols-outlined" onclick="lockTertiaryColor();">lock</span>
 				<p id="tertiaryColorValueDisplay"></p>
@@ -772,7 +757,7 @@
 				<span id="warningPrimaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="primaryFont">Primary Font</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary font of your business")'>info</span>
-				<input id="primaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1; this.style.fontFamily = this.value">
+				<input id="primaryFont" class="brandVarInput" type="text" readonly onkeyup="this.size = this.value.length + 1; this.style.fontFamily = this.value">
 				<span id="primaryFontUnlock" class="material-symbols-outlined" onclick="unlockPrimaryFont(); ">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="primaryFontLock" class="material-symbols-outlined" onclick="lockPrimaryFont();">lock</span>
 				<button id="primaryFontClear" onclick="clearPrimaryFont();">Clear</button>
@@ -783,7 +768,7 @@
 				<span id="warningSecondaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="secondaryFont">Secondary Font</label>
 				<span class="material-symbols-outlined" onclick='alert("The secondary font of your business")'>info</span>
-				<input id="secondaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="secondaryFont" class="brandVarInput" type="text" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="secondaryFontUnlock" class="material-symbols-outlined" onclick="unlockSecondaryFont(); ">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="secondaryFontLock" class="material-symbols-outlined" onclick="lockSecondaryFont();">lock</span>
 				<button id="secondaryFontClear" onclick="clearSecondaryFont();">Clear</button>
@@ -794,7 +779,7 @@
 				<span id="warningTertiaryFont" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="tertiaryFont">Tertiary Font</label>
 				<span class="material-symbols-outlined" onclick='alert("The tertiary font of your business")'>info</span>
-				<input id="tertiaryFont" type="text" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="tertiaryFont" class="brandVarInput" type="text" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="tertiaryFontUnlock" class="material-symbols-outlined" onclick="unlockTertiaryFont(); ">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="tertiaryFontLock" class="material-symbols-outlined" onclick="lockTertiaryFont();">lock</span>
 				<button id="tertiaryFontClear" onclick="clearTertiaryFont();">Clear</button>
@@ -813,7 +798,7 @@
 				<span id="warningOffer1Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Name">Offer 1 Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
-				<input id="offer1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer1Name" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer1NameUnlock" class="material-symbols-outlined" onclick="unlockOffer1Name();">lock_open</span>
 				<span id="offer1NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Name();">lock</span>
 				<button id="offer1NameClear" onclick="clearOffer1Name();">Clear</button>
@@ -824,7 +809,7 @@
 				<span id="warningOffer1Price" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Price">Offer 1 Price</label>
 				<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
-				<input id="offer1Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer1Price" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer1PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer1Price();">lock_open</span>
 				<span id="offer1PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Price();">lock</span>
 				<button id="offer1PriceClear" onclick="clearOffer1Price();">Clear</button>
@@ -835,7 +820,7 @@
 				<span id="warningOffer1Feature" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Feature">Offer 1 Feature</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
-				<input id="offer1Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer1Feature" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer1FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer1Feature();">lock_open</span>
 				<span id="offer1FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Feature();">lock</span>
 				<button id="offer1FeatureClear" onclick="clearOffer1Feature();">Clear</button>
@@ -846,7 +831,7 @@
 				<span id="warningOffer1Benefit" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Benefit">Offer 1 Benefit</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
-				<input id="offer1Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer1Benefit" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer1BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer1Benefit();">lock_open</span>
 				<span id="offer1BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Benefit();">lock</span>
 				<button id="offer1BenefitClear" onclick="clearOffer1Benefit();">Clear</button>
@@ -857,7 +842,7 @@
 				<span id="warningOffer1Solution" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Solution">Offer 1 Solution</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
-				<input id="offer1Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer1Solution" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer1SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Solution();">lock_open</span>
 				<span id="offer1SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Solution();">lock</span>
 				<button id="offer1SolutionClear" onclick="clearOffer1Solution();">Clear</button>
@@ -868,7 +853,7 @@
 				<span id="warningOffer1Description" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Description">Offer 1 Description</label>
 				<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
-				<input id="offer1Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer1Description" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer1DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer1Description();">lock_open</span>
 				<span id="offer1DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer1Description();">lock</span>
 				<button id="offer1DescriptionClear" onclick="clearOffer1Description();">Clear</button>
@@ -879,7 +864,7 @@
 				<span id="warningOffer1Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer1Image">Offer 1 Image</label>
 				<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
-				<input id="offer1Image" type="file" value="" style="display: none;">
+				<input id="offer1Image" class="brandVarInput" type="file" value="" style="display: none;">
 				<span id="offer1ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer1Image();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer1ImageLock" class="material-symbols-outlined" onclick="lockOffer1Image();">lock</span>
 				<p id="offer1ImageValueDisplay" style="display: none;"></p>
@@ -893,7 +878,7 @@
 				<span id="warningOffer2Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Name">Offer 2 Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The name of the offer.")'>info</span>
-				<input id="offer2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer2Name" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer2NameUnlock" class="material-symbols-outlined" onclick="unlockOffer2Name();">lock_open</span>
 				<span id="offer2NameLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Name() ">lock</span>
 				<button id="offer2NameClear" onclick="clearOffer2Name();">Clear</button>
@@ -904,7 +889,7 @@
 				<span id="warningOffer2Price" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Price">Offer 2 Price</label>
 				<span class="material-symbols-outlined" onclick='alert("The price of the offer")'>info</span>
-				<input id="offer2Price" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer2Price" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer2PriceUnlock" class="material-symbols-outlined" onclick="unlockOffer2Price();">lock_open</span>
 				<span id="offer2PriceLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Price();">lock</span>
 				<button id="offer2PriceClear" onclick="clearOffer2Price();">Clear</button>
@@ -915,7 +900,7 @@
 				<span id="warningOffer2Feature" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Feature">Offer 2 Feature</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary feature of the offer")'>info</span>
-				<input id="offer2Feature" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer2Feature" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer2FeatureUnlock" class="material-symbols-outlined" onclick="unlockOffer2Feature();">lock_open</span>
 				<span id="offer2FeatureLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Feature();">lock</span>
 				<button id="offer2FeatureClear" onclick="clearOffer2Feature();">Clear</button>
@@ -926,7 +911,7 @@
 				<span id="warningOffer2Benefit" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Benefit">Offer 2 Benefit</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary benefit of the offer")'>info</span>
-				<input id="offer2Benefit" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer2Benefit" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer2BenefitUnlock" class="material-symbols-outlined" onclick="unlockOffer2Benefit();">lock_open</span>
 				<span id="offer2BenefitLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Benefit();">lock</span>
 				<button id="offer2BenefitClear" onclick="clearOffer2Benefit();">Clear</button>
@@ -937,7 +922,7 @@
 				<span id="warningOffer2Solution" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Solution">Offer 2 Solution</label>
 				<span class="material-symbols-outlined" onclick='alert("The primary solution of the offer")'>info</span>
-				<input id="offer2Solution" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer2Solution" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer2SolutionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Solution();">lock_open</span>
 				<span id="offer2SolutionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Solution();">lock</span>
 				<button id="offer2SolutionClear" onclick="clearOffer2Solution();">Clear</button>
@@ -948,7 +933,7 @@
 				<span id="warningOffer2Description" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Description">Offer 2 Description</label>
 				<span class="material-symbols-outlined" onclick='alert("The description of the offer")'>info</span>
-				<input id="offer2Description" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="offer2Description" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="offer2DescriptionUnlock" class="material-symbols-outlined" onclick="unlockOffer2Description();">lock_open</span>
 				<span id="offer2DescriptionLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockOffer2Description();">lock</span>
 				<button id="offer2DescriptionClear" onclick="clearOffer2Description();">Clear</button>
@@ -959,7 +944,7 @@
 				<span id="warningOffer2Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="offer2Image">Offer 2 Image</label>
 				<span class="material-symbols-outlined" onclick='alert("The image of the offer")'>info</span>
-				<input id="offer2Image" type="file" value="" style="display: none;">
+				<input id="offer2Image" class="brandVarInput" type="file" value="" style="display: none;">
 				<span id="offer2ImageUnlock" class="material-symbols-outlined" onclick="unlockOffer2Image();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="offer2ImageLock" class="material-symbols-outlined" onclick="lockOffer2Image();">lock</span>
 				<p id="offer2ImageValueDisplay" style="display: none;"></p>
@@ -979,7 +964,7 @@
 				<span id="warningPerson1Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1Name">Person 1 Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
-				<input id="person1Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1Name" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1NameUnlock" class="material-symbols-outlined" onclick="unlockPerson1Name();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1NameLock" class="material-symbols-outlined" onclick="lockPerson1Name();">lock</span>
 				<button id="person1NameClear" onclick="clearPerson1Name();">Clear</button>
@@ -990,7 +975,7 @@
 				<span id="warningPerson1Title" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1Title">Person 1 Title</label>
 				<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
-				<input id="person1Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1Title" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson1Title();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TitleLock" class="material-symbols-outlined" onclick="lockPerson1Title();">lock</span>
 				<button id="person1TitleClear" onclick="clearPerson1Title();">Clear</button>
@@ -1001,7 +986,7 @@
 				<span id="warningPerson1Image" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1Headshot">Person 1 Headshot</label>
 				<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
-				<input id="person1Headshot" type="file" accept="image/*" value="" style="display: none;">
+				<input id="person1Headshot" class="brandVarInput" type="file" accept="image/*" value="" style="display: none;">
 				<span id="person1HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson1Headshot();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1HeadshotLock" class="material-symbols-outlined" onclick="lockPerson1Headshot();">lock</span>
 				<p id="person1HeadshotValueDisplay" style="display: none;"></p>
@@ -1013,7 +998,7 @@
 				<span id="warningPerson1Facebook" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1FacebookUrl">Person 1 Facebook URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
-				<input id="person1FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1FacebookUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1FacebookUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson1FacebookUrl();">lock</span>
 				<button id="person1FacebookUrlClear" onclick="clearPerson1FacebookUrl();">Clear</button>
@@ -1024,7 +1009,7 @@
 				<span id="warningPerson1Instagram" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1InstagramUrl">Person 1 Instagram URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
-				<input id="person1InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1InstagramUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1InstagramUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson1InstagramUrl();">lock</span>
 				<button id="person1InstagramUrlClear" onclick="clearPerson1InstagramUrl();">Clear</button>
@@ -1035,7 +1020,7 @@
 				<span id="warningPerson1Linkedin" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1LinkedinUrl">Person 1 LinkedIn URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
-				<input id="person1LinkedinUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1LinkedinUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1LinkedinUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson1LinkedinUrl();">lock</span>
 				<button id="person1LinkedinUrlClear" onclick="clearPerson1LinkedinUrl();">Clear</button>
@@ -1046,7 +1031,7 @@
 				<span id="warningPerson1Twitter" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1TwitterUrl">Person 1 Twitter URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
-				<input id="person1TwitterUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1TwitterUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TwitterUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson1TwitterUrl()">lock</span>
 				<button id="person1TwitterUrlClear" onclick="clearPerson1TwitterUrl();">Clear</button>
@@ -1057,7 +1042,7 @@
 				<span id="warningPerson1Tiktok" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person1TiktokUrl">Person 1 TikTok URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
-				<input id="person1TiktokUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person1TiktokUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person1TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson1TiktokUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person1TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson1TiktokUrl();">lock</span>
 				<button id="person1TiktokUrlClear" onclick="clearPerson1TiktokUrl();">Clear</button>
@@ -1070,7 +1055,7 @@
 				<span id="warningPerson2Name" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2Name">Person 2 Name</label>
 				<span class="material-symbols-outlined" onclick='alert("The name of the person")'>info</span>
-				<input id="person2Name" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person2Name" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person2NameUnlock" class="material-symbols-outlined" onclick="unlockPerson2Name();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2NameLock" class="material-symbols-outlined" onclick="lockPerson2Name();">lock</span>
 				<button id="person2NameClear" onclick="clearPerson2Name();">Clear</button>
@@ -1081,7 +1066,7 @@
 				<span id="warningPerson2Title" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2Title">Person 2 Title</label>
 				<span class="material-symbols-outlined" onclick='alert("The title of the person")'>info</span>
-				<input id="person2Title" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person2Title" class="brandVarInput" type="text" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person2TitleUnlock" class="material-symbols-outlined" onclick="unlockPerson2Title();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TitleLock" class="material-symbols-outlined" onclick="lockPerson2Title();">lock</span>
 				<button id="person2TitleClear" onclick="clearPerson2Title();">Clear</button>
@@ -1092,7 +1077,7 @@
 				<span id="warningPerson2Headshot" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2Headshot">Person 2 Headshot</label>
 				<span class="material-symbols-outlined" onclick='alert("The headshot of the person")'>info</span>
-				<input id="person2Headshot" type="file" accept="image/*" value="" style="display: none;">
+				<input id="person2Headshot" class="brandVarInput" type="file" accept="image/*" value="" style="display: none;">
 				<span id="person2HeadshotUnlock" class="material-symbols-outlined" onclick="unlockPerson2Headshot();">lock_open</span>
 				<span style="background-color: darkgreen; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2HeadshotLock" class="material-symbols-outlined" onclick="lockPerson2Headshot();">lock</span>
 				<p id="person2HeadshotValueDisplay" style="display: none;"></p>
@@ -1104,7 +1089,7 @@
 				<span id="warningPerson2FacebookUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2FacebookUrl">Person 2 Facebook URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The Facebook URL of the person")'>info</span>
-				<input id="person2FacebookUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person2FacebookUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person2FacebookUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2FacebookUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2FacebookUrlLock" class="material-symbols-outlined" onclick="lockPerson2FacebookUrl()">lock</span>
 				<button id="person2FacebookUrlClear" onclick="clearPerson2FacebookUrl();">Clear</button>
@@ -1115,7 +1100,7 @@
 				<span id="warningPerson2InstagramUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2InstagramUrl">Person 2 Instagram URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The Instagram URL of the person")'>info</span>
-				<input id="person2InstagramUrl" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
+				<input id="person2InstagramUrl" class="brandVarInput" type="url" value="" readonly onkeyup="this.size = this.value.length + 1">
 				<span id="person2InstagramUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2InstagramUrl()">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2InstagramUrlLock" class="material-symbols-outlined" onclick="lockPerson2InstagramUrl();">lock</span>
 				<button id="person2InstagramUrlClear" onclick="clearPerson2InstagramUrl();">Clear</button>
@@ -1126,7 +1111,7 @@
 				<span id="warningPerson2LinkedinUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2LinkedinUrl">Person 2 LinkedIn URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The LinkedIn URL of the person")'>info</span>
-				<input id="person2LinkedinUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
+				<input id="person2LinkedinUrl" class="brandVarInput" type="url" value="" onkeyup="this.size = this.value.length + 1">
 				<span id="person2LinkedinUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2LinkedinUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2LinkedinUrlLock" class="material-symbols-outlined" onclick="lockPerson2LinkedinUrl();">lock</span>
 				<button id="person2LinkedinUrlClear" onclick="clearPerson2LinkedinUrl();">Clear</button>
@@ -1137,7 +1122,7 @@
 				<span id="warningPerson2TwitterUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2TwitterUrl">Person 2 Twitter URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The Twitter URL of the person")'>info</span>
-				<input id="person2TwitterUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
+				<input id="person2TwitterUrl" class="brandVarInput" type="url" value="" onkeyup="this.size = this.value.length + 1">
 				<span id="person2TwitterUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TwitterUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TwitterUrlLock" class="material-symbols-outlined" onclick="lockPerson2TwitterUrl()">lock</span>
 				<button id="person2TwitterUrlClear" onclick="clearPerson2TwitterUrl();">Clear</button>
@@ -1148,7 +1133,7 @@
 				<span id="warningPerson2TiktokUrl" class="material-symbols-outlined" style="display: none;">warning</span>&nbsp;
 				<label for="person2TiktokUrl">Person 2 TikTok URL</label>
 				<span class="material-symbols-outlined" onclick='alert("The TikTok URL of the person")'>info</span>
-				<input id="person2TiktokUrl" type="url" value="" onkeyup="this.size = this.value.length + 1">
+				<input id="person2TiktokUrl" class="brandVarInput" type="url" value="" onkeyup="this.size = this.value.length + 1">
 				<span id="person2TiktokUrlUnlock" class="material-symbols-outlined" onclick="unlockPerson2TiktokUrl();">lock_open</span>
 				<span style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" id="person2TiktokUrlLock" class="material-symbols-outlined" onclick="lockPerson2TiktokUrl();">lock</span>
 				<button id="person2TiktokUrlClear" onclick="clearPerson2TiktokUrl();">Clear</button>
@@ -1156,7 +1141,6 @@
 		</details>
 
 	</section>
-
 	<!-- Content Tab -->
 	<section id="content" class="tabby">
 		<h2>My Content</h2>
@@ -1341,7 +1325,6 @@
 		</details>
 
 	</section>
-
 	<!-- New Content Tab -->
 	<section id="newContent" class="tabby">
 
@@ -2148,7 +2131,6 @@
 		</div>
 
 	</section>
-
 	<!-- Settings Tab -->
 	<section id="settings" class="tabby">
 		<div id="accountIntegrations" style="padding: 20px;">
@@ -2219,9 +2201,7 @@
 
 		</div>
 	</section>
-
 </main>
-
 <!-- Brand Popup-->
 <div id="brandPopup">
 	<!-- Chrome ignores autocomplete="off" -->
@@ -2234,7 +2214,6 @@
 		<span id="brandRecommendations"></span>
 	</span>
 </div>
-
 <!-- Signup form in a modal -->
 <div id="modal-signup" class="modal" style="display: none;">
   <form>
@@ -2257,7 +2236,6 @@
     <button type="button" class="btn-outline" onclick="toggleModal('modal-signup')" >Close</button>
   </form>
 </div>
-
 <!-- Login form in a modal -->
 <div id="modal-login" class="modal" style="display: none;">
   <form>
@@ -2279,7 +2257,6 @@
     <button type="button" class="btn-outline" onclick="toggleModal('modal-login')" >Close</button>
   </form>
 </div>
-
 <!-- Reset password form in a modal -->
 <div id="modal-reset" class="modal" style="display: none;">
   <form>
@@ -2292,10 +2269,8 @@
     <button type="button" class="btn-outline" onclick="toggleModal('modal-reset')" >Close</button>
   </form>
 </div>
-
 <!-- Notification bar -->
 <div id="snackbar"></div>
-
 <!-- JavaScript -->
 <script>
 
@@ -2310,12 +2285,9 @@
 			let brandSearch = document.getElementById('brandSearch');
 			// set label
 			document.getElementById('brandRecommendationsLabel').innerText = 'Field type: ' + inputType.toUpperCase();
-
-			// set the 'list' attribute for the input field clicked
+			// text
 			if (inputType === 'text' || inputType === 'textarea') {
 				brandSearch.setAttribute('list', 'text');
-
-				// for each option, show a div
 				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 					document.getElementById('brandRecommendations').innerHTML +=
 						'<div class="brandRecommendation" onmouseover="" onclick="">' +
@@ -2323,46 +2295,54 @@
 							'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
 						'</div>';
 				}
-
+			// url
 			} else if (inputType === 'url') {
 				brandSearch.setAttribute('list', 'url')
-
-				// for each option, show a div
 				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 					document.getElementById('brandRecommendations').innerHTML +=
 						'<div class="brandRecommendation" onmouseover="" onclick="">' +
 							'<div>' +
-								'<div class="brandRecommendationInnerText" style="display: flex;"><img alt="" style="margin-right: 3px;" src="https://s2.googleusercontent.com/s2/favicons?domain_url=' + document.getElementById('brandSearch').list.options[i].value + '" />' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+								'<div class="brandRecommendationInnerText" style="display: flex;"><img alt="" style="margin-right: 3px;" height="16px" width="16px" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=' + document.getElementById('brandSearch').list.options[i].value + '&size=96' + '" />' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 								'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
 							'</div>' +
 						'</div>';
 				}
-
+			// color
 			} else if (inputType === 'color') {
 				brandSearch.setAttribute('list', 'color')
 
-				// for each option, show a div
 				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 					document.getElementById('brandRecommendations').innerHTML +=
-						'<div class="brandRecommendation" style="display: flex; align-items: center; justify-content: start;" onmouseover="" onclick="">' +
-							'<span style="background-color: ' + document.getElementById('brandSearch').list.options[i].value + '; height: 25px; width: 25px; border-radius: 50%; margin: 0 5px 0 0;"></span>' +
+						'<div class="brandRecommendation" style="display: flex; align-items: center; justify-content: space-between;" onmouseover="" onclick="">' +
 							'<div>' +
 								'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 								'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
 							'</div>' +
+							'<span style="background-color: ' + document.getElementById('brandSearch').list.options[i].value + '; height: 25px; width: 25px; border-radius: 50%; margin: 0 5px 0 0;"></span>' +
 						'</div>';
 				}
-
+			// file
 			} else if (inputType === 'file') {
 				brandSearch.setAttribute('list', 'file')
-
-				// for each option, show a div
-				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
-					document.getElementById('brandRecommendations').innerHTML +=
-						'<div class="brandRecommendation" style="display: flex;" onmouseover="" onclick="">' +
-							'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
-							'<img alt="" src="' + document.getElementById('brandSearch').list.options[i].value + '" height="50px" width="200px" style="object-fit: contain; margin: 0 5px 0 0;" />' +
-						'</div>';
+					for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
+						// A method of determining if the format is base64 or not
+						if (document.getElementById('brandSearch').list.options[i].value.includes('.com' || '.net' || '.org' || '.io' || '.ai')) {
+							// set no additional image format
+							let imageFormat = '';
+							document.getElementById('brandRecommendations').innerHTML +=
+								'<div class="brandRecommendation" style="display: flex; justify-content: space-between" onmouseover="" onclick="">' +
+									'<div class="brandRecommendationInnerText" style="display: flex; align-items: center">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+									'<img alt="" src="' + imageFormat + document.getElementById('brandSearch').list.options[i].value + '" height="50px" width="200px" style="object-fit: contain; margin: 0 5px 0 0;" />' +
+								'</div>';
+						} else {
+							// set base64 image format
+							let imageFormat = 'data:image/png;base64,';
+							document.getElementById('brandRecommendations').innerHTML +=
+								'<div class="brandRecommendation" style="display: flex; justify-content: space-between" onmouseover="" onclick="">' +
+									'<div class="brandRecommendationInnerText" style="display: flex; align-items: center">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
+									'<img alt="" src="' + imageFormat + document.getElementById('brandSearch').list.options[i].value + '" height="50px" width="200px" style="object-fit: contain; margin: 0 5px 0 0;" />' +
+								'</div>';
+					}
 				}
 
 			} else if (inputType === 'date') {
@@ -2708,7 +2688,6 @@
 		for (let i = 0; i < companyUpdateBodyHere.length; i++) {
 			companyUpdateBodyHere[i].innerHTML = document.getElementById('companyUpdateBody').value;
 		}
-
 		// update hashtags
 		companyUpdateBodyHashtagsUpdate();
 	}
@@ -3989,6 +3968,7 @@
 		for(let i = 0; i < element.length; i ++) {
 			element[i].innerHTML = "";
 		}
+		clearTestimonialReviewAuthorNameHashtags();
 	}
 	function clearTestimonialReviewAuthorTitle() {
 		document.getElementById("testimonialReviewAuthorTitle").value = "";
@@ -4730,7 +4710,6 @@
 	}
 
 </script>
-
 <!-- Firebase Auth -->
 <script type="module">
 
@@ -4964,65 +4943,53 @@ onAuthStateChanged(auth, user => {
 })
 
 </script>
-
 <!-- 'list' inside <select> elements will not be searchable as the 'list' attribute value,
 so we need to place them here, not sure why, I guess we create 2 identical data sets for now?
 1 here for search and 1 for the brandRecommendations? -->
-
+<!-- Datalists, filled by firebaseSetup.js, used in the brandPopup -->
 <datalist id="text">
 	<option value="text">text</option>
 	<option value="text">text</option>
 </datalist>
-
 <datalist id="url">
-	<option value="url">url</option>
+	<option value="https://webflow.com">Webflow</option>
 	<option value="url">url</option>
 </datalist>
-
 <datalist id="color">
 	<option value="red">red</option>
 	<option value="blue">blue</option>
 </datalist>
-
 <datalist id="file">
 	<option value="file">file</option>
 	<option value="file">file</option>
 </datalist>
-
 <datalist id="date">
 	<option value="date">date</option>
 	<option value="date">date</option>
 </datalist>
-
 <datalist id="time">
 	<option value="time">time</option>
 	<option value="time">time</option>
 </datalist>
-
 <datalist id="datetime-local">
 	<option value="datetime">datetime</option>
 	<option value="datetime">datetime</option>
 </datalist>
-
 <datalist id="email">
 	<option value="email">email</option>
 	<option value="email">email</option>
 </datalist>
-
 <datalist id="tel">
 	<option value="tel">tel</option>
 	<option value="tel">tel</option>
 </datalist>
-
 <datalist id="number">
 	<option value="number">number</option>
 	<option value="number">number</option>
 </datalist>
-
 <datalist id="location">
 	<option value="location">location</option>
 	<option value="location">location</option>
 </datalist>
-
 </body>
 </html>

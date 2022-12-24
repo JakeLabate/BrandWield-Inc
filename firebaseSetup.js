@@ -37,461 +37,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	loadUserBrand();
 
-
-	// Address
-	if (snapshot.val().officeAddressStreet1 != null) {
-		console.log('officeAddressStreet1');
-		// set local storage
-		localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet1);
-		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 1';
-
-		document.getElementById('officeAddressStreet1').value = snapshot.val().officeAddressStreet1;
-		document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').value.length + 1;
-	} else {
-		document.getElementById('officeAddressStreet1').placeholder = '123 Main Street';
-		document.getElementById('warningOfficeAddressStreet1').style.display = 'block';
-		document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').placeholder.length + 1;
-	}
-	if (snapshot.val().officeAddressStreet2 != null) {
-		// set local storage
-		localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet2);
-		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 2';
-
-		document.getElementById('officeAddressStreet2').value = snapshot.val().officeAddressStreet2;
-		document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').value.length + 1;
-	} else {
-		document.getElementById('officeAddressStreet2').placeholder = 'Suite 100';
-		document.getElementById('warningOfficeAddressStreet2').style.display = 'block';
-		document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').placeholder.length + 1;
-	}
-	if (snapshot.val().officeAddressCity != null) {
-		// set local storage
-		localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCity);
-		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address City';
-
-		document.getElementById('officeAddressCity').value = snapshot.val().officeAddressCity;
-		document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').value.length + 1;
-	} else {
-		document.getElementById('officeAddressCity').placeholder = 'New York';
-		document.getElementById('warningOfficeAddressCity').style.display = 'block';
-		document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').placeholder.length + 1;
-	}
-	if (snapshot.val().officeAddressState != null) {
-		// set local storage
-		localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressState);
-		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address State';
-
-		document.getElementById('officeAddressState').value = snapshot.val().officeAddressState;
-		document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').value.length + 1;
-	} else {
-		document.getElementById('officeAddressState').placeholder = 'NY';
-		document.getElementById('warningOfficeAddressState').style.display = 'block';
-		document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').placeholder.length + 1;
-	}
-	if (snapshot.val().officeAddressZip != null) {
-		// set local storage
-		localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressZip);
-		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Zip';
-
-		document.getElementById('officeAddressZip').value = snapshot.val().officeAddressZip;
-		document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').value.length + 1;
-	} else {
-		document.getElementById('officeAddressZip').placeholder = '10001';
-		document.getElementById('warningOfficeAddressZip').style.display = 'block';
-		document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').placeholder.length + 1;
-	}
-	if (snapshot.val().officeAddressCountry != null) {
-		// set local storage
-		localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
-
-		// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-		document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCountry);
-		document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Country';
-
-		document.getElementById('officeAddressCountry').value = snapshot.val().officeAddressCountry;
-		document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').value.length + 1;
-	} else {
-		document.getElementById('officeAddressCountry').placeholder = 'USA';
-		document.getElementById('warningOfficeAddressCountry').style.display = 'block';
-		document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').placeholder.length + 1;
-	}
-
-	// Hours of Operation
-	if (snapshot.val().mondayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
-		document.getElementById('mondayOpeningTime').size = document.getElementById('mondayOpeningTime').value.length + 1;
-	} else {
-		document.getElementById('mondayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningMondayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().mondayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
-		document.getElementById('mondayClosingTime').value = snapshot.val().mondayClosingTime;
-	} else {
-		document.getElementById('mondayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningMondayClosingTime').style.display = 'block';
-	}
-	if (snapshot.val().tuesdayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('tuesdayOpeningTime', snapshot.val().tuesdayOpeningTime);
-		document.getElementById('tuesdayOpeningTime').value = snapshot.val().tuesdayOpeningTime;
-	} else {
-		document.getElementById('tuesdayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningTuesdayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().tuesdayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('tuesdayClosingTime', snapshot.val().tuesdayClosingTime);
-		document.getElementById('tuesdayClosingTime').value = snapshot.val().tuesdayClosingTime;
-	} else {
-		document.getElementById('tuesdayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningTuesdayClosingTime').style.display = 'block';
-	}
-	if (snapshot.val().wednesdayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('wednesdayOpeningTime', snapshot.val().wednesdayOpeningTime);
-		document.getElementById('wednesdayOpeningTime').value = snapshot.val().wednesdayOpeningTime;
-	} else {
-		document.getElementById('wednesdayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningWednesdayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().wednesdayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('wednesdayClosingTime', snapshot.val().wednesdayClosingTime);
-		document.getElementById('wednesdayClosingTime').value = snapshot.val().wednesdayClosingTime;
-	} else {
-		document.getElementById('wednesdayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningWednesdayClosingTime').style.display = 'block';
-	}
-	if (snapshot.val().thursdayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('thursdayOpeningTime', snapshot.val().thursdayOpeningTime);
-		document.getElementById('thursdayOpeningTime').value = snapshot.val().thursdayOpeningTime;
-	} else {
-		document.getElementById('thursdayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningThursdayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().thursdayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('thursdayClosingTime', snapshot.val().thursdayClosingTime);
-		document.getElementById('thursdayClosingTime').value = snapshot.val().thursdayClosingTime;
-	} else {
-		document.getElementById('thursdayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningThursdayClosingTime').style.display = 'block';
-	}
-	if (snapshot.val().fridayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('fridayOpeningTime', snapshot.val().fridayOpeningTime);
-		document.getElementById('fridayOpeningTime').value = snapshot.val().fridayOpeningTime;
-	} else {
-		document.getElementById('fridayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningFridayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().fridayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('fridayClosingTime', snapshot.val().fridayClosingTime);
-		document.getElementById('fridayClosingTime').value = snapshot.val().fridayClosingTime;
-	} else {
-		document.getElementById('fridayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningFridayClosingTime').style.display = 'block';
-	}
-	if (snapshot.val().saturdayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('saturdayOpeningTime', snapshot.val().saturdayOpeningTime);
-		document.getElementById('saturdayOpeningTime').value = snapshot.val().saturdayOpeningTime;
-	} else {
-		document.getElementById('saturdayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningSaturdayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().saturdayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('saturdayClosingTime', snapshot.val().saturdayClosingTime);
-		document.getElementById('saturdayClosingTime').value = snapshot.val().saturdayClosingTime;
-	} else {
-		document.getElementById('saturdayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningSaturdayClosingTime').style.display = 'block';
-	}
-	if (snapshot.val().sundayOpeningTime != null) {
-		// set local storage
-		localStorage.setItem('sundayOpeningTime', snapshot.val().sundayOpeningTime);
-		document.getElementById('sundayOpeningTime').value = snapshot.val().sundayOpeningTime;
-	} else {
-		document.getElementById('sundayOpeningTime').placeholder = '9:00 AM';
-		document.getElementById('warningSundayOpeningTime').style.display = 'block';
-	}
-	if (snapshot.val().sundayClosingTime != null) {
-		// set local storage
-		localStorage.setItem('sundayClosingTime', snapshot.val().sundayClosingTime);
-		document.getElementById('sundayClosingTime').value = snapshot.val().sundayClosingTime;
-	} else {
-		document.getElementById('sundayClosingTime').placeholder = '5:00 PM';
-		document.getElementById('warningSundayClosingTime').style.display = 'block';
-	}
-
-	// Founding Info
-	if (snapshot.val().founderName != null) {
-		// set local storage
-		localStorage.setItem('founderName', snapshot.val().founderName);
-		document.getElementById('founderName').value = snapshot.val().founderName;
-		document.getElementById('founderName').size = document.getElementById('founderName').value.length + 1;
-	} else {
-		document.getElementById('founder').placeholder = 'John Doe';
-		document.getElementById('warningFounderName').style.display = 'block';
-		document.getElementById('founderName').size = document.getElementById('founderName').placeholder.length + 1;
-	}
-	if (snapshot.val().foundingDate != null) {
-		// set local storage
-		localStorage.setItem('foundingDate', snapshot.val().foundingDate);
-		document.getElementById('foundingDate').value = snapshot.val().foundingDate;
-	} else {
-		document.getElementById('foundingDate').placeholder = '2017';
-		document.getElementById('warningFoundingDate').style.display = 'block';
-	}
-	if (snapshot.val().tradeBusinessName != null) {
-		// set local storage
-		localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
-		document.getElementById('tradeBusinessName').value = snapshot.val().tradeBusinessName;
-		document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').value.length + 1;
-
-	} else {
-		document.getElementById('tradeBusinessName').placeholder = 'John\'s Tacos';
-		document.getElementById('warningTradeBusinessName').style.display = 'block';
-		document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').placeholder.length + 1;
-	}
-	if (snapshot.val().legalBusinessName != null) {
-		// set local storage
-		localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
-		document.getElementById('legalBusinessName').value = snapshot.val().legalBusinessName;
-		document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').value.length + 1;
-
-	} else {
-		document.getElementById('legalBusinessName').placeholder = 'John\'s Tacos LLC';
-		document.getElementById('warningLegalBusinessName').style.display = 'block';
-		document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').placeholder.length + 1;
-	}
-
-	// Basic Info
-	if (snapshot.val().businessType != null) {
-		// set local storage
-		localStorage.setItem('businessType', snapshot.val().businessType);
-		document.getElementById('businessType').value = snapshot.val().businessType;
-		document.getElementById('businessType').size = document.getElementById('businessType').value.length + 1;
-
-	} else {
-		document.getElementById('businessType').placeholder = 'Restaurant';
-		document.getElementById('warningBusinessType').style.display = 'block';
-	}
-	if (snapshot.val().slogan != null) {
-		// set local storage
-		localStorage.setItem('slogan', snapshot.val().slogan);
-		document.getElementById('slogan').value = snapshot.val().slogan;
-		document.getElementById('slogan').size = document.getElementById('slogan').value.length + 1;
-	} else {
-		document.getElementById('slogan').placeholder = 'The Best Tacos in Town';
-		document.getElementById('warningSlogan').style.display = 'block';
-		document.getElementById('slogan').size = document.getElementById('slogan').placeholder.length + 1;
-	}
-	if (snapshot.val().missionStatement != null) {
-		// set local storage
-		localStorage.setItem('missionStatement', snapshot.val().missionStatement);
-		document.getElementById('missionStatement').value = snapshot.val().missionStatement;
-		document.getElementById('missionStatement').size = document.getElementById('missionStatement').value.length + 1;
-	} else {
-		document.getElementById('missionStatement').placeholder = 'To provide the best tacos in town';
-		document.getElementById('warningMissionStatement').style.display = 'block';
-		document.getElementById('missionStatement').size = document.getElementById('missionStatement').placeholder.length + 1;
-	}
-	if (snapshot.val().valueProp != null) {
-		// set local storage
-		localStorage.setItem('valueProp', snapshot.val().valueProp);
-		document.getElementById('valueProp').value = snapshot.val().valueProp;
-		document.getElementById('valueProp').size = document.getElementById('valueProp').value.length + 1;
-	} else {
-		document.getElementById('valueProp').placeholder = 'We make tacos with only the finest and freshest ingredients';
-		document.getElementById('warningValueProp').style.display = 'block';
-		document.getElementById('valueProp').size = document.getElementById('valueProp').placeholder.length + 1;
-	}
-
-	// PEOPLE
-	// Person 1
-	if (snapshot.val().person1Name != null) {
-		// set local storage
-		localStorage.setItem('person1Name', snapshot.val().person1Name);
-		document.getElementById('person1Name').value = snapshot.val().person1Name;
-		document.getElementById('person1Name').size = document.getElementById('person1Name').value.length + 1;
-	} else {
-		document.getElementById('person1Name').placeholder = 'Harry Doe';
-		document.getElementById('warningPerson1Name').style.display = 'block';
-		document.getElementById('person1Name').size = document.getElementById('person1Name').placeholder.length + 1;
-	}
-	if (snapshot.val().person1Title != null) {
-		// set local storage
-		localStorage.setItem('person1Title', snapshot.val().person1Title);
-		document.getElementById('person1Title').value = snapshot.val().person1Title;
-		document.getElementById('person1Title').size = document.getElementById('person1Title').value.length + 1;
-	} else {
-		document.getElementById('person1Title').placeholder = 'Head Chef';
-		document.getElementById('warningPerson1Title').style.display = 'block';
-		document.getElementById('person1Title').size = document.getElementById('person1Title').placeholder.length + 1;
-	}
-	//   if (snapshot.val().person1Headshot != null) {
-	//     // set local storage
-	//     localStorage.setItem('person1Headshot', snapshot.val().person1Headshot);
-	//      document.getElementById('person1Headshot').value = snapshot.val().person1Headshot;
-	//  } else {
-	//      document.getElementById('person1Headshot').placeholder = 'https://via.placeholder.com/150';
-	//       document.getElementById('warningPerson1Headshot').style.display = 'block';
-	//   }
-	if (snapshot.val().person1FacebookUrl != null) {
-		// set local storage
-		localStorage.setItem('person1FacebookUrl', snapshot.val().person1FacebookUrl);
-		document.getElementById('person1FacebookUrl').value = snapshot.val().person1FacebookUrl;
-		document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
-
-	} else {
-		document.getElementById('person1FacebookUrl').placeholder = 'https://facebook.com/harrydoetaco';
-		document.getElementById('warningPerson1FacebookUrl').style.display = 'block';
-		document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person1InstagramUrl != null) {
-		// set local storage
-		localStorage.setItem('person1InstagramUrl', snapshot.val().person1InstagramUrl);
-		document.getElementById('person1InstagramUrl').value = snapshot.val().person1InstagramUrl;
-		document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').value.length + 1;
-	} else {
-		document.getElementById('person1InstagramUrl').placeholder = 'https://instagram.com/harrydoe.tacko';
-		document.getElementById('warningPerson1InstagramUrl').style.display = 'block';
-		document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person1LinkedinUrl != null) {
-		// set local storage
-		localStorage.setItem('person1LinkedinUrl', snapshot.val().person1LinkedinUrl);
-		document.getElementById('person1LinkedinUrl').value = snapshot.val().person1LinkedinUrl;
-		document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').value.length + 1;
-	} else {
-		document.getElementById('person1LinkedinUrl').placeholder = 'https://linkedin.com/in/harrydoetaco';
-		document.getElementById('warningPerson1LinkedinUrl').style.display = 'block';
-		document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person1TwitterUrl != null) {
-		// set local storage
-		localStorage.setItem('person1TwitterUrl', snapshot.val().person1TwitterUrl);
-		document.getElementById('person1TwitterUrl').value = snapshot.val().person1TwitterUrl;
-		document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').value.length + 1;
-	} else {
-		document.getElementById('person1TwitterUrl').placeholder = 'https://twitter.com/@harrydoetaco';
-		document.getElementById('warningPerson1TwitterUrl').style.display = 'block';
-		document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person1TiktokUrl != null) {
-		// set local storage
-		localStorage.setItem('person1TiktokUrl', snapshot.val().person1TiktokUrl);
-		document.getElementById('person1TiktokUrl').value = snapshot.val().person1TiktokUrl;
-		document.getElementById('person1TiktokUrl').size = document.getElementById('person1TiktokUrl').value.length + 1;
-	} else {
-		document.getElementById('person1TiktokUrl').placeholder = 'https://tiktok.com/@harrydoetaco';
-		document.getElementById('warningPerson1TiktokUrl').style.display = 'block';
-		document.getElementById('person1TiktokUrl').size = document.getElementById('person1TiktokUrl').placeholder.length + 1;
-	}
-
-	// Person 2
-	if (snapshot.val().person2Name != null) {
-		// set local storage
-		localStorage.setItem('person2Name', snapshot.val().person2Name);
-		document.getElementById('person2Name').value = snapshot.val().person2Name;
-		document.getElementById('person2Name').size = document.getElementById('person2Name').value.length + 1;
-	} else {
-		document.getElementById('person2Name').placeholder = 'Harry Doe';
-		document.getElementById('warningPerson2Name').style.display = 'block';
-		document.getElementById('person2Name').size = document.getElementById('person2Name').placeholder.length + 1;
-	}
-	if (snapshot.val().person2Title != null) {
-		// set local storage
-		localStorage.setItem('person2Title', snapshot.val().person2Title);
-		document.getElementById('person2Title').value = snapshot.val().person2Title;
-		document.getElementById('person2Title').size = document.getElementById('person2Title').value.length + 1;
-	} else {
-		document.getElementById('person2Title').placeholder = 'Head Chef';
-		document.getElementById('warningPerson2Title').style.display = 'block';
-		document.getElementById('person2Title').size = document.getElementById('person2Title').placeholder.length + 1;
-	}
-	//   if (snapshot.val().person2Headshot != null) {
-	//       // set local storage
-	//       localStorage.setItem('person2Headshot', snapshot.val().person2Headshot);
-	//      document.getElementById('person2Headshot').value = snapshot.val().person2Headshot;
-	//  } else {
-	//       document.getElementById('person2Headshot').placeholder = 'https://via.placeholder.com/250';
-	//       document.getElementById('warningPerson2Headshot').style.display = 'block';
-	//  }
-	if (snapshot.val().person2FacebookUrl != null) {
-		// set local storage
-		localStorage.setItem('person2FacebookUrl', snapshot.val().person2FacebookUrl);
-		document.getElementById('person2FacebookUrl').value = snapshot.val().person2FacebookUrl;
-		document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').value.length + 1;
-	} else {
-		document.getElementById('person2FacebookUrl').placeholder = 'https://facebook.com/harrydoetaco';
-		document.getElementById('warningPerson2FacebookUrl').style.display = 'block';
-		document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person2InstagramUrl != null) {
-		// set local storage
-		localStorage.setItem('person2InstagramUrl', snapshot.val().person2InstagramUrl);
-		document.getElementById('person2InstagramUrl').value = snapshot.val().person2InstagramUrl;
-		document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').value.length + 1;
-	} else {
-		document.getElementById('person2InstagramUrl').placeholder = 'https://instagram.com/harrydoe.tacko';
-		document.getElementById('warningPerson2InstagramUrl').style.display = 'block';
-		document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person2LinkedinUrl != null) {
-		// set local storage
-		localStorage.setItem('person2LinkedinUrl', snapshot.val().person2LinkedinUrl);
-		document.getElementById('person2LinkedinUrl').value = snapshot.val().person2LinkedinUrl;
-		document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').value.length + 1;
-	} else {
-		document.getElementById('person2LinkedinUrl').placeholder = 'https://linkedin.com/in/harrydoetaco';
-		document.getElementById('warningPerson2LinkedinUrl').style.display = 'block';
-		document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person2TwitterUrl != null) {
-		// set local storage
-		localStorage.setItem('person2TwitterUrl', snapshot.val().person2TwitterUrl);
-		document.getElementById('person2TwitterUrl').value = snapshot.val().person2TwitterUrl;
-		document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').value.length + 1;
-	} else {
-		document.getElementById('person2TwitterUrl').placeholder = 'https://twitter.com/@harrydoetaco';
-		document.getElementById('warningPerson2TwitterUrl').style.display = 'block';
-		document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').placeholder.length + 1;
-	}
-	if (snapshot.val().person2TiktokUrl != null) {
-		// set local storage
-		localStorage.setItem('person2TiktokUrl', snapshot.val().person2TiktokUrl);
-		document.getElementById('person2TiktokUrl').value = snapshot.val().person2TiktokUrl;
-		document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').value.length + 1;
-	} else {
-		document.getElementById('person2TiktokUrl').placeholder = 'https://tiktok.com/@harrydoetaco';
-		document.getElementById('warningPerson2TiktokUrl').style.display = 'block';
-		document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').placeholder.length + 1;
-	}
-
 	// OFFERS
 	// Offer 1
 	if (snapshot.val().offer1Name != null) {
@@ -852,6 +397,615 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		loadFullLogo();
 	}
 
+	// Address
+	function loadOfficeAddressStreet1() {
+		// Address
+		if (snapshot.val().officeAddressStreet1 != null) {
+			console.log('officeAddressStreet1');
+			// set local storage
+			localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet1);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 1';
+
+			document.getElementById('officeAddressStreet1').value = snapshot.val().officeAddressStreet1;
+			document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').value.length + 1;
+		} else {
+			document.getElementById('officeAddressStreet1').placeholder = '123 Main Street';
+			document.getElementById('warningOfficeAddressStreet1').style.display = 'block';
+			document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').placeholder.length + 1;
+		}
+	}
+	function loadOfficeAddressStreet2() {
+		if (snapshot.val().officeAddressStreet2 != null) {
+			// set local storage
+			localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet2);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 2';
+
+			document.getElementById('officeAddressStreet2').value = snapshot.val().officeAddressStreet2;
+			document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').value.length + 1;
+		} else {
+			document.getElementById('officeAddressStreet2').placeholder = 'Suite 100';
+			document.getElementById('warningOfficeAddressStreet2').style.display = 'block';
+			document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').placeholder.length + 1;
+		}
+	}
+	function loadOfficeAddressCity() {
+		if (snapshot.val().officeAddressCity != null) {
+			// set local storage
+			localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCity);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address City';
+
+			document.getElementById('officeAddressCity').value = snapshot.val().officeAddressCity;
+			document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').value.length + 1;
+		} else {
+			document.getElementById('officeAddressCity').placeholder = 'New York';
+			document.getElementById('warningOfficeAddressCity').style.display = 'block';
+			document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').placeholder.length + 1;
+		}
+	}
+	function loadOfficeAddressState() {
+		if (snapshot.val().officeAddressState != null) {
+			// set local storage
+			localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressState);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address State';
+
+			document.getElementById('officeAddressState').value = snapshot.val().officeAddressState;
+			document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').value.length + 1;
+		} else {
+			document.getElementById('officeAddressState').placeholder = 'NY';
+			document.getElementById('warningOfficeAddressState').style.display = 'block';
+			document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').placeholder.length + 1;
+		}
+	}
+	function loadOfficeAddressZip() {
+		if (snapshot.val().officeAddressZip != null) {
+			// set local storage
+			localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressZip);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Zip';
+
+			document.getElementById('officeAddressZip').value = snapshot.val().officeAddressZip;
+			document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').value.length + 1;
+		} else {
+			document.getElementById('officeAddressZip').placeholder = '10001';
+			document.getElementById('warningOfficeAddressZip').style.display = 'block';
+			document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').placeholder.length + 1;
+		}
+	}
+	function loadOfficeAddressCountry() {
+		if (snapshot.val().officeAddressCountry != null) {
+			// set local storage
+			localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
+
+			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCountry);
+			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Country';
+
+			document.getElementById('officeAddressCountry').value = snapshot.val().officeAddressCountry;
+			document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').value.length + 1;
+		} else {
+			document.getElementById('officeAddressCountry').placeholder = 'USA';
+			document.getElementById('warningOfficeAddressCountry').style.display = 'block';
+			document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').placeholder.length + 1;
+		}
+	}
+	function loadOfficeAddress() {
+		loadOfficeAddressStreet1();
+		loadOfficeAddressStreet2();
+		loadOfficeAddressCity();
+		loadOfficeAddressState();
+		loadOfficeAddressZip();
+		loadOfficeAddressCountry();
+	}
+
+	// Hours of Operation
+	function loadMondayOpeningTime() {
+		// Hours of Operation
+		if (snapshot.val().mondayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
+			document.getElementById('mondayOpeningTime').size = document.getElementById('mondayOpeningTime').value.length + 1;
+		} else {
+			document.getElementById('mondayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningMondayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadMondayClosingTime() {
+		if (snapshot.val().mondayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
+			document.getElementById('mondayClosingTime').value = snapshot.val().mondayClosingTime;
+		} else {
+			document.getElementById('mondayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningMondayClosingTime').style.display = 'block';
+		}
+	}
+	function loadTuesdayOpeningTime() {
+		if (snapshot.val().tuesdayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('tuesdayOpeningTime', snapshot.val().tuesdayOpeningTime);
+			document.getElementById('tuesdayOpeningTime').value = snapshot.val().tuesdayOpeningTime;
+		} else {
+			document.getElementById('tuesdayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningTuesdayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadTuesdayClosingTime() {
+		if (snapshot.val().tuesdayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('tuesdayClosingTime', snapshot.val().tuesdayClosingTime);
+			document.getElementById('tuesdayClosingTime').value = snapshot.val().tuesdayClosingTime;
+		} else {
+			document.getElementById('tuesdayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningTuesdayClosingTime').style.display = 'block';
+		}
+	}
+	function loadWednesdayOpeningTime() {
+		if (snapshot.val().wednesdayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('wednesdayOpeningTime', snapshot.val().wednesdayOpeningTime);
+			document.getElementById('wednesdayOpeningTime').value = snapshot.val().wednesdayOpeningTime;
+		} else {
+			document.getElementById('wednesdayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningWednesdayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadWednesdayClosingTime() {
+		if (snapshot.val().wednesdayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('wednesdayClosingTime', snapshot.val().wednesdayClosingTime);
+			document.getElementById('wednesdayClosingTime').value = snapshot.val().wednesdayClosingTime;
+		} else {
+			document.getElementById('wednesdayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningWednesdayClosingTime').style.display = 'block';
+		}
+	}
+	function loadThursdayOpeningTime() {
+		if (snapshot.val().thursdayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('thursdayOpeningTime', snapshot.val().thursdayOpeningTime);
+			document.getElementById('thursdayOpeningTime').value = snapshot.val().thursdayOpeningTime;
+		} else {
+			document.getElementById('thursdayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningThursdayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadThursdayClosingTime() {
+		if (snapshot.val().thursdayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('thursdayClosingTime', snapshot.val().thursdayClosingTime);
+			document.getElementById('thursdayClosingTime').value = snapshot.val().thursdayClosingTime;
+		} else {
+			document.getElementById('thursdayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningThursdayClosingTime').style.display = 'block';
+		}
+	}
+	function loadFridayOpeningTime() {
+		if (snapshot.val().fridayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('fridayOpeningTime', snapshot.val().fridayOpeningTime);
+			document.getElementById('fridayOpeningTime').value = snapshot.val().fridayOpeningTime;
+		} else {
+			document.getElementById('fridayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningFridayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadFridayClosingTime() {
+		if (snapshot.val().fridayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('fridayClosingTime', snapshot.val().fridayClosingTime);
+			document.getElementById('fridayClosingTime').value = snapshot.val().fridayClosingTime;
+		} else {
+			document.getElementById('fridayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningFridayClosingTime').style.display = 'block';
+		}
+	}
+	function loadSaturdayOpeningTime() {
+		if (snapshot.val().saturdayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('saturdayOpeningTime', snapshot.val().saturdayOpeningTime);
+			document.getElementById('saturdayOpeningTime').value = snapshot.val().saturdayOpeningTime;
+		} else {
+			document.getElementById('saturdayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningSaturdayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadSaturdayClosingTime() {
+		if (snapshot.val().saturdayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('saturdayClosingTime', snapshot.val().saturdayClosingTime);
+			document.getElementById('saturdayClosingTime').value = snapshot.val().saturdayClosingTime;
+		} else {
+			document.getElementById('saturdayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningSaturdayClosingTime').style.display = 'block';
+		}
+	}
+	function loadSundayOpeningTime() {
+		if (snapshot.val().sundayOpeningTime != null) {
+			// set local storage
+			localStorage.setItem('sundayOpeningTime', snapshot.val().sundayOpeningTime);
+			document.getElementById('sundayOpeningTime').value = snapshot.val().sundayOpeningTime;
+		} else {
+			document.getElementById('sundayOpeningTime').placeholder = '9:00 AM';
+			document.getElementById('warningSundayOpeningTime').style.display = 'block';
+		}
+	}
+	function loadSundayClosingTime() {
+		if (snapshot.val().sundayClosingTime != null) {
+			// set local storage
+			localStorage.setItem('sundayClosingTime', snapshot.val().sundayClosingTime);
+			document.getElementById('sundayClosingTime').value = snapshot.val().sundayClosingTime;
+		} else {
+			document.getElementById('sundayClosingTime').placeholder = '5:00 PM';
+			document.getElementById('warningSundayClosingTime').style.display = 'block';
+		}
+	}
+	function loadHoursOfOperation() {
+		loadMondayOpeningTime();
+		loadMondayClosingTime();
+		loadTuesdayOpeningTime();
+		loadTuesdayClosingTime();
+		loadWednesdayOpeningTime();
+		loadWednesdayClosingTime();
+		loadThursdayOpeningTime();
+		loadThursdayClosingTime();
+		loadFridayOpeningTime();
+		loadFridayClosingTime();
+		loadSaturdayOpeningTime();
+		loadSaturdayClosingTime();
+		loadSundayOpeningTime();
+		loadSundayClosingTime();
+	}
+
+	// Founding
+	function loadFounderName() {
+		// Founding Info
+		if (snapshot.val().founderName != null) {
+			// set local storage
+			localStorage.setItem('founderName', snapshot.val().founderName);
+			document.getElementById('founderName').value = snapshot.val().founderName;
+			document.getElementById('founderName').size = document.getElementById('founderName').value.length + 1;
+		} else {
+			document.getElementById('founder').placeholder = 'John Doe';
+			document.getElementById('warningFounderName').style.display = 'block';
+			document.getElementById('founderName').size = document.getElementById('founderName').placeholder.length + 1;
+		}
+	}
+	function loadFoundingDae() {
+		if (snapshot.val().foundingDate != null) {
+			// set local storage
+			localStorage.setItem('foundingDate', snapshot.val().foundingDate);
+			document.getElementById('foundingDate').value = snapshot.val().foundingDate;
+		} else {
+			document.getElementById('foundingDate').placeholder = '2017';
+			document.getElementById('warningFoundingDate').style.display = 'block';
+		}
+	}
+	function loadTradeBusinessName() {
+		if (snapshot.val().tradeBusinessName != null) {
+			// set local storage
+			localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
+			document.getElementById('tradeBusinessName').value = snapshot.val().tradeBusinessName;
+			document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').value.length + 1;
+
+		} else {
+			document.getElementById('tradeBusinessName').placeholder = 'John\'s Tacos';
+			document.getElementById('warningTradeBusinessName').style.display = 'block';
+			document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').placeholder.length + 1;
+		}
+	}
+	function loadLegalBusinessName() {
+		if (snapshot.val().legalBusinessName != null) {
+			// set local storage
+			localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
+			document.getElementById('legalBusinessName').value = snapshot.val().legalBusinessName;
+			document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').value.length + 1;
+
+		} else {
+			document.getElementById('legalBusinessName').placeholder = 'John\'s Tacos LLC';
+			document.getElementById('warningLegalBusinessName').style.display = 'block';
+			document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').placeholder.length + 1;
+		}
+	}
+	function loadFounding() {
+		loadFounderName();
+		loadFoundingDae();
+		loadTradeBusinessName();
+		loadLegalBusinessName();
+	}
+
+	// Business
+	function loadBusinessType() {
+		// Basic Info
+		if (snapshot.val().businessType != null) {
+			// set local storage
+			localStorage.setItem('businessType', snapshot.val().businessType);
+			document.getElementById('businessType').value = snapshot.val().businessType;
+			document.getElementById('businessType').size = document.getElementById('businessType').value.length + 1;
+
+		} else {
+			document.getElementById('businessType').placeholder = 'Restaurant';
+			document.getElementById('warningBusinessType').style.display = 'block';
+		}
+	}
+	function loadSlogan() {
+		if (snapshot.val().slogan != null) {
+			// set local storage
+			localStorage.setItem('slogan', snapshot.val().slogan);
+			document.getElementById('slogan').value = snapshot.val().slogan;
+			document.getElementById('slogan').size = document.getElementById('slogan').value.length + 1;
+		} else {
+			document.getElementById('slogan').placeholder = 'The Best Tacos in Town';
+			document.getElementById('warningSlogan').style.display = 'block';
+			document.getElementById('slogan').size = document.getElementById('slogan').placeholder.length + 1;
+		}
+	}
+	function loadMissionStatement() {
+		if (snapshot.val().missionStatement != null) {
+			// set local storage
+			localStorage.setItem('missionStatement', snapshot.val().missionStatement);
+			document.getElementById('missionStatement').value = snapshot.val().missionStatement;
+			document.getElementById('missionStatement').size = document.getElementById('missionStatement').value.length + 1;
+		} else {
+			document.getElementById('missionStatement').placeholder = 'To provide the best tacos in town';
+			document.getElementById('warningMissionStatement').style.display = 'block';
+			document.getElementById('missionStatement').size = document.getElementById('missionStatement').placeholder.length + 1;
+		}
+	}
+	function loadValueProp() {
+		if (snapshot.val().valueProp != null) {
+			// set local storage
+			localStorage.setItem('valueProp', snapshot.val().valueProp);
+			document.getElementById('valueProp').value = snapshot.val().valueProp;
+			document.getElementById('valueProp').size = document.getElementById('valueProp').value.length + 1;
+		} else {
+			document.getElementById('valueProp').placeholder = 'We make tacos with only the finest and freshest ingredients';
+			document.getElementById('warningValueProp').style.display = 'block';
+			document.getElementById('valueProp').size = document.getElementById('valueProp').placeholder.length + 1;
+		}
+	}
+	function loadBusiness() {
+		loadBusinessType();
+		loadSlogan();
+		loadMissionStatement();
+		loadValueProp();
+	}
+
+	// PEOPLE
+	// person 1
+	function loadPerson1Name() {
+		// Person 1
+		if (snapshot.val().person1Name != null) {
+			// set local storage
+			localStorage.setItem('person1Name', snapshot.val().person1Name);
+			document.getElementById('person1Name').value = snapshot.val().person1Name;
+			document.getElementById('person1Name').size = document.getElementById('person1Name').value.length + 1;
+		} else {
+			document.getElementById('person1Name').placeholder = 'Harry Doe';
+			document.getElementById('warningPerson1Name').style.display = 'block';
+			document.getElementById('person1Name').size = document.getElementById('person1Name').placeholder.length + 1;
+		}
+	}
+	function loadPerson1Title() {
+		if (snapshot.val().person1Title != null) {
+			// set local storage
+			localStorage.setItem('person1Title', snapshot.val().person1Title);
+			document.getElementById('person1Title').value = snapshot.val().person1Title;
+			document.getElementById('person1Title').size = document.getElementById('person1Title').value.length + 1;
+		} else {
+			document.getElementById('person1Title').placeholder = 'Head Chef';
+			document.getElementById('warningPerson1Title').style.display = 'block';
+			document.getElementById('person1Title').size = document.getElementById('person1Title').placeholder.length + 1;
+		}
+	}
+	function loadPerson1Headshot() {
+		//   if (snapshot.val().person1Headshot != null) {
+		//     // set local storage
+		//     localStorage.setItem('person1Headshot', snapshot.val().person1Headshot);
+		//      document.getElementById('person1Headshot').value = snapshot.val().person1Headshot;
+		//  } else {
+		//      document.getElementById('person1Headshot').placeholder = 'https://via.placeholder.com/150';
+		//       document.getElementById('warningPerson1Headshot').style.display = 'block';
+		//   }
+	}
+	function loadPerson1FacebookUrl() {
+		if (snapshot.val().person1FacebookUrl != null) {
+			// set local storage
+			localStorage.setItem('person1FacebookUrl', snapshot.val().person1FacebookUrl);
+			document.getElementById('person1FacebookUrl').value = snapshot.val().person1FacebookUrl;
+			document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
+
+		} else {
+			document.getElementById('person1FacebookUrl').placeholder = 'https://facebook.com/harrydoetaco';
+			document.getElementById('warningPerson1FacebookUrl').style.display = 'block';
+			document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson1InstagramUrl() {
+		if (snapshot.val().person1InstagramUrl != null) {
+			// set local storage
+			localStorage.setItem('person1InstagramUrl', snapshot.val().person1InstagramUrl);
+			document.getElementById('person1InstagramUrl').value = snapshot.val().person1InstagramUrl;
+			document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').value.length + 1;
+		} else {
+			document.getElementById('person1InstagramUrl').placeholder = 'https://instagram.com/harrydoe.tacko';
+			document.getElementById('warningPerson1InstagramUrl').style.display = 'block';
+			document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson1LinkedInUrl() {
+		if (snapshot.val().person1LinkedinUrl != null) {
+			// set local storage
+			localStorage.setItem('person1LinkedinUrl', snapshot.val().person1LinkedinUrl);
+			document.getElementById('person1LinkedinUrl').value = snapshot.val().person1LinkedinUrl;
+			document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').value.length + 1;
+		} else {
+			document.getElementById('person1LinkedinUrl').placeholder = 'https://linkedin.com/in/harrydoetaco';
+			document.getElementById('warningPerson1LinkedinUrl').style.display = 'block';
+			document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson1TwitterUrl() {
+		if (snapshot.val().person1TwitterUrl != null) {
+			// set local storage
+			localStorage.setItem('person1TwitterUrl', snapshot.val().person1TwitterUrl);
+			document.getElementById('person1TwitterUrl').value = snapshot.val().person1TwitterUrl;
+			document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').value.length + 1;
+		} else {
+			document.getElementById('person1TwitterUrl').placeholder = 'https://twitter.com/@harrydoetaco';
+			document.getElementById('warningPerson1TwitterUrl').style.display = 'block';
+			document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson1TiktokUrl() {
+		if (snapshot.val().person1TiktokUrl != null) {
+			// set local storage
+			localStorage.setItem('person1TiktokUrl', snapshot.val().person1TiktokUrl);
+			document.getElementById('person1TiktokUrl').value = snapshot.val().person1TiktokUrl;
+			document.getElementById('person1TiktokUrl').size = document.getElementById('person1TiktokUrl').value.length + 1;
+		} else {
+			document.getElementById('person1TiktokUrl').placeholder = 'https://tiktok.com/@harrydoetaco';
+			document.getElementById('warningPerson1TiktokUrl').style.display = 'block';
+			document.getElementById('person1TiktokUrl').size = document.getElementById('person1TiktokUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson1() {
+		loadPerson1Name();
+		loadPerson1Title();
+		loadPerson1Headshot();
+		loadPerson1FacebookUrl();
+		loadPerson1InstagramUrl();
+		loadPerson1LinkedInUrl();
+		loadPerson1TwitterUrl();
+		loadPerson1TiktokUrl();
+	}
+
+	// person 2
+	function loadPerson2Name() {
+		// Person 2
+		if (snapshot.val().person2Name != null) {
+			// set local storage
+			localStorage.setItem('person2Name', snapshot.val().person2Name);
+			document.getElementById('person2Name').value = snapshot.val().person2Name;
+			document.getElementById('person2Name').size = document.getElementById('person2Name').value.length + 1;
+		} else {
+			document.getElementById('person2Name').placeholder = 'Harry Doe';
+			document.getElementById('warningPerson2Name').style.display = 'block';
+			document.getElementById('person2Name').size = document.getElementById('person2Name').placeholder.length + 1;
+		}
+	}
+	function loadPerson2Title() {
+		if (snapshot.val().person2Title != null) {
+			// set local storage
+			localStorage.setItem('person2Title', snapshot.val().person2Title);
+			document.getElementById('person2Title').value = snapshot.val().person2Title;
+			document.getElementById('person2Title').size = document.getElementById('person2Title').value.length + 1;
+		} else {
+			document.getElementById('person2Title').placeholder = 'Head Chef';
+			document.getElementById('warningPerson2Title').style.display = 'block';
+			document.getElementById('person2Title').size = document.getElementById('person2Title').placeholder.length + 1;
+		}
+	}
+	function loadPerson2Headshot() {
+		//   if (snapshot.val().person2Headshot != null) {
+		//       // set local storage
+		//       localStorage.setItem('person2Headshot', snapshot.val().person2Headshot);
+		//      document.getElementById('person2Headshot').value = snapshot.val().person2Headshot;
+		//  } else {
+		//       document.getElementById('person2Headshot').placeholder = 'https://via.placeholder.com/250';
+		//       document.getElementById('warningPerson2Headshot').style.display = 'block';
+		//  }
+	}
+	function loadPerson2FacebookUrl() {
+		if (snapshot.val().person2FacebookUrl != null) {
+			// set local storage
+			localStorage.setItem('person2FacebookUrl', snapshot.val().person2FacebookUrl);
+			document.getElementById('person2FacebookUrl').value = snapshot.val().person2FacebookUrl;
+			document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').value.length + 1;
+		} else {
+			document.getElementById('person2FacebookUrl').placeholder = 'https://facebook.com/harrydoetaco';
+			document.getElementById('warningPerson2FacebookUrl').style.display = 'block';
+			document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson2InstagramUrl() {
+		if (snapshot.val().person2InstagramUrl != null) {
+			// set local storage
+			localStorage.setItem('person2InstagramUrl', snapshot.val().person2InstagramUrl);
+			document.getElementById('person2InstagramUrl').value = snapshot.val().person2InstagramUrl;
+			document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').value.length + 1;
+		} else {
+			document.getElementById('person2InstagramUrl').placeholder = 'https://instagram.com/harrydoe.tacko';
+			document.getElementById('warningPerson2InstagramUrl').style.display = 'block';
+			document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson2LinkedinUrl() {
+		if (snapshot.val().person2LinkedinUrl != null) {
+			// set local storage
+			localStorage.setItem('person2LinkedinUrl', snapshot.val().person2LinkedinUrl);
+			document.getElementById('person2LinkedinUrl').value = snapshot.val().person2LinkedinUrl;
+			document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').value.length + 1;
+		} else {
+			document.getElementById('person2LinkedinUrl').placeholder = 'https://linkedin.com/in/harrydoetaco';
+			document.getElementById('warningPerson2LinkedinUrl').style.display = 'block';
+			document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson2TwitterUrl() {
+		if (snapshot.val().person2TwitterUrl != null) {
+			// set local storage
+			localStorage.setItem('person2TwitterUrl', snapshot.val().person2TwitterUrl);
+			document.getElementById('person2TwitterUrl').value = snapshot.val().person2TwitterUrl;
+			document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').value.length + 1;
+		} else {
+			document.getElementById('person2TwitterUrl').placeholder = 'https://twitter.com/@harrydoetaco';
+			document.getElementById('warningPerson2TwitterUrl').style.display = 'block';
+			document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson2TiktokUrl() {
+		if (snapshot.val().person2TiktokUrl != null) {
+			// set local storage
+			localStorage.setItem('person2TiktokUrl', snapshot.val().person2TiktokUrl);
+			document.getElementById('person2TiktokUrl').value = snapshot.val().person2TiktokUrl;
+			document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').value.length + 1;
+		} else {
+			document.getElementById('person2TiktokUrl').placeholder = 'https://tiktok.com/@harrydoetaco';
+			document.getElementById('warningPerson2TiktokUrl').style.display = 'block';
+			document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').placeholder.length + 1;
+		}
+	}
+	function loadPerson2() {
+		loadPerson2Name();
+		loadPerson2Title();
+		loadPerson2Headshot();
+		loadPerson2FacebookUrl();
+		loadPerson2InstagramUrl();
+		loadPerson2LinkedinUrl();
+		loadPerson2TwitterUrl();
+		loadPerson2TiktokUrl();
+	}
+
+	function loadPeople() {
+		loadPerson1();
+		loadPerson2();
+	}
+
 	// Colors
 	function loadPrimaryColor () {
 		if (snapshot.val().primaryColor != null) {
@@ -1040,12 +1194,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	function loadUserBrand () {
 		loadSocialMedia ();
 		loadLogos ();
+		loadOfficeAddress();
+		loadHoursOfOperation();
+		loadFounding();
+		loadBusiness();
+		loadPeople();
 		loadColors ();
 		loadFonts ();
 		loadContact ();
 	}
-
-
 
 });
 
