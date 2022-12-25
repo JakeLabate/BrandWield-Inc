@@ -129,7 +129,6 @@
 <main>
 	<!-- Brand Tab -->
 	<section id="brand" class="tabby">
-
 		<!-- Contact -->
 		<details>
 			<summary>
@@ -168,7 +167,6 @@
 				<button id="clearPrimaryContactWebsite" onclick="clearPrimaryContactWebsite();">Clear</button>
 			</div>
 		</details>
-
 		<!-- Address -->
 		<details>
 			<summary>
@@ -240,7 +238,6 @@
 				<button id="clearOfficeAddressCountry" onclick="clearOfficeAddressCountry()">Clear</button>
 			</div>
 		</details>
-
 		<!-- Founding -->
 		<details>
 			<summary>
@@ -290,7 +287,6 @@
 				<button id="clearLegalBusinessName" onclick="clearLegalBusinessName()">Clear</button>
 			</div>
 		</details>
-
 		<!-- Hours of Operation -->
 		<details>
 			<summary>
@@ -464,7 +460,6 @@
 				<button id="clearSundayClosingTime" onclick="clearSundayClosingTime()">Clear</button>
 			</div>
 		</details>
-
 		<!-- Basic -->
 		<details>
 			<summary>
@@ -546,7 +541,6 @@
 				<button id="clearValueProp" onclick="clearValueProp();">Clear</button>
 			</div>
 		</details>
-
 		<!-- Social Media -->
 		<details>
 			<summary>
@@ -673,7 +667,6 @@
 				<button id="clearTiktokUsername" onclick="clearTiktokUsername();">Clear</button>
 			</div>
 		</details>
-
 		<!-- Brand -->
 		<details>
 			<summary>
@@ -785,7 +778,6 @@
 				<button id="tertiaryFontClear" onclick="clearTertiaryFont();">Clear</button>
 			</div>
 		</details>
-
 		<!-- Offerings -->
 		<details>
 			<summary>
@@ -951,7 +943,6 @@
 				<button id="offer2ImageClear" onclick="clearOffer2Image();">Clear</button>
 			</div>
 		</details>
-
 		<!-- People -->
 		<details>
 			<summary>
@@ -1139,12 +1130,10 @@
 				<button id="person2TiktokUrlClear" onclick="clearPerson2TiktokUrl();">Clear</button>
 			</div>
 		</details>
-
 	</section>
 	<!-- Content Tab -->
 	<section id="content" class="tabby">
 		<h2>My Content</h2>
-
 		<!-- Copywriting -->
 		<details>
 			<summary>
@@ -1165,7 +1154,6 @@
 				<div id="copy/email"></div>
 			</details>
 		</details>
-
 		<!-- Email Signatures -->
 		<details>
 			<summary>
@@ -1325,6 +1313,7 @@
 		</details>
 
 	</section>
+
 	<!-- New Content Tab -->
 	<section id="newContent" class="tabby">
 
@@ -1348,34 +1337,74 @@
 				<div id="globalContentFieldsStart" style="display: block;">
 
 					<!-- Hook -->
-					<span id="newContentVarHookGlobal" class="newContentVar">
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookGlobalUpdate();"/>
-							<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookGlobal();"/>
-						</span>
-						<span class="flex-justify-content-end">
-							<button onclick="hookGlobalFontPriority1();">L</button>
-							<button onclick="hookGlobalFontPriority2();">M</button>
-							<button onclick="hookGlobalFontPriority3();">S</button>
-							<input id="hookGlobalInImages" type="checkbox" height="50px" width="50px;" onchange="hookGlobalInImages();" checked>
-						</span>
-					</span>
+					<div>
+						<div id="newContentVarHookGlobal" class="newContentVar">
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<input autocomplete="off" id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('hookGlobalSuggestions').style.display = 'block';"
+									   onkeyup="hookGlobalUpdate();"/>
+								<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookGlobal();"/>
+							</span>
+							<span class="flex-justify-content-end">
+								<button onclick="hookGlobalFontPriority1();">L</button>
+								<button onclick="hookGlobalFontPriority2();">M</button>
+								<button onclick="hookGlobalFontPriority3();">S</button>
+								<input id="hookGlobalInImages" type="checkbox" height="50px" width="50px;" onchange="hookGlobalInImages();" checked>
+							</span>
+						</div>
+						<div id="hookGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include audience context</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention offered value</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Hook Resolution -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="hookResolutionGlobalUpdate();" />
-							<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookResolutionGlobal();"/>
-						</span>
-						<span class="flex-justify-content-end">
-							<button onclick="hookResolutionGlobalFontPriority1();">L</button>
-							<button onclick="hookResolutionGlobalFontPriority2();">M</button>
-							<button onclick="hookResolutionGlobalFontPriority3();">S</button>
-							<input id="hookResolutionGlobalInImages" type="checkbox" height="50px" width="50px;" onchange="hookResolutionGlobalInImages();" checked>
-						</span>
-					</span>
+					<div>
+						<div id="newContentVarHookResolutionGlobal" class="newContentVar">
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<input autocomplete="off" id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('hookResolutionGlobalSuggestions').style.display = 'block';"
+									   onkeyup="hookResolutionGlobalUpdate();" />
+								<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookResolutionGlobal();"/>
+							</span>
+							<span class="flex-justify-content-end">
+								<button onclick="hookResolutionGlobalFontPriority1();">L</button>
+								<button onclick="hookResolutionGlobalFontPriority2();">M</button>
+								<button onclick="hookResolutionGlobalFontPriority3();">S</button>
+								<input id="hookResolutionGlobalInImages" type="checkbox" height="50px" width="50px;" onchange="hookResolutionGlobalInImages();" checked>
+							</span>
+						</div>
+						<div id="hookResolutionGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 				</div>
 
@@ -1383,40 +1412,75 @@
 				<div id="genericPostFields" class="contentTypeFieldOption finalImage" style="display: block;">
 
 					<!-- Body -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<textarea autocomplete="off" id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="genericPostBodyUpdate();"></textarea>
-							<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearGenericPostBody();"/>
-						</span>
-						<span class="flex-justify-content-end">
-						</span>
-					</span>
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<textarea autocomplete="off" id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body" style="margin-left: 0 !important; padding-left: 0 !important;"
+										  onfocus="hideNewContentVarSuggestions(); document.getElementById('genericPostBodySuggestions').style.display = 'block';"
+										  onkeyup="genericPostBodyUpdate();"></textarea>
+								<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearGenericPostBody();"/>
+							</span>
+							<span class="flex-justify-content-end">
+							</span>
+						</div>
+						<div id="genericPostBodySuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">200+ characters</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
+
 				</div>
 
-				<!-- Update -->
+				<!-- Company Update -->
 				<div id="companyUpdateFields" class="contentTypeFieldOption finalImage" style="display: none;">
-
 					<!-- Headline -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="update headline" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="companyUpdateHeadlineUpdate();" />
-							<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateHeadline();"/>
-						</span>
-						<span class="flex-justify-content-end">
-							<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
-							<button onclick="companyUpdateHeadlineFontPriority2();">M</button>
-							<button onclick="companyUpdateHeadlineFontPriority3();">S</button>
-							<input id="companyUpdateHeadlineInImages" type="checkbox" height="50px" width="50px;" onchange="companyUpdateHeadlineInImages();" checked>
-						</span>
-					</span>
-
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<input autocomplete="off" id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="update headline" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('companyUpdateHeadlineSuggestions').style.display = 'block';"
+									   onkeyup="companyUpdateHeadlineUpdate();" />
+								<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateHeadline();"/>
+							</span>
+							<span class="flex-justify-content-end">
+								<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
+								<button onclick="companyUpdateHeadlineFontPriority2();">M</button>
+								<button onclick="companyUpdateHeadlineFontPriority3();">S</button>
+								<input id="companyUpdateHeadlineInImages" type="checkbox" height="50px" width="50px;" onchange="companyUpdateHeadlineInImages();" checked>
+							</span>
+						</div>
+						<div id="companyUpdateHeadlineSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 					<!-- Date -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="companyUpdateDate" type="date" class="cleanCursorInput" placeholder="update date" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="companyUpdateDateUpdate();"/>
+							<input autocomplete="off" id="companyUpdateDate" type="date" class="cleanCursorInput" placeholder="update date" style="margin-left: 0 !important; padding-left: 0 !important;"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('companyUpdateDateSuggestions').style.display = 'block';"
+								   oninput="companyUpdateDateUpdate();"/>
 							<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateDate();"/>
 						</span>
 							<span class="flex-justify-content-end">
@@ -1425,83 +1489,219 @@
 								<button onclick="companyUpdateDateFontPriority3();">S</button>
 								<input id="companyUpdateDateInImages" type="checkbox" height="50px" width="50px;" onchange="companyUpdateDateInImages();" checked>
 							</span>
-						</span>
+						</div>
+						<div id="companyUpdateDateSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
 
+					</div>
 					<!-- Body -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<textarea autocomplete="off" id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of update" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="companyUpdateBodyUpdate();"></textarea>
+							<textarea autocomplete="off" id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of update" style="margin-left: 0 !important; padding-left: 0 !important;"
+									  onfocus="hideNewContentVarSuggestions(); document.getElementById('companyUpdateBodySuggestions').style.display = 'block';"
+									  onkeyup="companyUpdateBodyUpdate();"></textarea>
 							<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateBody();"/>
 						</span>
-							<span class="flex-justify-content-end">
+						<span class="flex-justify-content-end">
 							</span>
-						</span>
-
+						</div>
+						<div id="companyUpdateBodySuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<!-- Sale/Promotion -->
+				<!-- Sale / Promotion -->
 				<div id="salePromotionFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Title -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="promotion name/headline" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="salePromotionTitleUpdate();" />
+							<input autocomplete="off" id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="promotion name/headline" style="margin-left: 0 !important; padding-left: 0 !important;" size="50"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionTitleSuggestions').style.display = 'block';"
+								   onkeyup="salePromotionTitleUpdate();" />
 							<img id="salePromotionTitleClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionTitle();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<input id="salePromotionTitleInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionTitleInImages();" checked>
 
 							</span>
-						</span>
+						</div>
+						<div id="salePromotionTitleSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Product or Service -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="product/service being promoted" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="salePromotionProductOrServiceUpdate();" />
+							<input autocomplete="off" id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="product/service being promoted" style="margin-left: 0 !important; padding-left: 0 !important;" size="50"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionProductOrServiceSuggestions').style.display = 'block';"
+								   onkeyup="salePromotionProductOrServiceUpdate();" />
 							<img id="salePromotionProductOrServiceClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionProductOrService();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<input id="salePromotionProductOrServiceInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionProductOrServiceInImages();" checked>
 							</span>
-						</span>
+						</div>
+						<div id="salePromotionProductOrServiceSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Start Date -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="sale start date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="salePromotionStartDateUpdate();"/>
+							<input autocomplete="off" id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="sale start date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionStartDateSuggestions').style.display = 'block';"
+								   oninput="salePromotionStartDateUpdate();"/>
 							<img id="salePromotionStartDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionStartDate();"/>
 						</span>
 						<span class="flex-justify-content-end">
 							<input id="salePromotionStartDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionStartDateInImages();" checked>
 						</span>
-					</span>
+					</div>
+						<div id="salePromotionStartDateSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- End Date -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="sale end date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="salePromotionEndDateUpdate();"/>
+							<input autocomplete="off" id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="sale end date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionEndDateSuggestions').style.display = 'block';"
+								   oninput="salePromotionEndDateUpdate();"/>
 							<img id="salePromotionEndDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionEndDate();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<input id="salePromotionEndDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionEndDateInImages();" checked>
 							</span>
-						</span>
+						</div>
+						<div id="salePromotionEndDateSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Body -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<textarea autocomplete="off" id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="sale/promotion body" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="salePromotionBodyUpdate();"></textarea>
+							<textarea autocomplete="off" id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="sale/promotion body" style="margin-left: 0 !important; padding-left: 0 !important;"
+									  onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionBodySuggestions').style.display = 'block';"
+									  onkeyup="salePromotionBodyUpdate();"></textarea>
 							<img id="salePromotionBodyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionBody();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="salePromotionBodySuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 				</div>
 
@@ -1509,59 +1709,159 @@
 				<div id="eventPromotionFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Title -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="event title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionTitleUpdate();" />
+							<input autocomplete="off" id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="event title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionTitleSuggestions').style.display = 'block';"
+								   onkeyup="eventPromotionTitleUpdate();" />
 							<img id="eventPromotionTitleClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionTitle();"/>
-							<span class="flex-justify-content-end">
-							</span>
 						</span>
-					</span>
+						<span class="flex-justify-content-end">
+						</span>
+					</div>
+						<div id="eventPromotionTitleSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Start Date -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
-								<input autocomplete="off" id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="start date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="eventPromotionStartDateUpdate();"/>
+								<input autocomplete="off" id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="start date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionStartDateSuggestions').style.display = 'block';"
+									   oninput="eventPromotionStartDateUpdate();"/>
 								<img id="eventPromotionStartDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionStartDate();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="eventPromotionStartDateSuggestions" class="newContentVarSuggestions">
+						<div class="flex">
+							<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+							<details class="newContentVarSuggestion">
+								<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+								<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+							</details>
+						</div>
+						<div class="flex">
+							<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+							<details class="newContentVarSuggestion">
+								<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+								<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+							</details>
+						</div>
+					</div>
+					</div>
 
 					<!-- End Date -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
-								<input autocomplete="off" id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="end date/time" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="eventPromotionEndDateUpdate();"/>
+								<input autocomplete="off" id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="end date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionEndDateSuggestions').style.display = 'block';"
+									   oninput="eventPromotionEndDateUpdate();"/>
 								<img id="eventPromotionEndDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionEndDate();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="eventPromotionEndDateSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Location -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/location.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="eventPromotionLocation" type="text" class="cleanCursorInput" size="50" placeholder="location ('Online', '123 Main St, etc)" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionLocationUpdate();" />
+							<input autocomplete="off" id="eventPromotionLocation" type="text" class="cleanCursorInput" size="50" placeholder="location ('Online', '123 Main St, etc)" style="margin-left: 0 !important; padding-left: 0 !important;"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionLocationSuggestions').style.display = 'block';"
+								   onkeyup="eventPromotionLocationUpdate();" />
 							<img id="eventPromotionLocationClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionLocation();" />
 						</span>
 						<span class="flex-justify-content-end">
 						</span>
-						</span>
+						</div>
+						<div id="eventPromotionLocationSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Body -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<textarea autocomplete="off" id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="event body (description, etc)" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="eventPromotionBodyUpdate();"></textarea>
+							<textarea autocomplete="off" id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="event body (description, etc)" style="margin-left: 0 !important; padding-left: 0 !important;"
+									  onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionBodySuggestions').style.display = 'block';"
+									  onkeyup="eventPromotionBodyUpdate();"></textarea>
 							<img id="eventPromotionBodyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionBody();"/>
 						</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="eventPromotionBodySuggestions" class="newContentVarSuggestions">
+						<div class="flex">
+							<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+							<details class="newContentVarSuggestion">
+								<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+								<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+							</details>
+						</div>
+						<div class="flex">
+							<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+							<details class="newContentVarSuggestion">
+								<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+								<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+							</details>
+						</div>
+					</div>
+					</div>
 
 				</div>
 
@@ -1569,70 +1869,190 @@
 				<div id="testimonialReviewFields" class="contentTypeFieldOption finalImage" style="display: none;">
 
 					<!-- Author Name -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-								<input autocomplete="off" id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="author name" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewAuthorNameUpdate();" />
+								<input autocomplete="off" id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="author name" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorNameSuggestions').style.display = 'block';"
+									   onkeyup="testimonialReviewAuthorNameUpdate();" />
 								<img id="testimonialReviewAuthorNameClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorName();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="testimonialReviewAuthorNameSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Author Headshot -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-								<input autocomplete="off" id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" onchange="testimonialReviewAuthorHeadshotUpdate();"/>
+								<input autocomplete="off" id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorHeadshotSuggestions').style.display = 'block';"
+									   onchange="testimonialReviewAuthorHeadshotUpdate();"/>
 								<img id="testimonialReviewAuthorHeadshotClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorHeadshot();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="testimonialReviewAuthorHeadshotSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Author Title -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 							<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-								<input autocomplete="off" id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="author title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewAuthorTitleUpdate();" />
+								<input autocomplete="off" id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="author title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorTitleSuggestions').style.display = 'block';"
+									   onkeyup="testimonialReviewAuthorTitleUpdate();" />
 								<img id="testimonialReviewAuthorTitleClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorTitle();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="testimonialReviewAuthorTitleSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Author Company -->
-					<span class="newContentVar">
-						<span class="flex-align-items-center">
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="author company" style="margin-left: 0 !important; padding-left: 0 !important;" size="50" onkeyup="testimonialReviewAuthorCompanyUpdate();" />
+							<input autocomplete="off" id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="author company" style="margin-left: 0 !important; padding-left: 0 !important;" size="50"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorCompanySuggestions').style.display = 'block';"
+								   onkeyup="testimonialReviewAuthorCompanyUpdate();" />
 							<img id="testimonialReviewAuthorCompanyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorCompany();"/>
 						</span>
-						<span class="flex-justify-content-end">
+							<span class="flex-justify-content-end">
 						</span>
-					</span>
+						</div>
+						<div id="testimonialReviewAuthorCompanySuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Date -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="testimonialReviewDate" type="date" class="cleanCursorInput" placeholder="date of review" style="margin-left: 0 !important; padding-left: 0 !important;" oninput="testimonialReviewDateUpdate();"/>
+							<input autocomplete="off" id="testimonialReviewDate" type="date" class="cleanCursorInput" placeholder="date of review" style="margin-left: 0 !important; padding-left: 0 !important;"
+								   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewDateSuggestions').style.display = 'block';"
+								   oninput="testimonialReviewDateUpdate();"/>
 							<img id="testimonialReviewDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewDate();"/>
 						</span>
 							<span class="flex-justify-content-end">
 							</span>
-						</span>
+						</div>
+						<div id="testimonialReviewDateSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Body -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 						<span class="flex-align-items-center">
 							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<textarea autocomplete="off" id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of testimonial" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="testimonialReviewBodyUpdate();"></textarea>
+							<textarea autocomplete="off" id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of testimonial" style="margin-left: 0 !important; padding-left: 0 !important;"
+									  onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewBodySuggestions').style.display = 'block';"
+									  onkeyup="testimonialReviewBodyUpdate();"></textarea>
 							<img id="testimonialReviewBodyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewBody();"/>
 						</span>
 						<span class="flex-justify-content-end">
 						</span>
-					</span>
+					</div>
+						<div id="testimonialReviewBodySuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution to problem</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Mention consuption style of content</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 				</div>
 
@@ -1640,43 +2060,96 @@
 				<div id="globalContentFieldsEnd" style="display: block;">
 
 					<!-- Call to Action -->
-					<span class="newContentVar">
-
-						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-							<input autocomplete="off" id="callToActionGlobal" type="text" class="cleanCursorInput" placeholder="call to action" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="callToActionGlobalUpdate();" />
-							<img id="callToActionGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearCallToActionGlobal();"/>
-						</span>
-							<span class="flex-justify-content-end">
-								<button onclick="callToActionFontPriority1();">L</button>
-								<button onclick="callToActionFontPriority2();">M</button>
-								<button onclick="callToActionFontPriority3();">S</button>
-								<input id="callToActionGlobalInImages" type="checkbox" height="50px" width="50px;" onchange="callToActionGlobalInImages();" checked>
+					<div>
+						<div class="newContentVar">
+							<span class="flex-align-items-center">
+								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<input autocomplete="off" id="callToActionGlobal" type="text" class="cleanCursorInput" placeholder="call to action" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('callToActionGlobalSuggestions').style.display = 'block';"
+									   onkeyup="callToActionGlobalUpdate();" />
+								<img id="callToActionGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearCallToActionGlobal();"/>
 							</span>
-						</span>
+							<span class="flex-justify-content-end">
+									<button onclick="callToActionFontPriority1();">L</button>
+									<button onclick="callToActionFontPriority2();">M</button>
+									<button onclick="callToActionFontPriority3();">S</button>
+									<input id="callToActionGlobalInImages" type="checkbox" height="50px" width="50px;" onchange="callToActionGlobalInImages();" checked>
+								</span>
+						</div>
+						<div id="callToActionGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include action word</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include solution offered</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">twrthqerw weg wrt rth etyj etyj hwerhgmrjku teuwy5 trjymht htreqtvqyw4 jyerthwrqykruy,m jhtqrwjreydrhwthwrthr</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Link -->
-					<span class="newContentVar">
-							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
-								<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="https://www.example.com" size="50" style="margin-left: 0 !important; padding-left: 0 !important;" onkeyup="linkGlobalUpdate();" />
-								<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();" />
-							</span>
-								<span class="flex-justify-content-end">
-									<img id="linkGlobalQRHere" class="newContentFieldEnhancement" alt="" src="" style="display: none;" />
-									<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();" />
-									<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();" />
+					<div>
+						<div class="newContentVar">
+								<span class="flex-align-items-center">
+									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
+									<select id="linkGlobalProtocol" class="cleanCursorInputIcon" style="font-size: 14px; padding-left: 6px; border: none;">
+										<option value="https://" selected>https://</option>
+										<option value="http://">http://</option>
+									</select>
+									<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="www.example.com" size="50" style="margin-left: 0 !important;"
+										   onfocus="hideNewContentVarSuggestions(); document.getElementById('linkGlobalSuggestions').style.display = 'block';"
+										   onkeyup="linkGlobalUpdate();" />
+									<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();" />
 								</span>
-							</span>
+									<span class="flex-justify-content-end">
+										<img id="linkGlobalQRHere" class="newContentFieldEnhancement" alt="" src="" style="display: none;" />
+										<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();" />
+										<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();" />
+									</span>
+								</div>
+						<div id="linkGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include valid URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">Check your URL, and be sure it returns a valid webpage.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include SSL URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">URLs with https protocol (instead of http) provide a higher level of security; use https if possible.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Most specific URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">It is always good to use the MOST relivant URL to the content your are creating. This may be a blog page, a product page, etc.</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Logo -->
-					<span class="newContentVar">
-							<span class="flex-align-items-center">
+					<div>
+						<div class="newContentVar">
+						<span class="flex-align-items-center">
 								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-								<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo" onchange="squareLogoGlobalUpdate()" />
+								<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo"
+									   onfocus="hideNewContentVarSuggestions(); document.getElementById('squareLogoGlobalSuggestions').style.display = 'block';"
+									   onchange="squareLogoGlobalUpdate()" />
 								<img id="squareLogoGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSquareLogoGlobal();"/>
 							</span>
-							<span class="flex-justify-content-end">
+						<span class="flex-justify-content-end">
 								<span>
 									<input id="squareLogoGlobalTopLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalTopLeft();">
 									<input id="squareLogoGlobalBottomLeft" type="checkbox" height="50px" width="50px;" onchange="squareLogoGlobalBottomLeft();">
@@ -1687,37 +2160,115 @@
 								</span>
 								<input type="range" id="squareLogoGlobalSize" class="cleanCursorInput" name="squareLogoGlobalSize" min="0" max="100" step=".1" style="width: 50px;" oninput="squareLogoGlobalSizeUpdate();">
 							</span>
-						</span>
+					</div>
+						<div id="squareLogoGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include valid URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">Check your URL, and be sure it returns a valid webpage.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include SSL URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">URLs with https protocol (instead of http) provide a higher level of security; use https if possible.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Most specific URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">It is always good to use the MOST relivant URL to the content your are creating. This may be a blog page, a product page, etc.</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Primary Color -->
-					<span class="newContentVar">
-							<span class="flex-align-items-center">
+					<div>
+						<div class="newContentVar">
+						<span class="flex-align-items-center">
 									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 									<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;">of</span>
 									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
-									<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#ffffff" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="primaryColorGlobalUpdate();" />
+									<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#ffffff" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;"
+										   onfocus="hideNewContentVarSuggestions(); document.getElementById('primaryColorGlobalSuggestions').style.display = 'block';"
+										   oninput="primaryColorGlobalUpdate();" />
 									<span id="primaryColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#ffffff</span>
 									<img id="primaryColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearPrimaryColorGlobal();"/>
 								</span>
-								<span class="flex-justify-content-end">
+						<span class="flex-justify-content-end">
 									<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
 									<input type="range" id="primaryColorGlobalInvasion" class="cleanCursorInput" name="primaryColorGlobalInvasion" style="width: 50px;" min="0" max="100" step=".1" oninput="primaryColorGlobalDirectionInvasion();">
 								</span>
-							</span>
+					</div>
+						<div id="primaryColorGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include valid URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">Check your URL, and be sure it returns a valid webpage.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include SSL URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">URLs with https protocol (instead of http) provide a higher level of security; use https if possible.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Most specific URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">It is always good to use the MOST relivant URL to the content your are creating. This may be a blog page, a product page, etc.</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 					<!-- Text Color -->
-					<span class="newContentVar">
+					<div>
+						<div class="newContentVar">
 							<span class="flex-align-items-center">
 									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
 									<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;">of</span>
 									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
-									<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;" oninput="fontColorGlobalUpdate();" />
+									<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;"
+										   onfocus="hideNewContentVarSuggestions(); document.getElementById('fontColorGlobalSuggestions').style.display = 'block';"
+										   oninput="fontColorGlobalUpdate();" />
 									<span id="fontColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#000000</span>
 									<img id="fontColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearFontColorGlobal();"/>
 								</span>
 								<span class="flex-justify-content-end">
 								</span>
-							</span>
+							</div>
+						<div id="fontColorGlobalSuggestions" class="newContentVarSuggestions">
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include valid URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">Check your URL, and be sure it returns a valid webpage.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Include SSL URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">URLs with https protocol (instead of http) provide a higher level of security; use https if possible.</span>
+								</details>
+							</div>
+							<div class="flex">
+								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
+								<details class="newContentVarSuggestion">
+									<summary class="newContentVarSuggestionSummary">Most specific URL</summary>
+									<span class="newContentVarSuggestionText" onclick="this.parentNode.removeAttribute('open')">It is always good to use the MOST relivant URL to the content your are creating. This may be a blog page, a product page, etc.</span>
+								</details>
+							</div>
+						</div>
+					</div>
 
 				</div>
 
@@ -1727,7 +2278,6 @@
 
 		<!-- Outputs -->
 		<div id="final" class="column35PercentWidth" style="user-select: none;">
-
 			<!-- IMAGES -->
 			<div id="finalImages">
 				<div id="finalImageShowcase" style="display: flex; align-items: center; justify-content: center; height: 650px; width: 100%;">
@@ -1859,7 +2409,6 @@
 					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageStory();"></div>
 				</aside>
 			</div>
-
 			<!-- TEXT -->
 			<div>
 				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
@@ -1919,7 +2468,6 @@
 				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
 				<div id="output"></div>
 			</div>
-
 			<!-- Social Sendables -->
 			<div id="socialSendables" style="display: none;">
 				<script>
@@ -2127,10 +2675,10 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 
 	</section>
+
 	<!-- Settings Tab -->
 	<section id="settings" class="tabby">
 		<div id="accountIntegrations" style="padding: 20px;">
@@ -2201,7 +2749,9 @@
 
 		</div>
 	</section>
+
 </main>
+
 <!-- Brand Popup-->
 <div id="brandPopup">
 	<!-- Chrome ignores autocomplete="off" -->
@@ -2214,6 +2764,7 @@
 		<span id="brandRecommendations"></span>
 	</span>
 </div>
+
 <!-- Signup form in a modal -->
 <div id="modal-signup" class="modal" style="display: none;">
   <form>
@@ -2236,6 +2787,7 @@
     <button type="button" class="btn-outline" onclick="toggleModal('modal-signup')" >Close</button>
   </form>
 </div>
+
 <!-- Login form in a modal -->
 <div id="modal-login" class="modal" style="display: none;">
   <form>
@@ -2257,6 +2809,7 @@
     <button type="button" class="btn-outline" onclick="toggleModal('modal-login')" >Close</button>
   </form>
 </div>
+
 <!-- Reset password form in a modal -->
 <div id="modal-reset" class="modal" style="display: none;">
   <form>
@@ -2269,8 +2822,10 @@
     <button type="button" class="btn-outline" onclick="toggleModal('modal-reset')" >Close</button>
   </form>
 </div>
+
 <!-- Notification bar -->
 <div id="snackbar"></div>
+
 <!-- JavaScript -->
 <script>
 
@@ -2439,7 +2994,7 @@
 	// Rapid API - URL Links Shortener
 	function linkGlobalShorten() {
 
-		let url = document.getElementById("linkGlobal").value;
+		let url = document.getElementById('linkGlobalProtocol').value + document.getElementById("linkGlobal").value;
 		let domain = "my.brandwield.com";
 
 		const apikey = '65338792cfa94d94ac9a01788bdefc3d';
@@ -2594,6 +3149,15 @@
 		.then(response => response.json())
 		.then(response => console.log(response))
 		.catch(err => console.error(err));
+	}
+
+	// hide .newContentVarSuggestions
+	function hideNewContentVarSuggestions() {
+		// for all elements with the class 'newContentVarSuggestions', set the display to 'none'
+		var elements = document.getElementsByClassName('newContentVarSuggestions');
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].style.display = 'none';
+		}
 	}
 
 	// preview newContent finalImages with small 'dummy' divs

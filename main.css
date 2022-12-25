@@ -70,6 +70,26 @@ a[title="Clear field"]:hover {
     transition: .2s ease-in-out;
 }
 
+p {
+    margin: 0 0 0 0;
+    padding: 0 8px 0 8px;
+}
+h3 {
+    margin: 16px 0 5px 0
+}
+select {
+    margin-left: 8px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+label {
+    padding-right: 5px;
+}
+input {
+    font-size: 14px;
+}
+
 details {
     padding: 15px 15px 15px 15px;
     margin: 10px 5px 10px 5px;
@@ -92,6 +112,8 @@ summary:hover {
     transition: .2s ease-in-out;
     cursor: pointer;
 }
+
+
 
 /* FLEXBOX CLASSES */
 .flex-container {
@@ -129,26 +151,8 @@ summary:hover {
     margin: 15px;
     padding: 15px;
 }
-
-
-p {
-    margin: 0 0 0 0;
-    padding: 0 8px 0 8px;
-}
-h3 {
-    margin: 16px 0 5px 0
-}
-select {
-    margin-left: 8px;
-    margin-right: 5px;
-    cursor: pointer;
-    transition: .2s;
-}
-label {
-    padding-right: 5px;
-}
-input {
- font-size: 14px;
+.flex {
+    display: flex;
 }
 
 .var {
@@ -180,6 +184,116 @@ input {
     padding: 2px 10px 2px 10px;
     font-size: 14px;
     background: #ffffff;
+}
+
+.newContentVarSuggestions {
+    display: none;
+    padding: 0 0 0 20px;
+    transition: .2s ease-in-out;
+    animation: fadein 0.5s;
+    justify-content: center;
+    align-items: center;
+}
+
+.newContentVarSuggestion {
+    padding: 5px 8px 5px 15px;
+    margin: 0 0 5px 0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 12px;
+    color: #484848;
+    transition: .2s ease-in-out;
+    box-shadow: none !important;
+}
+.newContentVarSuggestion[open]{
+    transition: .2s ease-in-out;
+}
+.newContentVarSuggestionGood {
+    padding: 5px 8px 5px 15px;
+    margin: 0 0 5px 0;
+    border-radius: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    background-color: green;
+    color: #fff;
+}
+
+.newContentVarSuggestionSummary {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.newContentVarSuggestionText {
+    font-size: 10px;
+    color: #656565;
+}
+
+.suggestionDot1 {
+    position: relative;
+    right: 22px;
+    bottom: 12px;
+    height: 11px;
+    width: 11px;
+    background-color: orange;
+    border-radius: 10px;
+}
+.suggestionDot2 {
+    position: relative;
+    right: 33px;
+    bottom: 0;
+    height: 11px;
+    width: 11px;
+    background-color: orange;
+    border-radius: 10px;
+}
+.suggestionDot3 {
+    position: relative;
+    right: 44px;
+    top: 12px;
+    height: 11px;
+    width: 11px;
+    background-color: orange;
+    border-radius: 10px;
+}
+.suggestionDot1Good {
+    position: relative;
+    right: 22px;
+    bottom: 12px;
+    height: 11px;
+    width: 11px;
+    background-color: green;
+    border-radius: 10px;
+}
+.suggestionDot2Good {
+    position: relative;
+    right: 33px;
+    bottom: 0;
+    height: 11px;
+    width: 11px;
+    background-color: green;
+    border-radius: 10px;
+}
+.suggestionDot3Good {
+    position: relative;
+    right: 44px;
+    top: 12px;
+    height: 11px;
+    width: 11px;
+    background-color: green;
+    border-radius: 10px;
+}
+
+
+.subdirectoryArrow {
+    padding: 0 6px 0 0;
+}
+
+.padding10 {
+    padding: 10px;
 }
 
 input[type='checkbox'] {
