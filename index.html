@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
 	<title>BrandWield | Making content vision and content production, synonymous</title>
 	<meta name="title" content="BrandWield | Making content vision and content production, synonymous">
 	<meta name="description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="media/brandwieldLogos/squareLogo.png">
+	<link rel="icon" type="image/png" href="media/logos/squareLogo.png">
 	<meta name="robots" content="index, follow">
 	<script type="application/ld+json">
 		{
@@ -69,6 +70,7 @@
 			]
 		}
 	</script>
+
 	<!-- Open Graph -->
 	<meta property="og:title" content="BrandWield | Making content vision and content production, synonymous">
 	<meta property="og:description" content="Cut the content-creation process down by 90% or MORE! BrandWield is a content marketing software company making content vision and content production, synonymous">
@@ -80,28 +82,36 @@
 	<meta property="og:site_name" content="BrandWield">
 	<meta property="og:type" content="website">
 	<meta property="og:locale" content="en_US">
+
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@brandwield">
 	<meta name="twitter:creator" content="@brandwield">
 	<meta name="twitter:title" content="BrandWield | Making content vision and content production, synonymous">
+
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 	<!-- JavaScript -->
 	<script type="module" src="firebaseSetup.js"></script>
 	<script src="myBrand.js"></script>
+
 	<!-- HTML2Canvas Screenshot Capture -->
 	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 	<!-- Confetti -->
 	<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+
 </head>
+
 <body>
+
+<!-- Nav Bar -->
 <header>
-	<!-- Nav Bar -->
 	<nav id="navBar" style="height: 55px; display: flex; justify-content: space-around;">
 		<div class="navTab" onclick="selectContentType('brand'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b'; // Color change to purple not working for these tabs">Brand</div>
 		<div class="navTab" onclick="selectContentType('content'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Content</div>
@@ -126,7 +136,9 @@
 			</div>
 	</nav>
 </header>
+
 <main>
+
 	<!-- Brand Tab -->
 	<section id="brand" class="tabby">
 		<!-- Contact -->
@@ -1131,6 +1143,7 @@
 			</div>
 		</details>
 	</section>
+
 	<!-- Content Tab -->
 	<section id="content" class="tabby">
 		<h2>My Content</h2>
@@ -1242,7 +1255,7 @@
 				<summary>Facebook</summary>
 				<div id="facebookBannerImage" title="Facebook Banner" style="width: 820px; height: 312px; border: 2px solid #000000">
 					<div id="facebookBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 369px; height: 190px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 120px; left: 0;">Logo safe area</div>
-					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 				</div>
 			</details>
 
@@ -1251,7 +1264,7 @@
 				<summary>LinkedIn</summary>
 				<div id="linkedinBannerImage" title="LinkedIn Banner" style="width: 1128px; height: 191px; border: 2px solid #000000">
 					<div id="linkedinBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 203px; height: 114px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 73px; left: 0;">Logo safe area</div>
-					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 				</div>
 			</details>
 
@@ -1262,7 +1275,7 @@
 					<div id="twitterBannerNotchSafArea" style="color: white; background-color: #5d5d5d; width: 1496px; height: 125px; border-bottom: 2px solid #000000; position: relative; top: 0;">Notch safe area</div>
 					<div id="twitterBannerMobileNavLeftSafeArea" style="color: white; background-color: #5d5d5d; width: 300px; height: 175px; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Mobile nav left safe area (same area on right side, but we are having issues blocking off that space like we did here on the left side.)</div>
 					<div id="twitterBannerLogoSafeArea" style="color: white; background-color: #5d5d5d; width: 450px; height: 198px; border-top: 2px solid #000000; border-right: 2px solid #000000; position: relative; top: 0; left: 0;">Logo safe area</div>
-					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 				</div>
 			</details>
 
@@ -1271,7 +1284,7 @@
 				<summary>YouTube</summary>
 				<div id="youtubeBannerImage" title="YouTube Banner" style="width: 2048px; height: 326px; border: 2px solid #000000">
 					<div id="youtubeBannerSocialLinksSafeArea" style="color: white; background-color: #5d5d5d; width: 326px; height: 80px; border-top: 2px solid #000000; border-left: 2px solid #000000; position: relative; top: 244px; left: 1720px;">Social links safe area</div>
-					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 				</div>
 			</details>
 
@@ -1287,13 +1300,13 @@
 				<div>
 					<h5>Front</h5>
 					<div id="businessCard1FrontImage" title="Business Card 1: Front" style="width: 700px; height: 400px; border: 2px solid #000000">
-						<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+						<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 					</div>
 				</div>
 				<div>
 					<h5>Back</h5>
 					<div id="businessCard1BackImage" title="Business Card 1: Back" style="width: 700px; height: 400px; border: 2px solid #000000">
-						<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+						<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 					</div>
 				</div>
 			</details>
@@ -1307,7 +1320,7 @@
 			<details>
 				<summary>Letter Head 1</summary>
 				<div id="letterHead1" title="Letter Head 1" style="width: 816px; height: 1056px; border: 2px solid #000000">
-					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/brandwieldLogos/squareLogo.png"/>
+					<img class="contentVar:Icon" alt="" style="height: 50px; width: 50px;" src="media/logos/squareLogo.png"/>
 				</div>
 			</details>
 		</details>
@@ -1340,11 +1353,11 @@
 					<div>
 						<div id="newContentVarHookGlobal" class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="hookGlobal" type="text" class="cleanCursorInput" placeholder="hook" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('hookGlobalSuggestions').style.display = 'block';"
 									   onkeyup="hookGlobalUpdate();"/>
-								<img id="hookGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookGlobal();"/>
+								<img id="hookGlobalClear" alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookGlobal();"/>
 							</span>
 							<span class="flex-justify-content-end">
 								<button onclick="hookGlobalFontPriority1();">L</button>
@@ -1354,6 +1367,10 @@
 							</span>
 						</div>
 						<div id="hookGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1375,11 +1392,11 @@
 					<div>
 						<div id="newContentVarHookResolutionGlobal" class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="hookResolutionGlobal" type="text" class="cleanCursorInput" placeholder="hook resolution" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('hookResolutionGlobalSuggestions').style.display = 'block';"
 									   onkeyup="hookResolutionGlobalUpdate();" />
-								<img id="hookResolutionGlobalClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookResolutionGlobal();"/>
+								<img id="hookResolutionGlobalClear" alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" onclick="clearHookResolutionGlobal();"/>
 							</span>
 							<span class="flex-justify-content-end">
 								<button onclick="hookResolutionGlobalFontPriority1();">L</button>
@@ -1389,6 +1406,10 @@
 							</span>
 						</div>
 						<div id="hookResolutionGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1415,16 +1436,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<textarea autocomplete="off" id="genericPostBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body" style="margin-left: 0 !important; padding-left: 0 !important;"
 										  onfocus="hideNewContentVarSuggestions(); document.getElementById('genericPostBodySuggestions').style.display = 'block';"
 										  onkeyup="genericPostBodyUpdate();"></textarea>
-								<img id="genericPostBodyClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearGenericPostBody();"/>
+								<img id="genericPostBodyClear" alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" onclick="clearGenericPostBody();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="genericPostBodySuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1439,15 +1464,16 @@
 
 				<!-- Company Update -->
 				<div id="companyUpdateFields" class="contentTypeFieldOption finalImage" style="display: none;">
+
 					<!-- Headline -->
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="companyUpdateHeadline" type="text" class="cleanCursorInput" placeholder="update headline" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('companyUpdateHeadlineSuggestions').style.display = 'block';"
 									   onkeyup="companyUpdateHeadlineUpdate();" />
-								<img id="companyUpdateHeadlineClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateHeadline();"/>
+								<img id="companyUpdateHeadlineClear" alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateHeadline();"/>
 							</span>
 							<span class="flex-justify-content-end">
 								<button onclick="companyUpdateHeadlineFontPriority1();">L</button>
@@ -1457,6 +1483,10 @@
 							</span>
 						</div>
 						<div id="companyUpdateHeadlineSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1473,15 +1503,16 @@
 							</div>
 						</div>
 					</div>
+
 					<!-- Date -->
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="companyUpdateDate" type="date" class="cleanCursorInput" placeholder="update date" style="margin-left: 0 !important; padding-left: 0 !important;"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('companyUpdateDateSuggestions').style.display = 'block';"
 								   oninput="companyUpdateDateUpdate();"/>
-							<img id="companyUpdateDateClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateDate();"/>
+							<img id="companyUpdateDateClear" alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateDate();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<button onclick="companyUpdateDateFontPriority1();">L</button>
@@ -1491,6 +1522,10 @@
 							</span>
 						</div>
 						<div id="companyUpdateDateSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 185px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1506,22 +1541,26 @@
 								</details>
 							</div>
 						</div>
-
 					</div>
+
 					<!-- Body -->
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea autocomplete="off" id="companyUpdateBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of update" style="margin-left: 0 !important; padding-left: 0 !important;"
 									  onfocus="hideNewContentVarSuggestions(); document.getElementById('companyUpdateBodySuggestions').style.display = 'block';"
 									  onkeyup="companyUpdateBodyUpdate();"></textarea>
-							<img id="companyUpdateBodyClear" alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateBody();"/>
+							<img id="companyUpdateBodyClear" alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" onclick="clearCompanyUpdateBody();"/>
 						</span>
 						<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="companyUpdateBodySuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1538,6 +1577,7 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
 
 				<!-- Sale / Promotion -->
@@ -1547,11 +1587,11 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="salePromotionTitle" type="text" class="cleanCursorInput" placeholder="promotion name/headline" style="margin-left: 0 !important; padding-left: 0 !important;" size="50"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionTitleSuggestions').style.display = 'block';"
 								   onkeyup="salePromotionTitleUpdate();" />
-							<img id="salePromotionTitleClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionTitle();"/>
+							<img id="salePromotionTitleClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearSalePromotionTitle();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<input id="salePromotionTitleInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionTitleInImages();" checked>
@@ -1559,6 +1599,10 @@
 							</span>
 						</div>
 						<div id="salePromotionTitleSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1580,17 +1624,21 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="salePromotionProductOrService" type="text" class="cleanCursorInput" placeholder="product/service being promoted" style="margin-left: 0 !important; padding-left: 0 !important;" size="50"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionProductOrServiceSuggestions').style.display = 'block';"
 								   onkeyup="salePromotionProductOrServiceUpdate();" />
-							<img id="salePromotionProductOrServiceClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionProductOrService();"/>
+							<img id="salePromotionProductOrServiceClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearSalePromotionProductOrService();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<input id="salePromotionProductOrServiceInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionProductOrServiceInImages();" checked>
 							</span>
 						</div>
 						<div id="salePromotionProductOrServiceSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1612,17 +1660,21 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="salePromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="sale start date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionStartDateSuggestions').style.display = 'block';"
 								   oninput="salePromotionStartDateUpdate();"/>
-							<img id="salePromotionStartDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionStartDate();"/>
+							<img id="salePromotionStartDateClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearSalePromotionStartDate();"/>
 						</span>
 						<span class="flex-justify-content-end">
 							<input id="salePromotionStartDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionStartDateInImages();" checked>
 						</span>
 					</div>
 						<div id="salePromotionStartDateSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 252px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1644,17 +1696,21 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="salePromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="sale end date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionEndDateSuggestions').style.display = 'block';"
 								   oninput="salePromotionEndDateUpdate();"/>
-							<img id="salePromotionEndDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionEndDate();"/>
+							<img id="salePromotionEndDateClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearSalePromotionEndDate();"/>
 						</span>
 							<span class="flex-justify-content-end">
 								<input id="salePromotionEndDateInImages" type="checkbox" height="50px" width="50px;" onchange="salePromotionEndDateInImages();" checked>
 							</span>
 						</div>
 						<div id="salePromotionEndDateSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 252px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1676,16 +1732,20 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea autocomplete="off" id="salePromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="sale/promotion body" style="margin-left: 0 !important; padding-left: 0 !important;"
 									  onfocus="hideNewContentVarSuggestions(); document.getElementById('salePromotionBodySuggestions').style.display = 'block';"
 									  onkeyup="salePromotionBodyUpdate();"></textarea>
-							<img id="salePromotionBodyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSalePromotionBody();"/>
+							<img id="salePromotionBodyClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearSalePromotionBody();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="salePromotionBodySuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1712,16 +1772,20 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="eventPromotionTitle" type="text" class="cleanCursorInput" placeholder="event title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionTitleSuggestions').style.display = 'block';"
 								   onkeyup="eventPromotionTitleUpdate();" />
-							<img id="eventPromotionTitleClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionTitle();"/>
+							<img id="eventPromotionTitleClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearEventPromotionTitle();"/>
 						</span>
 						<span class="flex-justify-content-end">
 						</span>
 					</div>
 						<div id="eventPromotionTitleSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1743,16 +1807,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/date.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="eventPromotionStartDate" type="datetime-local" class="cleanCursorInput" placeholder="start date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionStartDateSuggestions').style.display = 'block';"
 									   oninput="eventPromotionStartDateUpdate();"/>
-								<img id="eventPromotionStartDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionStartDate();"/>
+								<img id="eventPromotionStartDateClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearEventPromotionStartDate();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="eventPromotionStartDateSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 252px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 						<div class="flex">
 							<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 							<details class="newContentVarSuggestion">
@@ -1774,16 +1842,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/date.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="eventPromotionEndDate" type="datetime-local" class="cleanCursorInput" placeholder="end date/time" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionEndDateSuggestions').style.display = 'block';"
 									   oninput="eventPromotionEndDateUpdate();"/>
-								<img id="eventPromotionEndDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionEndDate();"/>
+								<img id="eventPromotionEndDateClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearEventPromotionEndDate();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="eventPromotionEndDateSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 252px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1805,16 +1877,20 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/location.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/location.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="eventPromotionLocation" type="text" class="cleanCursorInput" size="50" placeholder="location ('Online', '123 Main St, etc)" style="margin-left: 0 !important; padding-left: 0 !important;"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionLocationSuggestions').style.display = 'block';"
 								   onkeyup="eventPromotionLocationUpdate();" />
-							<img id="eventPromotionLocationClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionLocation();" />
+							<img id="eventPromotionLocationClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearEventPromotionLocation();" />
 						</span>
 						<span class="flex-justify-content-end">
 						</span>
 						</div>
 						<div id="eventPromotionLocationSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1836,16 +1912,20 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea autocomplete="off" id="eventPromotionBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="event body (description, etc)" style="margin-left: 0 !important; padding-left: 0 !important;"
 									  onfocus="hideNewContentVarSuggestions(); document.getElementById('eventPromotionBodySuggestions').style.display = 'block';"
 									  onkeyup="eventPromotionBodyUpdate();"></textarea>
-							<img id="eventPromotionBodyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearEventPromotionBody();"/>
+							<img id="eventPromotionBodyClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearEventPromotionBody();"/>
 						</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="eventPromotionBodySuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 						<div class="flex">
 							<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 							<details class="newContentVarSuggestion">
@@ -1872,16 +1952,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="testimonialReviewAuthorName" type="text" class="cleanCursorInput" placeholder="author name" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorNameSuggestions').style.display = 'block';"
 									   onkeyup="testimonialReviewAuthorNameUpdate();" />
-								<img id="testimonialReviewAuthorNameClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorName();"/>
+								<img id="testimonialReviewAuthorNameClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearTestimonialReviewAuthorName();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="testimonialReviewAuthorNameSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1903,16 +1987,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="testimonialReviewAuthorHeadshot" type="file" class="cleanCursorInput" size="50" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorHeadshotSuggestions').style.display = 'block';"
 									   onchange="testimonialReviewAuthorHeadshotUpdate();"/>
-								<img id="testimonialReviewAuthorHeadshotClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorHeadshot();"/>
+								<img id="testimonialReviewAuthorHeadshotClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearTestimonialReviewAuthorHeadshot();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="testimonialReviewAuthorHeadshotSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1934,16 +2022,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="testimonialReviewAuthorTitle" type="text" class="cleanCursorInput" placeholder="author title" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorTitleSuggestions').style.display = 'block';"
 									   onkeyup="testimonialReviewAuthorTitleUpdate();" />
-								<img id="testimonialReviewAuthorTitleClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorTitle();"/>
+								<img id="testimonialReviewAuthorTitleClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearTestimonialReviewAuthorTitle();"/>
 							</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="testimonialReviewAuthorTitleSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1965,16 +2057,20 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="testimonialReviewAuthorCompany" type="text" class="cleanCursorInput" placeholder="author company" style="margin-left: 0 !important; padding-left: 0 !important;" size="50"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewAuthorCompanySuggestions').style.display = 'block';"
 								   onkeyup="testimonialReviewAuthorCompanyUpdate();" />
-							<img id="testimonialReviewAuthorCompanyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewAuthorCompany();"/>
+							<img id="testimonialReviewAuthorCompanyClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearTestimonialReviewAuthorCompany();"/>
 						</span>
 							<span class="flex-justify-content-end">
 						</span>
 						</div>
 						<div id="testimonialReviewAuthorCompanySuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -1996,16 +2092,20 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/date.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/date.svg" height="20" width="20" /></span>
 							<input autocomplete="off" id="testimonialReviewDate" type="date" class="cleanCursorInput" placeholder="date of review" style="margin-left: 0 !important; padding-left: 0 !important;"
 								   onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewDateSuggestions').style.display = 'block';"
 								   oninput="testimonialReviewDateUpdate();"/>
-							<img id="testimonialReviewDateClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewDate();"/>
+							<img id="testimonialReviewDateClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearTestimonialReviewDate();"/>
 						</span>
 							<span class="flex-justify-content-end">
 							</span>
 						</div>
 						<div id="testimonialReviewDateSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 185px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2027,16 +2127,20 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+							<span class="cleanCursorInputIcon padding-bottom-103"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 							<textarea autocomplete="off" id="testimonialReviewBody" class="cleanCursorInputTextarea" rows="6" cols="49" placeholder="body of testimonial" style="margin-left: 0 !important; padding-left: 0 !important;"
 									  onfocus="hideNewContentVarSuggestions(); document.getElementById('testimonialReviewBodySuggestions').style.display = 'block';"
 									  onkeyup="testimonialReviewBodyUpdate();"></textarea>
-							<img id="testimonialReviewBodyClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearTestimonialReviewBody();"/>
+							<img id="testimonialReviewBodyClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearTestimonialReviewBody();"/>
 						</span>
 						<span class="flex-justify-content-end">
 						</span>
 					</div>
 						<div id="testimonialReviewBodySuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2063,11 +2167,11 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 								<input autocomplete="off" id="callToActionGlobal" type="text" class="cleanCursorInput" placeholder="call to action" size="50" style="margin-left: 0 !important; padding-left: 0 !important;"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('callToActionGlobalSuggestions').style.display = 'block';"
 									   onkeyup="callToActionGlobalUpdate();" />
-								<img id="callToActionGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearCallToActionGlobal();"/>
+								<img id="callToActionGlobalClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearCallToActionGlobal();"/>
 							</span>
 							<span class="flex-justify-content-end">
 									<button onclick="callToActionFontPriority1();">L</button>
@@ -2077,6 +2181,10 @@
 								</span>
 						</div>
 						<div id="callToActionGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2098,23 +2206,27 @@
 					<div>
 						<div class="newContentVar">
 								<span class="flex-align-items-center">
-									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/url.svg" height="20" width="20" /></span>
-									<select id="linkGlobalProtocol" class="cleanCursorInputIcon" style="font-size: 14px; padding-left: 6px; border: none;">
+									<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/url.svg" height="20" width="20" /></span>
+									<select id="linkGlobalProtocol" class="cleanCursorInputIcon" style="font-size: 14px; padding: 10px 4px 11px 4px; border: none;">
 										<option value="https://" selected>https://</option>
 										<option value="http://">http://</option>
 									</select>
 									<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="www.example.com" size="50" style="margin-left: 0 !important;"
 										   onfocus="hideNewContentVarSuggestions(); document.getElementById('linkGlobalSuggestions').style.display = 'block';"
 										   onkeyup="linkGlobalUpdate();" />
-									<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearLinkGlobal();" />
+									<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearLinkGlobal();" />
 								</span>
 									<span class="flex-justify-content-end">
 										<img id="linkGlobalQRHere" class="newContentFieldEnhancement" alt="" src="" style="display: none;" />
-										<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/otherIcons/qrCode.svg" onclick="linkGlobalQR();" />
-										<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/otherIcons/shortenLink.svg" style="" onclick="linkGlobalShorten();" />
+										<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/icons/qrCode.svg" onclick="linkGlobalQR();" />
+										<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/icons/shortenLink.svg" style="" onclick="linkGlobalShorten();" />
 									</span>
 								</div>
 						<div id="linkGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 522px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2143,11 +2255,11 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-								<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+								<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/image.svg" height="20" width="20" /></span>
 								<input id="squareLogoGlobal" type="file" class="cleanCursorInput" size="40" style="height: 40px; padding-right: 73px !important; padding-top: 10px; margin-left: 0 !important; padding-left: 0 !important;" value="Select Logo"
 									   onfocus="hideNewContentVarSuggestions(); document.getElementById('squareLogoGlobalSuggestions').style.display = 'block';"
 									   onchange="squareLogoGlobalUpdate()" />
-								<img id="squareLogoGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearSquareLogoGlobal();"/>
+								<img id="squareLogoGlobalClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearSquareLogoGlobal();"/>
 							</span>
 						<span class="flex-justify-content-end">
 								<span>
@@ -2162,6 +2274,10 @@
 							</span>
 					</div>
 						<div id="squareLogoGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 427px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2190,14 +2306,14 @@
 					<div>
 						<div class="newContentVar">
 						<span class="flex-align-items-center">
-									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
+									<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/color.svg" height="20" width="20" /></span>
 									<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;">of</span>
-									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/image.svg" height="20" width="20" /></span>
+									<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/image.svg" height="20" width="20" /></span>
 									<input id="primaryColorGlobal" type="color" class="cleanCursorInput" value="#ffffff" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;"
 										   onfocus="hideNewContentVarSuggestions(); document.getElementById('primaryColorGlobalSuggestions').style.display = 'block';"
 										   oninput="primaryColorGlobalUpdate();" />
 									<span id="primaryColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#ffffff</span>
-									<img id="primaryColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearPrimaryColorGlobal();"/>
+									<img id="primaryColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearPrimaryColorGlobal();"/>
 								</span>
 						<span class="flex-justify-content-end">
 									<input type="range" id="primaryColorGlobalDirection" class="cleanCursorInput" name="primaryColorGlobalDirection" min="0" max="360" step=".1" oninput="primaryColorGlobalDirectionUpdate();">
@@ -2205,6 +2321,10 @@
 								</span>
 					</div>
 						<div id="primaryColorGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 245px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2233,19 +2353,23 @@
 					<div>
 						<div class="newContentVar">
 							<span class="flex-align-items-center">
-									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/color.svg" height="20" width="20" /></span>
+									<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/color.svg" height="20" width="20" /></span>
 									<span style="display: flex; justify-content: center; align-items: center; margin: 0; background-color: #f0f0f0; padding-top: 10px; padding-bottom: 10px;">of</span>
-									<span class="cleanCursorInputIcon"><img alt="" src="media/otherIcons/fieldTypes/text.svg" height="20" width="20" /></span>
+									<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/text.svg" height="20" width="20" /></span>
 									<input id="fontColorGlobal" type="color" class="cleanCursorInput" value="#000000" size="80" style="height: 40px; padding: 0; margin-left: 0 !important; margin-right: 0 !important;"
 										   onfocus="hideNewContentVarSuggestions(); document.getElementById('fontColorGlobalSuggestions').style.display = 'block';"
 										   oninput="fontColorGlobalUpdate();" />
 									<span id="fontColorGlobalValueDisplay" class="cleanCursorInputIcon" style="margin-left: 0; margin-right: 10px; width: 100px;">#000000</span>
-									<img id="fontColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/otherIcons/clear.svg" onclick="clearFontColorGlobal();"/>
+									<img id="fontColorGlobalClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearFontColorGlobal();"/>
 								</span>
-								<span class="flex-justify-content-end">
+							<span class="flex-justify-content-end">
 								</span>
-							</div>
+						</div>
 						<div id="fontColorGlobalSuggestions" class="newContentVarSuggestions">
+							<div title="Help Text" class="newContentVarHelp" style="width: 245px !important">
+								<img alt="" src="media/icons/info.svg" height="18px" style="margin-right: 14px;"/>
+								wrthwrthq rthrjyw qth wrth wrt hwrt h
+							</div>
 							<div class="flex">
 								<span class="material-symbols-outlined subdirectoryArrow">subdirectory_arrow_right</span>
 								<details class="newContentVarSuggestion">
@@ -2278,10 +2402,12 @@
 
 		<!-- Outputs -->
 		<div id="final" class="column35PercentWidth" style="user-select: none;">
+
 			<!-- IMAGES -->
 			<div id="finalImages">
+
 				<div id="finalImageShowcase" style="display: flex; align-items: center; justify-content: center; height: 650px; width: 100%;">
-					<div id="finalImageHorizontal" class="primaryColorGlobalHere" >
+					<div id="finalImageHorizontal" class="primaryColorGlobalHere">
 						<div class="finalImageWrapper">
 							<!-- Global Start -->
 							<text class="hookGlobalHere"></text>
@@ -2309,6 +2435,12 @@
 							<!-- Global End -->
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
+						</div>
+						<div>
+							<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; position: relative; bottom: 45px;" />
+							<img alt="" src="media/icons/socialMedia/linkedin.png" style="height: 25px; position: relative; bottom: 45px;" />
+							<img alt="" src="media/icons/socialMedia/twitter.png" style="height: 25px; position: relative; bottom: 45px;" />
+							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1200w X 630h</text>
 						</div>
 					</div>
 					<div id="finalImageSquare" class="primaryColorGlobalHere">
@@ -2340,6 +2472,10 @@
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
+						<div>
+							<img alt="" src="media/icons/socialMedia/googleMyBusiness.png" style="height: 25px; position: relative; bottom: 45px;" />
+							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1080h</text>
+						</div>
 					</div>
 					<div id="finalImageVertical" class="primaryColorGlobalHere">
 						<div class="finalImageWrapper">
@@ -2369,6 +2505,11 @@
 							<!-- Global End -->
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
+						</div>
+						<div>
+							<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; position: relative; bottom: 45px;" />
+							<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; position: relative; bottom: 45px;" />
+							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1350h</text>
 						</div>
 					</div>
 					<div id="finalImageStory" class="primaryColorGlobalHere">
@@ -2400,18 +2541,122 @@
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
+						<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; position: relative; bottom: 45px;" />
+						<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; position: relative; bottom: 45px;" />
+						<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1920h</text>
 					</div>
 				</div>
+
+
+				<!-- display selectors -->
 				<aside style="display: flex; align-items: flex-end; justify-content: flex-end;">
 					<div id="finalImageHorizontalDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageHorizontal();"></div>
 					<div id="finalImageSquareDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageSquare();"></div>
 					<div id="finalImageVerticalDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageVertical();"></div>
 					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageStory();"></div>
 				</aside>
+
 			</div>
+
 			<!-- TEXT -->
 			<div>
-				<p id="finalText" style="padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+
+				<!-- Text Tabs -->
+				<div id="finalTextNav">
+					<div id="masterText" class="finalTextNavDiv" onclick="
+						this.style.backgroundColor = '#a4a4a4';
+						previewFinalImageHorizontal(); // relevant image size to platform
+						document.getElementById('masterTextBox').style.display = 'block';
+						document.getElementById('facebookTextBox').style.display = 'none';
+						document.getElementById('instagramTextBox').style.display = 'none';
+						document.getElementById('linkedinTextBox').style.display = 'none';
+						document.getElementById('twitterTextBox').style.display = 'none';
+						document.getElementById('googlemybusinessTextBox').style.display = 'none';
+						document.getElementById('facebookText').style.backgroundColor = 'white';
+						document.getElementById('instagramText').style.backgroundColor = 'white';
+						document.getElementById('linkedinText').style.backgroundColor = 'white';
+						document.getElementById('twitterText').style.backgroundColor = 'white';
+						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+					">Full</div>
+					<div id="facebookText" class="finalTextNavDiv" onclick="
+						this.style.backgroundColor = '#a4a4a4';
+						previewFinalImageHorizontal(); // relevant image size to platform
+						document.getElementById('masterTextBox').style.display = 'none';
+						document.getElementById('facebookTextBox').style.display = 'block';
+						document.getElementById('instagramTextBox').style.display = 'none';
+						document.getElementById('linkedinTextBox').style.display = 'none';
+						document.getElementById('twitterTextBox').style.display = 'none';
+						document.getElementById('googlemybusinessTextBox').style.display = 'none';
+						document.getElementById('masterText').style.backgroundColor = 'white';
+						document.getElementById('instagramText').style.backgroundColor = 'white';
+						document.getElementById('linkedinText').style.backgroundColor = 'white';
+						document.getElementById('twitterText').style.backgroundColor = 'white';
+						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+					"><img alt="" src="media/icons/socialMedia/facebook.png" /></div>
+					<div id="instagramText" class="finalTextNavDiv"  onclick="
+						this.style.backgroundColor = '#a4a4a4';
+						previewFinalImageVertical(); // relevant image size to platform
+						document.getElementById('masterTextBox').style.display = 'none';
+						document.getElementById('facebookTextBox').style.display = 'none';
+						document.getElementById('instagramTextBox').style.display = 'block';
+						document.getElementById('linkedinTextBox').style.display = 'none';
+						document.getElementById('twitterTextBox').style.display = 'none';
+						document.getElementById('masterText').style.backgroundColor = 'white';
+						document.getElementById('facebookText').style.backgroundColor = 'white';
+						document.getElementById('linkedinText').style.backgroundColor = 'white';
+						document.getElementById('twitterText').style.backgroundColor = 'white';
+						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+						document.getElementById('googlemybusinessTextBox').style.display = 'none';
+					"><img alt="" src="media/icons/socialMedia/instagram.png" /></div>
+					<div id="linkedinText" class="finalTextNavDiv" onclick="
+						this.style.backgroundColor = '#a4a4a4';
+						previewFinalImageHorizontal(); // relevant image size to platform
+						document.getElementById('masterTextBox').style.display = 'none';
+						document.getElementById('facebookTextBox').style.display = 'none';
+						document.getElementById('instagramTextBox').style.display = 'none';
+						document.getElementById('linkedinTextBox').style.display = 'block';
+						document.getElementById('twitterTextBox').style.display = 'none';
+						document.getElementById('googlemybusinessTextBox').style.display = 'none';
+						document.getElementById('masterText').style.backgroundColor = 'white';
+						document.getElementById('facebookText').style.backgroundColor = 'white';
+						document.getElementById('instagramText').style.backgroundColor = 'white';
+						document.getElementById('twitterText').style.backgroundColor = 'white';
+						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+					"><img alt="" src="media/icons/socialMedia/linkedin.png" /></div>
+					<div id="twitterText" class="finalTextNavDiv" onclick="
+						this.style.backgroundColor = '#a4a4a4';
+						previewFinalImageHorizontal(); // relevant image size to platform
+						document.getElementById('masterTextBox').style.display = 'none';
+						document.getElementById('facebookTextBox').style.display = 'none';
+						document.getElementById('instagramTextBox').style.display = 'none';
+						document.getElementById('linkedinTextBox').style.display = 'none';
+						document.getElementById('twitterTextBox').style.display = 'block';
+						document.getElementById('googlemybusinessTextBox').style.display = 'none';
+						document.getElementById('masterText').style.backgroundColor = 'white';
+						document.getElementById('facebookText').style.backgroundColor = 'white';
+						document.getElementById('instagramText').style.backgroundColor = 'white';
+						document.getElementById('linkedinText').style.backgroundColor = 'white';
+						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+					"><img alt="" src="media/icons/socialMedia/twitter.png" /></div>
+					<div id="googlemybusinessText" class="finalTextNavDiv" onclick="
+						this.style.backgroundColor = '#a4a4a4';
+						previewFinalImageSquare(); // relevant image size to platform
+						document.getElementById('masterTextBox').style.display = 'none';
+						document.getElementById('facebookTextBox').style.display = 'none';
+						document.getElementById('instagramTextBox').style.display = 'none';
+						document.getElementById('linkedinTextBox').style.display = 'none';
+						document.getElementById('twitterTextBox').style.display = 'none';
+						document.getElementById('googlemybusinessTextBox').style.display = 'block';
+						document.getElementById('masterText').style.backgroundColor = 'white';
+						document.getElementById('facebookText').style.backgroundColor = 'white';
+						document.getElementById('instagramText').style.backgroundColor = 'white';
+						document.getElementById('linkedinText').style.backgroundColor = 'white';
+						document.getElementById('twitterText').style.backgroundColor = 'white';
+					"><img alt="" src="media/icons/socialMedia/googleMyBusiness.png" /></div>
+				</div>
+
+				<!-- Master -->
+				<p id="masterTextBox" style="display: block; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
 					<!-- Global Start -->
 					<text class="hookGlobalHere"></text>
 					<text class="hookResolutionGlobalHere"></text>
@@ -2446,30 +2691,356 @@
 					<!-- Hashtags -->
 					<br>
 					<br>
-					<text id="hashtagsHere">
-						<text id="hookGlobalHashtagsHere"></text>
-						<text id="hookResolutionGlobalHashtagsHere"></text>
-						<text id="genericPostBodyHashtagsHere"></text>
-						<text id="companyUpdateHeadlineHashtagsHere"></text>
-						<text id="companyUpdateBodyHashtagsHere"></text>
-						<text id="salePromotionTitleHashtagsHere"></text>
-						<text id="salePromotionProductOrServiceHashtagsHere"></text>
-						<text id="salePromotionBodyHashtagsHere"></text>
-						<text id="eventPromotionTitleHashtagsHere"></text>
-						<text id="eventPromotionLocationHashtagsHere"></text>
-						<text id="eventPromotionBodyHashtagsHere"></text>
-						<text id="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text id="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text id="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text id="testimonialReviewBodyHashtagsHere"></text>
+					<text>
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
+						<text>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
+
+						</text>
+					</text>
+				</p >
+
+				<!-- Facebook
+				- horizontal image + story image
+				- 60000-character limit
+				-
+				-->
+				<p id="facebookTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+					<!-- Global Start -->
+					<text class="hookGlobalHere"></text>
+					<text class="hookResolutionGlobalHere"></text>
+					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+					<!-- Company Update -->
+					<text class="companyUpdateHeadlineHere"></text>
+					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+					<!-- Sale/Promotion -->
+					<text class="salePromotionTitleHere"></text>
+					<text class="salePromotionProductOrServiceHere"></text>
+					<text class="salePromotionStartDateHere"></text>
+					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+					<!-- Event Promotion-->
+					<text class="eventPromotionTitleHere"></text>
+					<text class="eventPromotionStartDateHere"></text>
+					<text class="eventPromotionEndDateHere"></text>
+					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+					<!-- Testimonial / Review -->
+					<text class="testimonialReviewAuthorNameHere"></text>
+					<text class="testimonialReviewAuthorHeadshotHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorCompanyHere"></text>
+					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+					<!-- Global End -->
+					<text class="callToActionGlobalHere"></text>
+					<text class="linkGlobalHere"></text>
+					<!-- Hashtags -->
+					<br>
+					<br>
+					<text>
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
 					</text>
 				</p>
+
+				<!-- Instagram
+				- vertical image + story image
+				- 2200-character limit
+				- 30-hashtag limit
+				-
+				-->
+				<p id="instagramTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+					<!-- Global Start -->
+					<text class="hookGlobalHere"></text>
+					<text class="hookResolutionGlobalHere"></text>
+					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+					<!-- Company Update -->
+					<text class="companyUpdateHeadlineHere"></text>
+					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+					<!-- Sale/Promotion -->
+					<text class="salePromotionTitleHere"></text>
+					<text class="salePromotionProductOrServiceHere"></text>
+					<text class="salePromotionStartDateHere"></text>
+					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+					<!-- Event Promotion-->
+					<text class="eventPromotionTitleHere"></text>
+					<text class="eventPromotionStartDateHere"></text>
+					<text class="eventPromotionEndDateHere"></text>
+					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+					<!-- Testimonial / Review -->
+					<text class="testimonialReviewAuthorNameHere"></text>
+					<text class="testimonialReviewAuthorHeadshotHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorCompanyHere"></text>
+					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+					<!-- Global End -->
+					<text class="callToActionGlobalHere"></text>
+					<text class="linkGlobalHere"></text>
+					<!-- Hashtags -->
+					<br>
+					<br>
+					<text>
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
+					</text>
+				</p>
+
+				<!-- LinkedIn
+				- horizontal image
+				- 3000-character limit
+				-
+				-->
+				<p id="linkedinTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+					<!-- Global Start -->
+					<text class="hookGlobalHere"></text>
+					<text class="hookResolutionGlobalHere"></text>
+					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+					<!-- Company Update -->
+					<text class="companyUpdateHeadlineHere"></text>
+					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+					<!-- Sale/Promotion -->
+					<text class="salePromotionTitleHere"></text>
+					<text class="salePromotionProductOrServiceHere"></text>
+					<text class="salePromotionStartDateHere"></text>
+					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+					<!-- Event Promotion-->
+					<text class="eventPromotionTitleHere"></text>
+					<text class="eventPromotionStartDateHere"></text>
+					<text class="eventPromotionEndDateHere"></text>
+					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+					<!-- Testimonial / Review -->
+					<text class="testimonialReviewAuthorNameHere"></text>
+					<text class="testimonialReviewAuthorHeadshotHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorCompanyHere"></text>
+					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+					<!-- Global End -->
+					<text class="callToActionGlobalHere"></text>
+					<text class="linkGlobalHere"></text>
+					<!-- Hashtags -->
+					<br>
+					<br>
+					<text>
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
+					</text>
+				</p>
+
+				<!-- Twitter
+				- horizontal image
+				- 280-character limit
+				-
+				-->
+				<p id="twitterTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+					<!-- Global Start -->
+					<text class="hookGlobalHere"></text>
+					<text class="hookResolutionGlobalHere"></text>
+					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+					<!-- Company Update -->
+					<text class="companyUpdateHeadlineHere"></text>
+					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+					<!-- Sale/Promotion -->
+					<text class="salePromotionTitleHere"></text>
+					<text class="salePromotionProductOrServiceHere"></text>
+					<text class="salePromotionStartDateHere"></text>
+					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+					<!-- Event Promotion-->
+					<text class="eventPromotionTitleHere"></text>
+					<text class="eventPromotionStartDateHere"></text>
+					<text class="eventPromotionEndDateHere"></text>
+					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+					<!-- Testimonial / Review -->
+					<text class="testimonialReviewAuthorNameHere"></text>
+					<text class="testimonialReviewAuthorHeadshotHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorCompanyHere"></text>
+					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+					<!-- Global End -->
+					<text class="callToActionGlobalHere"></text>
+					<text class="linkGlobalHere"></text>
+					<!-- Hashtags -->
+					<br>
+					<br>
+					<text>
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
+					</text>
+				</p>
+
+				<!-- Google My Business
+				- square image
+				- title: 58-character limit
+				- 1500-character limit
+				- no hashtags
+				-
+				-->
+				<p id="googlemybusinessTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
+					<!-- Global Start -->
+					<text class="hookGlobalHere"></text>
+					<text class="hookResolutionGlobalHere"></text>
+					<!-- Generic Post -->
+					<text class="genericPostBodyHere"></text>
+					<!-- Company Update -->
+					<text class="companyUpdateHeadlineHere"></text>
+					<text class="companyUpdateDateHere"></text>
+					<text class="companyUpdateBodyHere"></text>
+					<!-- Sale/Promotion -->
+					<text class="salePromotionTitleHere"></text>
+					<text class="salePromotionProductOrServiceHere"></text>
+					<text class="salePromotionStartDateHere"></text>
+					<text class="salePromotionEndDateHere"></text>
+					<text class="salePromotionBodyHere"></text>
+					<!-- Event Promotion-->
+					<text class="eventPromotionTitleHere"></text>
+					<text class="eventPromotionStartDateHere"></text>
+					<text class="eventPromotionEndDateHere"></text>
+					<text class="eventPromotionLocationHere"></text>
+					<text class="eventPromotionBodyHere"></text>
+					<!-- Testimonial / Review -->
+					<text class="testimonialReviewAuthorNameHere"></text>
+					<text class="testimonialReviewAuthorHeadshotHere"></text>
+					<text class="testimonialReviewAuthorTitleHere"></text>
+					<text class="testimonialReviewAuthorCompanyHere"></text>
+					<text class="testimonialReviewAuthorDateHere"></text>
+					<text class="testimonialReviewBodyHere"></text>
+					<!-- Global End -->
+					<text class="callToActionGlobalHere"></text>
+					<text class="linkGlobalHere"></text>
+					<!-- Hashtags -->
+					<br>
+					<br>
+					<text>
+						<text class="hookGlobalHashtagsHere"></text>
+						<text class="hookResolutionGlobalHashtagsHere"></text>
+						<text class="genericPostBodyHashtagsHere"></text>
+						<text class="companyUpdateHeadlineHashtagsHere"></text>
+						<text class="companyUpdateBodyHashtagsHere"></text>
+						<text class="salePromotionTitleHashtagsHere"></text>
+						<text class="salePromotionProductOrServiceHashtagsHere"></text>
+						<text class="salePromotionBodyHashtagsHere"></text>
+						<text class="eventPromotionTitleHashtagsHere"></text>
+						<text class="eventPromotionLocationHashtagsHere"></text>
+						<text class="eventPromotionBodyHashtagsHere"></text>
+						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+						<text class="testimonialReviewBodyHashtagsHere"></text>
+					</text>
+				</p>
+
+				<!-- "Edit" label that will remain visible for all platforms -->
 				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+
+				<!-- Download content button -->
 				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
 				<div id="output"></div>
+
 			</div>
+
 			<!-- Social Sendables -->
 			<div id="socialSendables" style="display: none;">
+
 				<script>
 					function openSocialTab(evt, cityName) {
 						let i, socialTabContent, tablinks;
@@ -2484,15 +3055,16 @@
 						document.getElementById(cityName).style.display = "block";
 					}
 				</script>
+
 				<div id="socialSendablesTab" class="tab" style="background-color: white; padding: 0">
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/facebookWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/linkedinWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/twitterWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/emailWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/redditWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/tumblrWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/telegramWhite.png" /></button>
-					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/socialMediaIcons/whatsappWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--facebookColor); border-bottom: none;" onclick="openSocialTab(event, 'tabFacebook')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/facebookWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--linkedinColor); border-bottom: none;" onclick="openSocialTab(event, 'tabLinkedin')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/linkedinWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--twitterColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTwitter')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/twitterWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--googleColor); border-bottom: none;" onclick="openSocialTab(event, 'tabEmail')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/emailWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--redditColor); border-bottom: none;" onclick="openSocialTab(event, 'tabReddit')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/redditWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--tumblrColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTumblr')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/tumblrWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--telegramColor); border-bottom: none;" onclick="openSocialTab(event, 'tabTelegram')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/telegramWhite.png" /></button>
+					<button class="socialTab" style="position: relative; top: 0; background-color: var(--whatsappColor); border-bottom: none;" onclick="openSocialTab(event, 'tabWhatsapp')"><img alt="" class="shareToSocial" style="height: 25px; width: 25px;" src="media/icons/socialMedia/whatsappWhite.png" /></button>
 					<!-- Facebook -->
 					<div id="tabFacebook" class="socialTabContent">
 						<!-- Share Via Facebook -->
@@ -2674,6 +3246,7 @@
 						</div><span class="material-symbols-outlined">info</span>
 					</div>
 				</div>
+
 			</div>
 		</div>
 
@@ -2683,13 +3256,13 @@
 	<section id="settings" class="tabby">
 		<div id="accountIntegrations" style="padding: 20px;">
 			<h3>Integrations (just a dummy UI for now)</h3>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
-			<div class="var flex-align-items-center"><img alt="" src="media/socialMediaIcons/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/otherIcons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div><div class="var" style="align-items: center;"><img alt="" src="media/socialMediaIcons/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/facebook.png" width="25px" height="25px" />&nbsp;&nbsp;Facebook<img alt="" src="media/icons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/instagram.png" width="25px" height="25px" />&nbsp;&nbsp;Instagram<button id="connectToInstagramButton" onmouseleave="document.getElementById('connectToInstagramButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToInstagramButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to Instagram?')">Connect</button></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/linkedin.png" width="25px" height="25px" />&nbsp;&nbsp;LinkedIn<img alt="" src="media/icons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/twitter.png" width="25px" height="25px" />&nbsp;&nbsp;Twitter<img alt="" src="media/icons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/discord.png" width="25px" height="25px" />&nbsp;&nbsp;Discord<img alt="" src="media/icons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/apple.png" width="25px" height="25px" />&nbsp;&nbsp;Apple<img alt="" src="media/icons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div>
+			<div class="var flex-align-items-center"><img alt="" src="media/icons/socialMedia/tiktok.png" width="25px" height="25px" />&nbsp;&nbsp;TikTok<img alt="" src="media/icons/greenCheck.webp" width="20px" height="20px" style="padding: 0 15px 0 15px; position: absolute; right: 0;" /></div><div class="var" style="align-items: center;"><img alt="" src="media/icons/socialMedia/youtube.png" width="25px" height="25px" />&nbsp;&nbsp;YouTube<button id="connectToYoutubeButton" onmouseleave="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#3c5eab'" onmouseover="document.getElementById('connectToYoutubeButton').style.backgroundColor = '#2f2f9a'" style="border-radius: 30px; padding: 0 25px 0 25px; margin: 0 15px 0 15px; position: absolute; right: 0; background-color: #3c5eab; color: #fff;" onclick="confirm('Do you want to connect to YouTube?')">Connect</button></div>
 		</div>
 		<div id="accountNewContentSettings" style="padding: 20px;">
 
@@ -2757,7 +3330,7 @@
 	<!-- Chrome ignores autocomplete="off" -->
 	<span style="display: flex; align-items: center; justify-content: start;">
 		<input autocomplete="off" id="brandSearch" class="cleanCursorInput" type="text" size="40" placeholder="search your brand..." onkeyup="updateBrandSearch();" />
-		<img alt="" src="media/otherIcons/clear.svg" class="newContentFieldEnhancement" style="margin-left: 6px;" onclick="closeBrandPopup();"/>
+		<img alt="" src="media/icons/clear.svg" class="newContentFieldEnhancement" style="margin-left: 6px;" onclick="closeBrandPopup();"/>
 	</span>
 	<span>
 		<span id="brandRecommendationsLabel" style="display: flex; align-items: center; justify-content: start; padding: 10px; font-size: 9px; color: #9d9d9d;"></span>
@@ -3638,6 +4211,12 @@
 
 	}
 
+	// NOTES FOR HASHTAGS
+	// - remove duplicates across fields
+	// - add a class and some innerHTML (will be determined) to each hashtag when updated
+	// -
+	// -
+
 	// set newContent hashtags
 	function hookGlobalHashtagsUpdate() {
 
@@ -3666,8 +4245,12 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("hookGlobalHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'hookGlobalHashtagsHere', add uniq.join(" ") to the innerHTML
+		const hookGlobalHashtagsHere = document.getElementsByClassName('hookGlobalHashtagsHere');
+		for (let i = 0; i < hookGlobalHashtagsHere.length; i++) {
+			hookGlobalHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
+
 	}
 	function hookResolutionGlobalHashtagsUpdate() {
 
@@ -3696,8 +4279,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("hookResolutionGlobalHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'hookGlobalResolutionHashtagsHere', add uniq.join(" ") to the innerHTML
+		const hookGlobalResolutionHashtagsHere = document.getElementsByClassName('hookGlobalResolutionHashtagsHere');
+		for (let i = 0; i < hookGlobalResolutionHashtagsHere.length; i++) {
+			hookGlobalResolutionHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function genericPostHashtagsUpdate() {
 
@@ -3726,8 +4312,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("genericPostBodyHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'genericPostBodyHashtagsHere', add uniq.join(" ") to the innerHTML
+		const genericPostBodyHashtagsHere = document.getElementsByClassName('genericPostBodyHashtagsHere');
+		for (let i = 0; i < genericPostBodyHashtagsHere.length; i++) {
+			genericPostBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function companyUpdateHeadlineHashtagsUpdate() {
 
@@ -3756,8 +4345,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("companyUpdateHeadlineHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'companyUpdateHeadlineHashtagsHere', add uniq.join(" ") to the innerHTML
+		const companyUpdateHeadlineHashtagsHere = document.getElementsByClassName('companyUpdateHeadlineHashtagsHere');
+		for (let i = 0; i < companyUpdateHeadlineHashtagsHere.length; i++) {
+			companyUpdateHeadlineHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function companyUpdateBodyHashtagsUpdate() {
 
@@ -3786,8 +4378,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("companyUpdateBodyHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'companyUpdateBodyHashtagsHere', add uniq.join(" ") to the innerHTML
+		const companyUpdateBodyHashtagsHere = document.getElementsByClassName('companyUpdateBodyHashtagsHere');
+		for (let i = 0; i < companyUpdateBodyHashtagsHere.length; i++) {
+			companyUpdateBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function salePromotionTitleHashtagsUpdate() {
 
@@ -3816,8 +4411,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("salePromotionTitleHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'salePromotionTitleHashtagsHere', add uniq.join(" ") to the innerHTML
+		const salePromotionTitleHashtagsHere = document.getElementsByClassName('salePromotionTitleHashtagsHere');
+		for (let i = 0; i < salePromotionTitleHashtagsHere.length; i++) {
+			salePromotionTitleHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function salePromotionBodyHashtagsUpdate() {
 
@@ -3846,8 +4444,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("salePromotionBodyHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'hookGlobalHashtagsHere', add uniq.join(" ") to the innerHTML
+		const hookGlobalHashtagsHere = document.getElementsByClassName('hookGlobalHashtagsHere');
+		for (let i = 0; i < hookGlobalHashtagsHere.length; i++) {
+			hookGlobalHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function salePromotionProductOrServiceHashtagsUpdate() {
 
@@ -3876,8 +4477,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("salePromotionProductOrServiceHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'salePromotionProductOrServiceHashtagsHere', add uniq.join(" ") to the innerHTML
+		const salePromotionProductOrServiceHashtagsHere = document.getElementsByClassName('salePromotionProductOrServiceHashtagsHere');
+		for (let i = 0; i < salePromotionProductOrServiceHashtagsHere.length; i++) {
+			salePromotionProductOrServiceHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function eventPromotionTitleHashtagsUpdate() {
 
@@ -3906,8 +4510,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("eventPromotionTitleHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'eventPromotionTitleHashtagsHere', add uniq.join(" ") to the innerHTML
+		const eventPromotionTitleHashtagsHere = document.getElementsByClassName('eventPromotionTitleHashtagsHere');
+		for (let i = 0; i < eventPromotionTitleHashtagsHere.length; i++) {
+			eventPromotionTitleHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function eventPromotionLocationHashtagsUpdate() {
 
@@ -3936,8 +4543,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("eventPromotionLocationHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'eventPromotionLocationHashtagsHere', add uniq.join(" ") to the innerHTML
+		const eventPromotionLocationHashtagsHere = document.getElementsByClassName('eventPromotionLocationHashtagsHere');
+		for (let i = 0; i < eventPromotionLocationHashtagsHere.length; i++) {
+			eventPromotionLocationHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function eventPromotionBodyHashtagsUpdate() {
 
@@ -3966,8 +4576,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("eventPromotionBodyHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'eventPromotionBodyHashtagsHere', add uniq.join(" ") to the innerHTML
+		const eventPromotionBodyHashtagsHere = document.getElementsByClassName('eventPromotionBodyHashtagsHere');
+		for (let i = 0; i < eventPromotionBodyHashtagsHere.length; i++) {
+			eventPromotionBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function testimonialReviewAuthorNameHashtagsUpdate() {
 
@@ -3996,8 +4609,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("testimonialReviewAuthorNameHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'testimonialReviewAuthorNameHashtagsHere', add uniq.join(" ") to the innerHTML
+		const testimonialReviewAuthorNameHashtagsHere = document.getElementsByClassName('testimonialReviewAuthorNameHashtagsHere');
+		for (let i = 0; i < testimonialReviewAuthorNameHashtagsHere.length; i++) {
+			testimonialReviewAuthorNameHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function testimonialReviewAuthorTitleHashtagsUpdate() {
 
@@ -4026,8 +4642,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("testimonialReviewAuthorTitleHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'testimonialReviewAuthorTitleHashtagsHere', add uniq.join(" ") to the innerHTML
+		const testimonialReviewAuthorTitleHashtagsHere = document.getElementsByClassName('testimonialReviewAuthorTitleHashtagsHere');
+		for (let i = 0; i < testimonialReviewAuthorTitleHashtagsHere.length; i++) {
+			testimonialReviewAuthorTitleHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function testimonialReviewAuthorCompanyHashtagsUpdate() {
 
@@ -4056,8 +4675,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("testimonialReviewAuthorCompanyHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'testimonialReviewAuthorCompanyHashtagsHere', add uniq.join(" ") to the innerHTML
+		const testimonialReviewAuthorCompanyHashtagsHere = document.getElementsByClassName('testimonialReviewAuthorCompanyHashtagsHere');
+		for (let i = 0; i < testimonialReviewAuthorCompanyHashtagsHere.length; i++) {
+			testimonialReviewAuthorCompanyHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 	function testimonialReviewBodyHashtagsUpdate() {
 
@@ -4086,8 +4708,11 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
-		// place the hashtags in the hashtagsContainer
-		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = uniq.join(" ");
+		// for all items with the class of 'testimonialReviewBodyHashtagsHere', add uniq.join(" ") to the innerHTML
+		const testimonialReviewBodyHashtagsHere = document.getElementsByClassName('testimonialReviewBodyHashtagsHere');
+		for (let i = 0; i < testimonialReviewBodyHashtagsHere.length; i++) {
+			testimonialReviewBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+		}
 	}
 
 	// clear newContent hashtags
@@ -4955,49 +5580,78 @@
 		// clear the #brandRecommendations div
 		document.getElementById('brandRecommendations').innerHTML = '';
 	}
-	function resetBrandLists() {}
 
-	// content downloads --> blobs, files etc.
+	// Download Content
 	function downloadFinalTextBlob() {
 
 		// Get the content
 		let blobHtml =
 
 			`<!DOCTYPE html>
-	<html lang="en">
-		<head>
+			<html lang="en">
+			<head>
 
-		<meta charset="UTF-8">
-		<title>BrandWield Saved Content</title>
-	<meta name="author" content="BRANDWIELD Inc.">
+				<meta charset="UTF-8">
+				<title>BrandWield Saved Content</title>
+				<meta name="author" content="BRANDWIELD Inc.">
 
-		<!-- CSS -->
-		<style>
-			* {
+			<!-- CSS -->
+			<style>
+				* {
 
-		}
-			body {
-			padding: 20px 20px 20px 20px;
-		}
-		</style>
+			}
+				body {
+				padding: 20px 20px 20px 20px;
+			}
+			</style>
 
-	</head>
-	<body>
-	<header>
-		<h1>BrandWield Saved Content</h1>
-	</header>
-	<main>
-		<section id="savedMedia">
-		</section>
+			</head>
+			<body>
+				<header>
+					<h1>BrandWield Saved Content</h1>
+				</header>
+				<main>
+					<section id="savedMedia">
+					</section>
 
-		<section id="savedText">
-			<p id="savedTextHere" style="width: 300px">
-				${document.getElementById("finalText").innerText}
-			</p>
-		</section>
-	</main>
-	</body>
-</html>`
+					<section id="savedText">
+						<div id="savedTextHere" style="width: 600px; font-size: 14px">
+
+							<div style="padding: 20px; margin: 20px; border: 1px solid #000000; border-radius: 5px;">
+								<div>Full:</div>
+								${document.getElementById("masterTextBox").innerText}<br><br>
+							</div>
+
+							<div style="padding: 20px; margin: 20px; border: 1px solid #000000; border-radius: 5px;">
+								<div>Facebook:</div>
+								${document.getElementById("facebookTextBox").innerHTML}<br><br>
+							</div>
+
+							<div style="padding: 20px; margin: 20px; border: 1px solid #000000; border-radius: 5px;">
+								<div>Instagram:</div>
+								${document.getElementById("instagramTextBox").innerText}<br><br>
+							</div>
+
+							<div style="padding: 20px; margin: 20px; border: 1px solid #000000; border-radius: 5px;">
+								<div>LinkedIn:</div>
+								${document.getElementById("linkedinTextBox").innerHTML}<br><br>
+							</div>
+
+							<div style="padding: 20px; margin: 20px; border: 1px solid #000000; border-radius: 5px;">
+								<div>Twitter:</div>
+								${document.getElementById("twitterTextBox").innerText}<br><br>
+							</div>
+
+							<div style="padding: 20px; margin: 20px; border: 1px solid #000000; border-radius: 5px;">
+								<div>Google My Business:</div>
+								${document.getElementById("googlemybusinessTextBox").innerHTML}
+							</div>
+
+						</div>
+					</section>
+				</main>
+				</body>
+			</html>`
 
 		// Create a new Blob (html)
 		const blob = new Blob([blobHtml], { type: "text/html" });
@@ -5133,7 +5787,7 @@
 	}
 
 	// SETTINGS
-	// default newContent field value formats
+	// default formats
 	function changeDateFormat() {
 
 		// get date format
@@ -5152,7 +5806,7 @@
 		localStorage.setItem('timeFormat', timeFormat);
 
 	}
-	// default newContent field values
+	// default values
 	function changeLinkDefault() {
 
 		// get primary color default
@@ -5274,6 +5928,7 @@
 	}
 
 </script>
+
 <!-- Firebase Auth -->
 <script type="module">
 
@@ -5507,9 +6162,11 @@ onAuthStateChanged(auth, user => {
 })
 
 </script>
+
 <!-- 'list' inside <select> elements will not be searchable as the 'list' attribute value,
 so we need to place them here, not sure why, I guess we create 2 identical data sets for now?
 1 here for search and 1 for the brandRecommendations? -->
+
 <!-- datalists, filled by firebaseSetup.js, used in the brandPopup -->
 <datalist id="text">
 	<option value="text">text</option>
