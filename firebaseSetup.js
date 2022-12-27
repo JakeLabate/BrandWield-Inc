@@ -23,6 +23,7 @@ const db = getDatabase();
 // Get Brand Variables
 const dbRef = ref(getDatabase());
 const brand = 'BrandWield';
+
 get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	if (snapshot.exists()) {
 		if (snapshot.val().legalBusinessName !== null || snapshot.val().legalBusinessName !== '') {
@@ -36,148 +37,6 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 
 	loadUserBrand();
-
-	// OFFERS
-	// Offer 1
-	if (snapshot.val().offer1Name != null) {
-		// set local storage
-		localStorage.setItem('offer1Name', snapshot.val().offer1Name);
-		document.getElementById('offer1Name').value = snapshot.val().offer1Title;
-		document.getElementById('offer1Name').size = document.getElementById('offer1Name').value.length + 1;
-	} else {
-		document.getElementById('offer1Name').placeholder = 'Free Tacos';
-		document.getElementById('warningOffer1Name').style.display = 'block';
-		document.getElementById('offer1Name').size = document.getElementById('offer1Name').placeholder.length + 1;
-	}
-	if (snapshot.val().offer1Price != null) {
-		// set local storage
-		localStorage.setItem('offer1Price', snapshot.val().offer1Price);
-		document.getElementById('offer1Price').value = snapshot.val().offer1Price;
-		document.getElementById('offer1Price').size = document.getElementById('offer1Price').value.length + 1;
-	} else {
-		document.getElementById('offer1Price').placeholder = '$0';
-		document.getElementById('warningOffer1Price').style.display = 'block';
-		document.getElementById('offer1Price').size = document.getElementById('offer1Price').placeholder.length + 1;
-	}
-	if (snapshot.val().offer1Feature != null) {
-		// set local storage
-		localStorage.setItem('offer1Feature', snapshot.val().offer1Feature);
-		document.getElementById('offer1Feature').value = snapshot.val().offer1Feature;
-		document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').value.length + 1;
-	} else {
-		document.getElementById('offer1Feature').placeholder = 'Free Tacos for a Year';
-		document.getElementById('warningOffer1Feature').style.display = 'block';
-		document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').placeholder.length + 1;
-	}
-	if (snapshot.val().offer1Benefit != null) {
-		// set local storage
-		localStorage.setItem('offer1Benefit', snapshot.val().offer1Benefit);
-		document.getElementById('offer1Benefit').value = snapshot.val().offer1Benefit;
-		document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').value.length + 1;
-	} else {
-		document.getElementById('offer1Benefit').placeholder = 'Free Tacos for a Year';
-		document.getElementById('warningOffer1Benefit').style.display = 'block';
-		document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').placeholder.length + 1;
-	}
-	if (snapshot.val().offer1Solution != null) {
-		// set local storage
-		localStorage.setItem('offer1Solution', snapshot.val().offer1Solution);
-		document.getElementById('offer1Solution').value = snapshot.val().offer1Solution;
-		document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').value.length + 1;
-	} else {
-		document.getElementById('offer1Solution').placeholder = 'Free Tacos for a Year';
-		document.getElementById('warningOffer1Solution').style.display = 'block';
-		document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').placeholder.length + 1;
-	}
-	if (snapshot.val().offer1Description != null) {
-		// set local storage
-		localStorage.setItem('offer1Description', snapshot.val().offer1Description);
-		document.getElementById('offer1Description').value = snapshot.val().offer1Description;
-		document.getElementById('offer1Description').size = document.getElementById('offer1Description').value.length + 1;
-	} else {
-		document.getElementById('offer1Description').placeholder = 'Free tacos for everyone!';
-		document.getElementById('warningOffer1Description').style.display = 'block';
-		document.getElementById('offer1Description').size = document.getElementById('offer1Description').placeholder.length + 1;
-	}
-	//   if (snapshot.val().offer1Image != null) {
-	//     // set local storage
-	//     localStorage.setItem('offer1Image', snapshot.val().offer1Image);
-	//      document.getElementById('offer1Image').value = snapshot.val().offer1Image;
-	//   } else {
-	//      document.getElementById('offer1Image').placeholder = 'https://via.placeholder.com/150';
-	//       document.getElementById('warningOffer1Image').style.display = 'block';
-	//   }
-
-	// Offer 2
-	if (snapshot.val().offer2Title != null) {
-		// set local storage
-		localStorage.setItem('offer2Title', snapshot.val().offer2Title);
-		document.getElementById('offer2Name').value = snapshot.val().offer2Name;
-		document.getElementById('offer2Name').size = document.getElementById('offer2Name').value.length + 1;
-	} else {
-		document.getElementById('offer2Name').placeholder = 'Free Tacos';
-		document.getElementById('warningOffer2Name').style.display = 'block';
-		document.getElementById('offer2Name').size = document.getElementById('offer2Name').placeholder.length + 1;
-	}
-	if (snapshot.val().offer2Price != null) {
-		// set local storage
-		localStorage.setItem('offer2Price', snapshot.val().offer2Price);
-		document.getElementById('offer2Price').value = snapshot.val().offer2Price;
-		document.getElementById('offer2Price').size = document.getElementById('offer2Price').value.length + 1;
-	} else {
-		document.getElementById('offer2Price').placeholder = '$0';
-		document.getElementById('warningOffer2Price').style.display = 'block';
-		document.getElementById('offer2Price').size = document.getElementById('offer2Price').placeholder.length + 1;
-	}
-	if (snapshot.val().offer2Feature != null) {
-		// set local storage
-		localStorage.setItem('offer2Feature', snapshot.val().offer2Feature);
-		document.getElementById('offer2Feature').value = snapshot.val().offer2Feature;
-		document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').value.length + 1;
-	} else {
-		document.getElementById('offer2Feature').placeholder = 'Free Tacos for a Year';
-		document.getElementById('warningOffer2Feature').style.display = 'block';
-		document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').placeholder.length + 1;
-	}
-	if (snapshot.val().offer2Benefit != null) {
-		// set local storage
-		localStorage.setItem('offer2Benefit', snapshot.val().offer2Benefit);
-		document.getElementById('offer2Benefit').value = snapshot.val().offer2Benefit;
-		document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').value.length + 1;
-	} else {
-		document.getElementById('offer2Benefit').placeholder = 'Free Tacos for a Year';
-		document.getElementById('warningOffer2Benefit').style.display = 'block';
-		document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').placeholder.length + 1;
-	}
-	if (snapshot.val().offer2Solution != null) {
-		// set local storage
-		localStorage.setItem('offer2Solution', snapshot.val().offer2Solution);
-		document.getElementById('offer2Solution').value = snapshot.val().offer2Solution;
-		document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').value.length + 1;
-	} else {
-		document.getElementById('offer2Solution').placeholder = 'Free Tacos for a Year';
-		document.getElementById('warningOffer2Solution').style.display = 'block';
-		document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').placeholder.length + 1;
-	}
-	if (snapshot.val().offer2Description != null) {
-		// set local storage
-		localStorage.setItem('offer2Description', snapshot.val().offer2Description);
-		document.getElementById('offer2Description').value = snapshot.val().offer2Description;
-		document.getElementById('offer2Description').size = document.getElementById('offer2Description').value.length + 1;
-	} else {
-		document.getElementById('offer2Description').placeholder = 'Free tacos for everyone!';
-		document.getElementById('warningOffer2Description').style.display = 'block';
-		document.getElementById('offer2Description').size = document.getElementById('offer2Description').placeholder.length + 1;
-	}
-	//  if (snapshot.val().offer2Image != null) {
-	//    // set local storage
-	//    localStorage.setItem('offer2Image', snapshot.val().offer2Image);
-	//       document.getElementById('offer2Image').value = snapshot.val().offer2Image;
-	//   } else {
-	//       document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
-    //        document.getElementById('warningOffer2Image').style.display = 'block';
-	//  }
-
 
 	// Social Media
 	function loadFacebookUrl () {
@@ -1006,6 +865,197 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		loadPerson2();
 	}
 
+	// offer 1
+	function loadOffer1Name() {
+		if (snapshot.val().offer1Name != null) {
+			// set local storage
+			localStorage.setItem('offer1Name', snapshot.val().offer1Name);
+			document.getElementById('offer1Name').value = snapshot.val().offer1Name;
+			document.getElementById('offer1Name').size = document.getElementById('offer1Name').value.length + 1;
+		} else {
+			document.getElementById('offer1Name').placeholder = 'Free Tacos';
+			document.getElementById('warningOffer1Name').style.display = 'block';
+			document.getElementById('offer1Name').size = document.getElementById('offer1Name').placeholder.length + 1;
+		}
+	}
+	function loadOffer1Price() {
+		if (snapshot.val().offer1Price != null) {
+			// set local storage
+			localStorage.setItem('offer1Price', snapshot.val().offer1Price);
+			document.getElementById('offer1Price').value = snapshot.val().offer1Price;
+			document.getElementById('offer1Price').size = document.getElementById('offer1Price').value.length + 1;
+		} else {
+			document.getElementById('offer1Price').placeholder = '$0';
+			document.getElementById('warningOffer1Price').style.display = 'block';
+			document.getElementById('offer1Price').size = document.getElementById('offer1Price').placeholder.length + 1;
+		}
+	}
+	function loadOffer1Feature() {
+		if (snapshot.val().offer1Feature != null) {
+			// set local storage
+			localStorage.setItem('offer1Feature', snapshot.val().offer1Feature);
+			document.getElementById('offer1Feature').value = snapshot.val().offer1Feature;
+			document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').value.length + 1;
+		} else {
+			document.getElementById('offer1Feature').placeholder = 'Free Tacos for a Year';
+			document.getElementById('warningOffer1Feature').style.display = 'block';
+			document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').placeholder.length + 1;
+		}
+	}
+	function loadOffer1Benefit() {
+		if (snapshot.val().offer1Benefit != null) {
+			// set local storage
+			localStorage.setItem('offer1Benefit', snapshot.val().offer1Benefit);
+			document.getElementById('offer1Benefit').value = snapshot.val().offer1Benefit;
+			document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').value.length + 1;
+		} else {
+			document.getElementById('offer1Benefit').placeholder = 'Free Tacos for a Year';
+			document.getElementById('warningOffer1Benefit').style.display = 'block';
+			document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').placeholder.length + 1;
+		}
+	}
+	function loadOffer1Solution() {
+		if (snapshot.val().offer1Solution != null) {
+			// set local storage
+			localStorage.setItem('offer1Solution', snapshot.val().offer1Solution);
+			document.getElementById('offer1Solution').value = snapshot.val().offer1Solution;
+			document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').value.length + 1;
+		} else {
+			document.getElementById('offer1Solution').placeholder = 'Free Tacos for a Year';
+			document.getElementById('warningOffer1Solution').style.display = 'block';
+			document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').placeholder.length + 1;
+		}
+	}
+	function loadOffer1Description() {
+		if (snapshot.val().offer1Description != null) {
+			// set local storage
+			localStorage.setItem('offer1Description', snapshot.val().offer1Description);
+			document.getElementById('offer1Description').value = snapshot.val().offer1Description;
+			document.getElementById('offer1Description').size = document.getElementById('offer1Description').value.length + 1;
+		} else {
+			document.getElementById('offer1Description').placeholder = 'Free tacos for everyone!';
+			document.getElementById('warningOffer1Description').style.display = 'block';
+			document.getElementById('offer1Description').size = document.getElementById('offer1Description').placeholder.length + 1;
+		}
+	}
+	function loadOffer1Image() {
+		if (snapshot.val().offer1Image != null) {
+			// set local storage
+			localStorage.setItem('offer1Image', snapshot.val().offer1Image);
+			document.getElementById('offer1Image').value = snapshot.val().offer1Image;
+		} else {
+			document.getElementById('offer1Image').placeholder = 'https://via.placeholder.com/150';
+			document.getElementById('warningOffer1Image').style.display = 'block';
+		}
+	}
+	function loadOffer1() {
+		loadOffer1Name();
+		loadOffer1Price();
+		loadOffer1Feature();
+		loadOffer1Benefit();
+		loadOffer1Solution();
+		loadOffer1Description();
+		loadOffer1Image();
+	}
+
+	// offer 2
+	function loadOffer2Name() {
+		if (snapshot.val().offer2Name != null) {
+			// set local storage
+			localStorage.setItem('offer2Title', snapshot.val().offer2Name);
+			document.getElementById('offer2Name').value = snapshot.val().offer2Name;
+			document.getElementById('offer2Name').size = document.getElementById('offer2Name').value.length + 1;
+		} else {
+			document.getElementById('offer2Name').placeholder = 'Free Tacos';
+			document.getElementById('warningOffer2Name').style.display = 'block';
+			document.getElementById('offer2Name').size = document.getElementById('offer2Name').placeholder.length + 1;
+		}
+	}
+	function loadOffer2Price() {
+		if (snapshot.val().offer2Price != null) {
+			// set local storage
+			localStorage.setItem('offer2Price', snapshot.val().offer2Price);
+			document.getElementById('offer2Price').value = snapshot.val().offer2Price;
+			document.getElementById('offer2Price').size = document.getElementById('offer2Price').value.length + 1;
+		} else {
+			document.getElementById('offer2Price').placeholder = '$0';
+			document.getElementById('warningOffer2Price').style.display = 'block';
+			document.getElementById('offer2Price').size = document.getElementById('offer2Price').placeholder.length + 1;
+		}
+	}
+	function loadOffer2Feature() {
+		if (snapshot.val().offer2Feature != null) {
+			// set local storage
+			localStorage.setItem('offer2Feature', snapshot.val().offer2Feature);
+			document.getElementById('offer2Feature').value = snapshot.val().offer2Feature;
+			document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').value.length + 1;
+		} else {
+			document.getElementById('offer2Feature').placeholder = 'Free Tacos for a Year';
+			document.getElementById('warningOffer2Feature').style.display = 'block';
+			document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').placeholder.length + 1;
+		}
+	}
+	function loadOffer2Benefit() {
+		if (snapshot.val().offer2Benefit != null) {
+			// set local storage
+			localStorage.setItem('offer2Benefit', snapshot.val().offer2Benefit);
+			document.getElementById('offer2Benefit').value = snapshot.val().offer2Benefit;
+			document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').value.length + 1;
+		} else {
+			document.getElementById('offer2Benefit').placeholder = 'Free Tacos for a Year';
+			document.getElementById('warningOffer2Benefit').style.display = 'block';
+			document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').placeholder.length + 1;
+		}
+	}
+	function loadOffer2Solution() {
+		if (snapshot.val().offer2Solution != null) {
+			// set local storage
+			localStorage.setItem('offer2Solution', snapshot.val().offer2Solution);
+			document.getElementById('offer2Solution').value = snapshot.val().offer2Solution;
+			document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').value.length + 1;
+		} else {
+			document.getElementById('offer2Solution').placeholder = 'Free Tacos for a Year';
+			document.getElementById('warningOffer2Solution').style.display = 'block';
+			document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').placeholder.length + 1;
+		}
+	}
+	function loadOffer2Description() {
+		if (snapshot.val().offer2Description != null) {
+			// set local storage
+			localStorage.setItem('offer2Description', snapshot.val().offer2Description);
+			document.getElementById('offer2Description').value = snapshot.val().offer2Description;
+			document.getElementById('offer2Description').size = document.getElementById('offer2Description').value.length + 1;
+		} else {
+			document.getElementById('offer2Description').placeholder = 'Free tacos for everyone!';
+			document.getElementById('warningOffer2Description').style.display = 'block';
+			document.getElementById('offer2Description').size = document.getElementById('offer2Description').placeholder.length + 1;
+		}
+	}
+	function loadOffer2Image() {
+		if (snapshot.val().offer2Image != null) {
+			// set local storage
+			localStorage.setItem('offer2Image', snapshot.val().offer2Image);
+			document.getElementById('offer2Image').value = snapshot.val().offer2Image;
+		} else {
+			document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
+			document.getElementById('warningOffer2Image').style.display = 'block';
+		}
+	}
+	function loadOffer2() {
+		loadOffer2Name();
+		loadOffer2Price();
+		loadOffer2Feature();
+		loadOffer2Benefit();
+		loadOffer2Solution();
+		loadOffer2Description();
+		loadOffer2Image();
+	}
+
+	function loadOffers() {
+		loadOffer1();
+		loadOffer2();
+	}
+
 	// Colors
 	function loadPrimaryColor () {
 		if (snapshot.val().primaryColor != null) {
@@ -1202,6 +1252,7 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		loadColors ();
 		loadFonts ();
 		loadContact ();
+		loadOffers();
 	}
 
 });
