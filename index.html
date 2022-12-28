@@ -2507,7 +2507,6 @@
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
 						<div>
-							<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; position: relative; bottom: 45px;" />
 							<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; position: relative; bottom: 45px;" />
 							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1350h</text>
 						</div>
@@ -2547,13 +2546,12 @@
 					</div>
 				</div>
 
-
 				<!-- display selectors -->
 				<aside style="display: flex; align-items: flex-end; justify-content: flex-end;">
-					<div id="finalImageHorizontalDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageHorizontal();"></div>
-					<div id="finalImageSquareDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageSquare();"></div>
-					<div id="finalImageVerticalDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageVertical();"></div>
-					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" onmouseover="previewFinalImageStory();"></div>
+					<div id="finalImageHorizontalDummy" class="primaryColorGlobalHere" onclick="previewFinalImageHorizontal();"></div>
+					<div id="finalImageSquareDummy" class="primaryColorGlobalHere" onclick="previewFinalImageSquare();"></div>
+					<div id="finalImageVerticalDummy" class="primaryColorGlobalHere" onclick="previewFinalImageVertical();"></div>
+					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" onclick="previewFinalImageStory();"></div>
 				</aside>
 
 			</div>
@@ -2691,7 +2689,7 @@
 					<!-- Hashtags -->
 					<br>
 					<br>
-					<text>
+					<text id="masterTextHashtags">
 						<text class="hookGlobalHashtagsHere"></text>
 						<text class="hookResolutionGlobalHashtagsHere"></text>
 						<text class="genericPostBodyHashtagsHere"></text>
@@ -2707,28 +2705,8 @@
 						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
 						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
 						<text class="testimonialReviewBodyHashtagsHere"></text>
-						<text>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-							<span class="hashtag">#hashtag<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>
-
-						</text>
 					</text>
+					<text id="masterTextHashtagNoDuplicates"></text>
 				</p >
 
 				<!-- Facebook
@@ -2771,7 +2749,7 @@
 					<!-- Hashtags -->
 					<br>
 					<br>
-					<text>
+					<text id="facebookTextHashtags">
 						<text class="hookGlobalHashtagsHere"></text>
 						<text class="hookResolutionGlobalHashtagsHere"></text>
 						<text class="genericPostBodyHashtagsHere"></text>
@@ -2831,7 +2809,7 @@
 					<!-- Hashtags -->
 					<br>
 					<br>
-					<text>
+					<text id="instagramTextHashtags">
 						<text class="hookGlobalHashtagsHere"></text>
 						<text class="hookResolutionGlobalHashtagsHere"></text>
 						<text class="genericPostBodyHashtagsHere"></text>
@@ -2890,7 +2868,7 @@
 					<!-- Hashtags -->
 					<br>
 					<br>
-					<text>
+					<text id="linkedinTextHashtags">
 						<text class="hookGlobalHashtagsHere"></text>
 						<text class="hookResolutionGlobalHashtagsHere"></text>
 						<text class="genericPostBodyHashtagsHere"></text>
@@ -2949,7 +2927,7 @@
 					<!-- Hashtags -->
 					<br>
 					<br>
-					<text>
+					<text id="twitterTextHashtags">
 						<text class="hookGlobalHashtagsHere"></text>
 						<text class="hookResolutionGlobalHashtagsHere"></text>
 						<text class="genericPostBodyHashtagsHere"></text>
@@ -2972,7 +2950,7 @@
 				- square image
 				- title: 58-character limit
 				- 1500-character limit
-				- no hashtags
+				- no hashtags = DONE
 				-
 				-->
 				<p id="googlemybusinessTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
@@ -3007,26 +2985,6 @@
 					<!-- Global End -->
 					<text class="callToActionGlobalHere"></text>
 					<text class="linkGlobalHere"></text>
-					<!-- Hashtags -->
-					<br>
-					<br>
-					<text>
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
-					</text>
 				</p>
 
 				<!-- "Edit" label that will remain visible for all platforms -->
@@ -3338,6 +3296,14 @@
 	</span>
 </div>
 
+<!-- Hashtag contextmenu -->
+<div id="hashtagContextMenu" style="background-color: #1da1f2; height: 100px; width: 100px;">
+	<span id="hashtagContextMenuOptions">
+		<span id="hashtagContextMenuDeleteThis" class="hashtagContextMenuOption" onclick="hashtagContextMenuDeleteThis();">Delete for this platform</span>
+		<span id="hashtagContextMenuDeleteAll" class="hashtagContextMenuOption" onclick="hashtagContextMenuDeleteAll();">Delete for all platforms</span>
+	</span>
+</div>
+
 <!-- Signup form in a modal -->
 <div id="modal-signup" class="modal" style="display: none;">
   <form>
@@ -3503,6 +3469,26 @@
 			closeBrandPopup();
 		});
 	}
+
+	// NOT WORKING
+	// when any new element with the class="hashtag" added to the DOM, add the event listener
+	document.addEventListener('DOMNodeInserted', function(event) {
+		if (event.target.classList.contains('hashtag')) {
+			event.target.addEventListener('click', function(event) {
+				// for each right click on all .hashtag elements, add a context menu
+				let hashtag = document.querySelectorAll('.hashtag');
+				for (let i = 0; i < hashtag.length; i++) {
+					hashtag[i].addEventListener('contextmenu', function(event) {
+						event.preventDefault();
+						// show the #hashtagContextMenu div and set its position to the mouse position
+						document.getElementById('hashtagContextMenu').style.display = 'block';
+						document.getElementById('hashtagContextMenu').style.top = event.clientY + 'px';
+						document.getElementById('hashtagContextMenu').style.left = event.clientX + 'px';
+					});
+				}
+			});
+		}
+	});
 
 	// select app section
 	function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
@@ -3765,6 +3751,12 @@
 		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
 		for(let i = 0; i < hookGlobalHere.length; i ++) {
 			hookGlobalHere[i].innerHTML = document.getElementById('hookGlobal').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			hookGlobalHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				hookGlobalHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3775,6 +3767,12 @@
 		const hookResolutionGlobalHere = document.getElementsByClassName('hookResolutionGlobalHere');
 		for (let i = 0; i < hookResolutionGlobalHere.length; i++) {
 			hookResolutionGlobalHere[i].innerHTML = document.getElementById('hookResolutionGlobal').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			hookResolutionGlobalHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				hookResolutionGlobalHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3785,6 +3783,12 @@
 		const genericPostBodyHere = document.getElementsByClassName('genericPostBodyHere');
 		for (let i = 0; i < genericPostBodyHere.length; i++) {
 			genericPostBodyHere[i].innerHTML = document.getElementById('genericPostBody').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			genericPostBodyHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				genericPostBodyHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3795,6 +3799,12 @@
 		const companyUpdateHeadlineHere = document.getElementsByClassName('companyUpdateHeadlineHere');
 		for (let i = 0; i < companyUpdateHeadlineHere.length; i++) {
 			companyUpdateHeadlineHere[i].innerHTML = document.getElementById('companyUpdateHeadline').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			companyUpdateHeadlineHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				companyUpdateHeadlineHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3816,6 +3826,12 @@
 
 		for (let i = 0; i < companyUpdateDateHere.length; i++) {
 			companyUpdateDateHere[i].innerHTML = formattedDate;
+
+			// for 2 seconds, set the background color of the element to grey
+			companyUpdateDateHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				companyUpdateDateHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 	}
@@ -3824,6 +3840,12 @@
 		const companyUpdateBodyHere = document.getElementsByClassName('companyUpdateBodyHere');
 		for (let i = 0; i < companyUpdateBodyHere.length; i++) {
 			companyUpdateBodyHere[i].innerHTML = document.getElementById('companyUpdateBody').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			companyUpdateBodyHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				companyUpdateBodyHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 		// update hashtags
 		companyUpdateBodyHashtagsUpdate();
@@ -3833,6 +3855,12 @@
 		const salePromotionTitleHere = document.getElementsByClassName('salePromotionTitleHere');
 		for (let i = 0; i < salePromotionTitleHere.length; i++) {
 			salePromotionTitleHere[i].innerHTML = document.getElementById('salePromotionTitle').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			salePromotionTitleHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				salePromotionTitleHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3843,6 +3871,12 @@
 		const salePromotionProductOrServiceHere = document.getElementsByClassName('salePromotionProductOrServiceHere');
 		for (let i = 0; i < salePromotionProductOrServiceHere.length; i++) {
 			salePromotionProductOrServiceHere[i].innerHTML = document.getElementById('salePromotionProductOrService').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			salePromotionProductOrServiceHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				salePromotionProductOrServiceHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3866,6 +3900,12 @@
 
 		for (let i = 0; i < salePromotionStartDateHere.length; i++) {
 			salePromotionStartDateHere[i].innerHTML = formattedDate;
+
+			// for 2 seconds, set the background color of the element to grey
+			salePromotionStartDateHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				salePromotionStartDateHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function salePromotionEndDateUpdate() {
@@ -3886,6 +3926,12 @@
 
 		for (let i = 0; i < salePromotionEndDateHere.length; i++) {
 			salePromotionEndDateHere[i].innerHTML = formattedDate;
+
+			// for 2 seconds, set the background color of the element to grey
+			salePromotionEndDateHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				salePromotionEndDateHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function salePromotionBodyUpdate() {
@@ -3893,6 +3939,12 @@
 		const salePromotionBodyHere = document.getElementsByClassName('salePromotionBodyHere');
 		for (let i = 0; i < salePromotionBodyHere.length; i++) {
 			salePromotionBodyHere[i].innerHTML = document.getElementById('salePromotionBody').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			salePromotionBodyHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				salePromotionBodyHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3903,6 +3955,12 @@
 		const eventPromotionTitleHere = document.getElementsByClassName('eventPromotionTitleHere');
 		for (let i = 0; i < eventPromotionTitleHere.length; i++) {
 			eventPromotionTitleHere[i].innerHTML = document.getElementById('eventPromotionTitle').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			eventPromotionTitleHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				eventPromotionTitleHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3926,6 +3984,9 @@
 
 		for (let i = 0; i < eventPromotionStartDateHere.length; i++) {
 			eventPromotionStartDateHere[i].innerHTML = formattedDate;
+
+			// for 2 seconds, set the background color of the element to grey
+			eventPromotionStartDateHere[i].style.backgroundColor = '#d9d9d9';
 		}
 	}
 	function eventPromotionEndDateUpdate() {
@@ -3946,6 +4007,12 @@
 
 		for (let i = 0; i < eventPromotionEndDateHere.length; i++) {
 			eventPromotionEndDateHere[i].innerHTML = formattedDate;
+
+			// for 2 seconds, set the background color of the element to grey
+			eventPromotionEndDateHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				eventPromotionEndDateHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function eventPromotionLocationUpdate() {
@@ -3953,6 +4020,12 @@
 		const eventPromotionLocationHere = document.getElementsByClassName('eventPromotionLocationHere');
 		for (let i = 0; i < eventPromotionLocationHere.length; i++) {
 			eventPromotionLocationHere[i].innerHTML = document.getElementById('eventPromotionLocation').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			eventPromotionLocationHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				eventPromotionLocationHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3963,6 +4036,12 @@
 		const eventPromotionBodyHere = document.getElementsByClassName('eventPromotionBodyHere');
 		for (let i = 0; i < eventPromotionBodyHere.length; i++) {
 			eventPromotionBodyHere[i].innerHTML = document.getElementById('eventPromotionBody').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			eventPromotionBodyHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				eventPromotionBodyHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3973,6 +4052,12 @@
 		const testimonialReviewAuthorNameHere = document.getElementsByClassName('testimonialReviewAuthorNameHere');
 		for (let i = 0; i < testimonialReviewAuthorNameHere.length; i++) {
 			testimonialReviewAuthorNameHere[i].innerHTML = document.getElementById('testimonialReviewAuthorName').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			testimonialReviewAuthorNameHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				testimonialReviewAuthorNameHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -3983,6 +4068,12 @@
 		const testimonialReviewAuthorHeadshotHere = document.getElementsByClassName('testimonialReviewAuthorHeadshotHere');
 		for (let i = 0; i < testimonialReviewAuthorHeadshotHere.length; i++) {
 			testimonialReviewAuthorHeadshotHere[i].innerHTML = document.getElementById('testimonialReviewAuthorHeadshot').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			testimonialReviewAuthorHeadshotHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				testimonialReviewAuthorHeadshotHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function testimonialReviewAuthorTitleUpdate() {
@@ -3990,6 +4081,12 @@
 		const testimonialReviewAuthorTitleHere = document.getElementsByClassName('testimonialReviewAuthorTitleHere');
 		for (let i = 0; i < testimonialReviewAuthorTitleHere.length; i++) {
 			testimonialReviewAuthorTitleHere[i].innerHTML = document.getElementById('testimonialReviewAuthorTitle').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			testimonialReviewAuthorTitleHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				testimonialReviewAuthorTitleHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -4000,6 +4097,12 @@
 		const testimonialReviewAuthorCompanyHere = document.getElementsByClassName('testimonialReviewAuthorCompanyHere');
 		for (let i = 0; i < testimonialReviewAuthorCompanyHere.length; i++) {
 			testimonialReviewAuthorCompanyHere[i].innerHTML = document.getElementById('testimonialReviewAuthorCompany').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			testimonialReviewAuthorCompanyHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				testimonialReviewAuthorCompanyHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -4021,6 +4124,12 @@
 
 		for (let i = 0; i < testimonialReviewDateHere.length; i++) {
 			testimonialReviewDateHere[i].innerHTML = formattedDate;
+
+			// for 2 seconds, set the background color of the element to grey
+			testimonialReviewDateHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				testimonialReviewDateHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function testimonialReviewBodyUpdate() {
@@ -4028,6 +4137,12 @@
 		const testimonialReviewBodyHere = document.getElementsByClassName('testimonialReviewBodyHere');
 		for (let i = 0; i < testimonialReviewBodyHere.length; i++) {
 			testimonialReviewBodyHere[i].innerHTML = document.getElementById('testimonialReviewBody').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			testimonialReviewBodyHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				testimonialReviewBodyHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 
 		// update hashtags
@@ -4038,6 +4153,12 @@
 		const callToActionGlobalHere = document.getElementsByClassName('callToActionGlobalHere');
 		for (let i = 0; i < callToActionGlobalHere.length; i++) {
 			callToActionGlobalHere[i].innerHTML = document.getElementById('callToActionGlobal').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			callToActionGlobalHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				callToActionGlobalHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function linkGlobalUpdate() {
@@ -4045,6 +4166,12 @@
 		const linkGlobalHere = document.getElementsByClassName('linkGlobalHere');
 		for (let i = 0; i < linkGlobalHere.length; i++) {
 			linkGlobalHere[i].innerHTML = document.getElementById('linkGlobal').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			linkGlobalHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				linkGlobalHere[i].style.backgroundColor = 'white';
+			}, 2000);
 		}
 	}
 	function primaryColorGlobalUpdate () {
@@ -4213,9 +4340,6 @@
 
 	// NOTES FOR HASHTAGS
 	// - remove duplicates across fields
-	// - add a class and some innerHTML (will be determined) to each hashtag when updated
-	// -
-	// -
 
 	// set newContent hashtags
 	function hookGlobalHashtagsUpdate() {
@@ -4245,12 +4369,18 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'hookGlobalHashtagsHere', add uniq.join(" ") to the innerHTML
 		const hookGlobalHashtagsHere = document.getElementsByClassName('hookGlobalHashtagsHere');
 		for (let i = 0; i < hookGlobalHashtagsHere.length; i++) {
-			hookGlobalHashtagsHere[i].innerHTML = uniq.join(" ");
+			hookGlobalHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
-
 	}
 	function hookResolutionGlobalHashtagsUpdate() {
 
@@ -4279,10 +4409,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'hookGlobalResolutionHashtagsHere', add uniq.join(" ") to the innerHTML
 		const hookGlobalResolutionHashtagsHere = document.getElementsByClassName('hookGlobalResolutionHashtagsHere');
 		for (let i = 0; i < hookGlobalResolutionHashtagsHere.length; i++) {
-			hookGlobalResolutionHashtagsHere[i].innerHTML = uniq.join(" ");
+			hookGlobalResolutionHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function genericPostHashtagsUpdate() {
@@ -4312,10 +4449,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'genericPostBodyHashtagsHere', add uniq.join(" ") to the innerHTML
 		const genericPostBodyHashtagsHere = document.getElementsByClassName('genericPostBodyHashtagsHere');
 		for (let i = 0; i < genericPostBodyHashtagsHere.length; i++) {
-			genericPostBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+			genericPostBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function companyUpdateHeadlineHashtagsUpdate() {
@@ -4345,10 +4489,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'companyUpdateHeadlineHashtagsHere', add uniq.join(" ") to the innerHTML
 		const companyUpdateHeadlineHashtagsHere = document.getElementsByClassName('companyUpdateHeadlineHashtagsHere');
 		for (let i = 0; i < companyUpdateHeadlineHashtagsHere.length; i++) {
-			companyUpdateHeadlineHashtagsHere[i].innerHTML = uniq.join(" ");
+			companyUpdateHeadlineHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function companyUpdateBodyHashtagsUpdate() {
@@ -4378,10 +4529,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'companyUpdateBodyHashtagsHere', add uniq.join(" ") to the innerHTML
 		const companyUpdateBodyHashtagsHere = document.getElementsByClassName('companyUpdateBodyHashtagsHere');
 		for (let i = 0; i < companyUpdateBodyHashtagsHere.length; i++) {
-			companyUpdateBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+			companyUpdateBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function salePromotionTitleHashtagsUpdate() {
@@ -4411,10 +4569,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'salePromotionTitleHashtagsHere', add uniq.join(" ") to the innerHTML
 		const salePromotionTitleHashtagsHere = document.getElementsByClassName('salePromotionTitleHashtagsHere');
 		for (let i = 0; i < salePromotionTitleHashtagsHere.length; i++) {
-			salePromotionTitleHashtagsHere[i].innerHTML = uniq.join(" ");
+			salePromotionTitleHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function salePromotionBodyHashtagsUpdate() {
@@ -4444,10 +4609,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'hookGlobalHashtagsHere', add uniq.join(" ") to the innerHTML
 		const hookGlobalHashtagsHere = document.getElementsByClassName('hookGlobalHashtagsHere');
 		for (let i = 0; i < hookGlobalHashtagsHere.length; i++) {
-			hookGlobalHashtagsHere[i].innerHTML = uniq.join(" ");
+			hookGlobalHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function salePromotionProductOrServiceHashtagsUpdate() {
@@ -4477,10 +4649,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'salePromotionProductOrServiceHashtagsHere', add uniq.join(" ") to the innerHTML
 		const salePromotionProductOrServiceHashtagsHere = document.getElementsByClassName('salePromotionProductOrServiceHashtagsHere');
 		for (let i = 0; i < salePromotionProductOrServiceHashtagsHere.length; i++) {
-			salePromotionProductOrServiceHashtagsHere[i].innerHTML = uniq.join(" ");
+			salePromotionProductOrServiceHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function eventPromotionTitleHashtagsUpdate() {
@@ -4510,10 +4689,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'eventPromotionTitleHashtagsHere', add uniq.join(" ") to the innerHTML
 		const eventPromotionTitleHashtagsHere = document.getElementsByClassName('eventPromotionTitleHashtagsHere');
 		for (let i = 0; i < eventPromotionTitleHashtagsHere.length; i++) {
-			eventPromotionTitleHashtagsHere[i].innerHTML = uniq.join(" ");
+			eventPromotionTitleHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function eventPromotionLocationHashtagsUpdate() {
@@ -4543,10 +4729,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'eventPromotionLocationHashtagsHere', add uniq.join(" ") to the innerHTML
 		const eventPromotionLocationHashtagsHere = document.getElementsByClassName('eventPromotionLocationHashtagsHere');
 		for (let i = 0; i < eventPromotionLocationHashtagsHere.length; i++) {
-			eventPromotionLocationHashtagsHere[i].innerHTML = uniq.join(" ");
+			eventPromotionLocationHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function eventPromotionBodyHashtagsUpdate() {
@@ -4576,10 +4769,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'eventPromotionBodyHashtagsHere', add uniq.join(" ") to the innerHTML
 		const eventPromotionBodyHashtagsHere = document.getElementsByClassName('eventPromotionBodyHashtagsHere');
 		for (let i = 0; i < eventPromotionBodyHashtagsHere.length; i++) {
-			eventPromotionBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+			eventPromotionBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function testimonialReviewAuthorNameHashtagsUpdate() {
@@ -4609,10 +4809,16 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
 		// for all items with the class of 'testimonialReviewAuthorNameHashtagsHere', add uniq.join(" ") to the innerHTML
 		const testimonialReviewAuthorNameHashtagsHere = document.getElementsByClassName('testimonialReviewAuthorNameHashtagsHere');
 		for (let i = 0; i < testimonialReviewAuthorNameHashtagsHere.length; i++) {
-			testimonialReviewAuthorNameHashtagsHere[i].innerHTML = uniq.join(" ");
+			testimonialReviewAuthorNameHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function testimonialReviewAuthorTitleHashtagsUpdate() {
@@ -4642,10 +4848,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'testimonialReviewAuthorTitleHashtagsHere', add uniq.join(" ") to the innerHTML
 		const testimonialReviewAuthorTitleHashtagsHere = document.getElementsByClassName('testimonialReviewAuthorTitleHashtagsHere');
 		for (let i = 0; i < testimonialReviewAuthorTitleHashtagsHere.length; i++) {
-			testimonialReviewAuthorTitleHashtagsHere[i].innerHTML = uniq.join(" ");
+			testimonialReviewAuthorTitleHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function testimonialReviewAuthorCompanyHashtagsUpdate() {
@@ -4675,10 +4888,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'testimonialReviewAuthorCompanyHashtagsHere', add uniq.join(" ") to the innerHTML
 		const testimonialReviewAuthorCompanyHashtagsHere = document.getElementsByClassName('testimonialReviewAuthorCompanyHashtagsHere');
 		for (let i = 0; i < testimonialReviewAuthorCompanyHashtagsHere.length; i++) {
-			testimonialReviewAuthorCompanyHashtagsHere[i].innerHTML = uniq.join(" ");
+			testimonialReviewAuthorCompanyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 	function testimonialReviewBodyHashtagsUpdate() {
@@ -4708,10 +4928,17 @@
 		let inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates = inputLowerNoSpecialNoJunkNoCommonWithHashWithSpace.split(" ");
 		let uniq = [...new Set(inputLowerNoSpecialNoJunkNoCommonWithHashWithSpaceNoDuplicates)];
 
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove();"/></span>';
+			}
+		});
+
 		// for all items with the class of 'testimonialReviewBodyHashtagsHere', add uniq.join(" ") to the innerHTML
 		const testimonialReviewBodyHashtagsHere = document.getElementsByClassName('testimonialReviewBodyHashtagsHere');
 		for (let i = 0; i < testimonialReviewBodyHashtagsHere.length; i++) {
-			testimonialReviewBodyHashtagsHere[i].innerHTML = uniq.join(" ");
+			testimonialReviewBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
 	}
 
