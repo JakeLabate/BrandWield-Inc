@@ -227,6 +227,15 @@ summary:hover {
 .flex {
     display: flex;
 }
+.flexAllCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
 
 .var {
     display: flex;

@@ -2207,13 +2207,16 @@
 						<div class="newContentVar">
 								<span class="flex-align-items-center">
 									<span class="cleanCursorInputIcon"><img alt="" src="media/icons/fieldTypes/url.svg" height="20" width="20" /></span>
-									<select id="linkGlobalProtocol" class="cleanCursorInputIcon" style="font-size: 14px; padding: 10px 4px 11px 4px; border: none;">
+									<!-- do we need this?
+									<select id="linkGlobalProtocol" class="cleanCursorInputIcon" style="font-size: 14px; padding: 10px 4px 11px 4px; border: none;" onchange="linkProtocolGlobalUpdate();">
 										<option value="https://" selected>https://</option>
 										<option value="http://">http://</option>
 									</select>
+									-->
 									<input autocomplete="off" id="linkGlobal" type="url" class="cleanCursorInput" placeholder="www.example.com" size="50" style="margin-left: 0 !important;"
 										   onfocus="hideNewContentVarSuggestions(); document.getElementById('linkGlobalSuggestions').style.display = 'block';"
 										   onkeyup="linkGlobalUpdate();" />
+									<span id="linkGlobalStatus" class="cleanCursorInputIcon" style="font-size: 14px; padding: 10px 4px 11px 4px; border: none;"></span>
 									<img id="linkGlobalClear" class="newContentFieldEnhancement" alt="" src="media/icons/clear.svg" onclick="clearLinkGlobal();" />
 								</span>
 									<span class="flex-justify-content-end">
@@ -2406,7 +2409,13 @@
 			<!-- IMAGES -->
 			<div id="finalImages">
 
-				<div id="finalImageShowcase" style="display: flex; align-items: center; justify-content: center; height: 650px; width: 100%;">
+				<div id="finalImageShowcase" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 650px; width: 100%;">
+					<div id="finalImageHorizontalIcons" class="flexAllCenter" style="position: relative; right: 146px; bottom: 5px;">
+						<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; margin: 2px;" />
+						<img alt="" src="media/icons/socialMedia/linkedin.png" style="height: 25px; margin: 2px;" />
+						<img alt="" src="media/icons/socialMedia/twitter.png" style="height: 25px; margin: 2px;" />
+						<text style="color: #333; font-size: 14px; margin: 2px;">1200w X 630h</text>
+					</div>
 					<div id="finalImageHorizontal" class="primaryColorGlobalHere">
 						<div class="finalImageWrapper">
 							<!-- Global Start -->
@@ -2436,12 +2445,10 @@
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
-						<div>
-							<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; position: relative; bottom: 45px;" />
-							<img alt="" src="media/icons/socialMedia/linkedin.png" style="height: 25px; position: relative; bottom: 45px;" />
-							<img alt="" src="media/icons/socialMedia/twitter.png" style="height: 25px; position: relative; bottom: 45px;" />
-							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1200w X 630h</text>
-						</div>
+					</div>
+					<div id="finalImageSquareIcons" class="flexAllCenter hidden" style="position: relative; right: 108px; bottom: 5px;">
+						<img alt="" src="media/icons/socialMedia/googleMyBusiness.png" style="height: 25px; margin: 2px;" />
+						<text style="color: #333; font-size: 14px; margin: 2px;">1080w X 1080h</text>
 					</div>
 					<div id="finalImageSquare" class="primaryColorGlobalHere">
 						<div class="finalImageWrapper">
@@ -2472,10 +2479,10 @@
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
-						<div>
-							<img alt="" src="media/icons/socialMedia/googleMyBusiness.png" style="height: 25px; position: relative; bottom: 45px;" />
-							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1080h</text>
-						</div>
+					</div>
+					<div id="finalImageVerticalIcons" class="flexAllCenter hidden" style="position: relative; right: 108px; bottom: 5px;">
+						<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; margin: 2px;" />
+						<text style="color: #333; font-size: 14px; margin: 2px;">1080w X 1080h</text>
 					</div>
 					<div id="finalImageVertical" class="primaryColorGlobalHere">
 						<div class="finalImageWrapper">
@@ -2506,10 +2513,12 @@
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;"  style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
-						<div>
-							<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; position: relative; bottom: 45px;" />
-							<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1350h</text>
-						</div>
+
+					</div>
+					<div id="finalImageStoryIcons" class="flexAllCenter hidden" style="position: relative; right: 95px; bottom: 5px;">
+						<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; margin: 2px;" />
+						<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; margin: 2px;" />
+						<text style="color: #333; font-size: 14px; margin: 2px;">1080w X 1920h</text>
 					</div>
 					<div id="finalImageStory" class="primaryColorGlobalHere">
 						<div class="finalImageWrapper">
@@ -2540,460 +2549,465 @@
 							<text class="callToActionGlobalHere"></text>
 							<img class="squareLogoGlobalHere" alt="" src="" height="50px;" width="50px;" style="z-index: 999; display: none; position: relative; bottom: 5px; right: 5px;" />
 						</div>
-						<img alt="" src="media/icons/socialMedia/facebook.png" style="height: 25px; position: relative; bottom: 45px;" />
-						<img alt="" src="media/icons/socialMedia/instagram.png" style="height: 25px; position: relative; bottom: 45px;" />
-						<text style="color: #333; font-size: 14px; position: relative; left: 3px; bottom: 52px;">1080w X 1920h</text>
 					</div>
 				</div>
 
 				<!-- display selectors -->
 				<aside style="display: flex; align-items: flex-end; justify-content: flex-end;">
-					<div id="finalImageHorizontalDummy" class="primaryColorGlobalHere" onclick="previewFinalImageHorizontal();"></div>
-					<div id="finalImageSquareDummy" class="primaryColorGlobalHere" onclick="previewFinalImageSquare();"></div>
-					<div id="finalImageVerticalDummy" class="primaryColorGlobalHere" onclick="previewFinalImageVertical();"></div>
-					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" onclick="previewFinalImageStory();"></div>
+					<div id="finalImageHorizontalDummy" class="primaryColorGlobalHere" style="z-index: 99999 !important;" onclick="previewFinalImageHorizontal();"></div>
+					<div id="finalImageSquareDummy" class="primaryColorGlobalHere" style="z-index: 99999 !important;" onclick="previewFinalImageSquare();"></div>
+					<div id="finalImageVerticalDummy" class="primaryColorGlobalHere" style="z-index: 99999 !important;" onclick="previewFinalImageVertical();"></div>
+					<div id="finalImageStoryDummy" class="primaryColorGlobalHere" style="z-index: 99999 !important;" onclick="previewFinalImageStory();"></div>
 				</aside>
 
-			</div>
+				<!-- TEXT -->
+				<div style="position: relative; bottom: 38px;">
 
-			<!-- TEXT -->
-			<div>
+					<!-- Text Tabs -->
+					<div id="finalTextNav">
+						<div id="masterText" class="finalTextNavDiv" onclick="
+							this.style.backgroundColor = '#a4a4a4';
+							previewFinalImageHorizontal(); // relevant image size to platform
+							updateCharacterCount(); // update character counts
+							document.getElementById('masterTextBox').style.display = 'block';
+							document.getElementById('facebookTextBox').style.display = 'none';
+							document.getElementById('instagramTextBox').style.display = 'none';
+							document.getElementById('linkedinTextBox').style.display = 'none';
+							document.getElementById('twitterTextBox').style.display = 'none';
+							document.getElementById('googlemybusinessTextBox').style.display = 'none';
+							document.getElementById('facebookText').style.backgroundColor = 'white';
+							document.getElementById('instagramText').style.backgroundColor = 'white';
+							document.getElementById('linkedinText').style.backgroundColor = 'white';
+							document.getElementById('twitterText').style.backgroundColor = 'white';
+							document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+						">Full</div>
+						<div id="facebookText" class="finalTextNavDiv" onclick="
+							this.style.backgroundColor = '#a4a4a4';
+							previewFinalImageHorizontal(); // relevant image size to platform
+							updateCharacterCount(); // update character counts
+							document.getElementById('masterTextBox').style.display = 'none';
+							document.getElementById('facebookTextBox').style.display = 'block';
+							document.getElementById('instagramTextBox').style.display = 'none';
+							document.getElementById('linkedinTextBox').style.display = 'none';
+							document.getElementById('twitterTextBox').style.display = 'none';
+							document.getElementById('googlemybusinessTextBox').style.display = 'none';
+							document.getElementById('masterText').style.backgroundColor = 'white';
+							document.getElementById('instagramText').style.backgroundColor = 'white';
+							document.getElementById('linkedinText').style.backgroundColor = 'white';
+							document.getElementById('twitterText').style.backgroundColor = 'white';
+							document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+						"><img alt="" src="media/icons/socialMedia/facebook.png" /></div>
+						<div id="instagramText" class="finalTextNavDiv"  onclick="
+							this.style.backgroundColor = '#a4a4a4';
+							previewFinalImageVertical(); // relevant image size to platform
+							updateCharacterCount(); // update character counts
+							document.getElementById('masterTextBox').style.display = 'none';
+							document.getElementById('facebookTextBox').style.display = 'none';
+							document.getElementById('instagramTextBox').style.display = 'block';
+							document.getElementById('linkedinTextBox').style.display = 'none';
+							document.getElementById('twitterTextBox').style.display = 'none';
+							document.getElementById('masterText').style.backgroundColor = 'white';
+							document.getElementById('facebookText').style.backgroundColor = 'white';
+							document.getElementById('linkedinText').style.backgroundColor = 'white';
+							document.getElementById('twitterText').style.backgroundColor = 'white';
+							document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+							document.getElementById('googlemybusinessTextBox').style.display = 'none';
+						"><img alt="" src="media/icons/socialMedia/instagram.png" /></div>
+						<div id="linkedinText" class="finalTextNavDiv" onclick="
+							this.style.backgroundColor = '#a4a4a4';
+							previewFinalImageHorizontal(); // relevant image size to platform
+							updateCharacterCount(); // update character counts
+							document.getElementById('masterTextBox').style.display = 'none';
+							document.getElementById('facebookTextBox').style.display = 'none';
+							document.getElementById('instagramTextBox').style.display = 'none';
+							document.getElementById('linkedinTextBox').style.display = 'block';
+							document.getElementById('twitterTextBox').style.display = 'none';
+							document.getElementById('googlemybusinessTextBox').style.display = 'none';
+							document.getElementById('masterText').style.backgroundColor = 'white';
+							document.getElementById('facebookText').style.backgroundColor = 'white';
+							document.getElementById('instagramText').style.backgroundColor = 'white';
+							document.getElementById('twitterText').style.backgroundColor = 'white';
+							document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+						"><img alt="" src="media/icons/socialMedia/linkedin.png" /></div>
+						<div id="twitterText" class="finalTextNavDiv" onclick="
+							this.style.backgroundColor = '#a4a4a4';
+							previewFinalImageHorizontal(); // relevant image size to platform
+							updateCharacterCount(); // update character counts
+							document.getElementById('masterTextBox').style.display = 'none';
+							document.getElementById('facebookTextBox').style.display = 'none';
+							document.getElementById('instagramTextBox').style.display = 'none';
+							document.getElementById('linkedinTextBox').style.display = 'none';
+							document.getElementById('twitterTextBox').style.display = 'block';
+							document.getElementById('googlemybusinessTextBox').style.display = 'none';
+							document.getElementById('masterText').style.backgroundColor = 'white';
+							document.getElementById('facebookText').style.backgroundColor = 'white';
+							document.getElementById('instagramText').style.backgroundColor = 'white';
+							document.getElementById('linkedinText').style.backgroundColor = 'white';
+							document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
+						"><img alt="" src="media/icons/socialMedia/twitter.png" /></div>
+						<div id="googlemybusinessText" class="finalTextNavDiv" onclick="
+							this.style.backgroundColor = '#a4a4a4';
+							previewFinalImageSquare(); // relevant image size to platform
+							updateCharacterCount(); // update character counts
+							document.getElementById('masterTextBox').style.display = 'none';
+							document.getElementById('facebookTextBox').style.display = 'none';
+							document.getElementById('instagramTextBox').style.display = 'none';
+							document.getElementById('linkedinTextBox').style.display = 'none';
+							document.getElementById('twitterTextBox').style.display = 'none';
+							document.getElementById('googlemybusinessTextBox').style.display = 'block';
+							document.getElementById('masterText').style.backgroundColor = 'white';
+							document.getElementById('facebookText').style.backgroundColor = 'white';
+							document.getElementById('instagramText').style.backgroundColor = 'white';
+							document.getElementById('linkedinText').style.backgroundColor = 'white';
+							document.getElementById('twitterText').style.backgroundColor = 'white';
+						"><img alt="" src="media/icons/socialMedia/googleMyBusiness.png" /></div>
+					</div>
 
-				<!-- Text Tabs -->
-				<div id="finalTextNav">
-					<div id="masterText" class="finalTextNavDiv" onclick="
-						this.style.backgroundColor = '#a4a4a4';
-						previewFinalImageHorizontal(); // relevant image size to platform
-						document.getElementById('masterTextBox').style.display = 'block';
-						document.getElementById('facebookTextBox').style.display = 'none';
-						document.getElementById('instagramTextBox').style.display = 'none';
-						document.getElementById('linkedinTextBox').style.display = 'none';
-						document.getElementById('twitterTextBox').style.display = 'none';
-						document.getElementById('googlemybusinessTextBox').style.display = 'none';
-						document.getElementById('facebookText').style.backgroundColor = 'white';
-						document.getElementById('instagramText').style.backgroundColor = 'white';
-						document.getElementById('linkedinText').style.backgroundColor = 'white';
-						document.getElementById('twitterText').style.backgroundColor = 'white';
-						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
-					">Full</div>
-					<div id="facebookText" class="finalTextNavDiv" onclick="
-						this.style.backgroundColor = '#a4a4a4';
-						previewFinalImageHorizontal(); // relevant image size to platform
-						document.getElementById('masterTextBox').style.display = 'none';
-						document.getElementById('facebookTextBox').style.display = 'block';
-						document.getElementById('instagramTextBox').style.display = 'none';
-						document.getElementById('linkedinTextBox').style.display = 'none';
-						document.getElementById('twitterTextBox').style.display = 'none';
-						document.getElementById('googlemybusinessTextBox').style.display = 'none';
-						document.getElementById('masterText').style.backgroundColor = 'white';
-						document.getElementById('instagramText').style.backgroundColor = 'white';
-						document.getElementById('linkedinText').style.backgroundColor = 'white';
-						document.getElementById('twitterText').style.backgroundColor = 'white';
-						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
-					"><img alt="" src="media/icons/socialMedia/facebook.png" /></div>
-					<div id="instagramText" class="finalTextNavDiv"  onclick="
-						this.style.backgroundColor = '#a4a4a4';
-						previewFinalImageVertical(); // relevant image size to platform
-						document.getElementById('masterTextBox').style.display = 'none';
-						document.getElementById('facebookTextBox').style.display = 'none';
-						document.getElementById('instagramTextBox').style.display = 'block';
-						document.getElementById('linkedinTextBox').style.display = 'none';
-						document.getElementById('twitterTextBox').style.display = 'none';
-						document.getElementById('masterText').style.backgroundColor = 'white';
-						document.getElementById('facebookText').style.backgroundColor = 'white';
-						document.getElementById('linkedinText').style.backgroundColor = 'white';
-						document.getElementById('twitterText').style.backgroundColor = 'white';
-						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
-						document.getElementById('googlemybusinessTextBox').style.display = 'none';
-					"><img alt="" src="media/icons/socialMedia/instagram.png" /></div>
-					<div id="linkedinText" class="finalTextNavDiv" onclick="
-						this.style.backgroundColor = '#a4a4a4';
-						previewFinalImageHorizontal(); // relevant image size to platform
-						document.getElementById('masterTextBox').style.display = 'none';
-						document.getElementById('facebookTextBox').style.display = 'none';
-						document.getElementById('instagramTextBox').style.display = 'none';
-						document.getElementById('linkedinTextBox').style.display = 'block';
-						document.getElementById('twitterTextBox').style.display = 'none';
-						document.getElementById('googlemybusinessTextBox').style.display = 'none';
-						document.getElementById('masterText').style.backgroundColor = 'white';
-						document.getElementById('facebookText').style.backgroundColor = 'white';
-						document.getElementById('instagramText').style.backgroundColor = 'white';
-						document.getElementById('twitterText').style.backgroundColor = 'white';
-						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
-					"><img alt="" src="media/icons/socialMedia/linkedin.png" /></div>
-					<div id="twitterText" class="finalTextNavDiv" onclick="
-						this.style.backgroundColor = '#a4a4a4';
-						previewFinalImageHorizontal(); // relevant image size to platform
-						document.getElementById('masterTextBox').style.display = 'none';
-						document.getElementById('facebookTextBox').style.display = 'none';
-						document.getElementById('instagramTextBox').style.display = 'none';
-						document.getElementById('linkedinTextBox').style.display = 'none';
-						document.getElementById('twitterTextBox').style.display = 'block';
-						document.getElementById('googlemybusinessTextBox').style.display = 'none';
-						document.getElementById('masterText').style.backgroundColor = 'white';
-						document.getElementById('facebookText').style.backgroundColor = 'white';
-						document.getElementById('instagramText').style.backgroundColor = 'white';
-						document.getElementById('linkedinText').style.backgroundColor = 'white';
-						document.getElementById('googlemybusinessText').style.backgroundColor = 'white';
-					"><img alt="" src="media/icons/socialMedia/twitter.png" /></div>
-					<div id="googlemybusinessText" class="finalTextNavDiv" onclick="
-						this.style.backgroundColor = '#a4a4a4';
-						previewFinalImageSquare(); // relevant image size to platform
-						document.getElementById('masterTextBox').style.display = 'none';
-						document.getElementById('facebookTextBox').style.display = 'none';
-						document.getElementById('instagramTextBox').style.display = 'none';
-						document.getElementById('linkedinTextBox').style.display = 'none';
-						document.getElementById('twitterTextBox').style.display = 'none';
-						document.getElementById('googlemybusinessTextBox').style.display = 'block';
-						document.getElementById('masterText').style.backgroundColor = 'white';
-						document.getElementById('facebookText').style.backgroundColor = 'white';
-						document.getElementById('instagramText').style.backgroundColor = 'white';
-						document.getElementById('linkedinText').style.backgroundColor = 'white';
-						document.getElementById('twitterText').style.backgroundColor = 'white';
-					"><img alt="" src="media/icons/socialMedia/googleMyBusiness.png" /></div>
+					<!-- Master -->
+					<p id="masterTextBox" style="display: block; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<br><br>
+						<!-- Generic Post -->
+						<text class="genericPostBodyHere"></text>
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<text class="companyUpdateBodyHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<text class="salePromotionBodyHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<text class="eventPromotionBodyHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<text class="testimonialReviewBodyHere"></text>
+						<!-- Global End -->
+						<br><br>
+						<text class="callToActionGlobalHere"></text>
+						<br><br>
+						<text class="linkGlobalHere"></text>
+						<!-- Hashtags -->
+						<br>
+						<br>
+						<text id="masterTextHashtags">
+							<text class="hookGlobalHashtagsHere"></text>
+							<text class="hookResolutionGlobalHashtagsHere"></text>
+							<text class="genericPostBodyHashtagsHere"></text>
+							<text class="companyUpdateHeadlineHashtagsHere"></text>
+							<text class="companyUpdateBodyHashtagsHere"></text>
+							<text class="salePromotionTitleHashtagsHere"></text>
+							<text class="salePromotionProductOrServiceHashtagsHere"></text>
+							<text class="salePromotionBodyHashtagsHere"></text>
+							<text class="eventPromotionTitleHashtagsHere"></text>
+							<text class="eventPromotionLocationHashtagsHere"></text>
+							<text class="eventPromotionBodyHashtagsHere"></text>
+							<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+							<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+							<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+							<text class="testimonialReviewBodyHashtagsHere"></text>
+						</text>
+						<text id="masterTextHashtagsUnique"></text><br />
+						<span style="display: flex; justify-content: flex-end" contenteditable="false"><text id="masterTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="masterTextCharacterCountMax">∞</text></span>
+					</p>
+
+
+					<!-- Facebook -->
+					<p id="facebookTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<br><br>
+						<!-- Generic Post -->
+						<text class="genericPostBodyHere"></text>
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<text class="companyUpdateBodyHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<text class="salePromotionBodyHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<text class="eventPromotionBodyHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<text class="testimonialReviewBodyHere"></text>
+						<!-- Global End -->
+						<br><br>
+						<text class="callToActionGlobalHere"></text>
+						<br><br>
+						<text class="linkGlobalHere"></text>
+						<!-- Hashtags -->
+						<br>
+						<br>
+						<text id="facebookTextHashtags">
+							<text class="hookGlobalHashtagsHere"></text>
+							<text class="hookResolutionGlobalHashtagsHere"></text>
+							<text class="genericPostBodyHashtagsHere"></text>
+							<text class="companyUpdateHeadlineHashtagsHere"></text>
+							<text class="companyUpdateBodyHashtagsHere"></text>
+							<text class="salePromotionTitleHashtagsHere"></text>
+							<text class="salePromotionProductOrServiceHashtagsHere"></text>
+							<text class="salePromotionBodyHashtagsHere"></text>
+							<text class="eventPromotionTitleHashtagsHere"></text>
+							<text class="eventPromotionLocationHashtagsHere"></text>
+							<text class="eventPromotionBodyHashtagsHere"></text>
+							<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+							<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+							<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+							<text class="testimonialReviewBodyHashtagsHere"></text>
+						</text>
+						<text id="facebookTextHashtagsUnique"></text><br />
+						<span style="display: flex; justify-content: flex-end" contenteditable="false"><text id="facebookTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="facebookTextCharacterCountMax">60000</text></span>
+					</p>
+
+					<!-- Instagram -->
+					<p id="instagramTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<br><br>
+						<!-- Generic Post -->
+						<text class="genericPostBodyHere"></text>
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<text class="companyUpdateBodyHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<text class="salePromotionBodyHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<text class="eventPromotionBodyHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<text class="testimonialReviewBodyHere"></text>
+						<!-- Global End -->
+						<br><br>
+						<text class="callToActionGlobalHere"></text>
+						<br><br>
+						<text class="linkGlobalHere"></text>
+						<!-- Hashtags -->
+						<br>
+						<br>
+						<text id="instagramTextHashtags">
+							<text class="hookGlobalHashtagsHere"></text>
+							<text class="hookResolutionGlobalHashtagsHere"></text>
+							<text class="genericPostBodyHashtagsHere"></text>
+							<text class="companyUpdateHeadlineHashtagsHere"></text>
+							<text class="companyUpdateBodyHashtagsHere"></text>
+							<text class="salePromotionTitleHashtagsHere"></text>
+							<text class="salePromotionProductOrServiceHashtagsHere"></text>
+							<text class="salePromotionBodyHashtagsHere"></text>
+							<text class="eventPromotionTitleHashtagsHere"></text>
+							<text class="eventPromotionLocationHashtagsHere"></text>
+							<text class="eventPromotionBodyHashtagsHere"></text>
+							<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+							<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+							<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+							<text class="testimonialReviewBodyHashtagsHere"></text>
+						</text><br />
+						<span style="display: flex; justify-content: flex-end" contenteditable="false"><text id="instagramTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="instagramTextCharacterCountMax">2200</text></span>
+					</p>
+
+					<!-- LinkedIn -->
+					<p id="linkedinTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<br><br>
+						<!-- Generic Post -->
+						<text class="genericPostBodyHere"></text>
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<text class="companyUpdateBodyHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<text class="salePromotionBodyHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<text class="eventPromotionBodyHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<text class="testimonialReviewBodyHere"></text>
+						<!-- Global End -->
+						<br><br>
+						<text class="callToActionGlobalHere"></text>
+						<br><br>
+						<text class="linkGlobalHere"></text>
+						<!-- Hashtags -->
+						<br>
+						<br>
+						<text id="linkedinTextHashtags">
+							<text class="hookGlobalHashtagsHere"></text>
+							<text class="hookResolutionGlobalHashtagsHere"></text>
+							<text class="genericPostBodyHashtagsHere"></text>
+							<text class="companyUpdateHeadlineHashtagsHere"></text>
+							<text class="companyUpdateBodyHashtagsHere"></text>
+							<text class="salePromotionTitleHashtagsHere"></text>
+							<text class="salePromotionProductOrServiceHashtagsHere"></text>
+							<text class="salePromotionBodyHashtagsHere"></text>
+							<text class="eventPromotionTitleHashtagsHere"></text>
+							<text class="eventPromotionLocationHashtagsHere"></text>
+							<text class="eventPromotionBodyHashtagsHere"></text>
+							<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+							<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+							<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+							<text class="testimonialReviewBodyHashtagsHere"></text>
+						</text><br />
+						<span style="display: flex; justify-content: flex-end" contenteditable="false"><text id="linkedinTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="linkedinTextCharacterCountMax">3000</text></span>
+					</p>
+
+					<!-- Twitter -->
+					<p id="twitterTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<br><br>
+						<!-- Generic Post -->
+						<text class="genericPostBodyHere"></text>
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<text class="companyUpdateBodyHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<text class="salePromotionBodyHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<text class="eventPromotionBodyHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<text class="testimonialReviewBodyHere"></text>
+						<!-- Global End -->
+						<br><br>
+						<text class="callToActionGlobalHere"></text>
+						<br><br>
+						<text class="linkGlobalHere"></text>
+						<!-- Hashtags -->
+						<br>
+						<br>
+						<text id="twitterTextHashtags">
+							<text class="hookGlobalHashtagsHere"></text>
+							<text class="hookResolutionGlobalHashtagsHere"></text>
+							<text class="genericPostBodyHashtagsHere"></text>
+							<text class="companyUpdateHeadlineHashtagsHere"></text>
+							<text class="companyUpdateBodyHashtagsHere"></text>
+							<text class="salePromotionTitleHashtagsHere"></text>
+							<text class="salePromotionProductOrServiceHashtagsHere"></text>
+							<text class="salePromotionBodyHashtagsHere"></text>
+							<text class="eventPromotionTitleHashtagsHere"></text>
+							<text class="eventPromotionLocationHashtagsHere"></text>
+							<text class="eventPromotionBodyHashtagsHere"></text>
+							<text class="testimonialReviewAuthorNameHashtagsHere"></text>
+							<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
+							<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
+							<text class="testimonialReviewBodyHashtagsHere"></text>
+						</text><br />
+						<span style="display: flex; justify-content: flex-end" contenteditable="false"><text id="twitterTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="twitterTextCharacterCountMax">280</text></span>
+					</p>
+
+					<!-- Google My Business -->
+					<p id="googlemybusinessTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+						<!-- Global Start -->
+						<text class="hookGlobalHere"></text>
+						<text class="hookResolutionGlobalHere"></text>
+						<br><br>
+						<!-- Generic Post -->
+						<text class="genericPostBodyHere"></text>
+						<!-- Company Update -->
+						<text class="companyUpdateHeadlineHere"></text>
+						<text class="companyUpdateDateHere"></text>
+						<text class="companyUpdateBodyHere"></text>
+						<!-- Sale/Promotion -->
+						<text class="salePromotionTitleHere"></text>
+						<text class="salePromotionProductOrServiceHere"></text>
+						<text class="salePromotionStartDateHere"></text>
+						<text class="salePromotionEndDateHere"></text>
+						<text class="salePromotionBodyHere"></text>
+						<!-- Event Promotion-->
+						<text class="eventPromotionTitleHere"></text>
+						<text class="eventPromotionStartDateHere"></text>
+						<text class="eventPromotionEndDateHere"></text>
+						<text class="eventPromotionLocationHere"></text>
+						<text class="eventPromotionBodyHere"></text>
+						<!-- Testimonial / Review -->
+						<text class="testimonialReviewAuthorNameHere"></text>
+						<text class="testimonialReviewAuthorHeadshotHere"></text>
+						<text class="testimonialReviewAuthorTitleHere"></text>
+						<text class="testimonialReviewAuthorCompanyHere"></text>
+						<text class="testimonialReviewAuthorDateHere"></text>
+						<text class="testimonialReviewBodyHere"></text>
+						<!-- Global End -->
+						<br><br>
+						<text class="callToActionGlobalHere"></text>
+						<br><br>
+						<text class="linkGlobalHere"></text><br />
+						<span style="display: flex; justify-content: flex-end;" contenteditable="false"><text id="googlemybusinessTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="googlemybusinessTextCharacterCountMax">1500</text></span>
+					</p>
+
+					<!-- "Edit" label that will remain visible for all platforms -->
+					<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
+
+					<!-- Download content button -->
+					<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
+					<div id="output"></div>
+
 				</div>
-
-				<!-- Master -->
-				<p id="masterTextBox" style="display: block; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<text class="genericPostBodyHere"></text>
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<text class="companyUpdateBodyHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<text class="salePromotionBodyHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<text class="eventPromotionBodyHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<text class="testimonialReviewBodyHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<text class="linkGlobalHere"></text>
-					<!-- Hashtags -->
-					<br>
-					<br>
-					<text id="masterTextHashtags">
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
-					</text>
-					<text id="masterTextHashtagNoDuplicates"></text>
-				</p >
-
-				<!-- Facebook
-				- horizontal image + story image
-				- 60000-character limit
-				-
-				-->
-				<p id="facebookTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<text class="genericPostBodyHere"></text>
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<text class="companyUpdateBodyHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<text class="salePromotionBodyHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<text class="eventPromotionBodyHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<text class="testimonialReviewBodyHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<text class="linkGlobalHere"></text>
-					<!-- Hashtags -->
-					<br>
-					<br>
-					<text id="facebookTextHashtags">
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
-					</text>
-				</p>
-
-				<!-- Instagram
-				- vertical image + story image
-				- 2200-character limit
-				- 30-hashtag limit
-				-
-				-->
-				<p id="instagramTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<text class="genericPostBodyHere"></text>
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<text class="companyUpdateBodyHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<text class="salePromotionBodyHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<text class="eventPromotionBodyHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<text class="testimonialReviewBodyHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<text class="linkGlobalHere"></text>
-					<!-- Hashtags -->
-					<br>
-					<br>
-					<text id="instagramTextHashtags">
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
-					</text>
-				</p>
-
-				<!-- LinkedIn
-				- horizontal image
-				- 3000-character limit
-				-
-				-->
-				<p id="linkedinTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<text class="genericPostBodyHere"></text>
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<text class="companyUpdateBodyHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<text class="salePromotionBodyHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<text class="eventPromotionBodyHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<text class="testimonialReviewBodyHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<text class="linkGlobalHere"></text>
-					<!-- Hashtags -->
-					<br>
-					<br>
-					<text id="linkedinTextHashtags">
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
-					</text>
-				</p>
-
-				<!-- Twitter
-				- horizontal image
-				- 280-character limit
-				-
-				-->
-				<p id="twitterTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<text class="genericPostBodyHere"></text>
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<text class="companyUpdateBodyHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<text class="salePromotionBodyHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<text class="eventPromotionBodyHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<text class="testimonialReviewBodyHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<text class="linkGlobalHere"></text>
-					<!-- Hashtags -->
-					<br>
-					<br>
-					<text id="twitterTextHashtags">
-						<text class="hookGlobalHashtagsHere"></text>
-						<text class="hookResolutionGlobalHashtagsHere"></text>
-						<text class="genericPostBodyHashtagsHere"></text>
-						<text class="companyUpdateHeadlineHashtagsHere"></text>
-						<text class="companyUpdateBodyHashtagsHere"></text>
-						<text class="salePromotionTitleHashtagsHere"></text>
-						<text class="salePromotionProductOrServiceHashtagsHere"></text>
-						<text class="salePromotionBodyHashtagsHere"></text>
-						<text class="eventPromotionTitleHashtagsHere"></text>
-						<text class="eventPromotionLocationHashtagsHere"></text>
-						<text class="eventPromotionBodyHashtagsHere"></text>
-						<text class="testimonialReviewAuthorNameHashtagsHere"></text>
-						<text class="testimonialReviewAuthorTitleHashtagsHere"></text>
-						<text class="testimonialReviewAuthorCompanyHashtagsHere"></text>
-						<text class="testimonialReviewBodyHashtagsHere"></text>
-					</text>
-				</p>
-
-				<!-- Google My Business
-				- square image
-				- title: 58-character limit
-				- 1500-character limit
-				- no hashtags = DONE
-				-
-				-->
-				<p id="googlemybusinessTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true">
-					<!-- Global Start -->
-					<text class="hookGlobalHere"></text>
-					<text class="hookResolutionGlobalHere"></text>
-					<!-- Generic Post -->
-					<text class="genericPostBodyHere"></text>
-					<!-- Company Update -->
-					<text class="companyUpdateHeadlineHere"></text>
-					<text class="companyUpdateDateHere"></text>
-					<text class="companyUpdateBodyHere"></text>
-					<!-- Sale/Promotion -->
-					<text class="salePromotionTitleHere"></text>
-					<text class="salePromotionProductOrServiceHere"></text>
-					<text class="salePromotionStartDateHere"></text>
-					<text class="salePromotionEndDateHere"></text>
-					<text class="salePromotionBodyHere"></text>
-					<!-- Event Promotion-->
-					<text class="eventPromotionTitleHere"></text>
-					<text class="eventPromotionStartDateHere"></text>
-					<text class="eventPromotionEndDateHere"></text>
-					<text class="eventPromotionLocationHere"></text>
-					<text class="eventPromotionBodyHere"></text>
-					<!-- Testimonial / Review -->
-					<text class="testimonialReviewAuthorNameHere"></text>
-					<text class="testimonialReviewAuthorHeadshotHere"></text>
-					<text class="testimonialReviewAuthorTitleHere"></text>
-					<text class="testimonialReviewAuthorCompanyHere"></text>
-					<text class="testimonialReviewAuthorDateHere"></text>
-					<text class="testimonialReviewBodyHere"></text>
-					<!-- Global End -->
-					<text class="callToActionGlobalHere"></text>
-					<text class="linkGlobalHere"></text>
-				</p>
-
-				<!-- "Edit" label that will remain visible for all platforms -->
-				<span style="user-select: none; position: relative; top: -15px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
-
-				<!-- Download content button -->
-				<button class="copyTextButton" onclick="downloadContent();party.confetti(this,{count:party.variation.range(20,40),size:party.variation.range(0.8,1.2),});">Download Content</button>
-				<div id="output"></div>
-
 			</div>
 
 			<!-- Social Sendables -->
@@ -3296,14 +3310,6 @@
 	</span>
 </div>
 
-<!-- Hashtag contextmenu -->
-<div id="hashtagContextMenu" style="background-color: #1da1f2; height: 100px; width: 100px;">
-	<span id="hashtagContextMenuOptions">
-		<span id="hashtagContextMenuDeleteThis" class="hashtagContextMenuOption" onclick="hashtagContextMenuDeleteThis();">Delete for this platform</span>
-		<span id="hashtagContextMenuDeleteAll" class="hashtagContextMenuOption" onclick="hashtagContextMenuDeleteAll();">Delete for all platforms</span>
-	</span>
-</div>
-
 <!-- Signup form in a modal -->
 <div id="modal-signup" class="modal" style="display: none;">
   <form>
@@ -3375,6 +3381,7 @@
 			event.preventDefault();
 			showBrandPopup();
 			// get values
+			let inputId = event.target.id;
 			let inputType = event.target.type;
 			let brandSearch = document.getElementById('brandSearch');
 			// set label
@@ -3384,7 +3391,7 @@
 				brandSearch.setAttribute('list', 'text');
 				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 					document.getElementById('brandRecommendations').innerHTML +=
-						'<div class="brandRecommendation" onmouseover="" onclick="">' +
+						'<div class="brandRecommendation" onmouseover="" onclick="document.getElementById(\'' + inputId + '\').value = this.lastChild.innerText; updateNewContentTextFields(); closeBrandPopup();">' +
 							'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 							'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
 						'</div>';
@@ -3394,7 +3401,7 @@
 				brandSearch.setAttribute('list', 'url')
 				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 					document.getElementById('brandRecommendations').innerHTML +=
-						'<div class="brandRecommendation" onmouseover="" onclick="">' +
+						'<div class="brandRecommendation" onmouseover="" onclick="document.getElementById(\'' + inputId + '\').value = this.lastChild.lastChild.innerText; linkGlobalUpdate(); closeBrandPopup();">' +
 							'<div>' +
 								'<div class="brandRecommendationInnerText" style="display: flex;"><img alt="" style="margin-right: 3px;" height="16px" width="16px" src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=' + document.getElementById('brandSearch').list.options[i].value + '&size=96' + '" />' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 								'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
@@ -3407,7 +3414,7 @@
 
 				for (let i = 0; i < document.getElementById('brandSearch').list.options.length; i++) {
 					document.getElementById('brandRecommendations').innerHTML +=
-						'<div class="brandRecommendation" style="display: flex; align-items: center; justify-content: space-between;" onmouseover="" onclick="">' +
+						'<div class="brandRecommendation" style="display: flex; align-items: center; justify-content: space-between;" onmouseover="" onclick="document.getElementById(\'' + inputId + '\').value = this.firstChild.lastChild.innerText; updateNewContentColorFields(); closeBrandPopup();">' +
 							'<div>' +
 								'<div class="brandRecommendationInnerText">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 								'<div class="brandRecommendationValue">' + document.getElementById('brandSearch').list.options[i].value + '</div>' +
@@ -3424,7 +3431,7 @@
 							// set no additional image format
 							let imageFormat = '';
 							document.getElementById('brandRecommendations').innerHTML +=
-								'<div class="brandRecommendation" style="display: flex; justify-content: space-between" onmouseover="" onclick="">' +
+								'<div class="brandRecommendation" style="display: flex; justify-content: space-between" onmouseover="" onclick="document.getElementById(\'' + inputId + '\').value = this.lastChild.src; closeBrandPopup();">' +
 									'<div class="brandRecommendationInnerText" style="display: flex; align-items: center">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 									'<img alt="" src="' + imageFormat + document.getElementById('brandSearch').list.options[i].value + '" height="50px" width="200px" style="object-fit: contain; margin: 0 5px 0 0;" />' +
 								'</div>';
@@ -3432,13 +3439,12 @@
 							// set base64 image format
 							let imageFormat = 'data:image/png;base64,';
 							document.getElementById('brandRecommendations').innerHTML +=
-								'<div class="brandRecommendation" style="display: flex; justify-content: space-between" onmouseover="" onclick="">' +
+								'<div class="brandRecommendation" style="display: flex; justify-content: space-between" onmouseover="" onclick="document.getElementById(\'' + inputId + '\').value = this.lastChild.src; closeBrandPopup();">' +
 									'<div class="brandRecommendationInnerText" style="display: flex; align-items: center">' + document.getElementById('brandSearch').list.options[i].innerText + '</div>' +
 									'<img alt="" src="' + imageFormat + document.getElementById('brandSearch').list.options[i].value + '" height="50px" width="200px" style="object-fit: contain; margin: 0 5px 0 0;" />' +
 								'</div>';
 					}
 				}
-
 			} else if (inputType === 'date') {
 				brandSearch.setAttribute('list', 'date')
 			} else if (inputType === 'datetime-local') {
@@ -3469,26 +3475,6 @@
 			closeBrandPopup();
 		});
 	}
-
-	// NOT WORKING
-	// when any new element with the class="hashtag" added to the DOM, add the event listener
-	document.addEventListener('DOMNodeInserted', function(event) {
-		if (event.target.classList.contains('hashtag')) {
-			event.target.addEventListener('click', function(event) {
-				// for each right click on all .hashtag elements, add a context menu
-				let hashtag = document.querySelectorAll('.hashtag');
-				for (let i = 0; i < hashtag.length; i++) {
-					hashtag[i].addEventListener('contextmenu', function(event) {
-						event.preventDefault();
-						// show the #hashtagContextMenu div and set its position to the mouse position
-						document.getElementById('hashtagContextMenu').style.display = 'block';
-						document.getElementById('hashtagContextMenu').style.top = event.clientY + 'px';
-						document.getElementById('hashtagContextMenu').style.left = event.clientX + 'px';
-					});
-				}
-			});
-		}
-	});
 
 	// select app section
 	function selectContentType(tabby) { // need the active tab to stay blue (not just on click)
@@ -3725,24 +3711,89 @@
 		document.getElementById("finalImageSquare").style.display = "none";
 		document.getElementById("finalImageVertical").style.display = "none";
 		document.getElementById("finalImageStory").style.display = "none";
+		// icons
+		document.getElementById("finalImageHorizontalIcons").className = "flexAllCenter" // not hidden
+		document.getElementById("finalImageSquareIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageVerticalIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageStoryIcons").className = "flexAllCenter hidden";
 	}
 	function previewFinalImageSquare() {
 		document.getElementById("finalImageHorizontal").style.display = "none";
-		document.getElementById("finalImageSquare").style.display = "block"; //block
+		document.getElementById("finalImageSquare").style.display = "block"; // block
 		document.getElementById("finalImageVertical").style.display = "none";
 		document.getElementById("finalImageStory").style.display = "none";
+		// icons
+		document.getElementById("finalImageHorizontalIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageSquareIcons").className = "flexAllCenter"; // not hidden
+		document.getElementById("finalImageVerticalIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageStoryIcons").className = "flexAllCenter hidden";
 	}
 	function previewFinalImageVertical() {
 		document.getElementById("finalImageHorizontal").style.display = "none";
 		document.getElementById("finalImageSquare").style.display = "none";
-		document.getElementById("finalImageVertical").style.display = "block"; //block
+		document.getElementById("finalImageVertical").style.display = "block"; // block
 		document.getElementById("finalImageStory").style.display = "none";
+		// icons
+		document.getElementById("finalImageHorizontalIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageSquareIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageVerticalIcons").className = "flexAllCenter"; // not hidden
+		document.getElementById("finalImageStoryIcons").className = "flexAllCenter hidden";
 	}
 	function previewFinalImageStory() {
 		document.getElementById("finalImageHorizontal").style.display = "none";
 		document.getElementById("finalImageSquare").style.display = "none";
 		document.getElementById("finalImageVertical").style.display = "none";
-		document.getElementById("finalImageStory").style.display = "block"; //block
+		document.getElementById("finalImageStory").style.display = "block"; // block
+		// icons
+		document.getElementById("finalImageHorizontalIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageSquareIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageVerticalIcons").className = "flexAllCenter hidden";
+		document.getElementById("finalImageStoryIcons").className = "flexAllCenter"; // not hidden
+	}
+
+	function updateCharacterCount() {
+		// master
+		document.getElementById('masterTextCharacterCount').innerText = document.getElementById('masterTextBox').innerText.length;
+		if (Number(document.getElementById('masterTextCharacterCount').innerText) > Number(document.getElementById('masterTextCharacterCountMax').innerText)) {
+			document.getElementById('masterTextCharacterCount').style.backgroundColor = 'orange';
+		} else {
+			document.getElementById('masterTextCharacterCount').style.backgroundColor = 'white';
+		}
+		// facebook
+		document.getElementById('facebookTextCharacterCount').innerText = document.getElementById('facebookTextBox').innerText.length;
+		if (Number(document.getElementById('facebookTextCharacterCount').innerText) > Number(document.getElementById('facebookTextCharacterCountMax').innerText)) {
+			document.getElementById('facebookTextCharacterCount').style.backgroundColor = 'orange';
+		} else {
+			document.getElementById('facebookTextCharacterCount').style.backgroundColor = 'white';
+		}
+		// instagram
+		document.getElementById('instagramTextCharacterCount').innerText = document.getElementById('instagramTextBox').innerText.length;
+		if (Number(document.getElementById('instagramTextCharacterCount').innerText) > Number(document.getElementById('instagramTextCharacterCountMax').innerText)) {
+			document.getElementById('instagramTextCharacterCount').style.backgroundColor = 'orange';
+		} else {
+			document.getElementById('instagramTextCharacterCount').style.backgroundColor = 'white';
+		}
+		// linkedin
+		document.getElementById('linkedinTextCharacterCount').innerText = document.getElementById('linkedinTextBox').innerText.length;
+		if (Number(document.getElementById('linkedinTextCharacterCount').innerText) > Number(document.getElementById('linkedinTextCharacterCountMax').innerText)) {
+			document.getElementById('linkedinTextCharacterCount').style.backgroundColor = 'orange';
+		} else {
+			document.getElementById('linkedinTextCharacterCount').style.backgroundColor = 'white';
+		}
+		// twitter
+		document.getElementById('twitterTextCharacterCount').innerText = document.getElementById('twitterTextBox').innerText.length;
+		if (Number(document.getElementById('twitterTextCharacterCount').innerText) > Number(document.getElementById('twitterTextCharacterCountMax').innerText)) {
+			document.getElementById('twitterTextCharacterCount').style.backgroundColor = 'orange';
+		} else {
+			document.getElementById('twitterTextCharacterCount').style.backgroundColor = 'white';
+		}
+		// google my business
+		document.getElementById('googlemybusinessTextCharacterCount').innerText = document.getElementById('googlemybusinessTextBox').innerText.length;
+		if (Number(document.getElementById('googlemybusinessTextCharacterCount').innerText) > Number(document.getElementById('googlemybusinessTextCharacterCountMax').innerText)) {
+			document.getElementById('googlemybusinessTextCharacterCount').style.backgroundColor = 'orange';
+		} else {
+			document.getElementById('googlemybusinessTextCharacterCount').style.backgroundColor = 'white';
+		}
 	}
 
 	// update newContent fields
@@ -3755,12 +3806,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			hookGlobalHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				hookGlobalHere[i].style.backgroundColor = 'white';
+				hookGlobalHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		hookGlobalHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function hookResolutionGlobalUpdate() {
 		// for all elements with the 'hookResolutionGlobalHere' class, set the innerHTML to the value of the 'hookResolutionGlobal' field
@@ -3771,12 +3821,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			hookResolutionGlobalHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				hookResolutionGlobalHere[i].style.backgroundColor = 'white';
+				hookResolutionGlobalHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		hookResolutionGlobalHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function genericPostBodyUpdate() {
 		// for all elements with the 'genericPostBodyHere' class, set the innerHTML to the value of the 'genericPostBody' field
@@ -3787,12 +3836,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			genericPostBodyHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				genericPostBodyHere[i].style.backgroundColor = 'white';
+				genericPostBodyHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		genericPostHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function companyUpdateHeadlineUpdate() {
 		// for all elements with the 'companyUpdateHeadlineHere' class, set the innerHTML to the value of the 'companyUpdateHeadline' field
@@ -3803,12 +3851,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			companyUpdateHeadlineHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				companyUpdateHeadlineHere[i].style.backgroundColor = 'white';
+				companyUpdateHeadlineHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		companyUpdateHeadlineHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function companyUpdateDateUpdate() {
 		// for all elements with the 'companyUpdateDateHere' class, set the innerHTML to the value of the 'companyUpdateDate' field
@@ -3830,10 +3877,10 @@
 			// for 2 seconds, set the background color of the element to grey
 			companyUpdateDateHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				companyUpdateDateHere[i].style.backgroundColor = 'white';
+				companyUpdateDateHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
+		updateCharacterCount();
 	}
 	function companyUpdateBodyUpdate() {
 		// for all elements with the 'companyUpdateBodyHere' class, set the innerHTML to the value of the 'companyUpdateBody' field
@@ -3844,11 +3891,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			companyUpdateBodyHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				companyUpdateBodyHere[i].style.backgroundColor = 'white';
+				companyUpdateBodyHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-		// update hashtags
 		companyUpdateBodyHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function salePromotionTitleUpdate() {
 		// for all elements with the 'salePromotionTitleHere' class, set the innerHTML to the value of the 'salePromotionTitle' field
@@ -3859,12 +3906,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			salePromotionTitleHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				salePromotionTitleHere[i].style.backgroundColor = 'white';
+				salePromotionTitleHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		salePromotionTitleHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function salePromotionProductOrServiceUpdate() {
 		// for all elements with the 'salePromotionProductOrServiceHere' class, set the innerHTML to the value of the 'salePromotionDate' field
@@ -3875,12 +3921,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			salePromotionProductOrServiceHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				salePromotionProductOrServiceHere[i].style.backgroundColor = 'white';
+				salePromotionProductOrServiceHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		salePromotionProductOrServiceHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function salePromotionStartDateUpdate() {
 		// for all elements with the 'salePromotionStartDateHere' class, set the innerHTML to the value of the 'salePromotionStartDate' field
@@ -3904,9 +3949,10 @@
 			// for 2 seconds, set the background color of the element to grey
 			salePromotionStartDateHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				salePromotionStartDateHere[i].style.backgroundColor = 'white';
+				salePromotionStartDateHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
+		updateCharacterCount();
 	}
 	function salePromotionEndDateUpdate() {
 		// for all elements with the 'salePromotionEndDateHere' class, set the innerHTML to the value of the 'salePromotionEndDate' field
@@ -3930,9 +3976,10 @@
 			// for 2 seconds, set the background color of the element to grey
 			salePromotionEndDateHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				salePromotionEndDateHere[i].style.backgroundColor = 'white';
+				salePromotionEndDateHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
+		updateCharacterCount();
 	}
 	function salePromotionBodyUpdate() {
 		// for all elements with the 'salePromotionBodyHere' class, set the innerHTML to the value of the 'salePromotionBody' field
@@ -3943,11 +3990,10 @@
 			// for 2 seconds, set the background color of the element to grey
 			salePromotionBodyHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				salePromotionBodyHere[i].style.backgroundColor = 'white';
+				salePromotionBodyHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
+		updateCharacterCount();
 		salePromotionBodyHashtagsUpdate();
 	}
 	function eventPromotionTitleUpdate() {
@@ -3959,12 +4005,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			eventPromotionTitleHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				eventPromotionTitleHere[i].style.backgroundColor = 'white';
+				eventPromotionTitleHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		eventPromotionTitleHashtagsUpdate();
+		updateCharacterCount()
 	}
 	function eventPromotionStartDateUpdate() {
 		// for all elements with the 'eventPromotionStartDateHere' class, set the innerHTML to the value of the 'eventPromotionStartDate' field
@@ -3988,6 +4033,7 @@
 			// for 2 seconds, set the background color of the element to grey
 			eventPromotionStartDateHere[i].style.backgroundColor = '#d9d9d9';
 		}
+		updateCharacterCount();
 	}
 	function eventPromotionEndDateUpdate() {
 		// for all elements with the 'eventPromotionEndDateHere' class, set the innerHTML to the value of the 'eventPromotionEndDate' field
@@ -4011,9 +4057,10 @@
 			// for 2 seconds, set the background color of the element to grey
 			eventPromotionEndDateHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				eventPromotionEndDateHere[i].style.backgroundColor = 'white';
+				eventPromotionEndDateHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
+		updateCharacterCount();
 	}
 	function eventPromotionLocationUpdate() {
 		// for all elements with the 'eventPromotionLocationHere' class, set the innerHTML to the value of the 'eventPromotionLocation' field
@@ -4024,12 +4071,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			eventPromotionLocationHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				eventPromotionLocationHere[i].style.backgroundColor = 'white';
+				eventPromotionLocationHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		eventPromotionLocationHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function eventPromotionBodyUpdate() {
 		// for all elements with the 'eventPromotionBodyHere' class, set the innerHTML to the value of the 'eventPromotionBody' field
@@ -4040,12 +4086,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			eventPromotionBodyHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				eventPromotionBodyHere[i].style.backgroundColor = 'white';
+				eventPromotionBodyHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		eventPromotionBodyHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function testimonialReviewAuthorNameUpdate() {
 		// for all elements with the 'testimonialReviewAuthorNameHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorName' field
@@ -4056,12 +4101,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			testimonialReviewAuthorNameHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				testimonialReviewAuthorNameHere[i].style.backgroundColor = 'white';
+				testimonialReviewAuthorNameHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		testimonialReviewAuthorNameHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function testimonialReviewAuthorHeadshotUpdate() {
 		// for all elements with the 'testimonialReviewAuthorHeadshotHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorHeadshot' field
@@ -4072,7 +4116,7 @@
 			// for 2 seconds, set the background color of the element to grey
 			testimonialReviewAuthorHeadshotHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				testimonialReviewAuthorHeadshotHere[i].style.backgroundColor = 'white';
+				testimonialReviewAuthorHeadshotHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
 	}
@@ -4085,12 +4129,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			testimonialReviewAuthorTitleHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				testimonialReviewAuthorTitleHere[i].style.backgroundColor = 'white';
+				testimonialReviewAuthorTitleHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		testimonialReviewAuthorTitleHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function testimonialReviewAuthorCompanyUpdate() {
 		// for all elements with the 'testimonialReviewAuthorCompanyHere' class, set the innerHTML to the value of the 'testimonialReviewAuthorCompany' field
@@ -4101,12 +4144,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			testimonialReviewAuthorCompanyHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				testimonialReviewAuthorCompanyHere[i].style.backgroundColor = 'white';
+				testimonialReviewAuthorCompanyHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		testimonialReviewAuthorCompanyHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function testimonialReviewDateUpdate() {
 		// for all elements with the 'testimonialReviewDateHere' class, set the innerHTML to the value of the 'testimonialReviewDate' field
@@ -4128,9 +4170,10 @@
 			// for 2 seconds, set the background color of the element to grey
 			testimonialReviewDateHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				testimonialReviewDateHere[i].style.backgroundColor = 'white';
+				testimonialReviewDateHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
+		updateCharacterCount();
 	}
 	function testimonialReviewBodyUpdate() {
 		// for all elements with the 'testimonialReviewBodyHere' class, set the innerHTML to the value of the 'testimonialReviewBody' field
@@ -4141,12 +4184,11 @@
 			// for 2 seconds, set the background color of the element to grey
 			testimonialReviewBodyHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				testimonialReviewBodyHere[i].style.backgroundColor = 'white';
+				testimonialReviewBodyHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
-
-		// update hashtags
 		testimonialReviewBodyHashtagsUpdate();
+		updateCharacterCount();
 	}
 	function callToActionGlobalUpdate() {
 		// for all elements with the 'callToActionGlobalHere' class, set the innerHTML to the value of the 'callToActionGlobal' field
@@ -4157,22 +4199,40 @@
 			// for 2 seconds, set the background color of the element to grey
 			callToActionGlobalHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				callToActionGlobalHere[i].style.backgroundColor = 'white';
+				callToActionGlobalHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
+		updateCharacterCount();
 	}
+	// do we need this?
+	/*function linkProtocolGlobalUpdate() {
+		// for all elements with the 'linkGlobalHere' class, set the innerHTML to the value of the 'linkGlobal' field
+		const linkProtocolGlobalHere = document.getElementsByClassName('linkProtocolGlobalHere');
+		for (let i = 0; i < linkProtocolGlobalHere.length; i++) {
+			linkProtocolGlobalHere[i].innerHTML = document.getElementById('linkGlobalProtocol').value;
+
+			// for 2 seconds, set the background color of the element to grey
+			linkProtocolGlobalHere[i].style.backgroundColor = '#d9d9d9';
+			setTimeout(function() {
+				linkProtocolGlobalHere[i].style.backgroundColor = 'transparent';
+			}, 2000);
+		}
+		updateCharacterCount();
+	}*/
 	function linkGlobalUpdate() {
 		// for all elements with the 'linkGlobalHere' class, set the innerHTML to the value of the 'linkGlobal' field
-		const linkGlobalHere = document.getElementsByClassName('linkGlobalHere');
+		let linkGlobalHere = document.getElementsByClassName('linkGlobalHere');
 		for (let i = 0; i < linkGlobalHere.length; i++) {
-			linkGlobalHere[i].innerHTML = document.getElementById('linkGlobal').value;
+			linkGlobalHere[i].innerHTML = document.getElementById("linkGlobal").value;
 
 			// for 2 seconds, set the background color of the element to grey
 			linkGlobalHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
-				linkGlobalHere[i].style.backgroundColor = 'white';
+				linkGlobalHere[i].style.backgroundColor = 'transparent';
 			}, 2000);
 		}
+		updateCharacterCount();
+		// linkProtocolGlobalUpdate();
 	}
 	function primaryColorGlobalUpdate () {
 
@@ -4338,8 +4398,41 @@
 
 	}
 
-	// NOTES FOR HASHTAGS
-	// - remove duplicates across fields
+	function updateNewContentTextFields() {
+		hookGlobalUpdate();
+		hookResolutionGlobalUpdate();
+		genericPostBodyUpdate();
+		companyUpdateHeadlineUpdate();
+		companyUpdateBodyUpdate();
+		salePromotionTitleUpdate();
+		salePromotionProductOrServiceUpdate();
+		salePromotionBodyUpdate();
+		eventPromotionTitleUpdate();
+		eventPromotionLocationUpdate();
+		eventPromotionBodyUpdate();
+		testimonialReviewAuthorNameUpdate();
+		testimonialReviewAuthorTitleUpdate();
+		testimonialReviewAuthorCompanyUpdate();
+		testimonialReviewBodyUpdate();
+		callToActionGlobalUpdate();
+	}
+	function updateNewContentDateAndTimeFields() {
+		companyUpdateDateUpdate();
+		salePromotionStartDateUpdate();
+		salePromotionEndDateUpdate();
+		eventPromotionStartDateUpdate();
+		eventPromotionEndDateUpdate();
+		testimonialReviewDateUpdate();
+	}
+	function updateNewContentImageFields() {
+		squareLogoGlobalUpdate();
+		testimonialReviewAuthorHeadshotUpdate();
+
+	}
+	function updateNewContentColorFields() {
+		primaryColorGlobalUpdate();
+		fontColorGlobalUpdate();
+	}
 
 	// set newContent hashtags
 	function hookGlobalHashtagsUpdate() {
@@ -4381,6 +4474,9 @@
 		for (let i = 0; i < hookGlobalHashtagsHere.length; i++) {
 			hookGlobalHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
+
 	}
 	function hookResolutionGlobalHashtagsUpdate() {
 
@@ -4421,6 +4517,8 @@
 		for (let i = 0; i < hookGlobalResolutionHashtagsHere.length; i++) {
 			hookGlobalResolutionHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function genericPostHashtagsUpdate() {
 
@@ -4461,6 +4559,8 @@
 		for (let i = 0; i < genericPostBodyHashtagsHere.length; i++) {
 			genericPostBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function companyUpdateHeadlineHashtagsUpdate() {
 
@@ -4501,6 +4601,8 @@
 		for (let i = 0; i < companyUpdateHeadlineHashtagsHere.length; i++) {
 			companyUpdateHeadlineHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function companyUpdateBodyHashtagsUpdate() {
 
@@ -4541,6 +4643,8 @@
 		for (let i = 0; i < companyUpdateBodyHashtagsHere.length; i++) {
 			companyUpdateBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function salePromotionTitleHashtagsUpdate() {
 
@@ -4581,6 +4685,8 @@
 		for (let i = 0; i < salePromotionTitleHashtagsHere.length; i++) {
 			salePromotionTitleHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function salePromotionBodyHashtagsUpdate() {
 
@@ -4621,6 +4727,8 @@
 		for (let i = 0; i < hookGlobalHashtagsHere.length; i++) {
 			hookGlobalHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function salePromotionProductOrServiceHashtagsUpdate() {
 
@@ -4661,6 +4769,8 @@
 		for (let i = 0; i < salePromotionProductOrServiceHashtagsHere.length; i++) {
 			salePromotionProductOrServiceHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function eventPromotionTitleHashtagsUpdate() {
 
@@ -4701,6 +4811,8 @@
 		for (let i = 0; i < eventPromotionTitleHashtagsHere.length; i++) {
 			eventPromotionTitleHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function eventPromotionLocationHashtagsUpdate() {
 
@@ -4741,6 +4853,8 @@
 		for (let i = 0; i < eventPromotionLocationHashtagsHere.length; i++) {
 			eventPromotionLocationHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function eventPromotionBodyHashtagsUpdate() {
 
@@ -4781,6 +4895,8 @@
 		for (let i = 0; i < eventPromotionBodyHashtagsHere.length; i++) {
 			eventPromotionBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function testimonialReviewAuthorNameHashtagsUpdate() {
 
@@ -4820,6 +4936,8 @@
 		for (let i = 0; i < testimonialReviewAuthorNameHashtagsHere.length; i++) {
 			testimonialReviewAuthorNameHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function testimonialReviewAuthorTitleHashtagsUpdate() {
 
@@ -4860,6 +4978,8 @@
 		for (let i = 0; i < testimonialReviewAuthorTitleHashtagsHere.length; i++) {
 			testimonialReviewAuthorTitleHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function testimonialReviewAuthorCompanyHashtagsUpdate() {
 
@@ -4900,6 +5020,8 @@
 		for (let i = 0; i < testimonialReviewAuthorCompanyHashtagsHere.length; i++) {
 			testimonialReviewAuthorCompanyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
 	}
 	function testimonialReviewBodyHashtagsUpdate() {
 
@@ -4940,269 +5062,253 @@
 		for (let i = 0; i < testimonialReviewBodyHashtagsHere.length; i++) {
 			testimonialReviewBodyHashtagsHere[i].innerHTML = uniqWithClass.join(" ");
 		}
+
+		removeHashtagDuplicatesAcrossFields();
+	}
+
+	function removeHashtagDuplicatesAcrossFields() {
+
+		// set variable
+		let values = document.getElementById('masterTextHashtags').innerText;
+
+		// split
+		let valuesSplit = values.split(" ");
+
+		// remove duplicates
+		let uniq = [...new Set(valuesSplit)];
+
+		// add 'hashtag' class to each hashtag
+		let uniqWithClass = uniq.map(function (x) {
+			if (x.length > 2) {
+				return '<span class="hashtag">' + x + '<img alt="" title="remove hashtag" class="hashtagClear" src="media/icons/clearDark.svg" onclick="this.parentElement.remove(); updateCharacterCount();"/></span>';
+			}
+		});
+
+		// display them in the new hashtag field
+		document.getElementById('masterTextHashtagsUnique').innerHTML = uniqWithClass.join(' ');
+
+		// delete empty hashtags
+		const hashtag = document.getElementsByClassName('hashtag');
+		for (let i = 0; i < hashtag.length; i++) {
+			if (hashtag[i].innerText == '') {
+				hashtag[i].parentElement.remove();
+			}
+		}
+
 	}
 
 	// clear newContent hashtags
 	function clearHookGlobalHashtags() {
-		document.getElementById("hookGlobalHashtagsHere").innerText = "";
+		document.querySelectorAll(".hookGlobalHashtagsHere").innerText = "";
 	}
 	function clearHookResolutionGlobalHashtags() {
-		document.getElementById("hookResolutionGlobalHashtagsHere").innerText = "";
+		document.querySelectorAll(".hookResolutionGlobalHashtagsHere").innerText = "";
 	}
 	function clearGenericPostBodyHashtags() {
-		document.getElementById("genericPostBodyHashtagsHere").innerText = "";
+		document.querySelectorAll(".genericPostBodyHashtagsHere").innerText = "";
 	}
 	function clearCompanyUpdateHeadlineHashtags() {
-		document.getElementById("companyUpdateHeadlineHashtagsHere").innerText = "";
+		document.querySelectorAll(".companyUpdateHeadlineHashtagsHere").innerText = "";
 	}
 	function clearCompanyUpdateBodyHashtags() {
-		document.getElementById("companyUpdateBodyHashtagsHere").innerText = "";
+		document.querySelectorAll(".companyUpdateBodyHashtagsHere").innerText = "";
 	}
 	function clearSalePromotionTitleHashtags() {
-		document.getElementById("salePostTitleHashtagsHere").innerText = "";
+		document.querySelectorAll(".salePostTitleHashtagsHere").innerText = "";
 	}
 	function clearSalePromotionBodyHashtags() {
-		document.getElementById("salePromotionBodyHashtagsHere").innerText = "";
+		document.querySelectorAll(".salePromotionBodyHashtagsHere").innerText = "";
 	}
 	function clearSalePromotionProductOrServiceHashtags() {
-		document.getElementById("salePromotionProductOrServiceHashtagsHere").innerText = "";
+		document.querySelectorAll(".salePromotionProductOrServiceHashtagsHere").innerText = "";
 	}
 	function clearEventPromotionTitleHashtags() {
-		document.getElementById("eventPromotionTitleHashtagsHere").innerText = "";
+		document.querySelectorAll(".eventPromotionTitleHashtagsHere").innerText = "";
 	}
 	function clearEventPromotionLocationHashtags() {
-		document.getElementById("eventPromotionLocation").innerText = "";
+		document.querySelectorAll(".eventPromotionLocation").innerText = "";
 	}
 	function clearEventPromotionBodyHashtags() {
-		document.getElementById("eventPromotionBodyHashtagsHere").innerText = "";
+		document.querySelectorAll(".eventPromotionBodyHashtagsHere").innerText = "";
 	}
 	function clearTestimonialReviewAuthorNameHashtags() {
-		document.getElementById("testimonialReviewAuthorNameHashtagsHere").innerText = "";
+		document.querySelectorAll(".testimonialReviewAuthorNameHashtagsHere").innerText = "";
 	}
 	function clearTestimonialReviewAuthorTitleHashtags() {
-		document.getElementById("testimonialReviewAuthorTitleHashtagsHere").innerText = "";
+		document.querySelectorAll(".testimonialReviewAuthorTitleHashtagsHere").innerText = "";
 	}
 	function clearTestimonialReviewAuthorCompanyHashtags() {
-		document.getElementById("testimonialReviewAuthorCompanyHashtagsHere").innerText = "";
+		document.querySelectorAll(".testimonialReviewAuthorCompanyHashtagsHere").innerText = "";
 	}
 	function clearTestimonialReviewBodyHashtags() {
-		document.getElementById("testimonialReviewBodyHashtagsHere").innerText = "";
+		document.querySelectorAll(".testimonialReviewBodyHashtagsHere").innerText = "";
 	}
 
 	// select font priority for newContent fields
 	function hookGlobalFontPriority1() {
-
-		// set variables
 		let fontSize = 24;
 		let fontWeight = 700;
-
-		// set the font priority
-		let element = document.querySelectorAll('.hookGlobalHere:not(#finalText .hookGlobalHere)');
+		let element = document.querySelectorAll('.hookGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
-
 	}
 	function hookGlobalFontPriority2() {
-
-		// set variables
 		let fontSize = 18;
 		let fontWeight = 500;
-
-		// set the font priority
-		let element = document.querySelectorAll('.hookGlobalHere:not(#finalText .hookGlobalHere)');
+		let element = document.querySelectorAll('.hookGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function hookGlobalFontPriority3() {
-
-		// set variables
 		let fontSize = 12;
 		let fontWeight = 300;
-
-		// set the font priority
-		let element = document.querySelectorAll('.hookGlobalHere:not(#finalText .hookGlobalHere)');
+		let element = document.querySelectorAll('.hookGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function hookResolutionGlobalFontPriority1() {
-
-		// set variables
 		let fontSize = 24;
 		let fontWeight = 700;
-
-		// set the font priority
-		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		let element = document.querySelectorAll('.hookResolutionGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function hookResolutionGlobalFontPriority2() {
-
-		// set variables
 		let fontSize = 18;
 		let fontWeight = 500;
-
-		// set the font priority
-		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		let element = document.querySelectorAll('.hookResolutionGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function hookResolutionGlobalFontPriority3() {
-
-		// set variables
 		let fontSize = 12;
 		let fontWeight = 300;
-
-		// set the font priority
-		let element = document.querySelectorAll('.hookResolutionGlobalHere:not(#finalText .hookResolutionGlobalHere)');
+		let element = document.querySelectorAll('.hookResolutionGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function companyUpdateHeadlineFontPriority1() {
-
-		// set variables
 		let fontSize = 24;
 		let fontWeight = 700;
-
-		// set the font priority
-		let element = document.querySelectorAll('.companyUpdateHeadlineHere:not(#finalText .companyUpdateHeadlineHere)');
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
-
 	}
 	function companyUpdateHeadlineFontPriority2() {
-
-		// set variables
 		let fontSize = 18;
 		let fontWeight = 500;
-
-		// set the font priority
-		let element = document.querySelectorAll('.companyUpdateHeadlineHere:not(#finalText .companyUpdateHeadlineHere)');
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function companyUpdateHeadlineFontPriority3() {
-
-		// set variables
 		let fontSize = 12;
 		let fontWeight = 300;
-
-		// set the font priority
-		let element = document.querySelectorAll('.companyUpdateHeadlineHere:not(#finalText .companyUpdateHeadlineHere)');
+		let element = document.querySelectorAll('.companyUpdateHeadlineHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function companyUpdateDateFontPriority1() {
-
-		// set variables
 		let fontSize = 24;
 		let fontWeight = 700;
-
-		// set the font priority
-		let element = document.querySelectorAll('.companyUpdateDateHere:not(#finalText .companyUpdateDateHere)');
+		let element = document.querySelectorAll('.companyUpdateDateHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
-
 	}
 	function companyUpdateDateFontPriority2() {
-
-		// set variables
 		let fontSize = 18;
 		let fontWeight = 500;
-
-		// set the font priority
-		let element = document.querySelectorAll('.companyUpdateDateHere:not(#finalText .companyUpdateDateHere)');
+		let element = document.querySelectorAll('.companyUpdateDateHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function companyUpdateDateFontPriority3() {
-
-		// set variables
 		let fontSize = 12;
 		let fontWeight = 300;
-
-		// set the font priority
-		let element = document.querySelectorAll('.companyUpdateDateHere:not(#finalText .companyUpdateDateHere)');
+		let element = document.querySelectorAll('.companyUpdateDateHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function callToActionFontPriority1() {
-
-		// set variables
 		let fontSize = 24;
 		let fontWeight = 700;
-
-		// set the font priority
-		let element = document.querySelectorAll('.callToActionGlobalHere:not(#finalText .callToActionGlobalHere)');
+		let element = document.querySelectorAll('.callToActionGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
-
 	}
 	function callToActionFontPriority2() {
-
-		// set variables
 		let fontSize = 18;
 		let fontWeight = 500;
-
-		// set the font priority
-		let element = document.querySelectorAll('.callToActionGlobalHere:not(#finalText .callToActionGlobalHere)');
+		let element = document.querySelectorAll('.callToActionGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 	function callToActionFontPriority3() {
-
-		// set variables
 		let fontSize = 12;
 		let fontWeight = 300;
-
-		// set the font priority
-		let element = document.querySelectorAll('.callToActionGlobalHere:not(#finalText .callToActionGlobalHere)');
+		let element = document.querySelectorAll('.callToActionGlobalHere');
 		for (let i = 0; i < element.length; i++) {
-			element[i].style.fontSize = fontSize + 'px';
-			element[i].style.fontWeight = fontWeight;
+			if (element[i].parentElement.classList.contains('finalImageWrapper')) {
+				element[i].style.fontSize = fontSize + 'px';
+				element[i].style.fontWeight = fontWeight;
+			}
 		}
-
 	}
 
 	// clear newContent fields
@@ -6406,8 +6512,9 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 </datalist>
 
 <datalist id="color">
-	<option value="red">red</option>
-	<option value="blue">blue</option>
+	<option value="#666666">tertiaryColorSample</option>
+	<option value="#222222">secondaryColorSample</option>
+	<option value="#444444">primaryColorSample</option>
 </datalist>
 
 <datalist id="file">
