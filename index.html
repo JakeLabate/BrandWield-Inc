@@ -527,7 +527,8 @@
 				<span class="material-symbols-outlined" onclick='alert("The slogan is a short phrase that is used to describe your business. It should be catchy and memorable.")'>info</span>
 				<input id="slogan" class="brandVarInput" type="text" onkeyup="this.size = this.value.length + 1" readonly>
 				<span id="sloganUnlock" class="material-symbols-outlined" onclick="unlockSlogan();">lock_open</span>
-				<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan();">lock</span>
+				<span id="sloganLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockSlogan(); davinci('slogan', 'slogan');">lock</span>
+				<span id="sloganSuggestions">sdfsdfwef</span>
 				<button id="clearSlogan" onclick="clearSlogan();">Clear</button>
 			</div>
 
@@ -538,7 +539,8 @@
 				<span class="material-symbols-outlined" onclick='alert("The mission statement is a short phrase that describes the purpose of your business. It should be short and to the point.")'>info</span>
 				<input id="missionStatement" class="brandVarInput" type="text" onkeyup="this.size = this.value.length + 1" readonly>
 				<span id="missionStatementUnlock" class="material-symbols-outlined" onclick="unlockMissionStatement();">lock_open</span>
-				<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement();">lock</span>
+				<span id="missionStatementLock" class="material-symbols-outlined" style="background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;" onclick="lockMissionStatement(); davinci('missionStatement', 'mission statement');">lock</span>
+				<span id="missionStatementSuggestions">sdfsdfwef</span>
 				<button id="clearMissionStatement" onclick="clearMissionStatement();">Clear</button>
 			</div>
 
@@ -2664,7 +2666,7 @@
 					</div>
 
 					<!-- Master -->
-					<p id="masterTextBox" style="display: block; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
+					<p id="masterTextBox" style="display: block; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" onkeyup="updateCharacterCount();">
 						<!-- Global Start -->
 						<text class="hookGlobalHere"></text>
 						<text class="hookResolutionGlobalHere"></text>
@@ -2722,7 +2724,6 @@
 						<text id="masterTextHashtagsUnique"></text><br />
 						<span style="display: flex; justify-content: flex-end" contenteditable="false"><text id="masterTextCharacterCount">0</text>&nbsp;/&nbsp;<text id="masterTextCharacterCountMax">∞</text></span>
 					</p>
-
 
 					<!-- Facebook -->
 					<p id="facebookTextBox" style="display: none; padding: 10px 14px 24px 14px; border: 1px solid #cecece; border-radius: 5px; line-height: 1.8" contenteditable="true" onkeyup="updateCharacterCount();">
@@ -3796,13 +3797,25 @@
 		}
 	}
 
+	function davinci(id, itemToGenerate) {
+
+		let prompt = 'write a ' + itemToGenerate + ' for a marketing company';
+
+		fetch('https://hook.us1.make.com/hy48jw7wyycgafjj45uhpaayjdxldpun?prompt=' + prompt)
+		.then(response => response.json())
+		.then((data) => {
+			console.log(data);
+			let suggestionBox = document.getElementById(id + 'Suggestions');
+			suggestionBox.innerText = String(data);
+		})
+	}
+
 	// update newContent fields
 	function hookGlobalUpdate() {
 		// for all elements with the 'hookGlobalHere' class, set the innerHTML to the value of the 'hookGlobal' field
 		const hookGlobalHere = document.getElementsByClassName('hookGlobalHere');
 		for(let i = 0; i < hookGlobalHere.length; i ++) {
 			hookGlobalHere[i].innerHTML = document.getElementById('hookGlobal').value;
-
 			// for 2 seconds, set the background color of the element to grey
 			hookGlobalHere[i].style.backgroundColor = '#d9d9d9';
 			setTimeout(function() {
