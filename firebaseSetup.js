@@ -3,6 +3,7 @@ console.log("firebaseSetup.js loaded");
 // Firebase CDN Resources: https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+import { getFirestore, doc, getDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 // Firebase Config
 const firebaseConfig = {
@@ -19,19 +20,21 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
+const firestore = getFirestore(app)
 
 // Get Brand Variables
 const dbRef = ref(getDatabase());
-const brand = 'BrandWield';
+const brandID = '5k9PkwGSN7wrnoXAqS77';
 
-get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
-	if (snapshot.exists()) {
-		if (snapshot.val().legalBusinessName !== null || snapshot.val().legalBusinessName !== '') {
-			console.log('Brand Returned: ' + snapshot.val().legalBusinessName);
+getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
+	const brandData = snapshot.data();
+	if (brandData) {
+		if (brandData.legalBusinessName !== null || brandData.legalBusinessName !== '') {
+			console.log('Brand Returned: ' + brandData.legalBusinessName);
 		} else {
 			console.log('Brand Returned!');
 		}
-		console.log(snapshot.val());
+		console.log(brandData);
 	} else {
 		console.log("No Brand Returned");
 	}
@@ -40,15 +43,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// Social Media
 	function loadFacebookUrl () {
-		if (snapshot.val().facebookUrl != null) {
+		if (brandData.facebookUrl != null) {
 			// set local storage
-			localStorage.setItem('facebookUrl', snapshot.val().facebookUrl);
+			localStorage.setItem('facebookUrl', brandData.facebookUrl);
 
 			// Create an 'option' element under the 'brandList(s)' for search reference in the Brand Search
-			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().facebookUrl);
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', brandData.facebookUrl);
 			document.getElementById('url').lastChild.innerHTML = 'Facebook URL';
 
-			document.getElementById('facebookUrl').value = snapshot.val().facebookUrl;
+			document.getElementById('facebookUrl').value = brandData.facebookUrl;
 			document.getElementById('facebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
 		} else {
 			document.getElementById('facebookUrl').placeholder = 'https://facebook.com/myPage';
@@ -57,11 +60,11 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadFacebookUsername () {
-		if (snapshot.val().facebookUsername != null) {
+		if (brandData.facebookUsername != null) {
 			// set local storage
-			localStorage.setItem('facebookUsername', snapshot.val().facebookUsername);
+			localStorage.setItem('facebookUsername', brandData.facebookUsername);
 
-			document.getElementById('facebookUsername').value = snapshot.val().facebookUsername;
+			document.getElementById('facebookUsername').value = brandData.facebookUsername;
 			document.getElementById('facebookUsername').size = document.getElementById('facebookUsername').value.length + 1;
 		} else {
 			document.getElementById('facebookUsername').placeholder = 'myPage';
@@ -70,15 +73,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadInstagramUrl () {
-		if (snapshot.val().instagramUrl != null) {
+		if (brandData.instagramUrl != null) {
 			// set local storage
-			localStorage.setItem('instagramUrl', snapshot.val().instagramUrl);
+			localStorage.setItem('instagramUrl', brandData.instagramUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUrl);
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', brandData.instagramUrl);
 			document.getElementById('url').lastChild.innerHTML = 'Instagram URL';
 
-			document.getElementById('instagramUrl').value = snapshot.val().instagramUrl;
+			document.getElementById('instagramUrl').value = brandData.instagramUrl;
 			document.getElementById('instagramUrl').size = document.getElementById('instagramUrl').value.length + 1;
 		} else {
 			document.getElementById('instagramUrl').placeholder = 'https://instagram.com/myPage';
@@ -87,15 +90,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadInstagramUsername() {
-		if (snapshot.val().instagramUsername != null) {
+		if (brandData.instagramUsername != null) {
 			// set local storage
-			localStorage.setItem('instagramUsername', snapshot.val().instagramUsername);
+			localStorage.setItem('instagramUsername', brandData.instagramUsername);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().instagramUsername);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.instagramUsername);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Instagram Username';
 
-			document.getElementById('instagramUsername').value = snapshot.val().instagramUsername;
+			document.getElementById('instagramUsername').value = brandData.instagramUsername;
 			document.getElementById('instagramUsername').size = document.getElementById('instagramUsername').value.length + 1;
 		} else {
 			document.getElementById('instagramUsername').placeholder = 'myPage';
@@ -104,15 +107,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadLinkedinUrl () {
-		if (snapshot.val().linkedinUrl != null) {
+		if (brandData.linkedinUrl != null) {
 			// set local storage
-			localStorage.setItem('linkedinUrl', snapshot.val().linkedinUrl);
+			localStorage.setItem('linkedinUrl', brandData.linkedinUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUrl);
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', brandData.linkedinUrl);
 			document.getElementById('url').lastChild.innerHTML = 'LinkedIn URL';
 
-			document.getElementById('linkedinUrl').value = snapshot.val().linkedinUrl;
+			document.getElementById('linkedinUrl').value = brandData.linkedinUrl;
 			document.getElementById('linkedinUrl').size = document.getElementById('linkedinUrl').value.length + 1;
 		} else {
 			document.getElementById('linkedinUrl').placeholder = 'https://linkedin.com/myPage';
@@ -121,15 +124,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadLinkedinUsername () {
-		if (snapshot.val().linkedinUsername != null) {
+		if (brandData.linkedinUsername != null) {
 			// set local storage
-			localStorage.setItem('linkedinUsername', snapshot.val().linkedinUsername);
+			localStorage.setItem('linkedinUsername', brandData.linkedinUsername);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().linkedinUsername);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.linkedinUsername);
 			document.getElementById('valueAll').lastChild.innerHTML = 'LinkedIn Username';
 
-			document.getElementById('linkedinUsername').value = snapshot.val().linkedinUsername;
+			document.getElementById('linkedinUsername').value = brandData.linkedinUsername;
 			document.getElementById('linkedinUsername').size = document.getElementById('linkedinUsername').value.length + 1;
 		} else {
 			document.getElementById('linkedinUsername').placeholder = 'myPage';
@@ -138,15 +141,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadTwitterUrl() {
-		if (snapshot.val().twitterUrl != null) {
+		if (brandData.twitterUrl != null) {
 			// set local storage
-			localStorage.setItem('twitterUrl', snapshot.val().twitterUrl);
+			localStorage.setItem('twitterUrl', brandData.twitterUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUrl);
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', brandData.twitterUrl);
 			document.getElementById('url').lastChild.innerHTML = 'Twitter URL';
 
-			document.getElementById('twitterUrl').value = snapshot.val().twitterUrl;
+			document.getElementById('twitterUrl').value = brandData.twitterUrl;
 			document.getElementById('twitterUrl').size = document.getElementById('twitterUrl').value.length + 1;
 		} else {
 			document.getElementById('twitterUrl').placeholder = 'https://twitter.com/myPage';
@@ -155,15 +158,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadTwitterUsername () {
-		if (snapshot.val().twitterUsername != null) {
+		if (brandData.twitterUsername != null) {
 			// set local storage
-			localStorage.setItem('twitterUsername', snapshot.val().twitterUsername);
+			localStorage.setItem('twitterUsername', brandData.twitterUsername);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().twitterUsername);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.twitterUsername);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Twitter Username';
 
-			document.getElementById('twitterUsername').value = snapshot.val().twitterUsername;
+			document.getElementById('twitterUsername').value = brandData.twitterUsername;
 			document.getElementById('twitterUsername').size = document.getElementById('twitterUsername').value.length + 1;
 		} else {
 			document.getElementById('twitterUsername').placeholder = 'myPage';
@@ -172,15 +175,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadTiktokUrl () {
-		if (snapshot.val().tiktokUrl != null) {
+		if (brandData.tiktokUrl != null) {
 			// set local storage
-			localStorage.setItem('tiktokUrl', snapshot.val().tiktokUrl);
+			localStorage.setItem('tiktokUrl', brandData.tiktokUrl);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUrl);
+			document.getElementById('url').appendChild(document.createElement('option')).setAttribute('value', brandData.tiktokUrl);
 			document.getElementById('url').lastChild.innerHTML = 'TikTok URL';
 
-			document.getElementById('tiktokUrl').value = snapshot.val().tiktokUrl;
+			document.getElementById('tiktokUrl').value = brandData.tiktokUrl;
 			document.getElementById('tiktokUrl').size = document.getElementById('tiktokUrl').value.length + 1;
 		} else {
 			document.getElementById('tiktokUrl').placeholder = 'https://tiktok.com/myPage';
@@ -189,15 +192,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadTiktokUsername () {
-		if (snapshot.val().tiktokUsername != null) {
+		if (brandData.tiktokUsername != null) {
 			// set local storage
-			localStorage.setItem('tiktokUsername', snapshot.val().tiktokUsername);
+			localStorage.setItem('tiktokUsername', brandData.tiktokUsername);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tiktokUsername);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.tiktokUsername);
 			document.getElementById('valueAll').lastChild.innerHTML = 'TikTok Username';
 
-			document.getElementById('tiktokUsername').value = snapshot.val().tiktokUsername;
+			document.getElementById('tiktokUsername').value = brandData.tiktokUsername;
 			document.getElementById('tiktokUsername').size = document.getElementById('tiktokUsername').value.length + 1;
 		} else {
 			document.getElementById('tiktokUsername').placeholder = 'myPage';
@@ -221,15 +224,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Logos
 	function loadSquareLogo() {
 		// square logo
-		if (snapshot.val().squareLogo != null) {
+		if (brandData.squareLogo != null) {
 			// set local storage
-			localStorage.setItem('squareLogo', snapshot.val().squareLogo);
+			localStorage.setItem('squareLogo', brandData.squareLogo);
 
-			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().squareLogo);
+			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', brandData.squareLogo);
 			document.getElementById('file').lastChild.innerHTML = 'Square Logo';
-			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', snapshot.val().squareLogo);
+			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', brandData.squareLogo);
 
-			document.getElementById('squareLogoBro').src = snapshot.val().squareLogo;
+			document.getElementById('squareLogoBro').src = brandData.squareLogo;
 			document.getElementById('squareLogoBro').style.maxWidth = '32px';
 			document.getElementById('squareLogoBro').style.maxHeight = '32px';
 		} else {
@@ -237,15 +240,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	}
 	function loadFullLogo () {
 		// fullLogo
-		if (snapshot.val().fullLogo != null) {
+		if (brandData.fullLogo != null) {
 			// set local storage
-			localStorage.setItem('fullLogo', snapshot.val().fullLogo);
+			localStorage.setItem('fullLogo', brandData.fullLogo);
 
-			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().fullLogo);
+			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', brandData.fullLogo);
 			document.getElementById('file').lastChild.innerHTML = 'Full Logo';
-			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', snapshot.val().fullLogo);
+			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', brandData.fullLogo);
 
-			document.getElementById('fullLogoBro').src = snapshot.val().fullLogo;
+			document.getElementById('fullLogoBro').src = brandData.fullLogo;
 			document.getElementById('fullLogoBro').style.maxWidth = '250px';
 			document.getElementById('fullLogoBro').style.maxHeight = '250px';
 		} else {
@@ -259,16 +262,16 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Address
 	function loadOfficeAddressStreet1() {
 		// Address
-		if (snapshot.val().officeAddressStreet1 != null) {
+		if (brandData.officeAddressStreet1 != null) {
 			console.log('officeAddressStreet1');
 			// set local storage
-			localStorage.setItem('officeAddressStreet1', snapshot.val().officeAddressStreet1);
+			localStorage.setItem('officeAddressStreet1', brandData.officeAddressStreet1);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet1);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.officeAddressStreet1);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 1';
 
-			document.getElementById('officeAddressStreet1').value = snapshot.val().officeAddressStreet1;
+			document.getElementById('officeAddressStreet1').value = brandData.officeAddressStreet1;
 			document.getElementById('officeAddressStreet1').size = document.getElementById('officeAddressStreet1').value.length + 1;
 		} else {
 			document.getElementById('officeAddressStreet1').placeholder = '123 Main Street';
@@ -277,15 +280,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOfficeAddressStreet2() {
-		if (snapshot.val().officeAddressStreet2 != null) {
+		if (brandData.officeAddressStreet2 != null) {
 			// set local storage
-			localStorage.setItem('officeAddressStreet2', snapshot.val().officeAddressStreet2);
+			localStorage.setItem('officeAddressStreet2', brandData.officeAddressStreet2);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressStreet2);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.officeAddressStreet2);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Street 2';
 
-			document.getElementById('officeAddressStreet2').value = snapshot.val().officeAddressStreet2;
+			document.getElementById('officeAddressStreet2').value = brandData.officeAddressStreet2;
 			document.getElementById('officeAddressStreet2').size = document.getElementById('officeAddressStreet2').value.length + 1;
 		} else {
 			document.getElementById('officeAddressStreet2').placeholder = 'Suite 100';
@@ -294,16 +297,16 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOfficeAddressCity() {
-		if (snapshot.val().officeAddressCity != null) {
+		if (brandData.officeAddressCity != null) {
 			// set local storage
-			localStorage.setItem('officeAddressCity', snapshot.val().officeAddressCity);
+			localStorage.setItem('officeAddressCity', brandData.officeAddressCity);
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCity);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.officeAddressCity);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address City';
 
-			document.getElementById('officeAddressCity').value = snapshot.val().officeAddressCity;
+			document.getElementById('officeAddressCity').value = brandData.officeAddressCity;
 			document.getElementById('officeAddressCity').size = document.getElementById('officeAddressCity').value.length + 1;
 		} else {
 			document.getElementById('officeAddressCity').placeholder = 'New York';
@@ -312,15 +315,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOfficeAddressState() {
-		if (snapshot.val().officeAddressState != null) {
+		if (brandData.officeAddressState != null) {
 			// set local storage
-			localStorage.setItem('officeAddressState', snapshot.val().officeAddressState);
+			localStorage.setItem('officeAddressState', brandData.officeAddressState);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressState);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.officeAddressState);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address State';
 
-			document.getElementById('officeAddressState').value = snapshot.val().officeAddressState;
+			document.getElementById('officeAddressState').value = brandData.officeAddressState;
 			document.getElementById('officeAddressState').size = document.getElementById('officeAddressState').value.length + 1;
 		} else {
 			document.getElementById('officeAddressState').placeholder = 'NY';
@@ -329,15 +332,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOfficeAddressZip() {
-		if (snapshot.val().officeAddressZip != null) {
+		if (brandData.officeAddressZip != null) {
 			// set local storage
-			localStorage.setItem('officeAddressZip', snapshot.val().officeAddressZip);
+			localStorage.setItem('officeAddressZip', brandData.officeAddressZip);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressZip);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.officeAddressZip);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Zip';
 
-			document.getElementById('officeAddressZip').value = snapshot.val().officeAddressZip;
+			document.getElementById('officeAddressZip').value = brandData.officeAddressZip;
 			document.getElementById('officeAddressZip').size = document.getElementById('officeAddressZip').value.length + 1;
 		} else {
 			document.getElementById('officeAddressZip').placeholder = '10001';
@@ -346,15 +349,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOfficeAddressCountry() {
-		if (snapshot.val().officeAddressCountry != null) {
+		if (brandData.officeAddressCountry != null) {
 			// set local storage
-			localStorage.setItem('officeAddressCountry', snapshot.val().officeAddressCountry);
+			localStorage.setItem('officeAddressCountry', brandData.officeAddressCountry);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().officeAddressCountry);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.officeAddressCountry);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Office Address Country';
 
-			document.getElementById('officeAddressCountry').value = snapshot.val().officeAddressCountry;
+			document.getElementById('officeAddressCountry').value = brandData.officeAddressCountry;
 			document.getElementById('officeAddressCountry').size = document.getElementById('officeAddressCountry').value.length + 1;
 		} else {
 			document.getElementById('officeAddressCountry').placeholder = 'USA';
@@ -374,9 +377,9 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Hours of Operation
 	function loadMondayOpeningTime() {
 		// Hours of Operation
-		if (snapshot.val().mondayOpeningTime != null) {
+		if (brandData.mondayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('mondayOpeningTime', snapshot.val().mondayOpeningTime);
+			localStorage.setItem('mondayOpeningTime', brandData.mondayOpeningTime);
 			document.getElementById('mondayOpeningTime').size = document.getElementById('mondayOpeningTime').value.length + 1;
 		} else {
 			document.getElementById('mondayOpeningTime').placeholder = '9:00 AM';
@@ -384,130 +387,130 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadMondayClosingTime() {
-		if (snapshot.val().mondayClosingTime != null) {
+		if (brandData.mondayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('mondayClosingTime', snapshot.val().mondayClosingTime);
-			document.getElementById('mondayClosingTime').value = snapshot.val().mondayClosingTime;
+			localStorage.setItem('mondayClosingTime', brandData.mondayClosingTime);
+			document.getElementById('mondayClosingTime').value = brandData.mondayClosingTime;
 		} else {
 			document.getElementById('mondayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningMondayClosingTime').style.display = 'block';
 		}
 	}
 	function loadTuesdayOpeningTime() {
-		if (snapshot.val().tuesdayOpeningTime != null) {
+		if (brandData.tuesdayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('tuesdayOpeningTime', snapshot.val().tuesdayOpeningTime);
-			document.getElementById('tuesdayOpeningTime').value = snapshot.val().tuesdayOpeningTime;
+			localStorage.setItem('tuesdayOpeningTime', brandData.tuesdayOpeningTime);
+			document.getElementById('tuesdayOpeningTime').value = brandData.tuesdayOpeningTime;
 		} else {
 			document.getElementById('tuesdayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningTuesdayOpeningTime').style.display = 'block';
 		}
 	}
 	function loadTuesdayClosingTime() {
-		if (snapshot.val().tuesdayClosingTime != null) {
+		if (brandData.tuesdayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('tuesdayClosingTime', snapshot.val().tuesdayClosingTime);
-			document.getElementById('tuesdayClosingTime').value = snapshot.val().tuesdayClosingTime;
+			localStorage.setItem('tuesdayClosingTime', brandData.tuesdayClosingTime);
+			document.getElementById('tuesdayClosingTime').value = brandData.tuesdayClosingTime;
 		} else {
 			document.getElementById('tuesdayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningTuesdayClosingTime').style.display = 'block';
 		}
 	}
 	function loadWednesdayOpeningTime() {
-		if (snapshot.val().wednesdayOpeningTime != null) {
+		if (brandData.wednesdayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('wednesdayOpeningTime', snapshot.val().wednesdayOpeningTime);
-			document.getElementById('wednesdayOpeningTime').value = snapshot.val().wednesdayOpeningTime;
+			localStorage.setItem('wednesdayOpeningTime', brandData.wednesdayOpeningTime);
+			document.getElementById('wednesdayOpeningTime').value = brandData.wednesdayOpeningTime;
 		} else {
 			document.getElementById('wednesdayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningWednesdayOpeningTime').style.display = 'block';
 		}
 	}
 	function loadWednesdayClosingTime() {
-		if (snapshot.val().wednesdayClosingTime != null) {
+		if (brandData.wednesdayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('wednesdayClosingTime', snapshot.val().wednesdayClosingTime);
-			document.getElementById('wednesdayClosingTime').value = snapshot.val().wednesdayClosingTime;
+			localStorage.setItem('wednesdayClosingTime', brandData.wednesdayClosingTime);
+			document.getElementById('wednesdayClosingTime').value = brandData.wednesdayClosingTime;
 		} else {
 			document.getElementById('wednesdayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningWednesdayClosingTime').style.display = 'block';
 		}
 	}
 	function loadThursdayOpeningTime() {
-		if (snapshot.val().thursdayOpeningTime != null) {
+		if (brandData.thursdayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('thursdayOpeningTime', snapshot.val().thursdayOpeningTime);
-			document.getElementById('thursdayOpeningTime').value = snapshot.val().thursdayOpeningTime;
+			localStorage.setItem('thursdayOpeningTime', brandData.thursdayOpeningTime);
+			document.getElementById('thursdayOpeningTime').value = brandData.thursdayOpeningTime;
 		} else {
 			document.getElementById('thursdayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningThursdayOpeningTime').style.display = 'block';
 		}
 	}
 	function loadThursdayClosingTime() {
-		if (snapshot.val().thursdayClosingTime != null) {
+		if (brandData.thursdayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('thursdayClosingTime', snapshot.val().thursdayClosingTime);
-			document.getElementById('thursdayClosingTime').value = snapshot.val().thursdayClosingTime;
+			localStorage.setItem('thursdayClosingTime', brandData.thursdayClosingTime);
+			document.getElementById('thursdayClosingTime').value = brandData.thursdayClosingTime;
 		} else {
 			document.getElementById('thursdayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningThursdayClosingTime').style.display = 'block';
 		}
 	}
 	function loadFridayOpeningTime() {
-		if (snapshot.val().fridayOpeningTime != null) {
+		if (brandData.fridayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('fridayOpeningTime', snapshot.val().fridayOpeningTime);
-			document.getElementById('fridayOpeningTime').value = snapshot.val().fridayOpeningTime;
+			localStorage.setItem('fridayOpeningTime', brandData.fridayOpeningTime);
+			document.getElementById('fridayOpeningTime').value = brandData.fridayOpeningTime;
 		} else {
 			document.getElementById('fridayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningFridayOpeningTime').style.display = 'block';
 		}
 	}
 	function loadFridayClosingTime() {
-		if (snapshot.val().fridayClosingTime != null) {
+		if (brandData.fridayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('fridayClosingTime', snapshot.val().fridayClosingTime);
-			document.getElementById('fridayClosingTime').value = snapshot.val().fridayClosingTime;
+			localStorage.setItem('fridayClosingTime', brandData.fridayClosingTime);
+			document.getElementById('fridayClosingTime').value = brandData.fridayClosingTime;
 		} else {
 			document.getElementById('fridayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningFridayClosingTime').style.display = 'block';
 		}
 	}
 	function loadSaturdayOpeningTime() {
-		if (snapshot.val().saturdayOpeningTime != null) {
+		if (brandData.saturdayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('saturdayOpeningTime', snapshot.val().saturdayOpeningTime);
-			document.getElementById('saturdayOpeningTime').value = snapshot.val().saturdayOpeningTime;
+			localStorage.setItem('saturdayOpeningTime', brandData.saturdayOpeningTime);
+			document.getElementById('saturdayOpeningTime').value = brandData.saturdayOpeningTime;
 		} else {
 			document.getElementById('saturdayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningSaturdayOpeningTime').style.display = 'block';
 		}
 	}
 	function loadSaturdayClosingTime() {
-		if (snapshot.val().saturdayClosingTime != null) {
+		if (brandData.saturdayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('saturdayClosingTime', snapshot.val().saturdayClosingTime);
-			document.getElementById('saturdayClosingTime').value = snapshot.val().saturdayClosingTime;
+			localStorage.setItem('saturdayClosingTime', brandData.saturdayClosingTime);
+			document.getElementById('saturdayClosingTime').value = brandData.saturdayClosingTime;
 		} else {
 			document.getElementById('saturdayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningSaturdayClosingTime').style.display = 'block';
 		}
 	}
 	function loadSundayOpeningTime() {
-		if (snapshot.val().sundayOpeningTime != null) {
+		if (brandData.sundayOpeningTime != null) {
 			// set local storage
-			localStorage.setItem('sundayOpeningTime', snapshot.val().sundayOpeningTime);
-			document.getElementById('sundayOpeningTime').value = snapshot.val().sundayOpeningTime;
+			localStorage.setItem('sundayOpeningTime', brandData.sundayOpeningTime);
+			document.getElementById('sundayOpeningTime').value = brandData.sundayOpeningTime;
 		} else {
 			document.getElementById('sundayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningSundayOpeningTime').style.display = 'block';
 		}
 	}
 	function loadSundayClosingTime() {
-		if (snapshot.val().sundayClosingTime != null) {
+		if (brandData.sundayClosingTime != null) {
 			// set local storage
-			localStorage.setItem('sundayClosingTime', snapshot.val().sundayClosingTime);
-			document.getElementById('sundayClosingTime').value = snapshot.val().sundayClosingTime;
+			localStorage.setItem('sundayClosingTime', brandData.sundayClosingTime);
+			document.getElementById('sundayClosingTime').value = brandData.sundayClosingTime;
 		} else {
 			document.getElementById('sundayClosingTime').placeholder = '5:00 PM';
 			document.getElementById('warningSundayClosingTime').style.display = 'block';
@@ -533,10 +536,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Founding
 	function loadFounderName() {
 		// Founding Info
-		if (snapshot.val().founderName != null) {
+		if (brandData.founderName != null) {
 			// set local storage
-			localStorage.setItem('founderName', snapshot.val().founderName);
-			document.getElementById('founderName').value = snapshot.val().founderName;
+			localStorage.setItem('founderName', brandData.founderName);
+			document.getElementById('founderName').value = brandData.founderName;
 			document.getElementById('founderName').size = document.getElementById('founderName').value.length + 1;
 		} else {
 			document.getElementById('founder').placeholder = 'John Doe';
@@ -545,20 +548,20 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadFoundingDae() {
-		if (snapshot.val().foundingDate != null) {
+		if (brandData.foundingDate != null) {
 			// set local storage
-			localStorage.setItem('foundingDate', snapshot.val().foundingDate);
-			document.getElementById('foundingDate').value = snapshot.val().foundingDate;
+			localStorage.setItem('foundingDate', brandData.foundingDate);
+			document.getElementById('foundingDate').value = brandData.foundingDate;
 		} else {
 			document.getElementById('foundingDate').placeholder = '2017';
 			document.getElementById('warningFoundingDate').style.display = 'block';
 		}
 	}
 	function loadTradeBusinessName() {
-		if (snapshot.val().tradeBusinessName != null) {
+		if (brandData.tradeBusinessName != null) {
 			// set local storage
-			localStorage.setItem('tradeBusinessName', snapshot.val().tradeBusinessName);
-			document.getElementById('tradeBusinessName').value = snapshot.val().tradeBusinessName;
+			localStorage.setItem('tradeBusinessName', brandData.tradeBusinessName);
+			document.getElementById('tradeBusinessName').value = brandData.tradeBusinessName;
 			document.getElementById('tradeBusinessName').size = document.getElementById('tradeBusinessName').value.length + 1;
 
 		} else {
@@ -568,10 +571,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadLegalBusinessName() {
-		if (snapshot.val().legalBusinessName != null) {
+		if (brandData.legalBusinessName != null) {
 			// set local storage
-			localStorage.setItem('legalBusinessName', snapshot.val().legalBusinessName);
-			document.getElementById('legalBusinessName').value = snapshot.val().legalBusinessName;
+			localStorage.setItem('legalBusinessName', brandData.legalBusinessName);
+			document.getElementById('legalBusinessName').value = brandData.legalBusinessName;
 			document.getElementById('legalBusinessName').size = document.getElementById('legalBusinessName').value.length + 1;
 
 		} else {
@@ -590,10 +593,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// Business
 	function loadBusinessType() {
 		// Basic Info
-		if (snapshot.val().businessType != null) {
+		if (brandData.businessType != null) {
 			// set local storage
-			localStorage.setItem('businessType', snapshot.val().businessType);
-			document.getElementById('businessType').value = snapshot.val().businessType;
+			localStorage.setItem('businessType', brandData.businessType);
+			document.getElementById('businessType').value = brandData.businessType;
 			document.getElementById('businessType').size = document.getElementById('businessType').value.length + 1;
 
 		} else {
@@ -602,10 +605,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadSlogan() {
-		if (snapshot.val().slogan != null) {
+		if (brandData.slogan != null) {
 			// set local storage
-			localStorage.setItem('slogan', snapshot.val().slogan);
-			document.getElementById('slogan').value = snapshot.val().slogan;
+			localStorage.setItem('slogan', brandData.slogan);
+			document.getElementById('slogan').value = brandData.slogan;
 			document.getElementById('slogan').size = document.getElementById('slogan').value.length + 1;
 		} else {
 			document.getElementById('slogan').placeholder = 'The Best Tacos in Town';
@@ -614,10 +617,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadMissionStatement() {
-		if (snapshot.val().missionStatement != null) {
+		if (brandData.missionStatement != null) {
 			// set local storage
-			localStorage.setItem('missionStatement', snapshot.val().missionStatement);
-			document.getElementById('missionStatement').value = snapshot.val().missionStatement;
+			localStorage.setItem('missionStatement', brandData.missionStatement);
+			document.getElementById('missionStatement').value = brandData.missionStatement;
 			document.getElementById('missionStatement').size = document.getElementById('missionStatement').value.length + 1;
 		} else {
 			document.getElementById('missionStatement').placeholder = 'To provide the best tacos in town';
@@ -626,10 +629,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadValueProp() {
-		if (snapshot.val().valueProp != null) {
+		if (brandData.valueProp != null) {
 			// set local storage
-			localStorage.setItem('valueProp', snapshot.val().valueProp);
-			document.getElementById('valueProp').value = snapshot.val().valueProp;
+			localStorage.setItem('valueProp', brandData.valueProp);
+			document.getElementById('valueProp').value = brandData.valueProp;
 			document.getElementById('valueProp').size = document.getElementById('valueProp').value.length + 1;
 		} else {
 			document.getElementById('valueProp').placeholder = 'We make tacos with only the finest and freshest ingredients';
@@ -648,10 +651,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// person 1
 	function loadPerson1Name() {
 		// Person 1
-		if (snapshot.val().person1Name != null) {
+		if (brandData.person1Name != null) {
 			// set local storage
-			localStorage.setItem('person1Name', snapshot.val().person1Name);
-			document.getElementById('person1Name').value = snapshot.val().person1Name;
+			localStorage.setItem('person1Name', brandData.person1Name);
+			document.getElementById('person1Name').value = brandData.person1Name;
 			document.getElementById('person1Name').size = document.getElementById('person1Name').value.length + 1;
 		} else {
 			document.getElementById('person1Name').placeholder = 'Harry Doe';
@@ -660,10 +663,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson1Title() {
-		if (snapshot.val().person1Title != null) {
+		if (brandData.person1Title != null) {
 			// set local storage
-			localStorage.setItem('person1Title', snapshot.val().person1Title);
-			document.getElementById('person1Title').value = snapshot.val().person1Title;
+			localStorage.setItem('person1Title', brandData.person1Title);
+			document.getElementById('person1Title').value = brandData.person1Title;
 			document.getElementById('person1Title').size = document.getElementById('person1Title').value.length + 1;
 		} else {
 			document.getElementById('person1Title').placeholder = 'Head Chef';
@@ -672,20 +675,20 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson1Headshot() {
-		//   if (snapshot.val().person1Headshot != null) {
+		//   if (brandData.person1Headshot != null) {
 		//     // set local storage
-		//     localStorage.setItem('person1Headshot', snapshot.val().person1Headshot);
-		//      document.getElementById('person1Headshot').value = snapshot.val().person1Headshot;
+		//     localStorage.setItem('person1Headshot', brandData.person1Headshot);
+		//      document.getElementById('person1Headshot').value = brandData.person1Headshot;
 		//  } else {
 		//      document.getElementById('person1Headshot').placeholder = 'https://via.placeholder.com/150';
 		//       document.getElementById('warningPerson1Headshot').style.display = 'block';
 		//   }
 	}
 	function loadPerson1FacebookUrl() {
-		if (snapshot.val().person1FacebookUrl != null) {
+		if (brandData.person1FacebookUrl != null) {
 			// set local storage
-			localStorage.setItem('person1FacebookUrl', snapshot.val().person1FacebookUrl);
-			document.getElementById('person1FacebookUrl').value = snapshot.val().person1FacebookUrl;
+			localStorage.setItem('person1FacebookUrl', brandData.person1FacebookUrl);
+			document.getElementById('person1FacebookUrl').value = brandData.person1FacebookUrl;
 			document.getElementById('person1FacebookUrl').size = document.getElementById('person1FacebookUrl').value.length + 1;
 
 		} else {
@@ -695,10 +698,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson1InstagramUrl() {
-		if (snapshot.val().person1InstagramUrl != null) {
+		if (brandData.person1InstagramUrl != null) {
 			// set local storage
-			localStorage.setItem('person1InstagramUrl', snapshot.val().person1InstagramUrl);
-			document.getElementById('person1InstagramUrl').value = snapshot.val().person1InstagramUrl;
+			localStorage.setItem('person1InstagramUrl', brandData.person1InstagramUrl);
+			document.getElementById('person1InstagramUrl').value = brandData.person1InstagramUrl;
 			document.getElementById('person1InstagramUrl').size = document.getElementById('person1InstagramUrl').value.length + 1;
 		} else {
 			document.getElementById('person1InstagramUrl').placeholder = 'https://instagram.com/harrydoe.tacko';
@@ -707,10 +710,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson1LinkedInUrl() {
-		if (snapshot.val().person1LinkedinUrl != null) {
+		if (brandData.person1LinkedinUrl != null) {
 			// set local storage
-			localStorage.setItem('person1LinkedinUrl', snapshot.val().person1LinkedinUrl);
-			document.getElementById('person1LinkedinUrl').value = snapshot.val().person1LinkedinUrl;
+			localStorage.setItem('person1LinkedinUrl', brandData.person1LinkedinUrl);
+			document.getElementById('person1LinkedinUrl').value = brandData.person1LinkedinUrl;
 			document.getElementById('person1LinkedinUrl').size = document.getElementById('person1LinkedinUrl').value.length + 1;
 		} else {
 			document.getElementById('person1LinkedinUrl').placeholder = 'https://linkedin.com/in/harrydoetaco';
@@ -719,10 +722,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson1TwitterUrl() {
-		if (snapshot.val().person1TwitterUrl != null) {
+		if (brandData.person1TwitterUrl != null) {
 			// set local storage
-			localStorage.setItem('person1TwitterUrl', snapshot.val().person1TwitterUrl);
-			document.getElementById('person1TwitterUrl').value = snapshot.val().person1TwitterUrl;
+			localStorage.setItem('person1TwitterUrl', brandData.person1TwitterUrl);
+			document.getElementById('person1TwitterUrl').value = brandData.person1TwitterUrl;
 			document.getElementById('person1TwitterUrl').size = document.getElementById('person1TwitterUrl').value.length + 1;
 		} else {
 			document.getElementById('person1TwitterUrl').placeholder = 'https://twitter.com/@harrydoetaco';
@@ -731,10 +734,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson1TiktokUrl() {
-		if (snapshot.val().person1TiktokUrl != null) {
+		if (brandData.person1TiktokUrl != null) {
 			// set local storage
-			localStorage.setItem('person1TiktokUrl', snapshot.val().person1TiktokUrl);
-			document.getElementById('person1TiktokUrl').value = snapshot.val().person1TiktokUrl;
+			localStorage.setItem('person1TiktokUrl', brandData.person1TiktokUrl);
+			document.getElementById('person1TiktokUrl').value = brandData.person1TiktokUrl;
 			document.getElementById('person1TiktokUrl').size = document.getElementById('person1TiktokUrl').value.length + 1;
 		} else {
 			document.getElementById('person1TiktokUrl').placeholder = 'https://tiktok.com/@harrydoetaco';
@@ -756,10 +759,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 	// person 2
 	function loadPerson2Name() {
 		// Person 2
-		if (snapshot.val().person2Name != null) {
+		if (brandData.person2Name != null) {
 			// set local storage
-			localStorage.setItem('person2Name', snapshot.val().person2Name);
-			document.getElementById('person2Name').value = snapshot.val().person2Name;
+			localStorage.setItem('person2Name', brandData.person2Name);
+			document.getElementById('person2Name').value = brandData.person2Name;
 			document.getElementById('person2Name').size = document.getElementById('person2Name').value.length + 1;
 		} else {
 			document.getElementById('person2Name').placeholder = 'Harry Doe';
@@ -768,10 +771,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson2Title() {
-		if (snapshot.val().person2Title != null) {
+		if (brandData.person2Title != null) {
 			// set local storage
-			localStorage.setItem('person2Title', snapshot.val().person2Title);
-			document.getElementById('person2Title').value = snapshot.val().person2Title;
+			localStorage.setItem('person2Title', brandData.person2Title);
+			document.getElementById('person2Title').value = brandData.person2Title;
 			document.getElementById('person2Title').size = document.getElementById('person2Title').value.length + 1;
 		} else {
 			document.getElementById('person2Title').placeholder = 'Head Chef';
@@ -780,20 +783,20 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson2Headshot() {
-		//   if (snapshot.val().person2Headshot != null) {
+		//   if (brandData.person2Headshot != null) {
 		//       // set local storage
-		//       localStorage.setItem('person2Headshot', snapshot.val().person2Headshot);
-		//      document.getElementById('person2Headshot').value = snapshot.val().person2Headshot;
+		//       localStorage.setItem('person2Headshot', brandData.person2Headshot);
+		//      document.getElementById('person2Headshot').value = brandData.person2Headshot;
 		//  } else {
 		//       document.getElementById('person2Headshot').placeholder = 'https://via.placeholder.com/250';
 		//       document.getElementById('warningPerson2Headshot').style.display = 'block';
 		//  }
 	}
 	function loadPerson2FacebookUrl() {
-		if (snapshot.val().person2FacebookUrl != null) {
+		if (brandData.person2FacebookUrl != null) {
 			// set local storage
-			localStorage.setItem('person2FacebookUrl', snapshot.val().person2FacebookUrl);
-			document.getElementById('person2FacebookUrl').value = snapshot.val().person2FacebookUrl;
+			localStorage.setItem('person2FacebookUrl', brandData.person2FacebookUrl);
+			document.getElementById('person2FacebookUrl').value = brandData.person2FacebookUrl;
 			document.getElementById('person2FacebookUrl').size = document.getElementById('person2FacebookUrl').value.length + 1;
 		} else {
 			document.getElementById('person2FacebookUrl').placeholder = 'https://facebook.com/harrydoetaco';
@@ -802,10 +805,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson2InstagramUrl() {
-		if (snapshot.val().person2InstagramUrl != null) {
+		if (brandData.person2InstagramUrl != null) {
 			// set local storage
-			localStorage.setItem('person2InstagramUrl', snapshot.val().person2InstagramUrl);
-			document.getElementById('person2InstagramUrl').value = snapshot.val().person2InstagramUrl;
+			localStorage.setItem('person2InstagramUrl', brandData.person2InstagramUrl);
+			document.getElementById('person2InstagramUrl').value = brandData.person2InstagramUrl;
 			document.getElementById('person2InstagramUrl').size = document.getElementById('person2InstagramUrl').value.length + 1;
 		} else {
 			document.getElementById('person2InstagramUrl').placeholder = 'https://instagram.com/harrydoe.tacko';
@@ -814,10 +817,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson2LinkedinUrl() {
-		if (snapshot.val().person2LinkedinUrl != null) {
+		if (brandData.person2LinkedinUrl != null) {
 			// set local storage
-			localStorage.setItem('person2LinkedinUrl', snapshot.val().person2LinkedinUrl);
-			document.getElementById('person2LinkedinUrl').value = snapshot.val().person2LinkedinUrl;
+			localStorage.setItem('person2LinkedinUrl', brandData.person2LinkedinUrl);
+			document.getElementById('person2LinkedinUrl').value = brandData.person2LinkedinUrl;
 			document.getElementById('person2LinkedinUrl').size = document.getElementById('person2LinkedinUrl').value.length + 1;
 		} else {
 			document.getElementById('person2LinkedinUrl').placeholder = 'https://linkedin.com/in/harrydoetaco';
@@ -826,10 +829,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson2TwitterUrl() {
-		if (snapshot.val().person2TwitterUrl != null) {
+		if (brandData.person2TwitterUrl != null) {
 			// set local storage
-			localStorage.setItem('person2TwitterUrl', snapshot.val().person2TwitterUrl);
-			document.getElementById('person2TwitterUrl').value = snapshot.val().person2TwitterUrl;
+			localStorage.setItem('person2TwitterUrl', brandData.person2TwitterUrl);
+			document.getElementById('person2TwitterUrl').value = brandData.person2TwitterUrl;
 			document.getElementById('person2TwitterUrl').size = document.getElementById('person2TwitterUrl').value.length + 1;
 		} else {
 			document.getElementById('person2TwitterUrl').placeholder = 'https://twitter.com/@harrydoetaco';
@@ -838,10 +841,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPerson2TiktokUrl() {
-		if (snapshot.val().person2TiktokUrl != null) {
+		if (brandData.person2TiktokUrl != null) {
 			// set local storage
-			localStorage.setItem('person2TiktokUrl', snapshot.val().person2TiktokUrl);
-			document.getElementById('person2TiktokUrl').value = snapshot.val().person2TiktokUrl;
+			localStorage.setItem('person2TiktokUrl', brandData.person2TiktokUrl);
+			document.getElementById('person2TiktokUrl').value = brandData.person2TiktokUrl;
 			document.getElementById('person2TiktokUrl').size = document.getElementById('person2TiktokUrl').value.length + 1;
 		} else {
 			document.getElementById('person2TiktokUrl').placeholder = 'https://tiktok.com/@harrydoetaco';
@@ -867,10 +870,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// offer 1
 	function loadOffer1Name() {
-		if (snapshot.val().offer1Name != null) {
+		if (brandData.offer1Name != null) {
 			// set local storage
-			localStorage.setItem('offer1Name', snapshot.val().offer1Name);
-			document.getElementById('offer1Name').value = snapshot.val().offer1Name;
+			localStorage.setItem('offer1Name', brandData.offer1Name);
+			document.getElementById('offer1Name').value = brandData.offer1Name;
 			document.getElementById('offer1Name').size = document.getElementById('offer1Name').value.length + 1;
 		} else {
 			document.getElementById('offer1Name').placeholder = 'Free Tacos';
@@ -879,10 +882,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer1Price() {
-		if (snapshot.val().offer1Price != null) {
+		if (brandData.offer1Price != null) {
 			// set local storage
-			localStorage.setItem('offer1Price', snapshot.val().offer1Price);
-			document.getElementById('offer1Price').value = snapshot.val().offer1Price;
+			localStorage.setItem('offer1Price', brandData.offer1Price);
+			document.getElementById('offer1Price').value = brandData.offer1Price;
 			document.getElementById('offer1Price').size = document.getElementById('offer1Price').value.length + 1;
 		} else {
 			document.getElementById('offer1Price').placeholder = '$0';
@@ -891,10 +894,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer1Feature() {
-		if (snapshot.val().offer1Feature != null) {
+		if (brandData.offer1Feature != null) {
 			// set local storage
-			localStorage.setItem('offer1Feature', snapshot.val().offer1Feature);
-			document.getElementById('offer1Feature').value = snapshot.val().offer1Feature;
+			localStorage.setItem('offer1Feature', brandData.offer1Feature);
+			document.getElementById('offer1Feature').value = brandData.offer1Feature;
 			document.getElementById('offer1Feature').size = document.getElementById('offer1Feature').value.length + 1;
 		} else {
 			document.getElementById('offer1Feature').placeholder = 'Free Tacos for a Year';
@@ -903,10 +906,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer1Benefit() {
-		if (snapshot.val().offer1Benefit != null) {
+		if (brandData.offer1Benefit != null) {
 			// set local storage
-			localStorage.setItem('offer1Benefit', snapshot.val().offer1Benefit);
-			document.getElementById('offer1Benefit').value = snapshot.val().offer1Benefit;
+			localStorage.setItem('offer1Benefit', brandData.offer1Benefit);
+			document.getElementById('offer1Benefit').value = brandData.offer1Benefit;
 			document.getElementById('offer1Benefit').size = document.getElementById('offer1Benefit').value.length + 1;
 		} else {
 			document.getElementById('offer1Benefit').placeholder = 'Free Tacos for a Year';
@@ -915,10 +918,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer1Solution() {
-		if (snapshot.val().offer1Solution != null) {
+		if (brandData.offer1Solution != null) {
 			// set local storage
-			localStorage.setItem('offer1Solution', snapshot.val().offer1Solution);
-			document.getElementById('offer1Solution').value = snapshot.val().offer1Solution;
+			localStorage.setItem('offer1Solution', brandData.offer1Solution);
+			document.getElementById('offer1Solution').value = brandData.offer1Solution;
 			document.getElementById('offer1Solution').size = document.getElementById('offer1Solution').value.length + 1;
 		} else {
 			document.getElementById('offer1Solution').placeholder = 'Free Tacos for a Year';
@@ -927,10 +930,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer1Description() {
-		if (snapshot.val().offer1Description != null) {
+		if (brandData.offer1Description != null) {
 			// set local storage
-			localStorage.setItem('offer1Description', snapshot.val().offer1Description);
-			document.getElementById('offer1Description').value = snapshot.val().offer1Description;
+			localStorage.setItem('offer1Description', brandData.offer1Description);
+			document.getElementById('offer1Description').value = brandData.offer1Description;
 			document.getElementById('offer1Description').size = document.getElementById('offer1Description').value.length + 1;
 		} else {
 			document.getElementById('offer1Description').placeholder = 'Free tacos for everyone!';
@@ -939,10 +942,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer1Image() {
-		if (snapshot.val().offer1Image != null) {
+		if (brandData.offer1Image != null) {
 			// set local storage
-			localStorage.setItem('offer1Image', snapshot.val().offer1Image);
-			document.getElementById('offer1Image').value = snapshot.val().offer1Image;
+			localStorage.setItem('offer1Image', brandData.offer1Image);
+			document.getElementById('offer1Image').value = brandData.offer1Image;
 		} else {
 			document.getElementById('offer1Image').placeholder = 'https://via.placeholder.com/150';
 			document.getElementById('warningOffer1Image').style.display = 'block';
@@ -960,10 +963,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// offer 2
 	function loadOffer2Name() {
-		if (snapshot.val().offer2Name != null) {
+		if (brandData.offer2Name != null) {
 			// set local storage
-			localStorage.setItem('offer2Title', snapshot.val().offer2Name);
-			document.getElementById('offer2Name').value = snapshot.val().offer2Name;
+			localStorage.setItem('offer2Title', brandData.offer2Name);
+			document.getElementById('offer2Name').value = brandData.offer2Name;
 			document.getElementById('offer2Name').size = document.getElementById('offer2Name').value.length + 1;
 		} else {
 			document.getElementById('offer2Name').placeholder = 'Free Tacos';
@@ -972,10 +975,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer2Price() {
-		if (snapshot.val().offer2Price != null) {
+		if (brandData.offer2Price != null) {
 			// set local storage
-			localStorage.setItem('offer2Price', snapshot.val().offer2Price);
-			document.getElementById('offer2Price').value = snapshot.val().offer2Price;
+			localStorage.setItem('offer2Price', brandData.offer2Price);
+			document.getElementById('offer2Price').value = brandData.offer2Price;
 			document.getElementById('offer2Price').size = document.getElementById('offer2Price').value.length + 1;
 		} else {
 			document.getElementById('offer2Price').placeholder = '$0';
@@ -984,10 +987,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer2Feature() {
-		if (snapshot.val().offer2Feature != null) {
+		if (brandData.offer2Feature != null) {
 			// set local storage
-			localStorage.setItem('offer2Feature', snapshot.val().offer2Feature);
-			document.getElementById('offer2Feature').value = snapshot.val().offer2Feature;
+			localStorage.setItem('offer2Feature', brandData.offer2Feature);
+			document.getElementById('offer2Feature').value = brandData.offer2Feature;
 			document.getElementById('offer2Feature').size = document.getElementById('offer2Feature').value.length + 1;
 		} else {
 			document.getElementById('offer2Feature').placeholder = 'Free Tacos for a Year';
@@ -996,10 +999,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer2Benefit() {
-		if (snapshot.val().offer2Benefit != null) {
+		if (brandData.offer2Benefit != null) {
 			// set local storage
-			localStorage.setItem('offer2Benefit', snapshot.val().offer2Benefit);
-			document.getElementById('offer2Benefit').value = snapshot.val().offer2Benefit;
+			localStorage.setItem('offer2Benefit', brandData.offer2Benefit);
+			document.getElementById('offer2Benefit').value = brandData.offer2Benefit;
 			document.getElementById('offer2Benefit').size = document.getElementById('offer2Benefit').value.length + 1;
 		} else {
 			document.getElementById('offer2Benefit').placeholder = 'Free Tacos for a Year';
@@ -1008,10 +1011,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer2Solution() {
-		if (snapshot.val().offer2Solution != null) {
+		if (brandData.offer2Solution != null) {
 			// set local storage
-			localStorage.setItem('offer2Solution', snapshot.val().offer2Solution);
-			document.getElementById('offer2Solution').value = snapshot.val().offer2Solution;
+			localStorage.setItem('offer2Solution', brandData.offer2Solution);
+			document.getElementById('offer2Solution').value = brandData.offer2Solution;
 			document.getElementById('offer2Solution').size = document.getElementById('offer2Solution').value.length + 1;
 		} else {
 			document.getElementById('offer2Solution').placeholder = 'Free Tacos for a Year';
@@ -1020,10 +1023,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer2Description() {
-		if (snapshot.val().offer2Description != null) {
+		if (brandData.offer2Description != null) {
 			// set local storage
-			localStorage.setItem('offer2Description', snapshot.val().offer2Description);
-			document.getElementById('offer2Description').value = snapshot.val().offer2Description;
+			localStorage.setItem('offer2Description', brandData.offer2Description);
+			document.getElementById('offer2Description').value = brandData.offer2Description;
 			document.getElementById('offer2Description').size = document.getElementById('offer2Description').value.length + 1;
 		} else {
 			document.getElementById('offer2Description').placeholder = 'Free tacos for everyone!';
@@ -1032,10 +1035,10 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadOffer2Image() {
-		if (snapshot.val().offer2Image != null) {
+		if (brandData.offer2Image != null) {
 			// set local storage
-			localStorage.setItem('offer2Image', snapshot.val().offer2Image);
-			document.getElementById('offer2Image').value = snapshot.val().offer2Image;
+			localStorage.setItem('offer2Image', brandData.offer2Image);
+			document.getElementById('offer2Image').value = brandData.offer2Image;
 		} else {
 			document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
 			document.getElementById('warningOffer2Image').style.display = 'block';
@@ -1058,15 +1061,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// Colors
 	function loadPrimaryColor () {
-		if (snapshot.val().primaryColor != null) {
+		if (brandData.primaryColor != null) {
 			// set local storage
-			localStorage.setItem('primaryColor', snapshot.val().primaryColor);
+			localStorage.setItem('primaryColor', brandData.primaryColor);
 
-			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryColor);
+			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', brandData.primaryColor);
 			document.getElementById('color').lastChild.innerHTML = 'Primary Color';
 
-			document.getElementById('primaryColor').value = snapshot.val().primaryColor;
-			document.getElementById('inputEventPrimaryColor').value = '#ffffff';
+			document.getElementById('primaryColor').value = brandData.primaryColor;
+			// document.getElementById('inputEventPrimaryColor').value = '#ffffff';
 			document.getElementById('primaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('primaryColor').value;
 			document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: block;');
 			document.getElementById('primaryColorValueDisplayColor').style.backgroundColor = document.getElementById('primaryColor').value;
@@ -1081,14 +1084,14 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadSecondaryColor () {
-		if (snapshot.val().secondaryColor != null) {
+		if (brandData.secondaryColor != null) {
 			// set local storage
-			localStorage.setItem('secondaryColor', snapshot.val().secondaryColor);
+			localStorage.setItem('secondaryColor', brandData.secondaryColor);
 
-			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryColor);
+			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', brandData.secondaryColor);
 			document.getElementById('color').lastChild.innerHTML = 'Secondary Color';
 
-			document.getElementById('secondaryColor').value = snapshot.val().secondaryColor;
+			document.getElementById('secondaryColor').value = brandData.secondaryColor;
 			document.getElementById('secondaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('secondaryColor').value;
 			document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: block;');
 			document.getElementById('secondaryColorValueDisplayColor').style.backgroundColor = document.getElementById('secondaryColor').value;
@@ -1102,14 +1105,14 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadTertiaryColor () {
-		if (snapshot.val().tertiaryColor != null) {
+		if (brandData.tertiaryColor != null) {
 			// set local storage
-			localStorage.setItem('tertiaryColor', snapshot.val().tertiaryColor);
+			localStorage.setItem('tertiaryColor', brandData.tertiaryColor);
 
-			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryColor);
+			document.getElementById('color').appendChild(document.createElement('option')).setAttribute('value', brandData.tertiaryColor);
 			document.getElementById('color').lastChild.innerHTML = 'Tertiary Color';
 
-			document.getElementById('tertiaryColor').value = snapshot.val().tertiaryColor;
+			document.getElementById('tertiaryColor').value = brandData.tertiaryColor;
 			document.getElementById('tertiaryColorValueDisplay').innerHTML = 'Current Primary Color Code: ' + document.getElementById('tertiaryColor').value;
 			document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
 			document.getElementById('tertiaryColorValueDisplayColor').style.backgroundColor = document.getElementById('tertiaryColor').value;
@@ -1130,13 +1133,13 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// Fonts
 	function loadPrimaryFont () {
-		if (snapshot.val().primaryFont != null) {
-			localStorage.setItem('primaryFont', snapshot.val().primaryFont);
+		if (brandData.primaryFont != null) {
+			localStorage.setItem('primaryFont', brandData.primaryFont);
 
-			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().tertiaryFont);
+			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', brandData.tertiaryFont);
 			document.getElementById('text').lastChild.innerHTML = 'Tertiary Font';
 
-			document.getElementById('primaryFont').value = snapshot.val().primaryFont;
+			document.getElementById('primaryFont').value = brandData.primaryFont;
 			document.getElementById('primaryFont').size = document.getElementById('primaryFont').value.length + 1;
 		} else {
 			document.getElementById('primaryFont').placeholder = 'Arial';
@@ -1145,14 +1148,14 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadSecondaryFont () {
-		if (snapshot.val().secondaryFont != null) {
+		if (brandData.secondaryFont != null) {
 			// set local storage
-			localStorage.setItem('secondaryFont', snapshot.val().secondaryFont);
+			localStorage.setItem('secondaryFont', brandData.secondaryFont);
 
-			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().secondaryFont);
+			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', brandData.secondaryFont);
 			document.getElementById('text').lastChild.innerHTML = 'Secondary Font';
 
-			document.getElementById('secondaryFont').value = snapshot.val().secondaryFont;
+			document.getElementById('secondaryFont').value = brandData.secondaryFont;
 			document.getElementById('secondaryFont').size = document.getElementById('secondaryFont').value.length + 1;
 		} else {
 			document.getElementById('secondaryFont').placeholder = 'Arial';
@@ -1161,14 +1164,14 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadTertiaryFont () {
-		if (snapshot.val().tertiaryFont != null) {
+		if (brandData.tertiaryFont != null) {
 			// set local storage
-			localStorage.setItem('tertiaryFont', snapshot.val().tertiaryFont);
+			localStorage.setItem('tertiaryFont', brandData.tertiaryFont);
 
-			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryFont);
+			document.getElementById('text').appendChild(document.createElement('option')).setAttribute('value', brandData.primaryFont);
 			document.getElementById('text').lastChild.innerHTML = 'Primary Font';
 
-			document.getElementById('tertiaryFont').value = snapshot.val().tertiaryFont;
+			document.getElementById('tertiaryFont').value = brandData.tertiaryFont;
 			document.getElementById('tertiaryFont').size = document.getElementById('tertiaryFont').value.length + 1;
 		} else {
 			document.getElementById('tertiaryFont').placeholder = 'Arial';
@@ -1184,15 +1187,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 
 	// Contact
 	function loadPrimaryContactPhone () {
-		if (snapshot.val().primaryContactPhone != null) {
+		if (brandData.primaryContactPhone != null) {
 			// set local storage
-			localStorage.setItem('primaryContactPhone', snapshot.val().primaryContactPhone);
+			localStorage.setItem('primaryContactPhone', brandData.primaryContactPhone);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactPhone);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.primaryContactPhone);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Contact Phone';
 
-			document.getElementById('primaryContactPhone').value = snapshot.val().primaryContactPhone;
+			document.getElementById('primaryContactPhone').value = brandData.primaryContactPhone;
 			document.getElementById('primaryContactPhone').size = document.getElementById('primaryContactPhone').value.length + 1;
 		} else {
 			document.getElementById('primaryContactPhone').placeholder = '555-555-5555';
@@ -1201,15 +1204,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPrimaryContactEmail () {
-		if (snapshot.val().primaryContactEmail != null) {
+		if (brandData.primaryContactEmail != null) {
 			// set local storage
-			localStorage.setItem('primaryContactEmail', snapshot.val().primaryContactEmail);
+			localStorage.setItem('primaryContactEmail', brandData.primaryContactEmail);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactEmail);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.primaryContactEmail);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Contact Email';
 
-			document.getElementById('primaryContactEmail').value = snapshot.val().primaryContactEmail;
+			document.getElementById('primaryContactEmail').value = brandData.primaryContactEmail;
 			document.getElementById('primaryContactEmail').size = document.getElementById('primaryContactEmail').value.length + 2;
 		} else {
 			document.getElementById('primaryContactEmail').placeholder = 'sampleemail@gmail.com';
@@ -1218,15 +1221,15 @@ get(child(dbRef, 'brands/' + brand)).then((snapshot) => {
 		}
 	}
 	function loadPrimaryContactWebsite () {
-		if (snapshot.val().primaryContactWebsite != null) {
+		if (brandData.primaryContactWebsite != null) {
 			// set local storage
-			localStorage.setItem('primaryContactWebsite', snapshot.val().primaryContactWebsite);
+			localStorage.setItem('primaryContactWebsite', brandData.primaryContactWebsite);
 
 			// Create an 'option' element under the 'brandList' list for search reference in the Brand Reference Popup
-			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', snapshot.val().primaryContactWebsite);
+			document.getElementById('valueAll').appendChild(document.createElement('option')).setAttribute('value', brandData.primaryContactWebsite);
 			document.getElementById('valueAll').lastChild.innerHTML = 'Primary Contact Website';
 
-			document.getElementById('primaryContactWebsite').value = snapshot.val().primaryContactWebsite;
+			document.getElementById('primaryContactWebsite').value = brandData.primaryContactWebsite;
 			document.getElementById('primaryContactWebsite').size = document.getElementById('primaryContactWebsite').value.length + 1;
 		} else {
 			document.getElementById('primaryContactWebsite').placeholder = 'https://www.mySite.com';

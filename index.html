@@ -113,10 +113,10 @@
 <!-- Nav Bar -->
 <header>
 	<nav id="navBar" style="height: 55px; display: flex; justify-content: space-around;">
-		<div class="navTab" onclick="selectContentType('brand'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b'; // Color change to purple not working for these tabs">Brand</div>
-		<div class="navTab" onclick="selectContentType('content'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Content</div>
-		<div class="navTab" onclick="selectContentType('newContent'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">New Content</div>
-		<div class="navTab" onclick="selectContentType('settings'); document.querySelectorAll('.navTab').style.backgroundColor = '#c2c2c2'; this.style.backgroundColor = '#4c236b';">Settings</div>
+		<div class="navTab" data-navFor="brand" onclick="selectContentType('brand');">Brand</div>
+		<div class="navTab" data-navFor="content" onclick="selectContentType('content');">Content</div>
+		<div class="navTab" data-navFor="newContent" onclick="selectContentType('newContent');">New Content</div>
+		<div class="navTab" data-navFor="settings" onclick="selectContentType('settings');">Settings</div>
 
 		<!-- The tab below is dedicated to authentication related links/buttons -->
 		<div class="navTab auth-tab-container">
@@ -2224,7 +2224,7 @@
 									<span class="flex-justify-content-end">
 										<img id="linkGlobalQRHere" class="newContentFieldEnhancement" alt="" src="" style="display: none;" />
 										<img id="linkGlobalQR" class="newContentFieldEnhancement" alt="" src="media/icons/qrCode.svg" onclick="linkGlobalQR();" />
-										<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/icons/shortenLink.svg" style="" onclick="linkGlobalShorten();" />
+										<img id="linkGlobalShorten" class="newContentFieldEnhancement" alt="" src="media/icons/shortenLink.svg" onclick="linkGlobalShorten();" />
 									</span>
 								</div>
 						<div id="linkGlobalSuggestions" class="newContentVarSuggestions">
@@ -3041,11 +3041,11 @@
 					<!-- Facebook -->
 					<div id="tabFacebook" class="socialTabContent">
 						<!-- Share Via Facebook -->
-						<div onclick="
+						<div onclick="() => {
 									// prepare & set facebook post parameters
 									let u = document.getElementById('inputEventLink').value;
 									document.getElementById('shareViaFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + u
-								">
+								}">
 							Preview<br><br>
 							<div id="facebookPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
 							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
@@ -3062,13 +3062,13 @@
 					<!-- Linkedin -->
 					<div id="tabLinkedin" class="socialTabContent">
 						<!-- Share Via LinkedIn -->
-						<div onclick="
+						<div onclick="() => { // Multiline statement in html not allowed unless you wrap it in function
 									// prepare & set linkedin post parameters
 									let url = 'placeholder.value';
 									let title = 'placeholder.value'; // not shown in shared link
 									let summary = 'placeholder.value'; // link not working when added
 									document.getElementById('shareViaLinkedin').href = 'https://linkedin.com/shareArticle?url=' + url + '&title=' + title + '&summary=' + summary
-								">
+							}">
 							Preview<br><br>
 							<div id="linkedinPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
 							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
@@ -3085,13 +3085,13 @@
 					<!-- Twitter -->
 					<div id="tabTwitter" class="socialTabContent">
 						<!-- Share Via Twitter -->
-						<div onclick="
+						<div onclick="() => {
 									// prepare & set twitter post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let text = 'text to share';
 									let hashtags = 'hashtag1,hashtag2';
 									document.getElementById('shareViaTwitter').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text + '&hashtags=' + hashtags
-								">
+								}">
 							Preview<br><br>
 							<div id="twitterPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
 							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
@@ -3131,12 +3131,12 @@
 					<!-- Reddit -->
 					<div id="tabReddit" class="socialTabContent">
 						<!-- Share Via Reddit -->
-						<div onclick="
+						<div onclick="() => {
 									// prepare & set reddit post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let title = document.getElementById('inputEventTitle').value;
 									document.getElementById('shareViaTwitter').href = 'https://www.reddit.com/submit?url=' + url + '&title=' + title
-								">
+								}">
 							Preview<br><br>
 							<div id="redditPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
 							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
@@ -3176,12 +3176,12 @@
 					<!-- Telegram -->
 					<div id="tabTelegram" class="socialTabContent">
 						<!-- Share Via Telegram -->
-						<div onclick="
+						<div onclick="() => {
 									// prepare & set telegram post parameters
 									let url = document.getElementById('inputEventLink').value;
 									let text = document.getElementById('inputEventTitle').value;
 									document.getElementById('shareViaTwitter').href = 'https://t.me/share/url' + '?url=' + url + '&text=' + text
-								">
+								}">
 							Preview<br><br>
 							<div id="telegramPostPreview" contenteditable="true" style="max-width: 450px; padding: 10px 14px 22px 14px; border: 1px solid #cecece; border-radius: 5px;"></div>
 							<span contenteditable="false" style="user-select: none; position: relative; top: -12px; left: 8px; background-color: #fff; border: 9px solid #fff; color: #b2b2b2;">editable</span><br>
@@ -3483,6 +3483,13 @@
 		for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
 		document.getElementById(tabby).style.display = "block";
 		document.getElementById('hookGlobal').focus();
+
+		// Remove highlighting from all the nav tabs
+		document.querySelectorAll('.navTab').forEach( el => el.style.backgroundColor = '');
+
+		// Highlight the clicked tab
+		document.querySelector(`.navTab[data-navFor=${tabby}]`).style.backgroundColor = '#4c236b';
+
 		closeBrandPopup(); // close brand popup if it is open
 	}
 
@@ -6518,6 +6525,8 @@ so we need to place them here, not sure why, I guess we create 2 identical data 
 	<option value="text">text</option>
 	<option value="text">text</option>
 </datalist>
+
+<datalist id="valueAll"></datalist>
 
 <datalist id="url">
 	<option value="https://webflow.com">Webflow</option>
