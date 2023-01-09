@@ -9,7 +9,12 @@ function unlockFounderName() {
 	document.getElementById('founderNameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockFounderName() {
-	document.getElementById('founderName').append('readonly');
+	document.getElementById('founderName').setAttribute('readonly','');
+	updateTextField({
+		id: "founderName",
+		name: 'Founder Name',
+		val: document.getElementById("founderName").value,
+	});
 	document.getElementById('founderName').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('founderNameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('founderNameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -37,7 +42,12 @@ function unlockFoundingDate() {
 	document.getElementById('foundingDateLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockFoundingDate() {
-	document.getElementById('foundingDate').append('readonly');
+	document.getElementById('foundingDate').setAttribute('readonly','');
+	updateTextField({
+		id: "foundingDate",
+		name: 'Founding Date',
+		val: document.getElementById("foundingDate").value,
+	});
 	document.getElementById('foundingDate').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('foundingDateLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('foundingDateUnlock').setAttribute('style', 'background-color: transparent;');
@@ -65,8 +75,13 @@ function unlockTradeBusinessName() {
 	document.getElementById('tradeBusinessNameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTradeBusinessName() {
+	document.getElementById('tradeBusinessName').setAttribute('readonly','');
+	updateTextField({
+		id: "tradeBusinessName",
+		name: 'Trade business name',
+		val: document.getElementById("tradeBusinessName").value,
+	});
 	document.getElementById('tradeBusinessName').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
-	document.getElementById('tradeBusinessName').append('readonly');
 	document.getElementById('tradeBusinessNameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tradeBusinessNameUnlock').setAttribute('style', 'background-color: transparent;');
 	if (document.getElementById('tradeBusinessName').value.length > 0) { document.getElementById('warningTradeBusinessName').setAttribute('style', 'display: none;'); }
@@ -93,7 +108,12 @@ function unlockLegalBusinessName() {
 	document.getElementById('legalBusinessNameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockLegalBusinessName() {
-	document.getElementById('legalBusinessName').append('readonly');
+	document.getElementById('legalBusinessName').setAttribute('readonly','');
+	updateTextField({
+		id: "legalBusinessName",
+		name: 'Legal Business name',
+		val: document.getElementById("legalBusinessName").value,
+	});
 	document.getElementById('legalBusinessName').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('legalBusinessNameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('legalBusinessNameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -124,7 +144,12 @@ function unlockPrimaryContactPhone () {
 	document.getElementById('primaryContactPhoneLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPrimaryContactPhone () {
-	document.getElementById('primaryContactPhone').append('readonly');
+	document.getElementById('primaryContactPhone').setAttribute('readonly','');
+	updateTextField({
+		id: "primaryContactPhone",
+		name: 'Phone',
+		val: document.getElementById("primaryContactPhone").value,
+	});
 	document.getElementById('primaryContactPhone').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('primaryContactPhoneLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('primaryContactPhoneUnlock').setAttribute('style', 'background-color: transparent;');
@@ -152,7 +177,12 @@ function unlockPrimaryContactEmail () {
 	document.getElementById('primaryContactEmailLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPrimaryContactEmail () {
-	document.getElementById('primaryContactEmail').append('readonly');
+	document.getElementById('primaryContactEmail').setAttribute('readonly','');
+	updateTextField({
+		id: "primaryContactEmail",
+		name: 'Email',
+		val: document.getElementById("primaryContactEmail").value,
+	});
 	document.getElementById('primaryContactEmail').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('primaryContactEmailLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('primaryContactEmailUnlock').setAttribute('style', 'background-color: transparent;');
@@ -180,7 +210,12 @@ function unlockPrimaryContactWebsite () {
 	document.getElementById('primaryContactWebsiteLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPrimaryContactWebsite () {
-	document.getElementById('primaryContactWebsite').append('readonly');
+	document.getElementById('primaryContactWebsite').setAttribute('readonly','');
+	updateTextField({
+		id: "primaryContactWebsite",
+		name: 'Website',
+		val: document.getElementById("primaryContactWebsite").value,
+	});
 	document.getElementById('primaryContactWebsite').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('primaryContactWebsiteLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('primaryContactWebsiteUnlock').setAttribute('style', 'background-color: transparent;');
@@ -210,7 +245,12 @@ function unlockOfficeAddressStreet1() {
 	document.getElementById('officeAddressStreet1Lock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOfficeAddressStreet1() {
-	document.getElementById('officeAddressStreet1').append('readonly');
+	document.getElementById('officeAddressStreet1').setAttribute('readonly','');
+	updateTextField({
+		id: "officeAddressStreet1",
+		name: 'Office Address Street 1',
+		val: document.getElementById("officeAddressStreet1").value,
+	});
 	document.getElementById('officeAddressStreet1').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('officeAddressStreet1Lock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('officeAddressStreet1Unlock').setAttribute('style', 'background-color: transparent;');
@@ -238,7 +278,12 @@ function unlockOfficeAddressStreet2 () {
 	document.getElementById('officeAddressStreet2Lock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOfficeAddressStreet2 () {
-	document.getElementById('officeAddressStreet2').append('readonly');
+	document.getElementById('officeAddressStreet2').setAttribute('readonly','');
+	updateTextField({
+		id: "officeAddressStreet2",
+		name: 'Office Address Street 2',
+		val: document.getElementById("officeAddressStreet2").value,
+	});
 	document.getElementById('officeAddressStreet2').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('officeAddressStreet2Lock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('officeAddressStreet2Unlock').setAttribute('style', 'background-color: transparent;');
@@ -266,7 +311,12 @@ function unlockOfficeAddressCity() {
 	document.getElementById('officeAddressCityLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOfficeAddressCity() {
-	document.getElementById('officeAddressCity').append('readonly');
+	document.getElementById('officeAddressCity').setAttribute('readonly','');
+	updateTextField({
+		id: "officeAddressCity",
+		name: 'Office Address City',
+		val: document.getElementById("officeAddressCity").value,
+	});
 	document.getElementById('officeAddressCity').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('officeAddressCityLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('officeAddressCityUnlock').setAttribute('style', 'background-color: transparent;');
@@ -294,7 +344,12 @@ function unlockOfficeAddressState() {
 	document.getElementById('officeAddressStateLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOfficeAddressState() {
-	document.getElementById('officeAddressState').append('readonly');
+	document.getElementById('officeAddressState').setAttribute('readonly','');
+	updateTextField({
+		id: "officeAddressState",
+		name: 'Office Address State',
+		val: document.getElementById("officeAddressState").value,
+	});
 	document.getElementById('officeAddressState').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('officeAddressStateLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('officeAddressStateUnlock').setAttribute('style', 'background-color: transparent;');
@@ -322,7 +377,12 @@ function unlockOfficeAddressZip() {
 	document.getElementById('officeAddressZipLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOfficeAddressZip() {
-	document.getElementById('officeAddressZip').append('readonly');
+	document.getElementById('officeAddressZip').setAttribute('readonly','');
+	updateTextField({
+		id: "officeAddressZip",
+		name: 'Office Address Zip',
+		val: document.getElementById("officeAddressZip").value,
+	});
 	document.getElementById('officeAddressZip').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('officeAddressZipLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('officeAddressZipUnlock').setAttribute('style', 'background-color: transparent;');
@@ -350,7 +410,12 @@ function unlockOfficeAddressCountry() {
 	document.getElementById('officeAddressCountryLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOfficeAddressCountry() {
-	document.getElementById('officeAddressCountry').append('readonly');
+	document.getElementById('officeAddressCountry').setAttribute('readonly','');
+	updateTextField({
+		id: "officeAddressCountry",
+		name: 'Office Address Country',
+		val: document.getElementById("officeAddressCountry").value,
+	});
 	document.getElementById('officeAddressCountry').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('officeAddressCountryLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('officeAddressCountryUnlock').setAttribute('style', 'background-color: transparent;');
@@ -380,7 +445,12 @@ function unlockMondayOpeningTime() {
 	document.getElementById('mondayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockMondayOpeningTime() {
-	document.getElementById('mondayOpeningTime').append('readonly');
+	document.getElementById('mondayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "mondayOpeningTime",
+		name: 'Monday Opening Time',
+		val: document.getElementById("mondayOpeningTime").value,
+	});
 	document.getElementById('mondayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('mondayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('mondayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -407,7 +477,12 @@ function unlockMondayClosingTime() {
 	document.getElementById('mondayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockMondayClosingTime() {
-	document.getElementById('mondayClosingTime').append('readonly');
+	document.getElementById('mondayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "mondayClosingTime",
+		name: 'Monday Closing Time',
+		val: document.getElementById("mondayClosingTime").value,
+	});
 	document.getElementById('mondayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('mondayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('mondayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -434,7 +509,12 @@ function unlockTuesdayOpeningTime () {
 	document.getElementById('tuesdayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTuesdayOpeningTime () {
-	document.getElementById('tuesdayOpeningTime').append('readonly');
+	document.getElementById('tuesdayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "tuesdayOpeningTime",
+		name: 'Tuesday Opening Time',
+		val: document.getElementById("tuesdayOpeningTime").value,
+	});
 	document.getElementById('tuesdayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('tuesdayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tuesdayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -461,7 +541,12 @@ function unlockTuesdayClosingTime () {
 	document.getElementById('tuesdayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTuesdayClosingTime () {
-	document.getElementById('tuesdayClosingTime').append('readonly');
+	document.getElementById('tuesdayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "tuesdayClosingTime",
+		name: 'Tuesday Closing Time',
+		val: document.getElementById("tuesdayClosingTime").value,
+	});
 	document.getElementById('tuesdayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('tuesdayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tuesdayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -488,7 +573,12 @@ function unlockWednesdayOpeningTime () {
 	document.getElementById('wednesdayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockWednesdayOpeningTime () {
-	document.getElementById('wednesdayOpeningTime').append('readonly');
+	document.getElementById('wednesdayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "wednesdayOpeningTime",
+		name: 'Wednesday Opening Time',
+		val: document.getElementById("wednesdayOpeningTime").value,
+	});
 	document.getElementById('wednesdayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('wednesdayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('wednesdayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -515,7 +605,12 @@ function unlockWednesdayClosingTime () {
 	document.getElementById('wednesdayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockWednesdayClosingTime () {
-	document.getElementById('wednesdayClosingTime').append('readonly');
+	document.getElementById('wednesdayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "wednesdayClosingTime",
+		name: 'Wednesday Closing Time',
+		val: document.getElementById("wednesdayClosingTime").value,
+	});
 	document.getElementById('wednesdayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('wednesdayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('wednesdayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -542,7 +637,12 @@ function unlockThursdayOpeningTime () {
 	document.getElementById('thursdayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockThursdayOpeningTime () {
-	document.getElementById('thursdayOpeningTime').append('readonly');
+	document.getElementById('thursdayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "thursdayOpeningTime",
+		name: 'Thursday Opening Time',
+		val: document.getElementById("thursdayOpeningTime").value,
+	});
 	document.getElementById('thursdayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('thursdayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('thursdayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -569,7 +669,12 @@ function unlockThursdayClosingTime () {
 	document.getElementById('thursdayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockThursdayClosingTime () {
-	document.getElementById('thursdayClosingTime').append('readonly');
+	document.getElementById('thursdayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "thursdayClosingTime",
+		name: 'Thursday Closing Time',
+		val: document.getElementById("thursdayClosingTime").value,
+	});
 	document.getElementById('thursdayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('thursdayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('thursdayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -596,7 +701,12 @@ function unlockFridayOpeningTime () {
 	document.getElementById('fridayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockFridayOpeningTime () {
-	document.getElementById('fridayOpeningTime').append('readonly');
+	document.getElementById('fridayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "fridayOpeningTime",
+		name: 'Friday Opening Time',
+		val: document.getElementById("fridayOpeningTime").value,
+	});
 	document.getElementById('fridayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('fridayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('fridayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -623,7 +733,12 @@ function unlockFridayClosingTime () {
 	document.getElementById('fridayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockFridayClosingTime () {
-	document.getElementById('fridayClosingTime').append('readonly');
+	document.getElementById('fridayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "fridayClosingTime",
+		name: 'Friday Closing Time',
+		val: document.getElementById("fridayClosingTime").value,
+	});
 	document.getElementById('fridayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('fridayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('fridayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -650,7 +765,12 @@ function unlockSaturdayOpeningTime () {
 	document.getElementById('saturdayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockSaturdayOpeningTime () {
-	document.getElementById('saturdayOpeningTime').append('readonly');
+	document.getElementById('saturdayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "saturdayOpeningTime",
+		name: 'Saturday Opening Time',
+		val: document.getElementById("saturdayOpeningTime").value,
+	});
 	document.getElementById('saturdayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: green;');
 	document.getElementById('saturdayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('saturdayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -677,7 +797,12 @@ function unlockSaturdayClosingTime () {
 	document.getElementById('saturdayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockSaturdayClosingTime () {
-	document.getElementById('saturdayClosingTime').append('readonly');
+	document.getElementById('saturdayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "saturdayClosingTime",
+		name: 'Saturday Closing Time',
+		val: document.getElementById("saturdayClosingTime").value,
+	});
 	document.getElementById('saturdayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('saturdayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('saturdayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -704,7 +829,12 @@ function unlockSundayOpeningTime () {
 	document.getElementById('sundayOpeningTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockSundayOpeningTime () {
-	document.getElementById('sundayOpeningTime').append('readonly');
+	document.getElementById('sundayOpeningTime').setAttribute('readonly','');
+	updateTextField({
+		id: "sundayOpeningTime",
+		name: 'Sunday Opening Time',
+		val: document.getElementById("sundayOpeningTime").value,
+	});
 	document.getElementById('sundayOpeningTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('sundayOpeningTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('sundayOpeningTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -731,7 +861,12 @@ function unlockSundayClosingTime () {
 	document.getElementById('sundayClosingTimeLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockSundayClosingTime () {
-	document.getElementById('sundayClosingTime').append('readonly');
+	document.getElementById('sundayClosingTime').setAttribute('readonly','');
+	updateTextField({
+		id: "sundayClosingTime",
+		name: 'Sunday Closing Time',
+		val: document.getElementById("sundayClosingTime").value,
+	});
 	document.getElementById('sundayClosingTime').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('sundayClosingTimeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('sundayClosingTimeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -761,6 +896,12 @@ function unlockBusinessType () {
 	document.getElementById('businessTypeValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockBusinessType () {
+	document.getElementById('businessType').setAttribute('readonly','');
+	updateTextField({
+		id: "businessType",
+		name: 'Business Type',
+		val: document.getElementById("businessType").value,
+	});
 	document.getElementById('businessType').setAttribute('style', 'display: none;');
 	document.getElementById('businessTypeLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('businessTypeUnlock').setAttribute('style', 'background-color: transparent;');
@@ -789,12 +930,17 @@ function unlockSlogan () {
 	document.getElementById('sloganLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockSlogan () {
-	document.getElementById('slogan').append('readonly');
+	document.getElementById('slogan').setAttribute('readonly','');
+	updateTextField({
+		id: "slogan",
+		name: 'Slogan', 
+		val: document.getElementById("slogan").value,
+	});
 	document.getElementById('slogan').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('sloganLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('sloganUnlock').setAttribute('style', 'background-color: transparent;');
-	if (document.getElementById('slogan').value.length > 0) { document.getElementById('warningSlogan').setAttribute('style', 'display: block;'); }
-	if (document.getElementById('slogan').value.length < 1) { document.getElementById('warningSlogan').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('slogan').value.length > 0) { document.getElementById('warningSlogan').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('slogan').value.length < 1) { document.getElementById('warningSlogan').setAttribute('style', 'display: block;'); }
 }
 function clearSlogan () {
 	if (confirm('Are you sure you want to CLEAR the Slogan?') === true) {
@@ -816,12 +962,17 @@ function unlockMissionStatement () {
 	document.getElementById('missionStatementLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockMissionStatement () {
-	document.getElementById('missionStatement').append('readonly');
+	document.getElementById('missionStatement').setAttribute('readonly','');
+	updateTextField({
+		id: "missionStatement",
+		name: 'Mission Statement',
+		val: document.getElementById("missionStatement").value,
+	});
 	document.getElementById('missionStatement').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('missionStatementLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('missionStatementUnlock').setAttribute('style', 'background-color: transparent;');
-	if (document.getElementById('missionStatement').value.length > 0) { document.getElementById('warningMissionStatement').setAttribute('style', 'display: block;'); }
-	if (document.getElementById('missionStatement').value.length < 1) { document.getElementById('warningMissionStatement').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('missionStatement').value.length > 0) { document.getElementById('warningMissionStatement').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('missionStatement').value.length < 1) { document.getElementById('warningMissionStatement').setAttribute('style', 'display: block;'); }
 }
 function clearMissionStatement () {
 	if (confirm('Are you sure you want to CLEAR the Mission Statement?') === true) {
@@ -843,12 +994,17 @@ function unlockValueProp () {
 	document.getElementById('valuePropLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockValueProp () {
-	document.getElementById('valueProp').append('readonly');
+	document.getElementById('valueProp').setAttribute('readonly','');
+	updateTextField({
+		id: "valueProp",
+		name: 'Value Proposition',
+		val: document.getElementById("valueProp").value,
+	});
 	document.getElementById('valueProp').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('valuePropLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('valuePropUnlock').setAttribute('style', 'background-color: transparent;');
-	if (document.getElementById('valueProp').value.length > 0) { document.getElementById('warningValueProposition').setAttribute('style', 'display: block;'); }
-	if (document.getElementById('valueProp').value.length < 1) { document.getElementById('warningValueProposition').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('valueProp').value.length > 0) { document.getElementById('warningValueProposition').setAttribute('style', 'display: none;'); }
+	if (document.getElementById('valueProp').value.length < 1) { document.getElementById('warningValueProposition').setAttribute('style', 'display: block;'); }
 }
 function clearValueProp () {
 	if (confirm('Are you sure you want to CLEAR the Value Proposition?') === true) {
@@ -872,7 +1028,12 @@ function unlockFacebookUrl () {
 	document.getElementById('facebookUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockFacebookUrl () {
-	document.getElementById('facebookUrl').append('readonly');
+	document.getElementById('facebookUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "facebookUrl",
+		name: 'Facebook Url',
+		val: document.getElementById("facebookUrl").value,
+	});
 	document.getElementById('facebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('facebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('facebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -899,7 +1060,12 @@ function unlockFacebookUsername () {
 	document.getElementById('facebookUsernameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockFacebookUsername () {
-	document.getElementById('facebookUsername').append('readonly');
+	document.getElementById('facebookUsername').setAttribute('readonly','');
+	updateTextField({
+		id: "facebookUsername",
+		name: 'Facebook Username',
+		val: document.getElementById("facebookUsername").value,
+	});
 	document.getElementById('facebookUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('facebookUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('facebookUsernameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -926,7 +1092,12 @@ function unlockInstagramUrl () {
 	document.getElementById('instagramUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockInstagramUrl () {
-	document.getElementById('instagramUrl').append('readonly');
+	document.getElementById('instagramUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "instagramUrl",
+		name: 'Instagram Url',
+		val: document.getElementById("instagramUrl").value,
+	});
 	document.getElementById('instagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('instagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('instagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -953,7 +1124,12 @@ function unlockInstagramUsername () {
 	document.getElementById('instagramUsernameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockInstagramUsername () {
-	document.getElementById('instagramUsername').append('readonly');
+	document.getElementById('instagramUsername').setAttribute('readonly','');
+	updateTextField({
+		id: "instagramUsername",
+		name: 'Instagram Username',
+		val: document.getElementById("instagramUsername").value,
+	});
 	document.getElementById('instagramUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('instagramUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('instagramUsernameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1005,7 +1181,12 @@ function unlockLinkedinUrl () {
 	document.getElementById('linkedinUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockLinkedinUrl () {
-	document.getElementById('linkedinUrl').append('readonly');
+	document.getElementById('linkedinUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "linkedinUrl",
+		name: 'Linkedin Url',
+		val: document.getElementById("linkedinUrl").value,
+	});
 	document.getElementById('linkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('linkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('linkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1032,7 +1213,12 @@ function unlockLinkedinUsername () {
 	document.getElementById('linkedinUsernameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockLinkedinUsername () {
-	document.getElementById('linkedinUsername').append('readonly');
+	document.getElementById('linkedinUsername').setAttribute('readonly','');
+	updateTextField({
+		id: "linkedinUsername",
+		name: 'Linkedin Username',
+		val: document.getElementById("linkedinUsername").value,
+	});
 	document.getElementById('linkedinUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('linkedinUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('linkedinUsernameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1059,7 +1245,12 @@ function unlockTwitterUrl () {
 	document.getElementById('twitterUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTwitterUrl () {
-	document.getElementById('twitterUrl').append('readonly');
+	document.getElementById('twitterUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "twitterUrl",
+		name: 'Twitter Url',
+		val: document.getElementById("twitterUrl").value,
+	});
 	document.getElementById('twitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('twitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('twitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1086,7 +1277,12 @@ function unlockTwitterUsername () {
 	document.getElementById('twitterUsernameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTwitterUsername () {
-	document.getElementById('twitterUsername').append('readonly');
+	document.getElementById('twitterUsername').setAttribute('readonly','');
+	updateTextField({
+		id: "twitterUsername",
+		name: 'Twitter Username',
+		val: document.getElementById("twitterUsername").value,
+	});
 	document.getElementById('twitterUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('twitterUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('twitterUsernameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1113,7 +1309,12 @@ function unlockTiktokUrl () {
 	document.getElementById('tiktokUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTiktokUrl () {
-	document.getElementById('tiktokUrl').append('readonly');
+	document.getElementById('tiktokUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "tiktokUrl",
+		name: 'Tiktok Url',
+		val: document.getElementById("tiktokUrl").value,
+	});
 	document.getElementById('tiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('tiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1140,7 +1341,12 @@ function unlockTiktokUsername () {
 	document.getElementById('tiktokUsernameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTiktokUsername () {
-	document.getElementById('tiktokUsername').append('readonly');
+	document.getElementById('tiktokUsername').setAttribute('readonly','');
+	updateTextField({
+		id: "tiktokUsername",
+		name: 'Tiktok Username',
+		val: document.getElementById("tiktokUsername").value,
+	});
 	document.getElementById('tiktokUsername').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('tiktokUsernameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tiktokUsernameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1170,6 +1376,15 @@ function unlockSquareLogo () {
 	document.getElementById('squareLogoValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockSquareLogo () {
+	document.getElementById("squareLogo").setAttribute("readonly", "");
+  updateImageField({
+		id: "squareLogo",
+    name: "Square Logo",
+		folder: 'logo',
+		imgElId:"squareLogoBro",
+		tempImgId: "uploadedSquareImage",
+    file: document.getElementById("squareLogo").files[0],
+  });
 	document.getElementById('squareLogo').setAttribute('style', 'display: none;');
 	document.getElementById('squareLogoLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('squareLogoUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1222,6 +1437,15 @@ function unlockFullLogo () {
 	document.getElementById('fullLogoValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockFullLogo () {
+	document.getElementById("fullLogo").setAttribute("readonly", "");
+  updateImageField({
+		id: "fullLogo",
+    name: "Full Logo",
+		folder: 'logo',
+		imgElId:"fullLogoBro",
+		tempImgId: "uploadedFullImage",
+    file: document.getElementById("fullLogo").files[0],
+  });
 	document.getElementById('fullLogo').setAttribute('style', 'display: none;');
 	document.getElementById('fullLogoLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('fullLogoUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1265,6 +1489,12 @@ function unlockPrimaryColor () {
 	document.getElementById('primaryColorValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockPrimaryColor () {
+	document.getElementById('primaryColor').setAttribute('readonly','');
+	updateTextField({
+		id: "primaryColor",
+		name: 'Primary Color',
+		val: document.getElementById("primaryColor").value,
+	});
 	document.getElementById('primaryColor').setAttribute('style', 'display: none;');
 	document.getElementById('primaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('primaryColorUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1299,6 +1529,12 @@ function unlockSecondaryColor () {
 	document.getElementById('secondaryColorValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockSecondaryColor () {
+	document.getElementById('secondaryColor').setAttribute('readonly','');
+	updateTextField({
+		id: "secondaryColor",
+		name: 'Secondary Color',
+		val: document.getElementById("secondaryColor").value,
+	});
 	document.getElementById('secondaryColor').setAttribute('style', 'display: none;');
 	document.getElementById('secondaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('secondaryColorUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1333,6 +1569,12 @@ function unlockTertiaryColor () {
 	document.getElementById('tertiaryColorValueDisplay').setAttribute('style', 'display: block;');
 }
 function lockTertiaryColor () {
+	document.getElementById('tertiaryColor').setAttribute('readonly','');
+	updateTextField({
+		id: "tertiaryColor",
+		name: 'Tertiary Color',
+		val: document.getElementById("tertiaryColor").value,
+	});
 	document.getElementById('tertiaryColor').setAttribute('style', 'display: none;');
 	document.getElementById('tertiaryColorLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tertiaryColorUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1368,7 +1610,12 @@ function unlockPrimaryFont () {
 	document.getElementById('primaryFontLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPrimaryFont () {
-	document.getElementById('primaryFont').append('readonly');
+	document.getElementById('primaryFont').setAttribute('readonly','');
+	updateTextField({
+		id: "primaryFont",
+		name: 'Primary Font',
+		val: document.getElementById("primaryFont").value,
+	});
 	document.getElementById('primaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('primaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('primaryFontUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1396,7 +1643,12 @@ function unlockSecondaryFont () {
 	document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockSecondaryFont () {
-	document.getElementById('secondaryFont').append('readonly');
+	document.getElementById('secondaryFont').setAttribute('readonly','');
+	updateTextField({
+		id: "secondaryFont",
+		name: 'Secondary Font',
+		val: document.getElementById("secondaryFont").value,
+	});
 	document.getElementById('secondaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('secondaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('secondaryFontUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1423,7 +1675,12 @@ function unlockTertiaryFont () {
 	document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockTertiaryFont () {
-	document.getElementById('tertiaryFont').append('readonly');
+	document.getElementById('tertiaryFont').setAttribute('readonly','');
+	updateTextField({
+		id: "tertiaryFont",
+		name: 'Tertiary Font',
+		val: document.getElementById("tertiaryFont").value,
+	});
 	document.getElementById('tertiaryFont').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('tertiaryFontLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('tertiaryFontUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1453,7 +1710,12 @@ function unlockPerson1Name () {
 	document.getElementById('person1NameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1Name () {
-	document.getElementById('person1Name').append('readonly');
+	document.getElementById('person1Name').setAttribute('readonly','');
+	updateTextField({
+		id: "person1Name",
+		name: 'Person1 Name', 
+		val: document.getElementById("person1Name").value,
+	});
 	document.getElementById('person1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1480,7 +1742,12 @@ function unlockPerson1Title () {
 	document.getElementById('person1TitleLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1Title () {
-	document.getElementById('person1Title').append('readonly');
+	document.getElementById('person1Title').setAttribute('readonly','');
+	updateTextField({
+		id: "person1Title",
+		name: 'Person1 Title', 
+		val: document.getElementById("person1Title").value,
+	});
 	document.getElementById('person1Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1TitleUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1508,6 +1775,15 @@ function unlockPerson1Headshot () {
 	document.getElementById('person1HeadshotValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockPerson1Headshot () {
+	document.getElementById("person1Headshot").setAttribute("readonly", "");
+  updateImageField({
+		id: "person1Headshot",
+    name: "Person1 headshot",
+		folder: 'people/person1',
+		imgElId:"person1HeadshotBro",
+		tempImgId: "uploadedPerson1HeadshotImage",
+    file: document.getElementById("person1Headshot").files[0],
+  });
 	document.getElementById('person1Headshot').setAttribute('style', 'display: none;');
 	document.getElementById('person1HeadshotLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1HeadshotUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1536,7 +1812,12 @@ function unlockPerson1FacebookUrl () {
 	document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1FacebookUrl () {
-	document.getElementById('person1FacebookUrl').append('readonly');
+	document.getElementById('person1FacebookUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person1FacebookUrl",
+		name: 'Person1 Facebook Url',
+		val: document.getElementById("person1FacebookUrl").value,
+	});
 	document.getElementById('person1FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1563,7 +1844,12 @@ function unlockPerson1InstagramUrl () {
 	document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1InstagramUrl () {
-	document.getElementById('person1InstagramUrl').append('readonly');
+	document.getElementById('person1InstagramUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person1InstagramUrl",
+		name: 'Person1 Instagram Url',
+		val: document.getElementById("person1InstagramUrl").value,
+	});
 	document.getElementById('person1InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1590,7 +1876,12 @@ function unlockPerson1LinkedinUrl () {
 	document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1LinkedinUrl () {
-	document.getElementById('person1LinkedinUrl').append('readonly');
+	document.getElementById('person1LinkedinUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person1LinkedinUrl",
+		name: 'Person1 Linkedin Url',
+		val: document.getElementById("person1LinkedinUrl").value,
+	});
 	document.getElementById('person1LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1617,7 +1908,12 @@ function unlockPerson1TwitterUrl () {
 	document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1TwitterUrl () {
-	document.getElementById('person1TwitterUrl').append('readonly');
+	document.getElementById('person1TwitterUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person1TwitterUrl",
+		name: 'Person1 Twitter Url',
+		val: document.getElementById("person1TwitterUrl").value,
+	});
 	document.getElementById('person1TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1644,7 +1940,12 @@ function unlockPerson1TiktokUrl () {
 	document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson1TiktokUrl () {
-	document.getElementById('person1TiktokUrl').append('readonly');
+	document.getElementById('person1TiktokUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person1TiktokUrl",
+		name: 'Person1 Tiktok Url',
+		val: document.getElementById("person1TiktokUrl").value,
+	});
 	document.getElementById('person1TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person1TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person1TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1673,7 +1974,12 @@ function unlockPerson2Name () {
 	document.getElementById('person2NameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2Name () {
-	document.getElementById('person2Name').append('readonly');
+	document.getElementById('person2Name').setAttribute('readonly','');
+	updateTextField({
+		id: "person2Name",
+		name: 'Person2 Name', 
+		val: document.getElementById("person2Name").value,
+	});
 	document.getElementById('person2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1700,7 +2006,12 @@ function unlockPerson2Title () {
 	document.getElementById('person2TitleLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2Title () {
-	document.getElementById('person2Title').append('readonly');
+	document.getElementById('person2Title').setAttribute('readonly','');
+	updateTextField({
+		id: "person2Title",
+		name: 'Person2 Title', 
+		val: document.getElementById("person2Title").value,
+	});
 	document.getElementById('person2Title').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2TitleLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2TitleUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1728,6 +2039,15 @@ function unlockPerson2Headshot () {
 	document.getElementById('person2HeadshotValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockPerson2Headshot () {
+	document.getElementById("person2Headshot").setAttribute("readonly", "");
+  updateImageField({
+		id: "person2Headshot",
+    name: "Person2 headshot",
+		folder: 'people/person2',
+		imgElId:"person2HeadshotBro",
+		tempImgId: "uploadedPerson2HeadshotImage",
+    file: document.getElementById("person2Headshot").files[0],
+  });
 	document.getElementById('person2Headshot').setAttribute('style', 'display: none;');
 	document.getElementById('person2HeadshotLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2HeadshotUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1756,7 +2076,12 @@ function unlockPerson2FacebookUrl () {
 	document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2FacebookUrl () {
-	document.getElementById('person2FacebookUrl').append('readonly');
+	document.getElementById('person2FacebookUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person2FacebookUrl",
+		name: 'Person2 Facebook Url',
+		val: document.getElementById("person2FacebookUrl").value,
+	});
 	document.getElementById('person2FacebookUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2FacebookUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2FacebookUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1783,7 +2108,12 @@ function unlockPerson2InstagramUrl () {
 	document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2InstagramUrl () {
-	document.getElementById('person2InstagramUrl').append('readonly');
+	document.getElementById('person2InstagramUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person2InstagramUrl",
+		name: 'Person2 Instagram Url',
+		val: document.getElementById("person2InstagramUrl").value,
+	});
 	document.getElementById('person2InstagramUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2InstagramUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2InstagramUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1810,7 +2140,12 @@ function unlockPerson2LinkedinUrl () {
 	document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2LinkedinUrl () {
-	document.getElementById('person2LinkedinUrl').append('readonly');
+	document.getElementById('person2LinkedinUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person2LinkedinUrl",
+		name: 'Person2 Linkedin Url',
+		val: document.getElementById("person2LinkedinUrl").value,
+	});
 	document.getElementById('person2LinkedinUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2LinkedinUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2LinkedinUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1837,7 +2172,12 @@ function unlockPerson2TwitterUrl () {
 	document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2TwitterUrl () {
-	document.getElementById('person2TwitterUrl').append('readonly');
+	document.getElementById('person2TwitterUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person2TwitterUrl",
+		name: 'Person2 Twitter Url',
+		val: document.getElementById("person2TwitterUrl").value,
+	});
 	document.getElementById('person2TwitterUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2TwitterUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2TwitterUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1864,7 +2204,12 @@ function unlockPerson2TiktokUrl () {
 	document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockPerson2TiktokUrl () {
-	document.getElementById('person2TiktokUrl').append('readonly');
+	document.getElementById('person2TiktokUrl').setAttribute('readonly','');
+	updateTextField({
+		id: "person2TiktokUrl",
+		name: 'Person2 Tiktok Url',
+		val: document.getElementById("person2TiktokUrl").value,
+	});
 	document.getElementById('person2TiktokUrl').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('person2TiktokUrlLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('person2TiktokUrlUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1894,7 +2239,12 @@ function unlockOffer1Name () {
 	document.getElementById('offer1NameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer1Name () {
-	document.getElementById('offer1Name').append('readonly');
+	document.getElementById('offer1Name').setAttribute('readonly','');
+	updateTextField({
+		id: "offer1Name",
+		name: 'Offer1 Name', 
+		val: document.getElementById("offer1Name").value,
+	});
 	document.getElementById('offer1Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer1NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1921,7 +2271,12 @@ function unlockOffer1Price () {
 	document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer1Price () {
-	document.getElementById('offer1Price').append('readonly');
+	document.getElementById('offer1Price').setAttribute('readonly','');
+	updateTextField({
+		id: "offer1Price",
+		name: 'Offer1 Price', 
+		val: document.getElementById("offer1Price").value,
+	});
 	document.getElementById('offer1Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer1PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1PriceUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1948,7 +2303,12 @@ function unlockOffer1Feature () {
 	document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer1Feature () {
-	document.getElementById('offer1Feature').append('readonly');
+	document.getElementById('offer1Feature').setAttribute('readonly','');
+	updateTextField({
+		id: "offer1Feature",
+		name: 'Offer1 Feature', 
+		val: document.getElementById("offer1Feature").value,
+	});
 	document.getElementById('offer1Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer1FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1FeatureUnlock').setAttribute('style', 'background-color: transparent;');
@@ -1975,7 +2335,12 @@ function unlockOffer1Benefit () {
 	document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer1Benefit () {
-	document.getElementById('offer1Benefit').append('readonly');
+	document.getElementById('offer1Benefit').setAttribute('readonly','');
+	updateTextField({
+		id: "offer1Benefit",
+		name: 'Offer1 Benefit', 
+		val: document.getElementById("offer1Benefit").value,
+	});
 	document.getElementById('offer1Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer1BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1BenefitUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2002,7 +2367,12 @@ function unlockOffer1Solution () {
 	document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer1Solution () {
-	document.getElementById('offer1Solution').append('readonly');
+	document.getElementById('offer1Solution').setAttribute('readonly','');
+	updateTextField({
+		id: "offer1Solution",
+		name: 'Offer1 Solution', 
+		val: document.getElementById("offer1Solution").value,
+	});
 	document.getElementById('offer1Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer1SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1SolutionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2029,7 +2399,12 @@ function unlockOffer1Description () {
 	document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer1Description () {
-	document.getElementById('offer1Description').append('readonly');
+	document.getElementById('offer1Description').setAttribute('readonly','');
+	updateTextField({
+		id: "offer1Description",
+		name: 'Offer1 Description', 
+		val: document.getElementById("offer1Description").value,
+	});
 	document.getElementById('offer1Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer1DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2057,10 +2432,19 @@ function unlockOffer1Image () {
 	document.getElementById('offer1ImageValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockOffer1Image () {
+	document.getElementById("offer1Image").setAttribute("readonly", "");
+  updateImageField({
+		id: "offer1Image",
+    name: "Offer 1",
+		folder: 'offers/offer1',
+		imgElId:"offer1Bro",
+		tempImgId: "uploadedOffer1Image",
+    file: document.getElementById("offer1Image").files[0],
+  });
 	document.getElementById('offer1Image').setAttribute('style', 'display: none;');
 	document.getElementById('offer1ImageLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer1ImageUnlock').setAttribute('style', 'background-color: transparent;');
-	document.getElementById('offer1ImageValueDisplay').innerHTML = 'Current Person 1 Headshot: ' + document.getElementById('offer1Image').value;
+	document.getElementById('offer1ImageValueDisplay').innerHTML = 'Offer 1 Image: ' + document.getElementById('offer1Image').value;
 	document.getElementById('offer1ImageValueDisplay').setAttribute('style', 'display: block;');
 	if (document.getElementById('offer1Image').value != null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: none;'); }
 	if (document.getElementById('offer1Image').value == null) { document.getElementById('warningOffer1Image').setAttribute('style', 'display: block;'); }
@@ -2087,7 +2471,12 @@ function unlockOffer2Name () {
 	document.getElementById('offer2NameLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer2Name () {
-	document.getElementById('offer2Name').append('readonly');
+	document.getElementById('offer2Name').setAttribute('readonly','');
+	updateTextField({
+		id: "offer2Name",
+		name: 'Offer2 Name', 
+		val: document.getElementById("offer2Name").value,
+	});
 	document.getElementById('offer2Name').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer2NameLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2NameUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2114,7 +2503,12 @@ function unlockOffer2Price () {
 	document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer2Price () {
-	document.getElementById('offer2Price').append('readonly');
+	document.getElementById('offer2Price').setAttribute('readonly','');
+	updateTextField({
+		id: "offer2Price",
+		name: 'Offer2 Price', 
+		val: document.getElementById("offer2Price").value,
+	});
 	document.getElementById('offer2Price').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer2PriceLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2PriceUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2141,7 +2535,12 @@ function unlockOffer2Feature () {
 	document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer2Feature () {
-	document.getElementById('offer2Feature').append('readonly');
+	document.getElementById('offer2Feature').setAttribute('readonly','');
+	updateTextField({
+		id: "offer2Feature",
+		name: 'Offer2 Feature', 
+		val: document.getElementById("offer2Feature").value,
+	});
 	document.getElementById('offer2Feature').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer2FeatureLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2FeatureUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2168,7 +2567,12 @@ function unlockOffer2Benefit () {
 	document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer2Benefit () {
-	document.getElementById('offer2Benefit').append('readonly');
+	document.getElementById('offer2Benefit').setAttribute('readonly','');
+	updateTextField({
+		id: "offer2Benefit",
+		name: 'Offer2 Benefit', 
+		val: document.getElementById("offer2Benefit").value,
+	});
 	document.getElementById('offer2Benefit').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer2BenefitLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2BenefitUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2195,7 +2599,12 @@ function unlockOffer2Solution () {
 	document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer2Solution () {
-	document.getElementById('offer2Solution').append('readonly');
+	document.getElementById('offer2Solution').setAttribute('readonly','');
+	updateTextField({
+		id: "offer2Solution",
+		name: 'Offer2 Solution', 
+		val: document.getElementById("offer2Solution").value,
+	});
 	document.getElementById('offer2Solution').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer2SolutionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2SolutionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2222,7 +2631,12 @@ function unlockOffer2Description () {
 	document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: transparent;');
 }
 function lockOffer2Description () {
-	document.getElementById('offer2Description').append('readonly');
+	document.getElementById('offer2Description').setAttribute('readonly','');
+	updateTextField({
+		id: "offer2Description",
+		name: 'Offer2 Description', 
+		val: document.getElementById("offer2Description").value,
+	});
 	document.getElementById('offer2Description').setAttribute('style', 'border-width: 3px; border-radius: 30px; border-style: solid; border-color: darkgreen;');
 	document.getElementById('offer2DescriptionLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2DescriptionUnlock').setAttribute('style', 'background-color: transparent;');
@@ -2250,10 +2664,19 @@ function unlockOffer2Image () {
 	document.getElementById('offer2ImageValueDisplay').setAttribute('style', 'display: none;');
 }
 function lockOffer2Image () {
+	document.getElementById("offer2Image").setAttribute("readonly", "");
+  updateImageField({
+		id: "offer2Image",
+    name: "Offer 2",
+		folder: 'offers/offer2',
+		imgElId:"offer2Bro",
+		tempImgId: "uploadedOffer2Image",
+    file: document.getElementById("offer2Image").files[0],
+  });
 	document.getElementById('offer2Image').setAttribute('style', 'display: none;');
 	document.getElementById('offer2ImageLock').setAttribute('style', 'background-color: green; color: white; border-radius: 50%; height: 25px; width: 25px;');
 	document.getElementById('offer2ImageUnlock').setAttribute('style', 'background-color: transparent;');
-	document.getElementById('offer2ImageValueDisplay').innerHTML = 'Current Person 2 Headshot: ' + document.getElementById('offer2Image').value;
+	document.getElementById('offer2ImageValueDisplay').innerHTML = 'Offer 2 Image: ' + document.getElementById('offer2Image').value;
 	document.getElementById('offer2ImageValueDisplay').setAttribute('style', 'display: block;');
 	if (document.getElementById('offer2Image').value != null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: none;'); }
 	if (document.getElementById('offer2Image').value == null) { document.getElementById('warningOffer2Image').setAttribute('style', 'display: block;'); }

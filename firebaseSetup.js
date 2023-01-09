@@ -3,7 +3,8 @@ console.log("firebaseSetup.js loaded");
 // Firebase CDN Resources: https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
-import { getFirestore, doc, getDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, updateDoc, addDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { getStorage, uploadBytes, ref as sRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
 
 // Firebase Config
 const firebaseConfig = {
@@ -19,15 +20,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase();
 const firestore = getFirestore(app)
+const storage = getStorage();
 
 // Get Brand Variables
 const dbRef = ref(getDatabase());
 const brandID = '5k9PkwGSN7wrnoXAqS77';
+const brandDocRef = doc(firestore, "brands", brandID);
 
-getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
-	const brandData = snapshot.data();
+getDoc(brandDocRef).then((snapshot) => {
+	// save brand data globally as we need it later
+	window.brandData = snapshot.data();
 	if (brandData) {
 		if (brandData.legalBusinessName !== null || brandData.legalBusinessName !== '') {
 			console.log('Brand Returned: ' + brandData.legalBusinessName);
@@ -380,7 +383,7 @@ getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
 		if (brandData.mondayOpeningTime != null) {
 			// set local storage
 			localStorage.setItem('mondayOpeningTime', brandData.mondayOpeningTime);
-			document.getElementById('mondayOpeningTime').size = document.getElementById('mondayOpeningTime').value.length + 1;
+			document.getElementById('mondayOpeningTime').value = brandData.mondayOpeningTime;
 		} else {
 			document.getElementById('mondayOpeningTime').placeholder = '9:00 AM';
 			document.getElementById('warningMondayOpeningTime').style.display = 'block';
@@ -675,14 +678,18 @@ getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
 		}
 	}
 	function loadPerson1Headshot() {
-		//   if (brandData.person1Headshot != null) {
-		//     // set local storage
-		//     localStorage.setItem('person1Headshot', brandData.person1Headshot);
-		//      document.getElementById('person1Headshot').value = brandData.person1Headshot;
-		//  } else {
-		//      document.getElementById('person1Headshot').placeholder = 'https://via.placeholder.com/150';
-		//       document.getElementById('warningPerson1Headshot').style.display = 'block';
-		//   }
+		  if (brandData.person1Headshot != null) {
+		    // set local storage
+		    localStorage.setItem('person1Headshot', brandData.person1Headshot);
+
+		    document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', brandData.person1Headshot);
+				document.getElementById('file').lastChild.innerHTML = 'Person 1 headshot';
+				document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', brandData.person1Headshot);
+
+				document.getElementById('person1HeadshotBro').src = brandData.person1Headshot;
+				document.getElementById('person1HeadshotBro').style.maxWidth = '150px';
+				document.getElementById('person1HeadshotBro').style.maxHeight = '150px';
+		 }
 	}
 	function loadPerson1FacebookUrl() {
 		if (brandData.person1FacebookUrl != null) {
@@ -783,14 +790,18 @@ getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
 		}
 	}
 	function loadPerson2Headshot() {
-		//   if (brandData.person2Headshot != null) {
-		//       // set local storage
-		//       localStorage.setItem('person2Headshot', brandData.person2Headshot);
-		//      document.getElementById('person2Headshot').value = brandData.person2Headshot;
-		//  } else {
-		//       document.getElementById('person2Headshot').placeholder = 'https://via.placeholder.com/250';
-		//       document.getElementById('warningPerson2Headshot').style.display = 'block';
-		//  }
+		  if (brandData.person2Headshot != null) {
+		      // set local storage
+		      localStorage.setItem('person2Headshot', brandData.person2Headshot);
+		     
+					document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', brandData.person2Headshot);
+					document.getElementById('file').lastChild.innerHTML = 'Person 2 headshot';
+					document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', brandData.person2Headshot);
+
+					document.getElementById('person2HeadshotBro').src = brandData.person2Headshot;
+					document.getElementById('person2HeadshotBro').style.maxWidth = '150px';
+					document.getElementById('person2HeadshotBro').style.maxHeight = '150px';
+		 } 
 	}
 	function loadPerson2FacebookUrl() {
 		if (brandData.person2FacebookUrl != null) {
@@ -945,7 +956,14 @@ getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
 		if (brandData.offer1Image != null) {
 			// set local storage
 			localStorage.setItem('offer1Image', brandData.offer1Image);
-			document.getElementById('offer1Image').value = brandData.offer1Image;
+		
+			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', brandData.offer1Image);
+			document.getElementById('file').lastChild.innerHTML = 'Offer 1 Image';
+			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', brandData.offer1Image);
+
+			document.getElementById('offer1Bro').src = brandData.offer1Image;
+			document.getElementById('offer1Bro').style.maxWidth = '150px';
+			document.getElementById('offer1Bro').style.maxHeight = '150px';
 		} else {
 			document.getElementById('offer1Image').placeholder = 'https://via.placeholder.com/150';
 			document.getElementById('warningOffer1Image').style.display = 'block';
@@ -1038,7 +1056,14 @@ getDoc(doc(firestore, "brands", brandID)).then((snapshot) => {
 		if (brandData.offer2Image != null) {
 			// set local storage
 			localStorage.setItem('offer2Image', brandData.offer2Image);
-			document.getElementById('offer2Image').value = brandData.offer2Image;
+
+			document.getElementById('file').appendChild(document.createElement('option')).setAttribute('value', brandData.offer2Image);
+			document.getElementById('file').lastChild.innerHTML = 'Offer 2 Image';
+			document.getElementById('file').lastChild.appendChild(document.createElement('img')).setAttribute('src', brandData.offer2Image);
+
+			document.getElementById('offer2Bro').src = brandData.offer2Image;
+			document.getElementById('offer2Bro').style.maxWidth = '150px';
+			document.getElementById('offer2Bro').style.maxHeight = '150px';
 		} else {
 			document.getElementById('offer2Image').placeholder = 'https://via.placeholder.com/150';
 			document.getElementById('warningOffer2Image').style.display = 'block';
@@ -1336,3 +1361,96 @@ get(child(dbRef, 'assetTemplates/copy/email')).then((snapshot) => {
 	}}).catch((error) => {
 	console.error(error);
 	});
+
+// Function for updating non text fields
+window.updateTextField = async function ({ id, name, val = "" } = {}) {
+  if (!id) {
+    return;
+  }
+
+	// if we locked without changing anything
+  if (window.brandData[id] === val) {
+    showSnackbar({
+      message: "No changes were done to be updated",
+    });
+    return;
+  }
+
+  const result = { success: false };
+
+  try {
+		// Update the field in firestore
+    await updateDoc(brandDocRef, {
+      [id]: val,
+    });
+    window.brandData[id] = val;
+    showSnackbar({
+      message: `${name} updated successfully`,
+    });
+    result.success = true;
+  } catch (err) {
+    console.log(err);
+    showSnackbar({
+      message: `Failed to update ${name}`,
+    });
+  } finally {
+    return result;
+  }
+};
+
+window.updateImageField = async function ({
+  id,
+  name,
+	folder,
+  imgElId,
+	tempImgId,
+  file,
+} = {}) {
+  if (!id) {
+    return;
+  }
+
+  if (!file) {
+    showSnackbar({
+      message: "No file was selected",
+    });
+    return;
+  }
+
+	// Upload the file in firebase storage
+  const result = await uploadFile({ path: folder, file });
+  if (result.success) {
+		// Update the image field in database with url
+    const updateResult = await updateTextField({ id, name, val: result.url });
+    if (updateResult.success) {
+			// Show the uploaded image in image tag
+			document.getElementById(imgElId).setAttribute("src", result.url);
+      document.getElementById(tempImgId).style.display = "none";
+      document.getElementById(tempImgId).setAttribute("src", "");
+			window.brandData[id] = result.url;
+    }
+  } else {
+    showSnackbar({ message: `Failed to upload ${name}. Please try again!` });
+  }
+};
+
+// This function will upload a file (for example brand logo) to firebase storage
+window.uploadFile = async ({ path, file }) => {
+  const result = { success: false };
+	// Date is used to unsure file name is unique. Two logos can have same name
+	// and we don't wanna overwrite.
+  const filePath = `${brandID}/${path}/${Date.now()}_${file.name}`;
+  const storageRef = sRef(storage, filePath);
+
+  try {
+    // Upload the imagee
+		await uploadBytes(storageRef, file);
+		result.success = true;
+		// Get the download url
+    result.url = await getDownloadURL(storageRef);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    return result;
+  }
+};
